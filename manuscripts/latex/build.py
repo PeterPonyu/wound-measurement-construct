@@ -42,7 +42,7 @@ def validate(n):
     aux = stem.with_suffix(".aux").read_text()
     pages = {m[1]: int(m[2]) for m in re.finditer(r"\\newlabel\{((?:fig|call):[^}]+)\}\{\{[^}]*\}\{(\d+)\}", aux)}
     placement = []
-    for number in range(1, 9 if n == 1 else 7):
+    for number in range(1, 10 if n == 1 else 8):
         key = f"p{n}f{number}"
         ref, fig = pages[f"call:{key}"], pages[f"fig:{key}"]
         if not 0 <= fig - ref <= 1:

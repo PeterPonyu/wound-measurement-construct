@@ -148,9 +148,7 @@ methods <- c("topic_simplex_theta0", "module_score", "pca", "nmf")
 method_names <- c("Fibroblast\ntopic", "Module", "PCA", "NMF")
 
 figure1_workflow <- function() {
-  body <- readLines(file.path(ROOT, "manuscripts/r_tikz/construct_design.tikz"))
-  write_workflow("figure1_workflow", 106, body,
-    c("From skin specimens to three distinct readouts", "What changes the average?", "How is the interpretation tested?"), c(90, 44, 136))
+  biological_measurement_figure()
 }
 sample_data <- function(d) data.frame(sample = chr(d, "gsm"),
     arm = factor(c("DFU-healer" = "Healer", "DFU-nonhealer" = "Non-healer", "Non-diabetic" = "Healthy")[chr(d, "arm")], levels = names(ARMS)),
@@ -228,7 +226,7 @@ figure4_outcome_counterexample <- function() {
   draw_figure("figure4_outcome_counterexample", list(panel(pa, "Mixture by arm", a),
     panel(pb, "Unit correction", b), panel(pc, "Design power", c)), height = 68, widths = c(54, 63, 47))
 }
-figure5_sensitivity_negative_controls <- function() {
+figure6_sensitivity_negative_controls <- function() {
   s <- historical("method_constant_sensitivity"); n <- historical("pipeline_negative_control")
   a <- data.frame(cut = num(s$cut_sweep$rows, "cut"), rho = num(s$cut_sweep$rows, "A_rho_mean_vs_weight"),
                   p = num(s$cut_sweep$rows, "C_p"))
@@ -254,11 +252,11 @@ figure5_sensitivity_negative_controls <- function() {
   pf <- columns(f, "Probability", c(RED, BLUE), c(0, .065)) +
     geom_hline(yintercept = .05, linetype = "dashed", colour = GRAY, linewidth = .3) +
     scale_x_discrete(labels = c("Observed\np", "Null\nrate"))
-  draw_figure("figure5_sensitivity_negative_controls", list(panel(pa, "Semantic association", a),
+  draw_figure("figure6_sensitivity_negative_controls", list(panel(pa, "Semantic association", a),
     panel(pb, "Healing contrast", a), panel(pc, "Topic count", k), panel(pd, "Label permutation", d),
     panel(pe, "Structureless input", e), panel(pf, "Null calibration", f)), nrow = 2, height = 119)
 }
-figure6_representation_inference <- function() {
+figure7_representation_inference <- function() {
   r <- repaired("representation_inference"); b <- historical("representation_benchmark")
   a <- data.frame(label = method_names, value = num(r$auc[methods], "loso_auc"),
     low = vapply(r$auc[methods], function(x) x$bootstrap_95_ci[[1]], 0),
@@ -280,10 +278,10 @@ figure6_representation_inference <- function() {
           legend.position = "right", legend.key.height = unit(15, "mm"), legend.key.width = unit(2.4, "mm"),
           legend.title = element_text(size = 8, colour = "black", face = "bold")) + guides(fill = guide_colorbar(display = "rectangles", nbin = 60,
               barheight = unit(28, "mm"), barwidth = unit(2.4, "mm")))
-  draw_figure("figure6_representation_inference", list(panel(pa, "Leave-one-sample AUC", a),
+  draw_figure("figure7_representation_inference", list(panel(pa, "Leave-one-sample AUC", a),
     panel(pc, "Score correlation", c)), height = 71, widths = c(81, 88))
 }
-figure7_patient_unit_anatomy <- function() {
+figure8_patient_unit_anatomy <- function() {
   r <- repaired("patient_unit_representation_benchmark"); t <- repaired("paired_anatomical_control")
   a <- data.frame(label = method_names, value = num(r$auc[methods], "auc"),
     low = vapply(r$auc[methods], function(x) x$bootstrap_95_ci[[1]], 0),
@@ -293,10 +291,10 @@ figure7_patient_unit_anatomy <- function() {
                   low = c$bootstrap_95_ci[[1]], high = c$bootstrap_95_ci[[2]])
   pb <- ggplot(b, aes(label, value)) + zero_h() + geom_errorbar(aes(ymin = low, ymax = high), width = .15, colour = GREEN, linewidth = .6) +
     geom_point(size = 2.2, colour = GREEN) + coord_cartesian(ylim = c(-.03, .125)) + labs(x = NULL, y = "Foot − forearm loading")
-  draw_figure("figure7_patient_unit_anatomy", list(panel(forest(a), "Patient-unit AUC", a),
+  draw_figure("figure8_patient_unit_anatomy", list(panel(forest(a), "Patient-unit AUC", a),
     panel(pb, "Paired anatomy", b)), height = 66, widths = c(88, 81))
 }
-figure8_external_construct_audit <- function() {
+figure9_external_construct_audit <- function() {
   i <- repaired("external_immune_axis"); g <- repaired("external_gse268834_projection"); h <- repaired("external_gse248247_projection")
   cohort <- c("GSE223964", "GSE245703", "GSE268834")
   a <- data.frame(cohort = rep(cohort, 2), type = rep(c("Immune fraction", "B/plasma share"), each = 3),
@@ -321,11 +319,13 @@ figure8_external_construct_audit <- function() {
     geom_point(aes(colour = label), size = 2.1) + scale_colour_manual(values = c("GSE268834" = GREEN, "GSE248247" = GRAY)) +
     scale_x_discrete(labels = c("GSE248247" = "248247", "GSE268834" = "268834")) +
     coord_cartesian(ylim = c(-.04, .075)) + labs(x = "GSE series", y = "Diabetic − non-diabetic") + theme(legend.position = "none")
-  draw_figure("figure8_external_construct_audit", list(panel(pa, "Immune context", a),
+  draw_figure("figure9_external_construct_audit", list(panel(pa, "Immune context", a),
     panel(pb, "Detected genes", b), panel(pc, "Group contrast", c)), height = 73, widths = c(59, 59, 46))
 }
 
-names_all <- c("figure1_workflow", "figure2_mixture_semantics", "figure3_artifact_controls", "figure4_outcome_counterexample", "figure5_sensitivity_negative_controls", "figure6_representation_inference", "figure7_patient_unit_anatomy", "figure8_external_construct_audit")
+
+source(file.path(ROOT, "manuscripts/r_tikz/biological_figures.R"))
+names_all <- c("figure1_workflow", "figure2_mixture_semantics", "figure3_artifact_controls", "figure4_outcome_counterexample", "figure5_patient_readouts", "figure6_sensitivity_negative_controls", "figure7_representation_inference", "figure8_patient_unit_anatomy", "figure9_external_construct_audit")
 selected <- if (length(requested)) requested else names_all
 if (!all(selected %in% names_all)) stop("Unknown figure name")
 for (name in selected) get(name, mode = "function")()
@@ -338,5 +338,6 @@ manifest <- list(renderer = "R + ggplot2/grid + tikzDevice + XeLaTeX", font = "A
     function(f) digest::digest(file = file.path(ROOT, "manuscripts/r_tikz", f), algo = "sha256")),
     paste0("manuscripts/r_tikz/", c("construct_design.tikz"))),
   script_sha256 = digest::digest(file = normalizePath(script), algo = "sha256"))
+manifest$auxiliary_sources <- setNames(list(digest::digest(file=file.path(ROOT,"manuscripts/r_tikz/biological_figures.R"),algo="sha256")),"manuscripts/r_tikz/biological_figures.R")
 write_json(manifest, file.path(BUILD, "manifest.json"), auto_unbox = TRUE, pretty = TRUE, digits = NA)
 writeLines(capture.output(sessionInfo()), file.path(BUILD, "sessionInfo.txt"))

@@ -36,3 +36,7 @@ The software-only archive contains programs, not pretrained weights or completed
 ## Mathematical audit
 
 Run `python3 -m unittest discover -s tests -v` for analytic implementation checks. Run `python3 scripts/audit_measurement_math.py --output-dir outputs/reruns/mathematical_audit` after producing its saved inputs. The full reproduction package includes those inputs; the software-only archive requires the preceding analysis steps. Historical report hashes describe the original computation, while the release manifest describes the current exported files. Documentation corrections are not a claim that every original model has been refitted.
+
+## Biological extension
+
+After generating the saved inputs above, run `python3 scripts/expand_biological_evidence.py measurement` and `python3 scripts/expand_biological_evidence.py expression`. Outputs go to `outputs/reruns/biological_expansion/`; choose a fresh `--output-dir` for another run. The expression command requires the public raw counts. The full package already contains the reference display tables under `outputs/biological_expansion/measurement/`. The protocol is recorded in `config/biological_expansion_protocol.json` and is retrospective, not a preregistered clinical analysis. Five analytic checks in the native project are split between the two independent study packages.

@@ -9,3 +9,4 @@ PyMuPDF==1.27.1
 PyYAML==6.0.3
 anndata==0.12.10
 openpyxl==3.1.5
+umap-learn==0.5.11

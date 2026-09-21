@@ -1,0 +1,23 @@
+{
+  "status": "retrospective extension specified before computing the additional contrasts",
+  "scope": "Display the observed study material and test two gaps in the existing measurement and population-prediction analyses. Frozen historical results remain unchanged.",
+  "measurement": {
+    "readouts": [
+      "fibroblast_mean",
+      "high_state_fraction",
+      "fibroblast_fraction"
+    ],
+    "threshold": "Reuse the saved discovery two-Gaussian midpoint without refitting",
+    "unit": "Author-mapped patient; repeated specimens pooled by their relevant cell denominator",
+    "contrast": "healed minus not healed, seven versus four patients",
+    "inference": "All 330 patient-label allocations; absolute two-sided statistic including ties; no add-one for exhaustive enumeration; BH adjustment over these three new readouts",
+    "uncertainty": "10000 stratified patient bootstrap draws, seed 17; percentile intervals are descriptive in this small retrospective cohort",
+    "sensitivities": [
+      "equal specimen weights within patient",
+      "omit one patient at a time",
+      "repeat specimens must each contain at least 100 fibroblasts"
+    ],
+    "visualization": "UMAP on centered log ratios of the saved 15-topic proportions, 30 neighbors, minimum distance 0.3, seed 17; display a uniform 2000-cell subset. Raw-count marker displays do not constitute independent validation of marker-derived labels."
+  },
+  "limits": "No new recruitment, histology, perturbation experiment, spatial localization, DFU trajectory or independent clinical validation is supplied by these computations."
+}

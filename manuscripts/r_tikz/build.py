@@ -134,7 +134,7 @@ def inspect_headings(path: Path, specification: dict) -> list[dict]:
 
 
 def build_collection(paper: int) -> tuple[Path, int]:
-    expected = 8 if paper == 1 else 6
+    expected = 9 if paper == 1 else 7
     matches = []
     for number in range(1, expected + 1):
         source = PAPERS[paper] / f"f{number}.tex"
@@ -173,6 +173,9 @@ def main() -> None:
     manifest = json.loads((BUILD / "manifest.json").read_text())
     if manifest["script_sha256"] != sha(HERE / "build_figures.R"):
         raise RuntimeError("R source changed since generation; rerun without --compile-only")
+    for path, fingerprint in manifest.get("auxiliary_sources", {}).items():
+        if sha(ROOT / path) != fingerprint:
+            raise RuntimeError("Biological figure source changed since generation; rerun without --compile-only")
     for path, fingerprint in manifest.get("design_sources", {}).items():
         if sha(ROOT / path) != fingerprint:
             raise RuntimeError("Diagram source changed since generation; rerun without --compile-only")
@@ -196,7 +199,7 @@ def main() -> None:
     for name in names:
         for suffix in (".pdf", ".png"):
             shutil.copy2(STAGING / f"{name}{suffix}", FIG / f"{name}{suffix}")
-    if len(names) == 8:
+    if len(names) == 9:
         for paper in PAPERS:
             pdf, pages = build_collection(paper)
             verification["collections"][pdf.stem] = inspect_pdf(pdf, pages=pages, width_mm=210, figure_text=False)

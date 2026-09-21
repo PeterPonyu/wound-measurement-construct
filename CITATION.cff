@@ -5,7 +5,7 @@ title: Wound single-cell measurement construct validation
 authors:
 - family-names: Fu
   given-names: Zeyu
-version: 0.2.0
+version: 0.3.0
 license: MIT
 abstract: Software for testing whether a fibroblast-associated expression loading
   reflects cell-state abundance and supports patient-level healing inference in public
@@ -17,5 +17,3 @@ keywords:
 - single-cell transcriptomics
 - wound healing
 - measurement validity
-doi: 10.5281/zenodo.22875656
-date-released: '2026-09-21'

@@ -426,3 +426,60 @@ Two-sided 90\% Welch interval & -0.005864 to 0.061814 \\*
 Equivalence-margin infimum & 0.061814 \\
 \end{longtable}
 }
+
+{\small
+\begin{longtable}{@{}p{15mm}p{25mm}p{18mm}p{23mm}p{27mm}p{25mm}p{27mm}@{}}
+\caption{Observed-cell extension: mapped patient-level tissue measurements from 25 selected foot specimens. Patient labels are stable pseudonyms within this extension. The 20 rows include 9 non-diabetic participants, who do not enter healing tests, and 11 DFU patients (7 healed and 4 not healed). Repeated specimens are pooled by fibroblast count for the mean and high-state fraction, and by all-cell count for fibroblast composition. High state uses the unchanged discovery midpoint. Specimens and fibroblasts are counts; the three readouts are unitless fractions or loadings on zero-to-one scales.}\label{tab:p1biologicalpatients}\\
+\toprule
+\textbf{Patient} & \textbf{Group} & \textbf{Specimens} & \textbf{Fibroblasts} & \textbf{Fibroblast mean} & \textbf{High fraction} & \textbf{Fibroblast fraction} \\
+\midrule\endfirsthead
+\multicolumn{7}{l}{\tablename\ \thetable\ (continued)}\\
+\toprule
+\textbf{Patient} & \textbf{Group} & \textbf{Specimens} & \textbf{Fibroblasts} & \textbf{Fibroblast mean} & \textbf{High fraction} & \textbf{Fibroblast fraction} \\
+\midrule\endhead
+\bottomrule\endfoot
+01 & Not healed & 1 & 221 & 0.2496 & 0.5113 & 0.0970 \\*
+02 & Healed & 2 & 2751 & 0.3473 & 0.5863 & 0.3670 \\
+03 & Healed & 1 & 1238 & 0.0274 & 0.0226 & 0.3133 \\
+04 & Healed & 1 & 356 & 0.3521 & 0.6994 & 0.1582 \\
+05 & Not healed & 1 & 843 & 0.0125 & 0.0000 & 0.1965 \\
+06 & Not healed & 2 & 1552 & 0.0179 & 0.0032 & 0.2021 \\
+07 & Not healed & 1 & 872 & 0.0547 & 0.0837 & 0.3515 \\
+08 & Healed & 2 & 1605 & 0.1648 & 0.2960 & 0.3829 \\
+09 & Healed & 1 & 363 & 0.2087 & 0.3719 & 0.1240 \\
+10 & Healed & 1 & 170 & 0.0705 & 0.0824 & 0.0925 \\
+11 & Healed & 1 & 1821 & 0.0393 & 0.0483 & 0.5397 \\
+12 & Non-diabetic & 1 & 1020 & 0.4663 & 0.8412 & 0.3491 \\
+13 & Non-diabetic & 1 & 215 & 0.0295 & 0.0186 & 0.0866 \\
+14 & Non-diabetic & 2 & 1921 & 0.0137 & 0.0000 & 0.2509 \\
+15 & Non-diabetic & 1 & 1152 & 0.0120 & 0.0000 & 0.3904 \\
+16 & Non-diabetic & 2 & 1562 & 0.0153 & 0.0000 & 0.1873 \\
+17 & Non-diabetic & 1 & 153 & 0.0136 & 0.0000 & 0.1939 \\
+18 & Non-diabetic & 1 & 974 & 0.0131 & 0.0010 & 0.1804 \\
+19 & Non-diabetic & 1 & 425 & 0.0135 & 0.0000 & 0.2941 \\*
+20 & Non-diabetic & 1 & 196 & 0.0205 & 0.0000 & 0.1142 \\
+\end{longtable}
+}
+
+{\small
+\begin{longtable}{@{}p{34mm}p{34mm}p{23mm}p{36mm}p{17mm}p{17mm}@{}}
+\caption{Patient-unit extension of the three fibroblast readouts. Differences are healed minus not healed in the same 7 and 4 DFU patients. Percentile intervals use 10,000 within-arm patient resamples, seed 17. Exact two-sided probabilities enumerate all 330 label allocations including ties, without add-one correction; q values apply Benjamini--Hochberg adjustment to the three readouts within each weighting variant. These are retrospective observational comparisons without a clinical equivalence margin. Every DFU specimen already has at least 100 fibroblasts, so the final eligibility variant reproduces the pooled-cell comparison. Repeated-cell and specimen weighting affect only aggregation within a patient.}\label{tab:p1biologicalcontrasts}\\
+\toprule
+\textbf{Aggregation} & \textbf{Readout} & \textbf{Difference} & \textbf{Bootstrap 95\% interval} & \textbf{Exact p} & \textbf{BH q} \\
+\midrule\endfirsthead
+\multicolumn{6}{l}{\tablename\ \thetable\ (continued)}\\
+\toprule
+\textbf{Aggregation} & \textbf{Readout} & \textbf{Difference} & \textbf{Bootstrap 95\% interval} & \textbf{Exact p} & \textbf{BH q} \\
+\midrule\endhead
+\bottomrule\endfoot
+Pooled cells & Fibroblast mean & 0.0892 & -0.0486 to 0.2177 & 0.3121 & 0.4697 \\*
+Pooled cells & High-state fraction & 0.1514 & -0.1331 to 0.4153 & 0.3697 & 0.4697 \\
+Pooled cells & Fibroblast composition & 0.0708 & -0.0708 to 0.2146 & 0.4697 & 0.4697 \\
+Equal specimens & Fibroblast mean & 0.0974 & -0.0421 to 0.2260 & 0.2788 & 0.4848 \\
+Equal specimens & High-state fraction & 0.1683 & -0.1170 to 0.4310 & 0.3424 & 0.4848 \\
+Equal specimens & Fibroblast composition & 0.0679 & -0.0724 to 0.2114 & 0.4848 & 0.4848 \\
+At least 100 fibroblasts & Fibroblast mean & 0.0892 & -0.0486 to 0.2177 & 0.3121 & 0.4697 \\
+At least 100 fibroblasts & High-state fraction & 0.1514 & -0.1331 to 0.4153 & 0.3697 & 0.4697 \\*
+At least 100 fibroblasts & Fibroblast composition & 0.0708 & -0.0708 to 0.2146 & 0.4697 & 0.4697 \\
+\end{longtable}
+}

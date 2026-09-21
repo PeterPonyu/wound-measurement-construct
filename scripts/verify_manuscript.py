@@ -52,7 +52,7 @@ def check_author_style() -> None:
                     fail(f'Paper {n}: equation has no adjacent explanatory citation: {label[1]}')
                 totals['equations'] += 1
         narrative = '\n'.join(((folder / f'{section}.tex').read_text() for section in ('results', 'methods'))) + main
-        panel_counts = {1: [3, 3, 3, 3, 6, 2, 2, 3], 2: [3, 3, 1, 2, 2, 2]}[n]
+        panel_counts = {1: [6, 3, 3, 3, 3, 6, 2, 2, 3], 2: [6, 3, 4, 1, 2, 2, 2]}[n]
         for number, count in enumerate(panel_counts, 1):
             key = f'fig:p{n}f{number}'
             expected = set('ABCDEFGHIJKLMNOPQRSTUVWXYZ'[:count])

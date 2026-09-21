@@ -123,5 +123,10 @@
     "report": "outputs/mathematical_audit/measurement/report.json",
     "manuscript_destination": "Methods; Tables tab:p1math and tab:p1exact",
     "scope": "Mathematical verification and conditional sensitivity of saved observations; no new biological replication."
+  },
+  {
+    "report": "outputs/biological_expansion/measurement/report.json",
+    "manuscript_destination": "Results and Methods; Figures 1 and 5; Tables tab:p1biologicalpatients and tab:p1biologicalcontrasts",
+    "scope": "Observed-cell atlas and retrospective patient-level fibroblast mean, high-state fraction and composition comparisons; no external validation."
   }
 ]

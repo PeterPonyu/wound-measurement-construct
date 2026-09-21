@@ -1,8 +1,6 @@
 # Wound single-cell measurement construct validation
 
-Author: Zeyu Fu. Software version: 0.2.0.
-
-The manuscript and figures were revised on 21 September 2026. See [MANUSCRIPT_REVISION.md](MANUSCRIPT_REVISION.md) for the editorial changes and verification. The software DOI identifies the independently archived analysis version.
+Author: Zeyu Fu. Software version: 0.3.0.
 
 Software for testing whether a fibroblast-associated expression loading reflects cell-state abundance and supports patient-level healing inference in public wound single-cell data. The study includes technical controls, patient resampling, paired anatomy, representation comparisons and external tissue-context projections. It does not establish a clinically validated prognostic tool.
 
@@ -10,7 +8,7 @@ The discovery analysis contains 25 specimens mapped to 20 patients. Healing infe
 
 This study has its own [GitHub repository](https://github.com/PeterPonyu/wound-measurement-construct), version history, citation metadata and Zenodo deposit metadata. It does not import code or results from another study repository. Its GitHub release and Zenodo deposition are managed independently; no GitHub–Zenodo integration is required.
 
-Read the [manuscript](output/pdf/measurement_construct_validation.pdf) and the [figure collection](manuscripts/figures/figures.pdf). The package contains 8 editable R/TikZ vector figures, numerical tables, completed reports, and its own copy of the frozen expression model. RESULTS_INDEX.json maps numerical reports to manuscript use. A copy of the model is included here so the project runs independently.
+Read the [manuscript](output/pdf/measurement_construct_validation.pdf) and the [figure collection](manuscripts/figures/figures.pdf). The package contains 9 editable R/TikZ vector figures, numerical tables, completed reports, and its own copy of the frozen expression model. RESULTS_INDEX.json maps numerical reports to manuscript use. A copy of the model is included here so the project runs independently.
 
 ![Study design](manuscripts/figures/figure1_workflow.png)
 
@@ -35,8 +33,10 @@ The MIT License applies to software, including analysis and rendering programs. 
 
 Use CITATION.cff for software attribution. ARCHIVING.md describes direct Zenodo deposition using this study's .zenodo.json and software-only ZIP. A reserved identifier is not a published DOI; only verified published records are added to citations. Each study has its own deposit state, preventing accidental reuse of the other study's record.
 
-The independently published software archive for version 0.2.0 is [available on Zenodo](https://doi.org/10.5281/zenodo.22875656). Previous versions remain available for attribution.
-
 ## Mathematical verification
 
-Version 0.2.0 corrects method descriptions and adds explicit estimands, analytic unit tests and a frozen-input sensitivity report. Read METHODS_CONTRACT.md and CHANGELOG.md for the interpretation and provenance boundaries. Recompute the added analysis with `python3 scripts/audit_measurement_math.py --output-dir outputs/reruns/mathematical_audit`. This uses saved inputs and does not refit the original representation or temporal fields.
+Version 0.3.0 corrects method descriptions and adds explicit estimands, analytic unit tests and a frozen-input sensitivity report. Read METHODS_CONTRACT.md and CHANGELOG.md for the interpretation and provenance boundaries. Recompute the added analysis with `python3 scripts/audit_measurement_math.py --output-dir outputs/reruns/mathematical_audit`. This uses saved inputs and does not refit the original representation or temporal fields.
+
+## Observed-cell and experimental extension
+
+Version 0.3.0 adds observed-cell maps, raw-count expression context and explicitly bounded experiments. Three patient-level contrasts retain the appropriate cell denominators and enumerate all 330 outcome allocations. The display reconstructs the original raw rows and lineage labels; UMAP is descriptive. The frozen original reports remain unchanged.
