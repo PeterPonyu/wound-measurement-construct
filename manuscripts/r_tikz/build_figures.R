@@ -84,7 +84,7 @@ forest <- function(d, xlabel = "AUC", ref = .5, limits = c(0, 1)) {
     scale_x_continuous(limits = limits, expand = expansion(mult = .025)) +
     labs(x = xlabel, y = NULL) + xgrid()
 }
-record_figure <- function(name, width, height, panels) {
+record_figure <- function(name, width, height, panels, heading_centres) {
   data_files <- character()
   for (i in seq_along(panels)) {
     path <- file.path(DATA, paste0(name, "_", LETTERS[i], ".csv"))
@@ -93,6 +93,8 @@ record_figure <- function(name, width, height, panels) {
   }
   figures[[name]] <<- list(width_mm = width, height_mm = height,
       panels = vapply(panels, `[[`, character(1), "title"),
+      headings = paste(LETTERS[seq_along(panels)], vapply(panels, `[[`, character(1), "title")),
+      heading_centres_mm = heading_centres,
       sources = active_sources, data = data_files)
   active_sources <<- character()
   message("TikZ: ", name)
@@ -114,20 +116,20 @@ draw_figure <- function(name, panels, height = 82, widths = NULL, nrow = 1, gap 
     col <- (i - 1) %% ncol + 1; row <- (i - 1) %/% ncol + 1
     x <- left + sum(head(widths, col - 1)) + gap * (col - 1)
     y <- height - top - (row - 1) * (row_h + row_gap)
-    # Letter, title and plotting region use three separate physical slots.
-    grid.text(LETTERS[i], unit(x, "mm"), unit(y, "mm"), just = c("left", "top"),
-              gp = gpar(fontfamily = "Arial", fontsize = 11, fontface = "bold", col = "black"))
-    grid.text(panels[[i]]$title, unit(x, "mm"), unit(y - 4.5, "mm"), just = c("left", "top"),
+    # One centred text object keeps the panel letter attached to its title.
+    grid.text(paste(LETTERS[i], panels[[i]]$title),
+              unit(x + widths[col] / 2, "mm"), unit(y, "mm"), just = c("centre", "top"),
               gp = gpar(fontfamily = "Arial", fontsize = 9, fontface = "bold", col = "black"))
-    pushViewport(viewport(x = unit(x, "mm"), y = unit(y - 8.7, "mm"),
-                          width = unit(widths[col], "mm"), height = unit(row_h - 8.7, "mm"),
+    pushViewport(viewport(x = unit(x, "mm"), y = unit(y - 6.3, "mm"),
+                          width = unit(widths[col], "mm"), height = unit(row_h - 6.3, "mm"),
                           just = c("left", "top"), clip = "off"))
     grid.draw(ggplotGrob(panels[[i]]$plot))
     popViewport()
   }
-  record_figure(name, width, height, panels)
+  centres <- left + c(0, head(cumsum(widths), -1)) + gap * (seq_len(ncol) - 1) + widths / 2
+  record_figure(name, width, height, panels, rep(centres, nrow))
 }
-write_workflow <- function(name, height, body, steps) {
+write_workflow <- function(name, height, body, steps, heading_centres) {
   colors <- paste0("\\definecolor{", c("navy", "blue", "teal", "orange", "purple", "green", "gray"),
                    "}{HTML}{", sub("#", "", c(NAVY, BLUE, TEAL, ORANGE, PURPLE, GREEN, GRAY)), "}")
   lines <- c("\\documentclass[10pt]{standalone}", "\\usepackage{tikz}", font_commands,
@@ -139,7 +141,8 @@ write_workflow <- function(name, height, body, steps) {
     "link/.style={->,draw=gray,line width=0.45pt}}", body,
     "\\end{tikzpicture}", "\\end{document}")
   writeLines(lines, file.path(TEX, paste0(name, ".tex")))
-  record_figure(name, 180, height, list(panel(NULL, "Study design", data.frame(step = steps))))
+  record_figure(name, 180, height,
+                lapply(steps, function(s) panel(NULL, s, data.frame(step = s))), heading_centres)
 }
 methods <- c("topic_simplex_theta0", "module_score", "pca", "nmf")
 method_names <- c("Fibroblast\ntopic", "Module", "PCA", "NMF")
@@ -147,7 +150,7 @@ method_names <- c("Fibroblast\ntopic", "Module", "PCA", "NMF")
 figure1_workflow <- function() {
   body <- readLines(file.path(ROOT, "manuscripts/r_tikz/construct_design.tikz"))
   write_workflow("figure1_workflow", 106, body,
-    c("Data and distinct readouts", "Conceptual abundance comparison", "Technical, patient and external evidence"))
+    c("From skin specimens to three distinct readouts", "What changes the average?", "How is the interpretation tested?"), c(90, 44, 136))
 }
 sample_data <- function(d) data.frame(sample = chr(d, "gsm"),
     arm = factor(c("DFU-healer" = "Healer", "DFU-nonhealer" = "Non-healer", "Non-diabetic" = "Healthy")[chr(d, "arm")], levels = names(ARMS)),

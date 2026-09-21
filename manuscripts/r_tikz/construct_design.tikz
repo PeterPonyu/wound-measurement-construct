@@ -1,5 +1,4 @@
-\node[anchor=west,font=\fontsize{11}{13}\selectfont\bfseries] at (3,101) {A};
-\node[anchor=west,font=\fontsize{9}{11}\selectfont\bfseries] at (10,101) {From skin specimens to three distinct readouts};
+\node[anchor=center,font=\fontsize{9}{11}\selectfont\bfseries] at (90,101) {A From skin specimens to three distinct readouts};
 \draw[draw=gray!35,fill=blue!3,rounded corners=1mm] (3,63) rectangle (177,96);
 \node[align=center] at (23,89) {GSE165816\\25 foot specimens};
 \foreach \x in {0,...,5} {\foreach \y in {0,...,2} {
@@ -14,8 +13,7 @@
   \draw[link] (99,\y) -- (106,\y);
   \node[anchor=west,draw=teal!40,fill=white,rounded corners=.6mm,minimum height=7mm,text width=64mm,inner sep=1.2mm] at (106,\y) {\desc};
 }
-\node[anchor=west,font=\fontsize{11}{13}\selectfont\bfseries] at (3,56) {B};
-\node[anchor=west,font=\fontsize{9}{11}\selectfont\bfseries] at (10,56) {What changes the average?};
+\node[anchor=center,font=\fontsize{9}{11}\selectfont\bfseries] at (44,56) {B What changes the average?};
 \draw[draw=gray!35,rounded corners=1mm] (3,14) rectangle (85,51);
 \node[anchor=west,font=\fontsize{7}{9}\selectfont\bfseries] at (7,46) {Conceptual illustration: low / high cell states};
 \foreach \x in {0,...,9} {
@@ -28,8 +26,7 @@
 \node[anchor=west,font=\fontsize{7}{9}\selectfont\bfseries] at (44,30) {More high-state cells};
 \draw[link] (81,37) -- (81,32);
 \node[align=center,text width=74mm,font=\fontsize{7.5}{9}\selectfont\bfseries] at (44,20) {More high-state cells can raise the mean.\\Mean--fraction correlation alone cannot prove\\unchanged expression within each state.};
-\node[anchor=west,font=\fontsize{11}{13}\selectfont\bfseries] at (94,56) {C};
-\node[anchor=west,font=\fontsize{9}{11}\selectfont\bfseries] at (101,56) {How is the interpretation tested?};
+\node[anchor=center,font=\fontsize{9}{11}\selectfont\bfseries] at (136,56) {C How is the interpretation tested?};
 \node[draw=orange!40,fill=orange!5,rounded corners=.6mm,align=left,text width=75mm,inner sep=1.5mm] at (136,43) {Technical robustness\\Depth matching; stress; immune exclusion};
 \node[draw=purple!40,fill=purple!5,rounded corners=.6mm,align=left,text width=75mm,inner sep=1.5mm] at (136,30) {Independent analysis units\\14 DFU specimens → 11 patients; paired anatomy};
 \node[draw=green!40,fill=green!5,rounded corners=.6mm,align=left,text width=75mm,inner sep=1.5mm] at (136,17) {External tissue context\\Frozen projection; cohort-specific associations};

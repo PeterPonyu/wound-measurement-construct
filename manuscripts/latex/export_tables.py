@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Export numerical supplementary tables from completed reports; no model fitting."""
 from pathlib import Path
-import csv,json,math
+import csv,json
 ROOT=Path(__file__).resolve().parents[2]
 HERE=Path(__file__).resolve().parent
 ANALYSIS=ROOT/'outputs/analysis'
@@ -15,12 +15,11 @@ def f(x,n=4):return '—' if x in (None,'') else f'{float(x):.{n}f}'
 def table(label,caption,headers,rows,widths):
  col='@{}'+''.join('p{'+str(w)+'mm}' for w in widths)+'@{}'
  header=' & '.join(r'\textbf{'+esc(h)+'}' for h in headers)+r' \\'
- body='\n'.join(' & '.join(esc(c) for c in row)+r' \\' for row in rows)
- # Reserve each compact table including its caption, header and wrapped rows.
- row_lines=sum(max(math.ceil(len(str(c))/max(1,w*.7)) for c,w in zip(row,widths)) for row in rows)
- reserve=min(700, 65 + 11*math.ceil(len(caption)/125) + 12*row_lines)
- prefix = (r'\Needspace{'+str(reserve)+'pt}\n') if reserve else ''
- return prefix+'\n'.join([r'{\small',r'\begin{longtable}{'+col+'}',r'\caption{'+caption+r'}\label{'+label+r'}\\',r'\toprule',header,r'\midrule\endfirsthead',r'\multicolumn{'+str(len(headers))+r'}{l}{\tablename\ \thetable\ (continued)}\\',r'\toprule',header,r'\midrule\endhead',r'\bottomrule\endfoot',body,r'\end{longtable}',r'}'])
+ # Longtable measures its caption/header and starts only when a row fits.
+ # Keep the first and last row pairs together without reserving an estimated
+ # table height, which can push otherwise usable content onto another page.
+ body='\n'.join(' & '.join(esc(c) for c in row)+(r' \\*' if len(rows)>1 and i in (0,len(rows)-2) else r' \\') for i,row in enumerate(rows))
+ return '\n'.join([r'{\small',r'\begin{longtable}{'+col+'}',r'\caption{'+caption+r'}\label{'+label+r'}\\',r'\toprule',header,r'\midrule\endfirsthead',r'\multicolumn{'+str(len(headers))+r'}{l}{\tablename\ \thetable\ (continued)}\\',r'\toprule',header,r'\midrule\endhead',r'\bottomrule\endfoot',body,r'\end{longtable}',r'}'])
 def csvrows(n):return list(csv.DictReader((ROOT/'manuscripts/tables'/n).open()))
 # Each exported table lives in TeX; no Markdown draft is used by the build.
 p1=[]
@@ -30,7 +29,7 @@ p1.append(table('tab:p1sampleauc',r'Exploratory discrimination across 9 healing 
 rows=csvrows('patient_unit_and_anatomy.csv')
 p1.append(table('tab:p1patientauc','Patient-unit discrimination and anatomical sensitivity within GSE165816. The first four rows are leave-one-patient-out AUCs for 7 healing and 4 non-healing patients, with 4,000 arm-stratified bootstrap draws of fixed scores and one-sided label-permutation probabilities. PCA and NMF denote principal component analysis and nonnegative matrix factorization. The final row is the foot-minus-forearm all-cell fibroblast-associated topic mean difference in 10 paired patients, with a 4,000-draw paired bootstrap interval and a two-sided exhaustive sign-flip probability using add-one correction. Its Benjamini--Hochberg q value across 15 topics is 0.0402. The two row types have different estimands; neither supplies external validation.',['Readout','Estimate','Bootstrap 95% interval','Permutation p'],[[r['quantity'].replace('_',' ').replace('Fibroblast topic','Fibroblast topic'),f(r['estimate'],4),f(r['lower_95'],4)+' to '+f(r['upper_95'],4),f(r['p_value'],4)] for r in rows],[45,25,59,38]))
 rows=csvrows('representation_cross_method.csv')
-p1.append(table('tab:p1correlations','Spearman correlations between the four representative sample-level prediction scores across the same 14 DFU specimens (9 healing, 5 non-healing). Fibroblast topic is the frozen all-cell loading, Module the specified fibro-inflammatory score, PCA principal component analysis and NMF nonnegative matrix factorization. Each row is one pair of readouts; values are descriptive point estimates without confidence intervals or multiplicity-adjusted tests. Related scores do not establish equivalent discrimination or rank methods.',['Readout A','Readout B','Spearman correlation'],[[r['readout_a'].replace('Fibroblast topic','Fibroblast topic'),r['readout_b'].replace('Fibroblast topic','Fibroblast topic'),f(r['spearman_rho'])] for r in rows],[53,53,65]))
+p1.append(r'\Needspace{155pt}'+'\n'+table('tab:p1correlations','Spearman correlations between the four representative sample-level prediction scores across the same 14 DFU specimens (9 healing, 5 non-healing). Fibroblast topic is the frozen all-cell loading, Module the specified fibro-inflammatory score, PCA principal component analysis and NMF nonnegative matrix factorization. Each row is one pair of readouts; values are descriptive point estimates without confidence intervals or multiplicity-adjusted tests. Related scores do not establish equivalent discrimination or rank methods.',['Readout A','Readout B','Spearman correlation'],[[r['readout_a'].replace('Fibroblast topic','Fibroblast topic'),r['readout_b'].replace('Fibroblast topic','Fibroblast topic'),f(r['spearman_rho'])] for r in rows],[53,53,65]))
 d=report('design_power_simulation'); rows=[]
 for key,block in [('design_a_detect_difference','Detect difference'),('design_b_declare_equivalence','Equivalence under zero difference')]:
  for k,v in d[key].items():rows.append([block,k.split('_')[-1],v['total'],f"{v['n_healed']} / {v['n_not_healed']}",f(v['power'],3)])
@@ -62,7 +61,7 @@ for name,n,r2,b in [('Before immune-transcript exclusion',24,None,d['test_A_puri
 p1.append(table('tab:p1ambient',r'Immune-transcript exclusion and residual-mixture controls. BIC denotes Bayesian information criterion, fitted to sample high-state fractions or their regression residuals; the difference is BIC for one Gaussian minus BIC for two. Positive differences favour two components. The first two rows share 24 matched specimens and have fraction correlation 0.9887. Residual regressions use all 25 specimens: immune covariates are B/plasma, T-cell and myeloid fractions plus immune-transcript positivity; placebos are pericyte/smooth-muscle, endothelial, melanocyte and sweat-gland fractions. R squared is variance explained by each regression and is inapplicable to unadjusted rows (dash). Both residual differences are negative, so the analysis does not establish immune-specific separation.',['Summary','n','R squared','BIC one','BIC two','Difference'],rows,[64,13,22,23,23,20]))
 d=historical('celltype_resolved');rows=[]
 for cohort,c in d['cohorts'].items():
- for key,name in [('composition_test','Fibroblast fraction'),('whole_sample_test','All-cell fibroblast-associated topic mean'),('within_lineage_test','Fibroblast fibroblast-associated topic mean')]:
+ for key,name in [('composition_test','Fibroblast fraction'),('whole_sample_test','All-cell topic mean'),('within_lineage_test','Within-fibroblast topic mean')]:
   v=c[key];rows.append([cohort.split('_')[0],name,f(v['ratio'],3),f(v['ratio_ci95'][0],3)+' to '+f(v['ratio_ci95'][1],3),probability(v['p'])])
 p1.append(table('tab:p1lineage',r'Historical sample-level lineage and loading contrasts. Ratios divide the healing-arm mean by the non-healing-arm mean; intervals are percentile 95\% limits from 20,000 within-arm sample bootstraps, and p values are two-sided Mann--Whitney tests. GSE165816 uses 9 versus 5 DFU specimens; GSE231643 uses 5 versus 3 title-labelled specimens. The discovery ratios come from the saved lineage-projection analysis and are distinct from the later deterministic all-cell patient contrast. Fibroblast fraction uses all cells as denominator; fibroblast mean uses only assigned fibroblasts. These are separate estimands. Repeated discovery patients and unavailable external patient mappings prevent independent outcome validation.',['Cohort','Readout','Mean ratio','Bootstrap 95% interval','Raw p'],rows,[29,49,24,42,21]))
 readouts={'topic_simplex_theta0':'Fibroblast topic','module_score':'Module','pca':'PCA','nmf':'NMF'}
@@ -110,7 +109,7 @@ rows=[['Cell-pooled low-bin mean',f(m['low_reference'],5),'All 19,410 fibroblast
       ['Specimens with an empty bin',m['empty_bin_specimens'],'9 of 25; high bin empty'],
       ['Within-state residual range',' to '.join(f(v,5) for v in ranges['within_state_residual']),'All 25 specimens'],
       ['Within-state residual RMS',f(m['specimen_weighted_residual_rms'],5),'Equal specimen weights']]
-p1.append(r'\Needspace{520pt}')
+
 p1.append(table('tab:p1math',r'Exact mean decomposition on the saved 19,410 discovery fibroblasts in 25 specimens. The cut is 0.184295848; empirical bin means are distinct from fitted Gaussian-component means. The constant-state approximation uses the cell-pooled low/high means, and its residual is the observed specimen mean minus that approximation. RMS denotes root-mean-square residual with equal specimen weights. Ranges exclude undefined means for empty bins; zero-weight terms contribute zero to the identity. Both exact identities have maximum numerical discrepancy below $10^{-15}$. Values are on the zero-to-one loading scale, apart from the count row. They describe the frozen sample, without confidence intervals, a test of invariant state intensity or causal variance attribution.',['Quantity','Value or range','Denominator'],rows,[63,55,49]))
 p=d['patient_permutation'];e=d['patient_equivalence']
 rows=[['All label allocations',p['allocations']],['At least as extreme as observed',p['extreme_allocations']],

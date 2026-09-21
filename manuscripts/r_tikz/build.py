@@ -108,6 +108,31 @@ def latex_escape(text: str) -> str:
     return "".join(mapping.get(char, char) for char in text)
 
 
+def inspect_headings(path: Path, specification: dict) -> list[dict]:
+    """Check the rendered joint letter/title against each panel's centre."""
+    rows = []
+    titles = specification["headings"]
+    centres = specification["heading_centres_mm"]
+    if isinstance(titles, str):
+        titles = [titles]
+    if not isinstance(centres, list):
+        centres = [centres]
+    if len(titles) != len(centres):
+        raise RuntimeError(f"Incomplete panel-heading specification: {path.name}")
+    with fitz.open(path) as document:
+        page = document[0]
+        for title, centre in zip(titles, centres):
+            matches = page.search_for(title)
+            if len(matches) != 1:
+                raise RuntimeError(f"Panel heading must be one complete text block: {path.name}: {title}")
+            box = matches[0]
+            actual = (box.x0 + box.x1) / 2 * 25.4 / 72
+            if abs(actual - centre) > .6:
+                raise RuntimeError(f"Off-centre heading: {path.name}: {title}: {actual} vs {centre} mm")
+            rows.append({"heading": title, "centre_mm": actual, "expected_centre_mm": centre})
+    return rows
+
+
 def build_collection(paper: int) -> tuple[Path, int]:
     expected = 8 if paper == 1 else 6
     matches = []
@@ -160,6 +185,7 @@ def main() -> None:
         pdf = compile_tex(FIG / "tex" / f"{name}.tex")
         verification["figures"][name] = inspect_pdf(pdf, width_mm=dimensions["width_mm"],
                                                    height_mm=dimensions["height_mm"])
+        verification["figures"][name]["centred_joint_headings"] = inspect_headings(pdf, dimensions)
         run(["pdftoppm", "-r", "300", "-singlefile", "-png", str(pdf), str(STAGING / name)])
         print(f"Verified vector + 300 dpi preview: {name}", flush=True)
     for path, fingerprint in dict(manifest["sources"]).items():

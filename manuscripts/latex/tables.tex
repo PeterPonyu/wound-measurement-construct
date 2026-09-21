@@ -1,4 +1,3 @@
-\Needspace{252pt}
 {\small
 \begin{longtable}{@{}p{22mm}p{29mm}p{39mm}p{26mm}p{49mm}@{}}
 \caption{Author-mapped GSE165816 DFU patient scores (7 healed, 4 not healed). Each score is the mean frozen fibroblast-associated topic loading over all retained cells in the listed foot specimens; pooling cells weights repeated specimens by retained cell count. Cells are counts, not independent outcome observations. Patient identifiers are study-derived pseudonyms and G labels identify specimens. The outcome is the source-study category within 12 weeks, not an individual healing day. Scores are on the topic-loading scale from zero to one.}\label{tab:p1patients}\\
@@ -10,7 +9,7 @@
 \textbf{Patient} & \textbf{Outcome} & \textbf{Specimens} & \textbf{Cells} & \textbf{All-cell mean} \\
 \midrule\endhead
 \bottomrule\endfoot
-S01 & not healed & G6 & 2279 & 0.0500 \\
+S01 & not healed & G6 & 2279 & 0.0500 \\*
 S02 & healed & G23, G4 & 7495 & 0.1448 \\
 S03 & healed & G2 & 3951 & 0.0213 \\
 S04 & healed & G15 & 2250 & 0.0749 \\
@@ -19,12 +18,11 @@ S06 & not healed & G33, G34 & 7681 & 0.0131 \\
 S07 & not healed & G39 & 2481 & 0.0305 \\
 S08 & healed & G7, G8 & 4192 & 0.0751 \\
 S09 & healed & G49 & 2928 & 0.0539 \\
-S10 & healed & G42 & 1838 & 0.0201 \\
+S10 & healed & G42 & 1838 & 0.0201 \\*
 S11 & healed & G45 & 3374 & 0.0331 \\
 \end{longtable}
 }
 
-\Needspace{168pt}
 {\small
 \begin{longtable}{@{}p{25mm}p{20mm}p{49mm}p{37mm}p{34mm}@{}}
 \caption{Exploratory discrimination across 9 healing and 5 non-healing GSE165816 specimens. AUC is the area under the ROC curve for leave-one-sample-out scores; higher values favour healing. The percentile 95\% intervals use 4,000 arm-stratified resamples of fixed out-of-fold scores. One-sided permutation probabilities and null means rerun fold-dependent orientation and fitting. PCA is principal component analysis; NMF is nonnegative matrix factorization. The frozen topic encoder itself used the discovery expression cohort. Repeated patients limit independence, and none of the six paired AUC-difference intervals excludes zero.}\label{tab:p1sampleauc}\\
@@ -36,14 +34,13 @@ S11 & healed & G45 & 3374 & 0.0331 \\
 \textbf{Readout} & \textbf{AUC} & \textbf{Bootstrap 95\% interval} & \textbf{Permutation p} & \textbf{Null mean} \\
 \midrule\endhead
 \bottomrule\endfoot
-Fibroblast topic & 0.822 & 0.556 to 1.000 & 0.0604 & 0.561 \\
+Fibroblast topic & 0.822 & 0.556 to 1.000 & 0.0604 & 0.561 \\*
 Module & 0.844 & 0.578 to 1.000 & 0.0424 & 0.497 \\
-PCA & 0.533 & 0.156 to 0.889 & 0.4527 & 0.480 \\
+PCA & 0.533 & 0.156 to 0.889 & 0.4527 & 0.480 \\*
 NMF & 0.878 & 0.655 to 1.000 & 0.0597 & 0.553 \\
 \end{longtable}
 }
 
-\Needspace{191pt}
 {\small
 \begin{longtable}{@{}p{45mm}p{25mm}p{59mm}p{38mm}@{}}
 \caption{Patient-unit discrimination and anatomical sensitivity within GSE165816. The first four rows are leave-one-patient-out AUCs for 7 healing and 4 non-healing patients, with 4,000 arm-stratified bootstrap draws of fixed scores and one-sided label-permutation probabilities. PCA and NMF denote principal component analysis and nonnegative matrix factorization. The final row is the foot-minus-forearm all-cell fibroblast-associated topic mean difference in 10 paired patients, with a 4,000-draw paired bootstrap interval and a two-sided exhaustive sign-flip probability using add-one correction. Its Benjamini--Hochberg q value across 15 topics is 0.0402. The two row types have different estimands; neither supplies external validation.}\label{tab:p1patientauc}\\
@@ -55,15 +52,15 @@ NMF & 0.878 & 0.655 to 1.000 & 0.0597 & 0.553 \\
 \textbf{Readout} & \textbf{Estimate} & \textbf{Bootstrap 95\% interval} & \textbf{Permutation p} \\
 \midrule\endhead
 \bottomrule\endfoot
-Fibroblast topic & 0.7143 & 0.3571 to 1.0000 & 0.3021 \\
+Fibroblast topic & 0.7143 & 0.3571 to 1.0000 & 0.3021 \\*
 Module & 0.7857 & 0.5000 to 1.0000 & 0.1662 \\
 PCA & 0.5000 & 0.0000 to 1.0000 & 0.5025 \\
-NMF & 0.1250 & 0.0000 to 0.4286 & 0.9751 \\
+NMF & 0.1250 & 0.0000 to 0.4286 & 0.9751 \\*
 foot minus forearm & 0.0476 & 0.0119 to 0.0916 & 0.0107 \\
 \end{longtable}
 }
 
-\Needspace{192pt}
+\Needspace{155pt}
 {\small
 \begin{longtable}{@{}p{53mm}p{53mm}p{65mm}@{}}
 \caption{Spearman correlations between the four representative sample-level prediction scores across the same 14 DFU specimens (9 healing, 5 non-healing). Fibroblast topic is the frozen all-cell loading, Module the specified fibro-inflammatory score, PCA principal component analysis and NMF nonnegative matrix factorization. Each row is one pair of readouts; values are descriptive point estimates without confidence intervals or multiplicity-adjusted tests. Related scores do not establish equivalent discrimination or rank methods.}\label{tab:p1correlations}\\
@@ -75,16 +72,15 @@ foot minus forearm & 0.0476 & 0.0119 to 0.0916 & 0.0107 \\
 \textbf{Readout A} & \textbf{Readout B} & \textbf{Spearman correlation} \\
 \midrule\endhead
 \bottomrule\endfoot
-Fibroblast topic & Module & 0.7231 \\
+Fibroblast topic & Module & 0.7231 \\*
 Fibroblast topic & PCA & 0.1648 \\
 Fibroblast topic & NMF & 0.6023 \\
 Module & PCA & 0.4022 \\
-Module & NMF & 0.6756 \\
+Module & NMF & 0.6756 \\*
 PCA & NMF & 0.3200 \\
 \end{longtable}
 }
 
-\Needspace{263pt}
 {\small
 \begin{longtable}{@{}p{50mm}p{30mm}p{20mm}p{30mm}p{35mm}@{}}
 \caption{Conditional next-cohort simulations for all-cell fibroblast-associated topic mean loading. Rows assume one independent patient per observation, no missing outcomes, healing allocation near 9/14, and arm SDs 0.04845 and 0.01584 estimated from discovery specimens. Two-sided Welch tests assess candidate mean differences; Welch two-one-sided tests assess equivalence under a true difference of zero, at alpha=0.05. Total and arm columns give the simulated observation counts; power uses 4,000 draws per candidate size. Values near 0.80 have Monte Carlo error and are approximate search outputs. Candidate differences and margins are inputs, not clinical minimum important differences or validated recruitment targets.}\label{tab:p1design}\\
@@ -96,7 +92,7 @@ PCA & NMF & 0.3200 \\
 \textbf{Design} & \textbf{Difference / margin} & \textbf{Total} & \textbf{Healing / other} & \textbf{Estimated power} \\
 \midrule\endhead
 \bottomrule\endfoot
-Detect difference & 0.02 & 87 & 56 / 31 & 0.802 \\
+Detect difference & 0.02 & 87 & 56 / 31 & 0.802 \\*
 Detect difference & 0.03 & 41 & 26 / 15 & 0.798 \\
 Detect difference & 0.0435 & 21 & 14 / 7 & 0.822 \\
 Detect difference & 0.06 & 12 & 8 / 4 & 0.807 \\
@@ -105,12 +101,11 @@ Detect difference & 0.1 & 7 & 4 / 3 & 0.786 \\
 Equivalence under zero difference & 0.02 & 94 & 60 / 34 & 0.805 \\
 Equivalence under zero difference & 0.03 & 43 & 28 / 15 & 0.803 \\
 Equivalence under zero difference & 0.05 & 17 & 11 / 6 & 0.807 \\
-Equivalence under zero difference & 0.075 & 9 & 6 / 3 & 0.829 \\
+Equivalence under zero difference & 0.075 & 9 & 6 / 3 & 0.829 \\*
 Equivalence under zero difference & 0.1 & 7 & 4 / 3 & 0.856 \\
 \end{longtable}
 }
 
-\Needspace{168pt}
 {\small
 \begin{longtable}{@{}p{44mm}p{38mm}p{51mm}p{34mm}@{}}
 \caption{Exploratory binormal planning simulation for paired AUC differences. Two candidate AUCs are centred on 0.80, separated by the stated gap, with within-class score-noise correlation 0.5022 and healing allocation near 9/14. Each searched total uses 4,000 simulation draws and a model-based normal approximation for the paired difference at alpha=0.05. Totals assume one observation per independent patient and no missing outcome. The gaps are hypothetical inputs; the approximate 80\% power search does not establish actual clinical performance, calibrated patient-test power or a validated recruitment target.}\label{tab:p1aucdesign}\\
@@ -122,14 +117,13 @@ Equivalence under zero difference & 0.1 & 7 & 4 / 3 & 0.856 \\
 \textbf{Candidate AUC gap} & \textbf{Total observations} & \textbf{Healing / non-healing} & \textbf{Estimated power} \\
 \midrule\endhead
 \bottomrule\endfoot
-0.05 & 721 & 464 / 257 & 0.818 \\
+0.05 & 721 & 464 / 257 & 0.818 \\*
 0.1 & 181 & 116 / 65 & 0.800 \\
-0.15 & 84 & 54 / 30 & 0.816 \\
+0.15 & 84 & 54 / 30 & 0.816 \\*
 0.2 & 52 & 33 / 19 & 0.811 \\
 \end{longtable}
 }
 
-\Needspace{155pt}
 {\small
 \begin{longtable}{@{}p{63mm}p{28mm}p{39mm}p{37mm}@{}}
 \caption{Association between mean fibroblast-associated topic loading within fibroblasts and the threshold-defined high-state fraction across 25 GSE165816 specimens. The Spearman row gives the observed correlation and percentile 95\% limits from 10,000 sample-row bootstrap draws. The leave-one-out row gives the minimum and maximum of 25 recalculations, not a confidence interval; a dash means no single point estimate applies. A separate 10,000-draw permutation analysis gave a two-sided add-one probability of 0.00010 and a central null interval from -0.4025 to 0.4072. Samples may share patients, and the two summaries share cells.}\label{tab:p1semantics}\\
@@ -141,12 +135,11 @@ Equivalence under zero difference & 0.1 & 7 & 4 / 3 & 0.856 \\
 \textbf{Summary} & \textbf{Estimate} & \textbf{Lower endpoint} & \textbf{Upper endpoint} \\
 \midrule\endhead
 \bottomrule\endfoot
-spearman rho & 0.9325 & 0.7887 & 0.9828 \\
+spearman rho & 0.9325 & 0.7887 & 0.9828 \\*
 leave one out rho & — & 0.9235 & 0.9566 \\
 \end{longtable}
 }
 
-\Needspace{156pt}
 {\small
 \begin{longtable}{@{}p{29mm}p{18mm}p{29mm}p{29mm}p{29mm}p{29mm}@{}}
 \caption{External sample-level Spearman correlations with the frozen fibroblast-associated topic mean under exclusive lineage gates. Immune fraction divides immune-assigned cells by all retained cells; B/plasma share divides B/plasma cells by immune-assigned cells. Detected genes and unique molecular identifiers (UMIs) are separate per-sample medians over QC cells. All entries are descriptive point estimates without confidence intervals. Specimens are not verified independent patients, and no listed cohort supplies a qualifying patient-level healing outcome.}\label{tab:p1external}\\
@@ -158,13 +151,12 @@ leave one out rho & — & 0.9235 & 0.9566 \\
 \textbf{Cohort} & \textbf{Samples} & \textbf{Immune fraction} & \textbf{B/plasma share} & \textbf{Detected genes} & \textbf{UMIs} \\
 \midrule\endhead
 \bottomrule\endfoot
-GSE223964 & 8 & -0.024 & -0.071 & -0.429 & -0.476 \\
-GSE245703 & 12 & 0.846 & 0.077 & -0.427 & -0.308 \\
+GSE223964 & 8 & -0.024 & -0.071 & -0.429 & -0.476 \\*
+GSE245703 & 12 & 0.846 & 0.077 & -0.427 & -0.308 \\*
 GSE268834 & 8 & 0.714 & -0.500 & 0.238 & 0.262 \\
 \end{longtable}
 }
 
-\Needspace{503pt}
 {\small
 \begin{longtable}{@{}p{76mm}p{20mm}p{25mm}p{22mm}p{22mm}@{}}
 \caption{Complete exploratory covariate screen in 25 discovery specimens. Each row correlates the fibroblast high-state fraction, using the historical rule loading at least 0.184, with one of 31 covariates. Lineage fractions use all retained cells; technical summaries and topic means use fibroblasts. Values are Spearman rho, two-sided asymptotic p and Benjamini--Hochberg q across all 31 tests, ordered by absolute rho; 14 rows have q below 0.05. UMI means unique molecular identifier. The G label is an identifier, not an established batch or time variable. Repeated patients, shared cells and compositional constraints limit independence; these marginal associations are not causal or healing-validation tests.}\label{tab:p1covariates}\\
@@ -176,7 +168,7 @@ GSE268834 & 8 & 0.714 & -0.500 & 0.238 & 0.262 \\
 \textbf{Covariate} & \textbf{Specimens} & \textbf{Spearman rho} & \textbf{Raw p} & \textbf{BH q} \\
 \midrule\endhead
 \bottomrule\endfoot
-B/plasma fraction & 25 & 0.8279 & 3.26e-07 & 1.01e-05 \\
+B/plasma fraction & 25 & 0.8279 & 3.26e-07 & 1.01e-05 \\*
 Fibroblast CFD/APOD mean & 25 & -0.7664 & 7.95e-06 & 0.000123 \\
 Fibroblast PTPRC-positive fraction & 25 & 0.7267 & 3.88e-05 & 0.000401 \\
 Fibroblast median UMI count & 25 & 0.6632 & 0.000302 & 0.00234 \\
@@ -205,12 +197,11 @@ Fibroblast fraction & 25 & 0.1292 & 0.538 & 0.63 \\
 Fibroblast FOS/JUNB mean & 25 & -0.1260 & 0.548 & 0.63 \\
 Retained fibroblasts & 25 & 0.0851 & 0.686 & 0.759 \\
 Pericyte/smooth-muscle fraction & 25 & -0.0473 & 0.823 & 0.879 \\
-Fibroblast IGFBP7/SPARCL1 mean & 25 & -0.0354 & 0.866 & 0.895 \\
+Fibroblast IGFBP7/SPARCL1 mean & 25 & -0.0354 & 0.866 & 0.895 \\*
 Fibroblast DCD/SAT1 mean & 25 & -0.0236 & 0.911 & 0.911 \\
 \end{longtable}
 }
 
-\Needspace{190pt}
 {\small
 \begin{longtable}{@{}p{64mm}p{13mm}p{22mm}p{23mm}p{23mm}p{20mm}@{}}
 \caption{Immune-transcript exclusion and residual-mixture controls. BIC denotes Bayesian information criterion, fitted to sample high-state fractions or their regression residuals; the difference is BIC for one Gaussian minus BIC for two. Positive differences favour two components. The first two rows share 24 matched specimens and have fraction correlation 0.9887. Residual regressions use all 25 specimens: immune covariates are B/plasma, T-cell and myeloid fractions plus immune-transcript positivity; placebos are pericyte/smooth-muscle, endothelial, melanocyte and sweat-gland fractions. R squared is variance explained by each regression and is inapplicable to unadjusted rows (dash). Both residual differences are negative, so the analysis does not establish immune-specific separation.}\label{tab:p1ambient}\\
@@ -222,14 +213,13 @@ Fibroblast DCD/SAT1 mean & 25 & -0.0236 & 0.911 & 0.911 \\
 \textbf{Summary} & \textbf{n} & \textbf{R squared} & \textbf{BIC one} & \textbf{BIC two} & \textbf{Difference} \\
 \midrule\endhead
 \bottomrule\endfoot
-Before immune-transcript exclusion & 24 & — & 12.417 & -28.569 & 40.986 \\
+Before immune-transcript exclusion & 24 & — & 12.417 & -28.569 & 40.986 \\*
 After immune-transcript exclusion & 24 & — & 5.342 & -51.341 & 56.683 \\
-Immune-covariate residuals & 25 & 0.4953 & -3.900 & 0.031 & -3.931 \\
+Immune-covariate residuals & 25 & 0.4953 & -3.900 & 0.031 & -3.931 \\*
 Placebo-covariate residuals & 25 & 0.3549 & 2.235 & 10.433 & -8.198 \\
 \end{longtable}
 }
 
-\Needspace{251pt}
 {\small
 \begin{longtable}{@{}p{29mm}p{49mm}p{24mm}p{42mm}p{21mm}@{}}
 \caption{Historical sample-level lineage and loading contrasts. Ratios divide the healing-arm mean by the non-healing-arm mean; intervals are percentile 95\% limits from 20,000 within-arm sample bootstraps, and p values are two-sided Mann--Whitney tests. GSE165816 uses 9 versus 5 DFU specimens; GSE231643 uses 5 versus 3 title-labelled specimens. The discovery ratios come from the saved lineage-projection analysis and are distinct from the later deterministic all-cell patient contrast. Fibroblast fraction uses all cells as denominator; fibroblast mean uses only assigned fibroblasts. These are separate estimands. Repeated discovery patients and unavailable external patient mappings prevent independent outcome validation.}\label{tab:p1lineage}\\
@@ -241,16 +231,15 @@ Placebo-covariate residuals & 25 & 0.3549 & 2.235 & 10.433 & -8.198 \\
 \textbf{Cohort} & \textbf{Readout} & \textbf{Mean ratio} & \textbf{Bootstrap 95\% interval} & \textbf{Raw p} \\
 \midrule\endhead
 \bottomrule\endfoot
-GSE165816 & Fibroblast fraction & 1.425 & 0.873 to 2.298 & 0.438 \\
-GSE165816 & All-cell fibroblast-associated topic mean & 2.724 & 1.369 to 5.732 & 0.0599 \\
-GSE165816 & Fibroblast fibroblast-associated topic mean & 2.889 & 1.059 to 13.966 & 0.042 \\
+GSE165816 & Fibroblast fraction & 1.425 & 0.873 to 2.298 & 0.438 \\*
+GSE165816 & All-cell topic mean & 2.724 & 1.369 to 5.732 & 0.0599 \\
+GSE165816 & Within-fibroblast topic mean & 2.889 & 1.059 to 13.966 & 0.042 \\
 GSE231643 & Fibroblast fraction & 2.051 & 1.128 to 4.184 & 0.0714 \\
-GSE231643 & All-cell fibroblast-associated topic mean & 2.564 & 1.310 to 8.079 & 0.143 \\
-GSE231643 & Fibroblast fibroblast-associated topic mean & 1.660 & 1.007 to 6.102 & 0.143 \\
+GSE231643 & All-cell topic mean & 2.564 & 1.310 to 8.079 & 0.143 \\*
+GSE231643 & Within-fibroblast topic mean & 1.660 & 1.007 to 6.102 & 0.143 \\
 \end{longtable}
 }
 
-\Needspace{264pt}
 {\small
 \begin{longtable}{@{}p{31mm}p{59mm}p{26mm}p{51mm}@{}}
 \caption{All six paired AUC differences at each analysis unit. Each contrast subtracts the second leave-one-out readout from the first. Percentile 95\% intervals use 4,000 common-index, arm-stratified bootstrap draws of fixed out-of-fold scores: 9 versus 5 specimens or 7 versus 4 mapped patients. PCA and NMF denote principal component analysis and nonnegative matrix factorization. No sample-unit interval excludes zero; patient-unit Fibroblast topic minus NMF and Module minus NMF intervals do. The intervals are exploratory, are not adjusted across pairs, and do not refit the entire representation in each bootstrap draw.}\label{tab:p1aucdifferences}\\
@@ -262,7 +251,7 @@ GSE231643 & Fibroblast fibroblast-associated topic mean & 1.660 & 1.007 to 6.102
 \textbf{Unit} & \textbf{AUC contrast} & \textbf{Difference} & \textbf{Bootstrap 95\% interval} \\
 \midrule\endhead
 \bottomrule\endfoot
-14 specimens & Fibroblast topic minus Module & -0.0222 & -0.2889 to 0.2222 \\
+14 specimens & Fibroblast topic minus Module & -0.0222 & -0.2889 to 0.2222 \\*
 14 specimens & Fibroblast topic minus PCA & 0.2889 & -0.0889 to 0.6667 \\
 14 specimens & Fibroblast topic minus NMF & -0.0556 & -0.3556 to 0.2222 \\
 14 specimens & Module minus PCA & 0.3111 & 0.0000 to 0.6667 \\
@@ -272,12 +261,11 @@ GSE231643 & Fibroblast fibroblast-associated topic mean & 1.660 & 1.007 to 6.102
 11 patients & Fibroblast topic minus PCA & 0.2143 & -0.4643 to 0.9286 \\
 11 patients & Fibroblast topic minus NMF & 0.5893 & 0.1429 to 0.9643 \\
 11 patients & Module minus PCA & 0.2857 & -0.1786 to 0.7857 \\
-11 patients & Module minus NMF & 0.6607 & 0.2857 to 0.9652 \\
+11 patients & Module minus NMF & 0.6607 & 0.2857 to 0.9652 \\*
 11 patients & PCA minus NMF & 0.3750 & 0.0000 to 0.7857 \\
 \end{longtable}
 }
 
-\Needspace{311pt}
 {\small
 \begin{longtable}{@{}p{42mm}p{35mm}p{48mm}p{21mm}p{19mm}@{}}
 \caption{Complete paired anatomical control across 15 topics in 10 author-mapped patients. Differences are mean all-cell loadings in foot minus forearm, after cell-count-weighted collapse of repeated foot specimens. Intervals are percentile 95\% limits from 4,000 paired-patient bootstrap draws. Two-sided p values enumerate all 1,024 sign allocations and retain add-one correction; q values use Benjamini--Hochberg across 15 topics. The TIMP1/COL3A1, COL1A1/COL1A2, CFD/APOD and IGFBP7/TAGLN loadings have q below 0.05. Labels list the two leading decoder genes; they do not assert cell-type identity. Bootstrap intervals and permutation tests need not be dual. This is an anatomical sensitivity control within the discovery source, not a healing endpoint.}\label{tab:p1anatomy}\\
@@ -289,7 +277,7 @@ GSE231643 & Fibroblast fibroblast-associated topic mean & 1.660 & 1.007 to 6.102
 \textbf{Leading genes} & \textbf{Foot minus forearm} & \textbf{Bootstrap 95\% interval} & \textbf{Sign-flip p} & \textbf{BH q} \\
 \midrule\endhead
 \bottomrule\endfoot
-TIMP1/COL3A1 & 0.0476 & 0.0119 to 0.0916 & 0.0107 & 0.0402 \\
+TIMP1/COL3A1 & 0.0476 & 0.0119 to 0.0916 & 0.0107 & 0.0402 \\*
 JUNB/DNAJB1 & 0.0103 & -0.0616 to 0.0793 & 0.799 & 0.956 \\
 COL1A1/COL1A2 & 0.0914 & 0.0535 to 0.1376 & 0.00293 & 0.022 \\
 IGFBP7/IGFBP5 & 0.0188 & 0.0041 to 0.0361 & 0.0634 & 0.119 \\
@@ -302,12 +290,11 @@ IGFBP7/SPARCL1 & 0.0398 & -0.0015 to 0.0897 & 0.134 & 0.223 \\
 FOS/IGFBP7 & -0.0038 & -0.0087 to 0.0025 & 0.245 & 0.334 \\
 HLA-DRA/CD74 & 0.0111 & -0.0591 to 0.0984 & 0.854 & 0.956 \\
 IGFBP7/TAGLN & 0.0715 & 0.0436 to 0.1039 & 0.00293 & 0.022 \\
-FOS/JUNB & 0.0068 & 0.0025 to 0.0118 & 0.0185 & 0.0556 \\
+FOS/JUNB & 0.0068 & 0.0025 to 0.0118 & 0.0185 & 0.0556 \\*
 DNAJB1/FOS & 0.0061 & 0.0020 to 0.0108 & 0.0224 & 0.0561 \\
 \end{longtable}
 }
 
-\Needspace{240pt}
 {\small
 \begin{longtable}{@{}p{33mm}p{23mm}p{33mm}p{33mm}p{43mm}@{}}
 \caption{Complete Welch two-one-sided-test sensitivity grids for the all-cell mean fibroblast-associated topic contrast. The symmetric margin is on the loading scale, and both lower and upper one-sided p values must be below 0.05 for the final column to be Yes. Sample rows use 9 versus 5 specimens; patient rows use 7 versus 4 mapped patients with cell-count-weighted repeat collapse. Margins were examined retrospectively and have no externally justified clinical meaning. A Yes entry therefore records a mathematical sensitivity result, not demonstrated clinical equivalence.}\label{tab:p1equivalence}\\
@@ -319,7 +306,7 @@ DNAJB1/FOS & 0.0061 & 0.0020 to 0.0108 & 0.0224 & 0.0561 \\
 \textbf{Unit} & \textbf{Margin} & \textbf{Lower-test p} & \textbf{Upper-test p} & \textbf{Both below 0.05} \\
 \midrule\endhead
 \bottomrule\endfoot
-14 specimens & 0.05 & 0.000143 & 0.359 & No \\
+14 specimens & 0.05 & 0.000143 & 0.359 & No \\*
 14 specimens & 0.10 & 3.54e-06 & 0.00438 & Yes \\
 14 specimens & 0.20 & 2.07e-08 & 1.57e-06 & Yes \\
 14 specimens & 0.30 & 6.17e-10 & 1.22e-08 & Yes \\
@@ -327,12 +314,11 @@ DNAJB1/FOS & 0.0061 & 0.0020 to 0.0108 & 0.0224 & 0.0561 \\
 11 patients & 0.05 & 0.00131 & 0.13 & No \\
 11 patients & 0.10 & 5.19e-05 & 0.00206 & Yes \\
 11 patients & 0.20 & 7.01e-07 & 6e-06 & Yes \\
-11 patients & 0.30 & 4.05e-08 & 1.77e-07 & Yes \\
+11 patients & 0.30 & 4.05e-08 & 1.77e-07 & Yes \\*
 11 patients & 0.50 & 9.05e-10 & 2.22e-09 & Yes \\
 \end{longtable}
 }
 
-\Needspace{167pt}
 {\small
 \begin{longtable}{@{}p{43mm}p{24mm}p{21mm}p{39mm}p{39mm}@{}}
 \caption{Patient-level robustness in the discovery cohort. The first row correlates fibroblast mean loading with the high-state fraction after weighting repeated specimen summaries by fibroblast count within 20 patients (25 specimens). Its percentile 95\% interval uses 10,000 patient resamples, seed 217. The second row uses the previously defined all-cell healing contrast in 7 healing and 4 non-healing patients; its original interval remains in the outcome table. Omission ranges give the minimum and maximum after deleting one patient at a time (20 or 11 omissions), not confidence limits. Neither analysis refits the expression model, changes the state cut, adds patients, or provides external validation.}\label{tab:p1robustness}\\
@@ -344,12 +330,11 @@ DNAJB1/FOS & 0.0061 & 0.0020 to 0.0108 & 0.0224 & 0.0561 \\
 \textbf{Quantity} & \textbf{Unit} & \textbf{Estimate} & \textbf{Patient bootstrap 95\%} & \textbf{Patient-omission range} \\
 \midrule\endhead
 \bottomrule\endfoot
-Mean versus high-state fraction & 20 patients & 0.9372 & 0.7760 to 0.9903 & 0.9266 to 0.9643 \\
+Mean versus high-state fraction & 20 patients & 0.9372 & 0.7760 to 0.9903 & 0.9266 to 0.9643 \\*
 Healing minus non-healing & 11 patients & 0.0280 & Not recalculated & 0.0139 to 0.0347 \\
 \end{longtable}
 }
 
-\Needspace{156pt}
 {\small
 \begin{longtable}{@{}p{12mm}p{46mm}p{25mm}p{26mm}p{21mm}p{35mm}@{}}
 \caption{Topic-capacity sensitivity after tracking the TIMP1-carrying topic at each K. Gene-based descriptions identify the tracked loading; each fit supplies its own two-Gaussian midpoint cut. Semantic rho uses 25 specimens; the unadjusted healing-arm p value uses 9 versus 5 high-state-fraction summaries. The final column asks whether the maximum fraction occurs in healthy skin. At K=10 the tracked topic is a different IGFBP-rich programme and the counterexample fails. Topics across capacities are not assumed to have identical biological meaning.}\label{tab:p1capacity}\\
@@ -361,13 +346,12 @@ Healing minus non-healing & 11 patients & 0.0280 & Not recalculated & 0.0139 to 
 \textbf{K} & \textbf{Programme description} & \textbf{Derived cut} & \textbf{Semantic rho} & \textbf{Healing p} & \textbf{Healthy maximum} \\
 \midrule\endhead
 \bottomrule\endfoot
-10 & IGFBP-rich & 0.1454 & 0.9469 & 0.147 & No \\
-15 & CHI3L1/COL3A1-rich & 0.1691 & 0.9316 & 0.109 & Yes \\
+10 & IGFBP-rich & 0.1454 & 0.9469 & 0.147 & No \\*
+15 & CHI3L1/COL3A1-rich & 0.1691 & 0.9316 & 0.109 & Yes \\*
 20 & CHI3L1/COL3A1-rich & 0.1695 & 0.9236 & 0.109 & Yes \\
 \end{longtable}
 }
 
-\Needspace{336pt}
 {\small
 \begin{longtable}{@{}p{27mm}p{31mm}p{43mm}p{25mm}p{39mm}@{}}
 \caption{All 18 state-cut sensitivity evaluations for the frozen K=15 topic. Spearman rho correlates fibroblast mean loading with the threshold-defined high-state fraction across 25 specimens. The ratio compares mean high-state fractions in 9 healing versus 5 non-healing specimens; p is the unadjusted two-sided Mann--Whitney probability. The last column gives the group containing the largest fraction. The grid includes the fitted cut rounded to 0.1843. Four cuts have p below 0.05; these are dependent sensitivity analyses, not 18 independent confirmations.}\label{tab:p1cuts}\\
@@ -379,7 +363,7 @@ Healing minus non-healing & 11 patients & 0.0280 & Not recalculated & 0.0139 to 
 \textbf{State cut} & \textbf{Semantic rho} & \textbf{Healing / non-healing} & \textbf{Raw p} & \textbf{Largest fraction} \\
 \midrule\endhead
 \bottomrule\endfoot
-0.0800 & 0.9326 & 2.966 & 0.042 & Healthy \\
+0.0800 & 0.9326 & 2.966 & 0.042 & Healthy \\*
 0.1000 & 0.9414 & 2.959 & 0.042 & Healthy \\
 0.1200 & 0.9091 & 3.011 & 0.042 & Healthy \\
 0.1400 & 0.9301 & 2.992 & 0.042 & Healthy \\
@@ -395,14 +379,11 @@ Healing minus non-healing & 11 patients & 0.0280 & Not recalculated & 0.0139 to 
 0.3200 & 0.9479 & 3.741 & 0.0617 & Healthy \\
 0.3400 & 0.9463 & 3.699 & 0.0617 & Healthy \\
 0.3600 & 0.9401 & 4.040 & 0.0608 & Healthy \\
-0.3800 & 0.9182 & 3.945 & 0.0608 & Healthy \\
+0.3800 & 0.9182 & 3.945 & 0.0608 & Healthy \\*
 0.4000 & 0.9182 & 3.889 & 0.0608 & Healthy \\
 \end{longtable}
 }
 
-\Needspace{520pt}
-
-\Needspace{226pt}
 {\small
 \begin{longtable}{@{}p{63mm}p{55mm}p{49mm}@{}}
 \caption{Exact mean decomposition on the saved 19,410 discovery fibroblasts in 25 specimens. The cut is 0.184295848; empirical bin means are distinct from fitted Gaussian-component means. The constant-state approximation uses the cell-pooled low/high means, and its residual is the observed specimen mean minus that approximation. RMS denotes root-mean-square residual with equal specimen weights. Ranges exclude undefined means for empty bins; zero-weight terms contribute zero to the identity. Both exact identities have maximum numerical discrepancy below $10^{-15}$. Values are on the zero-to-one loading scale, apart from the count row. They describe the frozen sample, without confidence intervals, a test of invariant state intensity or causal variance attribution.}\label{tab:p1math}\\
@@ -414,17 +395,16 @@ Healing minus non-healing & 11 patients & 0.0280 & Not recalculated & 0.0139 to 
 \textbf{Quantity} & \textbf{Value or range} & \textbf{Denominator} \\
 \midrule\endhead
 \bottomrule\endfoot
-Cell-pooled low-bin mean & 0.02380 & All 19,410 fibroblasts \\
+Cell-pooled low-bin mean & 0.02380 & All 19,410 fibroblasts \\*
 Cell-pooled high-bin mean & 0.51301 & All 19,410 fibroblasts \\
 Specimen low-bin means & 0.01204 to 0.10213 & 25 nonempty low bins \\
 Specimen high-bin means & 0.22645 to 0.57777 & 16 nonempty high bins \\
 Specimens with an empty bin & 9 & 9 of 25; high bin empty \\
-Within-state residual range & -0.02434 to 0.04377 & All 25 specimens \\
+Within-state residual range & -0.02434 to 0.04377 & All 25 specimens \\*
 Within-state residual RMS & 0.01575 & Equal specimen weights \\
 \end{longtable}
 }
 
-\Needspace{238pt}
 {\small
 \begin{longtable}{@{}p{100mm}p{67mm}@{}}
 \caption{Independent arithmetic check of the all-cell mean-loading contrast in 11 patients (7 healing, 4 non-healing). Exhaustive allocation includes the observed labels and numerical ties: 89/330 allocations are at least as extreme in absolute mean difference, whereas the retained add-one convention gives 90/331. These probabilities assume observational label exchangeability and do not identify a causal effect. Welch quantities use sample variances within the two outcome groups. Standard error, interval and margin are on the loading scale; degrees of freedom and probabilities are dimensionless. A margin strictly greater than the infimum would be needed to reject both one-sided tests at 0.05. The data-derived boundary is not a clinical equivalence margin.}\label{tab:p1exact}\\
@@ -436,13 +416,13 @@ Within-state residual RMS & 0.01575 & Equal specimen weights \\
 \textbf{Quantity} & \textbf{Value} \\
 \midrule\endhead
 \bottomrule\endfoot
-All label allocations & 330 \\
+All label allocations & 330 \\*
 At least as extreme as observed & 89 \\
 Exhaustive two-sided probability & 0.269697 \\
 Recorded add-one probability & 0.271903 \\
 Welch standard error & 0.018226 \\
 Welch degrees of freedom & 8.098869 \\
-Two-sided 90\% Welch interval & -0.005864 to 0.061814 \\
+Two-sided 90\% Welch interval & -0.005864 to 0.061814 \\*
 Equivalence-margin infimum & 0.061814 \\
 \end{longtable}
 }

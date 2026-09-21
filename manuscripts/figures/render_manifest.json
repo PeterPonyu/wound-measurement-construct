@@ -11,14 +11,18 @@
     "figure1_workflow": {
       "width_mm": 180,
       "height_mm": 106,
-      "panels": "Study design",
+      "panels": ["From skin specimens to three distinct readouts", "What changes the average?", "How is the interpretation tested?"],
+      "headings": ["A From skin specimens to three distinct readouts", "B What changes the average?", "C How is the interpretation tested?"],
+      "heading_centres_mm": [90, 44, 136],
       "sources": [],
-      "data": "manuscripts/figures/source_data/figure1_workflow_A.csv"
+      "data": ["manuscripts/figures/source_data/figure1_workflow_A.csv", "manuscripts/figures/source_data/figure1_workflow_B.csv", "manuscripts/figures/source_data/figure1_workflow_C.csv"]
     },
     "figure2_mixture_semantics": {
       "width_mm": 180,
       "height_mm": 70,
       "panels": ["Mixture coordinate", "Sample shape", "Uncertainty"],
+      "headings": ["A Mixture coordinate", "B Sample shape", "C Uncertainty"],
+      "heading_centres_mm": [31.5, 88.5, 147],
       "sources": ["outputs/bimodal_stratification/report.json", "outputs/analysis/mixture_semantic_inference/report.json"],
       "data": ["manuscripts/figures/source_data/figure2_mixture_semantics_A.csv", "manuscripts/figures/source_data/figure2_mixture_semantics_B.csv", "manuscripts/figures/source_data/figure2_mixture_semantics_C.csv"]
     },
@@ -26,6 +30,8 @@
       "width_mm": 180,
       "height_mm": 66,
       "panels": ["Technical controls", "Depth matching", "Ambient RNA"],
+      "headings": ["A Technical controls", "B Depth matching", "C Ambient RNA"],
+      "heading_centres_mm": [30.3333333333333, 90, 149.666666666667],
       "sources": ["outputs/artifact_triage/report.json", "outputs/ambient_invariance/report.json"],
       "data": ["manuscripts/figures/source_data/figure3_artifact_controls_A.csv", "manuscripts/figures/source_data/figure3_artifact_controls_B.csv", "manuscripts/figures/source_data/figure3_artifact_controls_C.csv"]
     },
@@ -33,6 +39,8 @@
       "width_mm": 180,
       "height_mm": 68,
       "panels": ["Mixture by arm", "Unit correction", "Design power"],
+      "headings": ["A Mixture by arm", "B Unit correction", "C Design power"],
+      "heading_centres_mm": [30, 93.5, 153.5],
       "sources": ["outputs/bimodal_stratification/report.json", "outputs/cohort_metadata/gse165816_patient_unit_remap/report.json", "outputs/analysis/patient_mapping_equivalence/report.json", "outputs/negative_result_strength/report.json", "outputs/analysis/design_power_simulation/report.json"],
       "data": ["manuscripts/figures/source_data/figure4_outcome_counterexample_A.csv", "manuscripts/figures/source_data/figure4_outcome_counterexample_B.csv", "manuscripts/figures/source_data/figure4_outcome_counterexample_C.csv"]
     },
@@ -40,6 +48,8 @@
       "width_mm": 180,
       "height_mm": 119,
       "panels": ["Semantic association", "Healing contrast", "Topic count", "Label permutation", "Structureless input", "Null calibration"],
+      "headings": ["A Semantic association", "B Healing contrast", "C Topic count", "D Label permutation", "E Structureless input", "F Null calibration"],
+      "heading_centres_mm": [30.3333333333333, 90, 149.666666666667, 30.3333333333333, 90, 149.666666666667],
       "sources": ["outputs/method_constant_sensitivity/report.json", "outputs/pipeline_negative_control/report.json"],
       "data": ["manuscripts/figures/source_data/figure5_sensitivity_negative_controls_A.csv", "manuscripts/figures/source_data/figure5_sensitivity_negative_controls_B.csv", "manuscripts/figures/source_data/figure5_sensitivity_negative_controls_C.csv", "manuscripts/figures/source_data/figure5_sensitivity_negative_controls_D.csv", "manuscripts/figures/source_data/figure5_sensitivity_negative_controls_E.csv", "manuscripts/figures/source_data/figure5_sensitivity_negative_controls_F.csv"]
     },
@@ -47,6 +57,8 @@
       "width_mm": 180,
       "height_mm": 71,
       "panels": ["Leave-one-sample AUC", "Score correlation"],
+      "headings": ["A Leave-one-sample AUC", "B Score correlation"],
+      "heading_centres_mm": [43.5, 133],
       "sources": ["outputs/analysis/representation_inference/report.json", "outputs/representation_benchmark/report.json"],
       "data": ["manuscripts/figures/source_data/figure6_representation_inference_A.csv", "manuscripts/figures/source_data/figure6_representation_inference_B.csv"]
     },
@@ -54,6 +66,8 @@
       "width_mm": 180,
       "height_mm": 66,
       "panels": ["Patient-unit AUC", "Paired anatomy"],
+      "headings": ["A Patient-unit AUC", "B Paired anatomy"],
+      "heading_centres_mm": [47, 136.5],
       "sources": ["outputs/analysis/patient_unit_representation_benchmark/report.json", "outputs/analysis/paired_anatomical_control/report.json"],
       "data": ["manuscripts/figures/source_data/figure7_patient_unit_anatomy_A.csv", "manuscripts/figures/source_data/figure7_patient_unit_anatomy_B.csv"]
     },
@@ -61,6 +75,8 @@
       "width_mm": 180,
       "height_mm": 73,
       "panels": ["Immune context", "Detected genes", "Group contrast"],
+      "headings": ["A Immune context", "B Detected genes", "C Group contrast"],
+      "heading_centres_mm": [32.5, 96.5, 154],
       "sources": ["outputs/analysis/external_immune_axis/report.json", "outputs/analysis/external_gse268834_projection/report.json", "outputs/analysis/external_gse248247_projection/report.json"],
       "data": ["manuscripts/figures/source_data/figure8_external_construct_audit_A.csv", "manuscripts/figures/source_data/figure8_external_construct_audit_B.csv", "manuscripts/figures/source_data/figure8_external_construct_audit_C.csv"]
     }
@@ -104,7 +120,7 @@
     }
   ],
   "design_sources": {
-    "manuscripts/r_tikz/construct_design.tikz": "ca146ec3a7f5a4fd5a4e1656c94cee486db730045dd660f4e9955bc3a912b2c6"
+    "manuscripts/r_tikz/construct_design.tikz": "c84d57e184b793821737b8363079dcb3ce812909c6856e3a9f6386b468090273"
   },
-  "script_sha256": "31223563bfa3d1bfddb1502f467c224a700abaef7c54fd3f8a610c7e818dab6f"
+  "script_sha256": "c4c9eb456f79d1abf3da79ab0dc9e9b159954f693e6d1baa3df315729ea06beb"
 }

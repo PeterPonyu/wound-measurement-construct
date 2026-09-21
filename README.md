@@ -2,6 +2,8 @@
 
 Author: Zeyu Fu. Software version: 0.2.0.
 
+The manuscript and figures were revised on 21 September 2026. See [MANUSCRIPT_REVISION.md](MANUSCRIPT_REVISION.md) for the editorial changes and verification. The software DOI identifies the independently archived analysis version.
+
 Software for testing whether a fibroblast-associated expression loading reflects cell-state abundance and supports patient-level healing inference in public wound single-cell data. The study includes technical controls, patient resampling, paired anatomy, representation comparisons and external tissue-context projections. It does not establish a clinically validated prognostic tool.
 
 The discovery analysis contains 25 specimens mapped to 20 patients. Healing inference uses 14 specimens from 11 patients (7 healed and 4 not healed). Bootstrap draws and cells are not additional independent patients.

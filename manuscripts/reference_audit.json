@@ -210,6 +210,102 @@
       "publisher_title": "Exact testing with random permutations",
       "publisher_metadata_source": "https://api.crossref.org/works/10.1007%2Fs11749-017-0571-1",
       "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "buechler2021",
+      "title": "Cross-tissue organization of the fibroblast lineage",
+      "source": "https://doi.org/10.1038/s41586-021-03549-5",
+      "publisher_title": "Cross-tissue organization of the fibroblast lineage",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1038%2Fs41586-021-03549-5",
+      "status": "Publisher-deposited bibliographic identity checked; cited for contextual biological or methodological interpretation, not as an analysis performed in this study."
+    },
+    {
+      "citation_key": "muhl2020",
+      "title": "Single-cell analysis uncovers fibroblast heterogeneity and criteria for fibroblast and mural cell identification and discrimination",
+      "source": "https://doi.org/10.1038/s41467-020-17740-1",
+      "publisher_title": "Single-cell analysis uncovers fibroblast heterogeneity and criteria for fibroblast and mural cell identification and discrimination",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1038%2Fs41467-020-17740-1",
+      "status": "Publisher-deposited bibliographic identity checked; cited for contextual biological or methodological interpretation, not as an analysis performed in this study."
+    },
+    {
+      "citation_key": "soleboldo2020",
+      "title": "Single-cell transcriptomes of the human skin reveal age-related loss of fibroblast priming",
+      "source": "https://doi.org/10.1038/s42003-020-0922-4",
+      "publisher_title": "Single-cell transcriptomes of the human skin reveal age-related loss of fibroblast priming",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1038%2Fs42003-020-0922-4",
+      "status": "Publisher-deposited bibliographic identity checked; cited for contextual biological or methodological interpretation, not as an analysis performed in this study."
+    },
+    {
+      "citation_key": "driskell2013",
+      "title": "Distinct fibroblast lineages determine dermal architecture in skin development and repair",
+      "source": "https://doi.org/10.1038/nature12783",
+      "publisher_title": "Distinct fibroblast lineages determine dermal architecture in skin development and repair",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1038%2Fnature12783",
+      "status": "Publisher-deposited bibliographic identity checked; cited for contextual biological or methodological interpretation, not as an analysis performed in this study."
+    },
+    {
+      "citation_key": "dann2022",
+      "title": "Differential abundance testing on single-cell data using k-nearest neighbor graphs",
+      "source": "https://doi.org/10.1038/s41587-021-01033-z",
+      "publisher_title": "Differential abundance testing on single-cell data using k-nearest neighbor graphs",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1038%2Fs41587-021-01033-z",
+      "status": "Publisher-deposited bibliographic identity checked; cited for contextual biological or methodological interpretation, not as an analysis performed in this study."
+    },
+    {
+      "citation_key": "wolock2019",
+      "title": "Scrublet: Computational Identification of Cell Doublets in Single-Cell Transcriptomic Data",
+      "source": "https://doi.org/10.1016/j.cels.2018.11.005",
+      "publisher_title": "Scrublet: Computational Identification of Cell Doublets in Single-Cell Transcriptomic Data",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1016%2Fj.cels.2018.11.005",
+      "status": "Publisher-deposited bibliographic identity checked; cited for contextual biological or methodological interpretation, not as an analysis performed in this study."
+    },
+    {
+      "citation_key": "luecken2022",
+      "title": "Benchmarking atlas-level data integration in single-cell genomics",
+      "source": "https://doi.org/10.1038/s41592-021-01336-8",
+      "publisher_title": "Benchmarking atlas-level data integration in single-cell genomics",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1038%2Fs41592-021-01336-8",
+      "status": "Publisher-deposited bibliographic identity checked; cited for contextual biological or methodological interpretation, not as an analysis performed in this study."
+    },
+    {
+      "citation_key": "vancalster2019",
+      "title": "Calibration: the Achilles heel of predictive analytics",
+      "source": "https://doi.org/10.1186/s12916-019-1466-7",
+      "publisher_title": "Calibration: the Achilles heel of predictive analytics",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1186%2Fs12916-019-1466-7",
+      "status": "Publisher-deposited bibliographic identity checked; cited for contextual biological or methodological interpretation, not as an analysis performed in this study."
+    },
+    {
+      "citation_key": "vickers2006",
+      "title": "Decision Curve Analysis: A Novel Method for Evaluating Prediction Models",
+      "source": "https://doi.org/10.1177/0272989x06295361",
+      "publisher_title": "Decision Curve Analysis: A Novel Method for Evaluating Prediction Models",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1177%2F0272989x06295361",
+      "status": "Publisher-deposited bibliographic identity checked; cited for contextual biological or methodological interpretation, not as an analysis performed in this study."
+    },
+    {
+      "citation_key": "riley2019",
+      "title": "Minimum sample size for developing a multivariable prediction model: PART II ‐ binary and time‐to‐event outcomes",
+      "source": "https://doi.org/10.1002/sim.7992",
+      "publisher_title": "Minimum sample size for developing a multivariable prediction model: PART II ‐ binary and time‐to‐event outcomes",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1002%2Fsim.7992",
+      "status": "Publisher-deposited bibliographic identity checked; cited for contextual biological or methodological interpretation, not as an analysis performed in this study."
+    },
+    {
+      "citation_key": "altman2006",
+      "title": "The cost of dichotomising continuous variables",
+      "source": "https://doi.org/10.1136/bmj.332.7549.1080",
+      "publisher_title": "The cost of dichotomising continuous variables",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1136%2Fbmj.332.7549.1080",
+      "status": "Publisher-deposited bibliographic identity checked; cited for contextual biological or methodological interpretation, not as an analysis performed in this study."
+    },
+    {
+      "citation_key": "steyerberg2010",
+      "title": "Assessing the Performance of Prediction Models",
+      "source": "https://doi.org/10.1097/ede.0b013e3181c30fb2",
+      "publisher_title": "Assessing the Performance of Prediction Models",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1097%2Fede.0b013e3181c30fb2",
+      "status": "Publisher-deposited bibliographic identity checked; cited for contextual biological or methodological interpretation, not as an analysis performed in this study."
     }
   ]
 }

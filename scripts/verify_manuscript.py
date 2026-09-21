@@ -31,7 +31,7 @@ def read_native(path: Path, stack: tuple[Path, ...]=()) -> str:
 
 def check_author_style() -> None:
     """Check the author's prose, equation and cross-reference requirements."""
-    totals = {'equations': 0, 'tables': 0}
+    totals = {'equations': 0, 'tables': 0, 'panels': 0}
     for n in (1,):
         folder = MANUSCRIPTS / 'latex'
         main = (folder / 'manuscript.tex').read_text()
@@ -41,6 +41,8 @@ def check_author_style() -> None:
                 fail(f'Paper {n} {name}: internal result/figure/table reference')
             if re.search('\\\\(?:textbf|textit|emph|textcolor|colorbox|fcolorbox)\\b|\\\\begin\\{(?:itemize|enumerate|description)\\}', text):
                 fail(f'Paper {n} {name}: decorative formatting in narrative prose')
+            if re.search('\\b(?:supplementary|supplemental|appendix|appendices)\\b|\\$(?!\\$)', text, re.I):
+                fail(f'Paper {n} {name}: supplementary pointer or mathematical styling in plain narrative')
         for section in ('methods', 'supplement'):
             text = (folder / f'{section}.tex').read_text()
             for label in re.finditer('\\\\label\\{(eq:[^}]+)\\}', text):
@@ -50,12 +52,26 @@ def check_author_style() -> None:
                     fail(f'Paper {n}: equation has no adjacent explanatory citation: {label[1]}')
                 totals['equations'] += 1
         narrative = '\n'.join(((folder / f'{section}.tex').read_text() for section in ('results', 'methods'))) + main
+        panel_counts = {1: [3, 3, 3, 3, 6, 2, 2, 3], 2: [3, 3, 1, 2, 2, 2]}[n]
+        for number, count in enumerate(panel_counts, 1):
+            key = f'fig:p{n}f{number}'
+            expected = set('ABCDEFGHIJKLMNOPQRSTUVWXYZ'[:count])
+            used = set()
+            for reference in re.finditer('\\\\ref\\{' + re.escape(key) + '\\}([A-Z])?(?:--([A-Z]))?', narrative):
+                if not reference[1]:
+                    fail(f'Paper {n}: figure reference lacks a panel letter: {key}')
+                used.update((chr(i) for i in range(ord(reference[1]), ord(reference[2] or reference[1]) + 1)))
+            caption = (folder / f'figure_captions/f{number}.tex').read_text()
+            described = set(re.findall('\\(([A-Z])\\)', caption))
+            if used != expected or described != expected:
+                fail(f'Paper {n} figure {number}: panel references {used}, caption descriptions {described}, expected {expected}')
+            totals['panels'] += count
         tables = (folder / 'tables.tex').read_text() + (folder / 'supplement.tex').read_text()
         for label in re.findall('\\\\label\\{(tab:[^}]+)\\}', tables):
             if '\\ref{' + label + '}' not in narrative:
                 fail(f'Paper {n}: numerical table lacks a main-text citation: {label}')
             totals['tables'] += 1
-    print(f"PASS  author style: protected prose sections=3, adjacent equation citations={totals['equations']}, main-text table citations={totals['tables']}")
+    print(f"PASS  author style: protected prose sections=3, adjacent equation citations={totals['equations']}, main-text table citations={totals['tables']}, individually described/cited panels={totals['panels']}")
 
 def main():
     import argparse
