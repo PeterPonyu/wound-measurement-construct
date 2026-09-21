@@ -1,5 +1,7 @@
 # Wound single-cell measurement construct validation
 
+Published software archive: [10.5281/zenodo.22872448](https://doi.org/10.5281/zenodo.22872448) (version 0.1.0).
+
 Author: Zeyu Fu. Software version: 0.1.0.
 
 Software for testing whether a fibroblast-associated expression loading reflects cell-state abundance and supports patient-level healing inference in public wound single-cell data. The study includes technical controls, patient resampling, paired anatomy, representation comparisons and external tissue-context projections. It does not establish a clinically validated prognostic tool.

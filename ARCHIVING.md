@@ -1,5 +1,7 @@
 # Independent software archiving
 
+Published software archive: [10.5281/zenodo.22872448](https://doi.org/10.5281/zenodo.22872448) (version 0.1.0).
+
 This project uses GitHub for source history and releases, and a separate Zenodo record for its MIT software. No repository-integration webhook is required. Do not reuse another study's deposition ID or DOI.
 
 The full reproduction release contains manuscript and research outputs governed by NOTICE. Deposit the separate `wound-measurement-construct-code-0.1.0.zip` to Zenodo; its MIT-only scope matches .zenodo.json. Both ZIPs have independent checksum manifests. The software archive runs from public GEO inputs and does not require another GitHub repository.
