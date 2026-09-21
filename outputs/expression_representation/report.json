@@ -1,0 +1,401 @@
+{
+  "inputs": {
+    "tar": "data/raw/GSE165816/GSE165816_RAW.tar",
+    "max_samples": null
+  },
+  "loaded": {
+    "cells": 174962,
+    "genes": 26923,
+    "samples": 54,
+    "notes": [
+      "gene_policy=union: kept 26923 genes (union 26923, present-in-all 10645, samples 54)"
+    ]
+  },
+  "filtered": {
+    "cells": 81602,
+    "arms": {
+      "Non-diabetic": 36088,
+      "DFU-healer": 28365,
+      "DFU-nonhealer": 17149
+    }
+  },
+  "qc": {
+    "cells_kept": 76461,
+    "cells_dropped": 5141,
+    "median_mito": 0.05741447658742606,
+    "max_mito_threshold": 0.2,
+    "arms_after_qc": {
+      "Non-diabetic": 33702,
+      "DFU-healer": 26028,
+      "DFU-nonhealer": 16731
+    }
+  },
+  "target_line": {
+    "n_genes": 7002,
+    "pinned_present": [
+      "ASPN",
+      "CD163",
+      "CD68",
+      "CDKN1A",
+      "CHI3L1",
+      "COL7A1",
+      "FOS",
+      "IFNG",
+      "IL1B",
+      "JUNB",
+      "KRT14",
+      "KRT5",
+      "MMP1",
+      "MMP13",
+      "MMP3",
+      "NLRP3",
+      "NRG1",
+      "PRG4",
+      "THY1",
+      "TIMP1",
+      "TLR4",
+      "TNF",
+      "VEGFA"
+    ],
+    "pinned_absent_from_assay": []
+  },
+  "fit": {
+    "seconds": 166.41552901268005,
+    "trace": [
+      {
+        "step": 1,
+        "loss": 8.878880500793457,
+        "beta_perplexity": 7000.606983665977
+      },
+      {
+        "step": 4000,
+        "loss": 6.620459079742432,
+        "beta_perplexity": 2369.6765930148276
+      },
+      {
+        "step": 8000,
+        "loss": 6.263453960418701,
+        "beta_perplexity": 961.2849451521251
+      },
+      {
+        "step": 12000,
+        "loss": 6.126796722412109,
+        "beta_perplexity": 491.63789618422936
+      },
+      {
+        "step": 16000,
+        "loss": 6.083045959472656,
+        "beta_perplexity": 329.701196465183
+      },
+      {
+        "step": 20000,
+        "loss": 6.052440643310547,
+        "beta_perplexity": 267.46935350562376
+      },
+      {
+        "step": 24000,
+        "loss": 6.006707191467285,
+        "beta_perplexity": 249.39017802557512
+      },
+      {
+        "step": 28000,
+        "loss": 6.014073371887207,
+        "beta_perplexity": 242.46840893136337
+      },
+      {
+        "step": 32000,
+        "loss": 6.02080774307251,
+        "beta_perplexity": 243.28546710441756
+      },
+      {
+        "step": 36000,
+        "loss": 5.999365329742432,
+        "beta_perplexity": 243.30402902061206
+      },
+      {
+        "step": 40000,
+        "loss": 6.025890350341797,
+        "beta_perplexity": 243.15928362393507
+      }
+    ],
+    "final_beta_perplexity": 243.15928362393507,
+    "beta_near_uniform": false
+  },
+  "topics": {
+    "top_genes": {
+      "topic_0": [
+        "TIMP1",
+        "COL3A1",
+        "DCN",
+        "FN1",
+        "IER3",
+        "SOD2",
+        "LUM",
+        "CHI3L1",
+        "MMP1",
+        "COL6A2",
+        "SAT1",
+        "NNMT"
+      ],
+      "topic_1": [
+        "JUNB",
+        "DNAJB1",
+        "CD69",
+        "IL32",
+        "FOS",
+        "SRGN",
+        "CD52",
+        "CXCR4",
+        "LTB",
+        "DUSP2",
+        "ZFP36",
+        "KLRB1"
+      ],
+      "topic_2": [
+        "COL1A1",
+        "COL1A2",
+        "COL3A1",
+        "SPARC",
+        "COL6A2",
+        "COL6A1",
+        "LUM",
+        "COL6A3",
+        "POSTN",
+        "DCN",
+        "MMP2",
+        "FN1"
+      ],
+      "topic_3": [
+        "IGFBP7",
+        "IGFBP5",
+        "MGP",
+        "CALD1",
+        "IGFBP4",
+        "CCL19",
+        "APOE",
+        "C1R",
+        "TAGLN",
+        "NR2F2",
+        "SERPING1",
+        "NNMT"
+      ],
+      "topic_4": [
+        "TAGLN",
+        "ACTA2",
+        "TPM2",
+        "IGFBP7",
+        "MYL9",
+        "ADIRF",
+        "CALD1",
+        "C11orf96",
+        "IGFBP5",
+        "TPM1",
+        "SPARCL1",
+        "MYH11"
+      ],
+      "topic_5": [
+        "KRT14",
+        "KRT10",
+        "KRT5",
+        "KRT1",
+        "PERP",
+        "KRT16",
+        "DMKN",
+        "SFN",
+        "DSP",
+        "S100A2",
+        "CXCL14",
+        "KRT6A"
+      ],
+      "topic_6": [
+        "CFD",
+        "APOD",
+        "CXCL14",
+        "GSN",
+        "DCN",
+        "MGP",
+        "PTGDS",
+        "IGFBP7",
+        "APOE",
+        "CFH",
+        "CCDC80",
+        "LUM"
+      ],
+      "topic_7": [
+        "DCN",
+        "CFD",
+        "PLA2G2A",
+        "CXCL14",
+        "COL1A2",
+        "COMP",
+        "GSN",
+        "LUM",
+        "SFRP2",
+        "MGP",
+        "FBLN1",
+        "COL1A1"
+      ],
+      "topic_8": [
+        "DCD",
+        "SAT1",
+        "CALML5",
+        "SCGB2A2",
+        "PERP",
+        "KRT14",
+        "ATP1B1",
+        "MUCL1",
+        "KRT19",
+        "SFRP1",
+        "ADIRF",
+        "FXYD3"
+      ],
+      "topic_9": [
+        "IGFBP7",
+        "SPARCL1",
+        "IFI27",
+        "GNG11",
+        "CD74",
+        "CAV1",
+        "CCL21",
+        "AQP1",
+        "GSN",
+        "A2M",
+        "ADIRF",
+        "ID1"
+      ],
+      "topic_10": [
+        "FOS",
+        "IGFBP7",
+        "CRYAB",
+        "SPARC",
+        "APOE",
+        "GSN",
+        "DST",
+        "CLU",
+        "GPM6B",
+        "ADIRF",
+        "GPNMB",
+        "SOX4"
+      ],
+      "topic_11": [
+        "HLA-DRA",
+        "CD74",
+        "HLA-DRB1",
+        "HLA-DPB1",
+        "HLA-DPA1",
+        "IGKC",
+        "SAT1",
+        "SRGN",
+        "LYZ",
+        "RNASE1",
+        "CXCL8",
+        "CCL3"
+      ],
+      "topic_12": [
+        "IGFBP7",
+        "TAGLN",
+        "CALD1",
+        "RGS5",
+        "SPARC",
+        "ACTA2",
+        "NDUFA4L2",
+        "MYL9",
+        "SPARCL1",
+        "MGP",
+        "ADIRF",
+        "TPM2"
+      ],
+      "topic_13": [
+        "FOS",
+        "JUNB",
+        "GADD45B",
+        "ZFP36",
+        "RGS16",
+        "C11orf96",
+        "SOCS3",
+        "ATF3",
+        "CCL2",
+        "KLF2",
+        "NR4A1",
+        "ADIRF"
+      ],
+      "topic_14": [
+        "DNAJB1",
+        "FOS",
+        "IER3",
+        "ZFP36",
+        "SOD2",
+        "XIST",
+        "FOSB",
+        "HSPH1",
+        "HSPA6",
+        "JUNB",
+        "DST",
+        "NR4A1"
+      ]
+    },
+    "mean_theta_by_arm": {
+      "DFU-healer": [
+        0.0753,
+        0.0923,
+        0.1571,
+        0.0588,
+        0.0608,
+        0.0745,
+        0.0199,
+        0.0589,
+        0.0196,
+        0.089,
+        0.0158,
+        0.1073,
+        0.1167,
+        0.028,
+        0.026
+      ],
+      "DFU-nonhealer": [
+        0.0267,
+        0.1161,
+        0.0781,
+        0.0348,
+        0.0786,
+        0.1256,
+        0.0574,
+        0.0562,
+        0.0233,
+        0.0993,
+        0.0216,
+        0.1382,
+        0.0785,
+        0.0433,
+        0.0223
+      ],
+      "Non-diabetic": [
+        0.0319,
+        0.0584,
+        0.0531,
+        0.0334,
+        0.1129,
+        0.1501,
+        0.0967,
+        0.084,
+        0.0386,
+        0.1092,
+        0.0326,
+        0.0581,
+        0.0759,
+        0.0379,
+        0.0271
+      ]
+    }
+  },
+  "raag_audit": {
+    "reachability_survival": 1.0,
+    "edge_survival_score": 0.7610267658247369,
+    "edge_survival_n_sources": 2000.0,
+    "edge_survival_exact": false,
+    "mean_perplexity": 3.6854910850524902,
+    "near_uniform_warning": false,
+    "manifold_intact": true,
+    "n_cells_audited": 20000
+  }
+}

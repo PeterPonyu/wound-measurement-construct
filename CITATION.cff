@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: Please cite this software when using these analyses.
+type: software
+title: Wound single-cell measurement construct validation
+authors:
+- family-names: Fu
+  given-names: Zeyu
+version: 0.1.0
+license: MIT
+abstract: Software for testing whether a fibroblast-associated expression loading
+  reflects cell-state abundance and supports patient-level healing inference in public
+  wound single-cell data. The study includes technical controls, patient resampling,
+  paired anatomy, representation comparisons and external tissue-context projections.
+  It does not establish a clinically validated prognostic tool.
+repository-code: https://github.com/PeterPonyu/wound-measurement-construct
+keywords:
+- single-cell transcriptomics
+- wound healing
+- measurement validity

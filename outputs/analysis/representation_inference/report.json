@@ -1,0 +1,162 @@
+{
+  "experiment": "representation_benchmark_inference",
+  "status": "completed",
+  "scientific_unit": "sample",
+  "patient_level_inference_available": false,
+  "question": "Can the four representations be ordered at this sample size?",
+  "sample_counts": {
+    "dfu": 14,
+    "healer": 9,
+    "nonhealer": 5
+  },
+  "auc": {
+    "topic_simplex_theta0": {
+      "loso_auc": 0.8222222222222222,
+      "bootstrap_95_ci": [
+        0.5555555555555556,
+        1.0
+      ],
+      "bootstrap_sd": 0.11532854497306967,
+      "ci_includes_0_5": false
+    },
+    "module_score": {
+      "loso_auc": 0.8444444444444444,
+      "bootstrap_95_ci": [
+        0.5777777777777777,
+        1.0
+      ],
+      "bootstrap_sd": 0.11254001038271245,
+      "ci_includes_0_5": false
+    },
+    "pca": {
+      "loso_auc": 0.5333333333333333,
+      "bootstrap_95_ci": [
+        0.15555555555555553,
+        0.8888888888888888
+      ],
+      "bootstrap_sd": 0.19123014055123227,
+      "ci_includes_0_5": true
+    },
+    "nmf": {
+      "loso_auc": 0.8777777777777778,
+      "bootstrap_95_ci": [
+        0.6552777777777777,
+        1.0
+      ],
+      "bootstrap_sd": 0.09624627363253546,
+      "ci_includes_0_5": false
+    }
+  },
+  "pairwise_auc_difference": {
+    "topic_simplex_theta0__minus__module_score": {
+      "observed_difference": -0.022222222222222254,
+      "bootstrap_95_ci": [
+        -0.288888888888889,
+        0.2222222222222222
+      ],
+      "ci_excludes_zero": false,
+      "p_two_sided_bootstrap": 0.943
+    },
+    "topic_simplex_theta0__minus__pca": {
+      "observed_difference": 0.28888888888888886,
+      "bootstrap_95_ci": [
+        -0.0888888888888888,
+        0.6666666666666666
+      ],
+      "ci_excludes_zero": false,
+      "p_two_sided_bootstrap": 0.1335
+    },
+    "topic_simplex_theta0__minus__nmf": {
+      "observed_difference": -0.05555555555555558,
+      "bootstrap_95_ci": [
+        -0.3555555555555556,
+        0.2222222222222221
+      ],
+      "ci_excludes_zero": false,
+      "p_two_sided_bootstrap": 0.697
+    },
+    "module_score__minus__pca": {
+      "observed_difference": 0.3111111111111111,
+      "bootstrap_95_ci": [
+        0.0,
+        0.6666666666666667
+      ],
+      "ci_excludes_zero": false,
+      "p_two_sided_bootstrap": 0.0585
+    },
+    "module_score__minus__nmf": {
+      "observed_difference": -0.033333333333333326,
+      "bootstrap_95_ci": [
+        -0.28888888888888886,
+        0.20000000000000007
+      ],
+      "ci_excludes_zero": false,
+      "p_two_sided_bootstrap": 0.8755
+    },
+    "pca__minus__nmf": {
+      "observed_difference": -0.34444444444444444,
+      "bootstrap_95_ci": [
+        -0.7111111111111111,
+        0.0
+      ],
+      "ci_excludes_zero": false,
+      "p_two_sided_bootstrap": 0.057
+    }
+  },
+  "permutation_null": {
+    "topic_simplex_theta0": {
+      "n_relabelings": 2002,
+      "exact_enumeration": true,
+      "null_auc_mean": 0.5609723609723609,
+      "null_auc_95th_percentile": 0.8222222222222222,
+      "p_one_sided": 0.06040938592111832,
+      "significant_at_0_05": false
+    },
+    "module_score": {
+      "n_relabelings": 2002,
+      "exact_enumeration": true,
+      "null_auc_mean": 0.49672549672549665,
+      "null_auc_95th_percentile": 0.8222222222222222,
+      "p_one_sided": 0.042436345481777334,
+      "significant_at_0_05": true
+    },
+    "pca": {
+      "n_relabelings": 200,
+      "exact_enumeration": false,
+      "null_auc_mean": 0.47977777777777775,
+      "null_auc_95th_percentile": 0.8244444444444438,
+      "p_one_sided": 0.4527363184079602,
+      "significant_at_0_05": false
+    },
+    "nmf": {
+      "n_relabelings": 200,
+      "exact_enumeration": false,
+      "null_auc_mean": 0.5530555555555555,
+      "null_auc_95th_percentile": 0.8783333333333331,
+      "p_one_sided": 0.05970149253731343,
+      "significant_at_0_05": false
+    }
+  },
+  "point_estimate_ranking": [
+    "nmf",
+    "module_score",
+    "topic_simplex_theta0",
+    "pca"
+  ],
+  "pairs_with_nonzero_difference_at_95": [],
+  "verdict": "no pairwise AUC difference excludes zero; the point-estimate ranking is not a ranking",
+  "protocol": {
+    "leave_one_sample_out": true,
+    "orientation_estimated_inside_fold": true,
+    "permutation_reruns_full_loso": true,
+    "bootstrap_stratified_shared_indices": true,
+    "n_boot": 4000,
+    "seed": 0,
+    "pca_n_components": 5,
+    "nmf_n_components": 5,
+    "nmf_max_iter": 300,
+    "benchmark_script_sha256": "622450cc01e8cdecfdec7e7d65151161bcdae44d2fa52df221e4f4fcf597b91d",
+    "script_sha256": "af4c94c598175b4ddb71c81892be9f5c1545f11e28fb2f19338c0390c6ee1f96",
+    "elapsed_seconds": 1504.4507892131805
+  }
+}

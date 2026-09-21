@@ -1,0 +1,500 @@
+{
+  "experiment": "patient_unit_representation_benchmark",
+  "status": "completed",
+  "scientific_unit": "patient",
+  "scientific_scope": "author-mapped GSE165816 discovery-unit correction; not an independent cohort",
+  "not_an_independent_cohort": true,
+  "patient_level_inference_available": true,
+  "patient_counts": {
+    "dfu": 11,
+    "healed": 7,
+    "not_healed": 4,
+    "repeated_sample_patients": 3
+  },
+  "auc": {
+    "topic_simplex_theta0": {
+      "auc": 0.7142857142857143,
+      "bootstrap_95_ci": [
+        0.3571428571428571,
+        1.0
+      ],
+      "bootstrap_sd": 0.16022412994713553
+    },
+    "module_score": {
+      "auc": 0.7857142857142856,
+      "bootstrap_95_ci": [
+        0.49999999999999994,
+        1.0
+      ],
+      "bootstrap_sd": 0.1449247446055061
+    },
+    "pca": {
+      "auc": 0.5,
+      "bootstrap_95_ci": [
+        0.0,
+        1.0
+      ],
+      "bootstrap_sd": 0.2457413916760783
+    },
+    "nmf": {
+      "auc": 0.125,
+      "bootstrap_95_ci": [
+        0.0,
+        0.42857142857142855
+      ],
+      "bootstrap_sd": 0.11936095803128294
+    }
+  },
+  "pairwise_auc_difference": {
+    "topic_simplex_theta0__minus__module_score": {
+      "observed_difference": -0.07142857142857129,
+      "bootstrap_95_ci": [
+        -0.4285714285714286,
+        0.2857142857142857
+      ],
+      "ci_excludes_zero": false
+    },
+    "topic_simplex_theta0__minus__pca": {
+      "observed_difference": 0.2142857142857143,
+      "bootstrap_95_ci": [
+        -0.4642857142857143,
+        0.9285714285714286
+      ],
+      "ci_excludes_zero": false
+    },
+    "topic_simplex_theta0__minus__nmf": {
+      "observed_difference": 0.5892857142857143,
+      "bootstrap_95_ci": [
+        0.14285714285714285,
+        0.9642857142857143
+      ],
+      "ci_excludes_zero": true
+    },
+    "module_score__minus__pca": {
+      "observed_difference": 0.2857142857142856,
+      "bootstrap_95_ci": [
+        -0.1785714285714286,
+        0.7857142857142856
+      ],
+      "ci_excludes_zero": false
+    },
+    "module_score__minus__nmf": {
+      "observed_difference": 0.6607142857142856,
+      "bootstrap_95_ci": [
+        0.2857142857142857,
+        0.9651785714285747
+      ],
+      "ci_excludes_zero": true
+    },
+    "pca__minus__nmf": {
+      "observed_difference": 0.375,
+      "bootstrap_95_ci": [
+        0.0,
+        0.7857142857142857
+      ],
+      "ci_excludes_zero": false
+    }
+  },
+  "permutation_null": {
+    "topic_simplex_theta0": {
+      "n_relabelings": 330,
+      "exact_enumeration": true,
+      "null_auc_mean": 0.5393939393939394,
+      "null_auc_95th_percentile": 0.8571428571428571,
+      "p_one_sided": 0.3021148036253776
+    },
+    "module_score": {
+      "n_relabelings": 330,
+      "exact_enumeration": true,
+      "null_auc_mean": 0.49599567099567093,
+      "null_auc_95th_percentile": 0.8571428571428571,
+      "p_one_sided": 0.1661631419939577
+    },
+    "pca": {
+      "n_relabelings": 200,
+      "exact_enumeration": false,
+      "null_auc_mean": 0.4917857142857142,
+      "null_auc_95th_percentile": 0.8928571428571428,
+      "p_one_sided": 0.5024875621890548
+    },
+    "nmf": {
+      "n_relabelings": 200,
+      "exact_enumeration": false,
+      "null_auc_mean": 0.6063392857142857,
+      "null_auc_95th_percentile": 0.9285714285714286,
+      "p_one_sided": 0.9751243781094527
+    }
+  },
+  "patient_semantics": {
+    "cut": 0.18429584801197052,
+    "sample_unit": {
+      "n_samples": 25,
+      "n_patients": 20,
+      "spearman_rho": 0.9325436810796521,
+      "p": 1.1704852923665339e-11
+    },
+    "patient_collapsed_unit": {
+      "n_patients": 20,
+      "spearman_rho": 0.9372367215292043,
+      "p": 1.1414580592715905e-09
+    },
+    "sample_scores": [
+      {
+        "gsm": "GSM5050523",
+        "patient_id": "NCOMMS2022_S03",
+        "group": "DFU-H",
+        "mean_loading": 0.027422847226262093,
+        "mixture_weight": 0.022617124394184167,
+        "n_cells": 1238
+      },
+      {
+        "gsm": "GSM5050527",
+        "patient_id": "NCOMMS2022_S02",
+        "group": "DFU-H",
+        "mean_loading": 0.3536292314529419,
+        "mixture_weight": 0.5847280334728033,
+        "n_cells": 956
+      },
+      {
+        "gsm": "GSM5050530",
+        "patient_id": "NCOMMS2022_S01",
+        "group": "DFU-NH",
+        "mean_loading": 0.24960505962371826,
+        "mixture_weight": 0.5113122171945701,
+        "n_cells": 221
+      },
+      {
+        "gsm": "GSM5050531",
+        "patient_id": "NCOMMS2022_S08",
+        "group": "DFU-H",
+        "mean_loading": 0.35041558742523193,
+        "mixture_weight": 0.6880530973451328,
+        "n_cells": 452
+      },
+      {
+        "gsm": "GSM5050532",
+        "patient_id": "NCOMMS2022_S08",
+        "group": "DFU-H",
+        "mean_loading": 0.09206639230251312,
+        "mixture_weight": 0.1422376409366869,
+        "n_cells": 1153
+      },
+      {
+        "gsm": "GSM5050533",
+        "patient_id": "NCOMMS2022_S05",
+        "group": "DFU-NH",
+        "mean_loading": 0.012482110410928726,
+        "mixture_weight": 0.0,
+        "n_cells": 843
+      },
+      {
+        "gsm": "GSM5050534",
+        "patient_id": "NCOMMS2022_S23",
+        "group": "H",
+        "mean_loading": 0.01602080464363098,
+        "mixture_weight": 0.0,
+        "n_cells": 1004
+      },
+      {
+        "gsm": "GSM5050538",
+        "patient_id": "NCOMMS2022_S25",
+        "group": "H",
+        "mean_loading": 0.013104112818837166,
+        "mixture_weight": 0.001026694045174538,
+        "n_cells": 974
+      },
+      {
+        "gsm": "GSM5050539",
+        "patient_id": "NCOMMS2022_S04",
+        "group": "DFU-H",
+        "mean_loading": 0.35210302472114563,
+        "mixture_weight": 0.699438202247191,
+        "n_cells": 356
+      },
+      {
+        "gsm": "GSM5050540",
+        "patient_id": "NCOMMS2022_S19",
+        "group": "H",
+        "mean_loading": 0.46625635027885437,
+        "mixture_weight": 0.8411764705882353,
+        "n_cells": 1020
+      },
+      {
+        "gsm": "GSM5050547",
+        "patient_id": "NCOMMS2022_S02",
+        "group": "DFU-H",
+        "mean_loading": 0.3439810276031494,
+        "mixture_weight": 0.5871866295264624,
+        "n_cells": 1795
+      },
+      {
+        "gsm": "GSM5050548",
+        "patient_id": "NCOMMS2022_S23",
+        "group": "H",
+        "mean_loading": 0.014139204286038876,
+        "mixture_weight": 0.0,
+        "n_cells": 558
+      },
+      {
+        "gsm": "GSM5050552",
+        "patient_id": "NCOMMS2022_S20",
+        "group": "H",
+        "mean_loading": 0.02954976074397564,
+        "mixture_weight": 0.018604651162790697,
+        "n_cells": 215
+      },
+      {
+        "gsm": "GSM5050555",
+        "patient_id": "NCOMMS2022_S21",
+        "group": "H",
+        "mean_loading": 0.013581321574747562,
+        "mixture_weight": 0.0,
+        "n_cells": 901
+      },
+      {
+        "gsm": "GSM5050556",
+        "patient_id": "NCOMMS2022_S21",
+        "group": "H",
+        "mean_loading": 0.013826566748321056,
+        "mixture_weight": 0.0,
+        "n_cells": 1020
+      },
+      {
+        "gsm": "GSM5050557",
+        "patient_id": "NCOMMS2022_S06",
+        "group": "DFU-NH",
+        "mean_loading": 0.016218679025769234,
+        "mixture_weight": 0.0010799136069114472,
+        "n_cells": 926
+      },
+      {
+        "gsm": "GSM5050558",
+        "patient_id": "NCOMMS2022_S06",
+        "group": "DFU-NH",
+        "mean_loading": 0.02045651152729988,
+        "mixture_weight": 0.006389776357827476,
+        "n_cells": 626
+      },
+      {
+        "gsm": "GSM5050563",
+        "patient_id": "NCOMMS2022_S07",
+        "group": "DFU-NH",
+        "mean_loading": 0.054697807878255844,
+        "mixture_weight": 0.08371559633027523,
+        "n_cells": 872
+      },
+      {
+        "gsm": "GSM5050564",
+        "patient_id": "NCOMMS2022_S27",
+        "group": "H",
+        "mean_loading": 0.020514702424407005,
+        "mixture_weight": 0.0,
+        "n_cells": 196
+      },
+      {
+        "gsm": "GSM5050566",
+        "patient_id": "NCOMMS2022_S10",
+        "group": "DFU-H",
+        "mean_loading": 0.07049550116062164,
+        "mixture_weight": 0.08235294117647059,
+        "n_cells": 170
+      },
+      {
+        "gsm": "GSM5050567",
+        "patient_id": "NCOMMS2022_S24",
+        "group": "H",
+        "mean_loading": 0.013633698225021362,
+        "mixture_weight": 0.0,
+        "n_cells": 153
+      },
+      {
+        "gsm": "GSM5050568",
+        "patient_id": "NCOMMS2022_S26",
+        "group": "H",
+        "mean_loading": 0.013496397994458675,
+        "mixture_weight": 0.0,
+        "n_cells": 425
+      },
+      {
+        "gsm": "GSM5050569",
+        "patient_id": "NCOMMS2022_S11",
+        "group": "DFU-H",
+        "mean_loading": 0.039270635694265366,
+        "mixture_weight": 0.04832509610104338,
+        "n_cells": 1821
+      },
+      {
+        "gsm": "GSM5050573",
+        "patient_id": "NCOMMS2022_S09",
+        "group": "DFU-H",
+        "mean_loading": 0.2086632400751114,
+        "mixture_weight": 0.371900826446281,
+        "n_cells": 363
+      },
+      {
+        "gsm": "GSM5050574",
+        "patient_id": "NCOMMS2022_S22",
+        "group": "H",
+        "mean_loading": 0.012041046284139156,
+        "mixture_weight": 0.0,
+        "n_cells": 1152
+      }
+    ],
+    "patient_scores": [
+      {
+        "patient_id": "NCOMMS2022_S01",
+        "group": "DFU-NH",
+        "mean_loading": 0.24960505962371826,
+        "mixture_weight": 0.5113122171945701,
+        "n_cells": 221
+      },
+      {
+        "patient_id": "NCOMMS2022_S02",
+        "group": "DFU-H",
+        "mean_loading": 0.3473338484764099,
+        "mixture_weight": 0.5863322428207924,
+        "n_cells": 2751
+      },
+      {
+        "patient_id": "NCOMMS2022_S03",
+        "group": "DFU-H",
+        "mean_loading": 0.027422847226262093,
+        "mixture_weight": 0.022617124394184167,
+        "n_cells": 1238
+      },
+      {
+        "patient_id": "NCOMMS2022_S04",
+        "group": "DFU-H",
+        "mean_loading": 0.35210302472114563,
+        "mixture_weight": 0.699438202247191,
+        "n_cells": 356
+      },
+      {
+        "patient_id": "NCOMMS2022_S05",
+        "group": "DFU-NH",
+        "mean_loading": 0.012482110410928726,
+        "mixture_weight": 0.0,
+        "n_cells": 843
+      },
+      {
+        "patient_id": "NCOMMS2022_S06",
+        "group": "DFU-NH",
+        "mean_loading": 0.01792801171541214,
+        "mixture_weight": 0.0032216494845360823,
+        "n_cells": 1552
+      },
+      {
+        "patient_id": "NCOMMS2022_S07",
+        "group": "DFU-NH",
+        "mean_loading": 0.054697807878255844,
+        "mixture_weight": 0.08371559633027523,
+        "n_cells": 872
+      },
+      {
+        "patient_id": "NCOMMS2022_S08",
+        "group": "DFU-H",
+        "mean_loading": 0.16482268273830414,
+        "mixture_weight": 0.29595015576323985,
+        "n_cells": 1605
+      },
+      {
+        "patient_id": "NCOMMS2022_S09",
+        "group": "DFU-H",
+        "mean_loading": 0.2086632400751114,
+        "mixture_weight": 0.371900826446281,
+        "n_cells": 363
+      },
+      {
+        "patient_id": "NCOMMS2022_S10",
+        "group": "DFU-H",
+        "mean_loading": 0.07049550116062164,
+        "mixture_weight": 0.08235294117647059,
+        "n_cells": 170
+      },
+      {
+        "patient_id": "NCOMMS2022_S11",
+        "group": "DFU-H",
+        "mean_loading": 0.039270635694265366,
+        "mixture_weight": 0.04832509610104338,
+        "n_cells": 1821
+      },
+      {
+        "patient_id": "NCOMMS2022_S19",
+        "group": "H",
+        "mean_loading": 0.46625635027885437,
+        "mixture_weight": 0.8411764705882353,
+        "n_cells": 1020
+      },
+      {
+        "patient_id": "NCOMMS2022_S20",
+        "group": "H",
+        "mean_loading": 0.02954976074397564,
+        "mixture_weight": 0.018604651162790697,
+        "n_cells": 215
+      },
+      {
+        "patient_id": "NCOMMS2022_S21",
+        "group": "H",
+        "mean_loading": 0.013711540028452873,
+        "mixture_weight": 0.0,
+        "n_cells": 1921
+      },
+      {
+        "patient_id": "NCOMMS2022_S22",
+        "group": "H",
+        "mean_loading": 0.012041046284139156,
+        "mixture_weight": 0.0,
+        "n_cells": 1152
+      },
+      {
+        "patient_id": "NCOMMS2022_S23",
+        "group": "H",
+        "mean_loading": 0.015348631888628006,
+        "mixture_weight": 0.0,
+        "n_cells": 1562
+      },
+      {
+        "patient_id": "NCOMMS2022_S24",
+        "group": "H",
+        "mean_loading": 0.013633698225021362,
+        "mixture_weight": 0.0,
+        "n_cells": 153
+      },
+      {
+        "patient_id": "NCOMMS2022_S25",
+        "group": "H",
+        "mean_loading": 0.013104112818837166,
+        "mixture_weight": 0.001026694045174538,
+        "n_cells": 974
+      },
+      {
+        "patient_id": "NCOMMS2022_S26",
+        "group": "H",
+        "mean_loading": 0.013496397994458675,
+        "mixture_weight": 0.0,
+        "n_cells": 425
+      },
+      {
+        "patient_id": "NCOMMS2022_S27",
+        "group": "H",
+        "mean_loading": 0.020514702424407005,
+        "mixture_weight": 0.0,
+        "n_cells": 196
+      }
+    ]
+  },
+  "protocol": {
+    "author_map_sha256": "11870be07b8c06e6037c7ab5c532e90907913c390bd180b59cfe1821bebcd96c",
+    "benchmark_script_sha256": "622450cc01e8cdecfdec7e7d65151161bcdae44d2fa52df221e4f4fcf597b91d",
+    "script_sha256": "63992ccde22388e93d32967fd5d4c6213248564e50db54a92b0896c6423a319f",
+    "aggregate_within_patient": "cell-count-weighted mean of repeated sample means",
+    "leave_one_patient_out": true,
+    "orientation_inside_fold": true,
+    "bootstrap_stratified_shared_indices": true,
+    "expression_matrix_reloaded": true,
+    "mcid_filled": false,
+    "seed": 0,
+    "n_boot": 4000,
+    "elapsed_seconds": 321.9137349128723
+  }
+}

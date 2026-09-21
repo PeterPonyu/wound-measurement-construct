@@ -1,0 +1,183 @@
+{
+  "experiment": "mixture_semantic_inference",
+  "status": "completed",
+  "scientific_unit": "sample-level fibroblast summaries",
+  "patient_level_inference_available": false,
+  "scope": {
+    "patient_level_inference_available": false,
+    "limit": "sample-level semantic uncertainty only; no patient-level or healing validation"
+  },
+  "scientific_scope": "uncertainty audit of the frozen 25-sample GSE165816 mixture-semantic association; no topic refit, no patient-level inference, and no healing claim",
+  "source_experiment": "bimodal_stratification",
+  "n_samples": 25,
+  "observed": {
+    "spearman_rho": 0.9325436810796521,
+    "source_report_rho": 0.9325436810796521,
+    "source_p": 1.1704852923665339e-11,
+    "state_cut": 0.18429584801197052
+  },
+  "bootstrap": {
+    "n_resamples": 10000,
+    "seed": 11,
+    "ci95": [
+      0.7887455655868842,
+      0.982809902794845
+    ],
+    "sd": 0.05088645666845444,
+    "finite_draws": 10000
+  },
+  "permutation_null": {
+    "n_permutations": 10000,
+    "seed": 29,
+    "null_mean": -0.0011558343344462753,
+    "null_ci95": [
+      -0.4024745110065053,
+      0.4072002391200846
+    ],
+    "p_two_sided": 9.999000099990002e-05
+  },
+  "leave_one_sample_out": {
+    "rows": [
+      {
+        "excluded_sample": "GSM5050540",
+        "excluded_arm": "Non-diabetic",
+        "rho": 0.923545655386223
+      },
+      {
+        "excluded_sample": "GSM5050527",
+        "excluded_arm": "DFU-healer",
+        "rho": 0.928904721084789
+      },
+      {
+        "excluded_sample": "GSM5050539",
+        "excluded_arm": "DFU-healer",
+        "rho": 0.926225188235506
+      },
+      {
+        "excluded_sample": "GSM5050531",
+        "excluded_arm": "DFU-healer",
+        "rho": 0.926225188235506
+      },
+      {
+        "excluded_sample": "GSM5050547",
+        "excluded_arm": "DFU-healer",
+        "rho": 0.926225188235506
+      },
+      {
+        "excluded_sample": "GSM5050530",
+        "excluded_arm": "DFU-nonhealer",
+        "rho": 0.923545655386223
+      },
+      {
+        "excluded_sample": "GSM5050573",
+        "excluded_arm": "DFU-healer",
+        "rho": 0.923545655386223
+      },
+      {
+        "excluded_sample": "GSM5050532",
+        "excluded_arm": "DFU-healer",
+        "rho": 0.923545655386223
+      },
+      {
+        "excluded_sample": "GSM5050566",
+        "excluded_arm": "DFU-healer",
+        "rho": 0.9244388330026506
+      },
+      {
+        "excluded_sample": "GSM5050563",
+        "excluded_arm": "DFU-nonhealer",
+        "rho": 0.9244388330026506
+      },
+      {
+        "excluded_sample": "GSM5050569",
+        "excluded_arm": "DFU-healer",
+        "rho": 0.923545655386223
+      },
+      {
+        "excluded_sample": "GSM5050552",
+        "excluded_arm": "Non-diabetic",
+        "rho": 0.9244388330026506
+      },
+      {
+        "excluded_sample": "GSM5050523",
+        "excluded_arm": "DFU-healer",
+        "rho": 0.9244388330026506
+      },
+      {
+        "excluded_sample": "GSM5050564",
+        "excluded_arm": "Non-diabetic",
+        "rho": 0.9505630348322263
+      },
+      {
+        "excluded_sample": "GSM5050558",
+        "excluded_arm": "DFU-nonhealer",
+        "rho": 0.9297978987012168
+      },
+      {
+        "excluded_sample": "GSM5050557",
+        "excluded_arm": "DFU-nonhealer",
+        "rho": 0.9297978987012168
+      },
+      {
+        "excluded_sample": "GSM5050534",
+        "excluded_arm": "Non-diabetic",
+        "rho": 0.9399323205563767
+      },
+      {
+        "excluded_sample": "GSM5050548",
+        "excluded_arm": "Non-diabetic",
+        "rho": 0.9399323205563767
+      },
+      {
+        "excluded_sample": "GSM5050556",
+        "excluded_arm": "Non-diabetic",
+        "rho": 0.9399323205563767
+      },
+      {
+        "excluded_sample": "GSM5050567",
+        "excluded_arm": "Non-diabetic",
+        "rho": 0.9399323205563767
+      },
+      {
+        "excluded_sample": "GSM5050555",
+        "excluded_arm": "Non-diabetic",
+        "rho": 0.9399323205563767
+      },
+      {
+        "excluded_sample": "GSM5050568",
+        "excluded_arm": "Non-diabetic",
+        "rho": 0.9399323205563767
+      },
+      {
+        "excluded_sample": "GSM5050538",
+        "excluded_arm": "Non-diabetic",
+        "rho": 0.9565932271940472
+      },
+      {
+        "excluded_sample": "GSM5050533",
+        "excluded_arm": "DFU-nonhealer",
+        "rho": 0.9359458027029329
+      },
+      {
+        "excluded_sample": "GSM5050574",
+        "excluded_arm": "Non-diabetic",
+        "rho": 0.9359458027029329
+      }
+    ],
+    "rho_min": 0.923545655386223,
+    "rho_max": 0.9565932271940472,
+    "all_positive": true
+  },
+  "interpretation": "the sample-level semantic association is strong and remains positive under resampling and leave-one-sample-out analysis; the interval is a measurement-semantic uncertainty summary, not clinical validation",
+  "protocol": {
+    "script_sha256": "1b4e14ab8a8adfc6295281231dd376542cc0d487f7d76f52624beaec23e72dd5",
+    "source_report_sha256": "dde5b4e5f8cba6045449e8e7797f611213a61b7cbd51551ac0fd051b17d0d14f",
+    "source_report": "outputs/bimodal_stratification/report.json",
+    "bootstrap_resampling": "rows sampled with replacement",
+    "permutation_null": "mixture weights permuted across the 25 samples",
+    "no_topic_refit": true,
+    "patient_level_inference": false,
+    "new_model_fits": false,
+    "elapsed_seconds": 2.668700695037842
+  }
+}

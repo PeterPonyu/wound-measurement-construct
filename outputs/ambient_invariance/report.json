@@ -1,0 +1,63 @@
+{
+  "theta_cut": 0.184,
+  "rho_survive": 0.8,
+  "n_fibroblasts": 19410,
+  "n_pure": 11262,
+  "myeloid_cut": -0.2743878960609436,
+  "immune_genes_used": 14,
+  "test_A_purity": {
+    "rho": 0.9886980303409821,
+    "p": 1.2568087594281874e-19,
+    "n_samples": 24,
+    "survives": true,
+    "bimodal_all": {
+      "bic_1": 12.416518629559299,
+      "bic_2": -28.569257287365275,
+      "delta_bic": 40.985775916924574,
+      "bimodal": true,
+      "n": 24
+    },
+    "bimodal_pure": {
+      "bic_1": 5.34214938757255,
+      "bic_2": -51.3411932443133,
+      "delta_bic": 56.68334263188585,
+      "bimodal": true,
+      "n": 24
+    }
+  },
+  "test_B_residual": {
+    "r2_immune_covariates": 0.4952666050024712,
+    "bimodal_residual": {
+      "bic_1": -3.8998024666241777,
+      "bic_2": 0.03137525832213228,
+      "delta_bic": -3.93117772494631,
+      "bimodal": false,
+      "n": 25
+    },
+    "coefficients": {
+      "b_plasma": 1.4586892761063255,
+      "t_cell": 0.6404110143962116,
+      "myeloid": 0.17495230635425307,
+      "immune_pos_rate": 0.47334566788885146
+    }
+  },
+  "test_B_placebo": {
+    "covariates": [
+      "pericyte_smc",
+      "endothelial",
+      "melanocyte",
+      "sweat_gland"
+    ],
+    "r2": 0.3548955917889478,
+    "bimodal_residual": {
+      "bic_1": 2.2347429730982045,
+      "bic_2": 10.433232299670092,
+      "delta_bic": -8.198489326571888,
+      "bimodal": false,
+      "n": 25
+    },
+    "also_flattens": true
+  },
+  "verdict_ambient_contamination": "INVARIANT to ambient immune RNA",
+  "verdict_separability": "UNDETERMINED - the placebo covariates flatten the residual just as well, so test B is overfitting at this sample size"
+}

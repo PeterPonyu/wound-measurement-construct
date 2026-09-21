@@ -1,0 +1,110 @@
+{
+  "renderer": "R + ggplot2/grid + tikzDevice + XeLaTeX",
+  "font": "Arial",
+  "text_colour": "#000000",
+  "text_weight": "bold",
+  "base_font_pt": 8,
+  "tick_font_pt": 7.5,
+  "label_font_pt": 11,
+  "journal_width_mm": 180,
+  "figures": {
+    "figure1_workflow": {
+      "width_mm": 180,
+      "height_mm": 106,
+      "panels": "Study design",
+      "sources": [],
+      "data": "manuscripts/figures/source_data/figure1_workflow_A.csv"
+    },
+    "figure2_mixture_semantics": {
+      "width_mm": 180,
+      "height_mm": 70,
+      "panels": ["Mixture coordinate", "Sample shape", "Uncertainty"],
+      "sources": ["outputs/bimodal_stratification/report.json", "outputs/analysis/mixture_semantic_inference/report.json"],
+      "data": ["manuscripts/figures/source_data/figure2_mixture_semantics_A.csv", "manuscripts/figures/source_data/figure2_mixture_semantics_B.csv", "manuscripts/figures/source_data/figure2_mixture_semantics_C.csv"]
+    },
+    "figure3_artifact_controls": {
+      "width_mm": 180,
+      "height_mm": 66,
+      "panels": ["Technical controls", "Depth matching", "Ambient RNA"],
+      "sources": ["outputs/artifact_triage/report.json", "outputs/ambient_invariance/report.json"],
+      "data": ["manuscripts/figures/source_data/figure3_artifact_controls_A.csv", "manuscripts/figures/source_data/figure3_artifact_controls_B.csv", "manuscripts/figures/source_data/figure3_artifact_controls_C.csv"]
+    },
+    "figure4_outcome_counterexample": {
+      "width_mm": 180,
+      "height_mm": 68,
+      "panels": ["Mixture by arm", "Unit correction", "Design power"],
+      "sources": ["outputs/bimodal_stratification/report.json", "outputs/cohort_metadata/gse165816_patient_unit_remap/report.json", "outputs/analysis/patient_mapping_equivalence/report.json", "outputs/negative_result_strength/report.json", "outputs/analysis/design_power_simulation/report.json"],
+      "data": ["manuscripts/figures/source_data/figure4_outcome_counterexample_A.csv", "manuscripts/figures/source_data/figure4_outcome_counterexample_B.csv", "manuscripts/figures/source_data/figure4_outcome_counterexample_C.csv"]
+    },
+    "figure5_sensitivity_negative_controls": {
+      "width_mm": 180,
+      "height_mm": 119,
+      "panels": ["Semantic association", "Healing contrast", "Topic count", "Label permutation", "Structureless input", "Null calibration"],
+      "sources": ["outputs/method_constant_sensitivity/report.json", "outputs/pipeline_negative_control/report.json"],
+      "data": ["manuscripts/figures/source_data/figure5_sensitivity_negative_controls_A.csv", "manuscripts/figures/source_data/figure5_sensitivity_negative_controls_B.csv", "manuscripts/figures/source_data/figure5_sensitivity_negative_controls_C.csv", "manuscripts/figures/source_data/figure5_sensitivity_negative_controls_D.csv", "manuscripts/figures/source_data/figure5_sensitivity_negative_controls_E.csv", "manuscripts/figures/source_data/figure5_sensitivity_negative_controls_F.csv"]
+    },
+    "figure6_representation_inference": {
+      "width_mm": 180,
+      "height_mm": 71,
+      "panels": ["Leave-one-sample AUC", "Score correlation"],
+      "sources": ["outputs/analysis/representation_inference/report.json", "outputs/representation_benchmark/report.json"],
+      "data": ["manuscripts/figures/source_data/figure6_representation_inference_A.csv", "manuscripts/figures/source_data/figure6_representation_inference_B.csv"]
+    },
+    "figure7_patient_unit_anatomy": {
+      "width_mm": 180,
+      "height_mm": 66,
+      "panels": ["Patient-unit AUC", "Paired anatomy"],
+      "sources": ["outputs/analysis/patient_unit_representation_benchmark/report.json", "outputs/analysis/paired_anatomical_control/report.json"],
+      "data": ["manuscripts/figures/source_data/figure7_patient_unit_anatomy_A.csv", "manuscripts/figures/source_data/figure7_patient_unit_anatomy_B.csv"]
+    },
+    "figure8_external_construct_audit": {
+      "width_mm": 180,
+      "height_mm": 73,
+      "panels": ["Immune context", "Detected genes", "Group contrast"],
+      "sources": ["outputs/analysis/external_immune_axis/report.json", "outputs/analysis/external_gse268834_projection/report.json", "outputs/analysis/external_gse248247_projection/report.json"],
+      "data": ["manuscripts/figures/source_data/figure8_external_construct_audit_A.csv", "manuscripts/figures/source_data/figure8_external_construct_audit_B.csv", "manuscripts/figures/source_data/figure8_external_construct_audit_C.csv"]
+    }
+  },
+  "sources": {
+    "outputs/bimodal_stratification/report.json": "11e0e7a0ef69f708ebbda451305ef8e56a0c94004ac5006d619a6b6ce2d74c0f",
+    "outputs/analysis/mixture_semantic_inference/report.json": "fe18ebfc1e88c7e9399df16b41781c49d15474aa3cddb6f0ec8652c06a4b9946",
+    "outputs/artifact_triage/report.json": "803951e2f9d507469542695b67f73627dbbffe631c70bc6af99e9a5e01fd630d",
+    "outputs/ambient_invariance/report.json": "4c2bfacfccc6b285ea2d3064ba80496b853ac2f519f45768dc1dd95d6a06cf6a",
+    "outputs/cohort_metadata/gse165816_patient_unit_remap/report.json": "3b0fdac9c5ef95e7739784812b6306b75c6a361b59b3a85e6c71ee68053f033a",
+    "outputs/analysis/patient_mapping_equivalence/report.json": "a333ff860881462edfec36b4b2b29e886906eb3c051afbc282c3c4c3c653bd02",
+    "outputs/negative_result_strength/report.json": "a66d4027a55da2e846cda66a6a9c28bebff2eeb2c6dd32162b46378d9160865b",
+    "outputs/analysis/design_power_simulation/report.json": "52a4cc6bb683eacb09cc8d07bcef16755ef08a94a75ac142a5548255860d6ff5",
+    "outputs/method_constant_sensitivity/report.json": "8d107ad333bdfa19c518d4b7489ab054a88d83478041c9b1d1028046aac89ede",
+    "outputs/pipeline_negative_control/report.json": "c2857bbc3cc0a88148ffceae52ecef8e56843abe406c4a5489b96ad6240aad35",
+    "outputs/analysis/representation_inference/report.json": "6f2a2e3b76e681b85060b82ca83ecd5e35382d9d305ed768fab9bcb91a310a4b",
+    "outputs/representation_benchmark/report.json": "19e7e75f73504679032445b35556a4b42aaedb791bf31c00d48a54d140ec1b17",
+    "outputs/analysis/patient_unit_representation_benchmark/report.json": "25e7dc2b81bb4f6535d53afd76a4b5488bf608c3d531b1fc9eb81a46d31f5ec2",
+    "outputs/analysis/paired_anatomical_control/report.json": "a99cbde755cc07d327f36a4a52ed963dc4908a308262cf0c10a2b706d78dbb0b",
+    "outputs/analysis/external_immune_axis/report.json": "9ef87d8dee6259d6674b177d4bd6a293ad273d4807baa449ddc63613bf0105e9",
+    "outputs/analysis/external_gse268834_projection/report.json": "c19e5264afff3ec79144d91d0bd73c9804cb29ee09b546699a2968324936f386",
+    "outputs/analysis/external_gse248247_projection/report.json": "5288e8056ddd97cb116a1e13c000bacadbcc734d1f8de1c7847885343a3b718e"
+  },
+  "R": "R version 4.3.3 (2024-02-29)",
+  "packages": [
+    {
+      "package": "ggplot2",
+      "version": "4.0.3"
+    },
+    {
+      "package": "tikzDevice",
+      "version": "0.12.6"
+    },
+    {
+      "package": "jsonlite",
+      "version": "2.0.0"
+    },
+    {
+      "package": "digest",
+      "version": "0.6.39"
+    }
+  ],
+  "design_sources": {
+    "manuscripts/r_tikz/construct_design.tikz": "ca146ec3a7f5a4fd5a4e1656c94cee486db730045dd660f4e9955bc3a912b2c6"
+  },
+  "script_sha256": "31223563bfa3d1bfddb1502f467c224a700abaef7c54fd3f8a610c7e818dab6f"
+}

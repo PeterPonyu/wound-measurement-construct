@@ -1,0 +1,58 @@
+\documentclass[10pt]{standalone}
+\usepackage{tikz}
+\usepackage{fontspec}
+\setmainfont{Arial}
+\setsansfont{Arial}
+\usetikzlibrary{arrows.meta,patterns}
+\definecolor{navy}{HTML}{234E70}
+\definecolor{blue}{HTML}{4C78A8}
+\definecolor{teal}{HTML}{1F8A8A}
+\definecolor{orange}{HTML}{C46A1B}
+\definecolor{purple}{HTML}{6B4C9A}
+\definecolor{green}{HTML}{2E7D32}
+\definecolor{gray}{HTML}{73777B}
+\begin{document}
+\begin{tikzpicture}[x=1mm,y=1mm,font=\fontsize{8}{10}\selectfont\bfseries,text=black,>=Latex]
+\path[use as bounding box] (0,0) rectangle (180,106);
+\tikzset{step/.style={draw=#1!40,fill=#1!8,rounded corners=1mm,
+minimum height=13mm,text width=21mm,align=center,inner sep=1.5mm,text=black},
+link/.style={->,draw=gray,line width=0.45pt}}
+\node[anchor=west,font=\fontsize{11}{13}\selectfont\bfseries] at (3,101) {A};
+\node[anchor=west,font=\fontsize{9}{11}\selectfont\bfseries] at (10,101) {From skin specimens to three distinct readouts};
+\draw[draw=gray!35,fill=blue!3,rounded corners=1mm] (3,63) rectangle (177,96);
+\node[align=center] at (23,89) {GSE165816\\25 foot specimens};
+\foreach \x in {0,...,5} {\foreach \y in {0,...,2} {
+  \fill[blue!55] (12+4.3*\x,76+2.8*\y) circle (.85mm);
+}}
+\node[align=center,font=\fontsize{7}{9}\selectfont\bfseries] at (23,68) {76,461 retained cells};
+\draw[link] (44,79) -- (52,79);
+\node[draw=blue!55,fill=white,rounded corners=1mm,align=center,minimum width=36mm,minimum height=20mm] (encoder) at (72,79) {Frozen expression map\\15 topics; focus readout\\TIMP1/COL3A1/DCN-rich};
+\draw[link] (encoder.east) -- (99,79);
+\draw[draw=gray,line width=.45pt] (99,70) -- (99,88);
+\foreach \y/\name/\desc in {88/Mean/Fibroblast mean loading,79/Fraction/High-state fibroblast fraction,70/Patient/All-cell mean per patient} {
+  \draw[link] (99,\y) -- (106,\y);
+  \node[anchor=west,draw=teal!40,fill=white,rounded corners=.6mm,minimum height=7mm,text width=64mm,inner sep=1.2mm] at (106,\y) {\desc};
+}
+\node[anchor=west,font=\fontsize{11}{13}\selectfont\bfseries] at (3,56) {B};
+\node[anchor=west,font=\fontsize{9}{11}\selectfont\bfseries] at (10,56) {What changes the average?};
+\draw[draw=gray!35,rounded corners=1mm] (3,14) rectangle (85,51);
+\node[anchor=west,font=\fontsize{7}{9}\selectfont\bfseries] at (7,46) {Conceptual illustration: low / high cell states};
+\foreach \x in {0,...,9} {
+  \fill[gray!35] (10+3.1*\x,39) circle (1.15mm);
+  \fill[gray!35] (10+3.1*\x,30) circle (1.15mm);
+}
+\foreach \x in {8,9} {\fill[teal] (10+3.1*\x,39) circle (1.15mm);}
+\foreach \x in {4,...,9} {\fill[teal] (10+3.1*\x,30) circle (1.15mm);}
+\node[anchor=west,font=\fontsize{7}{9}\selectfont\bfseries] at (44,39) {Fewer high-state cells};
+\node[anchor=west,font=\fontsize{7}{9}\selectfont\bfseries] at (44,30) {More high-state cells};
+\draw[link] (81,37) -- (81,32);
+\node[align=center,text width=74mm,font=\fontsize{7.5}{9}\selectfont\bfseries] at (44,20) {More high-state cells can raise the mean.\\Mean--fraction correlation alone cannot prove\\unchanged expression within each state.};
+\node[anchor=west,font=\fontsize{11}{13}\selectfont\bfseries] at (94,56) {C};
+\node[anchor=west,font=\fontsize{9}{11}\selectfont\bfseries] at (101,56) {How is the interpretation tested?};
+\node[draw=orange!40,fill=orange!5,rounded corners=.6mm,align=left,text width=75mm,inner sep=1.5mm] at (136,43) {Technical robustness\\Depth matching; stress; immune exclusion};
+\node[draw=purple!40,fill=purple!5,rounded corners=.6mm,align=left,text width=75mm,inner sep=1.5mm] at (136,30) {Independent analysis units\\14 DFU specimens → 11 patients; paired anatomy};
+\node[draw=green!40,fill=green!5,rounded corners=.6mm,align=left,text width=75mm,inner sep=1.5mm] at (136,17) {External tissue context\\Frozen projection; cohort-specific associations};
+\draw[draw=gray!40] (3,8) -- (177,8);
+\node[align=center,font=\fontsize{8}{10}\selectfont\bfseries] at (90,3) {Cell-state abundance, technical robustness and healing prediction require separate evidence};
+\end{tikzpicture}
+\end{document}

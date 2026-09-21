@@ -1,0 +1,11 @@
+{
+  "observed_design_power": {
+    "sd": 0.2827024541496337,
+    "mde": 0.5189377629730367,
+    "observed_difference": 0.23626141111335078,
+    "power_at_observed": 0.249,
+    "n_healer": 9,
+    "n_nonhealer": 5
+  },
+  "scope": "Observed 9-versus-5 sample design power; compartment associations and paired-anatomy inference are supplied in their respective current reports."
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "report": "outputs/ambient_invariance/report.json",
+    "manuscript_destination": "Figure 3; Table tab:p1ambient",
+    "scope": "Both immune and placebo residual summaries retained, including adverse non-identification."
+  },
+  {
+    "report": "outputs/artifact_triage/report.json",
+    "manuscript_destination": "Figure 3; Methods technical controls",
+    "scope": "Rounded 0.184 state cut distinguished from the fitted mixture cut."
+  },
+  {
+    "report": "outputs/bimodal_stratification/report.json",
+    "manuscript_destination": "Figures 2 and 4; Methods threshold fraction",
+    "scope": "Distributional and arm summaries; full per-sample inputs are figure source data."
+  },
+  {
+    "report": "outputs/celltype_resolved/report.json",
+    "manuscript_destination": "Results; Table tab:p1lineage",
+    "scope": "All six lineage/composition ratios retained; patient-level mapping supersedes the older independence note."
+  },
+  {
+    "report": "outputs/expression_representation/report.json",
+    "manuscript_destination": "Results 2.1; Methods; Supplement representation integrity",
+    "scope": "Discovery representation/QC and decoder genes; training trace remains supporting output."
+  },
+  {
+    "report": "outputs/cohort_metadata/gse165816_patient_unit_remap/report.json",
+    "manuscript_destination": "Results; Tables tab:p1patients and tab:p1equivalence",
+    "scope": "Primary cell-weighted and alternate equal-specimen patient contrast retained."
+  },
+  {
+    "report": "outputs/cohort_metadata/next_public_cohort_contract/report.json",
+    "manuscript_destination": "cohort-role table and external limitations",
+    "scope": "Eligibility/metadata evidence, not a completed clinical outcome experiment."
+  },
+  {
+    "report": "outputs/method_constant_sensitivity/report.json",
+    "manuscript_destination": "Figure 5A-C; Tables tab:p1cuts and tab:p1capacity",
+    "scope": "All tested cuts and topic capacities retained, including K=10 failure."
+  },
+  {
+    "report": "outputs/negative_result_strength/report.json",
+    "manuscript_destination": "Figure 4C; Results power/anatomy; Methods design assumptions",
+    "scope": "observed_design_power retained; older sample-level anatomical count contextualized by paired control. Historical pooled immune correlations are superseded and not used."
+  },
+  {
+    "report": "outputs/pipeline_negative_control/report.json",
+    "manuscript_destination": "Figure 5D-F; Results; Supplement integrity",
+    "scope": "Label null, shuffled input and empirical calibration retained; figure callout corrected."
+  },
+  {
+    "report": "outputs/analysis/design_power_simulation/report.json",
+    "manuscript_destination": "Tables tab:p1design and tab:p1aucdesign; Supplement planning assumptions",
+    "scope": "All difference, equivalence and AUC-gap simulation rows retained. Arithmetic specimen-to-patient conversion grid is not a validated patient-prognosis design and is not used as a recruitment recommendation."
+  },
+  {
+    "report": "outputs/analysis/external_gse248247_projection/report.json",
+    "manuscript_destination": "Figure 8; external Results",
+    "scope": "n=2 low-yield feasibility only; correlations not estimated."
+  },
+  {
+    "report": "outputs/analysis/external_gse268834_projection/report.json",
+    "manuscript_destination": "Figure 8; Table tab:p1external; external Results",
+    "scope": "Descriptive immune and diabetes contrasts, no healing validation."
+  },
+  {
+    "report": "outputs/analysis/external_immune_axis/report.json",
+    "manuscript_destination": "Figure 8; Table tab:p1external",
+    "scope": "Repaired exclusive gates; median detected genes and UMIs kept distinct."
+  },
+  {
+    "report": "outputs/analysis/mixture_semantic_inference/report.json",
+    "manuscript_destination": "Figure 2; Table tab:p1semantics",
+    "scope": "Bootstrap, leave-one-out and permutation summaries retained."
+  },
+  {
+    "report": "outputs/analysis/negative_result_strength/report.json",
+    "manuscript_destination": "external Results",
+    "scope": "Three-donor acute human immune-axis summaries retained separately; pooled significance not promoted."
+  },
+  {
+    "report": "outputs/analysis/paired_anatomical_control/report.json",
+    "manuscript_destination": "Figure 7; Table tab:p1anatomy",
+    "scope": "All 15 topic contrasts and fibroblast fibroblast-associated topic sensitivity retained."
+  },
+  {
+    "report": "outputs/analysis/patient_mapping_equivalence/report.json",
+    "manuscript_destination": "Figure 4B; Table tab:p1equivalence",
+    "scope": "Sample-unit reference only. Later author mapping resolves patient identities."
+  },
+  {
+    "report": "outputs/analysis/patient_unit_representation_benchmark/report.json",
+    "manuscript_destination": "Figure 7; Tables tab:p1patientauc and tab:p1aucdifferences",
+    "scope": "All patient pairwise intervals; patient-collapsed semantic rho remains in Methods/Discussion."
+  },
+  {
+    "report": "outputs/analysis/representation_inference/report.json",
+    "manuscript_destination": "Figure 6; Tables tab:p1sampleauc and tab:p1aucdifferences",
+    "scope": "All pairwise intervals now tabulated."
+  },
+  {
+    "report": "outputs/representation_benchmark/report.json",
+    "manuscript_destination": "Figure 6; Table tab:p1correlations",
+    "scope": "Cross-method correlations; discrimination inference is taken from the later uncertainty audit."
+  },
+  {
+    "report": "outputs/stratifier_sweep/report.json",
+    "manuscript_destination": "Results; Table tab:p1covariates",
+    "scope": "All 31 covariates and 14 BH hits retained; sample-level exploratory screen."
+  },
+  {
+    "report": "outputs/validation_gse231643/report.json",
+    "manuscript_destination": "external Results; Table tab:p1lineage",
+    "scope": "Title-label all-cell fibroblast-associated topic comparison is included via the lineage report. The exploratory all-topic screen is not promoted to a selected healing endpoint; cell-level pseudoreplicated p is excluded."
+  },
+  {
+    "report": "outputs/robustness_extensions/report.json",
+    "manuscript_destination": "Supplementary patient-resampling table",
+    "scope": "New retrospective sensitivity analyses; original results are preserved and no new biological replication is claimed."
+  }
+]

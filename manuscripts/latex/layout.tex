@@ -1,0 +1,60 @@
+\usepackage[margin=15mm,top=16mm,bottom=17mm,headheight=12pt,headsep=5mm,footskip=9mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+\setsansfont{Arial}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{unicode-math}
+\setmathfont{TeX Gyre Termes Math}
+\usepackage{graphicx,booktabs,array,tabularx,longtable}
+\usepackage[font=small,labelfont=bf,labelsep=period,skip=4pt]{caption}
+\usepackage{flafter,placeins,needspace}
+\usepackage[sort&compress,numbers]{natbib}
+\usepackage[unicode,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{xcolor,microtype,titlesec,enumitem,fancyhdr}
+\usepackage{bookmark}
+\hypersetup{pdfcreator={XeLaTeX},pdfauthor={Zeyu Fu}}
+\graphicspath{{../figures/}}
+\setlength{\parindent}{1em}
+\setlength{\parskip}{2pt plus .5pt}
+\linespread{1.035}
+\setlength{\textfloatsep}{9pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\renewcommand{\topfraction}{.94}
+\renewcommand{\bottomfraction}{.88}
+\renewcommand{\textfraction}{.06}
+\renewcommand{\floatpagefraction}{.78}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\setlength{\abovedisplayskip}{6pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{6pt plus 2pt minus 2pt}
+\setlength{\abovedisplayshortskip}{3pt plus 1pt}
+\setlength{\belowdisplayshortskip}{4pt plus 1pt}
+\titlespacing*{\section}{0pt}{12pt plus 2pt minus 2pt}{5pt}
+\titlespacing*{\subsection}{0pt}{8pt plus 2pt minus 1pt}{3pt}
+\titleformat{\section}{\large\bfseries}{\thesection}{.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{.6em}{}
+\setlist{nosep,leftmargin=1.7em,topsep=4pt}
+\setlength{\bibsep}{3pt}
+\setlength{\tabcolsep}{4pt}
+\setlength{\LTpre}{2pt}
+\setlength{\LTpost}{2pt}
+\renewcommand{\arraystretch}{1.12}
+\setlength{\emergencystretch}{1.2em}
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\fontsize{8}{10}\selectfont\runningtitle}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{.25pt}
+\newcommand{\papertitle}[1]{\thispagestyle{plain}\begin{center}\vspace*{-5mm}{\fontsize{19}{22}\selectfont\bfseries #1\par}\vspace{2mm}{\normalsize Zeyu Fu\par}\end{center}\vspace{-2mm}}
+\newcommand{\paperfigure}[3]{\begin{figure}[!htbp]\centering\includegraphics[width=\linewidth]{#1.pdf}\caption{#3}\label{#2}\end{figure}}
+\newcommand{\supplement}{\FloatBarrier\section*{Supplementary methods and numerical results}\addcontentsline{toc}{section}{Supplementary methods and numerical results}\setcounter{section}{0}\setcounter{table}{0}\setcounter{equation}{0}\renewcommand{\thesection}{S\arabic{section}}\renewcommand{\thetable}{S\arabic{table}}\renewcommand{\theequation}{S\arabic{equation}}}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{doi: #1}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ind}{\mathbf{1}}

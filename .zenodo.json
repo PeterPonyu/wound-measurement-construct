@@ -1,0 +1,24 @@
+{
+  "title": "Wound single-cell measurement construct validation",
+  "upload_type": "software",
+  "description": "Software for testing whether a fibroblast-associated expression loading reflects cell-state abundance and supports patient-level healing inference in public wound single-cell data. The study includes technical controls, patient resampling, paired anatomy, representation comparisons and external tissue-context projections. It does not establish a clinically validated prognostic tool. This Zenodo deposit contains MIT software only. Manuscripts, artwork, source-study data, model weights and completed research outputs are excluded and retain their respective rights.",
+  "creators": [
+    {
+      "name": "Fu, Zeyu"
+    }
+  ],
+  "version": "0.1.0",
+  "license": "mit",
+  "keywords": [
+    "single-cell transcriptomics",
+    "wound healing",
+    "measurement validity"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/PeterPonyu/wound-measurement-construct",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

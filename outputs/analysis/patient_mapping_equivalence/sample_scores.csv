@@ -1,0 +1,15 @@
+gsm,title,tissue,disease,score,n_cells,title_prefix
+GSM5050523,G2: Foot skin of subject with healing DFU,Foot skin,DFU-healer,0.021259978,3951,G2
+GSM5050527,G4: Foot skin of subject with healing DFU,Foot skin,DFU-healer,0.13921958,2865,G4
+GSM5050530,G6: Foot skin of subject with non-healing DFU,Foot skin,DFU-nonhealer,0.049990013,2279,G6
+GSM5050531,G7: Foot skin of subject with healing DFU,Foot skin,DFU-healer,0.10369185,1775,G7
+GSM5050532,G8: Foot skin of subject with healing DFU,Foot skin,DFU-healer,0.054095495,2417,G8
+GSM5050533,G9: Foot skin of subject with non-healing DFU,Foot skin,DFU-nonhealer,0.036397927,4290,G9
+GSM5050539,G15: Foot skin of subject with healing DFU,Foot skin,DFU-healer,0.074928135,2250,G15
+GSM5050547,G23: Foot skin of subject with healing DFU,Foot skin,DFU-healer,0.1482971,4630,G23
+GSM5050557,G33: Foot skin of subject with non-healing DFU,Foot skin,DFU-nonhealer,0.01319812,4268,G33
+GSM5050558,G34: Foot skin of subject with non-healing DFU,Foot skin,DFU-nonhealer,0.012948242,3413,G34
+GSM5050563,G39: Foot skin of subject with non-healing DFU,Foot skin,DFU-nonhealer,0.030498166,2481,G39
+GSM5050566,G42: Foot skin of subject with healing DFU,Foot skin,DFU-healer,0.02014406,1838,G42
+GSM5050569,G45: Foot skin of subject with healing DFU,Foot skin,DFU-healer,0.033078216,3374,G45
+GSM5050573,G49: Foot skin of subject with healing DFU,Foot skin,DFU-healer,0.053945277,2928,G49

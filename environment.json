@@ -1,0 +1,30 @@
+{
+  "python": "3.13.5",
+  "system": "Linux",
+  "python_packages": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.8.0",
+    "torch": "2.12.0+cu130",
+    "pyarrow": "23.0.1",
+    "h5py": "3.16.0",
+    "PyMuPDF": "1.27.1",
+    "PyYAML": "6.0.3"
+  },
+  "R": "4.3.3",
+  "R_packages": {
+    "ggplot2": "4.0.3",
+    "tikzDevice": "0.12.6",
+    "jsonlite": "2.0.0",
+    "digest": "0.6.39"
+  },
+  "figure_fonts": [
+    "Arial Bold"
+  ],
+  "manuscript_fonts": [
+    "TeX Gyre Termes",
+    "TeX Gyre Termes Math",
+    "Arial"
+  ]
+}

@@ -1,0 +1,38 @@
+\documentclass[10pt,a4paper]{article}
+\newcommand{\runningtitle}{Construct validation of single-cell topic loadings}
+\input{layout}
+\hypersetup{pdftitle={Mixture weight and programme strength: construct validation of single-cell topic loadings in diabetic foot skin}}
+\begin{document}
+\papertitle{Mixture weight and programme strength: construct validation of single-cell topic loadings in diabetic foot skin}
+\section*{Abstract}
+\noindent A higher mean single-cell programme score can reflect either stronger expression within cells or more cells occupying a high state. We examined this distinction before interpreting a fibroblast-associated topic as a diabetic-foot-ulcer (DFU) healing marker.
+A frozen 15-topic model represented 76,461 cells from 25 selected foot-skin samples. We assessed distributional semantics, technical artifacts, analysis-constant sensitivity, negative controls and external projections. An author-derived mapping collapsed 14 DFU samples to 11 patients; anatomical controls and four representation benchmarks used the corresponding analysis units.
+Across 25 samples, mean fibroblast loading correlated with the threshold-defined high-state fraction at $\rho=0.933$ (sample-bootstrap 95\% interval 0.789--0.983). The highest fraction, 0.841, occurred in healthy non-diabetic skin. Depth matching preserved 99.5\% of state labels, and exclusion of cells carrying immune transcripts preserved sample weights ($\rho=0.989$). Semantic associations persisted over tested thresholds and topic numbers; the healthy-skin counterexample failed at $K=10$, and healing-arm significance was threshold-sensitive. The corrected all-cell mean-loading contrast in 11 patients was 0.0280 (permutation $p=0.2719$; bootstrap interval $[-0.0017,0.0631]$). The separate 9-versus-5 high-state-fraction design had 24.9\% simulated power at its observed effect. Patient-level topic, module, PCA and NMF AUCs were 0.714, 0.786, 0.500 and 0.125; these exploratory estimates do not establish clinical superiority. Paired anatomy remained detectable in 10 patients. External cohorts did not supply independent patient-level healing validation.
+The observed loading has a substantial cell-state-abundance interpretation. Its correlation with the threshold fraction does not prove invariant within-state intensity, and the tested fibroblast pattern remains an unvalidated prognostic marker. Patient-level validation requires independently defined outcomes and a clinically justified effect margin.
+\par\smallskip\noindent Keywords: topic model; cell-state abundance; construct validity; DFU; CHI3L1; TIMP1; patient-level inference.
+
+\section{Introduction}
+Diabetic foot ulceration combines tissue injury, inflammation and impaired repair, and a healed wound may remain vulnerable to recurrence \citep{armstrong2017,wilkinson2020}. Single-cell profiling has identified fibroblast-associated expression programmes that differ between healing groups in discovery material \citep{theocharidis2022,geo_gse165816}. These observations motivate prognostic research, but a tissue-level programme score must first be understood as a measurement. A higher average could reflect stronger expression within cells, a greater fraction of cells occupying a state, or both.
+
+Topic models represent observations using mixture coordinates, while gene-expression decompositions can separate cell identity from cellular activity \citep{blei2003,kotliar2019}. Deep generative representations can also summarize high-dimensional expression in transferable coordinates \citep{lopez2018}. None of these frameworks guarantees that an average over a biopsy is a cell-intrinsic intensity measurement. Relative cell abundances are compositional, so a change in one compartment can alter the apparent contribution of another \citep{buettner2021}. Distinguishing these explanations changes the biological interpretation and the design of a subsequent validation study.
+
+Technical robustness and statistical independence pose separate requirements. Dissociation can induce expression programmes, and ambient RNA can alter the apparent profiles of recovered cells \citep{vandenbrink2017,young2020}. Quality control and normalization therefore matter before comparing tissues \citep{heumos2023}. At the same time, cells from one individual share biological and sampling variation. Multi-sample analysis must preserve the specimen or patient as the appropriate independent unit; more cells do not substitute for more patients \citep{crowell2020,squair2021,zimmerman2021,lazic2010}.
+
+A useful prognostic marker also requires an outcome definition, an appropriate validation population and an assessment of uncertainty that matches the intended clinical use \citep{collins2015}. Failure to reject an outcome difference does not establish equivalence, which requires a scientifically justified margin \citep{schuirmann1987,lakens2017}. A healthy specimen with a high score can challenge disease exclusivity without disproving a probabilistic prognostic association.
+
+We examine state abundance, technical robustness and healing association in that order. A frozen expression map supplies cell loadings, distributional comparisons examine their measurement meaning, technical perturbations test robustness, and patient-level outcome and paired-anatomy analyses assess what the readout can distinguish. External cohorts provide additional tissue contexts with their own metadata limits. This sequence connects the biological interpretation of the measurement to the strength of the available clinical evidence.
+
+\section{Results}
+\input{results}
+\FloatBarrier
+\input{discussion}
+\input{methods}
+
+\section*{Data and reproducibility}
+The discovery series is GSE165816. External projections use GSE231643, GSE241132, GSE223964, GSE245703, GSE268834 and GSE248247; each accession is linked in Table~\ref{tab:p1cohorts}. This is a secondary analysis of publicly released data, with no new recruitment or intervention. The original studies govern participant consent and source-study ethical approvals. Shared series-level laboratory metadata do not identify sample-specific sequencing batches. The mathematical definitions, analysis units, numerical summaries and figure source data specify the present analysis; no unavailable patient identifiers, healing times or independent clinical validation are imputed.
+Analysis code is released under the MIT License. Manuscripts, figures and source-study data remain under their respective rights and repository terms. The accompanying software archive, authored by Zeyu Fu, is available at \url{https://github.com/PeterPonyu/wound-measurement-construct}.
+\FloatBarrier
+\bibliographystyle{abbrvnat}
+\bibliography{references}
+\input{supplement}
+\end{document}

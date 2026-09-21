@@ -1,0 +1,657 @@
+{
+  "experiment": "external_immune_axis_repair",
+  "status": "completed",
+  "scientific_unit": "sample",
+  "patient_level_inference_available": false,
+  "defect_repaired": {
+    "old_gates": {
+      "immune": [
+        "PTPRC",
+        "CD3D",
+        "CD3E",
+        "TRBC1",
+        "MS4A1",
+        "CD79A",
+        "CD74",
+        "LYZ",
+        "FCER1G",
+        "TYROBP",
+        "NKG7",
+        "MZB1",
+        "JCHAIN"
+      ],
+      "b_plasma": [
+        "MS4A1",
+        "CD79A",
+        "CD74",
+        "CD37",
+        "CD79B",
+        "MZB1",
+        "JCHAIN",
+        "SDC1",
+        "CD38"
+      ]
+    },
+    "why_unusable": "CD74 (plus CD37/CD38/SDC1 in the B/plasma gate) is detected in most cells, so 'any marker detected' saturates and the fibroblast gate overlapped the immune gate",
+    "new_gates": {
+      "pan_leukocyte": [
+        "PTPRC"
+      ],
+      "t_nk": [
+        "CD3D",
+        "CD3E",
+        "CD2",
+        "TRBC1",
+        "TRBC2",
+        "NKG7",
+        "GNLY"
+      ],
+      "myeloid": [
+        "LYZ",
+        "CD68",
+        "CD14",
+        "ITGAX",
+        "FCER1G",
+        "TYROBP",
+        "AIF1"
+      ],
+      "b": [
+        "MS4A1",
+        "CD79A",
+        "CD79B",
+        "BANK1"
+      ],
+      "plasma": [
+        "MZB1",
+        "JCHAIN",
+        "DERL3",
+        "TNFRSF17"
+      ],
+      "fibro": [
+        "COL1A1",
+        "COL1A2",
+        "COL3A1",
+        "DCN",
+        "LUM",
+        "PDGFRA",
+        "THY1"
+      ]
+    }
+  },
+  "cohorts": {
+    "GSE223964": {
+      "cohort": "GSE223964",
+      "sample_count": 8,
+      "cells_qc_total": 29124,
+      "patient_id_authoritative": false,
+      "duplicate_title_proxies": {
+        "DIAC019": [
+          "GSM7008851",
+          "GSM7008852",
+          "GSM7008853"
+        ]
+      },
+      "exclusivity_check": {
+        "exclusive_compartment_sum_max": 1.0,
+        "exclusive_compartment_sum_min": 1.0,
+        "old_gate_overlap_max": 1.4107623318385651,
+        "old_gates_were_overlapping": true
+      },
+      "samples": [
+        {
+          "gsm": "GSM7008846",
+          "title": "DIAC007",
+          "patient_proxy": "DIAC007",
+          "disease_or_genotype": "Diabetic",
+          "cells_qc": 9623,
+          "panel_fraction": 0.7583547557840618,
+          "median_genes_per_cell": 2163.0,
+          "median_umis_per_cell": 10952.0,
+          "immune_fraction_exclusive": 0.06401330146523954,
+          "fibro_fraction_exclusive": 0.6210121583705706,
+          "other_fraction_exclusive": 0.31497454016418996,
+          "b_plasma_fraction_strict": 0.0018705185493089473,
+          "b_plasma_share_of_immune": 0.02922077922077922,
+          "cd74_positive_fraction": 0.28255221864283486,
+          "old_immune_fraction": 0.3181959887768887,
+          "old_b_plasma_fraction": 0.735321625272784,
+          "topic0_fibro_mean": 0.04492349550127983,
+          "topic0_all_mean": 0.03259269893169403
+        },
+        {
+          "gsm": "GSM7008847",
+          "title": "DIAC009",
+          "patient_proxy": "DIAC009",
+          "disease_or_genotype": "Diabetic",
+          "cells_qc": 2230,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 1865.0,
+          "median_umis_per_cell": 5592.0,
+          "immune_fraction_exclusive": 0.3721973094170404,
+          "fibro_fraction_exclusive": 0.557847533632287,
+          "other_fraction_exclusive": 0.06995515695067264,
+          "b_plasma_fraction_strict": 0.09820627802690583,
+          "b_plasma_share_of_immune": 0.26385542168674697,
+          "cd74_positive_fraction": 0.7152466367713004,
+          "old_immune_fraction": 0.852914798206278,
+          "old_b_plasma_fraction": 0.841255605381166,
+          "topic0_fibro_mean": 0.017489353194832802,
+          "topic0_all_mean": 0.015028104186058044
+        },
+        {
+          "gsm": "GSM7008848",
+          "title": "DIAC010",
+          "patient_proxy": "DIAC010",
+          "disease_or_genotype": "Diabetic",
+          "cells_qc": 898,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 2689.5,
+          "median_umis_per_cell": 11976.0,
+          "immune_fraction_exclusive": 0.3028953229398664,
+          "fibro_fraction_exclusive": 0.4209354120267261,
+          "other_fraction_exclusive": 0.27616926503340755,
+          "b_plasma_fraction_strict": 0.02338530066815145,
+          "b_plasma_share_of_immune": 0.07720588235294118,
+          "cd74_positive_fraction": 0.4153674832962138,
+          "old_immune_fraction": 0.621380846325167,
+          "old_b_plasma_fraction": 0.8474387527839644,
+          "topic0_fibro_mean": 0.0350981168448925,
+          "topic0_all_mean": 0.022127676755189896
+        },
+        {
+          "gsm": "GSM7008849",
+          "title": "DIAC013",
+          "patient_proxy": "DIAC013",
+          "disease_or_genotype": "Diabetic",
+          "cells_qc": 3979,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 2132.0,
+          "median_umis_per_cell": 6442.0,
+          "immune_fraction_exclusive": 0.24001005277707968,
+          "fibro_fraction_exclusive": 0.688363910530284,
+          "other_fraction_exclusive": 0.07162603669263634,
+          "b_plasma_fraction_strict": 0.020105554159336517,
+          "b_plasma_share_of_immune": 0.08376963350785341,
+          "cd74_positive_fraction": 0.3314903242020608,
+          "old_immune_fraction": 0.49811510429756223,
+          "old_b_plasma_fraction": 0.4699673284744911,
+          "topic0_fibro_mean": 0.13931161165237427,
+          "topic0_all_mean": 0.11583247035741806
+        },
+        {
+          "gsm": "GSM7008850",
+          "title": "DIAC016",
+          "patient_proxy": "DIAC016",
+          "disease_or_genotype": "Diabetic",
+          "cells_qc": 3054,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 1371.0,
+          "median_umis_per_cell": 4523.5,
+          "immune_fraction_exclusive": 0.7445972495088409,
+          "fibro_fraction_exclusive": 0.2226588081204977,
+          "other_fraction_exclusive": 0.03274394237066143,
+          "b_plasma_fraction_strict": 0.26719056974459726,
+          "b_plasma_share_of_immune": 0.35883905013192613,
+          "cd74_positive_fraction": 0.7812704649639817,
+          "old_immune_fraction": 0.9204322200392927,
+          "old_b_plasma_fraction": 0.8555992141453831,
+          "topic0_fibro_mean": 0.08866265416145325,
+          "topic0_all_mean": 0.0544123612344265
+        },
+        {
+          "gsm": "GSM7008851",
+          "title": "DIAC019",
+          "patient_proxy": "DIAC019",
+          "disease_or_genotype": "Non-diabetic",
+          "cells_qc": 3454,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 3284.5,
+          "median_umis_per_cell": 23441.0,
+          "immune_fraction_exclusive": 0.06514186450492183,
+          "fibro_fraction_exclusive": 0.049797336421540245,
+          "other_fraction_exclusive": 0.885060799073538,
+          "b_plasma_fraction_strict": 0.0026056745801968733,
+          "b_plasma_share_of_immune": 0.04,
+          "cd74_positive_fraction": 0.28401852924145915,
+          "old_immune_fraction": 0.3326577880718008,
+          "old_b_plasma_fraction": 0.8792704111175449,
+          "topic0_fibro_mean": 0.046390678733587265,
+          "topic0_all_mean": 0.01424421090632677
+        },
+        {
+          "gsm": "GSM7008852",
+          "title": "DIAC019B",
+          "patient_proxy": "DIAC019",
+          "disease_or_genotype": "Non-diabetic",
+          "cells_qc": 1972,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 2391.0,
+          "median_umis_per_cell": 7405.0,
+          "immune_fraction_exclusive": 0.18509127789046653,
+          "fibro_fraction_exclusive": 0.6648073022312373,
+          "other_fraction_exclusive": 0.15010141987829614,
+          "b_plasma_fraction_strict": 0.017241379310344827,
+          "b_plasma_share_of_immune": 0.09315068493150686,
+          "cd74_positive_fraction": 0.3037525354969574,
+          "old_immune_fraction": 0.43356997971602435,
+          "old_b_plasma_fraction": 0.6288032454361054,
+          "topic0_fibro_mean": 0.06403115391731262,
+          "topic0_all_mean": 0.049775756895542145
+        },
+        {
+          "gsm": "GSM7008853",
+          "title": "DIAC019C",
+          "patient_proxy": "DIAC019",
+          "disease_or_genotype": "Non-diabetic",
+          "cells_qc": 3914,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 1453.0,
+          "median_umis_per_cell": 4663.0,
+          "immune_fraction_exclusive": 0.27925396014307613,
+          "fibro_fraction_exclusive": 0.19059785385794584,
+          "other_fraction_exclusive": 0.5301481859989781,
+          "b_plasma_fraction_strict": 0.009964230965763925,
+          "b_plasma_share_of_immune": 0.035681610247026534,
+          "cd74_positive_fraction": 0.2396525293817067,
+          "old_immune_fraction": 0.4833929483903935,
+          "old_b_plasma_fraction": 0.6788451711803781,
+          "topic0_fibro_mean": 0.20487549901008606,
+          "topic0_all_mean": 0.06542643904685974
+        }
+      ],
+      "sample_level_associations": {
+        "immune_fraction_exclusive": {
+          "n_samples": 8,
+          "rho": -0.023809523809523815,
+          "p_descriptive": 0.9553740118158807
+        },
+        "b_plasma_fraction_strict": {
+          "n_samples": 8,
+          "rho": -0.11904761904761905,
+          "p_descriptive": 0.7788857260523797
+        },
+        "b_plasma_share_of_immune": {
+          "n_samples": 8,
+          "rho": -0.07142857142857144,
+          "p_descriptive": 0.8665262706759088
+        },
+        "old_immune_fraction": {
+          "n_samples": 8,
+          "rho": -0.04761904761904763,
+          "p_descriptive": 0.9108491685195836
+        },
+        "old_b_plasma_fraction": {
+          "n_samples": 8,
+          "rho": -0.4285714285714286,
+          "p_descriptive": 0.2894032248467901
+        },
+        "cd74_positive_fraction": {
+          "n_samples": 8,
+          "rho": -0.3333333333333334,
+          "p_descriptive": 0.4197530864197531
+        },
+        "median_genes_per_cell": {
+          "n_samples": 8,
+          "rho": -0.4285714285714286,
+          "p_descriptive": 0.2894032248467901
+        },
+        "median_umis_per_cell": {
+          "n_samples": 8,
+          "rho": -0.4761904761904762,
+          "p_descriptive": 0.23293553465009798
+        }
+      }
+    },
+    "GSE245703": {
+      "cohort": "GSE245703",
+      "sample_count": 12,
+      "cells_qc_total": 42512,
+      "patient_id_authoritative": false,
+      "duplicate_title_proxies": {
+        "DIAC44": [
+          "GSM7847141",
+          "GSM7847142",
+          "GSM7847143"
+        ],
+        "DIAC50": [
+          "GSM7847144",
+          "GSM7847145"
+        ]
+      },
+      "exclusivity_check": {
+        "exclusive_compartment_sum_max": 1.0,
+        "exclusive_compartment_sum_min": 1.0,
+        "old_gate_overlap_max": 1.1421602787456446,
+        "old_gates_were_overlapping": true
+      },
+      "samples": [
+        {
+          "gsm": "GSM7847134",
+          "title": "Diac32",
+          "patient_proxy": "DIAC32",
+          "disease_or_genotype": "Diabetic",
+          "cells_qc": 5860,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 3577.5,
+          "median_umis_per_cell": 17837.0,
+          "immune_fraction_exclusive": 0.1174061433447099,
+          "fibro_fraction_exclusive": 0.35460750853242323,
+          "other_fraction_exclusive": 0.5279863481228669,
+          "b_plasma_fraction_strict": 0.029351535836177476,
+          "b_plasma_share_of_immune": 0.25,
+          "cd74_positive_fraction": 0.15017064846416384,
+          "old_immune_fraction": 0.24232081911262798,
+          "old_b_plasma_fraction": 0.9010238907849829,
+          "topic0_fibro_mean": 0.008730580098927021,
+          "topic0_all_mean": 0.009615455754101276
+        },
+        {
+          "gsm": "GSM7847135",
+          "title": "Diac34",
+          "patient_proxy": "DIAC34",
+          "disease_or_genotype": "Diabetic",
+          "cells_qc": 3816,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 3194.0,
+          "median_umis_per_cell": 12639.0,
+          "immune_fraction_exclusive": 0.149895178197065,
+          "fibro_fraction_exclusive": 0.47615303983228513,
+          "other_fraction_exclusive": 0.3739517819706499,
+          "b_plasma_fraction_strict": 0.015461215932914047,
+          "b_plasma_share_of_immune": 0.10314685314685315,
+          "cd74_positive_fraction": 0.24659329140461217,
+          "old_immune_fraction": 0.29926624737945495,
+          "old_b_plasma_fraction": 0.6561844863731656,
+          "topic0_fibro_mean": 0.09577564895153046,
+          "topic0_all_mean": 0.057976506650447845
+        },
+        {
+          "gsm": "GSM7847136",
+          "title": "Diac35",
+          "patient_proxy": "DIAC35",
+          "disease_or_genotype": "Diabetic",
+          "cells_qc": 2991,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 1880.0,
+          "median_umis_per_cell": 6706.0,
+          "immune_fraction_exclusive": 0.31895687061183553,
+          "fibro_fraction_exclusive": 0.6512871949180876,
+          "other_fraction_exclusive": 0.0297559344700769,
+          "b_plasma_fraction_strict": 0.02708124373119358,
+          "b_plasma_share_of_immune": 0.08490566037735849,
+          "cd74_positive_fraction": 0.32764961551320626,
+          "old_immune_fraction": 0.458040789033768,
+          "old_b_plasma_fraction": 0.5887662988966901,
+          "topic0_fibro_mean": 0.09495200216770172,
+          "topic0_all_mean": 0.07911474257707596
+        },
+        {
+          "gsm": "GSM7847137",
+          "title": "Diac36",
+          "patient_proxy": "DIAC36",
+          "disease_or_genotype": "Diabetic",
+          "cells_qc": 5740,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 2579.5,
+          "median_umis_per_cell": 9475.5,
+          "immune_fraction_exclusive": 0.6452961672473868,
+          "fibro_fraction_exclusive": 0.347212543554007,
+          "other_fraction_exclusive": 0.007491289198606272,
+          "b_plasma_fraction_strict": 0.07369337979094076,
+          "b_plasma_share_of_immune": 0.11420086393088554,
+          "cd74_positive_fraction": 0.5306620209059233,
+          "old_immune_fraction": 0.7949477351916376,
+          "old_b_plasma_fraction": 0.7134146341463414,
+          "topic0_fibro_mean": 0.12648124992847443,
+          "topic0_all_mean": 0.07386260479688644
+        },
+        {
+          "gsm": "GSM7847138",
+          "title": "Diac37",
+          "patient_proxy": "DIAC37",
+          "disease_or_genotype": "Diabetic",
+          "cells_qc": 2231,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 1329.0,
+          "median_umis_per_cell": 5086.0,
+          "immune_fraction_exclusive": 0.6611385029134917,
+          "fibro_fraction_exclusive": 0.2398027790228597,
+          "other_fraction_exclusive": 0.09905871806364859,
+          "b_plasma_fraction_strict": 0.3877185118780816,
+          "b_plasma_share_of_immune": 0.5864406779661017,
+          "cd74_positive_fraction": 0.581353653070372,
+          "old_immune_fraction": 0.8337068579112505,
+          "old_b_plasma_fraction": 0.79336620349619,
+          "topic0_fibro_mean": 0.14042514562606812,
+          "topic0_all_mean": 0.05147705227136612
+        },
+        {
+          "gsm": "GSM7847139",
+          "title": "Diac38",
+          "patient_proxy": "DIAC38",
+          "disease_or_genotype": "Non-Diabetic",
+          "cells_qc": 2462,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 2552.0,
+          "median_umis_per_cell": 8460.0,
+          "immune_fraction_exclusive": 0.5523964256701869,
+          "fibro_fraction_exclusive": 0.35255889520714867,
+          "other_fraction_exclusive": 0.0950446791226645,
+          "b_plasma_fraction_strict": 0.08651502843216897,
+          "b_plasma_share_of_immune": 0.15661764705882353,
+          "cd74_positive_fraction": 0.5885458976441917,
+          "old_immune_fraction": 0.6563769293257514,
+          "old_b_plasma_fraction": 0.6787164906580017,
+          "topic0_fibro_mean": 0.11747590452432632,
+          "topic0_all_mean": 0.06694640219211578
+        },
+        {
+          "gsm": "GSM7847140",
+          "title": "Diac39",
+          "patient_proxy": "DIAC39",
+          "disease_or_genotype": "Non-Diabetic",
+          "cells_qc": 1277,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 5558.0,
+          "median_umis_per_cell": 33494.0,
+          "immune_fraction_exclusive": 0.08065779169929523,
+          "fibro_fraction_exclusive": 0.711824588880188,
+          "other_fraction_exclusive": 0.20751761942051683,
+          "b_plasma_fraction_strict": 0.014095536413469069,
+          "b_plasma_share_of_immune": 0.17475728155339806,
+          "cd74_positive_fraction": 0.11902897415818324,
+          "old_immune_fraction": 0.20125293657008614,
+          "old_b_plasma_fraction": 0.7987470634299139,
+          "topic0_fibro_mean": 0.01908869668841362,
+          "topic0_all_mean": 0.019340064376592636
+        },
+        {
+          "gsm": "GSM7847141",
+          "title": "Diac44a",
+          "patient_proxy": "DIAC44",
+          "disease_or_genotype": "Non-Diabetic",
+          "cells_qc": 3297,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 1598.0,
+          "median_umis_per_cell": 4247.0,
+          "immune_fraction_exclusive": 0.10342735820442826,
+          "fibro_fraction_exclusive": 0.10585380649074917,
+          "other_fraction_exclusive": 0.7907188353048226,
+          "b_plasma_fraction_strict": 0.01637852593266606,
+          "b_plasma_share_of_immune": 0.15835777126099707,
+          "cd74_positive_fraction": 0.18956627236882015,
+          "old_immune_fraction": 0.23475887170154686,
+          "old_b_plasma_fraction": 0.6569608735213831,
+          "topic0_fibro_mean": 0.015886928886175156,
+          "topic0_all_mean": 0.008615564554929733
+        },
+        {
+          "gsm": "GSM7847142",
+          "title": "Diac44b",
+          "patient_proxy": "DIAC44",
+          "disease_or_genotype": "Non-Diabetic",
+          "cells_qc": 3947,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 2838.0,
+          "median_umis_per_cell": 11145.0,
+          "immune_fraction_exclusive": 0.1246516341525209,
+          "fibro_fraction_exclusive": 0.6192044590828477,
+          "other_fraction_exclusive": 0.2561439067646314,
+          "b_plasma_fraction_strict": 0.029136052698251837,
+          "b_plasma_share_of_immune": 0.23373983739837398,
+          "cd74_positive_fraction": 0.15378768685077274,
+          "old_immune_fraction": 0.22092728654674437,
+          "old_b_plasma_fraction": 0.7489232328350646,
+          "topic0_fibro_mean": 0.010437902063131332,
+          "topic0_all_mean": 0.009093975648283958
+        },
+        {
+          "gsm": "GSM7847143",
+          "title": "Diac44c",
+          "patient_proxy": "DIAC44",
+          "disease_or_genotype": "Non-Diabetic",
+          "cells_qc": 2522,
+          "panel_fraction": 0.9988574692944873,
+          "median_genes_per_cell": 1462.0,
+          "median_umis_per_cell": 4521.5,
+          "immune_fraction_exclusive": 0.9036478984932593,
+          "fibro_fraction_exclusive": 0.06859635210150675,
+          "other_fraction_exclusive": 0.02775574940523394,
+          "b_plasma_fraction_strict": 0.5265662172878668,
+          "b_plasma_share_of_immune": 0.5827117156647652,
+          "cd74_positive_fraction": 0.7585249801744647,
+          "old_immune_fraction": 0.9520222045995241,
+          "old_b_plasma_fraction": 0.8953211736716892,
+          "topic0_fibro_mean": 0.547120988368988,
+          "topic0_all_mean": 0.06060834601521492
+        },
+        {
+          "gsm": "GSM7847144",
+          "title": "Diac50a",
+          "patient_proxy": "DIAC50",
+          "disease_or_genotype": "Non-Diabetic",
+          "cells_qc": 5749,
+          "panel_fraction": 0.9642959154527277,
+          "median_genes_per_cell": 660.0,
+          "median_umis_per_cell": 1107.0,
+          "immune_fraction_exclusive": 0.10262654374673856,
+          "fibro_fraction_exclusive": 0.786223691076709,
+          "other_fraction_exclusive": 0.11114976517655245,
+          "b_plasma_fraction_strict": 0.004174639067663941,
+          "b_plasma_share_of_immune": 0.04067796610169491,
+          "cd74_positive_fraction": 0.17429118107496955,
+          "old_immune_fraction": 0.26265437467385633,
+          "old_b_plasma_fraction": 0.44007653504957384,
+          "topic0_fibro_mean": 0.03801894932985306,
+          "topic0_all_mean": 0.035377271473407745
+        },
+        {
+          "gsm": "GSM7847145",
+          "title": "Diac50b",
+          "patient_proxy": "DIAC50",
+          "disease_or_genotype": "Non-Diabetic",
+          "cells_qc": 2620,
+          "panel_fraction": 0.9642959154527277,
+          "median_genes_per_cell": 2068.0,
+          "median_umis_per_cell": 6159.0,
+          "immune_fraction_exclusive": 0.45152671755725193,
+          "fibro_fraction_exclusive": 0.3748091603053435,
+          "other_fraction_exclusive": 0.1736641221374046,
+          "b_plasma_fraction_strict": 0.03931297709923664,
+          "b_plasma_share_of_immune": 0.08706677937447169,
+          "cd74_positive_fraction": 0.3950381679389313,
+          "old_immune_fraction": 0.5576335877862595,
+          "old_b_plasma_fraction": 0.7019083969465649,
+          "topic0_fibro_mean": 0.09182212501764297,
+          "topic0_all_mean": 0.048157479614019394
+        }
+      ],
+      "sample_level_associations": {
+        "immune_fraction_exclusive": {
+          "n_samples": 12,
+          "rho": 0.8461538461538463,
+          "p_descriptive": 0.000521133700481005
+        },
+        "b_plasma_fraction_strict": {
+          "n_samples": 12,
+          "rho": 0.6223776223776225,
+          "p_descriptive": 0.030675895061640132
+        },
+        "b_plasma_share_of_immune": {
+          "n_samples": 12,
+          "rho": 0.07692307692307693,
+          "p_descriptive": 0.8121826980280591
+        },
+        "old_immune_fraction": {
+          "n_samples": 12,
+          "rho": 0.9090909090909092,
+          "p_descriptive": 4.1910446530342335e-05
+        },
+        "old_b_plasma_fraction": {
+          "n_samples": 12,
+          "rho": -0.013986013986013986,
+          "p_descriptive": 0.9655902689187795
+        },
+        "cd74_positive_fraction": {
+          "n_samples": 12,
+          "rho": 0.8951048951048951,
+          "p_descriptive": 8.36658642909172e-05
+        },
+        "median_genes_per_cell": {
+          "n_samples": 12,
+          "rho": -0.4265734265734266,
+          "p_descriptive": 0.16669998762494495
+        },
+        "median_umis_per_cell": {
+          "n_samples": 12,
+          "rho": -0.3076923076923077,
+          "p_descriptive": 0.3305892594121097
+        }
+      }
+    }
+  },
+  "cross_cohort": {
+    "strict_immune_sign_consistent": false,
+    "strict_immune_rho": {
+      "GSE223964": -0.023809523809523815,
+      "GSE245703": 0.8461538461538463
+    },
+    "strict_b_plasma_sign_consistent": false,
+    "strict_b_plasma_rho": {
+      "GSE223964": -0.11904761904761905,
+      "GSE245703": 0.6223776223776225
+    },
+    "old_broad_immune_rho": {
+      "GSE223964": -0.04761904761904763,
+      "GSE245703": 0.9090909090909092
+    },
+    "topic0_vs_sequencing_depth_rho": {
+      "GSE223964": -0.4285714285714286,
+      "GSE245703": -0.4265734265734266
+    },
+    "no_pooled_test": "cohorts are kept separate; sample titles are not authoritative patient IDs and neither cohort has a healing endpoint"
+  },
+  "protocol": {
+    "frozen_discovery_dir": "outputs/expression_representation",
+    "frozen_panel_genes": 7002,
+    "frozen_topics": 15,
+    "projection_deterministic": true,
+    "encoder_refit_on_external": false,
+    "exclusive_compartment_assignment": true,
+    "promiscuous_markers_excluded": [
+      "CD74",
+      "CD37",
+      "CD38",
+      "SDC1"
+    ],
+    "depth_confound_reported": true,
+    "qc": {
+      "min_genes_per_cell": 200,
+      "max_mito": 0.2
+    },
+    "healing_endpoint_available": false,
+    "source_script_sha256": "fd8395c7a49eefa122edcc2b931876ae427f83fcff2b47233d60d7bd7273b205",
+    "script_sha256": "31350bf1b138122e210530eeb35772b538b11bf8fd0d02cf828c861acdfdabf5",
+    "elapsed_seconds": 112.60187029838562
+  }
+}

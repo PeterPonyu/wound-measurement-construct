@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.env
+.env.*
+.venv/
+data/raw/
+tmp/
+outputs/reruns/
+outputs/figure_r_tikz/
+.archive-state/
+archive-draft.json

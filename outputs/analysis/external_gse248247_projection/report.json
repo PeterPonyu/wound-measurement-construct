@@ -1,0 +1,229 @@
+{
+  "experiment": "gse248247_low_yield_frozen_projection",
+  "status": "completed",
+  "scientific_unit": "sample",
+  "patient_level_inference_available": false,
+  "independent_prognostic_validation_eligible": false,
+  "healing_endpoint_available": false,
+  "cohort": {
+    "accession": "GSE248247",
+    "sample_count": 2,
+    "groups": {
+      "diabetic": 1,
+      "non_diabetic": 1
+    },
+    "cells_raw_total": 561,
+    "cells_qc_total": 358,
+    "authoritative_patient_ids": false,
+    "metadata_limit": "one diabetic and one non-diabetic plantar wound sample; no authoritative patient IDs, healing outcomes or follow-up"
+  },
+  "source_files": [
+    {
+      "name": "GSE248247_series_matrix.txt.gz",
+      "bytes": 4239,
+      "sha256": "69bb47c055185f600f0d15506116183347eb5e70e3cb052148a4a85351fe500c"
+    },
+    {
+      "name": "GSM7908977_DFU_matrix.mtx.gz",
+      "bytes": 729436,
+      "sha256": "5497e9b5ddd4d12a044dc4005e2d2ff2c0ba04065e42a82cdce938037dadf7fd"
+    },
+    {
+      "name": "GSM7908977_DFU_features.tsv.gz",
+      "bytes": 304728,
+      "sha256": "d4073285f77c230e90e730ec1b7c593d6d0e53d72dc1a385b8c1f7d19ec35392"
+    },
+    {
+      "name": "GSM7908977_DFU_barcodes.tsv.gz",
+      "bytes": 1629,
+      "sha256": "94a25ccd7903847900fedf7197f658df6c98c0833fc0339372fd5fa0047f1fc0"
+    },
+    {
+      "name": "GSM7908978_NFU_matrix.mtx.gz",
+      "bytes": 1797654,
+      "sha256": "db04f98981df6b9e0298e522824669cb18cec0f7a2d3a7918197c33bd32a00f6"
+    },
+    {
+      "name": "GSM7908978_NFU_features.tsv.gz",
+      "bytes": 304728,
+      "sha256": "0a76b7a4ad0a36099c09a81ae11be33596e8ae9315362d7738950102fba25891"
+    },
+    {
+      "name": "GSM7908978_NFU_barcodes.tsv.gz",
+      "bytes": 1906,
+      "sha256": "14cef5ceaa3b4b69b5db1122c76a1ded3f54dfe82e8a51f6dbbe5346174dc8d3"
+    }
+  ],
+  "samples": [
+    {
+      "gsm": "GSM7908977",
+      "title": "human diabetic foot ulcer",
+      "group": "diabetic",
+      "cells_raw": 256,
+      "cells_qc": 129,
+      "panel_covered": 6994,
+      "panel_total": 7002,
+      "panel_fraction": 0.9988574692944873,
+      "median_genes_per_cell": 655.0,
+      "median_umis_per_cell": 1436.0,
+      "immune_fraction_exclusive": 0.3488372093023256,
+      "fibro_fraction_exclusive": 0.49612403100775193,
+      "other_fraction_exclusive": 0.15503875968992248,
+      "b_plasma_fraction_strict": 0.015503875968992248,
+      "b_plasma_share_of_immune": 0.044444444444444446,
+      "cd74_positive_fraction": 0.20155038759689922,
+      "old_immune_fraction": 0.49612403100775193,
+      "old_b_plasma_fraction": 0.35658914728682173,
+      "topic0_all_mean": 0.07011623680591583,
+      "topic0_fibro_mean": 0.1250414252281189
+    },
+    {
+      "gsm": "GSM7908978",
+      "title": "human non-diabetic ulcer",
+      "group": "non_diabetic",
+      "cells_raw": 305,
+      "cells_qc": 229,
+      "panel_covered": 6994,
+      "panel_total": 7002,
+      "panel_fraction": 0.9988574692944873,
+      "median_genes_per_cell": 656.0,
+      "median_umis_per_cell": 1509.0,
+      "immune_fraction_exclusive": 0.13537117903930132,
+      "fibro_fraction_exclusive": 0.26200873362445415,
+      "other_fraction_exclusive": 0.6026200873362445,
+      "b_plasma_fraction_strict": 0.008733624454148471,
+      "b_plasma_share_of_immune": 0.06451612903225806,
+      "cd74_positive_fraction": 0.18340611353711792,
+      "old_immune_fraction": 0.2794759825327511,
+      "old_b_plasma_fraction": 0.34934497816593885,
+      "topic0_all_mean": 0.07031002640724182,
+      "topic0_fibro_mean": 0.14539729058742523
+    }
+  ],
+  "sample_level_group_contrasts": {
+    "topic0_all_mean": {
+      "difference_diabetic_minus_non_diabetic": -0.00019378960132598877,
+      "n_permutations": 20000,
+      "null_ci95": [
+        -0.00019378960132598877,
+        0.00019378960132598877
+      ],
+      "p_two_sided_descriptive": 1.0,
+      "scope_note": "sample-level descriptive contrast; no authoritative patient IDs"
+    },
+    "topic0_fibro_mean": {
+      "difference_diabetic_minus_non_diabetic": -0.020355865359306335,
+      "n_permutations": 20000,
+      "null_ci95": [
+        -0.020355865359306335,
+        0.020355865359306335
+      ],
+      "p_two_sided_descriptive": 1.0,
+      "scope_note": "sample-level descriptive contrast; no authoritative patient IDs"
+    },
+    "immune_fraction_exclusive": {
+      "difference_diabetic_minus_non_diabetic": 0.21346603026302427,
+      "n_permutations": 20000,
+      "null_ci95": [
+        -0.21346603026302427,
+        0.21346603026302427
+      ],
+      "p_two_sided_descriptive": 1.0,
+      "scope_note": "sample-level descriptive contrast; no authoritative patient IDs"
+    },
+    "fibro_fraction_exclusive": {
+      "difference_diabetic_minus_non_diabetic": 0.23411529738329778,
+      "n_permutations": 20000,
+      "null_ci95": [
+        -0.23411529738329778,
+        0.23411529738329778
+      ],
+      "p_two_sided_descriptive": 1.0,
+      "scope_note": "sample-level descriptive contrast; no authoritative patient IDs"
+    },
+    "b_plasma_fraction_strict": {
+      "difference_diabetic_minus_non_diabetic": 0.006770251514843777,
+      "n_permutations": 20000,
+      "null_ci95": [
+        -0.006770251514843777,
+        0.006770251514843777
+      ],
+      "p_two_sided_descriptive": 1.0,
+      "scope_note": "sample-level descriptive contrast; no authoritative patient IDs"
+    }
+  },
+  "sample_level_associations": {
+    "immune_fraction_exclusive": {
+      "n_samples": 2,
+      "rho": null,
+      "p_descriptive": null
+    },
+    "b_plasma_fraction_strict": {
+      "n_samples": 2,
+      "rho": null,
+      "p_descriptive": null
+    },
+    "b_plasma_share_of_immune": {
+      "n_samples": 2,
+      "rho": null,
+      "p_descriptive": null
+    },
+    "median_genes_per_cell": {
+      "n_samples": 2,
+      "rho": null,
+      "p_descriptive": null
+    },
+    "median_umis_per_cell": {
+      "n_samples": 2,
+      "rho": null,
+      "p_descriptive": null
+    },
+    "old_immune_fraction": {
+      "n_samples": 2,
+      "rho": null,
+      "p_descriptive": null
+    },
+    "old_b_plasma_fraction": {
+      "n_samples": 2,
+      "rho": null,
+      "p_descriptive": null
+    }
+  },
+  "exclusivity_check": {
+    "exclusive_compartment_sum_min": 1.0,
+    "exclusive_compartment_sum_max": 1.0,
+    "old_gate_overlap_max": 0.9922480620155039,
+    "old_gates_were_overlapping": false
+  },
+  "interpretation": "This is a two-sample, low-yield feasibility projection of the frozen encoder and exclusive lineage gates. It is not a prognostic result, not patient-level replication, and not evidence that diabetic versus non-diabetic status is a healing endpoint.",
+  "protocol": {
+    "frozen_discovery_dir": "outputs/expression_representation",
+    "frozen_panel_genes": 7002,
+    "frozen_topics": 15,
+    "encoder_refit_on_external": false,
+    "projection_deterministic": true,
+    "input_format": "10x matrix-market per GSM",
+    "qc": {
+      "min_genes_per_cell": 200,
+      "max_mito": 0.2
+    },
+    "exclusive_compartment_assignment": true,
+    "promiscuous_markers_excluded": [
+      "CD74",
+      "CD37",
+      "CD38",
+      "SDC1"
+    ],
+    "no_healing_endpoint": true,
+    "no_authoritative_patient_ids": true,
+    "source_axis_script_sha256": "31350bf1b138122e210530eeb35772b538b11bf8fd0d02cf828c861acdfdabf5",
+    "helper_script_sha256": "1ef69403ef2038928a7d95287a8ff4a14b8b533f681284b73270a67b0e5663c6",
+    "script_sha256": "261843df1cf0bcb157f5fd7e4af8d657045ee6d4ec4c6f428c382993a709e30f",
+    "checked_at_utc": "2026-09-20T16:01:00.500142+00:00",
+    "elapsed_seconds": 1.4388463497161865
+  },
+  "scope": {
+    "patient_level_inference_available": false,
+    "limit": "Two-sample low-yield feasibility projection only; no healing validation, no pooled patient inference, and no MCID test."
+  }
+}

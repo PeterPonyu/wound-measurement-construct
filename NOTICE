@@ -1,0 +1,25 @@
+Copyright (c) 2026 Zeyu Fu
+
+The MIT License in LICENSE applies to the analysis software: Python modules,
+analysis programs, R plotting code, build and verification utilities, and archival scripts. It does not
+relicense the other materials bundled so that the studies can be inspected
+and rebuilt.
+
+Manuscripts, figures, and compiled papers. Native manuscript sources, vector
+figures, compiled PDFs, and the numerical tables prepared as scholarly outputs
+remain the author's copyright. Inclusion in this archive permits inspection
+and reproduction of the reported analyses. Redistribution or reuse of those
+materials requires permission or another applicable right, except where a
+journal or repository later specifies otherwise.
+
+Source-study data. Count matrices, author cell annotations, and clinical
+metadata originate in the cited public series and published studies. Those
+source-study terms, consent conditions, and repository licenses continue to
+apply. This archive does not relicense them.
+
+Saved models and numerical reports. Frozen model weights, projected
+coordinates, and completed numerical reports are research outputs distributed
+for verification. They are not licensed as MIT software.
+
+Nothing in this archive is a clinically validated diagnostic or prognostic
+tool.

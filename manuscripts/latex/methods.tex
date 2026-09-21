@@ -1,0 +1,79 @@
+\section{Methods}
+\subsection{Cohort selection and independent units}
+GSE165816 comprises 54 original samples and 27 author-mapped participants \citep{theocharidis2022,geo_gse165816}. The frozen model used 25 selected foot-skin samples in the non-diabetic, DFU-healing and DFU-non-healing groups: 81,602 cells before cell quality control and 76,461 afterwards. Cells required at least 200 detected genes and a mitochondrial count fraction at most 0.20; genes required detection in at least 10 cells before panel selection. The final panel contained 7,002 genes, obtained from a nominal 7,000-gene dispersion selection with retained anchor genes. The discovery outcome subset contained 9 healing and 5 non-healing samples.
+
+The clinical supplement maps those 14 outcome samples to 11 patients: 7 healing and 4 non-healing. G4/G23, G7/G8 and G33/G34 are repeated samples from the same wound on the same day. We combine each patient's retained cells before computing the primary patient score. The outcome is the study's healing category within a 12-week follow-up window, not a measured individual healing time. Series metadata describe a shared Emory 10x Chromium 3$'$ V2/V3 workflow and NovaSeq instrumentation; the absence of per-sample chemistry and flow-cell identifiers prevents run-specific batch adjustment.
+
+\subsection{What the frozen neural topic model computes}
+For nonnegative panel counts $x_{ig}$ with positive total, let $u_{ig}=x_{ig}/\sum_{h=1}^{G}x_{ih}$. The implemented model uses a diagonal-Gaussian encoder in unconstrained coordinates and a softmax decoder:
+\begin{align}
+q_\phi(z\mid u_i)&=\mathcal N\!\left(\mu_\phi(u_i),\operatorname{diag}\sigma_\phi^2(u_i)\right),\label{eq:p1encoder}\\
+\theta_{ik}&=\frac{e^{z_{ik}}}{\sum_{\ell=0}^{K-1}e^{z_{i\ell}}},\qquad
+\beta_{kg}=\frac{e^{b_{kg}}}{\sum_{h=1}^{G}e^{b_{kh}}},\qquad
+\widehat u_{ig}=\sum_{k=0}^{K-1}\theta_{ik}\beta_{kg}.\label{eq:p1decoder}
+\end{align}
+Equations~\eqref{eq:p1encoder}--\eqref{eq:p1decoder} define the encoder, simplex coordinates and normalized topic-gene decoder used below. Thus $\theta_i\in\Delta^{K-1}=\{a\in\R^K:a_k\geq0,\sum_{k=0}^{K-1}a_k=1\}$ and every topic-gene row sums to one. The topic indices start at zero. This is a logistic-normal neural topic model; it does not implement an exact Dirichlet posterior or a Dirichlet prior, despite the general topic-model motivation \citep{blei2003,srivastava2017}. Training minimizes
+\begin{equation}
+\mathcal L(\phi,b)=\frac1N\sum_i\E_{q_\phi}\!\left[-\sum_g u_{ig}\log(\widehat u_{ig}+10^{-10})\right]
++0.01\,\frac1N\sum_i\operatorname{KL}\!\left(q_\phi(z\mid u_i)\,\|\,\mathcal N(0,I)\right).\label{eq:p1loss}
+\end{equation}
+Equation~\eqref{eq:p1loss} is the fitted objective: the reconstruction term is cross-entropy on per-cell proportions and the second term is the stated Gaussian regularizer; it is not a depth-weighted count likelihood. The encoder has widths 256 and 128, batch normalization, ReLU activations and dropout 0.1. The recorded fit used $K=15$, 40,000 Adam steps, learning rate $10^{-3}$ and batches of 512. Deterministic projection uses $z=\mu_\phi(u)$ and $\theta=\operatorname{softmax}(\mu_\phi(u))$, which is not generally $\E_q[\operatorname{softmax}(z)]$. Missing panel genes in external projections are set to zero. Normalization and quality control can alter biological interpretations, so this definition is kept distinct from other variance-stabilizing methods \citep{hafemeister2019,heumos2023}.
+
+Topic-gene perplexity is summarized as $\exp\{-K^{-1}\sum_{k,g}\beta_{kg}\log\beta_{kg}\}$; it measures concentration of decoder weights, not superiority over other representations. The latent coordinate $\mu\in\R^K$ is not the simplex coordinate $\theta$. No downstream outcome comparison substitutes one for the other.
+
+\subsection{Threshold fractions and the exact mean decomposition}
+Let $Y_{si}=\theta_{si,\star}$ for fibroblast-gated cell $i$ in sample $s$. Lineage markers are disjoint from the tested topic-gene list by an explicit overlap check; the gate is nevertheless an expression-based operational definition, not an independently measured cell identity. A pooled two-Gaussian fit provides a descriptive cut $c=0.1842958$, the midpoint of the fitted component means. Gaussian components approximate a bounded score distribution and are not assumed to be literal biological populations.
+\begin{equation}
+\bar Y_s=\frac1{n_s}\sum_iY_{si},\qquad
+\widehat w_s(c)=\frac1{n_s}\sum_i\ind\{Y_{si}>c\}.\label{eq:p1fraction}
+\end{equation}
+Equation~\eqref{eq:p1fraction} defines both the sample mean and the reported hard-threshold fraction; the latter is not an average posterior responsibility of the Gaussian mixture. Define $\bar Y_{s,L}$ and $\bar Y_{s,H}$ as means below/at and above the cut. Then, with empty-component contributions interpreted as zero,
+\begin{equation}
+\bar Y_s=(1-\widehat w_s)\bar Y_{s,L}+\widehat w_s\bar Y_{s,H}.\label{eq:p1identity}
+\end{equation}
+Equation~\eqref{eq:p1identity} is exact. Only under an additional approximate component-stability assumption, $\bar Y_{s,L}\approx m_L$ and $\bar Y_{s,H}\approx m_H$, does it reduce to $\bar Y_s\approx m_L+(m_H-m_L)\widehat w_s$. Consequently, a large correlation between the two summaries cannot independently prove stable intensity: both summaries use the same cells. Persistence of overlapping low-state tails supplies complementary distributional evidence. The 10th percentile of a high-loading sample (0.029) overlaps the scale of the 90th percentile in a low-loading sample (0.119); this observation alone is not a formal test of multimodality.
+
+The semantic statistic is $\rho_{\rm sem}=\operatorname{cor}_{\rm Spearman}(\bar Y_s,\widehat w_s)$ across 25 samples. A 10,000-draw sample-row percentile bootstrap, 10,000 row permutations and leave-one-sample-out recalculation characterize its stability. These do not create independent patients. The patient-collapsed correlation of 0.937 across 20 mapped patients is an additional descriptive unit check.
+
+A separate patient-resampling analysis collapses the 25 specimen means and high-state fractions to 20 patients using fibroblast counts as within-patient weights. It draws 10,000 patient samples with replacement (seed 217) and reports the percentile interval for their Spearman correlation. Leave-one-patient-out analyses recompute this correlation across the remaining 19 patients and separately recompute the all-cell healing contrast across the remaining 10 outcome patients. The reported omission range is a sensitivity diagnostic, not an interval estimate (Table~\ref{tab:p1robustness}).
+
+\subsection{Technical controls and constant sensitivity}
+Dissociation-induced programmes and ambient transcripts motivate the technical controls \citep{vandenbrink2017,young2020}. The stress comparison uses a standardized mean difference (SMD) with rejection bound 0.8; the doublet-oriented control compares PTPRC-positive rates with ratio bound 2.0. Exact panel-count matching reprojects downsampled counts, comparing cell labels and sample fractions. Removing any cell carrying a specified immune transcript tests invariance to that exclusion rule. This cannot by itself identify ambient contamination or exclude every doublet. Residual mixture checks with immune covariates are compared with four unrelated placebo covariates; similarly flattened residuals limit claims of statistical separability.
+
+Sensitivity fits use 18 cuts between 0.08 and 0.40 (including the rounded fitted cut) and $K\in\{10,15,20\}$. The TIMP1-carrying topic is tracked descriptively across capacities; topic labels are not assumed exchangeable or biologically identical across $K$. Label permutation uses 20,000 shuffles. Gene-column shuffling preserves each gene's marginal counts while destroying its joint cellwise association with other genes. The resulting topic concentration and integrity statistics are compared with real input. The anatomical label-permutation calibration checks a finite empirical false-positive fraction; it is not a proof of pipeline-wide error control. These analyses are retrospective computational controls, not a registered clinical trial.
+
+The exploratory covariate scan retains the original rounded rule $Y_{si}\geq0.184$, used by the technical-control analyses, rather than substituting the fitted cut 0.1842958. It correlates the sample high-state fraction with 14 other fibroblast topic means, 11 whole-sample lineage fractions, total and fibroblast cell counts, fibroblast dissociation score, median UMI count, PTPRC-positive fraction and the numeric G specimen label. Two-sided Spearman probabilities are adjusted across all 31 comparisons by Benjamini--Hochberg. The 25 rows are specimens, include repeated patients, and receive no clinical-outcome adjustment. The G label is an identifier covariate, not a verified sequencing batch or collection time. Topic coordinates and lineage fractions have compositional dependence.
+
+\subsection{Patient contrast, permutation and equivalence sensitivity}
+Let $\mathcal C_p$ contain all retained cells in the mapped DFU foot specimens of patient $p$. The primary corrected score is $S_p=|\mathcal C_p|^{-1}\sum_{i\in\mathcal C_p}\theta_{i\star}$, so repeated specimens contribute in proportion to retained cell counts. This all-cell readout differs from $\bar Y_s$ restricted to fibroblasts and from $\widehat w_s$. For healing set $H$ and non-healing set $N$,
+\begin{equation}
+\widehat\Delta=\frac1{|H|}\sum_{p\in H}S_p-\frac1{|N|}\sum_{p\in N}S_p.\label{eq:p1delta}
+\end{equation}
+Equation~\eqref{eq:p1delta} is the primary patient-unit contrast; it is separate from the sample-level fibroblast ratio and from the threshold fraction. All $\binom{11}{7}=330$ patient-label allocations are enumerated. To reproduce the recorded result, the implementation retains an add-one correction even for exhaustive enumeration:
+\begin{equation}
+p_{+}=\frac{1+\sum_{\pi\in\Pi}\ind\{|\widehat\Delta_\pi|\geq|\widehat\Delta|\}}{1+|\Pi|}.\label{eq:p1permutation}
+\end{equation}
+Equation~\eqref{eq:p1permutation} is the recorded add-one-corrected two-sided permutation probability. It is slightly conservative relative to the uncorrected exhaustive fraction; the add-one convention is usually motivated for randomly drawn permutations \citep{phipson2010}, whereas all allocations are enumerated here. Exchangeability is an assumption for an observational label comparison, not a randomization supplied by study design. A 30,000-draw bootstrap resamples patients within outcome arms \citep{efron1993}. Small group sizes and conditional resampling explain why bootstrap intervals and permutation tests need not be dual.
+
+For a symmetric equivalence margin $M$, the Welch two-one-sided-test procedure \citep{schuirmann1987,lakens2017} uses $SE=(s_H^2/n_H+s_N^2/n_N)^{1/2}$ and Welch degrees of freedom $\nu$:
+\begin{equation}
+p_L=1-F_{t_\nu}\!\left(\frac{\widehat\Delta+M}{SE}\right),\qquad
+p_U=F_{t_\nu}\!\left(\frac{\widehat\Delta-M}{SE}\right).\label{eq:p1tost}
+\end{equation}
+Equation~\eqref{eq:p1tost} gives the two one-sided tests used for a prespecified margin. Both must be below 0.05 to reject non-equivalence. The data-derived infimum $M_*=|\widehat\Delta|+t_{\nu,0.95}SE$ is reported only as sensitivity (0.0618 at the patient unit; 0.0753 at the original sample unit). Selecting this margin after observing the data is not a clinically justified equivalence claim. No clinical minimum important difference has been supplied.
+
+\subsection{Discrimination, anatomy and design simulations}
+For held-out prediction scores $r$, AUC is the empirical probability that a healing score exceeds a non-healing score, with half credit for ties:
+\begin{equation}
+\widehat{\rm AUC}=\frac1{n_Hn_N}\sum_{h\in H,n\in N}\left[\ind\{r_h>r_n\}+\tfrac12\ind\{r_h=r_n\}\right].\label{eq:p1auc}
+\end{equation}
+Equation~\eqref{eq:p1auc} is the pairwise empirical AUC used for the held-out scores. Topic orientation, module preprocessing and the choice of PCA/NMF components are determined inside each training fold. The topic encoder itself was trained without outcomes on the discovery cohort, including held-out patients' expression: this is an internal discrimination audit of a frozen discovery representation, not fully external representation validation. Bootstrap intervals resample fixed out-of-fold scores with common arm-stratified indices across methods; the entire fitting/orientation process is rerun for label permutations. All allocations are used for topic and module readouts; PCA and NMF use 200 sampled relabellings. Sample-level comparisons use 14 specimens and patient-level comparisons use 11 mapped patients; they are not interchangeable.
+
+The paired anatomical control tests foot-minus-forearm differences in 10 mapped patients using all $2^{10}$ sign allocations and the same add-one convention. Across 15 topics, Benjamini--Hochberg adjustment is $q_{(i)}=\min\{1,\min_{j\geq i}15p_{(j)}/j\}$, with the usual assumptions required for false-discovery-rate interpretation \citep{benjamini1995}.
+
+The historical high-state-fraction power calculation uses 9 versus 5 specimens, Gaussian location shifts with pooled SD 0.283 and a two-sided Mann--Whitney test. Its 24.9\% power and $\operatorname{MDE}_{0.8}=0.519$ apply to this approximate design, not to the 11-patient all-cell contrast. Gaussian simulation can leave the unit interval, so it is a design-scale sensitivity approximation. A separate next-cohort simulation uses arm-specific SDs of all-cell mean scores, 0.04845 and 0.01584, Welch testing or Welch equivalence testing, and 4,000 draws per candidate size. The candidate totals are approximate conditional calculations, not validated recruitment targets (Table~\ref{tab:p1design}).
+
+\subsection{External projections and limits of identification}
+Every external cohort is projected into the frozen panel/model without outcome-guided retuning. The immune and B/plasma gates exclude promiscuous markers such as CD74, CD37, CD38 and SDC1 and assign non-overlapping compartments. Immune fraction uses all retained cells as its denominator; B/plasma share within immune cells uses only that compartment. Their correlations estimate different quantities. Negative depth correlations cannot by themselves exclude depth confounding, because a marginal sign is not a conditional adjustment.
+
+GSE231643 supplies eight title-labelled specimens but lacks an authoritative patient mapping. GSE241132 contributes an acute-wound, three-donor construct summary. GSE223964, GSE245703 and GSE268834 lack qualifying patient-level healing endpoints, and GSE248247 has only two samples. We do not pool these correlations or describe them as independent prognostic validation. No analysis identifies a treatment effect, a time-to-healing model or a causal effect of immune infiltration.
