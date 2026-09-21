@@ -101,4 +101,23 @@ r=json.loads((ROOT/'outputs/robustness_extensions/report.json').read_text())['pa
 a=r['patient_semantics'];b=r['patient_outcome_influence']
 rows=[['Mean versus high-state fraction','20 patients',f(a['rho']),f(a['bootstrap_95_interval'][0])+' to '+f(a['bootstrap_95_interval'][1]),f(a['omission_range'][0])+' to '+f(a['omission_range'][1])],['Healing minus non-healing','11 patients',f(b['observed_difference']),'Not recalculated',f(b['omission_range'][0])+' to '+f(b['omission_range'][1])]]
 p1.insert(-2,table('tab:p1robustness',r'Patient-level robustness in the discovery cohort. The first row correlates fibroblast mean loading with the high-state fraction after weighting repeated specimen summaries by fibroblast count within 20 patients (25 specimens). Its percentile 95\% interval uses 10,000 patient resamples, seed 217. The second row uses the previously defined all-cell healing contrast in 7 healing and 4 non-healing patients; its original interval remains in the outcome table. Omission ranges give the minimum and maximum after deleting one patient at a time (20 or 11 omissions), not confidence limits. Neither analysis refits the expression model, changes the state cut, adds patients, or provides external validation.',['Quantity','Unit','Estimate','Patient bootstrap 95%','Patient-omission range'],rows,[43,24,21,39,39]))
+d=json.loads((ROOT/'outputs/mathematical_audit/measurement/report.json').read_text())
+m=d['state_decomposition'];ranges=m['ranges']
+rows=[['Cell-pooled low-bin mean',f(m['low_reference'],5),'All 19,410 fibroblasts'],
+      ['Cell-pooled high-bin mean',f(m['high_reference'],5),'All 19,410 fibroblasts'],
+      ['Specimen low-bin means',' to '.join(f(v,5) for v in ranges['low_state_mean']),'25 nonempty low bins'],
+      ['Specimen high-bin means',' to '.join(f(v,5) for v in ranges['high_state_mean']),'16 nonempty high bins'],
+      ['Specimens with an empty bin',m['empty_bin_specimens'],'9 of 25; high bin empty'],
+      ['Within-state residual range',' to '.join(f(v,5) for v in ranges['within_state_residual']),'All 25 specimens'],
+      ['Within-state residual RMS',f(m['specimen_weighted_residual_rms'],5),'Equal specimen weights']]
+p1.append(r'\Needspace{520pt}')
+p1.append(table('tab:p1math',r'Exact mean decomposition on the saved 19,410 discovery fibroblasts in 25 specimens. The cut is 0.184295848; empirical bin means are distinct from fitted Gaussian-component means. The constant-state approximation uses the cell-pooled low/high means, and its residual is the observed specimen mean minus that approximation. RMS denotes root-mean-square residual with equal specimen weights. Ranges exclude undefined means for empty bins; zero-weight terms contribute zero to the identity. Both exact identities have maximum numerical discrepancy below $10^{-15}$. Values are on the zero-to-one loading scale, apart from the count row. They describe the frozen sample, without confidence intervals, a test of invariant state intensity or causal variance attribution.',['Quantity','Value or range','Denominator'],rows,[63,55,49]))
+p=d['patient_permutation'];e=d['patient_equivalence']
+rows=[['All label allocations',p['allocations']],['At least as extreme as observed',p['extreme_allocations']],
+      ['Exhaustive two-sided probability',f(p['exact_probability'],6)],
+      ['Recorded add-one probability',f(p['recorded_add_one_probability'],6)],
+      ['Welch standard error',f(e['standard_error'],6)],['Welch degrees of freedom',f(e['welch_df'],6)],
+      ['Two-sided 90% Welch interval',' to '.join(f(v,6) for v in e['two_sided_90_interval'])],
+      ['Equivalence-margin infimum',f(e['equivalence_margin_infimum'],6)]]
+p1.append(table('tab:p1exact',r'Independent arithmetic check of the all-cell mean-loading contrast in 11 patients (7 healing, 4 non-healing). Exhaustive allocation includes the observed labels and numerical ties: 89/330 allocations are at least as extreme in absolute mean difference, whereas the retained add-one convention gives 90/331. These probabilities assume observational label exchangeability and do not identify a causal effect. Welch quantities use sample variances within the two outcome groups. Standard error, interval and margin are on the loading scale; degrees of freedom and probabilities are dimensionless. A margin strictly greater than the infimum would be needed to reject both one-sided tests at 0.05. The data-derived boundary is not a clinical equivalence margin.',['Quantity','Value'],rows,[100,67]))
 (HERE/'tables.tex').write_text('\n\n'.join(p1)+'\n')

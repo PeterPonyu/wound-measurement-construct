@@ -1,0 +1,215 @@
+{
+  "scope": "Bibliographic identity and citation-purpose audit; this is not a systematic literature review.",
+  "entries": [
+    {
+      "citation_key": "theocharidis2022",
+      "title": "Single cell transcriptomic landscape of diabetic foot ulcers",
+      "source": "https://doi.org/10.1038/s41467-021-27801-8",
+      "publisher_title": "Single cell transcriptomic landscape of diabetic foot ulcers",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1038%2Fs41467-021-27801-8",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "geo_gse165816",
+      "title": "GSE165816: Single-cell transcriptomic landscape of diabetic foot ulcers",
+      "source": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE165816",
+      "status": "Primary article page or source repository checked; no DOI asserted"
+    },
+    {
+      "citation_key": "blei2003",
+      "title": "Latent Dirichlet Allocation",
+      "source": "https://www.jmlr.org/papers/v3/blei03a.html",
+      "status": "Primary article page or source repository checked; no DOI asserted"
+    },
+    {
+      "citation_key": "kotliar2019",
+      "title": "Identifying gene expression programs of cell-type identity and cellular activity with single-cell RNA-Seq",
+      "source": "https://doi.org/10.7554/eLife.43803",
+      "publisher_title": "Identifying gene expression programs of cell-type identity and cellular activity with single-cell RNA-Seq",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.7554%2FeLife.43803",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "crowell2020",
+      "title": "muscat detects subpopulation-specific state transitions from multi-sample multi-condition single-cell transcriptomics data",
+      "source": "https://doi.org/10.1038/s41467-020-19894-4",
+      "publisher_title": "muscat detects subpopulation-specific state transitions from multi-sample multi-condition single-cell transcriptomics data",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1038%2Fs41467-020-19894-4",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "hafemeister2019",
+      "title": "Normalization and variance stabilization of single-cell RNA-seq data using regularized negative binomial regression",
+      "source": "https://doi.org/10.1186/s13059-019-1874-1",
+      "publisher_title": "Normalization and variance stabilization of single-cell RNA-seq data using regularized negative binomial regression",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1186%2Fs13059-019-1874-1",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "benjamini1995",
+      "title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+      "source": "https://doi.org/10.1111/j.2517-6161.1995.tb02031.x",
+      "publisher_title": "Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1111%2Fj.2517-6161.1995.tb02031.x",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "lazic2010",
+      "title": "The problem of pseudoreplication in neuroscientific studies: is it affecting your analysis?",
+      "source": "https://doi.org/10.1186/1471-2202-11-5",
+      "publisher_title": "The problem of pseudoreplication in neuroscientific studies: is it affecting your analysis?",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1186%2F1471-2202-11-5",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "efron1993",
+      "title": "An Introduction to the Bootstrap",
+      "source": "Publisher book metadata; ISBN 9780412042317",
+      "status": "Primary article page or source repository checked; no DOI asserted"
+    },
+    {
+      "citation_key": "srivastava2017",
+      "title": "Autoencoding Variational Inference For Topic Models",
+      "source": "https://arxiv.org/abs/1703.01488",
+      "status": "Primary article page or source repository checked; no DOI asserted"
+    },
+    {
+      "citation_key": "schuirmann1987",
+      "title": "A comparison of the two one-sided tests procedure and the power approach for assessing the equivalence of average bioavailability",
+      "source": "https://doi.org/10.1007/BF01068419",
+      "publisher_title": "A comparison of the Two One-Sided Tests Procedure and the Power Approach for assessing the equivalence of average bioavailability",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1007%2FBF01068419",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "armstrong2017",
+      "title": "Diabetic Foot Ulcers and Their Recurrence",
+      "source": "https://doi.org/10.1056/nejmra1615439",
+      "publisher_title": "Diabetic Foot Ulcers and Their Recurrence",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1056%2Fnejmra1615439",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "wilkinson2020",
+      "title": "Wound healing: cellular mechanisms and pathological outcomes",
+      "source": "https://doi.org/10.1098/rsob.200223",
+      "publisher_title": "Wound healing: cellular mechanisms and pathological outcomes",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1098%2Frsob.200223",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "squair2021",
+      "title": "Confronting false discoveries in single-cell differential expression",
+      "source": "https://doi.org/10.1038/s41467-021-25960-2",
+      "publisher_title": "Confronting false discoveries in single-cell differential expression",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1038%2Fs41467-021-25960-2",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "zimmerman2021",
+      "title": "A practical solution to pseudoreplication bias in single-cell studies",
+      "source": "https://doi.org/10.1038/s41467-021-21038-1",
+      "publisher_title": "A practical solution to pseudoreplication bias in single-cell studies",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1038%2Fs41467-021-21038-1",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "buettner2021",
+      "title": "scCODA is a Bayesian model for compositional single-cell data analysis",
+      "source": "https://doi.org/10.1038/s41467-021-27150-6",
+      "publisher_title": "scCODA is a Bayesian model for compositional single-cell data analysis",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1038%2Fs41467-021-27150-6",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "young2020",
+      "title": "SoupX removes ambient RNA contamination from droplet-based single-cell RNA sequencing data",
+      "source": "https://doi.org/10.1093/gigascience/giaa151",
+      "publisher_title": "SoupX removes ambient RNA contamination from droplet-based single-cell RNA sequencing data",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1093%2Fgigascience%2Fgiaa151",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "vandenbrink2017",
+      "title": "Single-cell sequencing reveals dissociation-induced gene expression in tissue subpopulations",
+      "source": "https://doi.org/10.1038/nmeth.4437",
+      "publisher_title": "Single-cell sequencing reveals dissociation-induced gene expression in tissue subpopulations",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1038%2Fnmeth.4437",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "phipson2010",
+      "title": "Permutation P-values Should Never Be Zero: Calculating Exact P-values When Permutations Are Randomly Drawn",
+      "source": "https://doi.org/10.2202/1544-6115.1585",
+      "publisher_title": "Permutation P-values Should Never Be Zero: Calculating Exact P-values When Permutations Are Randomly Drawn",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.2202%2F1544-6115.1585",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "lakens2017",
+      "title": "Equivalence Tests: A Practical Primer for {\\textit{t",
+      "source": "https://doi.org/10.1177/1948550617697177",
+      "publisher_title": "Equivalence Tests",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1177%2F1948550617697177",
+      "status": "Publisher title matched; extended subtitle checked separately"
+    },
+    {
+      "citation_key": "collins2015",
+      "title": "Transparent Reporting of a multivariable prediction model for Individual Prognosis Or Diagnosis (TRIPOD): The TRIPOD Statement",
+      "source": "https://doi.org/10.7326/m14-0697",
+      "publisher_title": "Transparent Reporting of a multivariable prediction model for Individual Prognosis Or Diagnosis (TRIPOD): The TRIPOD Statement",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.7326%2Fm14-0697",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "heumos2023",
+      "title": "Best practices for single-cell analysis across modalities",
+      "source": "https://doi.org/10.1038/s41576-023-00586-w",
+      "publisher_title": "Best practices for single-cell analysis across modalities",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1038%2Fs41576-023-00586-w",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "lopez2018",
+      "title": "Deep generative modeling for single-cell transcriptomics",
+      "source": "https://doi.org/10.1038/s41592-018-0229-2",
+      "publisher_title": "Deep generative modeling for single-cell transcriptomics",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1038%2Fs41592-018-0229-2",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "bengio2004",
+      "title": "No Unbiased Estimator of the Variance of K-Fold Cross-Validation",
+      "source": "https://www.jmlr.org/papers/v5/grandvalet04a.html",
+      "status": "Primary article page or source repository checked; no DOI asserted"
+    },
+    {
+      "citation_key": "cawley2010",
+      "title": "On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation",
+      "source": "https://www.jmlr.org/papers/v11/cawley10a.html",
+      "status": "Primary article page or source repository checked; no DOI asserted"
+    },
+    {
+      "citation_key": "aitchison1980",
+      "title": "Logistic-normal distributions: Some properties and uses",
+      "source": "https://doi.org/10.1093/biomet/67.2.261",
+      "publisher_title": "Logistic-normal distributions:Some properties and uses",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1093%2Fbiomet%2F67.2.261",
+      "status": "Publisher-deposited title matched"
+    },
+    {
+      "citation_key": "kingma2014",
+      "title": "Auto-Encoding Variational Bayes",
+      "source": "https://arxiv.org/abs/1312.6114",
+      "status": "Primary article page or source repository checked; no DOI asserted"
+    },
+    {
+      "citation_key": "hemerik2018",
+      "title": "Exact testing with random permutations",
+      "source": "https://doi.org/10.1007/s11749-017-0571-1",
+      "publisher_title": "Exact testing with random permutations",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1007%2Fs11749-017-0571-1",
+      "status": "Publisher-deposited title matched"
+    }
+  ]
+}

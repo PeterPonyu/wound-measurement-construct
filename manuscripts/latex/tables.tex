@@ -399,3 +399,50 @@ Healing minus non-healing & 11 patients & 0.0280 & Not recalculated & 0.0139 to 
 0.4000 & 0.9182 & 3.889 & 0.0608 & Healthy \\
 \end{longtable}
 }
+
+\Needspace{520pt}
+
+\Needspace{226pt}
+{\small
+\begin{longtable}{@{}p{63mm}p{55mm}p{49mm}@{}}
+\caption{Exact mean decomposition on the saved 19,410 discovery fibroblasts in 25 specimens. The cut is 0.184295848; empirical bin means are distinct from fitted Gaussian-component means. The constant-state approximation uses the cell-pooled low/high means, and its residual is the observed specimen mean minus that approximation. RMS denotes root-mean-square residual with equal specimen weights. Ranges exclude undefined means for empty bins; zero-weight terms contribute zero to the identity. Both exact identities have maximum numerical discrepancy below $10^{-15}$. Values are on the zero-to-one loading scale, apart from the count row. They describe the frozen sample, without confidence intervals, a test of invariant state intensity or causal variance attribution.}\label{tab:p1math}\\
+\toprule
+\textbf{Quantity} & \textbf{Value or range} & \textbf{Denominator} \\
+\midrule\endfirsthead
+\multicolumn{3}{l}{\tablename\ \thetable\ (continued)}\\
+\toprule
+\textbf{Quantity} & \textbf{Value or range} & \textbf{Denominator} \\
+\midrule\endhead
+\bottomrule\endfoot
+Cell-pooled low-bin mean & 0.02380 & All 19,410 fibroblasts \\
+Cell-pooled high-bin mean & 0.51301 & All 19,410 fibroblasts \\
+Specimen low-bin means & 0.01204 to 0.10213 & 25 nonempty low bins \\
+Specimen high-bin means & 0.22645 to 0.57777 & 16 nonempty high bins \\
+Specimens with an empty bin & 9 & 9 of 25; high bin empty \\
+Within-state residual range & -0.02434 to 0.04377 & All 25 specimens \\
+Within-state residual RMS & 0.01575 & Equal specimen weights \\
+\end{longtable}
+}
+
+\Needspace{238pt}
+{\small
+\begin{longtable}{@{}p{100mm}p{67mm}@{}}
+\caption{Independent arithmetic check of the all-cell mean-loading contrast in 11 patients (7 healing, 4 non-healing). Exhaustive allocation includes the observed labels and numerical ties: 89/330 allocations are at least as extreme in absolute mean difference, whereas the retained add-one convention gives 90/331. These probabilities assume observational label exchangeability and do not identify a causal effect. Welch quantities use sample variances within the two outcome groups. Standard error, interval and margin are on the loading scale; degrees of freedom and probabilities are dimensionless. A margin strictly greater than the infimum would be needed to reject both one-sided tests at 0.05. The data-derived boundary is not a clinical equivalence margin.}\label{tab:p1exact}\\
+\toprule
+\textbf{Quantity} & \textbf{Value} \\
+\midrule\endfirsthead
+\multicolumn{2}{l}{\tablename\ \thetable\ (continued)}\\
+\toprule
+\textbf{Quantity} & \textbf{Value} \\
+\midrule\endhead
+\bottomrule\endfoot
+All label allocations & 330 \\
+At least as extreme as observed & 89 \\
+Exhaustive two-sided probability & 0.269697 \\
+Recorded add-one probability & 0.271903 \\
+Welch standard error & 0.018226 \\
+Welch degrees of freedom & 8.098869 \\
+Two-sided 90\% Welch interval & -0.005864 to 0.061814 \\
+Equivalence-margin infimum & 0.061814 \\
+\end{longtable}
+}

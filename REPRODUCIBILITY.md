@@ -32,3 +32,7 @@ Run from the archive root. Each program documents options with `--help`. Some pr
 The archive verifier checks the checksum manifest, Python syntax, matching citation metadata and CLI imports. The full reproduction package additionally checks the frozen decoder, deterministic projection and training-only standardization. Manuscript builds check protected narrative sections, adjacent equation references, table citations, embedded fonts, complete citations and figure placement. Figure builds enforce black bold lettering, vector content and unchanged numerical source files.
 
 The software-only archive contains programs, not pretrained weights or completed observations. Its checksum/import checks do not claim that a full raw-count pipeline has been rerun on every platform. Provenance fingerprints inside reports describe the original computation; MANIFEST.sha256.json hashes the files in the exact distributed artifact.
+
+## Mathematical audit
+
+Run `python3 -m unittest discover -s tests -v` for analytic implementation checks. Run `python3 scripts/audit_measurement_math.py --output-dir outputs/reruns/mathematical_audit` after producing its saved inputs. The full reproduction package includes those inputs; the software-only archive requires the preceding analysis steps. Historical report hashes describe the original computation, while the release manifest describes the current exported files. Documentation corrections are not a claim that every original model has been refitted.

@@ -1,8 +1,6 @@
 # Wound single-cell measurement construct validation
 
-Published software archive: [10.5281/zenodo.22872448](https://doi.org/10.5281/zenodo.22872448) (version 0.1.0).
-
-Author: Zeyu Fu. Software version: 0.1.0.
+Author: Zeyu Fu. Software version: 0.2.0.
 
 Software for testing whether a fibroblast-associated expression loading reflects cell-state abundance and supports patient-level healing inference in public wound single-cell data. The study includes technical controls, patient resampling, paired anatomy, representation comparisons and external tissue-context projections. It does not establish a clinically validated prognostic tool.
 
@@ -22,6 +20,7 @@ python3 manuscripts/latex/export_tables.py
 python3 manuscripts/build_main_figures.py
 python3 manuscripts/latex/build.py --render
 python3 scripts/assess_robustness.py --output-dir outputs/reruns/robustness
+python3 -m unittest discover -s tests -v
 ```
 
 The figure and PDF commands require R with ggplot2, tikzDevice, jsonlite and digest; XeLaTeX/BibTeX/latexmk; Poppler; and installed Arial and TeX Gyre fonts. Fonts are not redistributed. Python package versions are recorded in requirements.txt and environment.json. CPU execution is supported; recorded neural fits used CUDA. The robustness command recomputes the patient bootstrap and omission diagnostics from the saved inputs, without raw-count downloads.
@@ -33,3 +32,9 @@ The MIT License applies to software, including analysis and rendering programs. 
 ## Citation and independent archiving
 
 Use CITATION.cff for software attribution. ARCHIVING.md describes direct Zenodo deposition using this study's .zenodo.json and software-only ZIP. A reserved identifier is not a published DOI; only verified published records are added to citations. Each study has its own deposit state, preventing accidental reuse of the other study's record.
+
+The independently published software archive for version 0.2.0 is [available on Zenodo](https://doi.org/10.5281/zenodo.22875656). Previous versions remain available for attribution.
+
+## Mathematical verification
+
+Version 0.2.0 corrects method descriptions and adds explicit estimands, analytic unit tests and a frozen-input sensitivity report. Read METHODS_CONTRACT.md and CHANGELOG.md for the interpretation and provenance boundaries. Recompute the added analysis with `python3 scripts/audit_measurement_math.py --output-dir outputs/reruns/mathematical_audit`. This uses saved inputs and does not refit the original representation or temporal fields.

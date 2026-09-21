@@ -118,5 +118,10 @@
     "report": "outputs/robustness_extensions/report.json",
     "manuscript_destination": "Supplementary patient-resampling table",
     "scope": "New retrospective sensitivity analyses; original results are preserved and no new biological replication is claimed."
+  },
+  {
+    "report": "outputs/mathematical_audit/measurement/report.json",
+    "manuscript_destination": "Methods; Tables tab:p1math and tab:p1exact",
+    "scope": "Mathematical verification and conditional sensitivity of saved observations; no new biological replication."
   }
 ]

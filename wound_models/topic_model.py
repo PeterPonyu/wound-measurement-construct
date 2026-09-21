@@ -66,11 +66,9 @@ class TopicModel(nn.Module):
         """
         Args:
             deterministic: skip the reparameterization sample and use the
-                posterior mean. Defaults to True in eval mode. Without this,
-                projecting a frozen model onto a validation cohort is
-                stochastic and the reported effect size shifts between runs
-                (measured: within-fibroblast ratio 2.74x vs 2.77x on identical
-                inputs), which makes a published number irreproducible.
+                Gaussian-coordinate posterior mean. Defaults to True in eval
+                mode. The resulting softmax(mu) is not generally the
+                posterior mean of the simplex weights.
         """
         if deterministic is None:
             deterministic = not self.training

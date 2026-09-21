@@ -45,6 +45,11 @@ def main():
             if result.returncode:
                 raise RuntimeError(f"{path.name}: {result.stderr[-2500:]}")
             commands.append(path.name)
+        if (ROOT / "tests").is_dir():
+            result = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"],
+                                    cwd=ROOT, capture_output=True, text=True, timeout=60)
+            if result.returncode:
+                raise RuntimeError("Mathematical verification failed: " + result.stderr[-2500:])
         import numpy as np
         import torch
         from wound_models.human_wound_data import fold_standardize, load_discovery

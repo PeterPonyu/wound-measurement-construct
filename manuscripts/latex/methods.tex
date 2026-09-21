@@ -12,14 +12,19 @@ q_\phi(z\mid u_i)&=\mathcal N\!\left(\mu_\phi(u_i),\operatorname{diag}\sigma_\ph
 \beta_{kg}=\frac{e^{b_{kg}}}{\sum_{h=1}^{G}e^{b_{kh}}},\qquad
 \widehat u_{ig}=\sum_{k=0}^{K-1}\theta_{ik}\beta_{kg}.\label{eq:p1decoder}
 \end{align}
-Equations~\eqref{eq:p1encoder}--\eqref{eq:p1decoder} define the encoder, simplex coordinates and normalized topic-gene decoder used below. Thus $\theta_i\in\Delta^{K-1}=\{a\in\R^K:a_k\geq0,\sum_{k=0}^{K-1}a_k=1\}$ and every topic-gene row sums to one. The topic indices start at zero. This is a logistic-normal neural topic model; it does not implement an exact Dirichlet posterior or a Dirichlet prior, despite the general topic-model motivation \citep{blei2003,srivastava2017}. Training minimizes
+Equations~\eqref{eq:p1encoder}--\eqref{eq:p1decoder} define the encoder, simplex coordinates and normalized topic-gene decoder used below. Thus $\theta_i\in\Delta^{K-1}=\{a\in\R^K:a_k\geq0,\sum_{k=0}^{K-1}a_k=1\}$ and every topic-gene row sums to one. The topic indices start at zero. A Gaussian mapped through softmax gives a logistic-normal representation \citep{aitchison1980}. This differs from a Dirichlet prior, while retaining the mixture representation that motivates topic models \citep{blei2003,srivastava2017}. Training minimizes
 \begin{equation}
 \mathcal L(\phi,b)=\frac1N\sum_i\E_{q_\phi}\!\left[-\sum_g u_{ig}\log(\widehat u_{ig}+10^{-10})\right]
 +0.01\,\frac1N\sum_i\operatorname{KL}\!\left(q_\phi(z\mid u_i)\,\|\,\mathcal N(0,I)\right).\label{eq:p1loss}
 \end{equation}
-Equation~\eqref{eq:p1loss} is the fitted objective: the reconstruction term is cross-entropy on per-cell proportions and the second term is the stated Gaussian regularizer; it is not a depth-weighted count likelihood. The encoder has widths 256 and 128, batch normalization, ReLU activations and dropout 0.1. The recorded fit used $K=15$, 40,000 Adam steps, learning rate $10^{-3}$ and batches of 512. Deterministic projection uses $z=\mu_\phi(u)$ and $\theta=\operatorname{softmax}(\mu_\phi(u))$, which is not generally $\E_q[\operatorname{softmax}(z)]$. Missing panel genes in external projections are set to zero. Normalization and quality control can alter biological interpretations, so this definition is kept distinct from other variance-stabilizing methods \citep{hafemeister2019,heumos2023}.
+Equation~\eqref{eq:p1loss} is the fitted objective: each cell contributes cross-entropy on its panel proportions, followed by a Gaussian regularizer. It is neither a depth-weighted count likelihood nor an unmodified evidence lower bound for such a likelihood. With encoder log-variance $\ell_{ik}=\log\sigma_{ik}^2$, the reparameterization and regularizer are
+\begin{equation}
+z_{ik}=\mu_{ik}+e^{\ell_{ik}/2}\epsilon_{ik},\quad \epsilon_i\sim\mathcal N(0,I),\qquad
+\operatorname{KL}_i=\frac12\sum_k\left(\mu_{ik}^2+e^{\ell_{ik}}-1-\ell_{ik}\right).\label{eq:p1gaussian}
+\end{equation}
+Equation~\eqref{eq:p1gaussian} is the diagonal-Gaussian calculation used by the implementation \citep{kingma2014}; one noise draw per cell estimates the reconstruction expectation in each training batch. The encoder has widths 256 and 128, batch normalization, ReLU activations and dropout 0.1. The recorded fit used $K=15$, 40,000 Adam steps, learning rate $10^{-3}$ and batches of 512. Deterministic projection disables encoder dropout and uses $z=\mu_\phi(u)$ and $\theta=\operatorname{softmax}(\mu_\phi(u))$, which is not generally $\E_q[\operatorname{softmax}(z)]$. Missing panel genes in external projections are set to zero. Normalization and quality control can alter biological interpretations, so this definition is kept distinct from other variance-stabilizing methods \citep{hafemeister2019,heumos2023}.
 
-Topic-gene perplexity is summarized as $\exp\{-K^{-1}\sum_{k,g}\beta_{kg}\log\beta_{kg}\}$; it measures concentration of decoder weights, not superiority over other representations. The latent coordinate $\mu\in\R^K$ is not the simplex coordinate $\theta$. No downstream outcome comparison substitutes one for the other.
+Topic-gene perplexity is summarized as $\exp\{-K^{-1}\sum_{k,g}\beta_{kg}\log\beta_{kg}\}$; it measures concentration of decoder weights, not superiority over other representations. The latent coordinate $\mu\in\R^K$ is not the simplex coordinate $\theta$. Softmax is unchanged by adding a common scalar to all coordinates of a cell; reconstruction therefore does not identify that offset. The Gaussian penalty constrains the fitted coordinates but does not give them a unique biological interpretation. Topic weights are decoder coefficients, not independently calibrated probabilities of membership in a biological cell type.
 
 \subsection{Threshold fractions and the exact mean decomposition}
 Let $Y_{si}=\theta_{si,\star}$ for fibroblast-gated cell $i$ in sample $s$. Lineage markers are disjoint from the tested topic-gene list by an explicit overlap check; the gate is nevertheless an expression-based operational definition, not an independently measured cell identity. A pooled two-Gaussian fit provides a descriptive cut $c=0.1842958$, the midpoint of the fitted component means. Gaussian components approximate a bounded score distribution and are not assumed to be literal biological populations.
@@ -32,6 +37,13 @@ Equation~\eqref{eq:p1fraction} defines both the sample mean and the reported har
 \bar Y_s=(1-\widehat w_s)\bar Y_{s,L}+\widehat w_s\bar Y_{s,H}.\label{eq:p1identity}
 \end{equation}
 Equation~\eqref{eq:p1identity} is exact. Only under an additional approximate component-stability assumption, $\bar Y_{s,L}\approx m_L$ and $\bar Y_{s,H}\approx m_H$, does it reduce to $\bar Y_s\approx m_L+(m_H-m_L)\widehat w_s$. Consequently, a large correlation between the two summaries cannot independently prove stable intensity: both summaries use the same cells. Persistence of overlapping low-state tails supplies complementary distributional evidence. The 10th percentile of a high-loading sample (0.029) overlaps the scale of the 90th percentile in a low-loading sample (0.119); this observation alone is not a formal test of multimodality.
+
+To quantify the term omitted by a constant-state approximation, let $m_L,m_H$ be the cell-pooled means in the two threshold bins across the 19,410 discovery fibroblasts. They are empirical bin means, not the fitted Gaussian means. For each specimen,
+\begin{align}
+A_s&=(1-\widehat w_s)m_L+\widehat w_sm_H,\notag\\
+R_s&=(1-\widehat w_s)(\bar Y_{s,L}-m_L)+\widehat w_s(\bar Y_{s,H}-m_H),\qquad \bar Y_s=A_s+R_s.\label{eq:p1residual}
+\end{align}
+Equation~\eqref{eq:p1residual} separates a specified constant-state approximation from its exact residual. An empty bin contributes zero and its undefined mean is omitted from the corresponding mean range. We report specimen-weighted residual RMS, bin-mean ranges and all 25 specimen summaries. These are finite-data descriptions without a test of state invariance or a causal allocation of variance (Table~\ref{tab:p1math}).
 
 The semantic statistic is $\rho_{\rm sem}=\operatorname{cor}_{\rm Spearman}(\bar Y_s,\widehat w_s)$ across 25 samples. A 10,000-draw sample-row percentile bootstrap, 10,000 row permutations and leave-one-sample-out recalculation characterize its stability. These do not create independent patients. The patient-collapsed correlation of 0.937 across 20 mapped patients is an additional descriptive unit check.
 
@@ -55,12 +67,23 @@ p_{+}=\frac{1+\sum_{\pi\in\Pi}\ind\{|\widehat\Delta_\pi|\geq|\widehat\Delta|\}}{
 \end{equation}
 Equation~\eqref{eq:p1permutation} is the recorded add-one-corrected two-sided permutation probability. It is slightly conservative relative to the uncorrected exhaustive fraction; the add-one convention is usually motivated for randomly drawn permutations \citep{phipson2010}, whereas all allocations are enumerated here. Exchangeability is an assumption for an observational label comparison, not a randomization supplied by study design. A 30,000-draw bootstrap resamples patients within outcome arms \citep{efron1993}. Small group sizes and conditional resampling explain why bootstrap intervals and permutation tests need not be dual.
 
+An independent enumeration also reports the exhaustive probability without the extra correction:
+\begin{equation}
+p_{\rm exact}=\frac{\#\{\pi\in\Pi:|\widehat\Delta_\pi|\geq|\widehat\Delta|\}}{|\Pi|}=\frac{89}{330}=0.2697.\label{eq:p1exact}
+\end{equation}
+Equation~\eqref{eq:p1exact} includes the observed allocation and numerical ties. It distinguishes exhaustive enumeration from randomly sampled permutations \citep{hemerik2018}; the recorded corrected value $90/331=0.2719$ is retained alongside it. Neither convention makes observational healing labels randomized or tests a causal effect. Table~\ref{tab:p1exact} reports the independent arithmetic check, including the Welch quantities below.
+
 For a symmetric equivalence margin $M$, the Welch two-one-sided-test procedure \citep{schuirmann1987,lakens2017} uses $SE=(s_H^2/n_H+s_N^2/n_N)^{1/2}$ and Welch degrees of freedom $\nu$:
 \begin{equation}
 p_L=1-F_{t_\nu}\!\left(\frac{\widehat\Delta+M}{SE}\right),\qquad
 p_U=F_{t_\nu}\!\left(\frac{\widehat\Delta-M}{SE}\right).\label{eq:p1tost}
 \end{equation}
-Equation~\eqref{eq:p1tost} gives the two one-sided tests used for a prespecified margin. Both must be below 0.05 to reject non-equivalence. The data-derived infimum $M_*=|\widehat\Delta|+t_{\nu,0.95}SE$ is reported only as sensitivity (0.0618 at the patient unit; 0.0753 at the original sample unit). Selecting this margin after observing the data is not a clinically justified equivalence claim. No clinical minimum important difference has been supplied.
+Equation~\eqref{eq:p1tost} gives the two one-sided tests used for a prespecified margin. Both must be below 0.05 to reject non-equivalence. Writing $v_H=s_H^2/n_H$ and $v_N=s_N^2/n_N$ makes the degrees of freedom and margin boundary explicit:
+\begin{equation}
+\nu=\frac{(v_H+v_N)^2}{v_H^2/(n_H-1)+v_N^2/(n_N-1)},\qquad
+M_*=|\widehat\Delta|+t_{\nu,0.95}SE.\label{eq:p1margin}
+\end{equation}
+Equation~\eqref{eq:p1margin} is the infimum margin containing the two-sided 90\% Welch interval; strict rejection requires $M>M_*$. Independent calculation gives $SE=0.01823$, $\nu=8.099$ and $M_*=0.06181$ for the 11-patient comparison. The original sample-unit boundary is 0.0753. A margin selected after seeing these data is a sensitivity summary, not a clinically justified equivalence claim. No clinical minimum important difference has been supplied.
 
 \subsection{Discrimination, anatomy and design simulations}
 For held-out prediction scores $r$, AUC is the empirical probability that a healing score exceeds a non-healing score, with half credit for ties:
@@ -68,6 +91,8 @@ For held-out prediction scores $r$, AUC is the empirical probability that a heal
 \widehat{\rm AUC}=\frac1{n_Hn_N}\sum_{h\in H,n\in N}\left[\ind\{r_h>r_n\}+\tfrac12\ind\{r_h=r_n\}\right].\label{eq:p1auc}
 \end{equation}
 Equation~\eqref{eq:p1auc} is the pairwise empirical AUC used for the held-out scores. Topic orientation, module preprocessing and the choice of PCA/NMF components are determined inside each training fold. The topic encoder itself was trained without outcomes on the discovery cohort, including held-out patients' expression: this is an internal discrimination audit of a frozen discovery representation, not fully external representation validation. Bootstrap intervals resample fixed out-of-fold scores with common arm-stratified indices across methods; the entire fitting/orientation process is rerun for label permutations. All allocations are used for topic and module readouts; PCA and NMF use 200 sampled relabellings. Sample-level comparisons use 14 specimens and patient-level comparisons use 11 mapped patients; they are not interchangeable.
+
+PCA scaling and basis fitting, and NMF fitting, use training rows only. The pooled out-of-fold AUC compares scores from different fitted folds; those scores are not calibrated clinical risks. Reusing the same cohort to inspect readouts and analysis choices limits confirmatory interpretation \citep{cawley2010}. Overlapping training sets and conditioning bootstrap draws on fixed scores also leave learning-algorithm uncertainty outside the reported intervals \citep{bengio2004}.
 
 The paired anatomical control tests foot-minus-forearm differences in 10 mapped patients using all $2^{10}$ sign allocations and the same add-one convention. Across 15 topics, Benjamini--Hochberg adjustment is $q_{(i)}=\min\{1,\min_{j\geq i}15p_{(j)}/j\}$, with the usual assumptions required for false-discovery-rate interpretation \citep{benjamini1995}.
 
