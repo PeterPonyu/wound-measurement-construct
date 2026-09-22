@@ -31,7 +31,7 @@ The MIT License applies to software, including analysis and rendering programs. 
 
 ## Citation and independent archiving
 
-Use CITATION.cff for software attribution. ARCHIVING.md describes direct Zenodo deposition using this study's .zenodo.json and software-only ZIP. A reserved identifier is not a published DOI; only verified published records are added to citations. Each study has its own deposit state, preventing accidental reuse of the other study's record.
+Use CITATION.cff for software attribution. The verified software archive for this version is [10.5281/zenodo.22884868](https://doi.org/10.5281/zenodo.22884868). ARCHIVING.md describes direct Zenodo deposition using this study's .zenodo.json and software-only ZIP. A reserved identifier is not a published DOI; only verified published records are added to citations. Each study has its own deposit state, preventing accidental reuse of the other study's record.
 
 ## Mathematical verification
 

@@ -6,6 +6,7 @@ authors:
 - family-names: Fu
   given-names: Zeyu
 version: 0.3.0
+doi: 10.5281/zenodo.22884868
 license: MIT
 abstract: Software for testing whether a fibroblast-associated expression loading
   reflects cell-state abundance and supports patient-level healing inference in public
