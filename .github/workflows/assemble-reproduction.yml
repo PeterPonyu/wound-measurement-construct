@@ -1,0 +1,41 @@
+name: Assemble verified reproduction archive
+on:
+  push:
+    branches: [codex/reproduction-transfer-0.4.2]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Download, verify and assemble immutable release bytes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir transfer
+          gh release download v0.4.2 --repo "$GITHUB_REPOSITORY" --pattern 'wound-measurement-construct-0.4.2.zip.part*' --dir transfer
+          python3 - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          folder = Path('transfer')
+          manifest = json.loads((folder / 'wound-measurement-construct-0.4.2.zip.parts.json').read_text())
+          assert manifest['sha256'] == 'a291b736cc3963ed420918baaf7fafd493609fbb584f4c69e8b14d77a01c395d'
+          target = Path('wound-measurement-construct-0.4.2.zip')
+          digest = hashlib.sha256()
+          with target.open('xb') as output:
+              for part in manifest['parts']:
+                  assert Path(part['name']).name == part['name']
+                  payload = (folder / part['name']).read_bytes()
+                  assert len(payload) == part['bytes']
+                  assert hashlib.sha256(payload).hexdigest() == part['sha256']
+                  output.write(payload)
+                  digest.update(payload)
+          assert target.stat().st_size == manifest['bytes']
+          assert digest.hexdigest() == manifest['sha256']
+          print('Exact ZIP SHA-256:', digest.hexdigest())
+          PY
+          gh release upload v0.4.2 'wound-measurement-construct-0.4.2.zip' --repo "$GITHUB_REPOSITORY"
