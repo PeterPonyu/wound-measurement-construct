@@ -11,23 +11,25 @@
     "h5py": "3.16.0",
     "PyMuPDF": "1.27.1",
     "PyYAML": "6.0.3",
+    "pytest": "8.4.2",
+    "threadpoolctl": "3.6.0",
     "anndata": "0.12.10",
     "openpyxl": "3.1.5",
     "umap-learn": "0.5.11"
   },
-  "R": "4.3.3",
-  "R_packages": {
-    "ggplot2": "4.0.3",
-    "tikzDevice": "0.12.6",
-    "jsonlite": "2.0.0",
-    "digest": "0.6.39"
-  },
+  "R_packages_required": [
+    "ggplot2",
+    "patchwork",
+    "tikzDevice",
+    "jsonlite",
+    "digest"
+  ],
   "figure_fonts": [
-    "Arial Bold"
+    "Arial"
   ],
   "manuscript_fonts": [
+    "Arial",
     "TeX Gyre Termes",
-    "TeX Gyre Termes Math",
-    "Arial"
+    "TeX Gyre Termes Math"
   ]
 }

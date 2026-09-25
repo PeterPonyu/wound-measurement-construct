@@ -1,0 +1,13 @@
+{
+  "scope": "source, manuscript, figures and PDF",
+  "version": "0.4.2",
+  "large_research_outputs": "download the complete reproduction ZIP",
+  "reproduction_zip": "wound-measurement-construct-0.4.2.zip",
+  "sha256": "a291b736cc3963ed420918baaf7fafd493609fbb584f4c69e8b14d77a01c395d",
+  "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.4.2/wound-measurement-construct-0.4.2.zip",
+  "not_in_git_checkout": [
+    "outputs",
+    "provenance",
+    "tmp"
+  ]
+}

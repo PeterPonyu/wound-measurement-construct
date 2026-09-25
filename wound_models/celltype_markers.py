@@ -1,5 +1,20 @@
 #!/usr/bin/env python3
-"""Celltype markers."""
+"""
+Marker-based cell type assignment for skin / wound scRNA-seq.
+
+Used to answer one specific question: is the healer-vs-nonhealer contrast on
+fibroblast-associated topic a difference in *programme strength within fibroblasts*, or merely a
+difference in *how many fibroblasts each sample contains*? Whole-sample mean
+theta cannot separate those two, and the two cohorts are sampled differently
+(GSE231643 is debridement tissue, GSE165816 is surgically resected), so a
+composition difference is the leading alternative explanation.
+
+Circularity guard: the panel below is curated from canonical lineage markers.
+`marker_overlap_with` reports how many of them also appear in a given topic's
+top genes, so any contamination of the cell-type call by the topic under test
+is visible rather than hidden. Genes that are top-ranked in fibroblast-associated topic
+(TIMP1, CHI3L1, FN1, IER3, SOD2, MMP1) are deliberately absent here.
+"""
 from typing import Dict, List, Sequence, Tuple
 import numpy as np
 import scipy.sparse as sp

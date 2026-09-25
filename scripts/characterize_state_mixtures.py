@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
-"""Characterize state mixtures."""
+"""Describe threshold-defined fibroblast loading distributions in saved projections.
+
+The pooled two-Gaussian fit and empirical quantile-overlap rules are descriptive.
+The retrospective high/low sample cuts do not identify mutually exclusive
+biological mechanisms, and high values in healthy skin challenge exclusivity,
+not every possible prognostic association. No one-versus-two-Gaussian model
+comparison is performed by this program. Historical flag names are retained
+for compatibility with the frozen numerical reports.
+"""
 import argparse
 import json
 import os

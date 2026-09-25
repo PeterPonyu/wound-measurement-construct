@@ -1,5 +1,18 @@
 #!/usr/bin/env python3
-"""Survey external clinical metadata."""
+"""Contract-first survey of public GEO series that could have been the next DFU cohort.
+
+The prescribed next step is: obtain an independent human DFU cohort, run
+scripts/validate_clinical_metadata.py on metadata only, and only then open expression.  This script does
+the part that local public data can actually support.  It reads series-matrix
+headers already on disk, writes honest contract tables (blank where GEO is
+silent), and runs the prognostic and projection scopes.
+
+It does not open RAW.tar, FPKM, counts, expression matrices, or h5 files.
+It does not invent patient IDs from titles.  It does not recode diabetic
+versus non-diabetic, or NPWT before/after, as healed/not_healed.  It does
+not fill MCID.  A passing run means every inspected series was rejected for
+a documented reason.  That is not experiment A.
+"""
 from __future__ import annotations
 import argparse
 import gzip

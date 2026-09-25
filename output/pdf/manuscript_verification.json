@@ -1,0 +1,260 @@
+{
+  "measurement_construct_validation": {
+    "pages": 28,
+    "figures": [
+      {
+        "figure": 1,
+        "first_citation_page": 7,
+        "figure_page": 8
+      },
+      {
+        "figure": 2,
+        "first_citation_page": 9,
+        "figure_page": 9
+      },
+      {
+        "figure": 3,
+        "first_citation_page": 10,
+        "figure_page": 10
+      },
+      {
+        "figure": 4,
+        "first_citation_page": 11,
+        "figure_page": 11
+      },
+      {
+        "figure": 5,
+        "first_citation_page": 12,
+        "figure_page": 12
+      },
+      {
+        "figure": 6,
+        "first_citation_page": 13,
+        "figure_page": 13
+      },
+      {
+        "figure": 7,
+        "first_citation_page": 14,
+        "figure_page": 14
+      },
+      {
+        "figure": 8,
+        "first_citation_page": 14,
+        "figure_page": 15
+      },
+      {
+        "figure": 9,
+        "first_citation_page": 15,
+        "figure_page": 16
+      }
+    ],
+    "raster_objects": 0,
+    "fonts": [
+      "AKBJGW+TeXGyreTermesMath-Regular-Identity-H",
+      "BMZGCT+Arial-BoldMT",
+      "BXAXMZ+TeXGyreTermes-Regular-Identity-H",
+      "BZIZRC+LMMono10-Regular-Identity-H",
+      "FUMZFV+LMMono9-Regular-Identity-H",
+      "JRDALB+Arial-BoldMT",
+      "KHJBOU+ArialMT",
+      "OXORRZ+ArialMT",
+      "PERAEF+Arial-BoldMT",
+      "QTBASN+ArialMT",
+      "RTLUWF+Arial-BoldMT",
+      "SBVELC+ArialMT",
+      "SOGISB+ArialMT",
+      "UMSGJF+ArialMT",
+      "UYYYUI+Arial-BoldMT",
+      "VPOBBB+Arial-BoldMT",
+      "XSLBZD+ArialMT",
+      "YHWUWF+TeXGyreTermes-Bold-Identity-H",
+      "YREXDU+ArialMT"
+    ],
+    "figure1_tissue": {
+      "filled_dermal_sections": 1,
+      "required_labels": [
+        "Ulcer bed",
+        "Dermis",
+        "Vessel",
+        "Immune cells",
+        "7,002-gene",
+        "Frozen MLP",
+        "15-topic",
+        "Fibroblast gate",
+        "All-cell mean",
+        "Patient-unit",
+        "sampled z",
+        "\u03b2 decoder",
+        "Gaussian KL"
+      ]
+    },
+    "page_bottom_gaps": [
+      {
+        "page": 1,
+        "bottom_gap_pt": 8.7
+      },
+      {
+        "page": 2,
+        "bottom_gap_pt": 0.2
+      },
+      {
+        "page": 3,
+        "bottom_gap_pt": 0
+      },
+      {
+        "page": 4,
+        "bottom_gap_pt": 0
+      },
+      {
+        "page": 5,
+        "bottom_gap_pt": 0
+      },
+      {
+        "page": 6,
+        "bottom_gap_pt": 0
+      },
+      {
+        "page": 7,
+        "bottom_gap_pt": 103.9
+      },
+      {
+        "page": 8,
+        "bottom_gap_pt": 27.7
+      },
+      {
+        "page": 9,
+        "bottom_gap_pt": 31.6
+      },
+      {
+        "page": 10,
+        "bottom_gap_pt": 15.4
+      },
+      {
+        "page": 11,
+        "bottom_gap_pt": 12.7
+      },
+      {
+        "page": 12,
+        "bottom_gap_pt": 4.9
+      },
+      {
+        "page": 13,
+        "bottom_gap_pt": 17.5
+      },
+      {
+        "page": 14,
+        "bottom_gap_pt": 13.4
+      },
+      {
+        "page": 15,
+        "bottom_gap_pt": 0
+      },
+      {
+        "page": 16,
+        "bottom_gap_pt": 8.5
+      },
+      {
+        "page": 17,
+        "bottom_gap_pt": 3.2
+      },
+      {
+        "page": 18,
+        "bottom_gap_pt": 9.4
+      },
+      {
+        "page": 19,
+        "bottom_gap_pt": 8.2
+      },
+      {
+        "page": 20,
+        "bottom_gap_pt": 0
+      },
+      {
+        "page": 21,
+        "bottom_gap_pt": 18.6
+      },
+      {
+        "page": 22,
+        "bottom_gap_pt": 26.7
+      },
+      {
+        "page": 23,
+        "bottom_gap_pt": 55.9
+      },
+      {
+        "page": 24,
+        "bottom_gap_pt": 110.3
+      },
+      {
+        "page": 25,
+        "bottom_gap_pt": 19.9
+      },
+      {
+        "page": 26,
+        "bottom_gap_pt": 48.6
+      },
+      {
+        "page": 27,
+        "bottom_gap_pt": 43.7
+      },
+      {
+        "page": 28,
+        "bottom_gap_pt": 81.3
+      }
+    ],
+    "resolved_internal_links": 197,
+    "references": 46,
+    "first_citation_order_verified": true,
+    "reference_keys": [
+      "armstrong2017",
+      "wilkinson2020",
+      "theocharidis2022",
+      "geo_gse165816",
+      "driskell2013",
+      "muhl2020",
+      "buechler2021",
+      "soleboldo2020",
+      "philippeos2018",
+      "blei2003",
+      "kotliar2019",
+      "lopez2018",
+      "srivastava2017",
+      "kingma2014",
+      "aitchison1980",
+      "buettner2021",
+      "altman2006",
+      "dann2022",
+      "vandenbrink2017",
+      "young2020",
+      "wolock2019",
+      "heumos2023",
+      "hafemeister2019",
+      "luecken2022",
+      "crowell2020",
+      "squair2021",
+      "zimmerman2021",
+      "lazic2010",
+      "steyerberg2010",
+      "vancalster2019",
+      "vickers2006",
+      "collins2015",
+      "cawley2010",
+      "schuirmann1987",
+      "lakens2017",
+      "riley2019",
+      "becht2019",
+      "huang2022visualization",
+      "cronbach1955",
+      "efron1993",
+      "phipson2010",
+      "hemerik2018",
+      "benjamini1995",
+      "foster2021",
+      "mascharak2021",
+      "bengio2004"
+    ],
+    "equations": 18,
+    "tables": 31,
+    "sha256": "70fe1f069ffd1336b0e68078ab5ea828b9d07a430a5296257adbf5440a7ecdc7"
+  }
+}

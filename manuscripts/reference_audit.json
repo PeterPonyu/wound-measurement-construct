@@ -306,6 +306,38 @@
       "publisher_title": "Assessing the Performance of Prediction Models",
       "publisher_metadata_source": "https://api.crossref.org/works/10.1097%2Fede.0b013e3181c30fb2",
       "status": "Publisher-deposited bibliographic identity checked; cited for contextual biological or methodological interpretation, not as an analysis performed in this study."
+    },
+    {
+      "citation_key": "cronbach1955",
+      "title": "Construct validity in psychological tests",
+      "source": "https://doi.org/10.1037/h0040957",
+      "publisher_title": "Construct validity in psychological tests.",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1037%2Fh0040957",
+      "status": "Publisher-deposited bibliographic identity checked; cited for contextual methodological interpretation, not as an analysis performed in this study."
+    },
+    {
+      "citation_key": "philippeos2018",
+      "title": "Spatial and single-cell transcriptional profiling identifies functionally distinct human dermal fibroblast subpopulations",
+      "source": "https://doi.org/10.1016/j.jid.2018.01.016",
+      "publisher_title": "Spatial and Single-Cell Transcriptional Profiling Identifies Functionally Distinct Human Dermal Fibroblast Subpopulations",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1016%2Fj.jid.2018.01.016",
+      "status": "Publisher-deposited bibliographic identity checked; cited for contextual biological interpretation, not as an analysis performed in this study."
+    },
+    {
+      "citation_key": "foster2021",
+      "title": "Integrated spatial multiomics reveals fibroblast fate during tissue repair",
+      "source": "https://doi.org/10.1073/pnas.2110025118",
+      "publisher_title": "Integrated spatial multiomics reveals fibroblast fate during tissue repair",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1073%2Fpnas.2110025118",
+      "status": "Publisher-deposited bibliographic identity checked; cited for contextual biological interpretation, not as an analysis performed in this study."
+    },
+    {
+      "citation_key": "mascharak2021",
+      "title": "Preventing Engrailed-1 activation in fibroblasts yields wound regeneration without scarring",
+      "source": "https://doi.org/10.1126/science.aba2374",
+      "publisher_title": "Preventing Engrailed-1 activation in fibroblasts yields wound regeneration without scarring",
+      "publisher_metadata_source": "https://api.crossref.org/works/10.1126%2Fscience.aba2374",
+      "status": "Publisher-deposited bibliographic identity checked; cited for contextual biological interpretation, not as an analysis performed in this study."
     }
   ]
 }

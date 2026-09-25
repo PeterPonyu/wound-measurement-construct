@@ -1,0 +1,7 @@
+sample_id,patient_id,patient_id_source,wound_id,timepoint_days,healing_status,follow_up_days,tissue_site,batch,library_id,sequencing_run
+GSM8414850,1,authoritative,,0,,,granulation tissue,GSE272918_Illumina_TruSeq_stranded_mRNA,SRX25429306,GSE272918_Illumina_HiSeq_2500
+GSM8414851,1,authoritative,,7,,,granulation tissue,GSE272918_Illumina_TruSeq_stranded_mRNA,SRX25429307,GSE272918_Illumina_HiSeq_2500
+GSM8414852,2,authoritative,,0,,,granulation tissue,GSE272918_Illumina_TruSeq_stranded_mRNA,SRX25429308,GSE272918_Illumina_HiSeq_2500
+GSM8414853,2,authoritative,,7,,,granulation tissue,GSE272918_Illumina_TruSeq_stranded_mRNA,SRX25429311,GSE272918_Illumina_HiSeq_2500
+GSM8414854,3,authoritative,,0,,,granulation tissue,GSE272918_Illumina_TruSeq_stranded_mRNA,SRX25429310,GSE272918_Illumina_HiSeq_2500
+GSM8414855,3,authoritative,,7,,,granulation tissue,GSE272918_Illumina_TruSeq_stranded_mRNA,SRX25429309,GSE272918_Illumina_HiSeq_2500

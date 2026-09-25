@@ -1,4 +1,8 @@
-"""Assess robustness."""
+"""Patient-resampling and numerical/evaluation sensitivity analyses.
+
+The original result files are read only. New results describe sensitivity of
+the existing cohorts; repeated resamples are not biological replications.
+"""
 from __future__ import annotations
 import argparse
 import hashlib

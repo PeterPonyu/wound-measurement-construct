@@ -1,5 +1,18 @@
 #!/usr/bin/env python3
-"""Scan sample covariates."""
+"""
+Exhaustive search for whatever stratifies the fibroblast-associated topic-high mixture weight.
+
+Section 7.4 showed the weight is bimodal but not explained by healing status,
+diabetes status, fibroblast count or sample order. Section 7.6 showed it is not
+dissociation, doublets or sequencing depth. "Unexplained" is only a defensible
+claim if the search was systematic, so this sweeps every covariate that public
+metadata and the existing outputs make available, and reports the full ranked
+table rather than the winners.
+
+Multiplicity is handled up front: with 14 samples the Spearman p-value floor is
+not the binding constraint, the number of tests is. Benjamini-Hochberg q-values
+are reported alongside raw p, and nothing is called a hit on raw p alone.
+"""
 import argparse
 import gzip
 import json

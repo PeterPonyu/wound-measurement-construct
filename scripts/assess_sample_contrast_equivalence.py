@@ -1,5 +1,16 @@
 #!/usr/bin/env python3
-"""Assess sample contrast equivalence."""
+"""Audit the patient unit and quantify the sample-level equivalence boundary.
+
+GSE165816's public series matrix gives GSM, title, tissue, and disease, but no
+explicit patient/subject identifier.  This script therefore does two separate
+things without silently treating a title prefix as a patient ID:
+
+1. documents whether a patient mapping is actually available; and
+2. runs a frozen, sample-level sensitivity analysis on fibroblast-associated topic means.  The
+   equivalence margins are a grid unless the user supplies a pre-specified
+   ``--equivalence-bound``.  Grid results are design sensitivity, not a claim
+   of clinical equivalence.
+"""
 from __future__ import annotations
 import argparse
 import hashlib

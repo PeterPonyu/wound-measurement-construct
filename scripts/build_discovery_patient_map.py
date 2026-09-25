@@ -1,5 +1,18 @@
 #!/usr/bin/env python3
-"""Build discovery patient map."""
+"""Build the GSE165816 subject-sample map from the published clinical table.
+
+GEO still has no patient field.  Nature Communications 13:181 ships a
+per-subject clinical table that names the GSE165816 sample titles belonging
+to each person.  This script reads that table, joins GSM accessions and the
+finest public laboratory provenance from the local series matrix, and runs
+the metadata contract **without opening any expression matrix**.
+
+The resulting map is an intake artifact.  It does not rewrite the sample-level
+expression representation/construct validation reports and does not fill MCID.  Batch and sequencing_run are the
+series-level process identifiers GEO actually deposited (identical 10x /
+NovaSeq S4 text for all 54 samples).  They are not per-flowcell IDs: SRA is
+empty and raw reads were withheld.
+"""
 from __future__ import annotations
 import argparse
 import gzip

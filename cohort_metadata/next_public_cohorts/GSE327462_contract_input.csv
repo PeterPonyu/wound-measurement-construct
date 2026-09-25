@@ -1,0 +1,7 @@
+sample_id,patient_id,patient_id_source,wound_id,timepoint_days,healing_status,follow_up_days,tissue_site,batch,library_id,sequencing_run
+GSM9657700,,cell_line,,,,,HaCaT cell,GSE327462_VAHTS_Universal_V8_RNAseq,SRX32869245,GSE327462_Illumina_NovaSeq_X_Plus
+GSM9657701,,cell_line,,,,,HaCaT cell,GSE327462_VAHTS_Universal_V8_RNAseq,SRX32869246,GSE327462_Illumina_NovaSeq_X_Plus
+GSM9657702,,cell_line,,,,,HaCaT cell,GSE327462_VAHTS_Universal_V8_RNAseq,SRX32869247,GSE327462_Illumina_NovaSeq_X_Plus
+GSM9657703,,cell_line,,,,,HaCaT cell,GSE327462_VAHTS_Universal_V8_RNAseq,SRX32869248,GSE327462_Illumina_NovaSeq_X_Plus
+GSM9657704,,cell_line,,,,,HaCaT cell,GSE327462_VAHTS_Universal_V8_RNAseq,SRX32869249,GSE327462_Illumina_NovaSeq_X_Plus
+GSM9657705,,cell_line,,,,,HaCaT cell,GSE327462_VAHTS_Universal_V8_RNAseq,SRX32869250,GSE327462_Illumina_NovaSeq_X_Plus

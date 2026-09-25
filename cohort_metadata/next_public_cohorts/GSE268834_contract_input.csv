@@ -1,0 +1,9 @@
+sample_id,patient_id,patient_id_source,wound_id,timepoint_days,healing_status,follow_up_days,tissue_site,batch,library_id,sequencing_run
+GSM8300974,,geo_title_only,,,,,skin,GSE268834_10x_Chromium,SRX24769165,GSE268834_Illumina_NovaSeq_6000
+GSM8300975,,geo_title_only,,,,,skin,GSE268834_10x_Chromium,SRX24769166,GSE268834_Illumina_NovaSeq_6000
+GSM8300976,,geo_title_only,,,,,skin,GSE268834_10x_Chromium,SRX24769167,GSE268834_Illumina_NovaSeq_6000
+GSM8300977,,geo_title_only,,,,,skin,GSE268834_10x_Chromium,SRX24769168,GSE268834_Illumina_NovaSeq_6000
+GSM8300978,,geo_title_only,,,,,skin,GSE268834_10x_Chromium,SRX24769169,GSE268834_Illumina_NovaSeq_6000
+GSM8300979,,geo_title_only,,,,,skin,GSE268834_10x_Chromium,SRX24769170,GSE268834_Illumina_NovaSeq_6000
+GSM8300980,,geo_title_only,,,,,skin,GSE268834_10x_Chromium,SRX24769171,GSE268834_Illumina_NovaSeq_6000
+GSM8325196,,geo_title_only,,,,,skin,GSE268834_10x_Chromium,SRX24897540,GSE268834_Illumina_NovaSeq_6000

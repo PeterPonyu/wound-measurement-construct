@@ -1,5 +1,28 @@
 #!/usr/bin/env python3
-"""Validate clinical metadata."""
+"""Validate the metadata contract for the next patient-linked DFU study.
+
+The current public discovery cohort cannot support patient-level inference:
+its matrix exposes GSM/sample labels but no authoritative subject identifier.
+This checker is the intake gate for a future cohort.  It deliberately runs
+before any expression matrix is opened and refuses to treat a title, GSM, or
+library identifier as a patient ID.
+
+The checker has three scopes:
+
+``projection``
+    identity, provenance, and time fields are present.  This is enough to
+    freeze a projection, not to test healing.
+``prognostic``
+    adds a patient-level healing outcome and follow-up information.  This is
+    the minimum scope for the expression representation/construct validation patient-level experiment.
+``causal``
+    additionally requires treatment/exposure and the pre-specified baseline
+    covariates needed before any DML or causal forest is considered.
+
+No report produced by this script is scientific evidence.  A passing report
+only says that the cohort can enter the pre-registered analysis without an
+obvious unit or outcome-contract violation.
+"""
 from __future__ import annotations
 import argparse
 import hashlib

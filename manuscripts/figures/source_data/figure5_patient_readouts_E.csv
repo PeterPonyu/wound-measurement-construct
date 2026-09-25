@@ -1,0 +1,3 @@
+"sensitivity","readout","comparisons","difference_mean","difference_min","difference_max","p_min","p_max","positive"
+"Equal 100 cells per specimen","Programme mean",250,0.0966235258096014,0.074861731910995,0.123259841201611,0.127272727272727,0.387878787878788,250
+"Equal 100 cells per specimen","High-state fraction",250,0.165928571428571,0.109821428571429,0.222857142857143,0.151515151515152,0.566666666666667,250

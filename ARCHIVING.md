@@ -1,19 +1,17 @@
-# Independent software archiving
+# Software and reproduction archives
 
-This project uses GitHub for source history and releases, and a separate Zenodo record for its MIT software. No repository-integration webhook is required. Do not reuse another study's deposition ID or DOI.
+Version 0.4.2 belongs to Neural topic measurements in diabetic foot ulcer research: analysis software.
 
-The full reproduction release contains manuscript and research outputs governed by NOTICE. Deposit the separate `wound-measurement-construct-code-0.3.0.zip` to Zenodo; its MIT-only scope matches .zenodo.json. Both ZIPs have independent checksum manifests. The software archive runs from public GEO inputs and does not require another GitHub repository.
+- Software DOI: https://doi.org/10.5281/zenodo.22962314
+- Source and release history: https://github.com/PeterPonyu/wound-measurement-construct
+- Versioned files: https://github.com/PeterPonyu/wound-measurement-construct/releases/tag/v0.4.2
 
-Offline check, from this project root:
+`wound-measurement-construct-code-0.4.2.zip` contains MIT software, tests and execution documentation.
+`wound-measurement-construct-0.4.2.zip` contains the complete reproduction materials: manuscript,
+editable figures, numerical results, frozen models and their provenance. Research
+materials retain the rights stated in NOTICE. Both downloads are public without an
+author access request. Source-study human raw-read access restrictions still apply.
 
-```sh
-python3 archive_draft.py ../wound-measurement-construct-code-0.3.0.zip
-```
-
-Create or resume this study's draft after configuring ZENODO_ACCESS_TOKEN locally (never put credentials in source files, command arguments or issue text):
-
-```sh
-python3 archive_draft.py ../wound-measurement-construct-code-0.3.0.zip --execute
-```
-
-The program validates the archive's embedded metadata, uploads with checksum verification, and records a study-specific state under .archive-state/. It refuses state from another study and never publishes automatically. Alternatively, upload the same ZIP and metadata directly at https://zenodo.org/uploads/new. Review the exact record in Zenodo and publish it; copy the DOI into citation metadata only after the published landing page and uploaded file have been verified. A draft's reserved DOI is not a published record.
+Each ZIP has its own exact file manifest. Extract the ZIP and run
+`python3 verify_archive.py --smoke`. The software DOI identifies the software snapshot,
+not the manuscript or a new clinical validation. Earlier published files are immutable.

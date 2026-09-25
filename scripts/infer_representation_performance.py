@@ -1,5 +1,24 @@
 #!/usr/bin/env python3
-"""Infer representation performance."""
+"""Turn the expression representation representation benchmark from point estimates into inference.
+
+scripts/benchmark_expression_representations.py reports one leave-one-sample-out AUC per representation. With 9
+healer and 5 non-healer samples those point estimates cannot be ordered: the
+sampling error on an AUC at this n is larger than the gaps between methods.
+This script adds the two things needed before any ranking claim:
+
+  * stratified bootstrap intervals for each AUC and for every pairwise
+    difference, resampled with shared indices so the differences are paired
+  * a label-permutation null in which the entire leave-one-sample-out
+    pipeline is rerun per permutation, including fold-internal fitting and
+    orientation, so the null absorbs the orientation degree of freedom
+
+The permutation null is exact (all 2002 label assignments) for the frozen
+topic score and the pre-specified module, and a random subsample for PCA and
+NMF, whose per-permutation cost is 14 matrix factorisations.
+
+This is still the sample unit. GSE165816 exposes no subject identifier, so
+none of these intervals are patient-level.
+"""
 from __future__ import annotations
 import argparse
 import hashlib

@@ -1,5 +1,23 @@
 #!/usr/bin/env python3
-"""Data adapter."""
+"""
+Data Adapter Layer: real GEO archives -> engine-standard tensors.
+
+This is the layer the ported engines were missing. The engines take plain
+float tensors; GEO ships per-sample archives in at least two incompatible
+shapes, neither of which is 10x-standard:
+
+- GSE165816: 54 *dense* CSVs (genes x barcodes), one per GSM. Naive
+  pd.concat of these is ~24 GB int64 in RAM (452 MB x 54, measured) against
+  ~44 GB available, so every sample is converted to CSR int32 on read and the
+  dense frame is dropped immediately (~1.8 GB for the full cohort at the
+  measured 92.6% sparsity).
+- GSE326622: standard 10x mtx/barcodes/features triplets.
+
+Phenotype comes from the series matrix, which is the only authoritative
+source for the sample labels; GSE165816 carries `disease` with
+DFU-healer / DFU-nonhealer / Non-DFU Diabetic / Non-diabetic, which is the
+cohort's only real clinical outcome variable.
+"""
 import gzip
 import io
 import os

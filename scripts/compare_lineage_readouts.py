@@ -1,5 +1,26 @@
 #!/usr/bin/env python3
-"""Compare lineage readouts."""
+"""
+Cell-type-resolved re-test of fibroblast-associated topic, on both cohorts.
+
+The question this settles: the whole-sample fibroblast-associated topic contrast (healer 2.8x
+non-healer in GSE165816, 2.47x in GSE231643) confounds two things that mean
+opposite things scientifically.
+
+  A. Healer samples run a stronger TIMP1/CHI3L1 programme *inside* their
+     fibroblasts. That is a biological claim about wound healing.
+  B. Healer samples simply contain more fibroblasts. That is a tissue-sampling
+     artefact, and it is the leading alternative here because GSE231643 is
+     debridement tissue while GSE165816 is surgically resected.
+
+Whole-sample mean theta cannot tell A from B. This script assigns lineages
+with a marker panel that shares no gene with fibroblast-associated topic's top list (asserted, not
+assumed). This top-list non-overlap does not establish independence from the
+full-panel learned representation. It re-tests fibroblast-associated topic restricted to fibroblasts, and separately
+reports whether composition itself differs between arms.
+
+The model and the 7,002-gene panel stay frozen throughout; nothing is
+retrained. The unit of analysis is the sample.
+"""
 import argparse
 import json
 import os
@@ -20,6 +41,10 @@ DECLARED_DFU_PATIENTS = {'GSE165816_discovery': 11, 'GSE231643_validation': 8}
 
 def log(msg: str='') -> None:
     print(f"[{time.strftime('%H:%M:%S')}] {msg}" if msg else '', flush=True)
+
+def top_list_overlap_audit(top_genes, lineage):
+    overlap = marker_overlap_with(top_genes)
+    return {'topic_top_genes': list(top_genes), 'marker_overlap': overlap, 'tested_lineage_top_list_disjoint': lineage not in overlap, 'scope': 'specified topic top-gene list only; not the full encoder panel', 'statistical_independence_established': False}
 
 def healing_status(title: str) -> str:
     t = str(title).strip().upper()
@@ -83,12 +108,13 @@ def main() -> int:
     top_focus = [str(panel[j]) for j in np.argsort(-beta[args.focus_topic])[:10]]
     log(f'frozen model K={n_topics}, panel={n_panel}')
     log(f"topic {args.focus_topic} top genes: {', '.join(top_focus)}")
-    overlap = marker_overlap_with(top_focus)
+    audit = top_list_overlap_audit(top_focus, args.lineage)
+    overlap = audit['marker_overlap']
     log(f"marker panel overlap with topic {args.focus_topic}: {overlap or 'none'}")
     if args.lineage in overlap:
-        log(f'FATAL: the {args.lineage} marker panel shares {overlap[args.lineage]} with the topic under test; the cell-type call would not be independent of the result.')
+        log(f'Top-list exclusion failed: the {args.lineage} marker panel shares {overlap[args.lineage]} with the specified topic top-gene list.')
         return 2
-    report['circularity_audit'] = {'topic_top_genes': top_focus, 'marker_overlap': overlap, 'lineage_is_independent': True}
+    report['circularity_audit'] = audit
     dev = 'cuda' if torch.cuda.is_available() else 'cpu'
     model = TopicModel(input_dim=n_panel, num_topics=n_topics).to(dev)
     model.load_state_dict(state)

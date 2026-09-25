@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Benchmark expression representations."""
+"""Frozen expression representation representation benchmark on the GSE165816 DFU sample unit.
+
+This is a sample-level method comparison, not a patient-level clinical
+validation. The frozen Topic model scores are compared with a pre-specified
+fibro-inflammatory module, PCA, and NMF under the same leave-one-sample-out
+protocol. PCA and NMF are fit inside each training fold; no test sample enters
+scaling, component fitting, or component orientation.
+"""
 from __future__ import annotations
 import argparse
 import hashlib

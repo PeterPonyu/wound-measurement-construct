@@ -1,5 +1,28 @@
 #!/usr/bin/env python3
-"""Project debridement cohort."""
+"""
+Independent validation of the GSE165816 topic decomposition on GSE231643.
+
+The discovery run (scripts/fit_expression_representation.py) found fibroblast-associated topic =
+TIMP1 / CHI3L1 / COL3A1 / FN1 loaded ~2.8x higher in DFU-healer cells than in
+DFU-nonhealer cells. This script tests whether that contrast reproduces in a
+cohort the model never saw.
+
+Design choices that make this a real validation rather than a re-fit:
+
+- The topic model is FROZEN. Encoder weights and the topic-gene matrix beta
+  come from the GSE165816 checkpoint; nothing is retrained here. GSE231643
+  cells are projected through it.
+- The gene panel is FROZEN. GSE231643 is reindexed onto the exact 7,002-gene
+  panel selected on GSE165816; genes absent from GSE231643 are zero-filled and
+  counted, so panel coverage is reported rather than assumed.
+- The unit of analysis is the SAMPLE, not the cell. Cells from one patient are
+  not independent replicates; a cell-level p-value on 8 patients is
+  pseudoreplication. Both are reported and the cell-level one is labelled.
+
+Labels are recovered from the sample titles (H1-H5 healer, NH1/NH2/NH4
+non-healer) because GEO does not expose healing status as a characteristics
+key for this series - only tissue, cell type and race.
+"""
 import argparse
 import json
 import os

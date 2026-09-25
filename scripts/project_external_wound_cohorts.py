@@ -1,5 +1,23 @@
 #!/usr/bin/env python3
-"""Project external wound cohorts."""
+"""
+External DFU projection and immune-axis audit.
+
+This is a frozen-model experiment.  It does not refit Topic model on either
+external cohort and it does not turn the diabetic/non-diabetic labels into a
+healing endpoint.  The two questions are deliberately separate:
+
+1. Can the GSE165816 panel and frozen encoder be projected onto GSE223964 and
+   GSE245703 with auditable gene coverage?
+2. Within each external sample, does the projected fibroblast-associated topic loading co-vary
+   with a pre-specified marker-derived immune composition measure, while the
+   fibroblast-like subset is kept separate from the all-cell estimate?
+
+The external series matrices provide disease/genotype labels and sample
+titles, but no healing outcome.  Trailing letter variants in titles (19B/19C,
+44a/44b/44c, 50a/50b) are reported as patient proxies only; they are never
+promoted to authoritative patient IDs or treated as independent patients in a
+pooled p-value.
+"""
 import argparse
 import glob
 import json

@@ -1,0 +1,9 @@
+sample_id,patient_id,patient_id_source,wound_id,timepoint_days,healing_status,follow_up_days,tissue_site,batch,library_id,sequencing_run
+GSM6767171,,geo_title_only,,,,,skin,GSE219078_TruSeq_stranded_mRNA_HDMEC_culture,SRX18431507,GSE219078_Illumina_NovaSeq_6000
+GSM6767172,,geo_title_only,,,,,skin,GSE219078_TruSeq_stranded_mRNA_HDMEC_culture,SRX18431508,GSE219078_Illumina_NovaSeq_6000
+GSM6767173,,geo_title_only,,,,,skin,GSE219078_TruSeq_stranded_mRNA_HDMEC_culture,SRX18431509,GSE219078_Illumina_NovaSeq_6000
+GSM6767174,,geo_title_only,,,,,skin,GSE219078_TruSeq_stranded_mRNA_HDMEC_culture,SRX18431510,GSE219078_Illumina_NovaSeq_6000
+GSM6767175,,geo_title_only,,,,,skin,GSE219078_TruSeq_stranded_mRNA_HDMEC_culture,SRX18431511,GSE219078_Illumina_NovaSeq_6000
+GSM6767176,,geo_title_only,,,,,skin,GSE219078_TruSeq_stranded_mRNA_HDMEC_culture,SRX18431512,GSE219078_Illumina_NovaSeq_6000
+GSM6767177,,geo_title_only,,,,,skin,GSE219078_TruSeq_stranded_mRNA_HDMEC_culture,SRX18431513,GSE219078_Illumina_NovaSeq_6000
+GSM6767178,,geo_title_only,,,,,skin,GSE219078_TruSeq_stranded_mRNA_HDMEC_culture,SRX18431514,GSE219078_Illumina_NovaSeq_6000

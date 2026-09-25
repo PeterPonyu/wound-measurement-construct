@@ -1,13 +1,13 @@
 {
-  "title": "Wound single-cell measurement construct validation",
+  "title": "Neural topic measurements in diabetic foot ulcer research: analysis software",
   "upload_type": "software",
-  "description": "Software for testing whether a fibroblast-associated expression loading reflects cell-state abundance and supports patient-level healing inference in public wound single-cell data. The study includes technical controls, patient resampling, paired anatomy, representation comparisons and external tissue-context projections. It does not establish a clinically validated prognostic tool. This Zenodo deposit contains MIT software only. Manuscripts, artwork, source-study data, model weights and completed research outputs are excluded and retain their respective rights.",
+  "description": "Analysis software for a patient-level audit of fibroblast measurements from a frozen 15-topic logistic-normal expression model in diabetic foot ulcer research. It evaluates score decomposition, whole-count-pipeline sensitivity, author-mapped patient contrasts, paired anatomy and external tissue-context projections. Healing inference involves 11 patients; outcome intervals include zero and the external cohorts do not supply independent healing validation. This is a measurement audit, not a validated prognostic tool. This software archive contains MIT-licensed analysis programs, model definitions, acquisition helpers, tests and environment specifications. Public processed inputs are identified by GEO accession in the reproduction guide. The complete reproduction package, with manuscript, editable figures, frozen weights and numerical results, is available from this project's versioned GitHub release. These research materials retain the rights stated in NOTICE.",
   "creators": [
     {
       "name": "Fu, Zeyu"
     }
   ],
-  "version": "0.3.0",
+  "version": "0.4.2",
   "license": "mit",
   "keywords": [
     "single-cell transcriptomics",
@@ -20,5 +20,7 @@
       "relation": "isSupplementTo",
       "scheme": "url"
     }
-  ]
+  ],
+  "access_right": "open",
+  "publication_date": "2026-09-25"
 }

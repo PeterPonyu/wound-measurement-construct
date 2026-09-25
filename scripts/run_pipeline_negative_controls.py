@@ -1,5 +1,36 @@
 #!/usr/bin/env python3
-"""Run pipeline negative controls."""
+"""
+Does the pipeline report nothing when there is nothing to report?
+
+Every gate in this project has been shown to fire on real defects. None has
+been shown to *stay quiet* on data that carries no signal, and those are
+different properties. A method that flags real errors but also manufactures
+findings from noise is not usable; a methods paper that never ran this check
+has not earned the word "gate".
+
+Three negative controls, each aimed at a different way the pipeline could
+invent a result:
+
+  N1 LABEL PERMUTATION      Shuffle the clinical arm labels across samples and
+                            re-run the readout. The observed arm statistic must
+                            sit inside the permutation null. This tests the
+                            downstream comparison, not the representation.
+
+  N2 STRUCTURELESS INPUT    Project cells whose counts carry no cell structure
+                            (row-shuffled within each gene, which preserves every
+                            gene's marginal but destroys co-expression) and ask
+                            whether the topology gate still says the manifold is
+                            intact. A gate that passes structureless input is
+                            decorative.
+
+  N3 PERMUTED POSITIVE      Re-run the foot-versus-forearm positive control with
+                            its own labels permuted. It must lose the
+                            significance it has on the real labels, or the
+                            positive control proves nothing.
+
+N1 and N3 reuse the frozen projection; N2 needs the frozen model but new input.
+Nothing here retrains.
+"""
 import argparse
 import hashlib
 import json

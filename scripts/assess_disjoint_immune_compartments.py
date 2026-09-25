@@ -1,5 +1,26 @@
 #!/usr/bin/env python3
-"""Assess disjoint immune compartments."""
+"""Repair the external immune axis and re-test the alternative explanation.
+
+scripts/project_external_wound_cohorts.py scored each external sample with two marker gates that are not
+usable as composition estimates:
+
+  * the broad immune gate and the B/plasma gate both contain CD74, and the
+    B/plasma gate additionally contains CD37, CD38 and SDC1.  CD74 is the
+    MHC class II invariant chain and is detected in most cells of an
+    inflamed skin biopsy, so "fraction of cells with any marker detected"
+    saturates.  The reported B/plasma fractions were 0.44-0.90, which is not
+    a plausible B/plasma abundance for skin.
+  * the gates are not mutually exclusive with the fibroblast gate, so single
+    cells were counted on both sides.  One GSE223964 sample had 84%
+    fibroblast-like cells and 92% immune cells at the same time.
+
+A saturating gate is a detection-rate readout, so a correlation against it can
+be produced by sequencing depth alone.  This script recomputes the axis with
+exclusive assignment and lineage-specific markers, keeps the old definition
+side by side, and adds the depth confound that the old design could not rule
+out.  The frozen encoder, panel and projection are unchanged; nothing is
+refit on the external cohorts, and neither cohort gains a healing endpoint.
+"""
 from __future__ import annotations
 import argparse
 import glob

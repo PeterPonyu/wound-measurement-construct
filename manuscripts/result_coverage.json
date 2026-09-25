@@ -1,0 +1,361 @@
+{
+  "scope": "Study-specific report coverage with transitive superseded_by provenance. Statuses, historical destinations and interpretations retain their native meaning; sha256 binds exported bytes and native_sha256 binds the producing snapshot. A replacement retained only for provenance is not a current claim of this study.",
+  "entries": [
+    {
+      "source": "outputs/ambient_invariance/report.json",
+      "sha256": "4c2bfacfccc6b285ea2d3064ba80496b853ac2f519f45768dc1dd95d6a06cf6a",
+      "status": "included",
+      "manuscript_destination": "P1 Figure 3; Table tab:p1ambient",
+      "interpretation": "Both immune and placebo residual summaries retained, including adverse non-identification.",
+      "native_sha256": "5c75ffdd8d47b6bf09c00ad53f0e31f206bd96e002578b086585b12d820ea3fb"
+    },
+    {
+      "source": "outputs/artifact_triage/report.json",
+      "sha256": "803951e2f9d507469542695b67f73627dbbffe631c70bc6af99e9a5e01fd630d",
+      "status": "included",
+      "manuscript_destination": "P1 Figure 3; Methods technical controls",
+      "interpretation": "Rounded 0.184 state cut distinguished from the fitted mixture cut.",
+      "native_sha256": "d0bab51e6c29938f86307558ca68e335aa5ae386cde39e27273bc4469ad71e11"
+    },
+    {
+      "source": "outputs/bimodal_stratification/report.json",
+      "sha256": "ab25e216b0ac3a0a26e335896e90557858b03255ac4ab150fe221516301c0e70",
+      "status": "included",
+      "manuscript_destination": "P1 Figures 2 and 4; Methods threshold fraction",
+      "interpretation": "Distributional and arm summaries; full per-sample inputs are figure source data.",
+      "native_sha256": "dde5b4e5f8cba6045449e8e7797f611213a61b7cbd51551ac0fd051b17d0d14f"
+    },
+    {
+      "source": "outputs/celltype_resolved/report.json",
+      "sha256": "264a5cd30c36f19485636fa9d9714159231f16d0cb68c7987b848a5aa412ca26",
+      "status": "included",
+      "manuscript_destination": "P1 Results; Table tab:p1lineage",
+      "interpretation": "Historical lineage contrasts retained. The old lineage_is_independent=true flag is not valid: only top-list marker non-overlap was checked; full-panel/statistical independence was never established. Current patient analyses supersede the specimen unit.",
+      "native_sha256": "f3afb41e22ad4898ed70779b0ed8dd214ffc8b7b86d62b92252e208846a1a877"
+    },
+    {
+      "source": "outputs/expression_representation/report.json",
+      "sha256": "d46b8d1b44b35306bc42b341934c798d8bbbaf9246396aeea03c1ec49baf3073",
+      "status": "included",
+      "manuscript_destination": "P1 Results: frozen representation; Methods; Supplement representation integrity",
+      "interpretation": "Discovery representation/QC and decoder genes; training trace remains supporting output.",
+      "native_sha256": "cede71a4ec29d5625eb88e675f8e2a22dc361e9fc37313dc8699cf21d4f0a123"
+    },
+    {
+      "source": "outputs/cohort_metadata/gse165816_patient_unit_remap/report.json",
+      "sha256": "3b0fdac9c5ef95e7739784812b6306b75c6a361b59b3a85e6c71ee68053f033a",
+      "superseded_by": "outputs/scientific_revision_20260922/measurement/patient_unit_remap/report.json",
+      "current_use": "historical_only",
+      "status": "included",
+      "manuscript_destination": "P1 Results; Tables tab:p1patients and tab:p1equivalence",
+      "interpretation": "Primary cell-weighted and alternate equal-specimen patient contrast retained.",
+      "native_sha256": "4eccb04133c68118e1b95afa871fa5be619a1c4270e5111349dd3d633028f380"
+    },
+    {
+      "source": "outputs/cohort_metadata/next_public_cohort_contract/report.json",
+      "sha256": "f3cd4dc3aa4f0a9ecd035f6cd28880629dabb4a33951b002d3d566d9924aad63",
+      "status": "metadata_only",
+      "manuscript_destination": "P1 cohort-role table and external limitations",
+      "interpretation": "Eligibility/metadata evidence, not a completed clinical outcome experiment.",
+      "native_sha256": "f1bb218ddaa1c13d1610b81399d97b28ec9f0ce8a6a63b109b3cdf5772331fb8"
+    },
+    {
+      "source": "outputs/method_constant_sensitivity/report.json",
+      "sha256": "8d107ad333bdfa19c518d4b7489ab054a88d83478041c9b1d1028046aac89ede",
+      "status": "included",
+      "manuscript_destination": "P1 Figure 6A-C; Tables tab:p1cuts and tab:p1capacity",
+      "interpretation": "All tested cuts and topic capacities retained, including K=10 failure.",
+      "native_sha256": "7afcb5684785c41ab2861b9825a0dd7f27dd5f6bfc7d8caadd8706d3a9c8c07e"
+    },
+    {
+      "source": "outputs/negative_result_strength/report.json",
+      "sha256": "39f38802e8a9a71d86ecd8b5161a841b555233c2bf9091e3370fe25ede3cd9fc",
+      "status": "partially_included",
+      "manuscript_destination": "P1 Figure 4C; Results power/anatomy; Methods design assumptions",
+      "interpretation": "observed_design_power retained; older sample-level anatomical count contextualized by paired control. Historical pooled immune correlations are superseded and not used.",
+      "native_sha256": "37fb7bc2fa1e2308a534e394f5ca54b2679c60ef928bfc49001054b8f8a52c03"
+    },
+    {
+      "source": "outputs/pipeline_negative_control/report.json",
+      "sha256": "c2857bbc3cc0a88148ffceae52ecef8e56843abe406c4a5489b96ad6240aad35",
+      "current_use": "P1-C15 positive-control calibration remains in use. The label-null and raw-shuffle claims use the separate 20260922 measurement_controls reports; this historical report cannot support their revised values or an integrity-gate failure claim.",
+      "status": "included",
+      "manuscript_destination": "P1 Figure 6D-F; Results; Supplement integrity",
+      "interpretation": "Label null, shuffled input and empirical calibration retained; figure callout corrected.",
+      "native_sha256": "d08ddfe00a64f5974e835c7f3ec6df9d566f981d217bcf6b11746094531a8c0c"
+    },
+    {
+      "source": "outputs/analysis/design_power_simulation/report.json",
+      "sha256": "52a4cc6bb683eacb09cc8d07bcef16755ef08a94a75ac142a5548255860d6ff5",
+      "superseded_by": "outputs/scientific_revision_20260922/measurement/design_power_simulation/report.json",
+      "current_use": "Historical AUC-gap design context only; revised difference/equivalence totals come from the replacement report, not this snapshot. No clinical recruitment recommendation.",
+      "status": "partially_included",
+      "manuscript_destination": "P1 Tables tab:p1design and tab:p1aucdesign; Supplement planning assumptions",
+      "interpretation": "All difference, equivalence and AUC-gap simulation rows retained. Arithmetic specimen-to-patient conversion grid is not a validated patient-prognosis design and is not used as a recruitment recommendation.",
+      "native_sha256": "a16a2ab6f41af9faf3760abeb74d45486793f80d3a731408642380ba71152494"
+    },
+    {
+      "source": "outputs/analysis/external_gse248247_projection/report.json",
+      "sha256": "5288e8056ddd97cb116a1e13c000bacadbcc734d1f8de1c7847885343a3b718e",
+      "status": "included",
+      "manuscript_destination": "P1 Figure 9; external Results",
+      "interpretation": "n=2 low-yield feasibility only; correlations not estimated.",
+      "native_sha256": "9e9e694c848b907926d474bd094e7089477904a6e258272ef572189f1fa4ba88"
+    },
+    {
+      "source": "outputs/analysis/external_gse268834_projection/report.json",
+      "sha256": "c19e5264afff3ec79144d91d0bd73c9804cb29ee09b546699a2968324936f386",
+      "status": "included",
+      "manuscript_destination": "P1 Figure 9; Table tab:p1external; external Results",
+      "interpretation": "Descriptive immune and diabetes contrasts, no healing validation.",
+      "native_sha256": "9a977ca2fbb9a5efce2c332670bbd4dcffd63cf951f0ea959745bba486a1e417"
+    },
+    {
+      "source": "outputs/analysis/external_immune_axis/report.json",
+      "sha256": "9ef87d8dee6259d6674b177d4bd6a293ad273d4807baa449ddc63613bf0105e9",
+      "status": "included",
+      "manuscript_destination": "P1 Figure 9; Table tab:p1external",
+      "interpretation": "Repaired exclusive gates; median detected genes and UMIs kept distinct.",
+      "native_sha256": "f708f83a70f1f999faaa11e5065552bb79c6e828816a5f7af54941a659264a2f"
+    },
+    {
+      "source": "outputs/analysis/mixture_semantic_inference/report.json",
+      "sha256": "fe18ebfc1e88c7e9399df16b41781c49d15474aa3cddb6f0ec8652c06a4b9946",
+      "status": "included",
+      "manuscript_destination": "P1 Figure 2; Table tab:p1semantics",
+      "interpretation": "Bootstrap, leave-one-out and permutation summaries retained.",
+      "native_sha256": "786ab061047aa14d84960d27dbec2cc2998f7155ae8b1073375db6a9386f3d19"
+    },
+    {
+      "source": "outputs/analysis/negative_result_strength/report.json",
+      "sha256": "e65e574bf3c0662413c711614b1eec2347a081e21f961e2a90ed981194e5ed57",
+      "status": "included",
+      "manuscript_destination": "P1 external Results",
+      "interpretation": "Three-donor acute human immune-axis summaries retained separately; pooled significance not promoted.",
+      "native_sha256": "6ee471cbde109ea4dd611658c39a624958df49ac8b3876d1048292f1331f6115"
+    },
+    {
+      "source": "outputs/analysis/paired_anatomical_control/report.json",
+      "sha256": "a99cbde755cc07d327f36a4a52ed963dc4908a308262cf0c10a2b706d78dbb0b",
+      "status": "included",
+      "manuscript_destination": "P1 Figure 8; Table tab:p1anatomy",
+      "interpretation": "All 15 topic contrasts and fibroblast fibroblast-associated topic sensitivity retained.",
+      "native_sha256": "1fbca1457230da1b0f6ce25511c343cba92ab572bec9bf952082bf2326efd67c"
+    },
+    {
+      "source": "outputs/analysis/patient_mapping_equivalence/report.json",
+      "sha256": "a333ff860881462edfec36b4b2b29e886906eb3c051afbc282c3c4c3c653bd02",
+      "superseded_by": "outputs/scientific_revision_20260922/measurement/patient_mapping_equivalence/report.json",
+      "current_use": "historical_only",
+      "status": "included",
+      "manuscript_destination": "P1 Figure 4B; Table tab:p1equivalence",
+      "interpretation": "Sample-unit reference only. Later author mapping resolves patient identities.",
+      "native_sha256": "47b9a5f6d19bbc4446cf27d2cee4e298d32b888042806636c1acd39f56deb171"
+    },
+    {
+      "source": "outputs/analysis/patient_unit_representation_benchmark/report.json",
+      "sha256": "25e7dc2b81bb4f6535d53afd76a4b5488bf608c3d531b1fc9eb81a46d31f5ec2",
+      "superseded_by": "outputs/scientific_revision_20260922/measurement/patient_unit_representation_benchmark/report.json",
+      "current_use": "historical_only",
+      "status": "included",
+      "manuscript_destination": "P1 Figure 8; Tables tab:p1patientauc and tab:p1aucdifferences",
+      "interpretation": "All patient pairwise intervals; patient-collapsed semantic rho remains in Methods/Discussion.",
+      "native_sha256": "23d39b30fdc0c1fd75d3549bda8d33f6bdc16b3eff86ddfb3e31a90a1ed1e132"
+    },
+    {
+      "source": "outputs/analysis/representation_inference/report.json",
+      "sha256": "6f2a2e3b76e681b85060b82ca83ecd5e35382d9d305ed768fab9bcb91a310a4b",
+      "superseded_by": "outputs/scientific_revision_20260922/measurement/representation_inference/report.json",
+      "current_use": "historical_only",
+      "status": "included",
+      "manuscript_destination": "P1 Figure 7; Tables tab:p1sampleauc and tab:p1aucdifferences",
+      "interpretation": "All pairwise intervals now tabulated.",
+      "native_sha256": "6447affe6c15f9cd5be6820d70807e517a9f002d32f17e4d9075e67d5fe4e982"
+    },
+    {
+      "source": "outputs/representation_benchmark/report.json",
+      "sha256": "19e7e75f73504679032445b35556a4b42aaedb791bf31c00d48a54d140ec1b17",
+      "superseded_by": "outputs/scientific_revision_20260922/measurement/representation_benchmark/report.json",
+      "current_use": "historical_only",
+      "status": "included",
+      "manuscript_destination": "P1 Figure 7; Table tab:p1correlations",
+      "interpretation": "Cross-method correlations; discrimination inference is taken from the later uncertainty audit.",
+      "native_sha256": "13510d4c60d7a3d06458c4ec3bcf587bf6dd5b1c26b72a87ffea4667079584ca"
+    },
+    {
+      "source": "outputs/stratifier_sweep/report.json",
+      "sha256": "a9b7b6666194e024fd666291ff09b638b9852d91603e6cc6eae7d106d963ce8b",
+      "status": "included",
+      "manuscript_destination": "P1 Results; Table tab:p1covariates",
+      "interpretation": "All 31 covariates and 14 BH hits retained; sample-level exploratory screen.",
+      "native_sha256": "d3b94673240fb8aa118f3f996563f3004cf53fb455c262d1777ff03fff24786a"
+    },
+    {
+      "source": "outputs/validation_gse231643/report.json",
+      "sha256": "4ad8838545dba08c0d9945cf00df55e31d61f68caa5394033568f46f25393049",
+      "status": "summarized",
+      "manuscript_destination": "P1 external Results; Table tab:p1lineage",
+      "interpretation": "Title-label all-cell fibroblast-associated topic comparison is included via the lineage report. The exploratory all-topic screen is not promoted to a selected healing endpoint; cell-level pseudoreplicated p is excluded.",
+      "native_sha256": "32f8c9db8fcab12f49432e48a2d9ceb1879589b1ede6a166d14ecb348e599806"
+    },
+    {
+      "source": "outputs/robustness_extensions/report.json",
+      "sha256": "71ca218f119b9c73b4275fb9a1b32a790cb23fe1c5890e0d6b18e9bb8d21c55b",
+      "superseded_by": "outputs/scientific_revision_20260922/measurement/robustness_extensions/report.json",
+      "current_use": "P2 temporal numerical/sampling diagnostics remain unchanged and support temporal_robustness_extension. The patient section is historical; current P1 patient results use the replacement measurement report.",
+      "status": "included",
+      "manuscript_destination": "P1 patient robustness table; P2 numerical resolution and evaluation-sampling tables",
+      "interpretation": "New retrospective sensitivity analyses; original results are preserved and no new biological replication is claimed.",
+      "native_sha256": "a967adc2481b9ebefae294ca7e210aaa4ad1cbbc298e7224e20cf0afc7301d95"
+    },
+    {
+      "source": "outputs/mathematical_audit/measurement/report.json",
+      "sha256": "961c56537d7396c754542888c4a841de8582b979ef3ba8cf8162a16a7e523935",
+      "superseded_by": "outputs/scientific_revision_20260922/measurement/mathematical_audit/report.json",
+      "current_use": "historical_only",
+      "status": "included",
+      "manuscript_destination": "P1 Methods; Tables tab:p1math and tab:p1exact",
+      "interpretation": "Mathematical verification and conditional sensitivity of saved observations; no new biological replication.",
+      "native_sha256": "961c56537d7396c754542888c4a841de8582b979ef3ba8cf8162a16a7e523935"
+    },
+    {
+      "source": "outputs/biological_expansion/measurement/report.json",
+      "sha256": "78fa777bd64ab7d5d4e1fcab1e5a7183dd527bb8c60886e41a96dc19800de0cc",
+      "status": "included",
+      "manuscript_destination": "P1 Results and Methods; Figures 1 and 5; Tables tab:p1biologicalpatients and tab:p1biologicalcontrasts",
+      "interpretation": "Observed-cell atlas and retrospective patient-level fibroblast mean, high-state fraction and composition comparisons; no external validation.",
+      "native_sha256": "aafb26d9ac6ad5e46b1b24fcf0ba05de18bad34de6917a89bd0bdce94267bf5d"
+    },
+    {
+      "source": "outputs/computational_extension/measurement/report.json",
+      "sha256": "5b331814655c9e98434dd8434eb10b27c6ee6ffeefba44c9091ef486435a4c44",
+      "status": "included",
+      "manuscript_destination": "P1 Methods patient distributions; Results patient comparisons; Figure 5D-F; Tables tab:p1thresholdpatient and tab:p1samplingsensitivity",
+      "interpretation": "Threshold-free patient inference, fixed-cut max-statistic sensitivity, 250 equal-cell draws, and all 8 repeated-specimen selections; no new clinical cases.",
+      "native_sha256": "5b331814655c9e98434dd8434eb10b27c6ee6ffeefba44c9091ef486435a4c44"
+    },
+    {
+      "source": "outputs/scientific_revision_20260922/measurement/report.json",
+      "sha256": "37463387fe1ba9714e52d9dfc22881a0e6c6b19236986aa0fa8fb64271ebae1f",
+      "status": "included",
+      "manuscript_destination": "P1 Methods deterministic projection and reconstructed cell-order identity; P1-REV-MEAS",
+      "interpretation": "Revised deterministic softmax(mu) aggregation and source/order checks; historical barcode omission and reconstruction limitations remain. No new biological replication.",
+      "native_sha256": "71ec3750ff74ff6ae00272d2288354e87d99bf503177beff4efbd9b86dab84a3"
+    },
+    {
+      "source": "outputs/scientific_revision_20260922/measurement/patient_unit_remap/report.json",
+      "sha256": "0844322f12670bd814184a4cae95153ec59122e8f1cfaf162513f853e4c28971",
+      "status": "included",
+      "manuscript_destination": "P1 patient Results; Tables tab:p1patients and tab:p1equivalence; P1-C07",
+      "interpretation": "Recomputed all-cell contrast for 11 author-mapped DFU patients; exhaustive and add-one probabilities are distinguished; the sensitivity margin is not a clinical MCID.",
+      "native_sha256": "427d7286836af7cc9b63979c7009c9b87f8d59ef75d87be983b97c2ef6607235"
+    },
+    {
+      "source": "outputs/scientific_revision_20260922/measurement/patient_mapping_equivalence/report.json",
+      "sha256": "e9ebfe288994679eb0c91a6ef2849fa1c77dbe849070334812cc0805b87bc1be",
+      "status": "included",
+      "manuscript_destination": "P1 specimen diagnostic; Table tab:p1equivalence; P1-C08",
+      "interpretation": "Recomputed 14-specimen comparison retained only as a unit-sensitivity diagnostic; these are not 14 independent patients.",
+      "native_sha256": "53578f9141c66ba43d2e723b3a882755ac0a979b2ace7e83bb8c18a2e9ad7e05"
+    },
+    {
+      "source": "outputs/scientific_revision_20260922/measurement/mathematical_audit/report.json",
+      "sha256": "6bd4607ba115cfee6e95b93510dae32e140e6c2576662578c3e0ac09a28c0088",
+      "status": "included",
+      "manuscript_destination": "P1 Methods; Tables tab:p1math and tab:p1exact; P1-MATH",
+      "interpretation": "Revised state-decomposition arithmetic, residual RMS, empty bins and exhaustive patient/specimen probabilities. The state identity does not establish constant bin means or healing specificity.",
+      "native_sha256": "6bd4607ba115cfee6e95b93510dae32e140e6c2576662578c3e0ac09a28c0088"
+    },
+    {
+      "source": "outputs/scientific_revision_20260922/measurement/representation_inference/report.json",
+      "sha256": "1fa027381800dd035b5e7ad5fd394dce3fb884031658010e258bed059074274c",
+      "status": "included",
+      "manuscript_destination": "P1 sample AUC diagnostic; Tables tab:p1sampleauc and tab:p1aucdifferences; P1-C16",
+      "interpretation": "Deterministic topic LOSO/null recomputed; non-topic fitted results and paired intervals reused with the cross-arm rank-invariance proof. No supported method ranking or independent validation.",
+      "native_sha256": "73feb4986c511a4c5718345f608bb10390c79f882ab9bd44f113933494467bed"
+    },
+    {
+      "source": "outputs/scientific_revision_20260922/measurement/patient_unit_representation_benchmark/report.json",
+      "sha256": "840aae2921029f1799452a1dffca68573ac4f8fb456f7a4554bea3f5e10eebac",
+      "current_use": "P1-C23 historical pooled-fold diagnostic and P1-C25 patient semantics remain separately documented. Current same-model held-pair discrimination comes from the 20260923 patient_pair_discrimination report, not these historical p values or intervals.",
+      "status": "included",
+      "manuscript_destination": "P1 historical patient AUC diagnostic and patient semantics; Tables tab:p1patientauc and tab:p1aucdifferences; P1-C23 and P1-C25",
+      "interpretation": "Revised topic patient OOF and null, with saved non-topic OOF scores and nulls reused. Pooling raw coordinates across separately fitted folds remains a historical diagnostic, not calibrated pair discrimination or clinical ranking.",
+      "native_sha256": "0a4a37cd3eaa34f4dbded4d416aa169cd5dc01240fa2b025ca9243857c224236"
+    },
+    {
+      "source": "outputs/scientific_revision_20260922/measurement/representation_benchmark/report.json",
+      "sha256": "a5aea6ae2ae2ae516d460a13f5ee7b0c0df0a59754876c4d3703abd5a7921c91",
+      "status": "included",
+      "manuscript_destination": "P1 cross-method structure; Table tab:p1correlations; P1-C27",
+      "interpretation": "Six deterministic-topic cross-method sample-score correlations supply the revised range, not a method ranking.",
+      "native_sha256": "08f0e40e332a046f1c8d0c230414e8fd2e1212015cb0a61408619b423e511b7a"
+    },
+    {
+      "source": "outputs/scientific_revision_20260922/measurement/robustness_extensions/report.json",
+      "sha256": "fff69b44b76c97fabee1d4ff1a9114fef6d13a3e67f9a14db688b4e9b78a457e",
+      "status": "partially_included",
+      "manuscript_destination": "P1 patient robustness table; patient_robustness_extension",
+      "interpretation": "Current patient semantic bootstrap and omission summaries plus all-cell influence ranges. Only the patient section is used here; unchanged temporal diagnostics retain their historical P2 source.",
+      "native_sha256": "2e615b5459c8aef0d1330f4278667599ab234a1087526c63169f3793c64f13dd"
+    },
+    {
+      "source": "outputs/scientific_revision_20260922/measurement/repeat_specimens/report.json",
+      "sha256": "9e8e466ffd399f1dc189b2131b07ee5be8077b34dced7b99d99ccd3926202d28",
+      "status": "included",
+      "manuscript_destination": "P1 repeated-specimen measurement diagnostic; P1-REV-REPEAT",
+      "interpretation": "Five same-day repeat pairs, including three DFU patients, contrasted with within-specimen split halves. Split-half ranges are computational sampling diagnostics, not biological confidence intervals.",
+      "native_sha256": "9e8e466ffd399f1dc189b2131b07ee5be8077b34dced7b99d99ccd3926202d28"
+    },
+    {
+      "source": "outputs/scientific_revision_20260922/measurement/design_power_simulation/report.json",
+      "sha256": "fd1f71891dd346fbe1889c57adbbd2c34a081f38ec5e5272f74f10404189b8e9",
+      "status": "partially_included",
+      "manuscript_destination": "P1 conditional design planning; Table tab:p1design; P1-C22",
+      "interpretation": "Updated hypothetical independent-observation totals for candidate difference/equivalence inputs; no validated MCID, recruitment target or observed biological result.",
+      "native_sha256": "a5b08848e6460dceedff4882c46b12bd3f8f6a16e8a9ae6fd86689973c218df2"
+    },
+    {
+      "source": "outputs/scientific_revision_20260922/measurement_controls/dfu_label_report.json",
+      "sha256": "24d572825e1261b196fee7c237dbdec5a40625dcc6cd8facd8eb30a2de567186",
+      "status": "included",
+      "manuscript_destination": "P1 DFU-only label-null control; P1-C13",
+      "interpretation": "Exhaustive 2002-allocation specimen-label null and its interval; repeated specimens mean this is secondary to patient-unit inference.",
+      "native_sha256": "b4c83465a57d69f0b361ad842ee3e4d2ecbe291d45e8bafef555809313043b0b"
+    },
+    {
+      "source": "outputs/scientific_revision_20260922/measurement_controls/raw_shuffle_report.json",
+      "sha256": "72d60b95a6a6c4d8af4a1a27ee3ec980d9ad300e7a200ed1cf3ac16bc97b07e2",
+      "status": "included",
+      "manuscript_destination": "P1 raw-count shuffle control; P1-C14",
+      "interpretation": "Gene-column shuffle reduces concentration but changes row library sizes. The historical cutoff was not exceeded and topology was not audited; this is not evidence of historical integrity-gate failure.",
+      "native_sha256": "d1a115cee1a3d710e04b389d6f261e7e35f9b4388982fe87725aa29b8935d36e"
+    },
+    {
+      "source": "outputs/scientific_revision_20260923/patient_pair_discrimination/report.json",
+      "sha256": "3df92ce83276c6e3c56af7c0accedb3ae87dea034a101e3eb0dfab3a95b610ea",
+      "status": "included",
+      "manuscript_destination": "P1 Equation eq:p1pairauc; Table tab:p1pairauc; Figure 8A; P1-PAIR-DISCRIMINATION",
+      "interpretation": "28 same-model held pairs reusing 11 patients; source-derived half-credit ties give NMF 6.5/28, not the earlier probe. Final uniform cap 10000 has zero training-convergence warnings. Discovery-derived representation and dependent pairs preclude independent validation, pair-binomial uncertainty or a method-ranking claim; no new p values or confidence intervals.",
+      "native_sha256": "a4a4593fb966ebbe8cc02b194343c6e7c372afa4036417b4ef02b5e952c47455"
+    },
+    {
+      "source": "outputs/scientific_revision_20260923/patient_pair_discrimination/pilot_maxiter1000/report.json",
+      "sha256": "9bb6c7bdae5df67661029ae648b3c9a600cf4b08909ce4f310a7e32ed5f72a6d",
+      "status": "diagnostic_only",
+      "superseded_by": "outputs/scientific_revision_20260923/patient_pair_discrimination/report.json",
+      "current_use": "historical_only",
+      "manuscript_destination": "P1 NMF training-convergence history only; not the final result source",
+      "interpretation": "Retained actual 1000-iteration pilot with warnings in three folds. The uniform cap increase addressed training convergence without using held-pair discrimination; neither this pilot nor the final run adds independent patients.",
+      "native_sha256": "f517e7dc66a3bcf595f38c36c5a7b7c677763eb4e95343bbed3bea58d22205c4"
+    },
+    {
+      "source": "outputs/scientific_revision_20260925/full_pipeline_depth/full/report.json",
+      "sha256": "1998392073093038f173a6c39336d10990faa5c4bc2ef073f0d3a54ca7380728",
+      "status": "included",
+      "manuscript_destination": "P1 Methods/Results; tab:p1fulldepth; tab:p1depthoutcomes",
+      "interpretation": "Frozen-reference QC/gate/score depth sensitivity from every released pre-QC column, no refit. Seeds are not biological replicates; this is not annotation truth or external portability. RT06 remains partially addressed; a computational range is not a clinical acceptance margin.",
+      "native_sha256": "e1b955523021c7de6b0f67d61086e8253fb5f1cd91caef8574ad8e35b1f224b9"
+    }
+  ]
+}

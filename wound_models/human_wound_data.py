@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
-"""Human wound data."""
+"""GSE241132 join contract, fold-internal scaling, and historical-output lock.
+
+Scripts 18-22 used to share a copy-pasted join that reset the pandas index
+after merging author metadata, then treated that index as a row into coh.X.
+This module is the single implementation those scripts must call.
+
+It also owns two protocol rules the 2026-09-17 review made mandatory:
+
+  * mu / theta standardisation is estimated on training cells only
+  * historical report.json files must not be overwritten by a repaired rerun
+"""
 from __future__ import annotations
 import hashlib
 import json

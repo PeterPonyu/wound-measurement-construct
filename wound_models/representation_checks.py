@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
-"""Representation checks."""
+"""
+Manifold Topological Audit Engine (Ported & Modularized from Instrument-connectivity audit).
+Strictly independent module: Reference-Anchored Allocation Geometry (connectivity audit) battery.
+
+Evaluates 4 core topological quantities to audit cross-tissue surrogate embeddings:
+1. reachability_survival: Pair-layer reachability ratio (Shatter-blindness detector).
+2. edge_survival: Average hop distance between reference k-NN edges in embedding graph.
+3. separation_survival: Preservation of distance between reference-separated clusters (Collapse detector).
+4. allocation_coherence: Jensen-Shannon divergence continuity along reference edges,
+   guarded by allocation_near_uniform perplexity check (< 0.95 * K).
+"""
 import numpy as np
 import scipy.sparse as sp
 from scipy.sparse.csgraph import connected_components, shortest_path

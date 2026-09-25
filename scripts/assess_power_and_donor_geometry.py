@@ -1,5 +1,32 @@
 #!/usr/bin/env python3
-"""Assess power and donor geometry."""
+"""
+Making the negative result falsifiable rather than merely unrejected.
+
+Section 7 concluded that fibroblast-associated topic abundance does not mark healing (Fisher
+p=0.221) and that it tracks immune infiltration instead (rho=+0.83 with
+B/plasma fraction). As stated, that is a failure to reject, which is the
+weakest form a negative result can take. Three things make it a claim:
+
+  A  REPLICATE THE POSITIVE ALTERNATIVE. "We found no healing association" is
+     weak; "we found what the quantity actually tracks, in every cohort we
+     have" is not. The immune-infiltration association needs no healing
+     labels, so it can be tested in every cohort on disk - including
+     GSE241132, an acute-wound cohort from different patients, different
+     tissue sampling, and with the submitters' own cell-type annotation
+     rather than ours.
+
+  B  BOUND THE EFFECT WE COULD HAVE MISSED. A non-significant test is
+     uninformative without a power statement. Simulating from the observed
+     between-sample variance estimates the smallest healing effect this
+     design would have caught 80% of the time under that model. It is a design
+     sensitivity, not an observed confidence bound or an equivalence test.
+
+  C  PROVE THE DESIGN CAN DETECT ANYTHING AT THIS n. Foot skin versus forearm
+     skin in GSE165816 is an anatomically certain contrast. Running the same
+     sample-level test on the same topic loadings at a matched sample size
+     shows whether the machinery detects real effects, or whether nothing
+     would ever have reached significance here.
+"""
 import argparse
 import json
 import os

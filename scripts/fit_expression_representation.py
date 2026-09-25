@@ -1,5 +1,24 @@
 #!/usr/bin/env python3
-"""Fit expression representation."""
+"""
+expression representation mainline: human DFU single-cell topic decomposition + topological audit.
+
+Replaces the retired Direction-1 stub. Every number this script reports comes
+from GSE165816 counts on disk; nothing is simulated.
+
+Pipeline
+  1. Load GSE165816 RAW.tar (54 dense CSVs) as CSR int32 via the data adapter.
+  2. Restrict to foot skin and to the labelled arms. Forearm skin and PBMCs are
+     dropped: they are different tissues and would dominate the variance.
+  3. Cell/gene QC, then pick the 7000-gene target line by dispersion.
+  4. Library-normalize to per-cell proportions (the simplex decoder's input).
+  5. Fit TopicModel; track whether beta escapes the near-uniform basin,
+     because at G=7000 the default init sits at perplexity ~= G and moves slowly.
+  6. connectivity audit audit of the learned latent against a PCA reference geometry.
+
+The audit's reference graph is built on a 50-dim SVD of the normalized counts,
+not on the raw 7000-dim matrix: kNN in 7000 dimensions is distance-concentrated
+and the resulting "reference" topology would itself be an artifact.
+"""
 import argparse
 import json
 import os

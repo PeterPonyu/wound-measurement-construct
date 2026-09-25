@@ -1,5 +1,5 @@
 % !TEX encoding = UTF-8 Unicode
-\documentclass[10pt]{standalone}\usepackage{tikz}
+\documentclass[10pt]{standalone}\usepackage{tikz,graphicx}
 \usepackage{fontspec}
 \setmainfont{Arial}
 \setsansfont{Arial}\begin{document}
@@ -11,7 +11,9 @@
 \path[clip] (  0.00,  0.00) rectangle (512.15,187.79);
 \definecolor{drawColor}{RGB}{0,0,0}
 
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.90] at (133.73,175.66) {\bfseries A Patient-unit AUC};
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  1.10] at (  8.54,174.22) {\bfseries A};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.90] at (133.73,174.23) {Same-model held pairs};
 \end{scope}
 \begin{scope}
 \path[clip] (  8.54,  4.27) rectangle (258.92,164.17);
@@ -20,164 +22,130 @@
 \path[fill=fillColor] (  8.54,  4.27) rectangle (258.92,164.17);
 \end{scope}
 \begin{scope}
-\path[clip] ( 52.65, 30.47) rectangle (255.51,159.05);
+\path[clip] ( 49.33, 30.47) rectangle (255.51,159.05);
 \definecolor{fillColor}{RGB}{255,255,255}
 
-\path[fill=fillColor] ( 52.65, 30.47) rectangle (255.51,159.05);
+\path[fill=fillColor] ( 49.33, 30.47) rectangle (255.51,159.05);
 \definecolor{drawColor}{RGB}{226,231,235}
 
-\path[draw=drawColor,line width= 0.2pt,line join=round] ( 57.48, 30.47) --
-	( 57.48,159.05);
+\path[draw=drawColor,line width= 0.2pt,line join=round] ( 54.23, 30.47) --
+	( 54.23,159.05);
 
-\path[draw=drawColor,line width= 0.2pt,line join=round] (105.78, 30.47) --
-	(105.78,159.05);
+\path[draw=drawColor,line width= 0.2pt,line join=round] (103.32, 30.47) --
+	(103.32,159.05);
 
-\path[draw=drawColor,line width= 0.2pt,line join=round] (154.08, 30.47) --
-	(154.08,159.05);
+\path[draw=drawColor,line width= 0.2pt,line join=round] (152.42, 30.47) --
+	(152.42,159.05);
 
-\path[draw=drawColor,line width= 0.2pt,line join=round] (202.38, 30.47) --
-	(202.38,159.05);
+\path[draw=drawColor,line width= 0.2pt,line join=round] (201.51, 30.47) --
+	(201.51,159.05);
 
-\path[draw=drawColor,line width= 0.2pt,line join=round] (250.68, 30.47) --
-	(250.68,159.05);
+\path[draw=drawColor,line width= 0.2pt,line join=round] (250.60, 30.47) --
+	(250.60,159.05);
 \definecolor{drawColor}{RGB}{115,119,123}
 
-\path[draw=drawColor,line width= 0.3pt,dash pattern=on 4pt off 4pt ,line join=round] (154.08, 30.47) -- (154.08,159.05);
+\path[draw=drawColor,line width= 0.3pt,dash pattern=on 4pt off 4pt ,line join=round] (152.42, 30.47) -- (152.42,159.05);
 \definecolor{drawColor}{RGB}{35,78,112}
-
-\path[draw=drawColor,line width= 0.6pt,line join=round] (250.68,138.39) --
-	(250.68,142.98);
-
-\path[draw=drawColor,line width= 0.6pt,line join=round] (250.68,140.68) --
-	(126.48,140.68);
-
-\path[draw=drawColor,line width= 0.6pt,line join=round] (126.48,138.39) --
-	(126.48,142.98);
-
-\path[draw=drawColor,line width= 0.6pt,line join=round] (250.68,107.77) --
-	(250.68,112.36);
-
-\path[draw=drawColor,line width= 0.6pt,line join=round] (250.68,110.07) --
-	(154.08,110.07);
-
-\path[draw=drawColor,line width= 0.6pt,line join=round] (154.08,107.77) --
-	(154.08,112.36);
-
-\path[draw=drawColor,line width= 0.6pt,line join=round] (250.68, 77.16) --
-	(250.68, 81.75);
-
-\path[draw=drawColor,line width= 0.6pt,line join=round] (250.68, 79.45) --
-	( 57.48, 79.45);
-
-\path[draw=drawColor,line width= 0.6pt,line join=round] ( 57.48, 77.16) --
-	( 57.48, 81.75);
-
-\path[draw=drawColor,line width= 0.6pt,line join=round] (140.28, 46.54) --
-	(140.28, 51.13);
-
-\path[draw=drawColor,line width= 0.6pt,line join=round] (140.28, 48.84) --
-	( 57.48, 48.84);
-
-\path[draw=drawColor,line width= 0.6pt,line join=round] ( 57.48, 46.54) --
-	( 57.48, 51.13);
 \definecolor{fillColor}{RGB}{35,78,112}
 
-\path[draw=drawColor,line width= 0.3pt,line join=round,line cap=round,fill=fillColor] (195.48,140.68) circle (  2.40);
+\path[draw=drawColor,line width= 0.3pt,line join=round,line cap=round,fill=fillColor] (194.49,140.68) circle (  2.40);
 
-\path[draw=drawColor,line width= 0.3pt,line join=round,line cap=round,fill=fillColor] (209.28,110.07) circle (  2.40);
+\path[draw=drawColor,line width= 0.3pt,line join=round,line cap=round,fill=fillColor] (208.52,110.07) circle (  2.40);
 
-\path[draw=drawColor,line width= 0.3pt,line join=round,line cap=round,fill=fillColor] (154.08, 79.45) circle (  2.40);
+\path[draw=drawColor,line width= 0.3pt,line join=round,line cap=round,fill=fillColor] (152.42, 79.45) circle (  2.40);
 
-\path[draw=drawColor,line width= 0.3pt,line join=round,line cap=round,fill=fillColor] ( 81.63, 48.84) circle (  2.40);
+\path[draw=drawColor,line width= 0.3pt,line join=round,line cap=round,fill=fillColor] ( 99.82, 48.84) circle (  2.40);
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (512.15,187.79);
 \definecolor{drawColor}{RGB}{115,119,123}
 
-\path[draw=drawColor,line width= 0.3pt,line join=round,line cap=rect] ( 52.65, 30.47) --
-	( 52.65,159.05);
+\path[draw=drawColor,line width= 0.3pt,line join=round,line cap=rect] ( 49.33, 30.47) --
+	( 49.33,159.05);
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (512.15,187.79);
 \definecolor{drawColor}{RGB}{0,0,0}
 
-\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.75] at ( 48.20, 46.15) {\bfseries NMF};
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.75] at ( 44.88, 46.15) {NMF};
 
-\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.75] at ( 48.20, 76.77) {\bfseries PCA};
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.75] at ( 44.88, 76.77) {PCA};
 
-\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.75] at ( 48.20,107.38) {\bfseries Module};
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.75] at ( 44.88,107.38) {Module};
 
-\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.75] at ( 48.20,142.05) {\bfseries Fibroblast};
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.75] at ( 44.88,142.05) {Fibroblast};
 
-\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.75] at ( 48.20,133.95) {\bfseries topic};
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.75] at ( 44.88,133.95) {topic};
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (512.15,187.79);
 \definecolor{drawColor}{RGB}{115,119,123}
 
-\path[draw=drawColor,line width= 0.3pt,line join=round] ( 49.80, 48.84) --
-	( 52.65, 48.84);
+\path[draw=drawColor,line width= 0.3pt,line join=round] ( 46.48, 48.84) --
+	( 49.33, 48.84);
 
-\path[draw=drawColor,line width= 0.3pt,line join=round] ( 49.80, 79.45) --
-	( 52.65, 79.45);
+\path[draw=drawColor,line width= 0.3pt,line join=round] ( 46.48, 79.45) --
+	( 49.33, 79.45);
 
-\path[draw=drawColor,line width= 0.3pt,line join=round] ( 49.80,110.07) --
-	( 52.65,110.07);
+\path[draw=drawColor,line width= 0.3pt,line join=round] ( 46.48,110.07) --
+	( 49.33,110.07);
 
-\path[draw=drawColor,line width= 0.3pt,line join=round] ( 49.80,140.68) --
-	( 52.65,140.68);
+\path[draw=drawColor,line width= 0.3pt,line join=round] ( 46.48,140.68) --
+	( 49.33,140.68);
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (512.15,187.79);
 \definecolor{drawColor}{RGB}{115,119,123}
 
-\path[draw=drawColor,line width= 0.3pt,line join=round,line cap=rect] ( 52.65, 30.47) --
+\path[draw=drawColor,line width= 0.3pt,line join=round,line cap=rect] ( 49.33, 30.47) --
 	(255.51, 30.47);
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (512.15,187.79);
 \definecolor{drawColor}{RGB}{115,119,123}
 
-\path[draw=drawColor,line width= 0.3pt,line join=round] ( 57.48, 27.62) --
-	( 57.48, 30.47);
+\path[draw=drawColor,line width= 0.3pt,line join=round] ( 54.23, 27.62) --
+	( 54.23, 30.47);
 
-\path[draw=drawColor,line width= 0.3pt,line join=round] (105.78, 27.62) --
-	(105.78, 30.47);
+\path[draw=drawColor,line width= 0.3pt,line join=round] (103.32, 27.62) --
+	(103.32, 30.47);
 
-\path[draw=drawColor,line width= 0.3pt,line join=round] (154.08, 27.62) --
-	(154.08, 30.47);
+\path[draw=drawColor,line width= 0.3pt,line join=round] (152.42, 27.62) --
+	(152.42, 30.47);
 
-\path[draw=drawColor,line width= 0.3pt,line join=round] (202.38, 27.62) --
-	(202.38, 30.47);
+\path[draw=drawColor,line width= 0.3pt,line join=round] (201.51, 27.62) --
+	(201.51, 30.47);
 
-\path[draw=drawColor,line width= 0.3pt,line join=round] (250.68, 27.62) --
-	(250.68, 30.47);
+\path[draw=drawColor,line width= 0.3pt,line join=round] (250.60, 27.62) --
+	(250.60, 30.47);
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (512.15,187.79);
 \definecolor{drawColor}{RGB}{0,0,0}
 
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.75] at ( 57.48, 20.65) {\bfseries 0.00};
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.75] at ( 54.23, 20.65) {0.00};
 
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.75] at (105.78, 20.65) {\bfseries 0.25};
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.75] at (103.32, 20.65) {0.25};
 
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.75] at (154.08, 20.65) {\bfseries 0.50};
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.75] at (152.42, 20.65) {0.50};
 
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.75] at (202.38, 20.65) {\bfseries 0.75};
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.75] at (201.51, 20.65) {0.75};
 
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.75] at (250.68, 20.65) {\bfseries 1.00};
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.75] at (250.60, 20.65) {1.00};
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (512.15,187.79);
 \definecolor{drawColor}{RGB}{0,0,0}
 
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.80] at (154.08,  9.37) {\bfseries AUC};
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.80] at (152.42,  9.37) {Held-pair discrimination};
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (512.15,187.79);
 \definecolor{drawColor}{RGB}{0,0,0}
 
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.90] at (388.38,175.66) {\bfseries B Paired anatomy};
+\node[text=drawColor,anchor=base west,inner sep=0pt, outer sep=0pt, scale=  1.10] at (273.15,174.22) {\bfseries B};
+
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.90] at (388.38,174.23) {Paired anatomy};
 \end{scope}
 \begin{scope}
 \path[clip] (273.15,  4.27) rectangle (503.61,164.17);
@@ -228,11 +196,11 @@
 \path[clip] (  0.00,  0.00) rectangle (512.15,187.79);
 \definecolor{drawColor}{RGB}{0,0,0}
 
-\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.75] at (302.27, 53.69) {\bfseries 0.00};
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.75] at (302.27, 53.69) {0.00};
 
-\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.75] at (302.27, 92.36) {\bfseries 0.05};
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.75] at (302.27, 92.36) {0.05};
 
-\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.75] at (302.27,131.04) {\bfseries 0.10};
+\node[text=drawColor,anchor=base east,inner sep=0pt, outer sep=0pt, scale=  0.75] at (302.27,131.04) {0.10};
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (512.15,187.79);
@@ -265,15 +233,15 @@
 \path[clip] (  0.00,  0.00) rectangle (512.15,187.79);
 \definecolor{drawColor}{RGB}{0,0,0}
 
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.75] at (403.46, 17.36) {\bfseries Fibroblast};
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.75] at (403.46, 17.36) {Fibroblast};
 
-\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.75] at (403.46,  9.26) {\bfseries topic};
+\node[text=drawColor,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.75] at (403.46,  9.26) {topic};
 \end{scope}
 \begin{scope}
 \path[clip] (  0.00,  0.00) rectangle (512.15,187.79);
 \definecolor{drawColor}{RGB}{0,0,0}
 
-\node[text=drawColor,rotate= 90.00,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.80] at (282.29, 93.11) {\bfseries Foot − forearm loading};
+\node[text=drawColor,rotate= 90.00,anchor=base,inner sep=0pt, outer sep=0pt, scale=  0.80] at (282.29, 93.11) {Foot − forearm loading};
 \end{scope}
 \end{tikzpicture}
 

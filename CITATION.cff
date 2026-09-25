@@ -1,20 +1,24 @@
 cff-version: 1.2.0
-message: Please cite this software when using these analyses.
+message: Cite this software release using the metadata below. The DOI identifies software,
+  not the manuscript.
 type: software
-title: Wound single-cell measurement construct validation
+title: 'Neural topic measurements in diabetic foot ulcer research: analysis software'
 authors:
 - family-names: Fu
   given-names: Zeyu
-version: 0.3.0
-doi: 10.5281/zenodo.22884868
+version: 0.4.2
 license: MIT
-abstract: Software for testing whether a fibroblast-associated expression loading
-  reflects cell-state abundance and supports patient-level healing inference in public
-  wound single-cell data. The study includes technical controls, patient resampling,
-  paired anatomy, representation comparisons and external tissue-context projections.
-  It does not establish a clinically validated prognostic tool.
+abstract: Analysis software for a patient-level audit of fibroblast measurements from
+  a frozen 15-topic logistic-normal expression model in diabetic foot ulcer research.
+  It evaluates score decomposition, whole-count-pipeline sensitivity, author-mapped
+  patient contrasts, paired anatomy and external tissue-context projections. Healing
+  inference involves 11 patients; outcome intervals include zero and the external
+  cohorts do not supply independent healing validation. This is a measurement audit,
+  not a validated prognostic tool.
 repository-code: https://github.com/PeterPonyu/wound-measurement-construct
 keywords:
 - single-cell transcriptomics
 - wound healing
 - measurement validity
+doi: 10.5281/zenodo.22962314
+date-released: '2026-09-25'

@@ -87,8 +87,11 @@ def inspect_pdf(path: Path, pages: int = 1, width_mm: float | None = None,
                     for span in line["spans"]:
                         if not span["text"].strip():
                             continue
-                        if figure_text and (span["color"] != 0 or "Bold" not in span["font"]):
-                            raise RuntimeError(f"Figure text must be black and bold in {path.name}: {span['text']} ({span['font']}, {span['color']})")
+                        if figure_text and span["color"] != 0:
+                            raise RuntimeError(f"Figure text must be black in {path.name}: {span['text']}")
+                        if figure_text and "Bold" in span["font"] and not (
+                                re.fullmatch(r"[A-Z]", span["text"].strip()) and span["size"] >= 10.8):
+                            raise RuntimeError(f"Only separate panel letters may be bold in {path.name}: {span['text']}")
                         bounds = fitz.Rect(span["bbox"])
                         if not (page.rect + (-.8, -.8, .8, .8)).contains(bounds):
                             raise RuntimeError(f"Text crosses page boundary in {path.name}: {span['text']}")
@@ -97,7 +100,7 @@ def inspect_pdf(path: Path, pages: int = 1, width_mm: float | None = None,
         raise RuntimeError(f"Missing or undersized text in {path.name}")
     return {"pages": pages, "dimensions_mm": dimensions, "fonts": sorted(fonts),
             "minimum_font_pt": min(sizes), "raster_objects": 0,
-            "black_bold_figure_text": figure_text, "sha256": sha(path)}
+            "black_text_bold_labels_only": figure_text, "sha256": sha(path)}
 
 
 def latex_escape(text: str) -> str:
@@ -109,7 +112,7 @@ def latex_escape(text: str) -> str:
 
 
 def inspect_headings(path: Path, specification: dict) -> list[dict]:
-    """Check the rendered joint letter/title against each panel's centre."""
+    """Measure title centring and independent bold letters in the actual PDF."""
     rows = []
     titles = specification["headings"]
     centres = specification["heading_centres_mm"]
@@ -119,18 +122,104 @@ def inspect_headings(path: Path, specification: dict) -> list[dict]:
         centres = [centres]
     if len(titles) != len(centres):
         raise RuntimeError(f"Incomplete panel-heading specification: {path.name}")
+    labels = specification["panel_labels"]
+    lefts = specification["label_left_mm"]
+    tops = specification["heading_top_mm"]
+    widths = specification["panel_width_mm"]
+    if not isinstance(lefts, list):
+        lefts = [lefts]
+    if not isinstance(tops, list):
+        tops = [tops]
+    if not isinstance(widths, list):
+        widths = [widths]
+    if (specification.get("heading_alignment") != "panel-centred" or
+            not len(titles) == len(lefts) == len(tops) == len(widths)):
+        raise RuntimeError(f"Incomplete centred-heading geometry: {path.name}")
     with fitz.open(path) as document:
         page = document[0]
-        for title, centre in zip(titles, centres):
-            matches = page.search_for(title)
+        spans = [s for b in page.get_text("dict")["blocks"] for l in b.get("lines", []) for s in l["spans"]]
+        bold = [s for s in spans if "Bold" in s["font"] and s["text"].strip()]
+        if len(bold) != len(labels):
+            raise RuntimeError(f"Incorrect number of bold panel letters: {path.name}")
+        for i, (title, centre) in enumerate(zip(titles, centres)):
+            if abs(centre - (lefts[i] + widths[i] / 2)) > .01:
+                raise RuntimeError(f"Heading target differs from panel centre: {path.name}: {title}")
+            matches = [box for box in page.search_for(title)
+                       if abs(box.y0 * 25.4 / 72 - tops[i] - .5) < 1]
             if len(matches) != 1:
                 raise RuntimeError(f"Panel heading must be one complete text block: {path.name}: {title}")
             box = matches[0]
             actual = (box.x0 + box.x1) / 2 * 25.4 / 72
-            if abs(actual - centre) > .6:
+            if abs(actual - centre) > .2:
                 raise RuntimeError(f"Off-centre heading: {path.name}: {title}: {actual} vs {centre} mm")
-            rows.append({"heading": title, "centre_mm": actual, "expected_centre_mm": centre})
+            if (box.x0 * 25.4 / 72 < lefts[i] - .2 or
+                    box.x1 * 25.4 / 72 > lefts[i] + widths[i] + .2):
+                raise RuntimeError(f"Title extends outside its panel: {path.name}: {title}")
+            title_spans = [s for s in spans if fitz.Rect(s["bbox"]).intersects(box)]
+            if any("Bold" in s["font"] for s in title_spans):
+                raise RuntimeError(f"Title must be regular and separate from label: {path.name}: {title}")
+            row = {"heading": title, "centre_mm": actual, "expected_centre_mm": centre,
+                   "centre_error_mm": actual - centre, "panel_width_mm": widths[i],
+                   "alignment": "panel-centred"}
+            if labels:
+                matches = [s for s in bold if s["text"].strip() == labels[i]]
+                if len(matches) != 1:
+                    raise RuntimeError(f"Missing independent panel letter {labels[i]}: {path.name}")
+                tag = matches[0]
+                tagbox = fitz.Rect(tag["bbox"])
+                overlaps = [s["text"] for s in spans if s is not tag and s["text"].strip()
+                            and fitz.Rect(s["bbox"]).intersects(tagbox + (-.5, -.5, .5, .5))]
+                if overlaps:
+                    raise RuntimeError(f"Text overlaps panel letter {labels[i]} in {path.name}: {overlaps}")
+                if (abs(tagbox.x0 * 25.4 / 72 - lefts[i]) > .6 or
+                        abs(tagbox.y0 * 25.4 / 72 - tops[i]) > 1.5 or
+                        tagbox.x1 + 1 >= box.x0 or tag["size"] <= max(s["size"] for s in title_spans)):
+                    raise RuntimeError(f"Panel letter/title layout or hierarchy failed: {path.name}: {labels[i]}")
+                row.update(label=labels[i], label_left_mm=tagbox.x0 * 25.4 / 72,
+                           label_font_pt=tag["size"], separate_text_objects=True)
+            rows.append(row)
     return rows
+
+
+def inspect_tissue_panel(path: Path, paper: int, page_number: int = 0) -> dict:
+    """Require visible filled dermis as well as labels; text alone passed before."""
+    with fitz.open(path) as document:
+        page = document[page_number]
+        dermis = [d for d in page.get_drawings() if d.get("fill") and
+                  max(abs(a-b) for a,b in zip(d["fill"], (245/255,231/255,216/255))) < .012
+                  and d["rect"].get_area() > 350]
+        expected = 1 if paper == 1 else 4
+        if len(dermis) != expected:
+            raise RuntimeError(f"Missing dermal section(s) in {path.name}: {len(dermis)} != {expected}")
+        words = (["Ulcer bed", "Dermis", "Vessel", "Immune cells", "7,002-gene",
+                  "Frozen MLP", "15-topic", "Fibroblast gate", "All-cell mean",
+                  "Patient-unit", "sampled z", "β decoder", "Gaussian KL"]
+                 if paper == 1 else
+                 ["Intact skin", "Day 1", "Day 7", "Day 30", "Donor A",
+                  "Donor B", "Donor C", "7,002-gene input", "5,383 covered",
+                  "Frozen", "Train-only", "Shared CFM", "Product endpoints",
+                  "RK4 flow", "marginal test", "held from fitting"])
+        for word in words:
+            if not page.search_for(word):
+                raise RuntimeError(f"Missing tissue/model label {word} in {path.name}")
+        return {"filled_dermal_sections": len(dermis), "required_labels": words}
+
+
+def build_tissue_panels() -> dict:
+    checks = {}
+    for paper in PAPERS:
+        source = HERE / "panel_a.tex"
+        pdf = compile_tex(source)
+        checks[source.stem] = inspect_pdf(pdf, width_mm=84.5, height_mm=57.8667)
+        checks[source.stem]["tissue"] = inspect_tissue_panel(pdf, paper)
+        with fitz.open(pdf) as doc:
+            (STAGING / f"{source.stem}.svg").write_text(doc[0].get_svg_image(text_as_path=True))
+        run(["pdftoppm", "-r", "300", "-singlefile", "-png", str(pdf), str(STAGING/source.stem)])
+    for paper in PAPERS:
+        for suffix in (".pdf", ".png", ".svg"):
+            name = f"panel_a{suffix}"
+            shutil.copy2(STAGING/name, FIG/name)
+    return checks
 
 
 def build_collection(paper: int) -> tuple[Path, int]:
@@ -150,9 +239,9 @@ def build_collection(paper: int) -> tuple[Path, int]:
     for index, (number, image, caption) in enumerate(matches):
         if index:
             lines.append(r"\newpage")
-        lines += [r"{\fontsize{13}{16}\selectfont\bfseries Figure " + number + r"}\par\vspace{5mm}",
-                  r"\includegraphics[width=180mm]{../" + image + r".pdf}\par\vspace{5mm}",
-                  r"{\fontsize{10}{13}\selectfont " + caption + r"\par}"]
+        lines += [r"{\fontsize{13}{16}\selectfont\bfseries Figure " + number + r"}\par\vspace{3mm}",
+                  r"\includegraphics[width=180mm]{../" + image + r".pdf}\par\vspace{3mm}",
+                  r"{\fontsize{9}{11.5}\selectfont " + caption + r"\par}"]
     lines.append(r"\end{document}")
     source = FIG / "tex" / "figures.tex"
     source.write_text("\n".join(lines) + "\n")
@@ -167,6 +256,7 @@ def main() -> None:
     BUILD.mkdir(parents=True, exist_ok=True)
     STAGING.mkdir(parents=True, exist_ok=True)
     check_environment()
+    tissue_checks = build_tissue_panels()
     if not args.compile_only:
         print("Rendering R panels to TikZ…", flush=True)
         run(["Rscript", str(HERE / "build_figures.R"), *args.figure], log=BUILD / "R-build.log")
@@ -182,13 +272,15 @@ def main() -> None:
     names = args.figure or list(manifest["figures"])
     if not set(names) <= set(manifest["figures"]):
         raise RuntimeError("Requested figure missing from the current manifest")
-    verification = {"figures": {}, "collections": {}, "source_reports_unchanged": False}
+    verification = {"tissue_panels": tissue_checks, "figures": {}, "collections": {}, "source_reports_unchanged": False}
     for name in names:
         dimensions = manifest["figures"][name]
         pdf = compile_tex(FIG / "tex" / f"{name}.tex")
         verification["figures"][name] = inspect_pdf(pdf, width_mm=dimensions["width_mm"],
                                                    height_mm=dimensions["height_mm"])
-        verification["figures"][name]["centred_joint_headings"] = inspect_headings(pdf, dimensions)
+        verification["figures"][name]["independent_panel_labels_and_titles"] = inspect_headings(pdf, dimensions)
+        if name.endswith("figure1_workflow"):
+            verification["figures"][name]["tissue"] = inspect_tissue_panel(pdf, 1)
         run(["pdftoppm", "-r", "300", "-singlefile", "-png", str(pdf), str(STAGING / name)])
         print(f"Verified vector + 300 dpi preview: {name}", flush=True)
     for path, fingerprint in dict(manifest["sources"]).items():
@@ -207,6 +299,8 @@ def main() -> None:
             run(["pdftoppm", "-r", "110", "-png", str(pdf), str(BUILD / f"paper{paper}-review")])
     verification["render_manifest_sha256"] = sha(BUILD / "manifest.json")
     verification["build_script_sha256"] = sha(Path(__file__))
+    verification["caption_sha256"] = {str(path.relative_to(ROOT)): sha(path)
+                                      for folder in PAPERS.values() for path in sorted(folder.glob("f*.tex"))}
     (BUILD / "verification.json").write_text(json.dumps(verification, indent=2) + "\n")
     shutil.copy2(BUILD / "manifest.json", FIG / "render_manifest.json")
     print(f"DONE: {len(names)} figures. Review: {FIG}", flush=True)

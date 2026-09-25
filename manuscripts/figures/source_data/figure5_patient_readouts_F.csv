@@ -1,0 +1,4 @@
+"sensitivity","readout","comparisons","difference_mean","difference_min","difference_max","p_min","p_max","positive"
+"One specimen per patient","Programme mean",8,0.0973624089073745,0.0776900080295773,0.117034809785172,0.233333333333333,0.33030303030303,8
+"One specimen per patient","High-state fraction",8,0.168271748374012,0.128445583211426,0.208097913536599,0.266666666666667,0.439393939393939,8
+"One specimen per patient","Fibroblast fraction",8,0.0678974504179586,0.043961464811887,0.0918334360240301,0.390909090909091,0.651515151515151,8

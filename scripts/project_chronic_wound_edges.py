@@ -1,5 +1,17 @@
 #!/usr/bin/env python3
-"""Project chronic wound edges."""
+"""Project the frozen encoder onto the newly retrieved GSE268834 matrices.
+
+GSE268834 is an independent human wound-edge scRNA-seq series, but its public
+metadata contains diabetic/non-diabetic labels rather than authoritative
+patient IDs or healing outcomes.  This script therefore extends the external
+construct audit only.  It never refits the encoder, turns disease status into
+a healing endpoint, or performs patient-level inference.
+
+The input is the per-GSM 10x MTX bundle downloaded by
+``fetch_gse268834_per_gsm.sh``.  The fixed exclusive immune/fibroblast gates
+are imported from scripts/assess_disjoint_immune_compartments.py; the old overlapping gates are retained only as
+a saturation control.
+"""
 from __future__ import annotations
 import argparse
 import gzip

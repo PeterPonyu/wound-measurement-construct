@@ -6,6 +6,7 @@ suppressPackageStartupMessages({
   library(grid)
   library(jsonlite)
   library(tikzDevice)
+  library(patchwork)
 })
 script <- sub("^--file=", "", grep("^--file=", commandArgs(), value = TRUE)[1])
 ROOT <- normalizePath(file.path(dirname(script), "../.."))
@@ -27,12 +28,11 @@ options(tikzDefaultEngine = "xetex",
         tikzMetricsDictionary = file.path(BUILD, "arial-metrics"))
 
 theme_set(theme_classic(base_size = 8, base_family = "Arial") + theme(
-  # Figure lettering is deliberately monochrome and bold. Data marks and
-  # reference lines retain colour; every textual element remains black.
-  text = element_text(colour = "black", face = "bold"),
-  axis.text = element_text(size = 7.5, colour = "black", face = "bold"),
-  axis.title.x = element_text(size = 8, colour = "black", face = "bold", margin = margin(t = 1.4, unit = "mm")),
-  axis.title.y = element_text(size = 8, colour = "black", face = "bold", margin = margin(r = 1.3, unit = "mm")),
+  # Only the separate panel letters are bold; ordinary figure text is regular.
+  text = element_text(colour = "black", face = "plain"),
+  axis.text = element_text(size = 7.5, colour = "black", face = "plain"),
+  axis.title.x = element_text(size = 8, colour = "black", face = "plain", margin = margin(t = 1.4, unit = "mm")),
+  axis.title.y = element_text(size = 8, colour = "black", face = "plain", margin = margin(r = 1.3, unit = "mm")),
   axis.ticks = element_line(linewidth = 0.25, colour = GRAY),
   axis.ticks.length = unit(1, "mm"),
   axis.line = element_line(linewidth = 0.25, colour = GRAY),
@@ -41,7 +41,7 @@ theme_set(theme_classic(base_size = 8, base_family = "Arial") + theme(
   plot.margin = margin(t = 1.8, r = 1.2, b = 1.2, l = 1.2, unit = "mm"),
   plot.background = element_rect(fill = "white", colour = NA),
   legend.position = "bottom",
-  legend.text = element_text(size = 7, colour = "black", face = "bold"),
+  legend.text = element_text(size = 7, colour = "black", face = "plain"),
   legend.title = element_blank(),
   legend.key.size = unit(3.2, "mm"), legend.spacing.x = unit(1.2, "mm"),
   legend.margin = margin(0, 0, 0, 0, unit = "mm"),
@@ -56,8 +56,18 @@ read_report <- function(path) {
   active_sources <<- unique(c(active_sources, path))
   d
 }
-repaired <- function(name) read_report(paste0("outputs/analysis/", name, "/report.json"))
-historical <- function(name) read_report(paste0("outputs/", name, "/report.json"))
+measurement_reports <- c("patient_mapping_equivalence", "representation_benchmark",
+  "representation_inference", "patient_unit_representation_benchmark", "design_power_simulation")
+repaired <- function(name) {
+  prefix <- if (name %in% measurement_reports) "outputs/scientific_revision_20260922/measurement/" else "outputs/analysis/"
+  read_report(paste0(prefix, name, "/report.json"))
+}
+historical <- function(name) {
+  if (name == "cohort_metadata/gse165816_patient_unit_remap")
+    return(read_report("outputs/scientific_revision_20260922/measurement/patient_unit_remap/report.json"))
+  if (name == "representation_benchmark") return(repaired(name))
+  read_report(paste0("outputs/", name, "/report.json"))
+}
 num <- function(rows, key) vapply(rows, function(x) as.numeric(x[[key]]), numeric(1))
 chr <- function(rows, key) vapply(rows, function(x) as.character(x[[key]]), character(1))
 vector <- function(x) as.numeric(unlist(x, use.names = FALSE))
@@ -84,7 +94,7 @@ forest <- function(d, xlabel = "AUC", ref = .5, limits = c(0, 1)) {
     scale_x_continuous(limits = limits, expand = expansion(mult = .025)) +
     labs(x = xlabel, y = NULL) + xgrid()
 }
-record_figure <- function(name, width, height, panels, heading_centres) {
+record_figure <- function(name, width, height, panels, heading_centres, label_lefts, heading_tops, panel_widths = rep(width / max(1, length(panels)), length(panels))) {
   data_files <- character()
   for (i in seq_along(panels)) {
     path <- file.path(DATA, paste0(name, "_", LETTERS[i], ".csv"))
@@ -93,7 +103,10 @@ record_figure <- function(name, width, height, panels, heading_centres) {
   }
   figures[[name]] <<- list(width_mm = width, height_mm = height,
       panels = vapply(panels, `[[`, character(1), "title"),
-      headings = paste(LETTERS[seq_along(panels)], vapply(panels, `[[`, character(1), "title")),
+      headings = vapply(panels, `[[`, character(1), "title"),
+      panel_labels = if (length(panels) > 1) LETTERS[seq_along(panels)] else character(),
+      label_left_mm = label_lefts, heading_top_mm = heading_tops,
+      panel_width_mm = panel_widths, heading_alignment = "panel-centred",
       heading_centres_mm = heading_centres,
       sources = active_sources, data = data_files)
   active_sources <<- character()
@@ -109,25 +122,43 @@ draw_figure <- function(name, panels, height = 82, widths = NULL, nrow = 1, gap 
   tikz(file.path(TEX, paste0(name, ".tex")), width = width / 25.4, height = height / 25.4,
        pointsize = 8, standAlone = TRUE, engine = "xetex", sanitize = TRUE,
        timestamp = FALSE, documentDeclaration = "\\documentclass[10pt]{standalone}",
-       packages = c("\\usepackage{tikz}", font_commands))
+       packages = c("\\usepackage{tikz,graphicx}", font_commands))
   on.exit(dev.off())
   grid.newpage()
   for (i in seq_along(panels)) {
     col <- (i - 1) %% ncol + 1; row <- (i - 1) %/% ncol + 1
     x <- left + sum(head(widths, col - 1)) + gap * (col - 1)
     y <- height - top - (row - 1) * (row_h + row_gap)
-    # One centred text object keeps the panel letter attached to its title.
-    grid.text(paste(LETTERS[i], panels[[i]]$title),
-              unit(x + widths[col] / 2, "mm"), unit(y, "mm"), just = c("centre", "top"),
-              gp = gpar(fontfamily = "Arial", fontsize = 9, fontface = "bold", col = "black"))
+    # Centre every title on its full panel, independently of the left-hand letter.
+    # Single-panel figures have a title only; PDF validation checks both objects.
+    labelled <- length(panels) > 1
+    if (labelled) grid.text(LETTERS[i], unit(x, "mm"), unit(y, "mm"),
+              just = c("left", "top"),
+              gp = gpar(fontfamily = "Arial", fontsize = 11, fontface = "bold", col = "black"))
+    grid.text(panels[[i]]$title,
+              unit(x + widths[col] / 2, "mm"),
+              unit(y - .5, "mm"), just = c("centre", "top"),
+              gp = gpar(fontfamily = "Arial", fontsize = 9, fontface = "plain", col = "black"))
+    if (inherits(panels[[i]]$plot, "vector_panel")) {
+      # Direct PDF inclusion keeps the hand-maintained tissue artwork out of
+      # ggplot scale/clip handling. The same asset is delivered independently.
+      tikzAnnotate(sprintf("\\node[anchor=north west,inner sep=0pt] at (%.6f,%.6f) {\\includegraphics[width=%.6fmm]{../%s.pdf}};",
+                           x * 72.27 / 25.4, (y - 6.3) * 72.27 / 25.4,
+                           widths[col], panels[[i]]$plot$asset))
+      next
+    }
     pushViewport(viewport(x = unit(x, "mm"), y = unit(y - 6.3, "mm"),
                           width = unit(widths[col], "mm"), height = unit(row_h - 6.3, "mm"),
                           just = c("left", "top"), clip = "off"))
-    grid.draw(ggplotGrob(panels[[i]]$plot))
+    grob <- if (inherits(panels[[i]]$plot, "patchwork")) patchworkGrob(panels[[i]]$plot) else ggplotGrob(panels[[i]]$plot)
+    grid.draw(grob)
     popViewport()
   }
   centres <- left + c(0, head(cumsum(widths), -1)) + gap * (seq_len(ncol) - 1) + widths / 2
-  record_figure(name, width, height, panels, rep(centres, nrow))
+  lefts <- centres - widths / 2
+  tops <- top + rep(seq_len(nrow) - 1, each = ncol) * (row_h + row_gap)
+  record_figure(name, width, height, panels,
+                rep(centres, nrow), rep(lefts, nrow), tops, rep(widths, nrow))
 }
 write_workflow <- function(name, height, body, steps, heading_centres) {
   colors <- paste0("\\definecolor{", c("navy", "blue", "teal", "orange", "purple", "green", "gray"),
@@ -142,7 +173,9 @@ write_workflow <- function(name, height, body, steps, heading_centres) {
     "\\end{tikzpicture}", "\\end{document}")
   writeLines(lines, file.path(TEX, paste0(name, ".tex")))
   record_figure(name, 180, height,
-                lapply(steps, function(s) panel(NULL, s, data.frame(step = s))), heading_centres)
+                lapply(steps, function(s) panel(NULL, s, data.frame(step = s))), heading_centres,
+                seq(0, by = 180 / max(1, length(steps)), length.out = length(steps)),
+                rep(2, length(steps)), rep(180 / max(1, length(steps)), length(steps)))
 }
 methods <- c("topic_simplex_theta0", "module_score", "pca", "nmf")
 method_names <- c("Fibroblast\ntopic", "Module", "PCA", "NMF")
@@ -155,7 +188,7 @@ sample_data <- function(d) data.frame(sample = chr(d, "gsm"),
     mean = num(d, "topic0_mean"), weight = num(d, "mixing_weight"))
 figure2_mixture_semantics <- function() {
   d <- historical("bimodal_stratification")$cohorts$GSE165816_discovery
-  s <- repaired("mixture_semantic_inference")
+  s <- read_report("outputs/scientific_revision_20260922/measurement/robustness_extensions/report.json")$patient$patient_semantics
   a <- sample_data(d$per_sample)
   pa <- ggplot(a, aes(weight, mean, colour = arm, shape = arm)) +
     geom_point(size = 1.9, alpha = .9) + scale_colour_manual(values = ARMS) +
@@ -168,9 +201,9 @@ figure2_mixture_semantics <- function() {
   pb <- columns(b, "Samples", c("#BCC7CF", BLUE, GRAY, PURPLE), c(0, 18)) +
     scale_y_continuous(breaks = c(0, 5, 10, 15))
   c <- data.frame(label = c("Bootstrap", "Leave-one-out"),
-    value = c(s$observed$spearman_rho, NA),
-    low = c(s$bootstrap$ci95[[1]], s$leave_one_sample_out$rho_min),
-    high = c(s$bootstrap$ci95[[2]], s$leave_one_sample_out$rho_max))
+    value = c(s$rho, NA),
+    low = c(s$bootstrap_95_interval[[1]], s$omission_range[[1]]),
+    high = c(s$bootstrap_95_interval[[2]], s$omission_range[[2]]))
   c$label <- factor(c$label, levels = rev(c$label))
   pc <- ggplot(c, aes(y = label)) +
     geom_segment(aes(x = low, xend = high, yend = label, colour = label), linewidth = 1.2) +
@@ -178,8 +211,8 @@ figure2_mixture_semantics <- function() {
     scale_colour_manual(values = c("Bootstrap" = NAVY, "Leave-one-out" = ORANGE)) +
     scale_x_continuous(limits = c(.74, 1), breaks = c(.8, .9, 1)) +
     labs(x = "Spearman ρ", y = NULL) + xgrid() + theme(legend.position = "none")
-  draw_figure("figure2_mixture_semantics", list(panel(pa, "Mixture coordinate", a),
-    panel(pb, "Sample shape", b), panel(pc, "Uncertainty", c)), height = 70, widths = c(57, 47, 60))
+  draw_figure("figure2_mixture_semantics", list(panel(pa, "Mean and fraction", a),
+    panel(pb, "Sample shape", b), panel(pc, "Patient uncertainty", c)), height = 70, widths = c(57, 47, 60))
 }
 figure3_artifact_controls <- function() {
   t <- historical("artifact_triage"); m <- historical("ambient_invariance")
@@ -228,6 +261,8 @@ figure4_outcome_counterexample <- function() {
 }
 figure6_sensitivity_negative_controls <- function() {
   s <- historical("method_constant_sensitivity"); n <- historical("pipeline_negative_control")
+  raw_control <- read_report("outputs/scientific_revision_20260922/measurement_controls/raw_shuffle_report.json")
+  dfu_control <- read_report("outputs/scientific_revision_20260922/measurement_controls/dfu_label_report.json")
   a <- data.frame(cut = num(s$cut_sweep$rows, "cut"), rho = num(s$cut_sweep$rows, "A_rho_mean_vs_weight"),
                   p = num(s$cut_sweep$rows, "C_p"))
   line_cut <- function() geom_vline(xintercept = s$cut_sweep$gmm_cut, colour = GRAY, linetype = "dashed", linewidth = .3)
@@ -239,14 +274,16 @@ figure6_sensitivity_negative_controls <- function() {
   k <- data.frame(K = num(s$k_sweep$rows, "K"), rho = num(s$k_sweep$rows, "A_rho_mean_vs_weight"))
   pc <- ggplot(k, aes(K, rho)) + geom_line(colour = BLUE, linewidth = .5) + geom_point(size = 2, colour = c(ORANGE, BLUE, BLUE)) +
     scale_x_continuous(breaks = c(10, 15, 20)) + coord_cartesian(ylim = c(.88, .97)) + labs(x = "Topics K", y = "Spearman ρ")
-  d <- data.frame(label = c("Observed", "Null 95%"), value = c(n$N1_label_permutation$observed, NA),
-    low = c(NA, n$N1_label_permutation$null_ci95[[1]]), high = c(NA, n$N1_label_permutation$null_ci95[[2]]))
+  dfu_high <- dfu_control$specimen_test$readouts[[2]]
+  d <- data.frame(label = c("Observed", "Null 95%"), value = c(dfu_high$difference, NA),
+    low = c(NA, dfu_high$null_percentile_025), high = c(NA, dfu_high$null_percentile_975))
   d$label <- factor(d$label, levels = rev(d$label))
   pd <- ggplot(d, aes(y = label)) + zero_v() +
     geom_segment(data = d[2, ], aes(x = low, xend = high, yend = label), colour = BLUE, linewidth = 1.5) +
     geom_point(data = d[1, ], aes(x = value), colour = RED, size = 2) +
     scale_x_continuous(limits = c(-.4, .4), breaks = c(-.3, 0, .3)) + labs(x = "Arm difference", y = NULL) + xgrid()
-  e <- data.frame(label = c("Intact", "Shuffled"), value = c(n$N2_structureless_input$perplexity_real, n$N2_structureless_input$perplexity_null))
+  e <- data.frame(label = c("Intact", "Shuffled"), value = c(raw_control$coordinate_summary$real_counts$perplexity_mean,
+    raw_control$coordinate_summary$column_shuffled_counts$perplexity_mean))
   pe <- columns(e, "Cell perplexity", c(TEAL, GRAY), c(0, 16)) + scale_y_continuous(breaks = c(0, 5, 10, 15))
   f <- data.frame(label = c("Observed p", "Null rate"), value = c(n$N3_permuted_positive_control$p_real, n$N3_permuted_positive_control$fraction_significant_under_permutation))
   pf <- columns(f, "Probability", c(RED, BLUE), c(0, .065)) +
@@ -269,29 +306,34 @@ figure7_representation_inference <- function() {
   c <- expand.grid(row = 1:4, col = 1:4); c$rho <- corr[cbind(c$row, c$col)]
   pc <- ggplot(c, aes(col, row, fill = rho)) + geom_tile(colour = "white", linewidth = .35) +
     geom_text(aes(label = sprintf("%.2f", rho)), size = 7.5 / .pt,
-              family = "Arial", fontface = "bold", colour = "black") +
+              family = "Arial", fontface = "plain", colour = "black") +
     scale_fill_gradient2(low = "#AFC5D6", mid = "#F8FAFB", high = "#E1A1A1", limits = c(-1, 1), name = "ρ") +
     scale_x_continuous(breaks = 1:4, labels = method_names, expand = c(0, 0)) +
     scale_y_reverse(breaks = 1:4, labels = method_names, expand = c(0, 0)) +
     coord_fixed() + labs(x = NULL, y = NULL) +
     theme(axis.line = element_blank(), axis.ticks = element_blank(), panel.grid = element_blank(),
           legend.position = "right", legend.key.height = unit(15, "mm"), legend.key.width = unit(2.4, "mm"),
-          legend.title = element_text(size = 8, colour = "black", face = "bold")) + guides(fill = guide_colorbar(display = "rectangles", nbin = 60,
+          legend.title = element_text(size = 8, colour = "black", face = "plain")) + guides(fill = guide_colorbar(display = "rectangles", nbin = 60,
               barheight = unit(28, "mm"), barwidth = unit(2.4, "mm")))
-  draw_figure("figure7_representation_inference", list(panel(pa, "Leave-one-sample AUC", a),
+  draw_figure("figure7_representation_inference", list(panel(pa, "Historical pooled-fold AUC", a),
     panel(pc, "Score correlation", c)), height = 71, widths = c(81, 88))
 }
 figure8_patient_unit_anatomy <- function() {
-  r <- repaired("patient_unit_representation_benchmark"); t <- repaired("paired_anatomical_control")
-  a <- data.frame(label = method_names, value = num(r$auc[methods], "auc"),
-    low = vapply(r$auc[methods], function(x) x$bootstrap_95_ci[[1]], 0),
-    high = vapply(r$auc[methods], function(x) x$bootstrap_95_ci[[2]], 0))
+  r <- read_report("outputs/scientific_revision_20260923/patient_pair_discrimination/report.json")
+  t <- repaired("paired_anatomical_control")
+  stopifnot(identical(chr(r$summary, "method"), methods))
+  a <- data.frame(label = method_names, value = num(r$summary, "auc"),
+                  pair_credit = num(r$summary, "credit_sum"), pairs = num(r$summary, "n_pairs"))
+  a$label <- factor(a$label, levels = rev(method_names))
+  pa <- ggplot(a, aes(value, label)) + zero_v(.5) + geom_point(size = 2, colour = NAVY) +
+    scale_x_continuous(limits = c(0, 1), expand = expansion(mult = .025)) +
+    labs(x = "Held-pair discrimination", y = NULL) + xgrid()
   c <- t$topic0_contrasts$topic0_all_mean
   b <- data.frame(label = "Fibroblast\ntopic", value = c$observed_difference_foot_minus_forearm,
                   low = c$bootstrap_95_ci[[1]], high = c$bootstrap_95_ci[[2]])
   pb <- ggplot(b, aes(label, value)) + zero_h() + geom_errorbar(aes(ymin = low, ymax = high), width = .15, colour = GREEN, linewidth = .6) +
     geom_point(size = 2.2, colour = GREEN) + coord_cartesian(ylim = c(-.03, .125)) + labs(x = NULL, y = "Foot − forearm loading")
-  draw_figure("figure8_patient_unit_anatomy", list(panel(forest(a), "Patient-unit AUC", a),
+  draw_figure("figure8_patient_unit_anatomy", list(panel(pa, "Same-model held pairs", a),
     panel(pb, "Paired anatomy", b)), height = 66, widths = c(88, 81))
 }
 figure9_external_construct_audit <- function() {
@@ -330,7 +372,8 @@ selected <- if (length(requested)) requested else names_all
 if (!all(selected %in% names_all)) stop("Unknown figure name")
 for (name in selected) get(name, mode = "function")()
 manifest <- list(renderer = "R + ggplot2/grid + tikzDevice + XeLaTeX", font = "Arial",
-  text_colour = "#000000", text_weight = "bold",
+  text_colour = "#000000", text_weight = "regular", panel_label_weight = "bold",
+  panel_title_alignment = "panel-centred",
   base_font_pt = 8, tick_font_pt = 7.5, label_font_pt = 11, journal_width_mm = 180,
   figures = figures, sources = sources, R = R.version.string,
   packages = lapply(c("ggplot2", "tikzDevice", "jsonlite", "digest"), function(p) list(package = p, version = as.character(packageVersion(p)))),
@@ -338,6 +381,7 @@ manifest <- list(renderer = "R + ggplot2/grid + tikzDevice + XeLaTeX", font = "A
     function(f) digest::digest(file = file.path(ROOT, "manuscripts/r_tikz", f), algo = "sha256")),
     paste0("manuscripts/r_tikz/", c("construct_design.tikz"))),
   script_sha256 = digest::digest(file = normalizePath(script), algo = "sha256"))
-manifest$auxiliary_sources <- setNames(list(digest::digest(file=file.path(ROOT,"manuscripts/r_tikz/biological_figures.R"),algo="sha256")),"manuscripts/r_tikz/biological_figures.R")
+auxiliary <- c("manuscripts/r_tikz/biological_figures.R", "manuscripts/r_tikz/panel_a.tex")
+manifest$auxiliary_sources <- setNames(lapply(auxiliary,function(f) digest::digest(file=file.path(ROOT,f),algo="sha256")),auxiliary)
 write_json(manifest, file.path(BUILD, "manifest.json"), auto_unbox = TRUE, pretty = TRUE, digits = NA)
 writeLines(capture.output(sessionInfo()), file.path(BUILD, "sessionInfo.txt"))

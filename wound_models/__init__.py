@@ -1,1 +1,1 @@
-"""Expression representations and wound population models."""
+"""Frozen expression representation and study models."""

@@ -1,0 +1,3 @@
+sample_id,patient_id,patient_id_source,wound_id,timepoint_days,healing_status,follow_up_days,tissue_site,batch,library_id,sequencing_run
+GSM7908977,,geo_title_only,,,,,plantar foot ulcer,GSE248247_10x_Chromium_3p_v3,SRX22583112,GSE248247_Illumina_HiSeq_4000
+GSM7908978,,geo_title_only,,,,,plantar foot ulcer,GSE248247_10x_Chromium_3p_v3,SRX22583113,GSE248247_Illumina_HiSeq_4000

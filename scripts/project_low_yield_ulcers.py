@@ -1,5 +1,16 @@
 #!/usr/bin/env python3
-"""Project low yield ulcers."""
+"""Run a frozen projection on the two very-low-yield GSE248247 samples.
+
+GSE248247 contains one diabetic and one non-diabetic plantar wound sample,
+with no authoritative patient identifiers or healing endpoint.  The purpose
+of this run is therefore a feasibility and low-yield stress test for the
+frozen encoder and mutually exclusive lineage gates.  It is not experiment A,
+not a prognostic comparison, and not a patient-level replication.
+
+The loader and projection helpers are shared with script 40 so that the
+matrix-market parsing, duplicate-gene handling, QC and deterministic eval
+projection cannot silently diverge between external cohorts.
+"""
 from __future__ import annotations
 import argparse
 import importlib.util

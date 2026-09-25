@@ -1,0 +1,63 @@
+% Authoritative editable artwork. Tissue and model modules are conceptual;
+% only the cohort counts below depict observed specimen/patient totals.
+\documentclass[10pt]{standalone}
+\usepackage{fontspec,tikz}
+\usetikzlibrary{arrows.meta}
+\setmainfont{Arial}
+\definecolor{dermis}{HTML}{F5E7D8}
+\definecolor{epidermis}{HTML}{E7C49B}
+\definecolor{edge}{HTML}{AD9071}
+\definecolor{fibro}{HTML}{1F8A8A}
+\definecolor{immune}{HTML}{6B4C9A}
+\definecolor{vessel}{HTML}{DBAAA1}
+\definecolor{healed}{HTML}{2E7D32}
+\definecolor{nonhealed}{HTML}{C46A1B}
+\definecolor{modelblue}{HTML}{EAF1F5}
+\begin{document}
+\begin{tikzpicture}[x=1mm,y=1mm,font=\fontsize{7}{8.2}\selectfont,text=black,line width=.3pt]
+\path[use as bounding box] (0,0) rectangle (84.5,57.8667);
+% Tissue shapes are compressed vertically, not the type. The lower half is
+% reserved for the model and the two NON-SEQUENTIAL statistical readouts.
+\begin{scope}[yscale=.60,yshift=37mm]
+% Open ulcer: the dermal surface descends into the wound bed; the opening is white.
+\filldraw[fill=dermis,draw=edge] (3,50) -- (27,50) -- (35,39) -- (49,39) -- (57,50) -- (81,50) -- (81,29) -- (3,29) -- cycle;
+\filldraw[fill=epidermis,draw=edge] (3,50) -- (27,50) -- (29.2,47) -- (3,47) -- cycle;
+\filldraw[fill=epidermis,draw=edge] (54.8,47) -- (57,50) -- (81,50) -- (81,47) -- cycle;
+\draw[vessel,line width=1.4pt] (4,32.2) -- (80,32.2);
+\draw[white,line width=.5pt] (4,32.2) -- (80,32.2);
+\foreach \x/\y in {12/43,25/36,39/34.8,64/41,72/35.5,10/30.5} {
+  \fill[fibro] (\x-2.1,\y-.55) -- (\x+1.2,\y+.65) -- (\x+3,\y+.2) -- (\x-.4,\y-.8) -- cycle;
+}
+\foreach \x/\y in {36/40.8,41/41.5,46/40.9,43/38} {\fill[immune] (\x,\y) circle (.65);}
+\end{scope}
+\node[anchor=west] at (3,55.3) {Epidermis};
+\draw[edge] (14,53.9) -- (14,52.4);
+\node at (43,55.3) {Ulcer bed};
+\draw[edge] (43,53.9) -- (43,48.5);
+\node[anchor=east] at (81,55.3) {Foot skin};
+\node[anchor=west] at (4,47.1) {Fibroblasts};
+\node[anchor=east] at (80,49.1) {Dermis};
+\node[anchor=east] at (80,41.5) {Vessel};
+\node at (43,50.5) {Immune cells};
+\node[align=center] at (15,35.1) {DFU healing\\9 specimens\\7 patients};
+\node[align=center] at (42.3,35.1) {DFU non-healing\\5 specimens\\4 patients};
+\node[align=center] at (69.5,35.1) {Non-diabetic\\11 specimens\\9 patients};
+% Frozen inference: the fibroblast and all-cell estimands branch from theta.
+% Neither readout feeds the other. Training is a separate dashed lower route.
+\tikzset{module/.style={draw=gray!60,fill=modelblue,rounded corners=.5mm,
+    minimum height=9mm,text width=14mm,align=center,inner sep=.6mm},
+    route/.style={-{Latex[length=1.2mm]},gray}}
+\node[module] (input) at (8.5,21) {7,002-gene\\proportions};
+\node[module,text width=16mm] (encoder) at (26.5,21) {Frozen MLP\\Gaussian μ};
+\node[module] (theta) at (45,21) {15-topic θ\\softmax(μ)};
+\node[module,text width=23mm] (fibroreadout) at (71,25.8) {Fibroblast gate\\mean / fraction};
+\node[module,text width=23mm] (patientreadout) at (71,14.8) {All-cell mean\\Patient-unit contrast};
+\draw[route] (input.east)--(encoder.west);
+\draw[route] (encoder.east)--(theta.west);
+\draw[route] (theta.east)--(55,21)|-(fibroreadout.west);
+\draw[route] (theta.east)--(55,21)|-(patientreadout.west);
+\draw[gray,dashed] (2,9.5)--(82.5,9.5);
+\node[anchor=west] at (2,6.5) {Training: sampled z → softmax(z) → β decoder};
+\node[anchor=west] at (2,2.7) {Proportion cross-entropy + 0.01 Gaussian KL};
+\end{tikzpicture}
+\end{document}

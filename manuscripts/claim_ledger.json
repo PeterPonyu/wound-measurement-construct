@@ -1,0 +1,300 @@
+{
+  "papers": {
+    "measurement_construct": {
+      "title": "Neural topic modelling in diabetic foot ulcer research: a patient-level audit of fibroblast measurements",
+      "claims": [
+        {
+          "id": "P1-C01",
+          "status": "ready",
+          "value": "76,461 QC cells; 25 selected foot-skin samples from 54 original samples",
+          "source": "outputs/expression_representation/report.json",
+          "scope": "GSE165816 discovery representation",
+          "allowed_wording": "The frozen representation was evaluated on 76,461 QC cells from 25 selected foot-skin samples in the 54-sample original series."
+        },
+        {
+          "id": "P1-C02",
+          "status": "ready",
+          "value": "beta perplexity 243",
+          "source": "outputs/expression_representation/report.json",
+          "scope": "15-topic frozen representation",
+          "allowed_wording": "The fitted topic representation had beta perplexity 243 and passed the current manifold audit."
+        },
+        {
+          "id": "P1-C03",
+          "status": "ready",
+          "value": "rho=0.933",
+          "source": "outputs/bimodal_stratification/report.json",
+          "scope": "25 sample-level observations",
+          "allowed_wording": "Across 25 specimens the fibroblast mean loading correlated with the high-score fraction at rho=0.933; this does not establish constant bin means."
+        },
+        {
+          "id": "P1-C04",
+          "status": "ready",
+          "value": "healthy non-diabetic foot specimen high-state fraction 0.841",
+          "source": "outputs/bimodal_stratification/report.json",
+          "scope": "existence counterexample",
+          "allowed_wording": "The highest-purity state occurred in a healthy non-diabetic foot-skin sample; this is an existence counterexample, not a clinical validation."
+        },
+        {
+          "id": "P1-C05",
+          "status": "ready",
+          "value": "Fisher p=0.2208; 4/9 healer high versus 0/5 non-healer high",
+          "source": "outputs/bimodal_stratification/report.json",
+          "scope": "14 DFU samples; exploratory sample unit",
+          "allowed_wording": "The high-state pattern was not exclusive to the healing arm in the discovery sample."
+        },
+        {
+          "id": "P1-C06",
+          "status": "ready",
+          "value": "within-fibroblast ratio 2.889; bootstrap CI 1.059\u201313.966; p=0.04196",
+          "source": "outputs/celltype_resolved/report.json",
+          "scope": "14 DFU samples; optimistic sample-level inference",
+          "allowed_wording": "The discovery within-fibroblast contrast was 2.89-fold, but its sample-level p value is optimistic because 14 samples map to 11 patients."
+        },
+        {
+          "id": "P1-C07",
+          "status": "ready",
+          "value": "patient-unit difference 0.0293; exhaustive p=0.272727; add-one p=0.274924; bootstrap CI [-0.0024,0.0667]; sensitivity margin 0.065375",
+          "source": "outputs/scientific_revision_20260922/measurement/patient_unit_remap/report.json",
+          "scope": "11 patients; repeated same-wound same-day samples collapsed",
+          "allowed_wording": "After deterministic projection and patient-unit correction, the discovery difference was 0.0293 with exhaustive p=0.272727, add-one p=0.274924 and a 95% bootstrap interval spanning zero."
+        },
+        {
+          "id": "P1-C08",
+          "status": "ready",
+          "value": "sample-unit difference 0.0457; exhaustive p=0.078921; add-one p=0.079381; margin 0.079644",
+          "source": "outputs/scientific_revision_20260922/measurement/patient_mapping_equivalence/report.json",
+          "scope": "14 samples; descriptive comparison only",
+          "allowed_wording": "The specimen-unit diagnostic contrast was 0.0457 with exhaustive p=0.078921; its sensitivity margin 0.079644 is not a clinical MCID."
+        },
+        {
+          "id": "P1-C09",
+          "status": "ready",
+          "value": "observed-effect power 24.9%; MDE 0.519",
+          "source": "outputs/negative_result_strength/report.json",
+          "scope": "discovery design simulation",
+          "allowed_wording": "The 9-versus-5 high-state-fraction design had 24.9% simulated power at its observed effect and MDE 0.519; neither is an effect-exclusion bound."
+        },
+        {
+          "id": "P1-C10",
+          "status": "ready",
+          "value": "positive control 3/15 topics separated; minimum p=0.0020",
+          "source": "outputs/negative_result_strength/report.json",
+          "scope": "foot versus forearm positive control",
+          "allowed_wording": "A positive anatomical control separated 3 of 15 topics, with minimum p=0.0020."
+        },
+        {
+          "id": "P1-C11",
+          "status": "ready",
+          "value": "cut sweep rho 0.909\u20130.948; K sweep rho 0.924\u20130.947",
+          "source": "outputs/method_constant_sensitivity/report.json",
+          "scope": "method constant sensitivity",
+          "allowed_wording": "The mixture-weight association was stable across the tested cut and K grids."
+        },
+        {
+          "id": "P1-C12",
+          "status": "ready",
+          "value": "K=10 counterexample fails; K=15/20 holds; healing p cut range 0.042\u20130.062 with 4/18 significant",
+          "source": "outputs/method_constant_sensitivity/report.json",
+          "scope": "method constant sensitivity",
+          "allowed_wording": "The healthy-skin counterexample depended on resolving the state as an independent topic; it failed at K=10, and the healing-arm p value was cut-sensitive."
+        },
+        {
+          "id": "P1-C13",
+          "status": "ready",
+          "value": "DFU-only specimen high-state-fraction difference +0.2380; 2002 allocations; exact p=0.1199; 95% null interval [-0.3167,+0.3222]",
+          "source": "outputs/scientific_revision_20260922/measurement_controls/dfu_label_report.json",
+          "scope": "DFU-only specimen-label permutation; secondary because repeated specimens share patients",
+          "allowed_wording": "The DFU-only specimen-label permutation null contained the observed high-state-fraction difference; this is a secondary specimen-unit calibration, not the primary patient test."
+        },
+        {
+          "id": "P1-C14",
+          "status": "ready",
+          "value": "Raw-count gene-wise shuffle: mean perplexity 3.44/15 to 11.23/15; historical concentration cutoff 14.25 not exceeded; topology audit not run",
+          "source": "outputs/scientific_revision_20260922/measurement_controls/raw_shuffle_report.json",
+          "scope": "gene-column shuffle negative control",
+          "allowed_wording": "The raw-count gene-wise shuffle reduced coordinate concentration while preserving each gene value multiset; row-wise library sizes were not preserved, and this control did not establish failure of the historical integrity gate."
+        },
+        {
+          "id": "P1-C15",
+          "status": "ready",
+          "value": "N3 real p=0.0015; permutation significant fraction 5.0%",
+          "source": "outputs/pipeline_negative_control/report.json",
+          "scope": "permutation positive control",
+          "allowed_wording": "The positive-control permutation behaved at the nominal 5% rate."
+        },
+        {
+          "id": "P1-C16",
+          "status": "ready",
+          "value": "AUC topic 0.822; module 0.844; PCA 0.533; NMF 0.878; no pairwise interval excludes zero",
+          "source": "outputs/scientific_revision_20260922/measurement/representation_inference/report.json",
+          "scope": "14 DFU samples; representation benchmark",
+          "allowed_wording": "Point AUC estimates differed, but paired uncertainty did not support a ranking. The deterministic topic projection was revised; other fitted results and paired intervals were reused under the documented cross-arm rank-invariance check."
+        },
+        {
+          "id": "P1-C20",
+          "status": "exploratory",
+          "value": "GSE231643 within-fibroblast ratio 1.66; bootstrap CI 1.01\u20136.10; p=0.1429; 5 healer/3 non-healer title labels",
+          "source": "outputs/celltype_resolved/report.json",
+          "scope": "title-label projection; no authoritative patient contract",
+          "allowed_wording": "GSE231643 is direction-consistent but non-significant and cannot serve as independent patient-level validation."
+        },
+        {
+          "id": "P1-C17",
+          "status": "exploratory",
+          "value": "GSE223964 immune rho=-0.024; GSE245703 rho=+0.846; within-immune B/plasma rho=-0.071/+0.077; depth rho=-0.429/-0.427",
+          "source": "outputs/analysis/external_immune_axis/report.json",
+          "scope": "external construct audit without healing labels",
+          "allowed_wording": "External immune-axis signs were inconsistent; the data support a descriptive construct audit only."
+        },
+        {
+          "id": "P1-C18",
+          "status": "exploratory",
+          "value": "GSE268834 topic\u2013immune rho=+0.714; diabetic-minus-non-diabetic fibro topic +0.0464, p=0.2812",
+          "source": "outputs/analysis/external_gse268834_projection/report.json",
+          "scope": "independent external projection without patient outcome contract",
+          "allowed_wording": "GSE268834 supplies a descriptive projection, not outcome validation."
+        },
+        {
+          "id": "P1-C19",
+          "status": "exploratory",
+          "value": "GSE248247: 2 samples, 561 raw cells, 358 QC cells, fibro topic contrast -0.0204, descriptive p=1.0; correlations non-estimable",
+          "source": "outputs/analysis/external_gse248247_projection/report.json",
+          "scope": "low-yield feasibility projection",
+          "allowed_wording": "GSE248247 is a two-sample low-yield feasibility stress test; all correlations are non-estimable."
+        },
+        {
+          "id": "P1-C21",
+          "status": "exploratory",
+          "value": "GSE241132 broad immune rho -0.070; author-annotated B/plasma rho +0.210; n=3 donors",
+          "source": "outputs/analysis/negative_result_strength/report.json",
+          "scope": "acute human wound descriptive audit; not DFU healing validation",
+          "allowed_wording": "GSE241132 provides a three-donor descriptive immune-axis audit and is not an outcome replication."
+        },
+        {
+          "id": "P1-C22",
+          "status": "design_only",
+          "value": "candidate difference 0.03 requires 47 total hypothetical independent observations; candidate equivalence margin 0.05 requires 20 at approximately 80% target power",
+          "source": "outputs/scientific_revision_20260922/measurement/design_power_simulation/report.json",
+          "scope": "design calculation, not biological result or clinical MCID",
+          "allowed_wording": "These are conditional design inputs for planning a future cohort; they are not findings and do not define the clinical MCID."
+        },
+        {
+          "id": "P1-C23",
+          "status": "exploratory",
+          "value": "11-patient leave-one-out AUCs: Topic 0.714, module 0.786, PCA 0.500, NMF 0.125; permutation p=0.2991/0.1662/0.5025/0.9751",
+          "source": "outputs/scientific_revision_20260922/measurement/patient_unit_representation_benchmark/report.json",
+          "scope": "author-mapped GSE165816 discovery unit; not an independent cohort",
+          "allowed_wording": "Patient-unit leave-one-out scores are an exploratory unit-sensitivity audit with broad uncertainty, not clinical ranking or independent validation. Non-topic saved OOF scores and permutation nulls were reused. Pooling raw held-out coordinates across separately fitted folds is a historical diagnostic, not calibrated cross-patient discrimination; the reported topic p uses the add-one convention."
+        },
+        {
+          "id": "P1-C24",
+          "status": "ready",
+          "value": "paired foot-minus-forearm fibroblast-associated topic difference +0.0476; 10 pairs; exact p=0.0107; BH q=0.0402; fibroblast difference +0.1398",
+          "source": "outputs/analysis/paired_anatomical_control/report.json",
+          "scope": "positive anatomical control within the discovery source; not a healing endpoint or independent cohort",
+          "allowed_wording": "A paired anatomical control shows that the frozen readout responds to foot versus forearm tissue; it does not establish healing specificity."
+        },
+        {
+          "id": "P1-C25",
+          "status": "exploratory",
+          "value": "patient-collapsed semantic rho=0.937 across 20 mapped patients",
+          "source": "outputs/scientific_revision_20260922/measurement/patient_unit_representation_benchmark/report.json",
+          "scope": "semantic audit across mapped discovery and healthy foot samples",
+          "allowed_wording": "The mixture-weight semantic association remains high after patient collapsing in the mapped discovery material."
+        },
+        {
+          "id": "P1-C26",
+          "status": "ready",
+          "value": "25-sample semantic rho=0.933; bootstrap 95% CI 0.789\u20130.983; leave-one-out range 0.924\u20130.957",
+          "source": "outputs/analysis/mixture_semantic_inference/report.json",
+          "scope": "sample-level uncertainty audit; frozen representation reused",
+          "allowed_wording": "The sample-level semantic association remains positive under bootstrap and leave-one-sample-out analysis; this is not patient-level or healing validation."
+        },
+        {
+          "id": "P1-C27",
+          "status": "exploratory",
+          "value": "cross-method sample-score Spearman correlations 0.174\u20130.710",
+          "source": "outputs/scientific_revision_20260922/measurement/representation_benchmark/report.json",
+          "scope": "sample-level representation structure",
+          "allowed_wording": "The four readouts are related but non-identical; their correlation structure does not support a method ranking."
+        },
+        {
+          "id": "P1-C28",
+          "status": "exploratory",
+          "value": "31 covariates; 25 specimens; 14 BH q<0.05; B/plasma rho 0.828; fibroblast topic-6 rho -0.766; PTPRC rho 0.727; UMI rho 0.663",
+          "source": "outputs/stratifier_sweep/report.json",
+          "scope": "Retrospective sample-unit marginal associations, rounded cut 0.184; all rows retained",
+          "allowed_wording": "Historical naive specimen-row p values and their BH transforms are descriptive only: repeated patients invalidate the independent-row premise, so no false-discovery-rate control or 14 independent discoveries is claimed. Neither causality nor healing validation is established."
+        },
+        {
+          "id": "patient_robustness_extension",
+          "status": "exploratory",
+          "source": "outputs/scientific_revision_20260922/measurement/robustness_extensions/report.json",
+          "value": "patient semantic rho 0.9372; bootstrap CI [0.7760,0.9903]; omission rho 0.9266\u20130.9643; all-cell difference 0.0293; omission difference 0.0143\u20130.0365",
+          "claim": "Patient resampling supports the mean-fraction association; omission ranges diagnose influence."
+        },
+        {
+          "id": "P1-MATH",
+          "status": "exploratory",
+          "value": "Residual RMS 0.0157544; 9 empty high bins; exact p=90/330=0.272727; add-one p=91/331=0.274924",
+          "source": "outputs/scientific_revision_20260922/measurement/mathematical_audit/report.json",
+          "scope": "19,410 frozen fibroblast scores in 25 specimens; separate 11-patient all-cell contrast",
+          "allowed_wording": "State-specific means vary. Independent exhaustive arithmetic does not change the uncertain healing interpretation."
+        },
+        {
+          "id": "P1-BIOLOGICAL",
+          "status": "exploratory",
+          "source": "outputs/biological_expansion/measurement/report.json",
+          "value": "Patient-unit differences 0.0892, 0.1514, 0.0708; all three BH q=0.4697",
+          "scope": "Seven healed and four non-healed patients; unchanged three tissue readouts",
+          "allowed_wording": "Patient-level contrasts remain uncertain and do not establish prognostic validity or equivalence."
+        },
+        {
+          "id": "P1-SAMPLING",
+          "status": "exploratory",
+          "source": "outputs/computational_extension/measurement/report.json",
+          "value": "Threshold-free patient CDF maximum 0.3045, exact p=0.1848; all 250 equal-cell draws and all 8 one-specimen choices preserve positive contrasts without a p below 0.05",
+          "scope": "Same 11 mapped DFU patients, frozen scores and retrospective sensitivity protocol",
+          "allowed_wording": "Observed direction persists under the tested threshold and sampling choices, but neither the whole-distribution comparison nor resampling validates healing prognosis."
+        },
+        {
+          "id": "P1-REV-MEAS",
+          "status": "ready",
+          "value": "deterministic softmax(mu) projection; 76461 cells; raw identity/order contract verified",
+          "source": "outputs/scientific_revision_20260922/measurement/report.json",
+          "scope": "revision projection contract",
+          "allowed_wording": "All revised aggregations use the deterministic softmax(mu) projection and the documented source-order cell contract."
+        },
+        {
+          "id": "P1-REV-REPEAT",
+          "status": "exploratory",
+          "value": "5 repeat pairs, 3 DFU; G7/G8 absolute mean difference 0.2583 and CDF supremum 0.5789; split-half upper limits 0.0553/0.0185; same-day repeat differences can exceed split-half sampling ranges",
+          "source": "outputs/scientific_revision_20260922/measurement/repeat_specimens/report.json",
+          "scope": "repeat specimen diagnostic",
+          "allowed_wording": "Repeat specimens show measurement and sampling variability; they are not biological confidence intervals."
+        },
+        {
+          "id": "P1-PAIR-DISCRIMINATION",
+          "status": "exploratory",
+          "value": "28 same-model held pairs from 11 patients; 9 training patients per fold; credit sums Topic/module/PCA/NMF 20/22/14/6.5; discrimination 0.714286/0.785714/0.500000/0.232143; NMF 5 wins, 3 ties, 20 losses; iteration cap 10000; final warning folds 0",
+          "source": "outputs/scientific_revision_20260923/patient_pair_discrimination/report.json",
+          "scope": "Retrospective leave-one-healed/one-nonhealed-patient-out audit, not external or fully nested validation; historical pooled-fold AUC and p values remain separate estimands",
+          "allowed_wording": "The revised audit compares each held pair using the same fitted scoring rule, without cross-fold raw-score pooling. The 28 pairs reuse 11 patients and overlapping training sets, not 28 independent biological replicates; no p values or confidence intervals are supplied. The frozen panel and encoder are discovery-derived, so this does not establish independent validation or a representation ranking. The NMF cap was raised uniformly after three training-convergence warnings at 1000, not selected using held-pair discrimination; changes from historical AUC do not isolate one correction."
+        },
+        {
+          "id": "P1-FULL-DEPTH",
+          "status": "exploratory",
+          "value": "81602 pre-QC cells; baseline 76461 retained / 19410 fibroblasts; 25 specimens; 4 rates x 3 seeds; 10% depth retains 61366-61397 cells; common-QC lineage changes 15.3109-15.4006%; 11-patient all-cell difference 0.02880042-0.02960352; exact p 0.330303-0.345455; zero-marker forced labels baseline 92, 10% 1410-1462",
+          "source": "outputs/scientific_revision_20260925/full_pipeline_depth/full/report.json",
+          "source_sha256": "e1b955523021c7de6b0f67d61086e8253fb5f1cd91caef8574ad8e35b1f224b9",
+          "evidence_sha256": {
+            "artifact_manifest.json": "07776690fe7b78693d0dfd6cc971c6765a2eb3b8f3039f6e598102ad91755fc5"
+          },
+          "scope": "Frozen-reference QC/gate/score depth sensitivity from every released pre-QC column, no refit.",
+          "allowed_wording": "Seeds are not biological replicates; this is not annotation truth or external portability. RT06 remains partially addressed; a computational range is not a clinical acceptance margin."
+        }
+      ]
+    }
+  }
+}

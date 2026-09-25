@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Infer mixture semantics."""
+"""Uncertainty audit for the frozen mixture-semantic association.
+
+This script reuses the completed 25-sample bimodal stratification report.  It
+does not refit the topic model or change the state cut.  The added analyses
+quantify sample-level uncertainty with a nonparametric bootstrap, a permutation
+null and leave-one-sample-out sensitivity.  The output is deliberately scoped
+to measurement semantics; it is not a patient-level or healing validation.
+"""
 from __future__ import annotations
 import argparse
 import hashlib

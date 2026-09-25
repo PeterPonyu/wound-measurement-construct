@@ -1,5 +1,31 @@
 #!/usr/bin/env python3
-"""Assess threshold and capacity."""
+"""
+Does the method's central claim survive its own arbitrary constants?
+
+The specification asserts that sample-mean topic loading is essentially the
+mixture weight of a discrete state (Spearman rho = 0.933). That number was
+computed at one cut (theta >= 0.1843, the midpoint of a two-component GMM) and
+one model size (K = 15). Both are choices. A methods paper that reports a
+correlation without showing it survives its own free parameters has reported a
+coincidence.
+
+Two sweeps, and they are not equivalent:
+
+  CUT   reuses the frozen projection, so only the binarisation moves. This asks
+        whether the equivalence is an artefact of where the line was drawn.
+  K     refits the topic model at several sizes into a scratch directory. This
+        asks whether the equivalence is an artefact of model capacity. The
+        frozen checkpoint is never touched - overwriting it would invalidate
+        every report whose protocol block pins it, which the release gate would
+        then flag.
+
+Three claims are tracked across the grid, not one:
+  A  rho(sample mean theta, mixture weight)
+  B  the healthy-skin counter-example: is the purest high sample still a
+     non-diabetic one? This is construct validation's main argument and it must not depend on
+     the cut.
+  C  the healer / non-healer ratio and its sample-level p
+"""
 import argparse
 import hashlib
 import json

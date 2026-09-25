@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
-"""Assess paired anatomy."""
+"""Paired foot-versus-forearm positive control on GSE165816.
+
+The frozen human encoder was fitted on foot-skin samples.  This experiment
+projects the already available forearm samples without refitting and asks
+whether an anatomically known difference is visible in fibroblast-associated topic and in the
+remaining topics.  The unit is an author-mapped patient with both tissues;
+repeated foot samples are collapsed before the paired comparison.
+
+This is a positive control for sensitivity, not a healing endpoint and not an
+independent cohort.
+"""
 from __future__ import annotations
 import argparse
 import hashlib

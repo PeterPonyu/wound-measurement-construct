@@ -1,5 +1,28 @@
 #!/usr/bin/env python3
-"""Assess ambient rna."""
+"""
+Is the simplex mixture-weight readout invariant to ambient immune RNA?
+
+This is a METHOD question, not a biology question. Section 7.4c found the
+per-sample fibroblast-associated topic mixture weight tracks B/plasma fraction (rho=+0.83) and the
+PTPRC+ rate among fibroblasts (rho=+0.73). Two readings survive that:
+
+  INVARIANT       the high state is intrinsic to the fibroblast; it merely
+                  co-occurs with immune infiltration. Then the weight should
+                  survive both conditioning on the immune covariates and
+                  restriction to strictly immune-negative fibroblasts.
+  CONTAMINATED    the weight is partly a readout of ambient immune transcripts
+                  landing in fibroblast droplets. Then purifying the cells or
+                  residualising the samples should flatten the bimodality.
+
+If CONTAMINATED, the honest headline is that simplex topic abundance is not
+invariant to ambient RNA - a real and reportable limitation of the readout,
+and a stronger methods contribution than another cohort would have been.
+
+Decision rules, fixed before running:
+  - the weight survives purification if rho(weight_all, weight_strict) > 0.8
+  - bimodality survives if the 2-component GMM still beats 1-component by
+    BIC (delta > 0) on the purified weights and on the residualised weights
+"""
 import argparse
 import json
 import os

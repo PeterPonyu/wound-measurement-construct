@@ -1,5 +1,36 @@
 #!/usr/bin/env python3
-"""Assess technical controls."""
+"""
+Artifact triage for the fibroblast-associated topic-high fibroblast state.
+
+Section 7.4 established that the bimodality is a MIXTURE: some samples simply
+contain more fibroblast-associated topic-high fibroblasts. Before that abundance is written up as
+biology, three technical explanations have to be excluded. Two specific
+warnings in the existing evidence make this mandatory rather than routine:
+
+  - fibroblast-associated topic's top-10 contains IER3 and SOD2, both canonical stress-response
+    genes. IER3 is a member of the standard dissociation-artifact gene set.
+  - the high state co-varies with topic 11 (HLA-DRA/CD74) at rho ~= 0.61 and
+    with whole-sample myeloid fraction at rho = 0.40. Myeloid co-variation is
+    exactly what fibroblast-myeloid doublets would produce.
+
+Pre-specified hypotheses, each with its decision rule fixed before running:
+
+  H1 DISSOCIATION  fibroblast-associated topic-high fibroblasts carry a higher dissociation score.
+                   Reject biology if the standardized mean difference exceeds
+                   0.8 AND the sample-level mixture weight tracks the sample
+                   dissociation score at rho > 0.6.
+  H2 DOUBLET       fibroblast-associated topic-high "fibroblasts" are PTPRC+ / myeloid-marker+.
+                   A genuine fibroblast is CD45-negative, so an elevated
+                   PTPRC+ rate in the high group is direct evidence of doublets
+                   or lineage misassignment. Reject biology if the PTPRC+ rate
+                   ratio exceeds 2.0.
+  H3 DEPTH         fibroblast-associated topic-high cells differ systematically in library size or
+                   genes detected. Reject if |SMD| > 0.8 on either.
+  H4 GENUINE       high cells are PTPRC-negative, dissociation-comparable, and
+                   depth-comparable. Survives only if H1, H2 and H3 all fail.
+
+The verdict is computed from these rules, not narrated after the fact.
+"""
 import argparse
 import json
 import os

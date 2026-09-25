@@ -1,0 +1,21 @@
+{
+  "status": "Retrospective sensitivity protocol fixed before this extension was computed; not prospective registration",
+  "measurement": {
+    "unit": "Eleven author-mapped DFU patients, seven healed and four not healed",
+    "threshold_free": "Supremum absolute difference between group means of patient-normalized empirical CDFs, evaluated over every observed fibroblast loading; all 330 patient label allocations including ties",
+    "threshold_grid": [
+      0.05,
+      0.1,
+      0.15,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6
+    ],
+    "grid_multiplicity": "Max statistic across the entire empirical CDF support, not selection of an outcome-favorable cut",
+    "cell_count_sensitivity": "250 draws of 100 fibroblasts without replacement per DFU specimen; average equally across specimens within patient; same eleven patients and frozen representation; seed 29",
+    "repeat_sampling": "Enumerate all choices of one specimen per patient; report contrast and exhaustive-probability ranges for all three readouts"
+  },
+  "historical_reports": "Read-only; write new CSVs and reports to outputs/computational_extension"
+}

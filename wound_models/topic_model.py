@@ -1,5 +1,23 @@
 #!/usr/bin/env python3
-"""Topic model."""
+"""
+Logistic-normal topic representation with a normalized linear decoder.
+
+Mathematical Formulation:
+- Input expression: nonnegative panel proportions x, sum(x) = 1
+- Encoder: q_phi(z | x) -> mu, log_variance in R^K (pre-softmax space)
+- Reparameterization & Simplex projection:
+    z ~ N(mu, diag(sigma^2))
+    theta = Softmax(z) in Delta^{K-1}
+- Decoder:
+    beta in Delta^{G-1} per topic (Topic-Gene matrix)
+    x_hat = theta @ beta
+- Loss:
+    L = -sum_g x_g log(x_hat_g + 1e-10)
+        + kl_weight * KL(q_phi(z|x) || N(0, I))
+The proportion-weighted loss with a scaled Gaussian KL is a regularized
+reconstruction objective, not an unmodified count-likelihood ELBO. The
+softmax image of a Gaussian is logistic-normal, not Dirichlet.
+"""
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

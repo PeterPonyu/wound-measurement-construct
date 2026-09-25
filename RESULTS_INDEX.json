@@ -2,131 +2,445 @@
   {
     "report": "outputs/ambient_invariance/report.json",
     "manuscript_destination": "Figure 3; Table tab:p1ambient",
-    "scope": "Both immune and placebo residual summaries retained, including adverse non-identification."
+    "status": "included",
+    "current_use": "Both immune and placebo residual summaries retained, including adverse non-identification.",
+    "scope": "Both immune and placebo residual summaries retained, including adverse non-identification.",
+    "sha256": "4c2bfacfccc6b285ea2d3064ba80496b853ac2f519f45768dc1dd95d6a06cf6a"
   },
   {
     "report": "outputs/artifact_triage/report.json",
     "manuscript_destination": "Figure 3; Methods technical controls",
-    "scope": "Rounded 0.184 state cut distinguished from the fitted mixture cut."
+    "status": "included",
+    "current_use": "Rounded 0.184 state cut distinguished from the fitted mixture cut.",
+    "scope": "Rounded 0.184 state cut distinguished from the fitted mixture cut.",
+    "sha256": "803951e2f9d507469542695b67f73627dbbffe631c70bc6af99e9a5e01fd630d"
   },
   {
     "report": "outputs/bimodal_stratification/report.json",
     "manuscript_destination": "Figures 2 and 4; Methods threshold fraction",
-    "scope": "Distributional and arm summaries; full per-sample inputs are figure source data."
+    "status": "included",
+    "current_use": "Distributional and arm summaries; full per-sample inputs are figure source data.",
+    "scope": "Distributional and arm summaries; full per-sample inputs are figure source data.",
+    "sha256": "ab25e216b0ac3a0a26e335896e90557858b03255ac4ab150fe221516301c0e70"
   },
   {
     "report": "outputs/celltype_resolved/report.json",
     "manuscript_destination": "Results; Table tab:p1lineage",
-    "scope": "All six lineage/composition ratios retained; patient-level mapping supersedes the older independence note."
+    "status": "included",
+    "current_use": "Historical lineage contrasts retained. The old lineage_is_independent=true flag is not valid: only top-list marker non-overlap was checked; full-panel/statistical independence was never established. Current patient analyses supersede the specimen unit.",
+    "scope": "Historical lineage contrasts retained. The old lineage_is_independent=true flag is not valid: only top-list marker non-overlap was checked; full-panel/statistical independence was never established. Current patient analyses supersede the specimen unit.",
+    "sha256": "264a5cd30c36f19485636fa9d9714159231f16d0cb68c7987b848a5aa412ca26"
   },
   {
     "report": "outputs/expression_representation/report.json",
-    "manuscript_destination": "Results 2.1; Methods; Supplement representation integrity",
-    "scope": "Discovery representation/QC and decoder genes; training trace remains supporting output."
+    "manuscript_destination": "Results: frozen representation; Methods; Supplement representation integrity",
+    "status": "included",
+    "current_use": "Discovery representation/QC and decoder genes; training trace remains supporting output.",
+    "scope": "Discovery representation/QC and decoder genes; training trace remains supporting output.",
+    "sha256": "d46b8d1b44b35306bc42b341934c798d8bbbaf9246396aeea03c1ec49baf3073"
   },
   {
     "report": "outputs/cohort_metadata/gse165816_patient_unit_remap/report.json",
     "manuscript_destination": "Results; Tables tab:p1patients and tab:p1equivalence",
-    "scope": "Primary cell-weighted and alternate equal-specimen patient contrast retained."
+    "status": "included",
+    "current_use": "historical_only",
+    "scope": "Primary cell-weighted and alternate equal-specimen patient contrast retained.",
+    "sha256": "3b0fdac9c5ef95e7739784812b6306b75c6a361b59b3a85e6c71ee68053f033a"
   },
   {
     "report": "outputs/cohort_metadata/next_public_cohort_contract/report.json",
     "manuscript_destination": "cohort-role table and external limitations",
-    "scope": "Eligibility/metadata evidence, not a completed clinical outcome experiment."
+    "status": "metadata_only",
+    "current_use": "Eligibility/metadata evidence, not a completed clinical outcome experiment.",
+    "scope": "Eligibility/metadata evidence, not a completed clinical outcome experiment.",
+    "sha256": "f3cd4dc3aa4f0a9ecd035f6cd28880629dabb4a33951b002d3d566d9924aad63"
   },
   {
     "report": "outputs/method_constant_sensitivity/report.json",
-    "manuscript_destination": "Figure 5A-C; Tables tab:p1cuts and tab:p1capacity",
-    "scope": "All tested cuts and topic capacities retained, including K=10 failure."
+    "manuscript_destination": "Figure 6A-C; Tables tab:p1cuts and tab:p1capacity",
+    "status": "included",
+    "current_use": "All tested cuts and topic capacities retained, including K=10 failure.",
+    "scope": "All tested cuts and topic capacities retained, including K=10 failure.",
+    "sha256": "8d107ad333bdfa19c518d4b7489ab054a88d83478041c9b1d1028046aac89ede"
   },
   {
     "report": "outputs/negative_result_strength/report.json",
     "manuscript_destination": "Figure 4C; Results power/anatomy; Methods design assumptions",
-    "scope": "observed_design_power retained; older sample-level anatomical count contextualized by paired control. Historical pooled immune correlations are superseded and not used."
+    "status": "partially_included",
+    "current_use": "observed_design_power retained; older sample-level anatomical count contextualized by paired control. Historical pooled immune correlations are superseded and not used.",
+    "scope": "observed_design_power retained; older sample-level anatomical count contextualized by paired control. Historical pooled immune correlations are superseded and not used.",
+    "sha256": "39f38802e8a9a71d86ecd8b5161a841b555233c2bf9091e3370fe25ede3cd9fc"
   },
   {
     "report": "outputs/pipeline_negative_control/report.json",
-    "manuscript_destination": "Figure 5D-F; Results; Supplement integrity",
-    "scope": "Label null, shuffled input and empirical calibration retained; figure callout corrected."
+    "manuscript_destination": "Figure 6D-F; Results; Supplement integrity",
+    "status": "included",
+    "current_use": "P1-C15 positive-control calibration remains in use. The label-null and raw-shuffle claims use the separate 20260922 measurement_controls reports; this historical report cannot support their revised values or an integrity-gate failure claim.",
+    "scope": "Label null, shuffled input and empirical calibration retained; figure callout corrected.",
+    "sha256": "c2857bbc3cc0a88148ffceae52ecef8e56843abe406c4a5489b96ad6240aad35"
   },
   {
     "report": "outputs/analysis/design_power_simulation/report.json",
     "manuscript_destination": "Tables tab:p1design and tab:p1aucdesign; Supplement planning assumptions",
-    "scope": "All difference, equivalence and AUC-gap simulation rows retained. Arithmetic specimen-to-patient conversion grid is not a validated patient-prognosis design and is not used as a recruitment recommendation."
+    "status": "partially_included",
+    "current_use": "Historical AUC-gap design context only; revised difference/equivalence totals come from the replacement report, not this snapshot. No clinical recruitment recommendation.",
+    "scope": "All difference, equivalence and AUC-gap simulation rows retained. Arithmetic specimen-to-patient conversion grid is not a validated patient-prognosis design and is not used as a recruitment recommendation.",
+    "sha256": "52a4cc6bb683eacb09cc8d07bcef16755ef08a94a75ac142a5548255860d6ff5"
   },
   {
     "report": "outputs/analysis/external_gse248247_projection/report.json",
-    "manuscript_destination": "Figure 8; external Results",
-    "scope": "n=2 low-yield feasibility only; correlations not estimated."
+    "manuscript_destination": "Figure 9; external Results",
+    "status": "included",
+    "current_use": "n=2 low-yield feasibility only; correlations not estimated.",
+    "scope": "n=2 low-yield feasibility only; correlations not estimated.",
+    "sha256": "5288e8056ddd97cb116a1e13c000bacadbcc734d1f8de1c7847885343a3b718e"
   },
   {
     "report": "outputs/analysis/external_gse268834_projection/report.json",
-    "manuscript_destination": "Figure 8; Table tab:p1external; external Results",
-    "scope": "Descriptive immune and diabetes contrasts, no healing validation."
+    "manuscript_destination": "Figure 9; Table tab:p1external; external Results",
+    "status": "included",
+    "current_use": "Descriptive immune and diabetes contrasts, no healing validation.",
+    "scope": "Descriptive immune and diabetes contrasts, no healing validation.",
+    "sha256": "c19e5264afff3ec79144d91d0bd73c9804cb29ee09b546699a2968324936f386"
   },
   {
     "report": "outputs/analysis/external_immune_axis/report.json",
-    "manuscript_destination": "Figure 8; Table tab:p1external",
-    "scope": "Repaired exclusive gates; median detected genes and UMIs kept distinct."
+    "manuscript_destination": "Figure 9; Table tab:p1external",
+    "status": "included",
+    "current_use": "Repaired exclusive gates; median detected genes and UMIs kept distinct.",
+    "scope": "Repaired exclusive gates; median detected genes and UMIs kept distinct.",
+    "sha256": "9ef87d8dee6259d6674b177d4bd6a293ad273d4807baa449ddc63613bf0105e9"
   },
   {
     "report": "outputs/analysis/mixture_semantic_inference/report.json",
     "manuscript_destination": "Figure 2; Table tab:p1semantics",
-    "scope": "Bootstrap, leave-one-out and permutation summaries retained."
+    "status": "included",
+    "current_use": "Bootstrap, leave-one-out and permutation summaries retained.",
+    "scope": "Bootstrap, leave-one-out and permutation summaries retained.",
+    "sha256": "fe18ebfc1e88c7e9399df16b41781c49d15474aa3cddb6f0ec8652c06a4b9946"
   },
   {
     "report": "outputs/analysis/negative_result_strength/report.json",
     "manuscript_destination": "external Results",
-    "scope": "Three-donor acute human immune-axis summaries retained separately; pooled significance not promoted."
+    "status": "included",
+    "current_use": "Three-donor acute human immune-axis summaries retained separately; pooled significance not promoted.",
+    "scope": "Three-donor acute human immune-axis summaries retained separately; pooled significance not promoted.",
+    "sha256": "e65e574bf3c0662413c711614b1eec2347a081e21f961e2a90ed981194e5ed57"
   },
   {
     "report": "outputs/analysis/paired_anatomical_control/report.json",
-    "manuscript_destination": "Figure 7; Table tab:p1anatomy",
-    "scope": "All 15 topic contrasts and fibroblast fibroblast-associated topic sensitivity retained."
+    "manuscript_destination": "Figure 8; Table tab:p1anatomy",
+    "status": "included",
+    "current_use": "All 15 topic contrasts and fibroblast fibroblast-associated topic sensitivity retained.",
+    "scope": "All 15 topic contrasts and fibroblast fibroblast-associated topic sensitivity retained.",
+    "sha256": "a99cbde755cc07d327f36a4a52ed963dc4908a308262cf0c10a2b706d78dbb0b"
   },
   {
     "report": "outputs/analysis/patient_mapping_equivalence/report.json",
     "manuscript_destination": "Figure 4B; Table tab:p1equivalence",
-    "scope": "Sample-unit reference only. Later author mapping resolves patient identities."
+    "status": "included",
+    "current_use": "historical_only",
+    "scope": "Sample-unit reference only. Later author mapping resolves patient identities.",
+    "sha256": "a333ff860881462edfec36b4b2b29e886906eb3c051afbc282c3c4c3c653bd02"
   },
   {
     "report": "outputs/analysis/patient_unit_representation_benchmark/report.json",
-    "manuscript_destination": "Figure 7; Tables tab:p1patientauc and tab:p1aucdifferences",
-    "scope": "All patient pairwise intervals; patient-collapsed semantic rho remains in Methods/Discussion."
+    "manuscript_destination": "Figure 8; Tables tab:p1patientauc and tab:p1aucdifferences",
+    "status": "included",
+    "current_use": "historical_only",
+    "scope": "All patient pairwise intervals; patient-collapsed semantic rho remains in Methods/Discussion.",
+    "sha256": "25e7dc2b81bb4f6535d53afd76a4b5488bf608c3d531b1fc9eb81a46d31f5ec2"
   },
   {
     "report": "outputs/analysis/representation_inference/report.json",
-    "manuscript_destination": "Figure 6; Tables tab:p1sampleauc and tab:p1aucdifferences",
-    "scope": "All pairwise intervals now tabulated."
+    "manuscript_destination": "Figure 7; Tables tab:p1sampleauc and tab:p1aucdifferences",
+    "status": "included",
+    "current_use": "historical_only",
+    "scope": "All pairwise intervals now tabulated.",
+    "sha256": "6f2a2e3b76e681b85060b82ca83ecd5e35382d9d305ed768fab9bcb91a310a4b"
   },
   {
     "report": "outputs/representation_benchmark/report.json",
-    "manuscript_destination": "Figure 6; Table tab:p1correlations",
-    "scope": "Cross-method correlations; discrimination inference is taken from the later uncertainty audit."
+    "manuscript_destination": "Figure 7; Table tab:p1correlations",
+    "status": "included",
+    "current_use": "historical_only",
+    "scope": "Cross-method correlations; discrimination inference is taken from the later uncertainty audit.",
+    "sha256": "19e7e75f73504679032445b35556a4b42aaedb791bf31c00d48a54d140ec1b17"
   },
   {
     "report": "outputs/stratifier_sweep/report.json",
     "manuscript_destination": "Results; Table tab:p1covariates",
-    "scope": "All 31 covariates and 14 BH hits retained; sample-level exploratory screen."
+    "status": "included",
+    "current_use": "All 31 covariates and 14 BH hits retained; sample-level exploratory screen.",
+    "scope": "All 31 covariates and 14 BH hits retained; sample-level exploratory screen.",
+    "sha256": "a9b7b6666194e024fd666291ff09b638b9852d91603e6cc6eae7d106d963ce8b"
   },
   {
     "report": "outputs/validation_gse231643/report.json",
     "manuscript_destination": "external Results; Table tab:p1lineage",
-    "scope": "Title-label all-cell fibroblast-associated topic comparison is included via the lineage report. The exploratory all-topic screen is not promoted to a selected healing endpoint; cell-level pseudoreplicated p is excluded."
+    "status": "summarized",
+    "current_use": "Title-label all-cell fibroblast-associated topic comparison is included via the lineage report. The exploratory all-topic screen is not promoted to a selected healing endpoint; cell-level pseudoreplicated p is excluded.",
+    "scope": "Title-label all-cell fibroblast-associated topic comparison is included via the lineage report. The exploratory all-topic screen is not promoted to a selected healing endpoint; cell-level pseudoreplicated p is excluded.",
+    "sha256": "4ad8838545dba08c0d9945cf00df55e31d61f68caa5394033568f46f25393049"
   },
   {
     "report": "outputs/robustness_extensions/report.json",
-    "manuscript_destination": "Supplementary patient-resampling table",
-    "scope": "New retrospective sensitivity analyses; original results are preserved and no new biological replication is claimed."
+    "manuscript_destination": "patient robustness table; P2 numerical resolution and evaluation-sampling tables",
+    "status": "included",
+    "current_use": "P2 temporal numerical/sampling diagnostics remain unchanged and support temporal_robustness_extension. The patient section is historical; current P1 patient results use the replacement measurement report.",
+    "scope": "New retrospective sensitivity analyses; original results are preserved and no new biological replication is claimed.",
+    "sha256": "71ca218f119b9c73b4275fb9a1b32a790cb23fe1c5890e0d6b18e9bb8d21c55b"
   },
   {
     "report": "outputs/mathematical_audit/measurement/report.json",
     "manuscript_destination": "Methods; Tables tab:p1math and tab:p1exact",
-    "scope": "Mathematical verification and conditional sensitivity of saved observations; no new biological replication."
+    "status": "included",
+    "current_use": "historical_only",
+    "scope": "Mathematical verification and conditional sensitivity of saved observations; no new biological replication.",
+    "sha256": "961c56537d7396c754542888c4a841de8582b979ef3ba8cf8162a16a7e523935"
   },
   {
     "report": "outputs/biological_expansion/measurement/report.json",
     "manuscript_destination": "Results and Methods; Figures 1 and 5; Tables tab:p1biologicalpatients and tab:p1biologicalcontrasts",
-    "scope": "Observed-cell atlas and retrospective patient-level fibroblast mean, high-state fraction and composition comparisons; no external validation."
+    "status": "included",
+    "current_use": "Observed-cell atlas and retrospective patient-level fibroblast mean, high-state fraction and composition comparisons; no external validation.",
+    "scope": "Observed-cell atlas and retrospective patient-level fibroblast mean, high-state fraction and composition comparisons; no external validation.",
+    "sha256": "78fa777bd64ab7d5d4e1fcab1e5a7183dd527bb8c60886e41a96dc19800de0cc"
+  },
+  {
+    "report": "outputs/computational_extension/measurement/report.json",
+    "manuscript_destination": "Methods patient distributions; Results patient comparisons; Figure 5D-F; Tables tab:p1thresholdpatient and tab:p1samplingsensitivity",
+    "status": "included",
+    "current_use": "Threshold-free patient inference, fixed-cut max-statistic sensitivity, 250 equal-cell draws, and all 8 repeated-specimen selections; no new clinical cases.",
+    "scope": "Threshold-free patient inference, fixed-cut max-statistic sensitivity, 250 equal-cell draws, and all 8 repeated-specimen selections; no new clinical cases.",
+    "sha256": "5b331814655c9e98434dd8434eb10b27c6ee6ffeefba44c9091ef486435a4c44"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/report.json",
+    "manuscript_destination": "Methods deterministic projection and reconstructed cell-order identity; P1-REV-MEAS",
+    "status": "included",
+    "current_use": "Revised deterministic softmax(mu) aggregation and source/order checks; historical barcode omission and reconstruction limitations remain. No new biological replication.",
+    "scope": "Revised deterministic softmax(mu) aggregation and source/order checks; historical barcode omission and reconstruction limitations remain. No new biological replication.",
+    "sha256": "37463387fe1ba9714e52d9dfc22881a0e6c6b19236986aa0fa8fb64271ebae1f"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/patient_unit_remap/report.json",
+    "manuscript_destination": "patient Results; Tables tab:p1patients and tab:p1equivalence; P1-C07",
+    "status": "included",
+    "current_use": "Recomputed all-cell contrast for 11 author-mapped DFU patients; exhaustive and add-one probabilities are distinguished; the sensitivity margin is not a clinical MCID.",
+    "scope": "Recomputed all-cell contrast for 11 author-mapped DFU patients; exhaustive and add-one probabilities are distinguished; the sensitivity margin is not a clinical MCID.",
+    "sha256": "0844322f12670bd814184a4cae95153ec59122e8f1cfaf162513f853e4c28971"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/patient_mapping_equivalence/report.json",
+    "manuscript_destination": "specimen diagnostic; Table tab:p1equivalence; P1-C08",
+    "status": "included",
+    "current_use": "Recomputed 14-specimen comparison retained only as a unit-sensitivity diagnostic; these are not 14 independent patients.",
+    "scope": "Recomputed 14-specimen comparison retained only as a unit-sensitivity diagnostic; these are not 14 independent patients.",
+    "sha256": "e9ebfe288994679eb0c91a6ef2849fa1c77dbe849070334812cc0805b87bc1be"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/mathematical_audit/report.json",
+    "manuscript_destination": "Methods; Tables tab:p1math and tab:p1exact; P1-MATH",
+    "status": "included",
+    "current_use": "Revised state-decomposition arithmetic, residual RMS, empty bins and exhaustive patient/specimen probabilities. The state identity does not establish constant bin means or healing specificity.",
+    "scope": "Revised state-decomposition arithmetic, residual RMS, empty bins and exhaustive patient/specimen probabilities. The state identity does not establish constant bin means or healing specificity.",
+    "sha256": "6bd4607ba115cfee6e95b93510dae32e140e6c2576662578c3e0ac09a28c0088"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/representation_inference/report.json",
+    "manuscript_destination": "sample AUC diagnostic; Tables tab:p1sampleauc and tab:p1aucdifferences; P1-C16",
+    "status": "included",
+    "current_use": "Deterministic topic LOSO/null recomputed; non-topic fitted results and paired intervals reused with the cross-arm rank-invariance proof. No supported method ranking or independent validation.",
+    "scope": "Deterministic topic LOSO/null recomputed; non-topic fitted results and paired intervals reused with the cross-arm rank-invariance proof. No supported method ranking or independent validation.",
+    "sha256": "1fa027381800dd035b5e7ad5fd394dce3fb884031658010e258bed059074274c"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/patient_unit_representation_benchmark/report.json",
+    "manuscript_destination": "historical patient AUC diagnostic and patient semantics; Tables tab:p1patientauc and tab:p1aucdifferences; P1-C23 and P1-C25",
+    "status": "included",
+    "current_use": "P1-C23 historical pooled-fold diagnostic and P1-C25 patient semantics remain separately documented. Current same-model held-pair discrimination comes from the 20260923 patient_pair_discrimination report, not these historical p values or intervals.",
+    "scope": "Revised topic patient OOF and null, with saved non-topic OOF scores and nulls reused. Pooling raw coordinates across separately fitted folds remains a historical diagnostic, not calibrated pair discrimination or clinical ranking.",
+    "sha256": "840aae2921029f1799452a1dffca68573ac4f8fb456f7a4554bea3f5e10eebac"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/representation_benchmark/report.json",
+    "manuscript_destination": "cross-method structure; Table tab:p1correlations; P1-C27",
+    "status": "included",
+    "current_use": "Six deterministic-topic cross-method sample-score correlations supply the revised range, not a method ranking.",
+    "scope": "Six deterministic-topic cross-method sample-score correlations supply the revised range, not a method ranking.",
+    "sha256": "a5aea6ae2ae2ae516d460a13f5ee7b0c0df0a59754876c4d3703abd5a7921c91"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/robustness_extensions/report.json",
+    "manuscript_destination": "patient robustness table; patient_robustness_extension",
+    "status": "partially_included",
+    "current_use": "Current patient semantic bootstrap and omission summaries plus all-cell influence ranges. Only the patient section is used here; unchanged temporal diagnostics retain their historical P2 source.",
+    "scope": "Current patient semantic bootstrap and omission summaries plus all-cell influence ranges. Only the patient section is used here; unchanged temporal diagnostics retain their historical P2 source.",
+    "sha256": "fff69b44b76c97fabee1d4ff1a9114fef6d13a3e67f9a14db688b4e9b78a457e"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/repeat_specimens/report.json",
+    "manuscript_destination": "repeated-specimen measurement diagnostic; P1-REV-REPEAT",
+    "status": "included",
+    "current_use": "Five same-day repeat pairs, including three DFU patients, contrasted with within-specimen split halves. Split-half ranges are computational sampling diagnostics, not biological confidence intervals.",
+    "scope": "Five same-day repeat pairs, including three DFU patients, contrasted with within-specimen split halves. Split-half ranges are computational sampling diagnostics, not biological confidence intervals.",
+    "sha256": "9e8e466ffd399f1dc189b2131b07ee5be8077b34dced7b99d99ccd3926202d28"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/design_power_simulation/report.json",
+    "manuscript_destination": "conditional design planning; Table tab:p1design; P1-C22",
+    "status": "partially_included",
+    "current_use": "Updated hypothetical independent-observation totals for candidate difference/equivalence inputs; no validated MCID, recruitment target or observed biological result.",
+    "scope": "Updated hypothetical independent-observation totals for candidate difference/equivalence inputs; no validated MCID, recruitment target or observed biological result.",
+    "sha256": "fd1f71891dd346fbe1889c57adbbd2c34a081f38ec5e5272f74f10404189b8e9"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement_controls/dfu_label_report.json",
+    "manuscript_destination": "DFU-only label-null control; P1-C13",
+    "status": "included",
+    "current_use": "Exhaustive 2002-allocation specimen-label null and its interval; repeated specimens mean this is secondary to patient-unit inference.",
+    "scope": "Exhaustive 2002-allocation specimen-label null and its interval; repeated specimens mean this is secondary to patient-unit inference.",
+    "sha256": "24d572825e1261b196fee7c237dbdec5a40625dcc6cd8facd8eb30a2de567186"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement_controls/raw_shuffle_report.json",
+    "manuscript_destination": "raw-count shuffle control; P1-C14",
+    "status": "included",
+    "current_use": "Gene-column shuffle reduces concentration but changes row library sizes. The historical cutoff was not exceeded and topology was not audited; this is not evidence of historical integrity-gate failure.",
+    "scope": "Gene-column shuffle reduces concentration but changes row library sizes. The historical cutoff was not exceeded and topology was not audited; this is not evidence of historical integrity-gate failure.",
+    "sha256": "72d60b95a6a6c4d8af4a1a27ee3ec980d9ad300e7a200ed1cf3ac16bc97b07e2"
+  },
+  {
+    "report": "outputs/scientific_revision_20260923/patient_pair_discrimination/report.json",
+    "manuscript_destination": "Equation eq:p1pairauc; Table tab:p1pairauc; Figure 8A; P1-PAIR-DISCRIMINATION",
+    "status": "included",
+    "current_use": "28 same-model held pairs reusing 11 patients; source-derived half-credit ties give NMF 6.5/28, not the earlier probe. Final uniform cap 10000 has zero training-convergence warnings. Discovery-derived representation and dependent pairs preclude independent validation, pair-binomial uncertainty or a method-ranking claim; no new p values or confidence intervals.",
+    "scope": "28 same-model held pairs reusing 11 patients; source-derived half-credit ties give NMF 6.5/28, not the earlier probe. Final uniform cap 10000 has zero training-convergence warnings. Discovery-derived representation and dependent pairs preclude independent validation, pair-binomial uncertainty or a method-ranking claim; no new p values or confidence intervals.",
+    "sha256": "3df92ce83276c6e3c56af7c0accedb3ae87dea034a101e3eb0dfab3a95b610ea"
+  },
+  {
+    "report": "outputs/scientific_revision_20260923/patient_pair_discrimination/pilot_maxiter1000/report.json",
+    "manuscript_destination": "NMF training-convergence history only; not the final result source",
+    "status": "diagnostic_only",
+    "current_use": "historical_only",
+    "scope": "Retained actual 1000-iteration pilot with warnings in three folds. The uniform cap increase addressed training convergence without using held-pair discrimination; neither this pilot nor the final run adds independent patients.",
+    "sha256": "9bb6c7bdae5df67661029ae648b3c9a600cf4b08909ce4f310a7e32ed5f72a6d"
+  },
+  {
+    "report": "outputs/scientific_revision_20260925/full_pipeline_depth/full/report.json",
+    "manuscript_destination": "Methods/Results; tab:p1fulldepth; tab:p1depthoutcomes",
+    "status": "included",
+    "current_use": "Frozen-reference QC/gate/score depth sensitivity from every released pre-QC column, no refit. Seeds are not biological replicates; this is not annotation truth or external portability. RT06 remains partially addressed; a computational range is not a clinical acceptance margin.",
+    "scope": "Frozen-reference QC/gate/score depth sensitivity from every released pre-QC column, no refit. Seeds are not biological replicates; this is not annotation truth or external portability. RT06 remains partially addressed; a computational range is not a clinical acceptance margin.",
+    "sha256": "1998392073093038f173a6c39336d10990faa5c4bc2ef073f0d3a54ca7380728"
+  },
+  {
+    "report": "outputs/scientific_revision_20260923/patient_pair_discrimination/report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "3df92ce83276c6e3c56af7c0accedb3ae87dea034a101e3eb0dfab3a95b610ea"
+  },
+  {
+    "report": "outputs/scientific_revision_20260923/patient_pair_discrimination/pilot_maxiter1000/report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "9bb6c7bdae5df67661029ae648b3c9a600cf4b08909ce4f310a7e32ed5f72a6d"
+  },
+  {
+    "report": "outputs/scientific_revision_20260925/full_pipeline_depth/full/report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "1998392073093038f173a6c39336d10990faa5c4bc2ef073f0d3a54ca7380728"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement_controls/report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "765a14fe89f1050dc6c646af06342c56e653d25f69d23956a30364451434d943"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement_controls/continuous_counterexample_report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "d689522834d904b3be7ad72409d25f622943dd016487ba8cf5afe6c217c3084c"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement_controls/gate_report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "40cd1e0e3451c39081d39eb4877de493eaa2da871ba29bf8846ad80ccd3abaad"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement_controls/raw_shuffle_report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "72d60b95a6a6c4d8af4a1a27ee3ec980d9ad300e7a200ed1cf3ac16bc97b07e2"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement_controls/dfu_label_report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "24d572825e1261b196fee7c237dbdec5a40625dcc6cd8facd8eb30a2de567186"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "37463387fe1ba9714e52d9dfc22881a0e6c6b19236986aa0fa8fb64271ebae1f"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/design_power_simulation/report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "fd1f71891dd346fbe1889c57adbbd2c34a081f38ec5e5272f74f10404189b8e9"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/robustness_extensions/report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "fff69b44b76c97fabee1d4ff1a9114fef6d13a3e67f9a14db688b4e9b78a457e"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/representation_inference/report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "1fa027381800dd035b5e7ad5fd394dce3fb884031658010e258bed059074274c"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/patient_unit_remap/report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "0844322f12670bd814184a4cae95153ec59122e8f1cfaf162513f853e4c28971"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/patient_mapping_equivalence/report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "e9ebfe288994679eb0c91a6ef2849fa1c77dbe849070334812cc0805b87bc1be"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/patient_unit_representation_benchmark/report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "840aae2921029f1799452a1dffca68573ac4f8fb456f7a4554bea3f5e10eebac"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/representation_benchmark/report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "a5aea6ae2ae2ae516d460a13f5ee7b0c0df0a59754876c4d3703abd5a7921c91"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/repeat_specimens/report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "9e8e466ffd399f1dc189b2131b07ee5be8077b34dced7b99d99ccd3926202d28"
+  },
+  {
+    "report": "outputs/scientific_revision_20260922/measurement/mathematical_audit/report.json",
+    "manuscript_destination": "Current scientific revision",
+    "scope": "Retrospective saved results; see report limitations and provenance.",
+    "sha256": "6bd4607ba115cfee6e95b93510dae32e140e6c2576662578c3e0ac09a28c0088"
   }
 ]

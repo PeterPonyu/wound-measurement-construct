@@ -1,0 +1,131 @@
+{
+  "protocol_id": "RT06-full-raw-depth-20260925-v1",
+  "status": "fixed before any new thinning results",
+  "purpose": "Retrospective computational depth sensitivity of the published-count-to-QC-to-frozen-marker-gate-to-frozen-topic-score pipeline; not prospective biological validation.",
+  "requested_agent_model": "gpt-6-astra",
+  "cohort": {
+    "accession": "GSE165816",
+    "tissue": "Foot skin",
+    "arms": [
+      "DFU-healer",
+      "DFU-nonhealer",
+      "Non-diabetic"
+    ],
+    "specimens": 25,
+    "expected_pre_qc_cells": 81602,
+    "expected_baseline_qc_cells": 76461,
+    "expected_baseline_fibroblasts": 19410,
+    "outcome_patients": {
+      "DFU-healer": 7,
+      "DFU-nonhealer": 4
+    },
+    "raw_scope": "All released pre-analysis-QC count columns in the 25 selected specimens, not pre-cell-calling droplets, FASTQ reads, or the old already-QC cache."
+  },
+  "inputs": {
+    "raw_tar": "data/raw/GSE165816/GSE165816_RAW.tar",
+    "series": "data/raw/GSE165816/GSE165816_series_matrix.txt.gz",
+    "obs": "outputs/expression_representation/obs.csv",
+    "panel": "outputs/expression_representation/panel.npy",
+    "model": "outputs/expression_representation/topic_model.pt",
+    "beta": "outputs/expression_representation/beta.npy",
+    "projection": "outputs/scientific_revision_20260922/measurement/projection/cells.parquet",
+    "historical_raw_identity": "outputs/scientific_revision_20260922/measurement_controls/raw_cell_identity.csv.gz",
+    "marker_reference": "outputs/scientific_revision_20260922/measurement_controls/frozen_marker_reference.csv",
+    "patient_map": "cohort_metadata/GSE165816_ncomms_subject_sample_map.csv",
+    "historical_patient_scores": "outputs/scientific_revision_20260922/measurement/projection/patient_scores_all_arms.csv",
+    "mixture_threshold": "outputs/bimodal_stratification/report.json"
+  },
+  "perturbation": {
+    "baseline_rate": 1.0,
+    "retention_rates": [
+      0.75,
+      0.5,
+      0.25,
+      0.1
+    ],
+    "seeds": [
+      20260925,
+      20260926,
+      20260927
+    ],
+    "law": "Independent Binomial(n=count, p=retention_rate) for each nonzero raw count; zero entries stay zero; every sample and arm uses the same rate. No resampling of cells or patients.",
+    "rng": "numpy PCG64 with SeedSequence([seed, round(rate*1000000), numeric_GSM]); sorted canonical CSR positions; each rate starts from original counts, not another thinned matrix.",
+    "zero_panel_library": "Mark the score missing; do not silently replace it by the encoder score of an all-zero vector. Preserve denominators and mark affected readouts non-estimable.",
+    "interpretation": "Seeds are Monte Carlo perturbations of the same cells and donors, not independent biological replication. Count thinning is not a reconstruction of missing upstream droplets or read-level technical noise."
+  },
+  "qc": {
+    "minimum_detected_genes": 200,
+    "maximum_mito_fraction": 0.2
+  },
+  "gate": {
+    "reference": "Use the saved discovery reference means and SDs without refitting, including for newly admitted cells.",
+    "transform": "log1p(10000 * marker counts / all-gene library size), followed by frozen per-marker z scores and lineage-marker mean, then historical argsort winner.",
+    "abstention": "No new margin cutoff is introduced: preserve the current forced-winner rule. Explicitly report zero detected marker genes, exact top-score ties and margin quantiles; this does not validate those labels.",
+    "missing_sample_genes": "Zero-fill genes absent from a released per-specimen detected-gene list into the fixed model/marker panel; save per-sample coverage."
+  },
+  "score": {
+    "panel_size": 7002,
+    "topics": 15,
+    "focus_topic": 0,
+    "projection": "Normalize frozen-panel integer counts to proportions, evaluate the unchanged MLP in eval mode, use softmax(mu). No sampled latent variables and no retraining.",
+    "high_state_threshold": "Use the existing discovery GMM midpoint unchanged; this is a descriptive historical cutoff, not a biological state truth.",
+    "baseline_coordinate_absolute_tolerance": 1e-06
+  },
+  "populations": {
+    "full_pipeline": "Thinned-count QC survivors, including original QC failures newly admitted by mitochondrial-fraction noise; use thinned-data frozen-reference gates.",
+    "original_qc_fixed_gate": "All original QC survivors regardless of re-QC result, retaining original gates. Conditional score-only sensitivity, not the end-to-end population.",
+    "qc_intersection_fixed_gate": "Cells surviving both original and perturbed QC, retaining original gates. Describes survivor selection plus scoring.",
+    "qc_intersection_regated": "Cells surviving both original and perturbed QC, using perturbed frozen-reference gates. Contrasts with the fixed-gate intersection to expose re-gating."
+  },
+  "endpoints": {
+    "qc_gate": [
+      "retained/lost/gained cells and fractions per specimen and arm",
+      "original-fibroblast retention",
+      "lineage confusion and fibroblast gate entry/exit among common QC survivors",
+      "zero-marker and tied-winner diagnostics"
+    ],
+    "conditional_cell": [
+      "fibroblast-associated topic Spearman correlation",
+      "mean signed change",
+      "mean absolute change",
+      "RMSE",
+      "absolute-change quantiles",
+      "historical-cutoff crossing fraction"
+    ],
+    "conditional_masks": [
+      "original_qc",
+      "qc_intersection",
+      "original_fibroblast",
+      "original_fibroblast_qc_intersection"
+    ],
+    "specimen_patient_readouts": [
+      "all_cell_topic0_mean",
+      "fibroblast_topic0_mean",
+      "fibroblast_high_state_fraction",
+      "fibroblast_fraction"
+    ],
+    "patient_aggregation": "Pool retained cell sums/counts across specimens of the same author-mapped patient; within-fibroblast endpoints use fibroblast-cell weights, not all-cell weights. Retain empty specimens/patients with explicit missing flags.",
+    "outcome_contrast": "Healer minus nonhealer among the same 11 DFU patients (7/4); 330 exhaustive label allocations with absolute two-sided ties included. Healthy patients excluded before allocation. Descriptive sensitivity p-values are not new discoveries or clinical validation; no cell-level inference.",
+    "seed_summary": "Report every run plus min/max across all three fixed seeds, never best-seed selection or a biological confidence interval."
+  },
+  "interpretation_rules": [
+    "Report unfavorable QC, gate, rank, magnitude and patient-contrast changes without changing rates, seeds, reference or endpoint definitions.",
+    "No pass/fail clinical margin, MCID or biological acceptance threshold is invented. Baseline tolerance is numerical reproduction only.",
+    "Agreement conditional on surviving or fixed original cells is not end-to-end robustness, annotation truth, external portability, clinical validity or biological repeatability.",
+    "Completing the computation addresses the missing whole-count-pipeline stress test only; the broader RT06 concern remains at least partially open if depth sensitivity is observed or validation is unavailable."
+  ],
+  "compute": {
+    "default_device": "cpu",
+    "default_threads": 4,
+    "encoder_batch_size": 512,
+    "raw_csv_gene_chunk_rows": 256,
+    "strategy": "Read one archive member in gene chunks, cache its full pre-QC CSR counts, then evaluate one specimen at a time. Never densify the cohort or retrain."
+  },
+  "smoke": {
+    "first_sorted_specimens": 2,
+    "first_raw_cells_per_specimen": 128,
+    "rate": 0.5,
+    "seed": 20260925,
+    "scope": "Real source subset for executable-path checks only; not a full-cohort result."
+  }
+}

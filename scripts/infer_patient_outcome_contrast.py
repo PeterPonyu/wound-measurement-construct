@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
-"""Infer patient outcome contrast."""
+"""Restate discovery fibroblast-associated topic scores on the author patient unit.
+
+Uses the GSE165816 author map and the already-computed frozen discovery
+projection.  It does **not** open the expression matrix, does not rewrite
+scripts/assess_sample_contrast_equivalence.py reports, does not fill MCID, and is not experiment A.
+
+Primary metric: mean of frozen fibroblast-associated topic over all retained cells belonging to
+that patient's DFU foot samples (cell-weighted).  The unweighted mean of
+sample means is reported only so the replicate collapse is visible.
+"""
 from __future__ import annotations
 import argparse
 import hashlib

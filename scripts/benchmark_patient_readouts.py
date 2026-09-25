@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Benchmark patient readouts."""
+"""Patient-unit extension of the frozen representation benchmark.
+
+This is a discovery-cohort unit correction, not an independent validation.
+The 14 DFU samples are collapsed with the authoritative GSE165816 author map
+before leave-one-patient-out representation comparisons.  A second, separate
+summary collapses all mapped foot samples to quantify whether the mixture
+semantics persist at the patient level.
+"""
 from __future__ import annotations
 import argparse
 import hashlib

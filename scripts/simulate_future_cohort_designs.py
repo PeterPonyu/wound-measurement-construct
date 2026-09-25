@@ -1,5 +1,34 @@
 #!/usr/bin/env python3
-"""Simulate future cohort designs."""
+"""How many independent patients would the next cohort actually need?
+
+docs/09 requires the next cohort to be sized from a design simulation rather
+than from how many methods can be run. This script produces that simulation
+before the cohort exists, so the requirement is a number rather than a wish.
+
+Three quantities are read off the current discovery data and used as the
+anchor, with no new biology claimed:
+
+  * the healer fraction, 9 of 14 samples
+  * the per-arm spread of the sample-level fibroblast-associated topic mean, which is markedly
+    unequal between arms (healer SD is about three times the non-healer SD),
+    so a pooled-SD calculation would understate the required n
+  * the rank correlation between representations, about 0.6 to 0.72, which
+    sets how paired an AUC comparison can be
+
+Three designs are sized:
+
+  A. detect the healer / non-healer difference at candidate effect sizes
+  B. declare equivalence at candidate clinical margins (two one-sided tests)
+  C. resolve a difference in AUC between two correlated representations
+
+Multiple samples per patient do not add independent information in
+proportion to their number, so every design is reported both per sample and
+per patient under a design effect, and under an outcome-missingness rate.
+
+Everything here is a design calculation under stated assumptions. It is not
+evidence about diabetic foot ulcer biology and it does not license any
+clinical margin: the candidate margins are inputs, not findings.
+"""
 from __future__ import annotations
 import argparse
 import hashlib
