@@ -141,8 +141,30 @@ except RuntimeError:
 with urlopen(base, timeout=90) as response: public = json.load(response)
 assert public['doi'] == CONFIG['doi'] and public['metadata']['version'] == CONFIG['version']
 assert {x['key'] for x in public['files']} == set(by_name)
-receipt = {'status': 'published', 'record_id': CONFIG['record_id'], 'doi': CONFIG['doi'],
+published = {x['key']: x for x in public['files']}
+verified = []
+public_root = Path('published-downloads'); public_root.mkdir(exist_ok=True)
+for name, item in by_name.items():
+    remote = published[name]
+    assert remote['size'] == item['bytes'] and remote['checksum'].removeprefix('md5:') == item['md5']
+    target = public_root / name
+    url = 'https://zenodo.org/records/' + record_id + '/files/' + quote(name) + '?download=1'
+    with urlopen(url, timeout=180) as response, target.open('wb') as stream:
+        for block in iter(lambda: response.read(1 << 20), b''): stream.write(block)
+    assert target.stat().st_size == item['bytes'] and digest(target) == item['sha256']
+    assert digest(target, 'md5') == item['md5']
+    verified.append({'name': name, 'bytes': item['bytes'], 'sha256': item['sha256'], 'md5': item['md5']})
+    print(name, 'public Zenodo download verified', flush=True)
+public_zip = public_root / CONFIG['canonical_archive_name']
+with public_zip.open('wb') as target:
+    for name in CONFIG['archive_parts']:
+        with (public_root / name).open('rb') as part:
+            for block in iter(lambda: part.read(1 << 20), b''): target.write(block)
+assert digest(public_zip) == CONFIG['canonical_archive_sha256']
+with zipfile.ZipFile(public_zip) as archive: assert archive.testzip() is None
+receipt = {'status': 'published-and-download-verified', 'record_id': CONFIG['record_id'], 'doi': CONFIG['doi'],
            'version': CONFIG['version'], 'canonical_archive_sha256': CONFIG['canonical_archive_sha256'],
-           'payload_files': len(by_name), 'publication_url': 'https://zenodo.org/records/' + record_id}
+           'payload_files': len(by_name), 'publication_url': 'https://zenodo.org/records/' + record_id,
+           'public_download_verification': verified, 'canonical_zip_crc': 'PASS'}
 Path('publication-receipt.json').write_text(json.dumps(receipt, indent=2) + '\n')
 print(json.dumps(receipt), flush=True)
