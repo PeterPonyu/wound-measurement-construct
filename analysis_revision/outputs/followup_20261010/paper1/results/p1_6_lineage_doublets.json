@@ -1,0 +1,451 @@
+{
+  "n_cells": 76461,
+  "n_predicted_doublets": 669,
+  "doublet_rate_by_lineage": {
+    "b_plasma": 0.0032981530343007917,
+    "endothelial": 0.0142744892613934,
+    "fibroblast": 0.004327666151468315,
+    "keratinocyte": 0.01811292856482765,
+    "lymphatic_ec": 0.009154929577464789,
+    "mast": 0.004078303425774877,
+    "melanocyte": 0.019548872180451128,
+    "myeloid": 0.009488666315234581,
+    "pericyte_smc": 0.006017039403620873,
+    "sweat_gland": 0.008710801393728223,
+    "t_cell": 0.006769658045478215
+  },
+  "doublet_rate_topic0_above_vs_below_cut": {
+    "above": 0.0038200339558573855,
+    "below": 0.009073297188810994
+  },
+  "spearman_doublet_score_vs_topic0_within_lineage": {
+    "b_plasma": 0.2100499497578276,
+    "endothelial": 0.3341098330951986,
+    "fibroblast": 0.29320781543974955,
+    "keratinocyte": 0.00498548535951356,
+    "lymphatic_ec": 0.2842574659463436,
+    "mast": 0.24311366224194225,
+    "melanocyte": -0.1392963770947237,
+    "myeloid": 0.03836746879999623,
+    "pericyte_smc": 0.45283549295578907,
+    "sweat_gland": -0.07113113369837949,
+    "t_cell": 0.17917784864834138
+  },
+  "lineage_before": [
+    {
+      "celltype": "melanocyte",
+      "n": 1330,
+      "mean_topic0": 0.15314872562885284,
+      "frac_above_cut": 0.34210526315789475,
+      "share_of_topic0_mass": 0.060001302510499954,
+      "share_of_above_cut_cells": 0.09656196943972835
+    },
+    {
+      "celltype": "fibroblast",
+      "n": 19410,
+      "mean_topic0": 0.11594679951667786,
+      "frac_above_cut": 0.18835651725914476,
+      "share_of_topic0_mass": 0.662948727607727,
+      "share_of_above_cut_cells": 0.7758913412563667
+    },
+    {
+      "celltype": "lymphatic_ec",
+      "n": 1420,
+      "mean_topic0": 0.032634586095809937,
+      "frac_above_cut": 0.028169014084507043,
+      "share_of_topic0_mass": 0.0136509258300066,
+      "share_of_above_cut_cells": 0.008488964346349746
+    },
+    {
+      "celltype": "b_plasma",
+      "n": 1516,
+      "mean_topic0": 0.024087175726890564,
+      "frac_above_cut": 0.026385224274406333,
+      "share_of_topic0_mass": 0.010756741277873516,
+      "share_of_above_cut_cells": 0.008488964346349746
+    },
+    {
+      "celltype": "pericyte_smc",
+      "n": 18780,
+      "mean_topic0": 0.022066427394747734,
+      "frac_above_cut": 0.015175718849840255,
+      "share_of_topic0_mass": 0.12207402288913727,
+      "share_of_above_cut_cells": 0.06048387096774194
+    },
+    {
+      "celltype": "myeloid",
+      "n": 5691,
+      "mean_topic0": 0.02039984054863453,
+      "frac_above_cut": 0.020031628887717447,
+      "share_of_topic0_mass": 0.0341988131403923,
+      "share_of_above_cut_cells": 0.024193548387096774
+    },
+    {
+      "celltype": "mast",
+      "n": 1226,
+      "mean_topic0": 0.01655171625316143,
+      "frac_above_cut": 0.010603588907014683,
+      "share_of_topic0_mass": 0.00597763154655695,
+      "share_of_above_cut_cells": 0.0027589134125636672
+    },
+    {
+      "celltype": "sweat_gland",
+      "n": 2870,
+      "mean_topic0": 0.013851877301931381,
+      "frac_above_cut": 0.0020905923344947735,
+      "share_of_topic0_mass": 0.011710789054632187,
+      "share_of_above_cut_cells": 0.0012733446519524619
+    },
+    {
+      "celltype": "t_cell",
+      "n": 5761,
+      "mean_topic0": 0.013668437488377094,
+      "frac_above_cut": 0.009546953653879534,
+      "share_of_topic0_mass": 0.023195961490273476,
+      "share_of_above_cut_cells": 0.0116723259762309
+    },
+    {
+      "celltype": "keratinocyte",
+      "n": 10821,
+      "mean_topic0": 0.010254149325191975,
+      "frac_above_cut": 0.0033268644302744664,
+      "share_of_topic0_mass": 0.03268606960773468,
+      "share_of_above_cut_cells": 0.007640067911714771
+    },
+    {
+      "celltype": "endothelial",
+      "n": 7636,
+      "mean_topic0": 0.010135716758668423,
+      "frac_above_cut": 0.001571503404924044,
+      "share_of_topic0_mass": 0.022799011319875717,
+      "share_of_above_cut_cells": 0.0025466893039049238
+    }
+  ],
+  "lineage_before_dfu_only": [
+    {
+      "celltype": "melanocyte",
+      "n": 648,
+      "mean_topic0": 0.1997656226158142,
+      "frac_above_cut": 0.4212962962962963,
+      "share_of_topic0_mass": 0.05443950742483139,
+      "share_of_above_cut_cells": 0.0787424286126334
+    },
+    {
+      "celltype": "fibroblast",
+      "n": 11792,
+      "mean_topic0": 0.14245258271694183,
+      "frac_above_cut": 0.23685549525101765,
+      "share_of_topic0_mass": 0.7064415216445923,
+      "share_of_above_cut_cells": 0.8055956158061724
+    },
+    {
+      "celltype": "lymphatic_ec",
+      "n": 718,
+      "mean_topic0": 0.04072153940796852,
+      "frac_above_cut": 0.03899721448467967,
+      "share_of_topic0_mass": 0.012296090833842754,
+      "share_of_above_cut_cells": 0.008076146524372656
+    },
+    {
+      "celltype": "mast",
+      "n": 350,
+      "mean_topic0": 0.0310097336769104,
+      "frac_above_cut": 0.037142857142857144,
+      "share_of_topic0_mass": 0.004564408678561449,
+      "share_of_above_cut_cells": 0.0037496394577444477
+    },
+    {
+      "celltype": "sweat_gland",
+      "n": 214,
+      "mean_topic0": 0.028924621641635895,
+      "frac_above_cut": 0.028037383177570093,
+      "share_of_topic0_mass": 0.0026031541638076305,
+      "share_of_above_cut_cells": 0.0017306028266512836
+    },
+    {
+      "celltype": "pericyte_smc",
+      "n": 10564,
+      "mean_topic0": 0.02552781254053116,
+      "frac_above_cut": 0.019216205982582356,
+      "share_of_topic0_mass": 0.11341236531734467,
+      "share_of_above_cut_cells": 0.05855206230170176
+    },
+    {
+      "celltype": "b_plasma",
+      "n": 1205,
+      "mean_topic0": 0.019161256030201912,
+      "frac_above_cut": 0.019087136929460582,
+      "share_of_topic0_mass": 0.009710228070616722,
+      "share_of_above_cut_cells": 0.006633977502163254
+    },
+    {
+      "celltype": "myeloid",
+      "n": 4525,
+      "mean_topic0": 0.014836205169558525,
+      "frac_above_cut": 0.010607734806629835,
+      "share_of_topic0_mass": 0.028233181685209274,
+      "share_of_above_cut_cells": 0.013844822613210269
+    },
+    {
+      "celltype": "keratinocyte",
+      "n": 4635,
+      "mean_topic0": 0.013675590045750141,
+      "frac_above_cut": 0.007766990291262136,
+      "share_of_topic0_mass": 0.026657182723283768,
+      "share_of_above_cut_cells": 0.010383616959907702
+    },
+    {
+      "celltype": "t_cell",
+      "n": 4119,
+      "mean_topic0": 0.01228973176330328,
+      "frac_above_cut": 0.007768875940762321,
+      "share_of_topic0_mass": 0.02128887176513672,
+      "share_of_above_cut_cells": 0.009229881742140178
+    },
+    {
+      "celltype": "endothelial",
+      "n": 3989,
+      "mean_topic0": 0.012132731266319752,
+      "frac_above_cut": 0.0030082727500626723,
+      "share_of_topic0_mass": 0.020353591069579124,
+      "share_of_above_cut_cells": 0.003461205653302567
+    }
+  ],
+  "lineage_after_doublet_removal": [
+    {
+      "celltype": "melanocyte",
+      "n": 1304,
+      "mean_topic0": 0.15324392914772034,
+      "frac_above_cut": 0.34202453987730064,
+      "share_of_topic0_mass": 0.05922021344304085,
+      "share_of_above_cut_cells": 0.0950149126544525
+    },
+    {
+      "celltype": "fibroblast",
+      "n": 19326,
+      "mean_topic0": 0.11630050092935562,
+      "frac_above_cut": 0.1890717168581186,
+      "share_of_topic0_mass": 0.666089653968811,
+      "share_of_above_cut_cells": 0.7784405624201107
+    },
+    {
+      "celltype": "lymphatic_ec",
+      "n": 1407,
+      "mean_topic0": 0.03261368349194527,
+      "frac_above_cut": 0.028429282160625444,
+      "share_of_topic0_mass": 0.013598877936601639,
+      "share_of_above_cut_cells": 0.008521516829995739
+    },
+    {
+      "celltype": "b_plasma",
+      "n": 1511,
+      "mean_topic0": 0.02411052957177162,
+      "frac_above_cut": 0.026472534745201854,
+      "share_of_topic0_mass": 0.010796434246003628,
+      "share_of_above_cut_cells": 0.008521516829995739
+    },
+    {
+      "celltype": "pericyte_smc",
+      "n": 18667,
+      "mean_topic0": 0.02202676422894001,
+      "frac_above_cut": 0.015214014035463653,
+      "share_of_topic0_mass": 0.12185247242450714,
+      "share_of_above_cut_cells": 0.060502769492969746
+    },
+    {
+      "celltype": "myeloid",
+      "n": 5637,
+      "mean_topic0": 0.020163916051387787,
+      "frac_above_cut": 0.019691325172964343,
+      "share_of_topic0_mass": 0.03368464857339859,
+      "share_of_above_cut_cells": 0.023647209203238175
+    },
+    {
+      "celltype": "mast",
+      "n": 1221,
+      "mean_topic0": 0.016533011570572853,
+      "frac_above_cut": 0.010647010647010647,
+      "share_of_topic0_mass": 0.005982418078929186,
+      "share_of_above_cut_cells": 0.0027694929697486153
+    },
+    {
+      "celltype": "sweat_gland",
+      "n": 2845,
+      "mean_topic0": 0.013804715126752853,
+      "frac_above_cut": 0.00210896309314587,
+      "share_of_topic0_mass": 0.011639084666967392,
+      "share_of_above_cut_cells": 0.0012782275244993609
+    },
+    {
+      "celltype": "t_cell",
+      "n": 5722,
+      "mean_topic0": 0.013509325683116913,
+      "frac_above_cut": 0.009437259699405802,
+      "share_of_topic0_mass": 0.022908182814717293,
+      "share_of_above_cut_cells": 0.011504047720494247
+    },
+    {
+      "celltype": "keratinocyte",
+      "n": 10625,
+      "mean_topic0": 0.010151853784918785,
+      "frac_above_cut": 0.003388235294117647,
+      "share_of_topic0_mass": 0.03196563944220543,
+      "share_of_above_cut_cells": 0.007669365146996165
+    },
+    {
+      "celltype": "endothelial",
+      "n": 7527,
+      "mean_topic0": 0.009980272501707077,
+      "frac_above_cut": 0.0013285505513484788,
+      "share_of_topic0_mass": 0.02226247452199459,
+      "share_of_above_cut_cells": 0.0021303792074989347
+    }
+  ],
+  "contrasts_before": {
+    "S": {
+      "diff": 0.029279670578294566,
+      "p_exact": 0.2727272727272727
+    },
+    "M": {
+      "diff": 0.089194864500314,
+      "p_exact": 0.31212121212121213
+    },
+    "W": {
+      "diff": 0.151425718383255,
+      "p_exact": 0.3696969696969697
+    },
+    "F": {
+      "diff": 0.07077186723932666,
+      "p_exact": 0.4696969696969697
+    },
+    "specimen_rho_MF": 0.9325436810796521
+  },
+  "contrasts_after_doublet_removal": {
+    "S": {
+      "diff": 0.029303146093817692,
+      "p_exact": 0.2727272727272727
+    },
+    "M": {
+      "diff": 0.08938464475795627,
+      "p_exact": 0.3090909090909091
+    },
+    "W": {
+      "diff": 0.15179042026588935,
+      "p_exact": 0.3696969696969697
+    },
+    "F": {
+      "diff": 0.07067305617635594,
+      "p_exact": 0.4696969696969697
+    },
+    "specimen_rho_MF": 0.9380570305454947
+  },
+  "contrasts_after_removing_top10pct_scores": {
+    "S": {
+      "diff": 0.027911034745297263,
+      "p_exact": 0.2909090909090909
+    },
+    "M": {
+      "diff": 0.08913670004611568,
+      "p_exact": 0.3090909090909091
+    },
+    "W": {
+      "diff": 0.1511417974281402,
+      "p_exact": 0.3575757575757576
+    },
+    "F": {
+      "diff": 0.062127784809118236,
+      "p_exact": 0.5303030303030303
+    },
+    "specimen_rho_MF": 0.9065445023634746
+  },
+  "lineage_after_top10pct_removal": [
+    {
+      "celltype": "melanocyte",
+      "n": 1151,
+      "mean_topic0": 0.15738508105278015,
+      "frac_above_cut": 0.35447437011294525,
+      "share_of_topic0_mass": 0.06103231757879257,
+      "share_of_above_cut_cells": 0.10022107590272661
+    },
+    {
+      "celltype": "fibroblast",
+      "n": 17511,
+      "mean_topic0": 0.11469727754592896,
+      "frac_above_cut": 0.1847981268916681,
+      "share_of_topic0_mass": 0.6766826510429382,
+      "share_of_above_cut_cells": 0.7948906902480963
+    },
+    {
+      "celltype": "lymphatic_ec",
+      "n": 1111,
+      "mean_topic0": 0.026821168139576912,
+      "frac_above_cut": 0.019801980198019802,
+      "share_of_topic0_mass": 0.010039514862000942,
+      "share_of_above_cut_cells": 0.005404077622205846
+    },
+    {
+      "celltype": "b_plasma",
+      "n": 1342,
+      "mean_topic0": 0.022353334352374077,
+      "frac_above_cut": 0.023099850968703428,
+      "share_of_topic0_mass": 0.010106850415468216,
+      "share_of_above_cut_cells": 0.0076148366494718745
+    },
+    {
+      "celltype": "pericyte_smc",
+      "n": 17340,
+      "mean_topic0": 0.020284174010157585,
+      "frac_above_cut": 0.01182237600922722,
+      "share_of_topic0_mass": 0.11850246787071228,
+      "share_of_above_cut_cells": 0.05035617784328175
+    },
+    {
+      "celltype": "myeloid",
+      "n": 5137,
+      "mean_topic0": 0.01773567870259285,
+      "frac_above_cut": 0.015378625656998247,
+      "share_of_topic0_mass": 0.030695760622620583,
+      "share_of_above_cut_cells": 0.01940555146155736
+    },
+    {
+      "celltype": "mast",
+      "n": 1059,
+      "mean_topic0": 0.015095219016075134,
+      "frac_above_cut": 0.0084985835694051,
+      "share_of_topic0_mass": 0.005385876167565584,
+      "share_of_above_cut_cells": 0.002210759027266028
+    },
+    {
+      "celltype": "sweat_gland",
+      "n": 2446,
+      "mean_topic0": 0.014357369393110275,
+      "frac_above_cut": 0.0024529844644317253,
+      "share_of_topic0_mass": 0.011831841431558132,
+      "share_of_above_cut_cells": 0.0014738393515106854
+    },
+    {
+      "celltype": "t_cell",
+      "n": 5571,
+      "mean_topic0": 0.011628442443907261,
+      "frac_above_cut": 0.006462035541195477,
+      "share_of_topic0_mass": 0.02182607725262642,
+      "share_of_above_cut_cells": 0.008843036109064112
+    },
+    {
+      "celltype": "keratinocyte",
+      "n": 9576,
+      "mean_topic0": 0.009763087145984173,
+      "frac_above_cut": 0.0032372598162071844,
+      "share_of_topic0_mass": 0.03149867802858353,
+      "share_of_above_cut_cells": 0.0076148366494718745
+    },
+    {
+      "celltype": "endothelial",
+      "n": 7033,
+      "mean_topic0": 0.009452479891479015,
+      "frac_above_cut": 0.0011374946679937438,
+      "share_of_topic0_mass": 0.022397903725504875,
+      "share_of_above_cut_cells": 0.0019651191353475803
+    }
+  ]
+}

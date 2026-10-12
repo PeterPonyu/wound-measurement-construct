@@ -1,0 +1,25 @@
+{
+  "script": "p1_2_project_excluded",
+  "inputs_sha256": {
+    "core_engines/data_adapter.py": "246f1b47e470b5167de494109881e9886ad74aa7e8e648c02e97505a6859c302",
+    "core_engines/topic_simplex_engine.py": "e576aacdd4e8b79b04da29e469a83f625dbdfc3ed982f2c64f39882f01a49ec1",
+    "data/raw/GSE165816/GSE165816_RAW.tar": "fcad6eacd4d92353c250090e3ecce42c399c321c0777887d28f7b1d90d9d67f4",
+    "metadata_intake/GSE165816_ncomms_subject_sample_map.csv": "11870be07b8c06e6037c7ab5c532e90907913c390bd180b59cfe1821bebcd96c",
+    "outputs/bimodal_stratification/report.json": "dde5b4e5f8cba6045449e8e7797f611213a61b7cbd51551ac0fd051b17d0d14f",
+    "outputs/direction1_dfu_mainline/panel.npy": "85f7f9110c895c918d6e55ff8dd84c7de3f61b46bfbde2d70028cebf46d713c4",
+    "outputs/direction1_dfu_mainline/topic_model.pt": "c54e78d7ebfd26b0d00436e928db3779d93ffd4133a768114698072fb0538ae9",
+    "outputs/scientific_revision_20260922/measurement/projection/cells.parquet": "3572a78007b7be093603988a87734c194371e1820ebc499d693c1379cd298449",
+    "outputs/scientific_revision_20260922/measurement_controls/frozen_marker_reference.csv": "8262fbdd5cf913bf1b2d0d1f9788446c501994946a0c94c0353d3abd7d9d4fe3",
+    "scripts/50_measurement_control_repair.py": "86b1df6f16c8c3e9e6de1eaeecf4ee8507ee831580f2152de49757915c9fa7fe",
+    "scripts/55_full_pipeline_depth_audit.py": "eda55413090b9b74127ab742d35925750257e28d695b5a20992ed6815c5ac6ab"
+  },
+  "reproduction_check": {
+    "reference_cells": 76461,
+    "reprojected_discovery_cells": 76461,
+    "common_cells": 76461,
+    "max_abs_topic_difference": 4.76837158203125e-07,
+    "celltype_agreement": 1.0,
+    "fibroblasts_reprojected": 19410,
+    "elapsed_s": 140.84606313705444
+  }
+}

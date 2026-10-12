@@ -1,0 +1,16 @@
+{
+ "schema_version": 1,
+ "stage": "initial_frozen_runner_post_fit_CPU_verification_and_table_extraction",
+ "command": "python scripts/run_quality_topic_stability.py run --approval output/publication-quality-20261009/p1/run/execution_approval.json",
+ "exit_code": 1,
+ "after_gpu_fitting_finished_utc": "2026-10-09T15:56:40.597998+00:00",
+ "fit_queue_counts": {"done": 9, "failed": 0, "running": 0, "pending": 0},
+ "exception_type": "ValueError",
+ "exception_message": "worker/table equal-specimen readout disagreement",
+ "failure_site": "scripts/run_quality_topic_stability.py patient_rows strict rtol=0/atol=1e-12 comparison",
+ "failure_kind": "float64_tabular_mean_vs_saved_float32_worker_mean_not_failed_fit_or_threshold_match",
+ "raw_traceback_file": "evidence/initial_verification_failure.txt",
+ "original_training_result_and_checkpoint_artifacts_preserved": true,
+ "frozen_source_config_and_test_manifest_preserved": true,
+ "correction": "Separately reviewed output-only replay restores exact existing worker float32 arithmetic; strict tolerance remains unchanged."
+}

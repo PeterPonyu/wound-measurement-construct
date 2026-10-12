@@ -1,0 +1,11 @@
+{
+ "evaluation_trace": [],
+ "training_config": {
+  "batch_size": 256,
+  "device": "cuda",
+  "lr": 0.001,
+  "seed": 2,
+  "steps": 40000
+ },
+ "training_trace": []
+}

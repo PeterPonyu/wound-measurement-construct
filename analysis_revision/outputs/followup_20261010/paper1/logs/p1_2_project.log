@@ -1,0 +1,53 @@
+[    3.4s] GSM5050521 G1 forearm qc=3054 fib=1549 cov=5463
+[    3.9s] GSM5050522 G1A dm_foot qc=985 fib=522 cov=2998
+[    7.1s] GSM5050523 G2 discovery_foot qc=3951 fib=1238 cov=5119
+[    7.4s] GSM5050524 G2A dm_foot qc=542 fib=204 cov=3088
+[    8.9s] GSM5050525 G3 dm_foot qc=1984 fib=685 cov=5051
+[    9.7s] GSM5050526 G3A dm_foot qc=1011 fib=271 cov=3258
+[   12.1s] GSM5050527 G4 discovery_foot qc=2865 fib=956 cov=5143
+[   13.1s] GSM5050528 G4A forearm qc=1384 fib=365 cov=3862
+[   15.4s] GSM5050529 G5 dm_foot qc=2630 fib=883 cov=5476
+[   17.0s] GSM5050530 G6 discovery_foot qc=2279 fib=221 cov=5120
+[   18.4s] GSM5050531 G7 discovery_foot qc=1775 fib=452 cov=5094
+[   20.3s] GSM5050532 G8 discovery_foot qc=2417 fib=1153 cov=5034
+[   24.2s] GSM5050533 G9 discovery_foot qc=4290 fib=843 cov=5304
+[   29.1s] GSM5050534 G10 discovery_foot qc=4825 fib=1004 cov=5787
+[   30.5s] GSM5050535 G11 forearm qc=1620 fib=62 cov=5260
+[   33.6s] GSM5050536 G12 forearm qc=3566 fib=304 cov=5714
+[   38.0s] GSM5050537 G13 forearm qc=4289 fib=547 cov=6140
+[   44.5s] GSM5050538 G14 discovery_foot qc=5399 fib=974 cov=6162
+[   47.4s] GSM5050539 G15 discovery_foot qc=2250 fib=356 cov=5442
+[   50.0s] GSM5050540 G16 discovery_foot qc=2922 fib=1020 cov=5523
+[   54.2s] GSM5050541 G17 forearm qc=4404 fib=35 cov=5301
+[   57.6s] GSM5050542 G18 forearm qc=3774 fib=886 cov=6100
+[   62.4s] GSM5050547 G23 discovery_foot qc=4630 fib=1795 cov=5797
+[   65.3s] GSM5050548 G24 discovery_foot qc=3515 fib=558 cov=5846
+[   67.4s] GSM5050552 G28 discovery_foot qc=2483 fib=215 cov=5321
+[   72.3s] GSM5050553 G29 forearm qc=4837 fib=724 cov=5845
+[   75.3s] GSM5050555 G31 discovery_foot qc=3465 fib=901 cov=6348
+[   79.5s] GSM5050556 G32 discovery_foot qc=4192 fib=1020 cov=6360
+[   83.8s] GSM5050557 G33 discovery_foot qc=4268 fib=926 cov=6375
+[   86.8s] GSM5050558 G34 discovery_foot qc=3413 fib=626 cov=6251
+[   89.4s] GSM5050559 G35 forearm qc=2902 fib=600 cov=6209
+[   95.3s] GSM5050560 G36 forearm qc=5248 fib=1186 cov=6512
+[   96.5s] GSM5050562 G38 dm_foot qc=1197 fib=349 cov=4960
+[   99.0s] GSM5050563 G39 discovery_foot qc=2481 fib=872 cov=5222
+[  102.5s] GSM5050564 G40 discovery_foot qc=1716 fib=196 cov=5237
+[  106.0s] GSM5050565 G41 dm_foot qc=1832 fib=458 cov=5153
+[  109.5s] GSM5050566 G42 discovery_foot qc=1838 fib=170 cov=5332
+[  111.2s] GSM5050567 G43 discovery_foot qc=789 fib=153 cov=4937
+[  114.6s] GSM5050568 G44 discovery_foot qc=1445 fib=425 cov=5331
+[  122.4s] GSM5050569 G45 discovery_foot qc=3374 fib=1821 cov=5411
+[  126.1s] GSM5050570 G46 dm_foot qc=1171 fib=212 cov=5066
+[  130.1s] GSM5050572 G48 forearm qc=1838 fib=350 cov=5636
+[  135.3s] GSM5050573 G49 discovery_foot qc=2928 fib=363 cov=5625
+[  140.5s] GSM5050574 G50 discovery_foot qc=2951 fib=1152 cov=5588
+{
+ "reference_cells": 76461,
+ "reprojected_discovery_cells": 76461,
+ "common_cells": 76461,
+ "max_abs_topic_difference": 4.76837158203125e-07,
+ "celltype_agreement": 1.0,
+ "fibroblasts_reprojected": 19410,
+ "elapsed_s": 140.84606313705444
+}

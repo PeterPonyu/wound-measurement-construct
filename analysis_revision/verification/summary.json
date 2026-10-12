@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "scope": "Portable imports, safe CLI, exact selection/bulk arithmetic and nine saved checkpoint CPU projections; no refit.",
+  "selection_allocations_per_readout": 330,
+  "quantitative_numeric_values": 299,
+  "quantitative_max_abs_error": 0,
+  "checkpoint_replays": 9,
+  "checkpoint_max_abs_error": 0,
+  "commands": [
+    "python3 verify_revision.py --smoke --saved-checks --output-dir tmp/reproduction-check-01",
+    "python3 replay_measurement_checkpoints.py --output-dir tmp/checkpoint-replay-01"
+  ],
+  "remaining_central_input_gap": null,
+  "scientific_replay_limits": [
+    "The six diagnostic refits are preserved; their full replay was not repeated in this closure verification.",
+    "This is computational sensitivity in the same 11 outcome patients, not independent biological validation."
+  ],
+  "requested_agent_runtime": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "max"
+  },
+  "actual_agent_runtime": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "max",
+    "verification": "Directly verified from the subagent session metadata and turn_context, separately from requested parameters.",
+    "session_id": "01a12e0f-2d3d-7601-9c19-e75b17d96372",
+    "source_agent_path": "/root/wound_release_closure",
+    "runtime_evidence": "/home/zeyufu/.codex/sessions/2026/10/11/rollout-2026-10-11T20-01-48-01a12e0f-2d3d-7601-9c19-e75b17d96372.jsonl"
+  },
+  "model_training_performed": false,
+  "downloads_performed": false,
+  "published": false,
+  "sealed": false,
+  "manuscript_overlay_and_final_archive_handled_by_parent": true
+}

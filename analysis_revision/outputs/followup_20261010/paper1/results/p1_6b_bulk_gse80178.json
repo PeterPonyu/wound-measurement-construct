@@ -1,0 +1,421 @@
+{
+  "universe": {
+    "n_rows": 5872,
+    "all_fdr_below_0.05": true,
+    "all_absFC_ge_2": true,
+    "frac_up_in_DFU": 0.26362397820163486
+  },
+  "n_annotated_genes": 3903,
+  "n_overlap_with_panel": 958,
+  "groups": {
+    "Diabetic Foot Ulcer 07": "DFU",
+    "Diabetic Foot Ulcer 14": "DFU",
+    "Diabetic Foot Ulcer 15": "DFU",
+    "Diabetic Foot Ulcer 24": "DFU",
+    "Diabetic Foot Ulcer 27": "DFU",
+    "Diabetic Foot Ulcer 31": "DFU",
+    "Diabetic Foot Skin 01": "DM",
+    "Diabetic Foot Skin 02": "DM",
+    "Diabetic Foot Skin 03": "DM",
+    "non-Diabetic Foot Skin 01": "NDM",
+    "non-Diabetic Foot Skin 02": "NDM",
+    "non-Diabetic Foot Skin 03": "NDM"
+  },
+  "signatures": {
+    "TOP50": {
+      "genes": [
+        "DCN",
+        "IER3",
+        "MMP1",
+        "IGFBP4",
+        "MMP2",
+        "DCT",
+        "MMP3",
+        "TYRP1",
+        "C1R",
+        "BGN",
+        "SPARC",
+        "PMEL",
+        "NAMPT",
+        "COL1A2",
+        "CTSK",
+        "MLANA",
+        "TNFRSF12A",
+        "CCL20",
+        "FSTL1",
+        "DNAJB1",
+        "ADM",
+        "MMP9",
+        "TPM1",
+        "SERPINF1",
+        "C1S",
+        "ANGPTL4",
+        "IGFBP5",
+        "SERPINE1",
+        "IGFBP7",
+        "CRYAB",
+        "PRRX1",
+        "SLC16A3",
+        "RND3",
+        "IL6",
+        "PLAUR",
+        "CLU",
+        "DDIT4",
+        "IL24",
+        "SPHK1",
+        "FGF7",
+        "PHLDA1",
+        "TMEM158",
+        "CXCL5",
+        "ACP5",
+        "NDUFA4L2",
+        "PTGS2",
+        "RCAN1",
+        "CCND1",
+        "C4orf48",
+        "S100A16"
+      ],
+      "n_genes": 50,
+      "scores": {
+        "Diabetic Foot Ulcer 07": 0.1449,
+        "Diabetic Foot Ulcer 14": -0.5354,
+        "Diabetic Foot Ulcer 15": 0.2537,
+        "Diabetic Foot Ulcer 24": 0.1034,
+        "Diabetic Foot Ulcer 27": 0.3223,
+        "Diabetic Foot Ulcer 31": 0.2283,
+        "Diabetic Foot Skin 01": 0.0396,
+        "Diabetic Foot Skin 02": -0.3068,
+        "Diabetic Foot Skin 03": -0.0831,
+        "non-Diabetic Foot Skin 01": -0.187,
+        "non-Diabetic Foot Skin 02": -0.0712,
+        "non-Diabetic Foot Skin 03": 0.0913
+      },
+      "DFU_vs_intact": {
+        "diff": 0.17242169979701782,
+        "p_exact_perm": 0.25757575757575757,
+        "n_relabellings": 924,
+        "random_signature_frac_ge_observed": 0.0,
+        "random_signature_median": -0.8461409207729089
+      },
+      "DFU_vs_DMfoot": {
+        "diff": 0.2029746577354372,
+        "p_exact_perm": 0.38095238095238093,
+        "n_relabellings": 84,
+        "random_signature_frac_ge_observed": 0.0,
+        "random_signature_median": -0.8113068767873884
+      },
+      "DMfoot_vs_NDMfoot": {
+        "diff": -0.06110591587683869,
+        "p_exact_perm": 0.6,
+        "n_relabellings": 20,
+        "random_signature_frac_ge_observed": 0.2974,
+        "random_signature_median": -0.0867973697072458
+      }
+    },
+    "LIFT50": {
+      "genes": [
+        "MMP1",
+        "MMP3",
+        "TYRP1",
+        "PMEL",
+        "MLANA",
+        "DCT",
+        "IL11",
+        "TYR",
+        "IL24",
+        "CXCL5",
+        "CLEC12B",
+        "MMP9",
+        "TMEM158",
+        "TREM1",
+        "GAL",
+        "SLC16A3",
+        "SERPINE1",
+        "HAS1",
+        "GREM1",
+        "PI3",
+        "ACP5",
+        "TNFRSF12A",
+        "ANGPTL4",
+        "CDC20",
+        "CCL20",
+        "TPX2",
+        "PTGS2",
+        "IL6",
+        "SPHK1",
+        "SLCO4A1",
+        "STEAP2",
+        "SLC16A10",
+        "C15orf48",
+        "NEFM",
+        "F3",
+        "HILPDA",
+        "AMPD3",
+        "CTSK",
+        "ADM",
+        "KYNU",
+        "RCAN1",
+        "PLAUR",
+        "MMP2",
+        "PTHLH",
+        "FNDC1",
+        "HMOX1",
+        "BGN",
+        "NAMPT",
+        "C4orf48",
+        "FGF2"
+      ],
+      "n_genes": 50,
+      "scores": {
+        "Diabetic Foot Ulcer 07": 0.2681,
+        "Diabetic Foot Ulcer 14": -0.2189,
+        "Diabetic Foot Ulcer 15": 0.6045,
+        "Diabetic Foot Ulcer 24": 0.2745,
+        "Diabetic Foot Ulcer 27": 0.7062,
+        "Diabetic Foot Ulcer 31": 0.4432,
+        "Diabetic Foot Skin 01": -0.1475,
+        "Diabetic Foot Skin 02": -0.4825,
+        "Diabetic Foot Skin 03": -0.3418,
+        "non-Diabetic Foot Skin 01": -0.4189,
+        "non-Diabetic Foot Skin 02": -0.3739,
+        "non-Diabetic Foot Skin 03": -0.313
+      },
+      "DFU_vs_intact": {
+        "diff": 0.6925502805166283,
+        "p_exact_perm": 0.004329004329004329,
+        "n_relabellings": 924,
+        "random_signature_frac_ge_observed": 0.0,
+        "random_signature_median": -0.8508000736700663
+      },
+      "DFU_vs_DMfoot": {
+        "diff": 0.6702163580362843,
+        "p_exact_perm": 0.03571428571428571,
+        "n_relabellings": 84,
+        "random_signature_frac_ge_observed": 0.0,
+        "random_signature_median": -0.806978779772299
+      },
+      "DMfoot_vs_NDMfoot": {
+        "diff": 0.044667844960687986,
+        "p_exact_perm": 0.8,
+        "n_relabellings": 20,
+        "random_signature_frac_ge_observed": 0.0028,
+        "random_signature_median": -0.08488165251311974
+      }
+    },
+    "LIFT50_no_melanocyte_genes": {
+      "genes": [
+        "MMP1",
+        "MMP3",
+        "IL11",
+        "IL24",
+        "CXCL5",
+        "CLEC12B",
+        "MMP9",
+        "TMEM158",
+        "TREM1",
+        "GAL",
+        "SLC16A3",
+        "SERPINE1",
+        "HAS1",
+        "GREM1",
+        "PI3",
+        "ACP5",
+        "TNFRSF12A",
+        "ANGPTL4",
+        "CDC20",
+        "CCL20",
+        "TPX2",
+        "PTGS2",
+        "IL6",
+        "SPHK1",
+        "SLCO4A1",
+        "STEAP2",
+        "SLC16A10",
+        "C15orf48",
+        "NEFM",
+        "F3",
+        "HILPDA",
+        "AMPD3",
+        "CTSK",
+        "ADM",
+        "KYNU",
+        "RCAN1",
+        "PLAUR",
+        "MMP2",
+        "PTHLH",
+        "FNDC1",
+        "HMOX1",
+        "BGN",
+        "NAMPT",
+        "C4orf48",
+        "FGF2",
+        "PLXNC1",
+        "CDH3",
+        "TMEM45A",
+        "HSD3B7",
+        "CD68"
+      ],
+      "n_genes": 50,
+      "scores": {
+        "Diabetic Foot Ulcer 07": 0.3781,
+        "Diabetic Foot Ulcer 14": -0.1858,
+        "Diabetic Foot Ulcer 15": 0.774,
+        "Diabetic Foot Ulcer 24": 0.3928,
+        "Diabetic Foot Ulcer 27": 0.7924,
+        "Diabetic Foot Ulcer 31": 0.5688,
+        "Diabetic Foot Skin 01": -0.3021,
+        "Diabetic Foot Skin 02": -0.5883,
+        "Diabetic Foot Skin 03": -0.4203,
+        "non-Diabetic Foot Skin 01": -0.5471,
+        "non-Diabetic Foot Skin 02": -0.4602,
+        "non-Diabetic Foot Skin 03": -0.4023
+      },
+      "DFU_vs_intact": {
+        "diff": 0.9067837858707639,
+        "p_exact_perm": 0.0021645021645021645,
+        "n_relabellings": 924,
+        "random_signature_frac_ge_observed": 0.0,
+        "random_signature_median": -0.8497712045119783
+      },
+      "DFU_vs_DMfoot": {
+        "diff": 0.8902889090654025,
+        "p_exact_perm": 0.011904761904761904,
+        "n_relabellings": 84,
+        "random_signature_frac_ge_observed": 0.0,
+        "random_signature_median": -0.8081155196983166
+      },
+      "DMfoot_vs_NDMfoot": {
+        "diff": 0.032989753610722816,
+        "p_exact_perm": 0.9,
+        "n_relabellings": 20,
+        "random_signature_frac_ge_observed": 0.0051,
+        "random_signature_median": -0.08533840966008577
+      }
+    },
+    "BETA_weighted_all_overlap": {
+      "n_genes": 958,
+      "scores": {
+        "Diabetic Foot Ulcer 07": 0.0373,
+        "Diabetic Foot Ulcer 14": -0.7646,
+        "Diabetic Foot Ulcer 15": -0.0153,
+        "Diabetic Foot Ulcer 24": 0.0639,
+        "Diabetic Foot Ulcer 27": 0.1027,
+        "Diabetic Foot Ulcer 31": 0.0664,
+        "Diabetic Foot Skin 01": 0.1824,
+        "Diabetic Foot Skin 02": -0.1817,
+        "Diabetic Foot Skin 03": 0.1013,
+        "non-Diabetic Foot Skin 01": -0.016,
+        "non-Diabetic Foot Skin 02": 0.1233,
+        "non-Diabetic Foot Skin 03": 0.3003
+      },
+      "DFU_vs_intact": {
+        "diff": -0.16986957487903992,
+        "p_exact_perm": 0.3333333333333333,
+        "n_relabellings": 924
+      },
+      "DFU_vs_DMfoot": {
+        "diff": -0.11894159209712032,
+        "p_exact_perm": 0.75,
+        "n_relabellings": 84
+      },
+      "DMfoot_vs_NDMfoot": {
+        "diff": -0.10185596556383919,
+        "p_exact_perm": 0.5,
+        "n_relabellings": 20
+      }
+    }
+  },
+  "all_topics_LIFT50_DFU_vs_intact": [
+    {
+      "topic": 0,
+      "n_genes": 50,
+      "DFU_vs_intact_diff": 0.6925502805166283,
+      "p_exact_perm": 0.004329004329004329
+    },
+    {
+      "topic": 1,
+      "n_genes": 50,
+      "DFU_vs_intact_diff": -0.43831838662618827,
+      "p_exact_perm": 0.004329004329004329
+    },
+    {
+      "topic": 2,
+      "n_genes": 50,
+      "DFU_vs_intact_diff": -1.3344058316710679,
+      "p_exact_perm": 0.0021645021645021645
+    },
+    {
+      "topic": 3,
+      "n_genes": 50,
+      "DFU_vs_intact_diff": -1.3797034905384074,
+      "p_exact_perm": 0.0021645021645021645
+    },
+    {
+      "topic": 4,
+      "n_genes": 50,
+      "DFU_vs_intact_diff": -1.5599746835288306,
+      "p_exact_perm": 0.0021645021645021645
+    },
+    {
+      "topic": 5,
+      "n_genes": 50,
+      "DFU_vs_intact_diff": 0.6635666329830905,
+      "p_exact_perm": 0.004329004329004329
+    },
+    {
+      "topic": 6,
+      "n_genes": 50,
+      "DFU_vs_intact_diff": -1.5850819393826572,
+      "p_exact_perm": 0.0021645021645021645
+    },
+    {
+      "topic": 7,
+      "n_genes": 50,
+      "DFU_vs_intact_diff": -1.4814426232455542,
+      "p_exact_perm": 0.0021645021645021645
+    },
+    {
+      "topic": 8,
+      "n_genes": 50,
+      "DFU_vs_intact_diff": -0.20738958223392312,
+      "p_exact_perm": 0.006493506493506494
+    },
+    {
+      "topic": 9,
+      "n_genes": 50,
+      "DFU_vs_intact_diff": -1.1012316299796725,
+      "p_exact_perm": 0.0021645021645021645
+    },
+    {
+      "topic": 10,
+      "n_genes": 50,
+      "DFU_vs_intact_diff": -1.350025405680449,
+      "p_exact_perm": 0.0021645021645021645
+    },
+    {
+      "topic": 11,
+      "n_genes": 50,
+      "DFU_vs_intact_diff": -0.03097368714180753,
+      "p_exact_perm": 0.7510822510822511
+    },
+    {
+      "topic": 12,
+      "n_genes": 50,
+      "DFU_vs_intact_diff": -1.1866567182879062,
+      "p_exact_perm": 0.0021645021645021645
+    },
+    {
+      "topic": 13,
+      "n_genes": 50,
+      "DFU_vs_intact_diff": 0.22041654053890322,
+      "p_exact_perm": 0.09523809523809523
+    },
+    {
+      "topic": 14,
+      "n_genes": 50,
+      "DFU_vs_intact_diff": -0.657543369204284,
+      "p_exact_perm": 0.0021645021645021645
+    }
+  ],
+  "topic0_rank_among_15_by_DFU_vs_intact_diff": 1
+}

@@ -1,0 +1,535 @@
+{
+  "status": "completed",
+  "n_repeated_pairs": 5,
+  "n_repeated_patients": 5,
+  "n_dfu_repeated_patients": 3,
+  "cut": 0.18429584801197052,
+  "paired_specimens": [
+    {
+      "patient_id": "NCOMMS2022_S02",
+      "arm": "DFU-healer",
+      "gsm_a": "GSM5050547",
+      "gsm_b": "GSM5050527",
+      "sample_a": "G23",
+      "sample_b": "G4",
+      "n_fibroblasts_a": 1795,
+      "n_fibroblasts_b": 956,
+      "mean_a": 0.3439810048531959,
+      "mean_b": 0.35362922714898465,
+      "high_fraction_a": 0.5871866295264624,
+      "high_fraction_b": 0.5847280334728033,
+      "composition_a": 0.3876889848812095,
+      "composition_b": 0.3336823734729494,
+      "absolute_all_cell_mean_difference": 0.008063830619500612,
+      "absolute_composition_difference": 0.05400661140826013,
+      "absolute_mean_difference": 0.009648222295788766,
+      "absolute_high_fraction_difference": 0.0024585960536590568,
+      "wasserstein_distance": 0.015709068862284382,
+      "ecdf_supremum": 0.05760014452046014,
+      "absolute_mean_difference_split_half_a_median": 0.009782799980290718,
+      "absolute_mean_difference_split_half_a_upper975": 0.030874283884205257,
+      "absolute_mean_difference_split_half_b_median": 0.014694440745549847,
+      "absolute_mean_difference_split_half_b_upper975": 0.04446931967831306,
+      "absolute_mean_difference_exceeds_both_split_half_upper975": false,
+      "absolute_high_fraction_difference_split_half_a_median": 0.016253137779234428,
+      "absolute_high_fraction_difference_split_half_a_upper975": 0.04816385601100426,
+      "absolute_high_fraction_difference_split_half_b_median": 0.023012552301255207,
+      "absolute_high_fraction_difference_split_half_b_upper975": 0.0680962343096234,
+      "absolute_high_fraction_difference_exceeds_both_split_half_upper975": false,
+      "wasserstein_distance_split_half_a_median": 0.01316318816542108,
+      "wasserstein_distance_split_half_a_upper975": 0.03100559466194558,
+      "wasserstein_distance_split_half_b_median": 0.01846174740478023,
+      "wasserstein_distance_split_half_b_upper975": 0.045249309356199675,
+      "wasserstein_distance_exceeds_both_split_half_upper975": false,
+      "ecdf_supremum_split_half_a_median": 0.03763534970565091,
+      "ecdf_supremum_split_half_a_upper975": 0.0663186866392057,
+      "ecdf_supremum_split_half_b_median": 0.054393305439330575,
+      "ecdf_supremum_split_half_b_upper975": 0.09157949790794981,
+      "ecdf_supremum_exceeds_both_split_half_upper975": false
+    },
+    {
+      "patient_id": "NCOMMS2022_S06",
+      "arm": "DFU-nonhealer",
+      "gsm_a": "GSM5050557",
+      "gsm_b": "GSM5050558",
+      "sample_a": "G33",
+      "sample_b": "G34",
+      "n_fibroblasts_a": 926,
+      "n_fibroblasts_b": 626,
+      "mean_a": 0.016218680192436823,
+      "mean_b": 0.020456510114694793,
+      "high_fraction_a": 0.0010799136069114472,
+      "high_fraction_b": 0.006389776357827476,
+      "composition_a": 0.2169634489222118,
+      "composition_b": 0.18341634925285671,
+      "absolute_all_cell_mean_difference": 9.449853488361845e-05,
+      "absolute_composition_difference": 0.033547099669355096,
+      "absolute_mean_difference": 0.00423782992225797,
+      "absolute_high_fraction_difference": 0.005309862750916028,
+      "wasserstein_distance": 0.004238237584777893,
+      "ecdf_supremum": 0.12510781885053035,
+      "absolute_mean_difference_split_half_a_median": 0.0005336452042181087,
+      "absolute_mean_difference_split_half_a_upper975": 0.00170010673988522,
+      "absolute_mean_difference_split_half_b_median": 0.0013498166909280684,
+      "absolute_mean_difference_split_half_b_upper975": 0.004110220011871178,
+      "absolute_mean_difference_exceeds_both_split_half_upper975": true,
+      "absolute_high_fraction_difference_split_half_a_median": 0.0021598272138228943,
+      "absolute_high_fraction_difference_split_half_a_upper975": 0.0021598272138228943,
+      "absolute_high_fraction_difference_split_half_b_median": 0.006389776357827476,
+      "absolute_high_fraction_difference_split_half_b_upper975": 0.012779552715654952,
+      "absolute_high_fraction_difference_exceeds_both_split_half_upper975": false,
+      "wasserstein_distance_split_half_a_median": 0.0010077683295306341,
+      "wasserstein_distance_split_half_a_upper975": 0.0018157640200502573,
+      "wasserstein_distance_split_half_b_median": 0.0023180386587120455,
+      "wasserstein_distance_split_half_b_upper975": 0.004330975672426506,
+      "wasserstein_distance_exceeds_both_split_half_upper975": false,
+      "ecdf_supremum_split_half_a_median": 0.04967602591792661,
+      "ecdf_supremum_split_half_a_upper975": 0.09071274298056156,
+      "ecdf_supremum_split_half_b_median": 0.06389776357827476,
+      "ecdf_supremum_split_half_b_upper975": 0.11110223642172529,
+      "ecdf_supremum_exceeds_both_split_half_upper975": true
+    },
+    {
+      "patient_id": "NCOMMS2022_S08",
+      "arm": "DFU-healer",
+      "gsm_a": "GSM5050531",
+      "gsm_b": "GSM5050532",
+      "sample_a": "G7",
+      "sample_b": "G8",
+      "n_fibroblasts_a": 452,
+      "n_fibroblasts_b": 1153,
+      "mean_a": 0.35041558163949343,
+      "mean_b": 0.09206639401007247,
+      "high_fraction_a": 0.6880530973451328,
+      "high_fraction_b": 0.1422376409366869,
+      "composition_a": 0.25464788732394367,
+      "composition_b": 0.4770376499793132,
+      "absolute_all_cell_mean_difference": 0.05360948638745479,
+      "absolute_composition_difference": 0.22238976265536953,
+      "absolute_mean_difference": 0.25834918762942094,
+      "absolute_high_fraction_difference": 0.5458154564084459,
+      "wasserstein_distance": 0.258349187629421,
+      "ecdf_supremum": 0.5788919248747015,
+      "absolute_mean_difference_split_half_a_median": 0.014195944738895738,
+      "absolute_mean_difference_split_half_a_upper975": 0.05525373675308269,
+      "absolute_mean_difference_split_half_b_median": 0.005429342520061373,
+      "absolute_mean_difference_split_half_b_upper975": 0.018460988265456238,
+      "absolute_mean_difference_exceeds_both_split_half_upper975": true,
+      "absolute_high_fraction_difference_split_half_a_median": 0.030973451327433565,
+      "absolute_high_fraction_difference_split_half_a_upper975": 0.10176991150442483,
+      "absolute_high_fraction_difference_split_half_b_median": 0.014123579818987098,
+      "absolute_high_fraction_difference_split_half_b_upper975": 0.05112192795590219,
+      "absolute_high_fraction_difference_exceeds_both_split_half_upper975": true,
+      "wasserstein_distance_split_half_a_median": 0.02153659663863678,
+      "wasserstein_distance_split_half_a_upper975": 0.0553738022264324,
+      "wasserstein_distance_split_half_b_median": 0.007614196642486559,
+      "wasserstein_distance_split_half_b_upper975": 0.01891721388885159,
+      "wasserstein_distance_exceeds_both_split_half_upper975": true,
+      "ecdf_supremum_split_half_a_median": 0.0752212389380531,
+      "ecdf_supremum_split_half_a_upper975": 0.14159292035398235,
+      "ecdf_supremum_split_half_b_median": 0.0463153523974581,
+      "ecdf_supremum_split_half_b_upper975": 0.08389358270749084,
+      "ecdf_supremum_exceeds_both_split_half_upper975": true
+    },
+    {
+      "patient_id": "NCOMMS2022_S21",
+      "arm": "Non-diabetic",
+      "gsm_a": "GSM5050555",
+      "gsm_b": "GSM5050556",
+      "sample_a": "G31",
+      "sample_b": "G32",
+      "n_fibroblasts_a": 901,
+      "n_fibroblasts_b": 1020,
+      "mean_a": 0.013581321234158452,
+      "mean_b": 0.01382656681862678,
+      "high_fraction_a": 0.0,
+      "high_fraction_b": 0.0,
+      "composition_a": 0.26002886002886005,
+      "composition_b": 0.2433206106870229,
+      "absolute_all_cell_mean_difference": 0.0002450434660617503,
+      "absolute_composition_difference": 0.01670824934183715,
+      "absolute_mean_difference": 0.00024524558446832774,
+      "absolute_high_fraction_difference": 0.0,
+      "wasserstein_distance": 0.0003481529378292581,
+      "ecdf_supremum": 0.03372179060303371,
+      "absolute_mean_difference_split_half_a_median": 0.0002464439324659706,
+      "absolute_mean_difference_split_half_a_upper975": 0.0007198991058276148,
+      "absolute_mean_difference_split_half_b_median": 0.0002991678987574924,
+      "absolute_mean_difference_split_half_b_upper975": 0.0009158842484740653,
+      "absolute_mean_difference_exceeds_both_split_half_upper975": false,
+      "absolute_high_fraction_difference_split_half_a_median": 0.0,
+      "absolute_high_fraction_difference_split_half_a_upper975": 0.0,
+      "absolute_high_fraction_difference_split_half_b_median": 0.0,
+      "absolute_high_fraction_difference_split_half_b_upper975": 0.0,
+      "absolute_high_fraction_difference_exceeds_both_split_half_upper975": false,
+      "wasserstein_distance_split_half_a_median": 0.0004764122192615494,
+      "wasserstein_distance_split_half_a_upper975": 0.0008095932394561777,
+      "wasserstein_distance_split_half_b_median": 0.0006133646393815667,
+      "wasserstein_distance_split_half_b_upper975": 0.000982066939959265,
+      "wasserstein_distance_exceeds_both_split_half_upper975": false,
+      "ecdf_supremum_split_half_a_median": 0.05608031534860802,
+      "ecdf_supremum_split_half_a_upper975": 0.09658893816210888,
+      "ecdf_supremum_split_half_b_median": 0.05098039215686273,
+      "ecdf_supremum_split_half_b_upper975": 0.09215686274509809,
+      "ecdf_supremum_exceeds_both_split_half_upper975": false
+    },
+    {
+      "patient_id": "NCOMMS2022_S23",
+      "arm": "Non-diabetic",
+      "gsm_a": "GSM5050534",
+      "gsm_b": "GSM5050548",
+      "sample_a": "G10",
+      "sample_b": "G24",
+      "n_fibroblasts_a": 1004,
+      "n_fibroblasts_b": 558,
+      "mean_a": 0.01602080508424674,
+      "mean_b": 0.01413920412831489,
+      "high_fraction_a": 0.0,
+      "high_fraction_b": 0.0,
+      "composition_a": 0.20808290155440415,
+      "composition_b": 0.15874822190611665,
+      "absolute_all_cell_mean_difference": 0.0011066913482754692,
+      "absolute_composition_difference": 0.0493346796482875,
+      "absolute_mean_difference": 0.00188160095593185,
+      "absolute_high_fraction_difference": 0.0,
+      "wasserstein_distance": 0.0019490839149188233,
+      "ecdf_supremum": 0.1865334361478816,
+      "absolute_mean_difference_split_half_a_median": 0.000328257474936991,
+      "absolute_mean_difference_split_half_a_upper975": 0.0010212059597488475,
+      "absolute_mean_difference_split_half_b_median": 0.00041168159221075407,
+      "absolute_mean_difference_split_half_b_upper975": 0.0013392287087009211,
+      "absolute_mean_difference_exceeds_both_split_half_upper975": true,
+      "absolute_high_fraction_difference_split_half_a_median": 0.0,
+      "absolute_high_fraction_difference_split_half_a_upper975": 0.0,
+      "absolute_high_fraction_difference_split_half_b_median": 0.0,
+      "absolute_high_fraction_difference_split_half_b_upper975": 0.0,
+      "absolute_high_fraction_difference_exceeds_both_split_half_upper975": false,
+      "wasserstein_distance_split_half_a_median": 0.0005765739880294438,
+      "wasserstein_distance_split_half_a_upper975": 0.0010626970060759657,
+      "wasserstein_distance_split_half_b_median": 0.0007575728853757243,
+      "wasserstein_distance_split_half_b_upper975": 0.0014767479350937269,
+      "wasserstein_distance_exceeds_both_split_half_upper975": true,
+      "ecdf_supremum_split_half_a_median": 0.05179282868525903,
+      "ecdf_supremum_split_half_a_upper975": 0.09163346613545818,
+      "ecdf_supremum_split_half_b_median": 0.06810035842293904,
+      "ecdf_supremum_split_half_b_upper975": 0.1266129032258065,
+      "ecdf_supremum_exceeds_both_split_half_upper975": true
+    }
+  ],
+  "within_specimen_split_half": {
+    "GSM5050527": {
+      "absolute_mean_difference": {
+        "median": 0.014694440745549847,
+        "central_95_range": [
+          0.000925599354334869,
+          0.04446931967831306
+        ]
+      },
+      "absolute_high_fraction_difference": {
+        "median": 0.023012552301255207,
+        "central_95_range": [
+          0.0020920502092049986,
+          0.0680962343096234
+        ]
+      },
+      "wasserstein_distance": {
+        "median": 0.01846174740478023,
+        "central_95_range": [
+          0.0076596080537916595,
+          0.045249309356199675
+        ]
+      },
+      "ecdf_supremum": {
+        "median": 0.054393305439330575,
+        "central_95_range": [
+          0.029288702928870314,
+          0.09157949790794981
+        ]
+      }
+    },
+    "GSM5050531": {
+      "absolute_mean_difference": {
+        "median": 0.014195944738895738,
+        "central_95_range": [
+          0.00041015014975469836,
+          0.05525373675308269
+        ]
+      },
+      "absolute_high_fraction_difference": {
+        "median": 0.030973451327433565,
+        "central_95_range": [
+          0.004424778761061954,
+          0.10176991150442483
+        ]
+      },
+      "wasserstein_distance": {
+        "median": 0.02153659663863678,
+        "central_95_range": [
+          0.0105843188506922,
+          0.0553738022264324
+        ]
+      },
+      "ecdf_supremum": {
+        "median": 0.0752212389380531,
+        "central_95_range": [
+          0.04424778761061948,
+          0.14159292035398235
+        ]
+      }
+    },
+    "GSM5050532": {
+      "absolute_mean_difference": {
+        "median": 0.005429342520061373,
+        "central_95_range": [
+          0.00023177236384577668,
+          0.018460988265456238
+        ]
+      },
+      "absolute_high_fraction_difference": {
+        "median": 0.014123579818987098,
+        "central_95_range": [
+          0.00024672636241093726,
+          0.05112192795590219
+        ]
+      },
+      "wasserstein_distance": {
+        "median": 0.007614196642486559,
+        "central_95_range": [
+          0.004154414562401267,
+          0.01891721388885159
+        ]
+      },
+      "ecdf_supremum": {
+        "median": 0.0463153523974581,
+        "central_95_range": [
+          0.027259953302522615,
+          0.08389358270749084
+        ]
+      }
+    },
+    "GSM5050534": {
+      "absolute_mean_difference": {
+        "median": 0.000328257474936991,
+        "central_95_range": [
+          1.0545511425756865e-05,
+          0.0010212059597488475
+        ]
+      },
+      "absolute_high_fraction_difference": {
+        "median": 0.0,
+        "central_95_range": [
+          0.0,
+          0.0
+        ]
+      },
+      "wasserstein_distance": {
+        "median": 0.0005765739880294438,
+        "central_95_range": [
+          0.0003416985233010078,
+          0.0010626970060759657
+        ]
+      },
+      "ecdf_supremum": {
+        "median": 0.05179282868525903,
+        "central_95_range": [
+          0.031872509960159334,
+          0.09163346613545818
+        ]
+      }
+    },
+    "GSM5050547": {
+      "absolute_mean_difference": {
+        "median": 0.009782799980290718,
+        "central_95_range": [
+          0.0005861718903282632,
+          0.030874283884205257
+        ]
+      },
+      "absolute_high_fraction_difference": {
+        "median": 0.016253137779234428,
+        "central_95_range": [
+          0.0015741658038549433,
+          0.04816385601100426
+        ]
+      },
+      "wasserstein_distance": {
+        "median": 0.01316318816542108,
+        "central_95_range": [
+          0.0056214617977069815,
+          0.03100559466194558
+        ]
+      },
+      "ecdf_supremum": {
+        "median": 0.03763534970565091,
+        "central_95_range": [
+          0.0217667217872989,
+          0.0663186866392057
+        ]
+      }
+    },
+    "GSM5050548": {
+      "absolute_mean_difference": {
+        "median": 0.00041168159221075407,
+        "central_95_range": [
+          4.730194132761736e-05,
+          0.0013392287087009211
+        ]
+      },
+      "absolute_high_fraction_difference": {
+        "median": 0.0,
+        "central_95_range": [
+          0.0,
+          0.0
+        ]
+      },
+      "wasserstein_distance": {
+        "median": 0.0007575728853757243,
+        "central_95_range": [
+          0.00043097880867553647,
+          0.0014767479350937269
+        ]
+      },
+      "ecdf_supremum": {
+        "median": 0.06810035842293904,
+        "central_95_range": [
+          0.03942652329749108,
+          0.1266129032258065
+        ]
+      }
+    },
+    "GSM5050555": {
+      "absolute_mean_difference": {
+        "median": 0.0002464439324659706,
+        "central_95_range": [
+          9.744277406641566e-06,
+          0.0007198991058276148
+        ]
+      },
+      "absolute_high_fraction_difference": {
+        "median": 0.0,
+        "central_95_range": [
+          0.0,
+          0.0
+        ]
+      },
+      "wasserstein_distance": {
+        "median": 0.0004764122192615494,
+        "central_95_range": [
+          0.0002660216617500187,
+          0.0008095932394561777
+        ]
+      },
+      "ecdf_supremum": {
+        "median": 0.05608031534860802,
+        "central_95_range": [
+          0.030545084996304494,
+          0.09658893816210888
+        ]
+      }
+    },
+    "GSM5050556": {
+      "absolute_mean_difference": {
+        "median": 0.0002991678987574924,
+        "central_95_range": [
+          2.4936949907272947e-05,
+          0.0009158842484740653
+        ]
+      },
+      "absolute_high_fraction_difference": {
+        "median": 0.0,
+        "central_95_range": [
+          0.0,
+          0.0
+        ]
+      },
+      "wasserstein_distance": {
+        "median": 0.0006133646393815667,
+        "central_95_range": [
+          0.0004375889190180476,
+          0.000982066939959265
+        ]
+      },
+      "ecdf_supremum": {
+        "median": 0.05098039215686273,
+        "central_95_range": [
+          0.029852941176470596,
+          0.09215686274509809
+        ]
+      }
+    },
+    "GSM5050557": {
+      "absolute_mean_difference": {
+        "median": 0.0005336452042181087,
+        "central_95_range": [
+          3.080928771601633e-05,
+          0.00170010673988522
+        ]
+      },
+      "absolute_high_fraction_difference": {
+        "median": 0.0021598272138228943,
+        "central_95_range": [
+          0.0021598272138228943,
+          0.0021598272138228943
+        ]
+      },
+      "wasserstein_distance": {
+        "median": 0.0010077683295306341,
+        "central_95_range": [
+          0.0006502258950405918,
+          0.0018157640200502573
+        ]
+      },
+      "ecdf_supremum": {
+        "median": 0.04967602591792661,
+        "central_95_range": [
+          0.03023758099352053,
+          0.09071274298056156
+        ]
+      }
+    },
+    "GSM5050558": {
+      "absolute_mean_difference": {
+        "median": 0.0013498166909280684,
+        "central_95_range": [
+          0.00012096238260071039,
+          0.004110220011871178
+        ]
+      },
+      "absolute_high_fraction_difference": {
+        "median": 0.006389776357827476,
+        "central_95_range": [
+          0.0,
+          0.012779552715654952
+        ]
+      },
+      "wasserstein_distance": {
+        "median": 0.0023180386587120455,
+        "central_95_range": [
+          0.0012522286072688777,
+          0.004330975672426506
+        ]
+      },
+      "ecdf_supremum": {
+        "median": 0.06389776357827476,
+        "central_95_range": [
+          0.03514376996805113,
+          0.11110223642172529
+        ]
+      }
+    }
+  },
+  "interpretation": "Between-specimen disagreement is compared with conditional cell-partition variability in each specimen. Split halves are not biological replicates, confidence intervals, or a null distribution for a patient-level significance test. This is not an ICC or a clinical reliability estimate.",
+  "limitations": [
+    "Only five repeat pairs, including three DFU patients; anatomical microheterogeneity, preparation and annotation differences remain confounded.",
+    "Random disjoint fibroblast halves preserve each specimen's own distribution and use half its cell count; their central range is a finite-cell sampling diagnostic.",
+    "A stable mean across repeated cell partitions cannot establish specimen or assay repeatability."
+  ],
+  "protocol": {
+    "seed": 20260922,
+    "split_half_draws": 250,
+    "split_half_without_replacement": true,
+    "source_sha256": "aed3e7cdb7d63207db82781ad521f3b9c06cca08b7a365b21da8e1f330323014",
+    "map_sha256": "11870be07b8c06e6037c7ab5c532e90907913c390bd180b59cfe1821bebcd96c",
+    "script_sha256": "160ece7687a4a3785857d8232e4efbf3d995b367b2907f51e0cc253ddca9b469"
+  }
+}

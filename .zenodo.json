@@ -1,14 +1,14 @@
 {
-  "title": "Neural topic measurements in diabetic foot ulcer research: analysis software",
+  "title": "Neural topic modelling of fibroblast measurements and diabetic foot ulcer healing: analysis software and reproduction archive",
   "upload_type": "software",
-  "description": "Analysis software for a patient-level audit of fibroblast measurements from a frozen 15-topic logistic-normal expression model in diabetic foot ulcer research. It evaluates score decomposition, whole-count-pipeline sensitivity, author-mapped patient contrasts, paired anatomy and external tissue-context projections. Healing inference involves 11 patients; outcome intervals include zero and the external cohorts do not supply independent healing validation. This is a measurement audit, not a validated prognostic tool. This software archive contains MIT-licensed analysis programs, model definitions, acquisition helpers, tests and environment specifications. Public processed inputs are identified by GEO accession in the reproduction guide. The complete reproduction package, with manuscript, editable figures, frozen weights and numerical results, is available from this project's versioned GitHub release. These research materials retain the rights stated in NOTICE.",
+  "description": "A patient-level audit of frozen neural topic measurements in diabetic foot ulcer research. The release includes the producing analysis programs, public processed inputs, numerical evidence, fixed model states, mappings, and corrected journal documents. Healing inference uses eleven discovery patients. The analysis evaluates measurement decomposition, technical sensitivity, topic selection, refits and tissue context; it does not establish prospective healing prediction or independent clinical validation. This full reproduction archive contains the corrected inline journal manuscript, submission-layout manuscript, supplement, editable journal sources, analysis code, public processed inputs and saved research outputs. The DOI was reserved at local archive assembly; publication is a separate operation. MIT applies to authored software only. Manuscripts, figures, saved research outputs, source-study materials and third-party fonts retain the rights stated in NOTICE; the archive does not relicense those materials.",
   "creators": [
     {
       "name": "Fu, Zeyu"
     }
   ],
-  "version": "0.4.2",
-  "license": "mit",
+  "version": "0.5.0",
+  "license": "other-open",
   "keywords": [
     "single-cell transcriptomics",
     "wound healing",
@@ -21,6 +21,6 @@
       "scheme": "url"
     }
   ],
-  "access_right": "open",
-  "publication_date": "2026-09-25"
+  "doi": "10.5281/zenodo.23308073",
+  "notes": "Mixed-rights archive: the primary software license applies to authored software; see NOTICE and journal/source/measurement/fonts/ for source-data, scholarly-output and font terms."
 }

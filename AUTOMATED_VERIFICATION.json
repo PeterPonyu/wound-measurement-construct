@@ -1,8 +1,8 @@
 {
-  "status": "automated-verified",
-  "human_visual_approved": false,
-  "visual_review_status": "not-recorded",
-  "visual_review": "Image inspection was unavailable; automated layout checks are not visual approval.",
-  "manuscript_pdf_sha256": "70fe1f069ffd1336b0e68078ab5ea828b9d07a430a5296257adbf5440a7ecdc7",
-  "model_training_performed": false
+  "status": "source_closure_and_corrected_journal_build_verified",
+  "journal_source_provenance": "journal/JOURNAL_SOURCE_PROVENANCE.json",
+  "saved_analysis_verification": "analysis_revision/verification/summary.json",
+  "model_training_performed": false,
+  "strict_saved_field_CPU_replay_certified": false,
+  "full_archive_fresh_extraction_checks": "See the external final archive receipt; package metadata is frozen before sealing."
 }

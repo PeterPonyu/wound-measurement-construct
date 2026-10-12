@@ -1,0 +1,77 @@
+{\setlength{\tabcolsep}{2pt}
+\begin{longtable}{@{}p{42mm}p{28mm}p{32mm}p{22mm}p{22mm}@{}}
+\caption{Clinical balance among the 11 DFU patients. Medians are followed by the number of finite values. The shift is the Hodges--Lehmann median of all healed-minus-non-healed pairwise differences. Exact rank probabilities enumerate every allocation of the observed values; sex uses the two-sided Fisher probability. HbA1c is missing for three healed patients and diabetes duration for one. These comparisons do not adjust the healing contrast and do not establish equivalence.}\label{tab:p1clinicalbalance}\\
+\toprule
+Covariate & Healed & Non-healed & Shift & Exact p\\\midrule\endfirsthead
+\multicolumn{5}{l}{\tablename\ \thetable\ (continued)}\\[6pt]
+\toprule
+Covariate & Healed & Non-healed & Shift & Exact p\\\midrule\endhead
+\bottomrule\endfoot
+Age (years) & 63.00 (7) & 52.50 (4) & 9.00 & 0.291\\
+BMI & 34.86 (7) & 36.35 (4) & -1.20 & 0.788\\
+HbA1c & 8.50 (4) & 7.60 (4) & 0.55 & 0.400\\
+Wound area (cm\textsuperscript{2}) & 1.00 (7) & 1.15 (4) & -0.10 & 0.961\\
+Diabetes duration (years) & 13.00 (6) & 12.50 (4) & -0.50 & 1.000\\
+Male & 2/7 & 2/4 & -- & 0.576\\
+\end{longtable}
+}
+{\setlength{\tabcolsep}{2pt}
+\begin{longtable}{@{}p{36mm}p{48mm}p{12mm}p{18mm}p{28mm}@{}}
+\caption{Spearman correlations between the four patient readouts and the clinical covariates, using every finite pair. Probabilities come from 20,000 permutations of the covariate within the available patients. The complete family is shown. No correlation is a covariate-adjusted healing effect.}\label{tab:p1clinicalassoc}\\
+\toprule
+Readout & Covariate & n & Rho & Permutation p\\\midrule\endfirsthead
+\multicolumn{5}{l}{\tablename\ \thetable\ (continued)}\\[6pt]
+\toprule
+Readout & Covariate & n & Rho & Permutation p\\\midrule\endhead
+\bottomrule\endfoot
+All-cell mean & Age (years) & 11 & 0.000 & 1.000\\
+All-cell mean & BMI & 11 & 0.400 & 0.231\\
+All-cell mean & HbA1c & 8 & -0.036 & 0.946\\
+All-cell mean & Wound area (cm\textsuperscript{2}) & 11 & 0.159 & 0.637\\
+All-cell mean & Diabetes duration (years) & 10 & 0.476 & 0.164\\
+Fibroblast mean & Age (years) & 11 & 0.310 & 0.352\\
+Fibroblast mean & BMI & 11 & -0.064 & 0.858\\
+Fibroblast mean & HbA1c & 8 & -0.252 & 0.556\\
+Fibroblast mean & Wound area (cm\textsuperscript{2}) & 11 & -0.178 & 0.599\\
+Fibroblast mean & Diabetes duration (years) & 10 & 0.177 & 0.617\\
+High-score fraction & Age (years) & 11 & 0.255 & 0.450\\
+High-score fraction & BMI & 11 & 0.009 & 0.990\\
+High-score fraction & HbA1c & 8 & -0.252 & 0.556\\
+High-score fraction & Wound area (cm\textsuperscript{2}) & 11 & -0.164 & 0.626\\
+High-score fraction & Diabetes duration (years) & 10 & 0.177 & 0.617\\
+Composition & Age (years) & 11 & -0.146 & 0.668\\
+Composition & BMI & 11 & 0.436 & 0.188\\
+Composition & HbA1c & 8 & 0.647 & 0.092\\
+Composition & Wound area (cm\textsuperscript{2}) & 11 & 0.005 & 0.996\\
+Composition & Diabetes duration (years) & 10 & -0.122 & 0.735\\
+\end{longtable}
+}
+{\setlength{\tabcolsep}{2pt}
+\begin{longtable}{@{}p{32mm}p{36mm}p{42mm}p{22mm}p{18mm}p{18mm}@{}}
+\caption{Frozen fibroblast-associated topic decoder scores in 12 bulk foot samples: 6 ulcers, 3 diabetic intact samples and 3 non-diabetic intact samples. The full array is the primary universe. The DE-filtered sensitivity uses only the submitters' genes that already differ between ulcer and intact skin, so its random-gene distribution is not an independent control. Difference is the mean standardized score in the first named group minus the second. Exact probabilities relabel the samples in that contrast. The random column is the fraction of 4,000 size-matched gene sets whose difference was at least as far from zero; it is undefined for the weight-averaged score. Sample relabellings and gene sets do not add patients, and the series has no healing labels.}\label{tab:p1bulkwound}\\
+\toprule
+Universe & Score & Contrast & Difference & Exact p & Random\\\midrule\endfirsthead
+\multicolumn{6}{l}{\tablename\ \thetable\ (continued)}\\[6pt]
+\toprule
+Universe & Score & Contrast & Difference & Exact p & Random\\\midrule\endhead
+\bottomrule\endfoot
+Full array & Highest 50 weights & Ulcer vs intact & -0.125 & 0.738 & 0.744\\
+Full array & Highest 50 weights & Ulcer vs diabetic intact & -0.069 & 0.881 & 0.865\\
+Full array & Highest 50 weights & Diabetic vs non-diabetic intact & -0.112 & 0.600 & 0.085\\
+Full array & Topic-specific 50 & Ulcer vs intact & 0.662 & 0.0022 & 0.0043\\
+Full array & Topic-specific 50 & Ulcer vs diabetic intact & 0.606 & 0.012 & 0.0092\\
+Full array & Topic-specific 50 & Diabetic vs non-diabetic intact & 0.113 & 0.500 & 0.081\\
+Full array & Weight-averaged overlap & Ulcer vs intact & -0.199 & 0.539 & --\\
+Full array & Weight-averaged overlap & Ulcer vs diabetic intact & -0.113 & 0.821 & --\\
+Full array & Weight-averaged overlap & Diabetic vs non-diabetic intact & -0.172 & 0.600 & --\\
+DE-filtered sensitivity & Highest 50 weights & Ulcer vs intact & 0.035 & 0.864 & 1.000\\
+DE-filtered sensitivity & Highest 50 weights & Ulcer vs diabetic intact & 0.041 & 0.905 & 1.000\\
+DE-filtered sensitivity & Highest 50 weights & Diabetic vs non-diabetic intact & -0.011 & 0.900 & 0.962\\
+DE-filtered sensitivity & Topic-specific 50 & Ulcer vs intact & 0.575 & 0.011 & 0.916\\
+DE-filtered sensitivity & Topic-specific 50 & Ulcer vs diabetic intact & 0.538 & 0.048 & 0.922\\
+DE-filtered sensitivity & Topic-specific 50 & Diabetic vs non-diabetic intact & 0.075 & 0.800 & 0.569\\
+DE-filtered sensitivity & Weight-averaged overlap & Ulcer vs intact & -0.227 & 0.195 & --\\
+DE-filtered sensitivity & Weight-averaged overlap & Ulcer vs diabetic intact & -0.190 & 0.512 & --\\
+DE-filtered sensitivity & Weight-averaged overlap & Diabetic vs non-diabetic intact & -0.073 & 0.600 & --\\
+\end{longtable}
+}

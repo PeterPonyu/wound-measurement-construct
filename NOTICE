@@ -1,25 +1,37 @@
 Copyright (c) 2026 Zeyu Fu
 
-The MIT License in LICENSE applies to the analysis software: Python modules,
-analysis programs, R plotting code, build and verification utilities, and archival scripts. It does not
-relicense the other materials bundled so that the studies can be inspected
-and rebuilt.
+Authored software. LICENSE (MIT) applies to authored Python analysis programs,
+model definitions, R plotting code, build/verification utilities and documentation
+about those programs. The primary software license does not relicense every
+research or third-party material carried in this complete reproduction archive.
 
-Manuscripts, figures, and compiled papers. Native manuscript sources, vector
-figures, compiled PDFs, and the numerical tables prepared as scholarly outputs
-remain the author's copyright. Inclusion in this archive permits inspection
-and reproduction of the reported analyses. Redistribution or reuse of those
-materials requires permission or another applicable right, except where a
-journal or repository later specifies otherwise.
+Scholarly outputs. Manuscripts, figures, compiled papers and scholarly numerical
+tables remain the author's copyright. They are supplied for inspection and
+reproduction of the reported analyses. Their inclusion does not grant a blanket
+MIT license or claim journal publication/acceptance. Applicable later journal
+licenses or other permissions may separately govern reuse.
 
-Source-study data. Count matrices, author cell annotations, and clinical
-metadata originate in the cited public series and published studies. Those
-source-study terms, consent conditions, and repository licenses continue to
-apply. This archive does not relicense them.
+Source-study materials. Public processed count matrices, array signals, supplied
+cell annotations, clinical metadata, source gene lists and source-study extracts
+retain their original repository/study terms, consent conditions and applicable
+rights. Citations and access instructions accompany the analysis. Processed
+RAW-named count archives are not controlled human sequencing reads. Controlled
+human sequencing reads were not used or redistributed. This archive does not
+grant new rights in any source-study material.
 
-Saved models and numerical reports. Frozen model weights, projected
-coordinates, and completed numerical reports are research outputs distributed
-for verification. They are not licensed as MIT software.
+Saved research outputs. Frozen weights, projected coordinates, fitted predictions,
+completed numerical reports and research-input caches are distributed for
+verification and retain their respective research-output rights. They are not
+represented as newly independent biological evidence or blanket MIT software.
 
-Nothing in this archive is a clinically validated diagnostic or prognostic
-tool.
+Fonts and typography. The unmodified bundled TeX Gyre Termes and Termes Math fonts
+retain the GUST Font License / LaTeX Project Public License stated in their
+included license, readme and manifest files. Their original authors and maintenance
+credits remain intact. Proprietary raw Arial font binaries are not bundled or
+relicensed; the delivered PDFs carry their embedded fonts, and the source tree
+records the producing font identity/hash contract and separately licensed font
+requirement. External TeX/Python tools retain their own package licenses; no
+third-party library source is relicensed by this archive's MIT file.
+
+The software/reproduction DOI is distinct from a manuscript or preprint DOI.
+Nothing in this archive is a clinically validated diagnostic or prognostic tool.

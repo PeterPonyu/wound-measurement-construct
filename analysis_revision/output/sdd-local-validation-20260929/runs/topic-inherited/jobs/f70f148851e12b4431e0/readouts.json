@@ -1,0 +1,343 @@
+{
+ "cut": 0.02252382647267624,
+ "cut_scope": "training_patient_fibroblasts_only_descriptive",
+ "patients": [
+  {
+   "fraction": 0.6968325791855203,
+   "mean": 0.029212020337581635,
+   "n_cells": 221,
+   "n_specimens": 1,
+   "partition": "train",
+   "unit": "NCOMMS2022_S01"
+  },
+  {
+   "fraction": 0.35601741238447104,
+   "mean": 0.020719578489661217,
+   "n_cells": 2751,
+   "n_specimens": 2,
+   "partition": "held",
+   "unit": "NCOMMS2022_S02"
+  },
+  {
+   "fraction": 0.0840064620355412,
+   "mean": 0.013095761649310589,
+   "n_cells": 1238,
+   "n_specimens": 1,
+   "partition": "train",
+   "unit": "NCOMMS2022_S03"
+  },
+  {
+   "fraction": 0.5393258426966292,
+   "mean": 0.025911644101142883,
+   "n_cells": 356,
+   "n_specimens": 1,
+   "partition": "held",
+   "unit": "NCOMMS2022_S04"
+  },
+  {
+   "fraction": 0.05338078291814947,
+   "mean": 0.013166747987270355,
+   "n_cells": 843,
+   "n_specimens": 1,
+   "partition": "train",
+   "unit": "NCOMMS2022_S05"
+  },
+  {
+   "fraction": 0.30623141203016857,
+   "mean": 0.019204502925276756,
+   "n_cells": 1552,
+   "n_specimens": 2,
+   "partition": "train",
+   "unit": "NCOMMS2022_S06"
+  },
+  {
+   "fraction": 0.3256880733944954,
+   "mean": 0.020930979400873184,
+   "n_cells": 872,
+   "n_specimens": 1,
+   "partition": "held",
+   "unit": "NCOMMS2022_S07"
+  },
+  {
+   "fraction": 0.456467928988633,
+   "mean": 0.023825950920581818,
+   "n_cells": 1605,
+   "n_specimens": 2,
+   "partition": "train",
+   "unit": "NCOMMS2022_S08"
+  },
+  {
+   "fraction": 0.5289256198347108,
+   "mean": 0.026719674468040466,
+   "n_cells": 363,
+   "n_specimens": 1,
+   "partition": "train",
+   "unit": "NCOMMS2022_S09"
+  },
+  {
+   "fraction": 0.6705882352941176,
+   "mean": 0.031065968796610832,
+   "n_cells": 170,
+   "n_specimens": 1,
+   "partition": "train",
+   "unit": "NCOMMS2022_S10"
+  },
+  {
+   "fraction": 0.11202635914332784,
+   "mean": 0.014291057363152504,
+   "n_cells": 1821,
+   "n_specimens": 1,
+   "partition": "held",
+   "unit": "NCOMMS2022_S11"
+  },
+  {
+   "fraction": 0.2784313725490196,
+   "mean": 0.020061006769537926,
+   "n_cells": 1020,
+   "n_specimens": 1,
+   "partition": "train",
+   "unit": "NCOMMS2022_S19"
+  },
+  {
+   "fraction": 0.40930232558139534,
+   "mean": 0.02123432420194149,
+   "n_cells": 215,
+   "n_specimens": 1,
+   "partition": "train",
+   "unit": "NCOMMS2022_S20"
+  },
+  {
+   "fraction": 0.24613392526822048,
+   "mean": 0.018236946314573288,
+   "n_cells": 1921,
+   "n_specimens": 2,
+   "partition": "train",
+   "unit": "NCOMMS2022_S21"
+  },
+  {
+   "fraction": 0.20399305555555555,
+   "mean": 0.01808246225118637,
+   "n_cells": 1152,
+   "n_specimens": 1,
+   "partition": "train",
+   "unit": "NCOMMS2022_S22"
+  },
+  {
+   "fraction": 0.3748107926716075,
+   "mean": 0.020242922008037567,
+   "n_cells": 1562,
+   "n_specimens": 2,
+   "partition": "train",
+   "unit": "NCOMMS2022_S23"
+  },
+  {
+   "fraction": 0.23529411764705882,
+   "mean": 0.017132114619016647,
+   "n_cells": 153,
+   "n_specimens": 1,
+   "partition": "train",
+   "unit": "NCOMMS2022_S24"
+  },
+  {
+   "fraction": 0.13449691991786447,
+   "mean": 0.014958461746573448,
+   "n_cells": 974,
+   "n_specimens": 1,
+   "partition": "train",
+   "unit": "NCOMMS2022_S25"
+  },
+  {
+   "fraction": 0.4117647058823529,
+   "mean": 0.024190770462155342,
+   "n_cells": 425,
+   "n_specimens": 1,
+   "partition": "train",
+   "unit": "NCOMMS2022_S26"
+  },
+  {
+   "fraction": 0.7653061224489796,
+   "mean": 0.03191894292831421,
+   "n_cells": 196,
+   "n_specimens": 1,
+   "partition": "train",
+   "unit": "NCOMMS2022_S27"
+  }
+ ],
+ "specimens": [
+  {
+   "fraction": 0.6968325791855203,
+   "mean": 0.029212020337581635,
+   "n_cells": 221,
+   "specimen": "GSM5050530",
+   "unit": "NCOMMS2022_S01"
+  },
+  {
+   "fraction": 0.3410041841004184,
+   "mean": 0.02022380195558071,
+   "n_cells": 956,
+   "specimen": "GSM5050527",
+   "unit": "NCOMMS2022_S02"
+  },
+  {
+   "fraction": 0.3710306406685237,
+   "mean": 0.021215355023741722,
+   "n_cells": 1795,
+   "specimen": "GSM5050547",
+   "unit": "NCOMMS2022_S02"
+  },
+  {
+   "fraction": 0.0840064620355412,
+   "mean": 0.013095761649310589,
+   "n_cells": 1238,
+   "specimen": "GSM5050523",
+   "unit": "NCOMMS2022_S03"
+  },
+  {
+   "fraction": 0.5393258426966292,
+   "mean": 0.025911644101142883,
+   "n_cells": 356,
+   "specimen": "GSM5050539",
+   "unit": "NCOMMS2022_S04"
+  },
+  {
+   "fraction": 0.05338078291814947,
+   "mean": 0.013166747987270355,
+   "n_cells": 843,
+   "specimen": "GSM5050533",
+   "unit": "NCOMMS2022_S05"
+  },
+  {
+   "fraction": 0.2386609071274298,
+   "mean": 0.018067659810185432,
+   "n_cells": 926,
+   "specimen": "GSM5050557",
+   "unit": "NCOMMS2022_S06"
+  },
+  {
+   "fraction": 0.3738019169329074,
+   "mean": 0.02034134604036808,
+   "n_cells": 626,
+   "specimen": "GSM5050558",
+   "unit": "NCOMMS2022_S06"
+  },
+  {
+   "fraction": 0.3256880733944954,
+   "mean": 0.020930979400873184,
+   "n_cells": 872,
+   "specimen": "GSM5050563",
+   "unit": "NCOMMS2022_S07"
+  },
+  {
+   "fraction": 0.28761061946902655,
+   "mean": 0.02038641646504402,
+   "n_cells": 452,
+   "specimen": "GSM5050531",
+   "unit": "NCOMMS2022_S08"
+  },
+  {
+   "fraction": 0.6253252385082394,
+   "mean": 0.027265485376119614,
+   "n_cells": 1153,
+   "specimen": "GSM5050532",
+   "unit": "NCOMMS2022_S08"
+  },
+  {
+   "fraction": 0.5289256198347108,
+   "mean": 0.026719674468040466,
+   "n_cells": 363,
+   "specimen": "GSM5050573",
+   "unit": "NCOMMS2022_S09"
+  },
+  {
+   "fraction": 0.6705882352941176,
+   "mean": 0.031065968796610832,
+   "n_cells": 170,
+   "specimen": "GSM5050566",
+   "unit": "NCOMMS2022_S10"
+  },
+  {
+   "fraction": 0.11202635914332784,
+   "mean": 0.014291057363152504,
+   "n_cells": 1821,
+   "specimen": "GSM5050569",
+   "unit": "NCOMMS2022_S11"
+  },
+  {
+   "fraction": 0.2784313725490196,
+   "mean": 0.020061006769537926,
+   "n_cells": 1020,
+   "specimen": "GSM5050540",
+   "unit": "NCOMMS2022_S19"
+  },
+  {
+   "fraction": 0.40930232558139534,
+   "mean": 0.02123432420194149,
+   "n_cells": 215,
+   "specimen": "GSM5050552",
+   "unit": "NCOMMS2022_S20"
+  },
+  {
+   "fraction": 0.25305216426193117,
+   "mean": 0.018307197839021683,
+   "n_cells": 901,
+   "specimen": "GSM5050555",
+   "unit": "NCOMMS2022_S21"
+  },
+  {
+   "fraction": 0.23921568627450981,
+   "mean": 0.018166696652770042,
+   "n_cells": 1020,
+   "specimen": "GSM5050556",
+   "unit": "NCOMMS2022_S21"
+  },
+  {
+   "fraction": 0.20399305555555555,
+   "mean": 0.01808246225118637,
+   "n_cells": 1152,
+   "specimen": "GSM5050574",
+   "unit": "NCOMMS2022_S22"
+  },
+  {
+   "fraction": 0.299800796812749,
+   "mean": 0.018778778612613678,
+   "n_cells": 1004,
+   "specimen": "GSM5050534",
+   "unit": "NCOMMS2022_S23"
+  },
+  {
+   "fraction": 0.449820788530466,
+   "mean": 0.021707065403461456,
+   "n_cells": 558,
+   "specimen": "GSM5050548",
+   "unit": "NCOMMS2022_S23"
+  },
+  {
+   "fraction": 0.23529411764705882,
+   "mean": 0.017132114619016647,
+   "n_cells": 153,
+   "specimen": "GSM5050567",
+   "unit": "NCOMMS2022_S24"
+  },
+  {
+   "fraction": 0.13449691991786447,
+   "mean": 0.014958461746573448,
+   "n_cells": 974,
+   "specimen": "GSM5050538",
+   "unit": "NCOMMS2022_S25"
+  },
+  {
+   "fraction": 0.4117647058823529,
+   "mean": 0.024190770462155342,
+   "n_cells": 425,
+   "specimen": "GSM5050568",
+   "unit": "NCOMMS2022_S26"
+  },
+  {
+   "fraction": 0.7653061224489796,
+   "mean": 0.03191894292831421,
+   "n_cells": 196,
+   "specimen": "GSM5050564",
+   "unit": "NCOMMS2022_S27"
+  }
+ ]
+}

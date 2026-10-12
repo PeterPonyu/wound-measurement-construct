@@ -1,0 +1,310 @@
+{
+  "experiment": "paired_anatomical_positive_control",
+  "status": "completed",
+  "scientific_unit": "author-mapped patient with paired foot and forearm",
+  "scientific_scope": "positive anatomical control for frozen encoder sensitivity; not a healing endpoint, not experiment A, and not an independent cohort",
+  "not_an_independent_cohort": true,
+  "healing_validation": false,
+  "patient_counts": {
+    "mapped_foot_samples": 33,
+    "mapped_forearm_samples": 11,
+    "paired_patients": 10
+  },
+  "qc": {
+    "cells_after_qc": 124729,
+    "min_genes_per_cell": 200,
+    "max_mito": 0.2
+  },
+  "panel": {
+    "size": 7002,
+    "covered": 7002,
+    "fraction": 1.0
+  },
+  "celltype_markers_found": {
+    "keratinocyte": 8,
+    "fibroblast": 7,
+    "myeloid": 8,
+    "t_cell": 7,
+    "b_plasma": 5,
+    "endothelial": 6,
+    "lymphatic_ec": 5,
+    "pericyte_smc": 6,
+    "mast": 5,
+    "melanocyte": 4,
+    "sweat_gland": 5
+  },
+  "topic0_contrasts": {
+    "topic0_all_mean": {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": 0.04757931906347437,
+      "p_two_sided_exact_sign_flip": 0.010731707317073172,
+      "null_95_ci": [
+        -0.04582511808340712,
+        0.04582511808340712
+      ],
+      "bootstrap_95_ci": [
+        0.01188264005875065,
+        0.09161679603429441
+      ]
+    },
+    "topic0_fibro_mean": {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": 0.13982828691137048,
+      "p_two_sided_exact_sign_flip": 0.014634146341463415,
+      "null_95_ci": [
+        -0.13723327733100563,
+        0.13723327733100563
+      ],
+      "bootstrap_95_ci": [
+        0.03929082226158761,
+        0.25107773060103034
+      ]
+    }
+  },
+  "all_topic_contrasts": [
+    {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": 0.04757933342255667,
+      "p_two_sided_exact_sign_flip": 0.010731707317073172,
+      "null_95_ci": [
+        -0.04582512953210637,
+        0.045825129532106365
+      ],
+      "bootstrap_95_ci": [
+        0.011882630055177028,
+        0.09161683678805871
+      ],
+      "topic": 0,
+      "bh_q": 0.04024390243902439
+    },
+    {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": 0.010348632109481132,
+      "p_two_sided_exact_sign_flip": 0.7990243902439025,
+      "null_95_ci": [
+        -0.06913490783615057,
+        0.06913490783615056
+      ],
+      "bootstrap_95_ci": [
+        -0.06155989491141613,
+        0.07931010737083853
+      ],
+      "topic": 1,
+      "bh_q": 0.9564459930313589
+    },
+    {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": 0.09142393367536379,
+      "p_two_sided_exact_sign_flip": 0.002926829268292683,
+      "null_95_ci": [
+        -0.06843471638036887,
+        0.06843471638036885
+      ],
+      "bootstrap_95_ci": [
+        0.05352617734046107,
+        0.1376152945785783
+      ],
+      "topic": 2,
+      "bh_q": 0.02195121951219512
+    },
+    {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": 0.018778604615327057,
+      "p_two_sided_exact_sign_flip": 0.06341463414634146,
+      "null_95_ci": [
+        -0.019298008407313463,
+        0.019298008407313463
+      ],
+      "bootstrap_95_ci": [
+        0.00405009311714273,
+        0.036144875603230216
+      ],
+      "topic": 3,
+      "bh_q": 0.11890243902439024
+    },
+    {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": 0.0015919629769437255,
+      "p_two_sided_exact_sign_flip": 0.8926829268292683,
+      "null_95_ci": [
+        -0.02181934475954997,
+        0.021819344759549966
+      ],
+      "bootstrap_95_ci": [
+        -0.019976832079701124,
+        0.024091179932462667
+      ],
+      "topic": 4,
+      "bh_q": 0.9564459930313589
+    },
+    {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": -0.24911440094749712,
+      "p_two_sided_exact_sign_flip": 0.03609756097560975,
+      "null_95_ci": [
+        -0.23163769671520645,
+        0.23163769671520643
+      ],
+      "bootstrap_95_ci": [
+        -0.42739015441836786,
+        -0.06818933275810786
+      ],
+      "topic": 5,
+      "bh_q": 0.0773519163763066
+    },
+    {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": -0.03616410995658564,
+      "p_two_sided_exact_sign_flip": 0.010731707317073172,
+      "null_95_ci": [
+        -0.029333062366084153,
+        0.02933306236608415
+      ],
+      "bootstrap_95_ci": [
+        -0.056709366204702696,
+        -0.01688100560637741
+      ],
+      "topic": 6,
+      "bh_q": 0.04024390243902439
+    },
+    {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": -0.015901457563898276,
+      "p_two_sided_exact_sign_flip": 0.20780487804878048,
+      "null_95_ci": [
+        -0.022280792164715582,
+        0.02228079216471557
+      ],
+      "bootstrap_95_ci": [
+        -0.03831286682395541,
+        0.004212076992927909
+      ],
+      "topic": 7,
+      "bh_q": 0.3117073170731707
+    },
+    {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": -0.00014840124778108947,
+      "p_two_sided_exact_sign_flip": 0.9746341463414634,
+      "null_95_ci": [
+        -0.00828204004275545,
+        0.008282040042755448
+      ],
+      "bootstrap_95_ci": [
+        -0.008319033983733886,
+        0.009783359122400038
+      ],
+      "topic": 8,
+      "bh_q": 0.9746341463414634
+    },
+    {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": 0.039779488801577376,
+      "p_two_sided_exact_sign_flip": 0.13365853658536586,
+      "null_95_ci": [
+        -0.046693936563893014,
+        0.046693936563893014
+      ],
+      "bootstrap_95_ci": [
+        -0.0015162847347746946,
+        0.08968724706063147
+      ],
+      "topic": 9,
+      "bh_q": 0.22276422764227644
+    },
+    {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": -0.0037683818313744323,
+      "p_two_sided_exact_sign_flip": 0.2448780487804878,
+      "null_95_ci": [
+        -0.005961306966309691,
+        0.00596130696630969
+      ],
+      "bootstrap_95_ci": [
+        -0.008701393471829147,
+        0.0024834462354009815
+      ],
+      "topic": 10,
+      "bh_q": 0.33392461197339246
+    },
+    {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": 0.011126786627985634,
+      "p_two_sided_exact_sign_flip": 0.8536585365853658,
+      "null_95_ci": [
+        -0.07391935022173998,
+        0.07391935022173997
+      ],
+      "bootstrap_95_ci": [
+        -0.059127436525712784,
+        0.09840447190243179
+      ],
+      "topic": 11,
+      "bh_q": 0.9564459930313589
+    },
+    {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": 0.07154084387927041,
+      "p_two_sided_exact_sign_flip": 0.002926829268292683,
+      "null_95_ci": [
+        -0.051722230024102187,
+        0.05172223002410217
+      ],
+      "bootstrap_95_ci": [
+        0.04356470035860291,
+        0.10386476705480915
+      ],
+      "topic": 12,
+      "bh_q": 0.02195121951219512
+    },
+    {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": 0.006834139414721672,
+      "p_two_sided_exact_sign_flip": 0.018536585365853658,
+      "null_95_ci": [
+        -0.006154598659826858,
+        0.006154598659826857
+      ],
+      "bootstrap_95_ci": [
+        0.00246171986965075,
+        0.011806299413500589
+      ],
+      "topic": 13,
+      "bh_q": 0.05560975609756097
+    },
+    {
+      "n_pairs": 10,
+      "observed_difference_foot_minus_forearm": 0.00609296546555089,
+      "p_two_sided_exact_sign_flip": 0.0224390243902439,
+      "null_95_ci": [
+        -0.00546537528447725,
+        0.00546537528447725
+      ],
+      "bootstrap_95_ci": [
+        0.002004004259633164,
+        0.01080325650848165
+      ],
+      "topic": 14,
+      "bh_q": 0.05609756097560975
+    }
+  ],
+  "positive_control_summary": {
+    "n_topics_p_below_0_05": 7,
+    "n_topics_bh_q_below_0_05": 4,
+    "topic0_all_p_below_0_05": true,
+    "topic0_all_bh_q": 0.04024390243902439,
+    "topic0_fibro_p_below_0_05": true,
+    "interpretation": "paired anatomy is a sensitivity control only; a significant topic difference cannot establish healing specificity"
+  },
+  "protocol": {
+    "script_sha256": "bf0d40df47307a16b1053c4731c8c67b7170e4b9b69da3cdb42d83cadf0b135f",
+    "author_map_sha256": "11870be07b8c06e6037c7ab5c532e90907913c390bd180b59cfe1821bebcd96c",
+    "panel_sha256": "85f7f9110c895c918d6e55ff8dd84c7de3f61b46bfbde2d70028cebf46d713c4",
+    "model_sha256": "c54e78d7ebfd26b0d00436e928db3779d93ffd4133a768114698072fb0538ae9",
+    "encoder_refit": false,
+    "patient_pairing": "author-mapped patient; repeated foot samples cell-count-weighted",
+    "test": "exact paired sign-flip over patients; 4000 bootstrap resamples",
+    "seed": 0,
+    "elapsed_seconds": 131.66168594360352
+  }
+}

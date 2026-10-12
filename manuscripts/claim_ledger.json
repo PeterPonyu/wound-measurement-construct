@@ -1,8 +1,18 @@
 {
   "papers": {
     "measurement_construct": {
-      "title": "Neural topic modelling in diabetic foot ulcer research: a patient-level audit of fibroblast measurements",
+      "title": "Neural topic modelling linking fibroblast measurements to clinical observation of diabetic foot ulcer healing in the context of amputation risk: a patient-level audit",
+      "clinical_scope": "Amputation risk is title context only. Evaluated outcomes are source-study healing categories in 11 mapped patients; no amputation endpoint, event rate or risk model was evaluated. Non-healing is not an amputation event.",
       "claims": [
+        {
+          "id": "P1-QUALITY-STABILITY",
+          "status": "diagnostic_only",
+          "source": "output/publication-quality-20261009/p1/verification.json",
+          "source_sha256": "9c43715d2116c4577b1849506d6d6ecdfa07d59c770ac0b72c4d06ee16e35d64",
+          "value": "9 fixed 40000-step fits; 9 complete CPU checkpoint replays; 20 existing people including 11 DFU patients; primary match r=0.603801-0.987605; specimen mean-fraction rho=0.905963-0.950262",
+          "scope": "Capacity/initialization and conditional density sensitivities on full-discovery expression; not new patients, independent state truth, end-to-end held-patient validation, healing prognosis or convergence evidence.",
+          "allowed_wording": "Mean-fraction association remained high despite variable primary decoder matches and person-specific readout dispersion; adverse continuous-density comparisons remain. Nine computational fits add no biological patients."
+        },
         {
           "id": "P1-C01",
           "status": "ready",
@@ -33,7 +43,7 @@
           "value": "healthy non-diabetic foot specimen high-state fraction 0.841",
           "source": "outputs/bimodal_stratification/report.json",
           "scope": "existence counterexample",
-          "allowed_wording": "The highest-purity state occurred in a healthy non-diabetic foot-skin sample; this is an existence counterexample, not a clinical validation."
+          "allowed_wording": "The highest operational high-score fraction (0.841) occurred in a healthy non-diabetic foot-skin specimen; this is an existence counterexample to strict healing specificity, not a measure of cell-state purity or clinical validation."
         },
         {
           "id": "P1-C05",
@@ -41,7 +51,7 @@
           "value": "Fisher p=0.2208; 4/9 healer high versus 0/5 non-healer high",
           "source": "outputs/bimodal_stratification/report.json",
           "scope": "14 DFU samples; exploratory sample unit",
-          "allowed_wording": "The high-state pattern was not exclusive to the healing arm in the discovery sample."
+          "allowed_wording": "Within the 14 DFU specimens, high-mode membership occurred in 4/9 healed and 0/5 non-healed specimens (Fisher p=0.2208); this uncertain table does not establish non-exclusivity. The separate non-diabetic specimen in P1-C04 supplies the counterexample outside this DFU subset."
         },
         {
           "id": "P1-C06",
@@ -80,8 +90,8 @@
           "status": "ready",
           "value": "positive control 3/15 topics separated; minimum p=0.0020",
           "source": "outputs/negative_result_strength/report.json",
-          "scope": "foot versus forearm positive control",
-          "allowed_wording": "A positive anatomical control separated 3 of 15 topics, with minimum p=0.0020."
+          "scope": "historical specimen-unit foot versus forearm control; superseded for current patient-paired interpretation by P1-C24",
+          "allowed_wording": "The historical specimen-unit anatomical control separated 3 of 15 topics (minimum p=0.0020). The current control uses 10 patient pairs and reports 4/15 topics at q<0.05; these analyses must not be conflated. See P1-C24."
         },
         {
           "id": "P1-C11",
@@ -89,7 +99,7 @@
           "value": "cut sweep rho 0.909\u20130.948; K sweep rho 0.924\u20130.947",
           "source": "outputs/method_constant_sensitivity/report.json",
           "scope": "method constant sensitivity",
-          "allowed_wording": "The mixture-weight association was stable across the tested cut and K grids."
+          "allowed_wording": "The correlation between fibroblast mean loading and the fixed-threshold high-score fraction remained high across the tested cut and K grids; this does not identify a biological mixture weight or demonstrate stable cell states."
         },
         {
           "id": "P1-C12",
@@ -121,15 +131,15 @@
           "value": "N3 real p=0.0015; permutation significant fraction 5.0%",
           "source": "outputs/pipeline_negative_control/report.json",
           "scope": "permutation positive control",
-          "allowed_wording": "The positive-control permutation behaved at the nominal 5% rate."
+          "allowed_wording": "Within this particular positive-control permutation reference, 5.0% of the statistics met the significance threshold. This is not evidence of nominal 5% pipeline-wide type-I-error control across repeated datasets."
         },
         {
           "id": "P1-C16",
           "status": "ready",
           "value": "AUC topic 0.822; module 0.844; PCA 0.533; NMF 0.878; no pairwise interval excludes zero",
           "source": "outputs/scientific_revision_20260922/measurement/representation_inference/report.json",
-          "scope": "14 DFU samples; representation benchmark",
-          "allowed_wording": "Point AUC estimates differed, but paired uncertainty did not support a ranking. The deterministic topic projection was revised; other fitted results and paired intervals were reused under the documented cross-arm rank-invariance check."
+          "scope": "historical 14-specimen pooled-fold diagnostic, not a valid cross-representation ranking",
+          "allowed_wording": "These historical AUCs pool held-out coordinates from separately fitted, non-comparable folds. Their fixed-prediction bootstrap intervals cannot establish representation superiority, regardless of whether they span zero. The deterministic topic projection was revised; the fitted outputs and intervals were reused as historical diagnostics, not repaired generalization estimates."
         },
         {
           "id": "P1-C20",
@@ -201,7 +211,7 @@
           "value": "patient-collapsed semantic rho=0.937 across 20 mapped patients",
           "source": "outputs/scientific_revision_20260922/measurement/patient_unit_representation_benchmark/report.json",
           "scope": "semantic audit across mapped discovery and healthy foot samples",
-          "allowed_wording": "The mixture-weight semantic association remains high after patient collapsing in the mapped discovery material."
+          "allowed_wording": "The correlation between fibroblast mean loading and the operational high-score fraction remains high after aggregation to 20 mapped patients; it does not identify a biological mixture weight or validate a healing outcome."
         },
         {
           "id": "P1-C26",
@@ -293,6 +303,51 @@
           },
           "scope": "Frozen-reference QC/gate/score depth sensitivity from every released pre-QC column, no refit.",
           "allowed_wording": "Seeds are not biological replicates; this is not annotation truth or external portability. RT06 remains partially addressed; a computational range is not a clinical acceptance margin."
+        },
+        {
+          "id": "P1-PATIENT-COVARIATES",
+          "status": "exploratory",
+          "source": "output/paper-science-priority-20261001-r1/patient-covariates/report.json",
+          "source_sha256": "258c58bf1482a1e8e8415a0007053dacee98a2fd1b49addd0818b1b7f6cb2eb4",
+          "value": "20 patients; 31 covariates; B/plasma rho 0.8592; CFD/APOD rho -0.7652; PTPRC rho 0.7725; weighted specimen UMI medians rho 0.6622",
+          "scope": "Retrospective patient-unit descriptive update in the existing mixed-arm discovery data",
+          "allowed_wording": "All 31 covariates and patient-deletion ranges are retained. No p values or BH discoveries, adjusted effects or independent validation are supplied; weighted specimen UMI medians are not a pooled-patient median."
+        },
+        {
+          "id": "P1-DFU11-COVARIATES-20261005",
+          "status": "exploratory",
+          "source": "output/autodl-cpu-preparation-20261005-r1/p1-dfu-only/analysis/report.json",
+          "source_sha256": "c5155c5c38f826d146bffb7aefdaeb1f383342a7f6191a1cb50397d66c49578a",
+          "value": "11 DFU patients; 14 specimens; all 31 covariates and 341 omissions; CFD/APOD rho -0.20, omission [-0.369697,+0.042424], two sign reversals",
+          "scope": "Complete patient-unit restricted descriptive family, same discovery patients, high-score fraction rather than healing endpoint",
+          "allowed_wording": "The mixed-20 association weakened after disease restriction; omissions are influence ranges, not confidence intervals. No p/BH discoveries, adjustment, clinical validation or new independent units. Weighted specimen UMI medians are not pooled-patient medians."
+        },
+        {
+          "id": "P1-SAVED-POOLING-BRIDGE-20261005",
+          "status": "exploratory",
+          "source": "output/autodl-cpu-preparation-20261005-r1/p1-pooling-bridge/analysis/report.json",
+          "source_sha256": "2fa416a913929561d79be484638a818d1d7fbc5366ce4a61ab639545088edd0e",
+          "value": "Six saved fits; 120 patient-fit rows; 18 all/train/held summaries; same 20 people, same 16 train/4 held partition",
+          "scope": "Saved cell-pooled versus equal-specimen patient readouts under each fit's original topic/cut, no refit, encoding, checkpoint reload or primary-estimator replacement",
+          "allowed_wording": "All fit contracts and adverse changes retained. Shared discovery-derived QC/gene universe/reference prevents end-to-end independence; seeds, fits and pooled readouts do not create independent patients or validate clinical outcome prediction."
+        },
+        {
+          "id": "P1-BUDGET-PANEL-DIAGNOSTIC",
+          "status": "exploratory",
+          "source": "output/submission-preparation-20261002-r1/measurement/report.json",
+          "source_sha256": "da4401eca504ce5d28759e93362be781e520f3cd7b533122f526fdf26ce80809",
+          "value": "6 saved fits; 16 training / 4 held patients; inherited40k held reconstruction 5.88759/5.88567; same-panel patient null 6.74522; median decoder cosine 0.355/0.345; 1 training and 0 held plateau screens pass",
+          "scope": "Separate all-group budget/panel diagnostics, not the frozen primary estimator or DFU-only clinical validation",
+          "allowed_wording": "All fits and adverse screens retained. Equal-patient reconstruction and historical equal-specimen clinical readouts are not the primary cell-pooled measurement. Training-panel fit remains conditional on discovery-derived gene universe and QC. No cross-panel raw ranking, reference-guided fit selection, convergence proof or independent construct validation."
+        },
+        {
+          "id": "P1-FOLLOWUP-SELECTION-20261011",
+          "status": "diagnostic_only",
+          "source": "output/followup-integration-20261011-r1/p1/audit/report.json",
+          "source_sha256": "b1440d00b8325b174d8950b328dfa8b2868f27015c75ddcf4d93607a9ccbf968",
+          "value": "11 outcome patients; all 330 allocations; named fibroblast-associated topic maximum-calibrated probabilities S=0.784848, M=0.609091, W=0.954545; global W maximum occurs at topic 14, p=0.884848",
+          "scope": "Patient-mean topic-search sensitivity conditional on discovery-trained upstream processing, not a replay of the original cell-weighted arm selection or independent outcome validation.",
+          "allowed_wording": "Retain the difference between named fibroblast-associated topic and global maximum tests, pooled tissue/site confounding, descriptive variance shares, upstream discovery dependence and unsuccessful outcome validation. Non-significance does not establish equivalence or absence of association."
         }
       ]
     }

@@ -1,0 +1,150 @@
+{
+  "status": "complete",
+  "patients": 11,
+  "healed": 7,
+  "nonhealed": 4,
+  "threshold_free_statistic": 0.30451240483676617,
+  "threshold_free_exact_p": 0.18484848484848485,
+  "allocations": 330,
+  "threshold_rows": [
+    {
+      "threshold": 0.05,
+      "is_original": false,
+      "difference": 0.24852505019995175,
+      "exact_p": 0.22424242424242424,
+      "support_max_adjusted_p": 0.3181818181818182
+    },
+    {
+      "threshold": 0.1,
+      "is_original": false,
+      "difference": 0.19579543902265528,
+      "exact_p": 0.30303030303030304,
+      "support_max_adjusted_p": 0.45151515151515154
+    },
+    {
+      "threshold": 0.15,
+      "is_original": false,
+      "difference": 0.1681641456677538,
+      "exact_p": 0.3424242424242424,
+      "support_max_adjusted_p": 0.5606060606060606
+    },
+    {
+      "threshold": 0.18429584801197052,
+      "is_original": true,
+      "difference": 0.151425718383255,
+      "exact_p": 0.3696969696969697,
+      "support_max_adjusted_p": 0.6151515151515151
+    },
+    {
+      "threshold": 0.2,
+      "is_original": false,
+      "difference": 0.14450971258977444,
+      "exact_p": 0.37272727272727274,
+      "support_max_adjusted_p": 0.6424242424242425
+    },
+    {
+      "threshold": 0.3,
+      "is_original": false,
+      "difference": 0.12999265506390817,
+      "exact_p": 0.37272727272727274,
+      "support_max_adjusted_p": 0.7181818181818181
+    },
+    {
+      "threshold": 0.4,
+      "is_original": false,
+      "difference": 0.10288907881057012,
+      "exact_p": 0.39090909090909093,
+      "support_max_adjusted_p": 0.806060606060606
+    },
+    {
+      "threshold": 0.5,
+      "is_original": false,
+      "difference": 0.08192747852578666,
+      "exact_p": 0.36666666666666664,
+      "support_max_adjusted_p": 0.8757575757575757
+    },
+    {
+      "threshold": 0.6,
+      "is_original": false,
+      "difference": 0.057010093002268905,
+      "exact_p": 0.3090909090909091,
+      "support_max_adjusted_p": 0.9484848484848485
+    }
+  ],
+  "sampling": [
+    {
+      "sensitivity": "Equal 100 cells per specimen",
+      "readout": "fibroblast_mean",
+      "comparisons": 250,
+      "difference_mean": 0.09662352580960142,
+      "difference_min": 0.07486173191099496,
+      "difference_max": 0.12325984120161076,
+      "p_min": 0.12727272727272726,
+      "p_max": 0.3878787878787879,
+      "positive": 250
+    },
+    {
+      "sensitivity": "Equal 100 cells per specimen",
+      "readout": "high_state_fraction",
+      "comparisons": 250,
+      "difference_mean": 0.16592857142857143,
+      "difference_min": 0.10982142857142854,
+      "difference_max": 0.22285714285714292,
+      "p_min": 0.15151515151515152,
+      "p_max": 0.5666666666666667,
+      "positive": 250
+    },
+    {
+      "sensitivity": "One specimen per patient",
+      "readout": "fibroblast_mean",
+      "comparisons": 8,
+      "difference_mean": 0.09736240890737449,
+      "difference_min": 0.07769000802957729,
+      "difference_max": 0.11703480978517171,
+      "p_min": 0.23333333333333334,
+      "p_max": 0.3303030303030303,
+      "positive": 8
+    },
+    {
+      "sensitivity": "One specimen per patient",
+      "readout": "high_state_fraction",
+      "comparisons": 8,
+      "difference_mean": 0.16827174837401238,
+      "difference_min": 0.12844558321142607,
+      "difference_max": 0.20809791353659862,
+      "p_min": 0.26666666666666666,
+      "p_max": 0.4393939393939394,
+      "positive": 8
+    },
+    {
+      "sensitivity": "One specimen per patient",
+      "readout": "fibroblast_fraction",
+      "comparisons": 8,
+      "difference_mean": 0.06789745041795855,
+      "difference_min": 0.043961464811887035,
+      "difference_max": 0.09183343602403007,
+      "p_min": 0.39090909090909093,
+      "p_max": 0.6515151515151515,
+      "positive": 8
+    }
+  ],
+  "limits": "Retrospective patient-label exchangeability assumption; sampling ranges are not confidence intervals or independent replications",
+  "provenance": {
+    "script_sha256": "5590a1a4e7e15f8bb6ae3ed1c54130ddf6aee1b71b340daf7f386a1eb4ea63bf",
+    "protocol_sha256": "eeb51bbacde72bc079f2b37876c59dd78da6cbf971dc7cc76b1b5c30f7df330b",
+    "input_sha256": {
+      "outputs/celltype_resolved/GSE165816_discovery_theta.parquet": "aed3e7cdb7d63207db82781ad521f3b9c06cca08b7a365b21da8e1f330323014",
+      "outputs/biological_expansion/measurement/specimen_readouts.csv": "7ee52a29570f82a3f6ce6cd884ca0cbff6b7ff2712149bcd588a0958ba3dd376",
+      "outputs/biological_expansion/measurement/report.json": "aafb26d9ac6ad5e46b1b24fcf0ba05de18bad34de6917a89bd0bdce94267bf5d",
+      "scripts/expand_biological_evidence.py": "e007b728fab165abb38855d42c67e5cb29ba2d469a6f2dc15327f1c7bf9793ed"
+    },
+    "output_sha256": {
+      "ecdf_permutation_null.csv": "417ef2af9b4119795d6527ab8d6477cb470371647ed6594f74d4ff7ab266c1b1",
+      "equal_cell_draws.csv": "2f3c5475cb6d8510d4703b5a1009e9b8b9c8dd15e940e276e69e6b98d8be8aeb",
+      "one_specimen_choices.csv": "e04c313693e0260e93b80582131f10a2e4965c3146528ed064c8b4ecdbdd5343",
+      "patient_ecdf_contrast.csv": "c2ddcb50ab3aa3d4dc4174eba12aca487341c08d0b2fcb7a4bfccd8d3a7f65f1",
+      "sampling_summary.csv": "018c58cf2ed158eddea3e41fc1023a54368a32ab3564618d9154e4775be864a1",
+      "threshold_sensitivity.csv": "5c5b815987183f49828c2a35be2d2d0779b054226761f119e47bccf1cc9bcf68"
+    }
+  }
+}

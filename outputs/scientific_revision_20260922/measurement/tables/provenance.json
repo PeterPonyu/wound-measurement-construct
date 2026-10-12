@@ -1,0 +1,9 @@
+{
+  "source_sha256": {
+    "inference_table": "33bc8627867511ac1714fe1c7643bc106e9c20636f8049df9fcab5a31c3ab279",
+    "patient_table": "d814a29fa49d63be1ac55b93b9d536a42d2924eba9416db94e1b43b318d6b0da",
+    "cross_table": "b92593e0da222b77ed10f9c4b48c894ace7db06fa9966f8f63a8dbe57ad45290"
+  },
+  "paired_anatomy_row": "Retained verbatim in numerical content from original patient/anatomy CSV; independent analysis not recalculated here.",
+  "auc_p_convention": "p_one_sided and patient p_value use retained add-one AUC convention; updated all-cell mean-contrast reports instead prioritize exhaustive k/N."
+}

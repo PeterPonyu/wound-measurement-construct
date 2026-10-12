@@ -1,0 +1,64 @@
+{\setlength{\tabcolsep}{2pt}
+\begin{longtable}{@{}p{12mm}p{13mm}p{35mm}p{26mm}p{40mm}p{37mm}@{}}
+\caption{Every fixed 40,000-step topic fit and its primary one-to-one reference match. Correlation is calculated on square-root decoder probabilities. The specimen mean--fraction association uses the fit-specific full-discovery fibroblast cut and is descriptive. Unmatched reference topics, including capacity-constrained omissions at K=10, are retained. No seed or match-quality threshold selects the primary result.}\label{tab:p1qualityfits}\\
+\toprule
+K & Seed & Primary match & Decoder r & Mean--fraction rho & Unmatched reference\\\midrule\endfirsthead
+\multicolumn{6}{l}{\tablename\ \thetable\ (continued)}\\[6pt]
+\toprule
+K & Seed & Primary match & Decoder r & Mean--fraction rho & Unmatched reference\\\midrule\endhead
+\bottomrule\endfoot
+10 & 0 & assigned & 0.817 & 0.946 & 5\\
+10 & 1 & assigned & 0.938 & 0.916 & 5\\
+10 & 2 & assigned & 0.965 & 0.906 & 5\\
+15 & 0 & assigned & 0.980 & 0.922 & 0\\
+15 & 1 & assigned & 0.982 & 0.918 & 0\\
+15 & 2 & assigned & 0.746 & 0.950 & 0\\
+20 & 0 & assigned & 0.988 & 0.912 & 0\\
+20 & 1 & assigned & 0.832 & 0.933 & 0\\
+20 & 2 & assigned & 0.604 & 0.925 & 0\\
+\end{longtable}
+}
+{\setlength{\tabcolsep}{2pt}
+\begin{longtable}{@{}p{9mm}p{11mm}p{29mm}p{29mm}p{29mm}p{29mm}p{29mm}@{}}
+\caption{All five conditional density comparisons for every capacity/seed fit. Positive transformed-score log-density differences favor the first family. Each cell gives the specimen median in nats/cell, the number of people favoring the first family in parentheses (out of 20), and the full range of equal-specimen patient means on its second line; these are not confidence intervals. M1/M2 reweight shared components, C1/C2 shift or shift-and-scale a continuous shared shape, and H1 weights cut-separated reference components by the training-half high-score fraction. These conditional scores exclude the scored patient from reference-density fitting but not from expression-representation training. All values are descriptive nats/cell, without state identification or sign-test inference.}\label{tab:p1qualitydensity}\\
+\toprule
+K & Seed & M1 vs C1 & M2 vs C2 & M1 vs C2 & H1 vs C1 & M1 vs H1\\\midrule\endfirsthead
+\multicolumn{7}{l}{\tablename\ \thetable\ (continued)}\\[6pt]
+\toprule
+K & Seed & M1 vs C1 & M2 vs C2 & M1 vs C2 & H1 vs C1 & M1 vs H1\\\midrule\endhead
+\bottomrule\endfoot
+10 & 0 & 0.095 (16/20)\newline [-0.475, 0.371] & 0.053 (18/20)\newline [-0.024, 0.248] & 0.023 (15/20)\newline [-0.492, 0.254] & 0.076 (14/20)\newline [-0.404, 0.282] & 0.030 (16/20)\newline [-0.070, 0.166]\\
+10 & 1 & 0.204 (14/20)\newline [-0.376, 0.949] & 0.072 (16/20)\newline [-0.155, 0.247] & 0.043 (12/20)\newline [-0.406, 0.185] & 0.141 (15/20)\newline [-0.506, 0.953] & 0.039 (14/20)\newline [-0.113, 0.221]\\
+10 & 2 & 0.208 (14/20)\newline [-0.330, 0.835] & 0.055 (15/20)\newline [-0.053, 0.275] & 0.022 (11/20)\newline [-0.366, 0.253] & 0.139 (15/20)\newline [-0.464, 0.836] & 0.043 (13/20)\newline [-0.100, 0.210]\\
+15 & 0 & 0.235 (14/20)\newline [-0.374, 1.027] & 0.070 (17/20)\newline [-0.163, 0.385] & 0.044 (13/20)\newline [-0.394, 0.267] & 0.178 (13/20)\newline [-0.492, 1.037] & 0.051 (13/20)\newline [-0.102, 0.255]\\
+15 & 1 & 0.222 (13/20)\newline [-0.452, 1.050] & 0.050 (13/20)\newline [-0.149, 0.413] & -0.001 (8/20)\newline [-0.580, 0.295] & 0.166 (13/20)\newline [-0.525, 1.064] & 0.048 (13/20)\newline [-0.041, 0.238]\\
+15 & 2 & 0.173 (14/20)\newline [-0.395, 0.640] & 0.055 (16/20)\newline [-0.063, 0.239] & 0.023 (10/20)\newline [-0.389, 0.190] & 0.115 (14/20)\newline [-0.409, 0.565] & 0.038 (19/20)\newline [-0.006, 0.261]\\
+20 & 0 & 0.251 (14/20)\newline [-0.430, 1.123] & 0.084 (16/20)\newline [-0.143, 0.542] & 0.060 (12/20)\newline [-0.445, 0.433] & 0.201 (15/20)\newline [-0.521, 1.143] & 0.061 (14/20)\newline [-0.040, 0.283]\\
+20 & 1 & 0.218 (14/20)\newline [-0.562, 0.758] & 0.047 (16/20)\newline [-0.097, 0.269] & -0.008 (9/20)\newline [-0.581, 0.247] & 0.168 (14/20)\newline [-0.553, 0.699] & 0.043 (17/20)\newline [-0.090, 0.259]\\
+20 & 2 & 0.130 (14/20)\newline [-0.414, 0.775] & 0.056 (14/20)\newline [-0.122, 0.252] & 0.017 (10/20)\newline [-0.412, 0.180] & 0.099 (14/20)\newline [-0.431, 0.672] & 0.024 (20/20)\newline [0.004, 0.214]\\
+\end{longtable}
+}
+\clearpage
+{\setlength{\tabcolsep}{2pt}
+\begin{longtable}{@{}p{10mm}p{32mm}p{40mm}p{24mm}p{27mm}p{30mm}@{}}
+\caption{Computational seed dispersion in all 20 mapped people, separately by capacity, readout and population. For each person the range spans the three seeds; the table summarizes those person-specific ranges. Complete counts name people with all three estimable readouts. Equal-specimen means within patient are used only in this sensitivity experiment, not as replacements for the primary cell-pooled outcome measurements. Each fit has its own topic and descriptive fibroblast cut; cross-fit biological scale and patient confidence intervals are not implied.}\label{tab:p1qualityranges}\\
+\toprule
+K & Population & Readout & Complete /20 & Median range & Maximum range\\\midrule\endfirsthead
+\multicolumn{6}{l}{\tablename\ \thetable\ (continued)}\\[6pt]
+\toprule
+K & Population & Readout & Complete /20 & Median range & Maximum range\\\midrule\endhead
+\bottomrule\endfoot
+10 & all cells & Fraction above cut & 20 & 0.034 & 0.160\\
+10 & all cells & Mean loading & 20 & 0.011 & 0.112\\
+10 & fibroblast only & Fraction above cut & 20 & 0.029 & 0.365\\
+10 & fibroblast only & Mean loading & 20 & 0.011 & 0.226\\
+15 & all cells & Fraction above cut & 20 & 0.014 & 0.173\\
+15 & all cells & Mean loading & 20 & 0.007 & 0.058\\
+15 & fibroblast only & Fraction above cut & 20 & 0.005 & 0.331\\
+15 & fibroblast only & Mean loading & 20 & 0.006 & 0.230\\
+20 & all cells & Fraction above cut & 20 & 0.035 & 0.109\\
+20 & all cells & Mean loading & 20 & 0.009 & 0.101\\
+20 & fibroblast only & Fraction above cut & 20 & 0.011 & 0.357\\
+20 & fibroblast only & Mean loading & 20 & 0.008 & 0.277\\
+\end{longtable}
+}

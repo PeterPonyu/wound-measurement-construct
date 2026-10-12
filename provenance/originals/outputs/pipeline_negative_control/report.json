@@ -1,0 +1,60 @@
+{
+  "N1_label_permutation": {
+    "observed": 0.23803823170722263,
+    "n_draws": 20000,
+    "null_mean": -0.0005686560508732213,
+    "null_sd": 0.15770909351686618,
+    "null_ci95": [
+      -0.31828931263123467,
+      0.28736751242080283
+    ],
+    "p_two_sided": 0.13575,
+    "observed_inside_null": true,
+    "passes": true
+  },
+  "N2_structureless_input": {
+    "n_cells": 6000,
+    "perplexity_real": 3.684553384780884,
+    "perplexity_null": 14.430119514465332,
+    "audit_real": {
+      "reachability_survival": 1.0,
+      "edge_survival_score": 0.9386564380191706,
+      "edge_survival_n_sources": 2000,
+      "edge_survival_exact": false,
+      "mean_perplexity": 3.684553384780884,
+      "near_uniform_warning": false,
+      "manifold_intact": true
+    },
+    "audit_null": {
+      "reachability_survival": 1.0,
+      "edge_survival_score": 0.7163855122798313,
+      "edge_survival_n_sources": 2000,
+      "edge_survival_exact": false,
+      "mean_perplexity": 14.430119514465332,
+      "near_uniform_warning": true,
+      "manifold_intact": false
+    },
+    "passes": true,
+    "note": "Column shuffle preserves every gene marginal and destroys co-expression. Perplexity is the discriminating statistic; reachability alone is not, because a shuffled cloud is still connected."
+  },
+  "N3_permuted_positive_control": {
+    "p_real": 0.0015183622059333974,
+    "n_foot": 33,
+    "n_forearm": 11,
+    "fraction_significant_under_permutation": 0.0495,
+    "passes": true
+  },
+  "all_negative_controls_pass": true,
+  "protocol": {
+    "seed": 0,
+    "n_perm": 20000,
+    "theta_cut": 0.18429584801197052,
+    "retrains_model": false,
+    "script_sha256": "b895116f502564e5466e6845199c493fae896bedcf56f6aa0fbbb0e39533cabb",
+    "elapsed_seconds": 172.9158582687378
+  },
+  "scope": {
+    "patient_level_inference_available": false,
+    "limit": "Negative controls on the discovery cohort only. They show the pipeline stays quiet on null input; they do not validate any positive finding."
+  }
+}

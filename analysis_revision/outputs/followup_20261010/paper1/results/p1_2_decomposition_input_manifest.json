@@ -1,0 +1,7 @@
+{
+  "script": "p1_2_decomposition",
+  "inputs_sha256": {
+    "outputs/followup_20261010/paper1/results/p1_2_projected_cells.parquet": "8de91eb18f0a3ba4ff4d0e3cd422fdd3a9037b199582f71a55938a9b234f3dd2",
+    "outputs/repaired_20260918/paired_anatomical_control/paired_patient_scores.csv": "803a2543721bb665eb2418f9c1b989984bd8de1104e2915d6151bf232330a077"
+  }
+}

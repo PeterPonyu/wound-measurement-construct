@@ -1,0 +1,1276 @@
+{
+  "status": "survey_complete_no_admitted_cohort",
+  "independent_prognostic_validation_admitted": false,
+  "not_an_independent_validation": true,
+  "any_prognostic_accepted": false,
+  "mcid_filled": false,
+  "n_series_surveyed": 5,
+  "prognostic_accepted_count": 0,
+  "projection_accepted_count": 0,
+  "closest_public_hit": {
+    "accession": "GSE272918",
+    "why_closest": "Only surveyed series with a GEO-deposited patient number field.",
+    "why_still_rejected": [
+      "bulk RNA-seq cannot enter the frozen scRNA-seq expression representation encoder",
+      "no healed/not_healed labels for the three sequenced patients",
+      "no wound_id",
+      "no follow_up_days for a healing endpoint",
+      "n=3 is below the registered design-power floor"
+    ]
+  },
+  "cohorts": [
+    {
+      "accession": "GSE268834",
+      "assay": "scRNA-seq",
+      "n_gsm": 8,
+      "n_named_patient_rows": 0,
+      "n_named_patients": 0,
+      "patient_id_source_values": [
+        "geo_title_only"
+      ],
+      "prognostic": {
+        "status": "rejected",
+        "errors": [
+          "follow_up_days has 8 missing/blank values",
+          "healing_status has 8 missing/blank values",
+          "patient_id has 8 missing/blank values",
+          "timepoint_days has 8 missing/blank values",
+          "wound_id has 8 missing/blank values",
+          "patient_id_source must be exactly 'authoritative'; found geo_title_only",
+          "duplicate patient_id + wound_id + timepoint_days rows",
+          "timepoint_days must be numeric and non-negative",
+          "healing_status must use healed/not_healed; found ",
+          "both healed and not_healed patients are required",
+          "follow_up_days must be numeric and non-negative"
+        ],
+        "warnings": [
+          "fewer than two independent patients; no comparative inference",
+          "one or more patients lack a timepoint_days=0 row"
+        ],
+        "patient_count": 1
+      },
+      "projection": {
+        "status": "rejected",
+        "errors": [
+          "patient_id has 8 missing/blank values",
+          "timepoint_days has 8 missing/blank values",
+          "wound_id has 8 missing/blank values",
+          "patient_id_source must be exactly 'authoritative'; found geo_title_only",
+          "duplicate patient_id + wound_id + timepoint_days rows",
+          "timepoint_days must be numeric and non-negative"
+        ],
+        "warnings": [
+          "fewer than two independent patients; no comparative inference",
+          "one or more patients lack a timepoint_days=0 row"
+        ]
+      },
+      "independent_prognostic_validation_eligible": false,
+      "why_not_independent_prognostic_validation": [
+        "no authoritative patient_id",
+        "no healed/not_healed labels",
+        "diabetic versus non-diabetic is not a healing endpoint"
+      ],
+      "notes": {
+        "accession": "GSE268834",
+        "assay": "scRNA-seq",
+        "n_gsm": 8,
+        "titles": [
+          "non-diabetic wound [SC_W4]",
+          "non-diabetic wound [SC_W6]",
+          "diabetic wound [SC_W7]",
+          "diabetic wound [SC_W8]",
+          "diabetic wound [SC_W9]",
+          "diabetic wound [SC_W10]",
+          "diabetic wound [SC_W11]",
+          "non-diabetic wound [SC_W5]"
+        ],
+        "disease_labels": [
+          "non-diabetic wound",
+          "non-diabetic wound",
+          "diabetic wound",
+          "diabetic wound",
+          "diabetic wound",
+          "diabetic wound",
+          "diabetic wound",
+          "non-diabetic wound"
+        ],
+        "patient_id_source_reason": "GEO deposits titles such as SC_W4 and diabetic versus non-diabetic tissue type. That is not an authoritative subject identifier and is not a healing endpoint.",
+        "batch_source": "GEO extract protocol: 10x Genomics single-cell suspensions from diabetic and non-diabetic wounds. No per-sample chemistry version.",
+        "sequencing_run_source": "GEO !Sample_instrument_model is Illumina NovaSeq 6000 for all eight samples. No flowcell identifiers.",
+        "independent_prognostic_validation_eligible": false,
+        "why_not_independent_prognostic_validation": [
+          "no authoritative patient_id",
+          "no healed/not_healed labels",
+          "diabetic versus non-diabetic is not a healing endpoint"
+        ]
+      },
+      "contract_csv": "cohort_metadata/next_public_cohorts/GSE268834_contract_input.csv"
+    },
+    {
+      "accession": "GSE272918",
+      "assay": "bulk_rnaseq",
+      "n_gsm": 6,
+      "n_named_patient_rows": 6,
+      "n_named_patients": 3,
+      "patient_id_source_values": [
+        "authoritative"
+      ],
+      "prognostic": {
+        "status": "rejected",
+        "errors": [
+          "follow_up_days has 6 missing/blank values",
+          "healing_status has 6 missing/blank values",
+          "wound_id has 6 missing/blank values",
+          "healing_status must use healed/not_healed; found ",
+          "both healed and not_healed patients are required",
+          "follow_up_days must be numeric and non-negative"
+        ],
+        "warnings": [],
+        "patient_count": 3
+      },
+      "projection": {
+        "status": "rejected",
+        "errors": [
+          "wound_id has 6 missing/blank values"
+        ],
+        "warnings": []
+      },
+      "independent_prognostic_validation_eligible": false,
+      "why_not_independent_prognostic_validation": [
+        "bulk RNA-seq cannot enter the frozen scRNA-seq expression representation encoder",
+        "no healed/not_healed labels for the three sequenced patients",
+        "no wound_id",
+        "no follow_up_days for a healing endpoint",
+        "n=3 is below the registered design-power floor"
+      ],
+      "notes": {
+        "accession": "GSE272918",
+        "assay": "bulk_rnaseq",
+        "n_gsm": 6,
+        "titles": [
+          "before-patient 1",
+          "after-patient 1",
+          "before-patient 2",
+          "after-patient 2",
+          "before-patient 3",
+          "after-patient 3"
+        ],
+        "geo_patient_numbers": [
+          "1",
+          "1",
+          "2",
+          "2",
+          "3",
+          "3"
+        ],
+        "treatments": [
+          "",
+          "NPWT",
+          "",
+          "NPWT",
+          "",
+          "NPWT"
+        ],
+        "patient_id_source_reason": "GEO !Sample_characteristics_ch1 includes depositor field 'patient number' for all six samples. That is authoritative subject identity, not a title parse.",
+        "timepoint_source": "GEO time point is before/after treatment; overall design states full-thickness wound-edge tissue before and after 1 week of NPWT. timepoint_days 0 and 7 are that documented interval, not a healing follow-up window.",
+        "batch_source": "GEO extract protocol: Illumina TruSeq Stranded mRNA library prep. Series-level process ID only.",
+        "sequencing_run_source": "GEO !Sample_instrument_model is Illumina HiSeq 2500 for all six samples. No flowcell identifiers.",
+        "paper_note": "PMID 39301661 validated FUS/ILF2 by qPCR in 24 additional DFU patients and reported a 4-week healing association in that qPCR set. Those 24 patients are not in this GEO series. Their healing labels are not assigned to the three RNA-seq patients.",
+        "independent_prognostic_validation_eligible": false,
+        "why_not_independent_prognostic_validation": [
+          "bulk RNA-seq cannot enter the frozen scRNA-seq expression representation encoder",
+          "no healed/not_healed labels for the three sequenced patients",
+          "no wound_id",
+          "no follow_up_days for a healing endpoint",
+          "n=3 is below the registered design-power floor"
+        ]
+      },
+      "contract_csv": "cohort_metadata/next_public_cohorts/GSE272918_contract_input.csv"
+    },
+    {
+      "accession": "GSE248247",
+      "assay": "scRNA-seq",
+      "n_gsm": 2,
+      "n_named_patient_rows": 0,
+      "n_named_patients": 0,
+      "patient_id_source_values": [
+        "geo_title_only"
+      ],
+      "prognostic": {
+        "status": "rejected",
+        "errors": [
+          "follow_up_days has 2 missing/blank values",
+          "healing_status has 2 missing/blank values",
+          "patient_id has 2 missing/blank values",
+          "timepoint_days has 2 missing/blank values",
+          "wound_id has 2 missing/blank values",
+          "patient_id_source must be exactly 'authoritative'; found geo_title_only",
+          "duplicate patient_id + wound_id + timepoint_days rows",
+          "timepoint_days must be numeric and non-negative",
+          "healing_status must use healed/not_healed; found ",
+          "both healed and not_healed patients are required",
+          "follow_up_days must be numeric and non-negative"
+        ],
+        "warnings": [
+          "fewer than two independent patients; no comparative inference",
+          "one or more patients lack a timepoint_days=0 row"
+        ],
+        "patient_count": 1
+      },
+      "projection": {
+        "status": "rejected",
+        "errors": [
+          "patient_id has 2 missing/blank values",
+          "timepoint_days has 2 missing/blank values",
+          "wound_id has 2 missing/blank values",
+          "patient_id_source must be exactly 'authoritative'; found geo_title_only",
+          "duplicate patient_id + wound_id + timepoint_days rows",
+          "timepoint_days must be numeric and non-negative"
+        ],
+        "warnings": [
+          "fewer than two independent patients; no comparative inference",
+          "one or more patients lack a timepoint_days=0 row"
+        ]
+      },
+      "independent_prognostic_validation_eligible": false,
+      "why_not_independent_prognostic_validation": [
+        "no authoritative patient_id",
+        "no healed/not_healed labels",
+        "n=2 and diabetic versus non-diabetic is not a healing endpoint"
+      ],
+      "notes": {
+        "accession": "GSE248247",
+        "assay": "scRNA-seq",
+        "n_gsm": 2,
+        "titles": [
+          "human diabetic foot ulcer",
+          "human non-diabetic ulcer"
+        ],
+        "patient_id_source_reason": "Two samples titled human diabetic foot ulcer and human non-diabetic ulcer. The extract protocol mentions one DFU patient but does not name that person. Titles are not promoted to patient IDs.",
+        "independent_prognostic_validation_eligible": false,
+        "why_not_independent_prognostic_validation": [
+          "no authoritative patient_id",
+          "no healed/not_healed labels",
+          "n=2 and diabetic versus non-diabetic is not a healing endpoint"
+        ]
+      },
+      "contract_csv": "cohort_metadata/next_public_cohorts/GSE248247_contract_input.csv"
+    },
+    {
+      "accession": "GSE219078",
+      "assay": "bulk_rnaseq_cultured_hdmec",
+      "n_gsm": 8,
+      "n_named_patient_rows": 0,
+      "n_named_patients": 0,
+      "patient_id_source_values": [
+        "geo_title_only"
+      ],
+      "prognostic": {
+        "status": "rejected",
+        "errors": [
+          "follow_up_days has 8 missing/blank values",
+          "healing_status has 8 missing/blank values",
+          "patient_id has 8 missing/blank values",
+          "timepoint_days has 8 missing/blank values",
+          "wound_id has 8 missing/blank values",
+          "patient_id_source must be exactly 'authoritative'; found geo_title_only",
+          "duplicate patient_id + wound_id + timepoint_days rows",
+          "timepoint_days must be numeric and non-negative",
+          "healing_status must use healed/not_healed; found ",
+          "both healed and not_healed patients are required",
+          "follow_up_days must be numeric and non-negative"
+        ],
+        "warnings": [
+          "fewer than two independent patients; no comparative inference",
+          "one or more patients lack a timepoint_days=0 row"
+        ],
+        "patient_count": 1
+      },
+      "projection": {
+        "status": "rejected",
+        "errors": [
+          "patient_id has 8 missing/blank values",
+          "timepoint_days has 8 missing/blank values",
+          "wound_id has 8 missing/blank values",
+          "patient_id_source must be exactly 'authoritative'; found geo_title_only",
+          "duplicate patient_id + wound_id + timepoint_days rows",
+          "timepoint_days must be numeric and non-negative"
+        ],
+        "warnings": [
+          "fewer than two independent patients; no comparative inference",
+          "one or more patients lack a timepoint_days=0 row"
+        ]
+      },
+      "independent_prognostic_validation_eligible": false,
+      "why_not_independent_prognostic_validation": [
+        "cultured endothelial cells, not wound single-cell tissue",
+        "no authoritative patient_id",
+        "no healed/not_healed labels"
+      ],
+      "notes": {
+        "accession": "GSE219078",
+        "assay": "bulk_rnaseq_cultured_hdmec",
+        "n_gsm": 8,
+        "titles": [
+          "HDMEC, Control, sample1",
+          "HDMEC, Control, sample2",
+          "HDMEC, Control, sample3",
+          "HDMEC, Control, sample4",
+          "HDMEC, DFU, sample1",
+          "HDMEC, DFU, sample2",
+          "HDMEC, DFU, sample3",
+          "HDMEC, DFU, sample4"
+        ],
+        "disease_state": [
+          "non-diabetic",
+          "non-diabetic",
+          "non-diabetic",
+          "non-diabetic",
+          "diabetic foot ulcer",
+          "diabetic foot ulcer",
+          "diabetic foot ulcer",
+          "diabetic foot ulcer"
+        ],
+        "patient_id_source_reason": "Titles are HDMEC control/DFU sample1–4. That is a culture replicate label, not an authoritative patient ID.",
+        "independent_prognostic_validation_eligible": false,
+        "why_not_independent_prognostic_validation": [
+          "cultured endothelial cells, not wound single-cell tissue",
+          "no authoritative patient_id",
+          "no healed/not_healed labels"
+        ]
+      },
+      "contract_csv": "cohort_metadata/next_public_cohorts/GSE219078_contract_input.csv"
+    },
+    {
+      "accession": "GSE327462",
+      "assay": "bulk_rnaseq_cell_line",
+      "n_gsm": 6,
+      "n_named_patient_rows": 0,
+      "n_named_patients": 0,
+      "patient_id_source_values": [
+        "cell_line"
+      ],
+      "prognostic": {
+        "status": "rejected",
+        "errors": [
+          "follow_up_days has 6 missing/blank values",
+          "healing_status has 6 missing/blank values",
+          "patient_id has 6 missing/blank values",
+          "timepoint_days has 6 missing/blank values",
+          "wound_id has 6 missing/blank values",
+          "patient_id_source must be exactly 'authoritative'; found cell_line",
+          "duplicate patient_id + wound_id + timepoint_days rows",
+          "timepoint_days must be numeric and non-negative",
+          "healing_status must use healed/not_healed; found ",
+          "both healed and not_healed patients are required",
+          "follow_up_days must be numeric and non-negative"
+        ],
+        "warnings": [
+          "fewer than two independent patients; no comparative inference",
+          "one or more patients lack a timepoint_days=0 row"
+        ],
+        "patient_count": 1
+      },
+      "projection": {
+        "status": "rejected",
+        "errors": [
+          "patient_id has 6 missing/blank values",
+          "timepoint_days has 6 missing/blank values",
+          "wound_id has 6 missing/blank values",
+          "patient_id_source must be exactly 'authoritative'; found cell_line",
+          "duplicate patient_id + wound_id + timepoint_days rows",
+          "timepoint_days must be numeric and non-negative"
+        ],
+        "warnings": [
+          "fewer than two independent patients; no comparative inference",
+          "one or more patients lack a timepoint_days=0 row"
+        ]
+      },
+      "independent_prognostic_validation_eligible": false,
+      "why_not_independent_prognostic_validation": [
+        "HaCaT cell line, not human DFU tissue",
+        "no patient_id",
+        "no healing endpoint"
+      ],
+      "notes": {
+        "accession": "GSE327462",
+        "assay": "bulk_rnaseq_cell_line",
+        "n_gsm": 6,
+        "titles": [
+          "si_NC_1",
+          "si_NC_2",
+          "si_NC_3",
+          "si_YWHAZ_1",
+          "si_YWHAZ_2",
+          "si_YWHAZ_3"
+        ],
+        "patient_id_source_reason": "All six samples are HaCaT si_NC / si_YWHAZ replicates. A cell line perturbation is not a patient-linked DFU cohort.",
+        "independent_prognostic_validation_eligible": false,
+        "why_not_independent_prognostic_validation": [
+          "HaCaT cell line, not human DFU tissue",
+          "no patient_id",
+          "no healing endpoint"
+        ]
+      },
+      "contract_csv": "cohort_metadata/next_public_cohorts/GSE327462_contract_input.csv"
+    }
+  ],
+  "full_contracts": {
+    "GSE268834": {
+      "prognostic": {
+        "contract_version": "1.0",
+        "status": "rejected",
+        "scope_requested": "prognostic",
+        "row_count": 8,
+        "patient_count": 1,
+        "required_fields": [
+          "batch",
+          "follow_up_days",
+          "healing_status",
+          "library_id",
+          "patient_id",
+          "patient_id_source",
+          "sample_id",
+          "sequencing_run",
+          "timepoint_days",
+          "tissue_site",
+          "wound_id"
+        ],
+        "missing_columns": [],
+        "errors": [
+          "follow_up_days has 8 missing/blank values",
+          "healing_status has 8 missing/blank values",
+          "patient_id has 8 missing/blank values",
+          "timepoint_days has 8 missing/blank values",
+          "wound_id has 8 missing/blank values",
+          "patient_id_source must be exactly 'authoritative'; found geo_title_only",
+          "duplicate patient_id + wound_id + timepoint_days rows",
+          "timepoint_days must be numeric and non-negative",
+          "healing_status must use healed/not_healed; found ",
+          "both healed and not_healed patients are required",
+          "follow_up_days must be numeric and non-negative"
+        ],
+        "warnings": [
+          "fewer than two independent patients; no comparative inference",
+          "one or more patients lack a timepoint_days=0 row"
+        ],
+        "checks": {
+          "no_missing_batch": true,
+          "no_missing_follow_up_days": false,
+          "no_missing_healing_status": false,
+          "no_missing_library_id": true,
+          "no_missing_patient_id": false,
+          "no_missing_patient_id_source": true,
+          "no_missing_sample_id": true,
+          "no_missing_sequencing_run": true,
+          "no_missing_timepoint_days": false,
+          "no_missing_tissue_site": true,
+          "no_missing_wound_id": false,
+          "sample_id_unique": true,
+          "patient_id_source_authoritative": false,
+          "patient_ids_do_not_look_like_sample_proxies": true,
+          "patient_wound_timepoint_unique": false,
+          "timepoint_days_numeric_nonnegative": false,
+          "patient_count": 1,
+          "healing_status_values_valid": false,
+          "both_healing_classes_present": false,
+          "healing_status_consistent_within_patient": true,
+          "follow_up_days_numeric_nonnegative": false,
+          "baseline_row_for_each_patient": false
+        },
+        "scope_statement": "rejected; keep the cohort descriptive until the listed defects are fixed",
+        "protocol": {
+          "script_sha256": "8cd58ea7abe61126e6c34ef6e638a19b8a8dc25c31153980a09696166da1c7cb",
+          "checked_at_utc": "2026-09-20T10:07:41.124105+00:00",
+          "does_not_open_expression_matrix": true,
+          "files_read": [
+            "data/raw/GSE268834/GSE268834_series_matrix.txt.gz",
+            "data/raw/GSE272918/GSE272918_series_matrix.txt.gz",
+            "data/raw/GSE248247/GSE248247_series_matrix.txt.gz",
+            "data/raw/GSE219078/GSE219078_series_matrix.txt.gz",
+            "data/raw/GSE327462/GSE327462_series_matrix.txt.gz"
+          ],
+          "series_matrix_sha256": {
+            "GSE268834_series_matrix.txt.gz": "b11244599522cd9e26d38855acf93b508a6b3ee223286dca53bb97a71af744cd",
+            "GSE272918_series_matrix.txt.gz": "6c8179fabc26f6425bb52bd5668ce80f88fe3127ae92847ac6f603c43f4f408b",
+            "GSE248247_series_matrix.txt.gz": "69bb47c055185f600f0d15506116183347eb5e70e3cb052148a4a85351fe500c",
+            "GSE219078_series_matrix.txt.gz": "15da77a78008a8ce3cb40a1482bd3e16d8ba08ac18ab697136c585464acfd6af",
+            "GSE327462_series_matrix.txt.gz": "d5743fe533e88321535b7441ca0f8eeef170d3aff83708bb8b88092d8a647c42"
+          },
+          "mcid_filled": false,
+          "dryad_17_patient_bulk": {
+            "doi": "10.5061/dryad.2v6wwpzzc",
+            "sra": "PRJNA1200081",
+            "status": "metadata_file_not_locally_available",
+            "reason": "Dryad Patients.xlsx is the author sample key for a 17-patient 12-week bulk DFU RNA-seq. The public landing page is readable; the file stream is BotStopper-gated from this environment. Even after a local copy arrives, the assay is bulk and cannot enter frozen expression representation experiment A."
+          },
+          "analysis_scope": "prognostic"
+        }
+      },
+      "projection": {
+        "contract_version": "1.0",
+        "status": "rejected",
+        "scope_requested": "projection",
+        "row_count": 8,
+        "patient_count": 1,
+        "required_fields": [
+          "batch",
+          "library_id",
+          "patient_id",
+          "patient_id_source",
+          "sample_id",
+          "sequencing_run",
+          "timepoint_days",
+          "tissue_site",
+          "wound_id"
+        ],
+        "missing_columns": [],
+        "errors": [
+          "patient_id has 8 missing/blank values",
+          "timepoint_days has 8 missing/blank values",
+          "wound_id has 8 missing/blank values",
+          "patient_id_source must be exactly 'authoritative'; found geo_title_only",
+          "duplicate patient_id + wound_id + timepoint_days rows",
+          "timepoint_days must be numeric and non-negative"
+        ],
+        "warnings": [
+          "fewer than two independent patients; no comparative inference",
+          "one or more patients lack a timepoint_days=0 row"
+        ],
+        "checks": {
+          "no_missing_batch": true,
+          "no_missing_library_id": true,
+          "no_missing_patient_id": false,
+          "no_missing_patient_id_source": true,
+          "no_missing_sample_id": true,
+          "no_missing_sequencing_run": true,
+          "no_missing_timepoint_days": false,
+          "no_missing_tissue_site": true,
+          "no_missing_wound_id": false,
+          "sample_id_unique": true,
+          "patient_id_source_authoritative": false,
+          "patient_ids_do_not_look_like_sample_proxies": true,
+          "patient_wound_timepoint_unique": false,
+          "timepoint_days_numeric_nonnegative": false,
+          "patient_count": 1,
+          "baseline_row_for_each_patient": false
+        },
+        "scope_statement": "rejected; keep the cohort descriptive until the listed defects are fixed",
+        "protocol": {
+          "script_sha256": "8cd58ea7abe61126e6c34ef6e638a19b8a8dc25c31153980a09696166da1c7cb",
+          "checked_at_utc": "2026-09-20T10:07:41.124105+00:00",
+          "does_not_open_expression_matrix": true,
+          "files_read": [
+            "data/raw/GSE268834/GSE268834_series_matrix.txt.gz",
+            "data/raw/GSE272918/GSE272918_series_matrix.txt.gz",
+            "data/raw/GSE248247/GSE248247_series_matrix.txt.gz",
+            "data/raw/GSE219078/GSE219078_series_matrix.txt.gz",
+            "data/raw/GSE327462/GSE327462_series_matrix.txt.gz"
+          ],
+          "series_matrix_sha256": {
+            "GSE268834_series_matrix.txt.gz": "b11244599522cd9e26d38855acf93b508a6b3ee223286dca53bb97a71af744cd",
+            "GSE272918_series_matrix.txt.gz": "6c8179fabc26f6425bb52bd5668ce80f88fe3127ae92847ac6f603c43f4f408b",
+            "GSE248247_series_matrix.txt.gz": "69bb47c055185f600f0d15506116183347eb5e70e3cb052148a4a85351fe500c",
+            "GSE219078_series_matrix.txt.gz": "15da77a78008a8ce3cb40a1482bd3e16d8ba08ac18ab697136c585464acfd6af",
+            "GSE327462_series_matrix.txt.gz": "d5743fe533e88321535b7441ca0f8eeef170d3aff83708bb8b88092d8a647c42"
+          },
+          "mcid_filled": false,
+          "dryad_17_patient_bulk": {
+            "doi": "10.5061/dryad.2v6wwpzzc",
+            "sra": "PRJNA1200081",
+            "status": "metadata_file_not_locally_available",
+            "reason": "Dryad Patients.xlsx is the author sample key for a 17-patient 12-week bulk DFU RNA-seq. The public landing page is readable; the file stream is BotStopper-gated from this environment. Even after a local copy arrives, the assay is bulk and cannot enter frozen expression representation experiment A."
+          },
+          "analysis_scope": "projection"
+        }
+      }
+    },
+    "GSE272918": {
+      "prognostic": {
+        "contract_version": "1.0",
+        "status": "rejected",
+        "scope_requested": "prognostic",
+        "row_count": 6,
+        "patient_count": 3,
+        "required_fields": [
+          "batch",
+          "follow_up_days",
+          "healing_status",
+          "library_id",
+          "patient_id",
+          "patient_id_source",
+          "sample_id",
+          "sequencing_run",
+          "timepoint_days",
+          "tissue_site",
+          "wound_id"
+        ],
+        "missing_columns": [],
+        "errors": [
+          "follow_up_days has 6 missing/blank values",
+          "healing_status has 6 missing/blank values",
+          "wound_id has 6 missing/blank values",
+          "healing_status must use healed/not_healed; found ",
+          "both healed and not_healed patients are required",
+          "follow_up_days must be numeric and non-negative"
+        ],
+        "warnings": [],
+        "checks": {
+          "no_missing_batch": true,
+          "no_missing_follow_up_days": false,
+          "no_missing_healing_status": false,
+          "no_missing_library_id": true,
+          "no_missing_patient_id": true,
+          "no_missing_patient_id_source": true,
+          "no_missing_sample_id": true,
+          "no_missing_sequencing_run": true,
+          "no_missing_timepoint_days": true,
+          "no_missing_tissue_site": true,
+          "no_missing_wound_id": false,
+          "sample_id_unique": true,
+          "patient_id_source_authoritative": true,
+          "patient_ids_do_not_look_like_sample_proxies": true,
+          "patient_wound_timepoint_unique": true,
+          "timepoint_days_numeric_nonnegative": true,
+          "patient_count": 3,
+          "healing_status_values_valid": false,
+          "both_healing_classes_present": false,
+          "healing_status_consistent_within_patient": true,
+          "follow_up_days_numeric_nonnegative": false,
+          "baseline_row_for_each_patient": true
+        },
+        "scope_statement": "rejected; keep the cohort descriptive until the listed defects are fixed",
+        "protocol": {
+          "script_sha256": "8cd58ea7abe61126e6c34ef6e638a19b8a8dc25c31153980a09696166da1c7cb",
+          "checked_at_utc": "2026-09-20T10:07:41.124105+00:00",
+          "does_not_open_expression_matrix": true,
+          "files_read": [
+            "data/raw/GSE268834/GSE268834_series_matrix.txt.gz",
+            "data/raw/GSE272918/GSE272918_series_matrix.txt.gz",
+            "data/raw/GSE248247/GSE248247_series_matrix.txt.gz",
+            "data/raw/GSE219078/GSE219078_series_matrix.txt.gz",
+            "data/raw/GSE327462/GSE327462_series_matrix.txt.gz"
+          ],
+          "series_matrix_sha256": {
+            "GSE268834_series_matrix.txt.gz": "b11244599522cd9e26d38855acf93b508a6b3ee223286dca53bb97a71af744cd",
+            "GSE272918_series_matrix.txt.gz": "6c8179fabc26f6425bb52bd5668ce80f88fe3127ae92847ac6f603c43f4f408b",
+            "GSE248247_series_matrix.txt.gz": "69bb47c055185f600f0d15506116183347eb5e70e3cb052148a4a85351fe500c",
+            "GSE219078_series_matrix.txt.gz": "15da77a78008a8ce3cb40a1482bd3e16d8ba08ac18ab697136c585464acfd6af",
+            "GSE327462_series_matrix.txt.gz": "d5743fe533e88321535b7441ca0f8eeef170d3aff83708bb8b88092d8a647c42"
+          },
+          "mcid_filled": false,
+          "dryad_17_patient_bulk": {
+            "doi": "10.5061/dryad.2v6wwpzzc",
+            "sra": "PRJNA1200081",
+            "status": "metadata_file_not_locally_available",
+            "reason": "Dryad Patients.xlsx is the author sample key for a 17-patient 12-week bulk DFU RNA-seq. The public landing page is readable; the file stream is BotStopper-gated from this environment. Even after a local copy arrives, the assay is bulk and cannot enter frozen expression representation experiment A."
+          },
+          "analysis_scope": "prognostic"
+        }
+      },
+      "projection": {
+        "contract_version": "1.0",
+        "status": "rejected",
+        "scope_requested": "projection",
+        "row_count": 6,
+        "patient_count": 3,
+        "required_fields": [
+          "batch",
+          "library_id",
+          "patient_id",
+          "patient_id_source",
+          "sample_id",
+          "sequencing_run",
+          "timepoint_days",
+          "tissue_site",
+          "wound_id"
+        ],
+        "missing_columns": [],
+        "errors": [
+          "wound_id has 6 missing/blank values"
+        ],
+        "warnings": [],
+        "checks": {
+          "no_missing_batch": true,
+          "no_missing_library_id": true,
+          "no_missing_patient_id": true,
+          "no_missing_patient_id_source": true,
+          "no_missing_sample_id": true,
+          "no_missing_sequencing_run": true,
+          "no_missing_timepoint_days": true,
+          "no_missing_tissue_site": true,
+          "no_missing_wound_id": false,
+          "sample_id_unique": true,
+          "patient_id_source_authoritative": true,
+          "patient_ids_do_not_look_like_sample_proxies": true,
+          "patient_wound_timepoint_unique": true,
+          "timepoint_days_numeric_nonnegative": true,
+          "patient_count": 3,
+          "baseline_row_for_each_patient": true
+        },
+        "scope_statement": "rejected; keep the cohort descriptive until the listed defects are fixed",
+        "protocol": {
+          "script_sha256": "8cd58ea7abe61126e6c34ef6e638a19b8a8dc25c31153980a09696166da1c7cb",
+          "checked_at_utc": "2026-09-20T10:07:41.124105+00:00",
+          "does_not_open_expression_matrix": true,
+          "files_read": [
+            "data/raw/GSE268834/GSE268834_series_matrix.txt.gz",
+            "data/raw/GSE272918/GSE272918_series_matrix.txt.gz",
+            "data/raw/GSE248247/GSE248247_series_matrix.txt.gz",
+            "data/raw/GSE219078/GSE219078_series_matrix.txt.gz",
+            "data/raw/GSE327462/GSE327462_series_matrix.txt.gz"
+          ],
+          "series_matrix_sha256": {
+            "GSE268834_series_matrix.txt.gz": "b11244599522cd9e26d38855acf93b508a6b3ee223286dca53bb97a71af744cd",
+            "GSE272918_series_matrix.txt.gz": "6c8179fabc26f6425bb52bd5668ce80f88fe3127ae92847ac6f603c43f4f408b",
+            "GSE248247_series_matrix.txt.gz": "69bb47c055185f600f0d15506116183347eb5e70e3cb052148a4a85351fe500c",
+            "GSE219078_series_matrix.txt.gz": "15da77a78008a8ce3cb40a1482bd3e16d8ba08ac18ab697136c585464acfd6af",
+            "GSE327462_series_matrix.txt.gz": "d5743fe533e88321535b7441ca0f8eeef170d3aff83708bb8b88092d8a647c42"
+          },
+          "mcid_filled": false,
+          "dryad_17_patient_bulk": {
+            "doi": "10.5061/dryad.2v6wwpzzc",
+            "sra": "PRJNA1200081",
+            "status": "metadata_file_not_locally_available",
+            "reason": "Dryad Patients.xlsx is the author sample key for a 17-patient 12-week bulk DFU RNA-seq. The public landing page is readable; the file stream is BotStopper-gated from this environment. Even after a local copy arrives, the assay is bulk and cannot enter frozen expression representation experiment A."
+          },
+          "analysis_scope": "projection"
+        }
+      }
+    },
+    "GSE248247": {
+      "prognostic": {
+        "contract_version": "1.0",
+        "status": "rejected",
+        "scope_requested": "prognostic",
+        "row_count": 2,
+        "patient_count": 1,
+        "required_fields": [
+          "batch",
+          "follow_up_days",
+          "healing_status",
+          "library_id",
+          "patient_id",
+          "patient_id_source",
+          "sample_id",
+          "sequencing_run",
+          "timepoint_days",
+          "tissue_site",
+          "wound_id"
+        ],
+        "missing_columns": [],
+        "errors": [
+          "follow_up_days has 2 missing/blank values",
+          "healing_status has 2 missing/blank values",
+          "patient_id has 2 missing/blank values",
+          "timepoint_days has 2 missing/blank values",
+          "wound_id has 2 missing/blank values",
+          "patient_id_source must be exactly 'authoritative'; found geo_title_only",
+          "duplicate patient_id + wound_id + timepoint_days rows",
+          "timepoint_days must be numeric and non-negative",
+          "healing_status must use healed/not_healed; found ",
+          "both healed and not_healed patients are required",
+          "follow_up_days must be numeric and non-negative"
+        ],
+        "warnings": [
+          "fewer than two independent patients; no comparative inference",
+          "one or more patients lack a timepoint_days=0 row"
+        ],
+        "checks": {
+          "no_missing_batch": true,
+          "no_missing_follow_up_days": false,
+          "no_missing_healing_status": false,
+          "no_missing_library_id": true,
+          "no_missing_patient_id": false,
+          "no_missing_patient_id_source": true,
+          "no_missing_sample_id": true,
+          "no_missing_sequencing_run": true,
+          "no_missing_timepoint_days": false,
+          "no_missing_tissue_site": true,
+          "no_missing_wound_id": false,
+          "sample_id_unique": true,
+          "patient_id_source_authoritative": false,
+          "patient_ids_do_not_look_like_sample_proxies": true,
+          "patient_wound_timepoint_unique": false,
+          "timepoint_days_numeric_nonnegative": false,
+          "patient_count": 1,
+          "healing_status_values_valid": false,
+          "both_healing_classes_present": false,
+          "healing_status_consistent_within_patient": true,
+          "follow_up_days_numeric_nonnegative": false,
+          "baseline_row_for_each_patient": false
+        },
+        "scope_statement": "rejected; keep the cohort descriptive until the listed defects are fixed",
+        "protocol": {
+          "script_sha256": "8cd58ea7abe61126e6c34ef6e638a19b8a8dc25c31153980a09696166da1c7cb",
+          "checked_at_utc": "2026-09-20T10:07:41.124105+00:00",
+          "does_not_open_expression_matrix": true,
+          "files_read": [
+            "data/raw/GSE268834/GSE268834_series_matrix.txt.gz",
+            "data/raw/GSE272918/GSE272918_series_matrix.txt.gz",
+            "data/raw/GSE248247/GSE248247_series_matrix.txt.gz",
+            "data/raw/GSE219078/GSE219078_series_matrix.txt.gz",
+            "data/raw/GSE327462/GSE327462_series_matrix.txt.gz"
+          ],
+          "series_matrix_sha256": {
+            "GSE268834_series_matrix.txt.gz": "b11244599522cd9e26d38855acf93b508a6b3ee223286dca53bb97a71af744cd",
+            "GSE272918_series_matrix.txt.gz": "6c8179fabc26f6425bb52bd5668ce80f88fe3127ae92847ac6f603c43f4f408b",
+            "GSE248247_series_matrix.txt.gz": "69bb47c055185f600f0d15506116183347eb5e70e3cb052148a4a85351fe500c",
+            "GSE219078_series_matrix.txt.gz": "15da77a78008a8ce3cb40a1482bd3e16d8ba08ac18ab697136c585464acfd6af",
+            "GSE327462_series_matrix.txt.gz": "d5743fe533e88321535b7441ca0f8eeef170d3aff83708bb8b88092d8a647c42"
+          },
+          "mcid_filled": false,
+          "dryad_17_patient_bulk": {
+            "doi": "10.5061/dryad.2v6wwpzzc",
+            "sra": "PRJNA1200081",
+            "status": "metadata_file_not_locally_available",
+            "reason": "Dryad Patients.xlsx is the author sample key for a 17-patient 12-week bulk DFU RNA-seq. The public landing page is readable; the file stream is BotStopper-gated from this environment. Even after a local copy arrives, the assay is bulk and cannot enter frozen expression representation experiment A."
+          },
+          "analysis_scope": "prognostic"
+        }
+      },
+      "projection": {
+        "contract_version": "1.0",
+        "status": "rejected",
+        "scope_requested": "projection",
+        "row_count": 2,
+        "patient_count": 1,
+        "required_fields": [
+          "batch",
+          "library_id",
+          "patient_id",
+          "patient_id_source",
+          "sample_id",
+          "sequencing_run",
+          "timepoint_days",
+          "tissue_site",
+          "wound_id"
+        ],
+        "missing_columns": [],
+        "errors": [
+          "patient_id has 2 missing/blank values",
+          "timepoint_days has 2 missing/blank values",
+          "wound_id has 2 missing/blank values",
+          "patient_id_source must be exactly 'authoritative'; found geo_title_only",
+          "duplicate patient_id + wound_id + timepoint_days rows",
+          "timepoint_days must be numeric and non-negative"
+        ],
+        "warnings": [
+          "fewer than two independent patients; no comparative inference",
+          "one or more patients lack a timepoint_days=0 row"
+        ],
+        "checks": {
+          "no_missing_batch": true,
+          "no_missing_library_id": true,
+          "no_missing_patient_id": false,
+          "no_missing_patient_id_source": true,
+          "no_missing_sample_id": true,
+          "no_missing_sequencing_run": true,
+          "no_missing_timepoint_days": false,
+          "no_missing_tissue_site": true,
+          "no_missing_wound_id": false,
+          "sample_id_unique": true,
+          "patient_id_source_authoritative": false,
+          "patient_ids_do_not_look_like_sample_proxies": true,
+          "patient_wound_timepoint_unique": false,
+          "timepoint_days_numeric_nonnegative": false,
+          "patient_count": 1,
+          "baseline_row_for_each_patient": false
+        },
+        "scope_statement": "rejected; keep the cohort descriptive until the listed defects are fixed",
+        "protocol": {
+          "script_sha256": "8cd58ea7abe61126e6c34ef6e638a19b8a8dc25c31153980a09696166da1c7cb",
+          "checked_at_utc": "2026-09-20T10:07:41.124105+00:00",
+          "does_not_open_expression_matrix": true,
+          "files_read": [
+            "data/raw/GSE268834/GSE268834_series_matrix.txt.gz",
+            "data/raw/GSE272918/GSE272918_series_matrix.txt.gz",
+            "data/raw/GSE248247/GSE248247_series_matrix.txt.gz",
+            "data/raw/GSE219078/GSE219078_series_matrix.txt.gz",
+            "data/raw/GSE327462/GSE327462_series_matrix.txt.gz"
+          ],
+          "series_matrix_sha256": {
+            "GSE268834_series_matrix.txt.gz": "b11244599522cd9e26d38855acf93b508a6b3ee223286dca53bb97a71af744cd",
+            "GSE272918_series_matrix.txt.gz": "6c8179fabc26f6425bb52bd5668ce80f88fe3127ae92847ac6f603c43f4f408b",
+            "GSE248247_series_matrix.txt.gz": "69bb47c055185f600f0d15506116183347eb5e70e3cb052148a4a85351fe500c",
+            "GSE219078_series_matrix.txt.gz": "15da77a78008a8ce3cb40a1482bd3e16d8ba08ac18ab697136c585464acfd6af",
+            "GSE327462_series_matrix.txt.gz": "d5743fe533e88321535b7441ca0f8eeef170d3aff83708bb8b88092d8a647c42"
+          },
+          "mcid_filled": false,
+          "dryad_17_patient_bulk": {
+            "doi": "10.5061/dryad.2v6wwpzzc",
+            "sra": "PRJNA1200081",
+            "status": "metadata_file_not_locally_available",
+            "reason": "Dryad Patients.xlsx is the author sample key for a 17-patient 12-week bulk DFU RNA-seq. The public landing page is readable; the file stream is BotStopper-gated from this environment. Even after a local copy arrives, the assay is bulk and cannot enter frozen expression representation experiment A."
+          },
+          "analysis_scope": "projection"
+        }
+      }
+    },
+    "GSE219078": {
+      "prognostic": {
+        "contract_version": "1.0",
+        "status": "rejected",
+        "scope_requested": "prognostic",
+        "row_count": 8,
+        "patient_count": 1,
+        "required_fields": [
+          "batch",
+          "follow_up_days",
+          "healing_status",
+          "library_id",
+          "patient_id",
+          "patient_id_source",
+          "sample_id",
+          "sequencing_run",
+          "timepoint_days",
+          "tissue_site",
+          "wound_id"
+        ],
+        "missing_columns": [],
+        "errors": [
+          "follow_up_days has 8 missing/blank values",
+          "healing_status has 8 missing/blank values",
+          "patient_id has 8 missing/blank values",
+          "timepoint_days has 8 missing/blank values",
+          "wound_id has 8 missing/blank values",
+          "patient_id_source must be exactly 'authoritative'; found geo_title_only",
+          "duplicate patient_id + wound_id + timepoint_days rows",
+          "timepoint_days must be numeric and non-negative",
+          "healing_status must use healed/not_healed; found ",
+          "both healed and not_healed patients are required",
+          "follow_up_days must be numeric and non-negative"
+        ],
+        "warnings": [
+          "fewer than two independent patients; no comparative inference",
+          "one or more patients lack a timepoint_days=0 row"
+        ],
+        "checks": {
+          "no_missing_batch": true,
+          "no_missing_follow_up_days": false,
+          "no_missing_healing_status": false,
+          "no_missing_library_id": true,
+          "no_missing_patient_id": false,
+          "no_missing_patient_id_source": true,
+          "no_missing_sample_id": true,
+          "no_missing_sequencing_run": true,
+          "no_missing_timepoint_days": false,
+          "no_missing_tissue_site": true,
+          "no_missing_wound_id": false,
+          "sample_id_unique": true,
+          "patient_id_source_authoritative": false,
+          "patient_ids_do_not_look_like_sample_proxies": true,
+          "patient_wound_timepoint_unique": false,
+          "timepoint_days_numeric_nonnegative": false,
+          "patient_count": 1,
+          "healing_status_values_valid": false,
+          "both_healing_classes_present": false,
+          "healing_status_consistent_within_patient": true,
+          "follow_up_days_numeric_nonnegative": false,
+          "baseline_row_for_each_patient": false
+        },
+        "scope_statement": "rejected; keep the cohort descriptive until the listed defects are fixed",
+        "protocol": {
+          "script_sha256": "8cd58ea7abe61126e6c34ef6e638a19b8a8dc25c31153980a09696166da1c7cb",
+          "checked_at_utc": "2026-09-20T10:07:41.124105+00:00",
+          "does_not_open_expression_matrix": true,
+          "files_read": [
+            "data/raw/GSE268834/GSE268834_series_matrix.txt.gz",
+            "data/raw/GSE272918/GSE272918_series_matrix.txt.gz",
+            "data/raw/GSE248247/GSE248247_series_matrix.txt.gz",
+            "data/raw/GSE219078/GSE219078_series_matrix.txt.gz",
+            "data/raw/GSE327462/GSE327462_series_matrix.txt.gz"
+          ],
+          "series_matrix_sha256": {
+            "GSE268834_series_matrix.txt.gz": "b11244599522cd9e26d38855acf93b508a6b3ee223286dca53bb97a71af744cd",
+            "GSE272918_series_matrix.txt.gz": "6c8179fabc26f6425bb52bd5668ce80f88fe3127ae92847ac6f603c43f4f408b",
+            "GSE248247_series_matrix.txt.gz": "69bb47c055185f600f0d15506116183347eb5e70e3cb052148a4a85351fe500c",
+            "GSE219078_series_matrix.txt.gz": "15da77a78008a8ce3cb40a1482bd3e16d8ba08ac18ab697136c585464acfd6af",
+            "GSE327462_series_matrix.txt.gz": "d5743fe533e88321535b7441ca0f8eeef170d3aff83708bb8b88092d8a647c42"
+          },
+          "mcid_filled": false,
+          "dryad_17_patient_bulk": {
+            "doi": "10.5061/dryad.2v6wwpzzc",
+            "sra": "PRJNA1200081",
+            "status": "metadata_file_not_locally_available",
+            "reason": "Dryad Patients.xlsx is the author sample key for a 17-patient 12-week bulk DFU RNA-seq. The public landing page is readable; the file stream is BotStopper-gated from this environment. Even after a local copy arrives, the assay is bulk and cannot enter frozen expression representation experiment A."
+          },
+          "analysis_scope": "prognostic"
+        }
+      },
+      "projection": {
+        "contract_version": "1.0",
+        "status": "rejected",
+        "scope_requested": "projection",
+        "row_count": 8,
+        "patient_count": 1,
+        "required_fields": [
+          "batch",
+          "library_id",
+          "patient_id",
+          "patient_id_source",
+          "sample_id",
+          "sequencing_run",
+          "timepoint_days",
+          "tissue_site",
+          "wound_id"
+        ],
+        "missing_columns": [],
+        "errors": [
+          "patient_id has 8 missing/blank values",
+          "timepoint_days has 8 missing/blank values",
+          "wound_id has 8 missing/blank values",
+          "patient_id_source must be exactly 'authoritative'; found geo_title_only",
+          "duplicate patient_id + wound_id + timepoint_days rows",
+          "timepoint_days must be numeric and non-negative"
+        ],
+        "warnings": [
+          "fewer than two independent patients; no comparative inference",
+          "one or more patients lack a timepoint_days=0 row"
+        ],
+        "checks": {
+          "no_missing_batch": true,
+          "no_missing_library_id": true,
+          "no_missing_patient_id": false,
+          "no_missing_patient_id_source": true,
+          "no_missing_sample_id": true,
+          "no_missing_sequencing_run": true,
+          "no_missing_timepoint_days": false,
+          "no_missing_tissue_site": true,
+          "no_missing_wound_id": false,
+          "sample_id_unique": true,
+          "patient_id_source_authoritative": false,
+          "patient_ids_do_not_look_like_sample_proxies": true,
+          "patient_wound_timepoint_unique": false,
+          "timepoint_days_numeric_nonnegative": false,
+          "patient_count": 1,
+          "baseline_row_for_each_patient": false
+        },
+        "scope_statement": "rejected; keep the cohort descriptive until the listed defects are fixed",
+        "protocol": {
+          "script_sha256": "8cd58ea7abe61126e6c34ef6e638a19b8a8dc25c31153980a09696166da1c7cb",
+          "checked_at_utc": "2026-09-20T10:07:41.124105+00:00",
+          "does_not_open_expression_matrix": true,
+          "files_read": [
+            "data/raw/GSE268834/GSE268834_series_matrix.txt.gz",
+            "data/raw/GSE272918/GSE272918_series_matrix.txt.gz",
+            "data/raw/GSE248247/GSE248247_series_matrix.txt.gz",
+            "data/raw/GSE219078/GSE219078_series_matrix.txt.gz",
+            "data/raw/GSE327462/GSE327462_series_matrix.txt.gz"
+          ],
+          "series_matrix_sha256": {
+            "GSE268834_series_matrix.txt.gz": "b11244599522cd9e26d38855acf93b508a6b3ee223286dca53bb97a71af744cd",
+            "GSE272918_series_matrix.txt.gz": "6c8179fabc26f6425bb52bd5668ce80f88fe3127ae92847ac6f603c43f4f408b",
+            "GSE248247_series_matrix.txt.gz": "69bb47c055185f600f0d15506116183347eb5e70e3cb052148a4a85351fe500c",
+            "GSE219078_series_matrix.txt.gz": "15da77a78008a8ce3cb40a1482bd3e16d8ba08ac18ab697136c585464acfd6af",
+            "GSE327462_series_matrix.txt.gz": "d5743fe533e88321535b7441ca0f8eeef170d3aff83708bb8b88092d8a647c42"
+          },
+          "mcid_filled": false,
+          "dryad_17_patient_bulk": {
+            "doi": "10.5061/dryad.2v6wwpzzc",
+            "sra": "PRJNA1200081",
+            "status": "metadata_file_not_locally_available",
+            "reason": "Dryad Patients.xlsx is the author sample key for a 17-patient 12-week bulk DFU RNA-seq. The public landing page is readable; the file stream is BotStopper-gated from this environment. Even after a local copy arrives, the assay is bulk and cannot enter frozen expression representation experiment A."
+          },
+          "analysis_scope": "projection"
+        }
+      }
+    },
+    "GSE327462": {
+      "prognostic": {
+        "contract_version": "1.0",
+        "status": "rejected",
+        "scope_requested": "prognostic",
+        "row_count": 6,
+        "patient_count": 1,
+        "required_fields": [
+          "batch",
+          "follow_up_days",
+          "healing_status",
+          "library_id",
+          "patient_id",
+          "patient_id_source",
+          "sample_id",
+          "sequencing_run",
+          "timepoint_days",
+          "tissue_site",
+          "wound_id"
+        ],
+        "missing_columns": [],
+        "errors": [
+          "follow_up_days has 6 missing/blank values",
+          "healing_status has 6 missing/blank values",
+          "patient_id has 6 missing/blank values",
+          "timepoint_days has 6 missing/blank values",
+          "wound_id has 6 missing/blank values",
+          "patient_id_source must be exactly 'authoritative'; found cell_line",
+          "duplicate patient_id + wound_id + timepoint_days rows",
+          "timepoint_days must be numeric and non-negative",
+          "healing_status must use healed/not_healed; found ",
+          "both healed and not_healed patients are required",
+          "follow_up_days must be numeric and non-negative"
+        ],
+        "warnings": [
+          "fewer than two independent patients; no comparative inference",
+          "one or more patients lack a timepoint_days=0 row"
+        ],
+        "checks": {
+          "no_missing_batch": true,
+          "no_missing_follow_up_days": false,
+          "no_missing_healing_status": false,
+          "no_missing_library_id": true,
+          "no_missing_patient_id": false,
+          "no_missing_patient_id_source": true,
+          "no_missing_sample_id": true,
+          "no_missing_sequencing_run": true,
+          "no_missing_timepoint_days": false,
+          "no_missing_tissue_site": true,
+          "no_missing_wound_id": false,
+          "sample_id_unique": true,
+          "patient_id_source_authoritative": false,
+          "patient_ids_do_not_look_like_sample_proxies": true,
+          "patient_wound_timepoint_unique": false,
+          "timepoint_days_numeric_nonnegative": false,
+          "patient_count": 1,
+          "healing_status_values_valid": false,
+          "both_healing_classes_present": false,
+          "healing_status_consistent_within_patient": true,
+          "follow_up_days_numeric_nonnegative": false,
+          "baseline_row_for_each_patient": false
+        },
+        "scope_statement": "rejected; keep the cohort descriptive until the listed defects are fixed",
+        "protocol": {
+          "script_sha256": "8cd58ea7abe61126e6c34ef6e638a19b8a8dc25c31153980a09696166da1c7cb",
+          "checked_at_utc": "2026-09-20T10:07:41.124105+00:00",
+          "does_not_open_expression_matrix": true,
+          "files_read": [
+            "data/raw/GSE268834/GSE268834_series_matrix.txt.gz",
+            "data/raw/GSE272918/GSE272918_series_matrix.txt.gz",
+            "data/raw/GSE248247/GSE248247_series_matrix.txt.gz",
+            "data/raw/GSE219078/GSE219078_series_matrix.txt.gz",
+            "data/raw/GSE327462/GSE327462_series_matrix.txt.gz"
+          ],
+          "series_matrix_sha256": {
+            "GSE268834_series_matrix.txt.gz": "b11244599522cd9e26d38855acf93b508a6b3ee223286dca53bb97a71af744cd",
+            "GSE272918_series_matrix.txt.gz": "6c8179fabc26f6425bb52bd5668ce80f88fe3127ae92847ac6f603c43f4f408b",
+            "GSE248247_series_matrix.txt.gz": "69bb47c055185f600f0d15506116183347eb5e70e3cb052148a4a85351fe500c",
+            "GSE219078_series_matrix.txt.gz": "15da77a78008a8ce3cb40a1482bd3e16d8ba08ac18ab697136c585464acfd6af",
+            "GSE327462_series_matrix.txt.gz": "d5743fe533e88321535b7441ca0f8eeef170d3aff83708bb8b88092d8a647c42"
+          },
+          "mcid_filled": false,
+          "dryad_17_patient_bulk": {
+            "doi": "10.5061/dryad.2v6wwpzzc",
+            "sra": "PRJNA1200081",
+            "status": "metadata_file_not_locally_available",
+            "reason": "Dryad Patients.xlsx is the author sample key for a 17-patient 12-week bulk DFU RNA-seq. The public landing page is readable; the file stream is BotStopper-gated from this environment. Even after a local copy arrives, the assay is bulk and cannot enter frozen expression representation experiment A."
+          },
+          "analysis_scope": "prognostic"
+        }
+      },
+      "projection": {
+        "contract_version": "1.0",
+        "status": "rejected",
+        "scope_requested": "projection",
+        "row_count": 6,
+        "patient_count": 1,
+        "required_fields": [
+          "batch",
+          "library_id",
+          "patient_id",
+          "patient_id_source",
+          "sample_id",
+          "sequencing_run",
+          "timepoint_days",
+          "tissue_site",
+          "wound_id"
+        ],
+        "missing_columns": [],
+        "errors": [
+          "patient_id has 6 missing/blank values",
+          "timepoint_days has 6 missing/blank values",
+          "wound_id has 6 missing/blank values",
+          "patient_id_source must be exactly 'authoritative'; found cell_line",
+          "duplicate patient_id + wound_id + timepoint_days rows",
+          "timepoint_days must be numeric and non-negative"
+        ],
+        "warnings": [
+          "fewer than two independent patients; no comparative inference",
+          "one or more patients lack a timepoint_days=0 row"
+        ],
+        "checks": {
+          "no_missing_batch": true,
+          "no_missing_library_id": true,
+          "no_missing_patient_id": false,
+          "no_missing_patient_id_source": true,
+          "no_missing_sample_id": true,
+          "no_missing_sequencing_run": true,
+          "no_missing_timepoint_days": false,
+          "no_missing_tissue_site": true,
+          "no_missing_wound_id": false,
+          "sample_id_unique": true,
+          "patient_id_source_authoritative": false,
+          "patient_ids_do_not_look_like_sample_proxies": true,
+          "patient_wound_timepoint_unique": false,
+          "timepoint_days_numeric_nonnegative": false,
+          "patient_count": 1,
+          "baseline_row_for_each_patient": false
+        },
+        "scope_statement": "rejected; keep the cohort descriptive until the listed defects are fixed",
+        "protocol": {
+          "script_sha256": "8cd58ea7abe61126e6c34ef6e638a19b8a8dc25c31153980a09696166da1c7cb",
+          "checked_at_utc": "2026-09-20T10:07:41.124105+00:00",
+          "does_not_open_expression_matrix": true,
+          "files_read": [
+            "data/raw/GSE268834/GSE268834_series_matrix.txt.gz",
+            "data/raw/GSE272918/GSE272918_series_matrix.txt.gz",
+            "data/raw/GSE248247/GSE248247_series_matrix.txt.gz",
+            "data/raw/GSE219078/GSE219078_series_matrix.txt.gz",
+            "data/raw/GSE327462/GSE327462_series_matrix.txt.gz"
+          ],
+          "series_matrix_sha256": {
+            "GSE268834_series_matrix.txt.gz": "b11244599522cd9e26d38855acf93b508a6b3ee223286dca53bb97a71af744cd",
+            "GSE272918_series_matrix.txt.gz": "6c8179fabc26f6425bb52bd5668ce80f88fe3127ae92847ac6f603c43f4f408b",
+            "GSE248247_series_matrix.txt.gz": "69bb47c055185f600f0d15506116183347eb5e70e3cb052148a4a85351fe500c",
+            "GSE219078_series_matrix.txt.gz": "15da77a78008a8ce3cb40a1482bd3e16d8ba08ac18ab697136c585464acfd6af",
+            "GSE327462_series_matrix.txt.gz": "d5743fe533e88321535b7441ca0f8eeef170d3aff83708bb8b88092d8a647c42"
+          },
+          "mcid_filled": false,
+          "dryad_17_patient_bulk": {
+            "doi": "10.5061/dryad.2v6wwpzzc",
+            "sra": "PRJNA1200081",
+            "status": "metadata_file_not_locally_available",
+            "reason": "Dryad Patients.xlsx is the author sample key for a 17-patient 12-week bulk DFU RNA-seq. The public landing page is readable; the file stream is BotStopper-gated from this environment. Even after a local copy arrives, the assay is bulk and cannot enter frozen expression representation experiment A."
+          },
+          "analysis_scope": "projection"
+        }
+      }
+    }
+  },
+  "protocol": {
+    "script_sha256": "8cd58ea7abe61126e6c34ef6e638a19b8a8dc25c31153980a09696166da1c7cb",
+    "checked_at_utc": "2026-09-20T10:07:41.124105+00:00",
+    "does_not_open_expression_matrix": true,
+    "files_read": [
+      "data/raw/GSE268834/GSE268834_series_matrix.txt.gz",
+      "data/raw/GSE272918/GSE272918_series_matrix.txt.gz",
+      "data/raw/GSE248247/GSE248247_series_matrix.txt.gz",
+      "data/raw/GSE219078/GSE219078_series_matrix.txt.gz",
+      "data/raw/GSE327462/GSE327462_series_matrix.txt.gz"
+    ],
+    "series_matrix_sha256": {
+      "GSE268834_series_matrix.txt.gz": "b11244599522cd9e26d38855acf93b508a6b3ee223286dca53bb97a71af744cd",
+      "GSE272918_series_matrix.txt.gz": "6c8179fabc26f6425bb52bd5668ce80f88fe3127ae92847ac6f603c43f4f408b",
+      "GSE248247_series_matrix.txt.gz": "69bb47c055185f600f0d15506116183347eb5e70e3cb052148a4a85351fe500c",
+      "GSE219078_series_matrix.txt.gz": "15da77a78008a8ce3cb40a1482bd3e16d8ba08ac18ab697136c585464acfd6af",
+      "GSE327462_series_matrix.txt.gz": "d5743fe533e88321535b7441ca0f8eeef170d3aff83708bb8b88092d8a647c42"
+    },
+    "mcid_filled": false,
+    "dryad_17_patient_bulk": {
+      "doi": "10.5061/dryad.2v6wwpzzc",
+      "sra": "PRJNA1200081",
+      "status": "metadata_file_not_locally_available",
+      "reason": "Dryad Patients.xlsx is the author sample key for a 17-patient 12-week bulk DFU RNA-seq. The public landing page is readable; the file stream is BotStopper-gated from this environment. Even after a local copy arrives, the assay is bulk and cannot enter frozen expression representation experiment A."
+    }
+  },
+  "scientific_scope": "public metadata-contract survey only; no expression opened; no independent validation; not experiment A"
+}

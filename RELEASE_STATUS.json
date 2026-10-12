@@ -1,9 +1,11 @@
 {
-  "status": "release",
-  "version": "0.4.2",
-  "doi": "10.5281/zenodo.22962314",
-  "doi_scope": "software-only; not a manuscript DOI",
-  "repository": "https://github.com/PeterPonyu/wound-measurement-construct",
-  "release_url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/tag/v0.4.2",
-  "archive_record_url": "https://zenodo.org/records/22962314"
+  "status": "release_prepared",
+  "version": "0.5.0",
+  "doi": "10.5281/zenodo.23308073",
+  "doi_status": "reserved_at_archive_assembly",
+  "doi_scope": "Software and reproduction release; not a manuscript or preprint DOI",
+  "remote_publication_performed_by_this_assembler": false,
+  "prior_software_snapshot_doi": "10.5281/zenodo.22884868",
+  "prior_doi_scope": "Immutable historical software snapshot; does not identify this revision",
+  "journal_main": "journal/scientific-reports-manuscript-inline.pdf"
 }

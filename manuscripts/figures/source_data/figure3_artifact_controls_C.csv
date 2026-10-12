@@ -1,4 +1,8 @@
-"label","value"
-"All",40.9857759169246
+"label","value","specimens"
+"All",40.9857759169246,24
 "RNA-
-excluded",56.6833426318858
+excluded",56.6833426318858,24
+"Immune
+residual",-3.93117772494631,25
+"Placebo
+residual",-8.19848932657189,25

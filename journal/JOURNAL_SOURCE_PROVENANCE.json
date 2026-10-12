@@ -1,0 +1,267 @@
+{
+  "status": "corrected_parent_build_PASS",
+  "copied_without_scientific_or_numerical_changes": true,
+  "files": [
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/paper_srep_inline.tex",
+      "destination": "source/measurement/paper_srep_inline.tex",
+      "sha256": "1a76dbdd7afb9b3e4ea390fbba66dc3c5dcb736c1d2f3c8b2aad6f1d8720c993"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/paper_srep.tex",
+      "destination": "source/measurement/paper_srep.tex",
+      "sha256": "df12a6661f90a653963e04e0402bb340cdc42e01b57d165d42c8645fbed90ccb"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/supporting_srep.tex",
+      "destination": "source/measurement/supporting_srep.tex",
+      "sha256": "eb400062404dfb13134628b7cf1557509d785db18c9978a5c43697320f83da98"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/supporting.tex",
+      "destination": "source/measurement/supporting.tex",
+      "sha256": "028f31ec939b45f3462bb4b57128ed2cc0b8f21c9a8580729c1998beed9037f2"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/paper.tex",
+      "destination": "source/measurement/paper.tex",
+      "sha256": "3985c5cba84f230d5ea184e89a2d7c91de5013fbdd66fd0f8896dc5acf964f7c"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/layout.tex",
+      "destination": "source/measurement/layout.tex",
+      "sha256": "880ee3607af622f3564820cc1f0469d0d6cc880a74b6687366145df7304a3627"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/references_paper1.bib",
+      "destination": "source/measurement/references_paper1.bib",
+      "sha256": "95f66fd85c661f3d97434901432a7df4d7f26f2d326b474712f496a31f27d325"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/scientific-reports.json",
+      "destination": "source/measurement/scientific-reports.json",
+      "sha256": "cf8911269a6807586f72ee6057186f3cd99bc338c74ac5035e62a96bcfe475ee"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal-style-report.json",
+      "destination": "source/measurement/journal-style-report.json",
+      "sha256": "57b25958469509483f26bed63c41b837fe3fa53a780dc7f5660ca67d9526ec58"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/LICENSE",
+      "destination": "source/measurement/LICENSE",
+      "sha256": "10ef938551816fda8e6981789fd207e905524d51abd3023de441f7aac6dedfd1"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/scripts/style_journal_figures.py",
+      "destination": "source/measurement/scripts/style_journal_figures.py",
+      "sha256": "bc83a67cbcb37059b85e34f0c14280dbc94e4b881143e1a74577c355cdf50513"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/scripts/build_scientific_reports.py",
+      "destination": "source/measurement/scripts/build_scientific_reports.py",
+      "sha256": "62839ea28caad14c2bdc75d80a59b3164f41a220e76510639fd72616f6c9a6e4"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/figures/paper1_figure8_patient_unit_anatomy.pdf",
+      "destination": "source/measurement/figures/paper1_figure8_patient_unit_anatomy.pdf",
+      "sha256": "448c2b1877a692d919e24aaac9aeb82e56a9470b645a3b7379228fd8449408da"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/figures/paper1_figure9_external_construct_audit.pdf",
+      "destination": "source/measurement/figures/paper1_figure9_external_construct_audit.pdf",
+      "sha256": "6ed4758831c038267b78a10ecea199a7893727e58dbbb35f7ff74523f3bfc21a"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/figures/paper1_figure7_representation_inference.pdf",
+      "destination": "source/measurement/figures/paper1_figure7_representation_inference.pdf",
+      "sha256": "5d15a530c90c790a7198a39e0882bee2cd6aa1166e0570910d3d2dca6d6fe950"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/figures/paper1_figure6_sensitivity_negative_controls.pdf",
+      "destination": "source/measurement/figures/paper1_figure6_sensitivity_negative_controls.pdf",
+      "sha256": "ce3d40919f88d3d276f462b3757ae13005b5188483d3be453a1f2e77684abb37"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/figures/paper1_figure10_topic_stability.pdf",
+      "destination": "source/measurement/figures/paper1_figure10_topic_stability.pdf",
+      "sha256": "61c557715a6f6ef3f4f3c32d213e242dce12f29c118257a0e10639c7721895b7"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/figures/paper1_figure1_workflow.pdf",
+      "destination": "source/measurement/figures/paper1_figure1_workflow.pdf",
+      "sha256": "a82004eebce29183209bcdad6ad56b08aa45899053685dbb55f427416f29bcb6"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/figures/paper1_figure2_mixture_semantics.pdf",
+      "destination": "source/measurement/figures/paper1_figure2_mixture_semantics.pdf",
+      "sha256": "37ed058ccab307585542eb8eb887deb1a113ae4ea186f74b25bbacdd8259f06c"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/figures/paper1_figure11_selection_context.pdf",
+      "destination": "source/measurement/figures/paper1_figure11_selection_context.pdf",
+      "sha256": "12eea0cdc748f6e05944e0fffd227babfd30b56c01607dc859b81e93c6a295d9"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/figures/paper1_figure3_artifact_controls.pdf",
+      "destination": "source/measurement/figures/paper1_figure3_artifact_controls.pdf",
+      "sha256": "87427c4a21f8bcc568ff62122e80ed6c6405adf295fa2191c89feef3cc372c2f"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/figures/paper1_figure4_outcome_counterexample.pdf",
+      "destination": "source/measurement/figures/paper1_figure4_outcome_counterexample.pdf",
+      "sha256": "136016a96358e348e279cf73b5de24977f4de9dc0a7162d74d41440e4f890a12"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/figures/paper1_figure5_patient_readouts.pdf",
+      "destination": "source/measurement/figures/paper1_figure5_patient_readouts.pdf",
+      "sha256": "5761528576d8125baa3ec2d332ed6a95851586ee272d6caae911e7f3a8c1062e"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal-figures/paper1_figure8_patient_unit_anatomy.pdf",
+      "destination": "source/measurement/journal-figures/paper1_figure8_patient_unit_anatomy.pdf",
+      "sha256": "5f7e3684b64f8f6db993905481d4f8631fac533f2afe20e9e6a9f1317975a85b"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal-figures/paper1_figure9_external_construct_audit.pdf",
+      "destination": "source/measurement/journal-figures/paper1_figure9_external_construct_audit.pdf",
+      "sha256": "44fe97aa6f02439a970c8124eba226ff0d4b09aab66444d40721dc447287c993"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal-figures/paper1_figure7_representation_inference.pdf",
+      "destination": "source/measurement/journal-figures/paper1_figure7_representation_inference.pdf",
+      "sha256": "805c16b746d5675868f5dea58dd3db5207c9cd3ccf2b226850b672063198ea31"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal-figures/paper1_figure6_sensitivity_negative_controls.pdf",
+      "destination": "source/measurement/journal-figures/paper1_figure6_sensitivity_negative_controls.pdf",
+      "sha256": "d853a72da7b63806dd48de70edf170d198e72eb1b5720491a8a0be43d315531e"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal-figures/paper1_figure10_topic_stability.pdf",
+      "destination": "source/measurement/journal-figures/paper1_figure10_topic_stability.pdf",
+      "sha256": "7b3a5afa7983944320a7e5fb1f082824e522adbe4ac080e28e64359262330c71"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal-figures/paper1_figure1_workflow.pdf",
+      "destination": "source/measurement/journal-figures/paper1_figure1_workflow.pdf",
+      "sha256": "ec56ec8da087f54c4c975ebe0283c5507d62f21622970be0404d35cb35aa66bc"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal-figures/paper1_figure2_mixture_semantics.pdf",
+      "destination": "source/measurement/journal-figures/paper1_figure2_mixture_semantics.pdf",
+      "sha256": "0c3fee05050b9d4b93b52c7f2a93193c84b42ac8f00695ac2db2545408090806"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal-figures/paper1_figure11_selection_context.pdf",
+      "destination": "source/measurement/journal-figures/paper1_figure11_selection_context.pdf",
+      "sha256": "d5b3b6e0176c7ba164dc0de818dcad7a975f5011cbf9395d4bffbe1a964003f1"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal-figures/paper1_figure3_artifact_controls.pdf",
+      "destination": "source/measurement/journal-figures/paper1_figure3_artifact_controls.pdf",
+      "sha256": "48cf07d3b81545c0bfb7a532a210efda9b76cd7cbbc2745a06dc13f9e0484c12"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal-figures/paper1_figure4_outcome_counterexample.pdf",
+      "destination": "source/measurement/journal-figures/paper1_figure4_outcome_counterexample.pdf",
+      "sha256": "2fc1e59865cff7060b308ef8c69b93e9743e362449609eefded72a68bb6e213d"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal-figures/paper1_figure5_patient_readouts.pdf",
+      "destination": "source/measurement/journal-figures/paper1_figure5_patient_readouts.pdf",
+      "sha256": "dab4f0d64f24028a2b0701518a54762073b0444d57bbc3d2194b130339e286db"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal/scientific-reports-supplement.pdf",
+      "destination": "scientific-reports-supplement.pdf",
+      "sha256": "cb27387383039c2caa811f5a2d301d60ac454b2a187b42771cae676be2441357"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal/scientific-reports-manuscript.pdf",
+      "destination": "scientific-reports-manuscript.pdf",
+      "sha256": "5722421bdb0e865d93be31c9fb2f6fd31718923833f6b9077dabce65c1d46a89"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal/scientific-reports-manuscript-inline.pdf",
+      "destination": "scientific-reports-manuscript-inline.pdf",
+      "sha256": "1478b4d883a44eac780182ccdd857d2745ae885beea45d1a6505a1277f1e40bd"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/qa/scientific-reports/format-check.json",
+      "destination": "verification/format-check.json",
+      "sha256": "43b6b17117de6fdb3d0ebc50c8b739c53fc055d755405382a8995b26975e1c4e"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/qa/scientific-reports/manuscript-build.txt",
+      "destination": "verification/manuscript-build.txt",
+      "sha256": "160512d4c8a94ecf1b2bdd3b1be49c9cd8004d799d59c9b3f96a06520d668cab"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/qa/scientific-reports/manuscript-inline-build.txt",
+      "destination": "verification/manuscript-inline-build.txt",
+      "sha256": "46e502b86d7fd7b8e95a59420c9a72f0ba029bfc4841c5700c4844be9395731d"
+    },
+    {
+      "source": "output/scientific-reports-readiness-20261011-r2/final-documents/measurement/qa/scientific-reports/supplement-build.txt",
+      "destination": "verification/supplement-build.txt",
+      "sha256": "f7f8314ee2ee5473fba28fd595f8657aec5806d02f81904c607cd1e3add804ca"
+    },
+    {
+      "source": "/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyretermes-regular.otf",
+      "destination": "source/measurement/fonts/texgyretermes-regular.otf",
+      "sha256": "cc3fe7c707b81428d23d54df3eadd9228a2bf6a4d43125d94df56f5f63134659",
+      "license": "GUST Font License / LPPL 1.3c-or-later"
+    },
+    {
+      "source": "/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyretermes-bolditalic.otf",
+      "destination": "source/measurement/fonts/texgyretermes-bolditalic.otf",
+      "sha256": "1bf6af99cb0e26c12951317032d79b96ae009551e59ccf02a5b24f325ecfec87",
+      "license": "GUST Font License / LPPL 1.3c-or-later"
+    },
+    {
+      "source": "/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyretermes-bold.otf",
+      "destination": "source/measurement/fonts/texgyretermes-bold.otf",
+      "sha256": "2fb3e952065fa153c7e4e64e04b98b9d79225739b6025aa3f0f0782d299ff61e",
+      "license": "GUST Font License / LPPL 1.3c-or-later"
+    },
+    {
+      "source": "/usr/share/texmf/fonts/opentype/public/tex-gyre/texgyretermes-italic.otf",
+      "destination": "source/measurement/fonts/texgyretermes-italic.otf",
+      "sha256": "6dd103a1672e50568cd2f8a706ccd48443d44d7d073a59d2286f4e6f746575d6",
+      "license": "GUST Font License / LPPL 1.3c-or-later"
+    },
+    {
+      "source": "/usr/share/texmf/fonts/opentype/public/tex-gyre-math/texgyretermes-math.otf",
+      "destination": "source/measurement/fonts/texgyretermes-math.otf",
+      "sha256": "e5ce42b4fe826b7ea4c0874359decf0b294439355c511a4794107a9924e2cd5a",
+      "license": "GUST Font License / LPPL 1.3c-or-later"
+    },
+    {
+      "source": "/usr/share/texmf/doc/fonts/tex-gyre/GUST-FONT-LICENSE.txt",
+      "destination": "source/measurement/fonts/GUST-FONT-LICENSE.txt",
+      "sha256": "2bd69affc3da00715116f713f57eab9707e96daf3562ad0215987b15b9c16f73",
+      "license": "GUST Font License / LPPL 1.3c-or-later"
+    },
+    {
+      "source": "/usr/share/texmf/doc/fonts/tex-gyre/README-TeX-Gyre-Termes.txt",
+      "destination": "source/measurement/fonts/README-TeX-Gyre-Termes.txt",
+      "sha256": "2ca38f2af08da678b2cdb4ac99f8b3ff72fb7bdcc785ace290cd8ef1b2b947ab",
+      "license": "GUST Font License / LPPL 1.3c-or-later"
+    },
+    {
+      "source": "/usr/share/texmf/doc/fonts/tex-gyre/MANIFEST-TeX-Gyre-Termes.txt",
+      "destination": "source/measurement/fonts/MANIFEST-TeX-Gyre-Termes.txt",
+      "sha256": "f68e1704d13ab91fb1ef3c9f14e1db94c066c53aa2ac686879213e3619214bc7",
+      "license": "GUST Font License / LPPL 1.3c-or-later"
+    },
+    {
+      "source": "/usr/share/texmf/doc/fonts/tex-gyre-math/README-TeX-Gyre-Termes-Math.txt",
+      "destination": "source/measurement/fonts/README-TeX-Gyre-Termes-Math.txt",
+      "sha256": "88ba1d5940d2eaa7aa55a36becdbb2561edcf93e096a1b23ec7fd2c7ae666baa",
+      "license": "GUST Font License / LPPL 1.3c-or-later"
+    }
+  ],
+  "default_document": "scientific-reports-manuscript-inline.pdf",
+  "native_title": "Neural topic modelling of fibroblast measurements and diabetic foot ulcer healing: a patient-level audit"
+}

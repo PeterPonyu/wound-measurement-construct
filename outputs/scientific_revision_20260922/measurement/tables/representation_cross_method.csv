@@ -1,0 +1,7 @@
+readout_a,readout_b,spearman_rho
+Fibroblast topic,Module,0.7098901098901099
+Fibroblast topic,PCA,0.17362637362637365
+Fibroblast topic,NMF,0.6067041186941533
+Module,PCA,0.4021978021978022
+Module,NMF,0.6755972603773723
+PCA,NMF,0.32001975491559737

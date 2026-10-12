@@ -1,0 +1,7 @@
+{
+  "script": "p1_5_covariates_rank",
+  "inputs_sha256": {
+    "metadata_intake/GSE165816_ncomms_subject_sample_map.csv": "11870be07b8c06e6037c7ab5c532e90907913c390bd180b59cfe1821bebcd96c",
+    "outputs/scientific_revision_20260922/measurement/projection/cells.parquet": "3572a78007b7be093603988a87734c194371e1820ebc499d693c1379cd298449"
+  }
+}

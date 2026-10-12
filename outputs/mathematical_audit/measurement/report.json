@@ -1,0 +1,383 @@
+{
+  "status": "completed",
+  "scope": "Frozen-score algebra and conditional patient-label inference; no new biological replication or causal identification.",
+  "state_decomposition": {
+    "n_specimens": 25,
+    "n_fibroblasts": 19410,
+    "cut": 0.18429584801197052,
+    "reference": "Cell-pooled means of the two threshold bins; not fitted Gaussian means",
+    "low_reference": 0.023800360089332534,
+    "high_reference": 0.5130132593426454,
+    "empty_bin_specimens": 9,
+    "ranges": {
+      "low_state_mean": [
+        0.012041046521416219,
+        0.10213392401505032
+      ],
+      "high_state_mean": [
+        0.22644877433776855,
+        0.5777657505704593
+      ],
+      "within_state_residual": [
+        -0.024335831348201175,
+        0.043772370529733845
+      ]
+    },
+    "specimen_weighted_residual_rms": 0.01575442532198561,
+    "max_identity_error": 5.551115123125783e-17,
+    "max_residual_identity_error": 7.632783294297951e-17,
+    "specimens": [
+      {
+        "specimen": "GSM5050523",
+        "n_cells": 1238,
+        "n_high": 28,
+        "mean_loading": 0.027422848027440237,
+        "high_state_fraction": 0.022617124394184167,
+        "low_state_mean": 0.01899450441422172,
+        "high_state_mean": 0.3916476970272405,
+        "fixed_state_prediction": 0.0348649490869842,
+        "within_state_residual": -0.007442101059543961,
+        "identity_error": 0.0,
+        "residual_identity_error": 1.734723475976807e-18
+      },
+      {
+        "specimen": "GSM5050527",
+        "n_cells": 956,
+        "n_high": 559,
+        "mean_loading": 0.35362922714898465,
+        "high_state_fraction": 0.5847280334728033,
+        "low_state_mean": 0.038031452356530375,
+        "high_state_mean": 0.5777657505704593,
+        "fixed_state_prediction": 0.30985685661925083,
+        "within_state_residual": 0.043772370529733845,
+        "identity_error": 0.0,
+        "residual_identity_error": 2.7755575615628914e-17
+      },
+      {
+        "specimen": "GSM5050530",
+        "n_cells": 221,
+        "n_high": 113,
+        "mean_loading": 0.2496050609385266,
+        "high_state_fraction": 0.5113122171945701,
+        "low_state_mean": 0.055484085654218994,
+        "high_state_mean": 0.4351366125376879,
+        "fixed_state_prediction": 0.2739408922867278,
+        "within_state_residual": -0.024335831348201175,
+        "identity_error": 0.0,
+        "residual_identity_error": 1.734723475976807e-17
+      },
+      {
+        "specimen": "GSM5050531",
+        "n_cells": 452,
+        "n_high": 311,
+        "mean_loading": 0.35041558163949343,
+        "high_state_fraction": 0.6880530973451328,
+        "low_state_mean": 0.08208616453071013,
+        "high_state_mean": 0.4720697546695206,
+        "fixed_state_prediction": 0.36040481068176683,
+        "within_state_residual": -0.009989229042273354,
+        "identity_error": 5.551115123125783e-17,
+        "residual_identity_error": 4.163336342344337e-17
+      },
+      {
+        "specimen": "GSM5050532",
+        "n_cells": 1153,
+        "n_high": 164,
+        "mean_loading": 0.09206639401007247,
+        "high_state_fraction": 0.1422376409366869,
+        "low_state_mean": 0.04531269736919473,
+        "high_state_mean": 0.37401399143585345,
+        "fixed_state_prediction": 0.09338484879492083,
+        "within_state_residual": -0.001318454784848367,
+        "identity_error": 6.938893903907228e-18,
+        "residual_identity_error": 3.469446951953614e-18
+      },
+      {
+        "specimen": "GSM5050533",
+        "n_cells": 843,
+        "n_high": 0,
+        "mean_loading": 0.01248211035845207,
+        "high_state_fraction": 0.0,
+        "low_state_mean": 0.01248211035845207,
+        "high_state_mean": null,
+        "fixed_state_prediction": 0.023800360089332534,
+        "within_state_residual": -0.011318249730880465,
+        "identity_error": 0.0,
+        "residual_identity_error": 0.0
+      },
+      {
+        "specimen": "GSM5050534",
+        "n_cells": 1004,
+        "n_high": 0,
+        "mean_loading": 0.01602080508424674,
+        "high_state_fraction": 0.0,
+        "low_state_mean": 0.01602080508424674,
+        "high_state_mean": null,
+        "fixed_state_prediction": 0.023800360089332534,
+        "within_state_residual": -0.007779555005085793,
+        "identity_error": 0.0,
+        "residual_identity_error": 0.0
+      },
+      {
+        "specimen": "GSM5050538",
+        "n_cells": 974,
+        "n_high": 1,
+        "mean_loading": 0.013104112337398853,
+        "high_state_fraction": 0.001026694045174538,
+        "low_state_mean": 0.012795390755049157,
+        "high_state_mean": 0.31349021196365356,
+        "fixed_state_prediction": 0.02430263205981848,
+        "within_state_residual": -0.011198519722419626,
+        "identity_error": 1.6805133673525319e-18,
+        "residual_identity_error": 1.734723475976807e-18
+      },
+      {
+        "specimen": "GSM5050539",
+        "n_cells": 356,
+        "n_high": 249,
+        "mean_loading": 0.35210303476818033,
+        "high_state_fraction": 0.699438202247191,
+        "low_state_mean": 0.0889317681621238,
+        "high_state_mean": 0.46519269551857406,
+        "fixed_state_prediction": 0.3659745508592058,
+        "within_state_residual": -0.01387151609102557,
+        "identity_error": 5.551115123125783e-17,
+        "residual_identity_error": 7.632783294297951e-17
+      },
+      {
+        "specimen": "GSM5050540",
+        "n_cells": 1020,
+        "n_high": 858,
+        "mean_loading": 0.4662563670627481,
+        "high_state_fraction": 0.8411764705882353,
+        "low_state_mean": 0.10213392401505032,
+        "high_state_mean": 0.5350067584074183,
+        "fixed_state_prediction": 0.43531474004947224,
+        "within_state_residual": 0.03094162701327586,
+        "identity_error": 0.0,
+        "residual_identity_error": 6.938893903907228e-18
+      },
+      {
+        "specimen": "GSM5050547",
+        "n_cells": 1795,
+        "n_high": 1054,
+        "mean_loading": 0.3439810048531959,
+        "high_state_fraction": 0.5871866295264624,
+        "low_state_mean": 0.042387499993694656,
+        "high_state_mean": 0.5560121121595435,
+        "fixed_state_prediction": 0.3110596335227542,
+        "within_state_residual": 0.03292137133044171,
+        "identity_error": 0.0,
+        "residual_identity_error": 0.0
+      },
+      {
+        "specimen": "GSM5050548",
+        "n_cells": 558,
+        "n_high": 0,
+        "mean_loading": 0.01413920412831489,
+        "high_state_fraction": 0.0,
+        "low_state_mean": 0.01413920412831489,
+        "high_state_mean": null,
+        "fixed_state_prediction": 0.023800360089332534,
+        "within_state_residual": -0.009661155961017643,
+        "identity_error": 0.0,
+        "residual_identity_error": 0.0
+      },
+      {
+        "specimen": "GSM5050552",
+        "n_cells": 215,
+        "n_high": 4,
+        "mean_loading": 0.029549761224797993,
+        "high_state_fraction": 0.018604651162790697,
+        "low_state_mean": 0.024344854025938216,
+        "high_state_mean": 0.3041086159646511,
+        "fixed_state_prediction": 0.032901995424277894,
+        "within_state_residual": -0.0033522341994798996,
+        "identity_error": 8.673617379884035e-19,
+        "residual_identity_error": 8.673617379884035e-19
+      },
+      {
+        "specimen": "GSM5050555",
+        "n_cells": 901,
+        "n_high": 0,
+        "mean_loading": 0.013581321234158452,
+        "high_state_fraction": 0.0,
+        "low_state_mean": 0.013581321234158452,
+        "high_state_mean": null,
+        "fixed_state_prediction": 0.023800360089332534,
+        "within_state_residual": -0.010219038855174082,
+        "identity_error": 0.0,
+        "residual_identity_error": 0.0
+      },
+      {
+        "specimen": "GSM5050556",
+        "n_cells": 1020,
+        "n_high": 0,
+        "mean_loading": 0.01382656681862678,
+        "high_state_fraction": 0.0,
+        "low_state_mean": 0.01382656681862678,
+        "high_state_mean": null,
+        "fixed_state_prediction": 0.023800360089332534,
+        "within_state_residual": -0.009973793270705755,
+        "identity_error": 0.0,
+        "residual_identity_error": 0.0
+      },
+      {
+        "specimen": "GSM5050557",
+        "n_cells": 926,
+        "n_high": 1,
+        "mean_loading": 0.016218680192436823,
+        "high_state_fraction": 0.0010799136069114472,
+        "low_state_mean": 0.01599140441498241,
+        "high_state_mean": 0.22644877433776855,
+        "fixed_state_prediction": 0.024328667755912785,
+        "within_state_residual": -0.008109987563475961,
+        "identity_error": 2.222614453595284e-18,
+        "residual_identity_error": 1.734723475976807e-18
+      },
+      {
+        "specimen": "GSM5050558",
+        "n_cells": 626,
+        "n_high": 4,
+        "mean_loading": 0.020456510114694793,
+        "high_state_fraction": 0.006389776357827476,
+        "low_state_mean": 0.018864106761974392,
+        "high_state_mean": 0.26807523146271706,
+        "fixed_state_prediction": 0.02692632110692559,
+        "within_state_residual": -0.006469810992230798,
+        "identity_error": 1.0842021724855044e-18,
+        "residual_identity_error": 8.673617379884035e-19
+      },
+      {
+        "specimen": "GSM5050563",
+        "n_cells": 872,
+        "n_high": 73,
+        "mean_loading": 0.05469780751138738,
+        "high_state_fraction": 0.08371559633027523,
+        "low_state_mean": 0.027122005102841257,
+        "high_state_mean": 0.35652063113369353,
+        "fixed_state_prediction": 0.06475510968278647,
+        "within_state_residual": -0.010057302171399104,
+        "identity_error": 3.469446951953614e-18,
+        "residual_identity_error": 1.0408340855860843e-17
+      },
+      {
+        "specimen": "GSM5050564",
+        "n_cells": 196,
+        "n_high": 0,
+        "mean_loading": 0.020514701269757078,
+        "high_state_fraction": 0.0,
+        "low_state_mean": 0.020514701269757078,
+        "high_state_mean": null,
+        "fixed_state_prediction": 0.023800360089332534,
+        "within_state_residual": -0.0032856588195754564,
+        "identity_error": 0.0,
+        "residual_identity_error": 0.0
+      },
+      {
+        "specimen": "GSM5050566",
+        "n_cells": 170,
+        "n_high": 14,
+        "mean_loading": 0.07049550311092068,
+        "high_state_fraction": 0.08235294117647059,
+        "low_state_mean": 0.0501620076262416,
+        "high_state_mean": 0.29706873851163046,
+        "fixed_state_prediction": 0.06408848120431124,
+        "within_state_residual": 0.006407021906609446,
+        "identity_error": 6.938893903907228e-18,
+        "residual_identity_error": 6.938893903907228e-18
+      },
+      {
+        "specimen": "GSM5050567",
+        "n_cells": 153,
+        "n_high": 0,
+        "mean_loading": 0.013633698060670319,
+        "high_state_fraction": 0.0,
+        "low_state_mean": 0.013633698060670319,
+        "high_state_mean": null,
+        "fixed_state_prediction": 0.023800360089332534,
+        "within_state_residual": -0.010166662028662215,
+        "identity_error": 0.0,
+        "residual_identity_error": 0.0
+      },
+      {
+        "specimen": "GSM5050568",
+        "n_cells": 425,
+        "n_high": 0,
+        "mean_loading": 0.013496398290290552,
+        "high_state_fraction": 0.0,
+        "low_state_mean": 0.013496398290290552,
+        "high_state_mean": null,
+        "fixed_state_prediction": 0.023800360089332534,
+        "within_state_residual": -0.010303961799041982,
+        "identity_error": 0.0,
+        "residual_identity_error": 0.0
+      },
+      {
+        "specimen": "GSM5050569",
+        "n_cells": 1821,
+        "n_high": 88,
+        "mean_loading": 0.03927063619495993,
+        "high_state_fraction": 0.04832509610104338,
+        "low_state_mean": 0.026108186667816217,
+        "high_state_mean": 0.29848114790564234,
+        "fixed_state_prediction": 0.04744162045961893,
+        "within_state_residual": -0.008170984264659004,
+        "identity_error": 1.734723475976807e-18,
+        "residual_identity_error": 1.734723475976807e-18
+      },
+      {
+        "specimen": "GSM5050573",
+        "n_cells": 363,
+        "n_high": 135,
+        "mean_loading": 0.2086632408576276,
+        "high_state_fraction": 0.371900826446281,
+        "low_state_mean": 0.05093607803594256,
+        "high_state_mean": 0.4750468936231401,
+        "fixed_state_prediction": 0.2057390416298208,
+        "within_state_residual": 0.0029241992278068035,
+        "identity_error": 0.0,
+        "residual_identity_error": 1.3877787807814457e-17
+      },
+      {
+        "specimen": "GSM5050574",
+        "n_cells": 1152,
+        "n_high": 0,
+        "mean_loading": 0.012041046521416219,
+        "high_state_fraction": 0.0,
+        "low_state_mean": 0.012041046521416219,
+        "high_state_mean": null,
+        "fixed_state_prediction": 0.023800360089332534,
+        "within_state_residual": -0.011759313567916315,
+        "identity_error": 0.0,
+        "residual_identity_error": 0.0
+      }
+    ]
+  },
+  "patient_permutation": {
+    "observed_difference": 0.02797509084588716,
+    "allocations": 330,
+    "extreme_allocations": 89,
+    "exact_probability": 0.2696969696969697,
+    "recorded_add_one_probability": 0.2719033232628399
+  },
+  "patient_equivalence": {
+    "standard_error": 0.018226384634571897,
+    "welch_df": 8.098868540709555,
+    "two_sided_90_interval": [
+      -0.005864186000390799,
+      0.06181436769216512
+    ],
+    "equivalence_margin_infimum": 0.06181436769216512
+  },
+  "protocol": {
+    "script_sha256": "ff3f55b95ca983f4bca7c73ee1f0d1ed23ddf4dff5c548670df92385660bce34",
+    "source_sha256": {
+      "cell_projection": "aed3e7cdb7d63207db82781ad521f3b9c06cca08b7a365b21da8e1f330323014",
+      "mixture_fit": "dde5b4e5f8cba6045449e8e7797f611213a61b7cbd51551ac0fd051b17d0d14f",
+      "patient_scores": "8f99c008be06e74a6178ee5187b1df2574349518aa53b98da51d6336f30cc4db"
+    },
+    "computation_dtype": "float64",
+    "label_exchangeability": "assumed, not supplied by randomization"
+  }
+}

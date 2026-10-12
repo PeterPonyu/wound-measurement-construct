@@ -1,0 +1,146 @@
+{
+  "cohort": {
+    "DFU_patients": 11,
+    "cells": 76461,
+    "fibroblast_cells": 19410,
+    "people": 20,
+    "specimens": 25
+  },
+  "full_checkpoint_replays": [
+    {
+      "K": 10,
+      "complete_reload_and_match_replay": true,
+      "fresh_cpu_projection_max_abs_error": 0.0,
+      "job_id": "c63a1e8454a6cd5bb604",
+      "seed": 0
+    },
+    {
+      "K": 10,
+      "complete_reload_and_match_replay": true,
+      "fresh_cpu_projection_max_abs_error": 0.0,
+      "job_id": "8a21de4ba901e2a207e8",
+      "seed": 1
+    },
+    {
+      "K": 10,
+      "complete_reload_and_match_replay": true,
+      "fresh_cpu_projection_max_abs_error": 0.0,
+      "job_id": "d0e362d9bbf7de7a32cc",
+      "seed": 2
+    },
+    {
+      "K": 15,
+      "complete_reload_and_match_replay": true,
+      "fresh_cpu_projection_max_abs_error": 0.0,
+      "job_id": "2f7bd513d5be8fed7801",
+      "seed": 0
+    },
+    {
+      "K": 15,
+      "complete_reload_and_match_replay": true,
+      "fresh_cpu_projection_max_abs_error": 0.0,
+      "job_id": "be6c78438f804f78c67f",
+      "seed": 1
+    },
+    {
+      "K": 15,
+      "complete_reload_and_match_replay": true,
+      "fresh_cpu_projection_max_abs_error": 0.0,
+      "job_id": "276891b34ca94e72f4b8",
+      "seed": 2
+    },
+    {
+      "K": 20,
+      "complete_reload_and_match_replay": true,
+      "fresh_cpu_projection_max_abs_error": 0.0,
+      "job_id": "575c028dc798d820fe4b",
+      "seed": 0
+    },
+    {
+      "K": 20,
+      "complete_reload_and_match_replay": true,
+      "fresh_cpu_projection_max_abs_error": 0.0,
+      "job_id": "9d4cc9372fadeb4c6770",
+      "seed": 1
+    },
+    {
+      "K": 20,
+      "complete_reload_and_match_replay": true,
+      "fresh_cpu_projection_max_abs_error": 0.0,
+      "job_id": "f809518a6001a67cc6ec",
+      "seed": 2
+    }
+  ],
+  "integrity": {
+    "code_digest": "ab109504d42ec1e58bb2",
+    "complete": true,
+    "counts": {
+      "done": 9,
+      "failed": 0,
+      "pending": 0,
+      "running": 0
+    },
+    "output_hashes_verified": true,
+    "protocol_hash": "0b5a397b1d500d57733c",
+    "total": 9
+  },
+  "not_claims": [
+    "Seeds, capacity variants, cells and specimens are not new biological patients.",
+    "All fits reuse the full discovery gene panel, cell QC and supplied patient/lineage mapping.",
+    "Full-discovery topic fitting is not independent held-patient or external-cohort validation.",
+    "Assigned, weak, negative, unmatched and undefined matches remain in the tables without a success threshold.",
+    "The rowwise best match is a labeled sensitivity diagnostic and never replaces the Hungarian primary match.",
+    "Fixed 40000-step completion is not proof of optimizer convergence.",
+    "Density comparisons are descriptive transformed-score likelihoods, not proof of discrete biological states.",
+    "No new healing, amputation, MCID, mechanistic or prognostic hypothesis test is performed.",
+    "No GitHub publishing, commits, releases, installations, software archives or raw-data duplication."
+  ],
+  "resource_final": {
+    "artifact_bytes": 111400159,
+    "free_disk_bytes": 327011291136,
+    "reserved_next_write_bytes": 0
+  },
+  "tables": {
+    "fits": {
+      "rows": 9,
+      "sha256": "6cc8ce29aa57be50161c446b6aabcc5cc8139fcfb437d474d472c433a7950a20"
+    },
+    "patient_readouts": {
+      "rows": 360,
+      "sha256": "f39ea7a526984710200316622f4d44b5c32962f11ab5862c52cae376104ec1e0"
+    },
+    "patient_semantics": {
+      "rows": 900,
+      "sha256": "bd2b2caa055668b5d58513d969cc5b70285d16b429fc010006316a9f1f453311"
+    },
+    "seed_ranges": {
+      "rows": 240,
+      "sha256": "f3397efe6f224ea5d0c4b25e3539db5fe70094069626cae528790348ac79bc88"
+    },
+    "semantics": {
+      "rows": 45,
+      "sha256": "575eb38096a89e30d7cfdb3ac7e4075c0526e1e13cd80cbb8951f6d083842109"
+    },
+    "semantics_specimens": {
+      "rows": 225,
+      "sha256": "c10059a79b298b841c56dca4875dd04933256e4944f757557daaaba25c19bbb6"
+    },
+    "topic_matches": {
+      "rows": 150,
+      "sha256": "d90662de1329efd3a4233a7153f4f79331b0aca90fd738ae4e304a18c83a2777"
+    }
+  },
+  "verification_addendum": {
+    "addendum_sha256": "73a1a914c5d3dd1fa70b42489b25964f230bb9e901ab53a5a8c07dc6f942af44",
+    "frozen_source_files_unchanged": true,
+    "kind": "exact_worker_dtype_no_scientific_rule_or_tolerance_change",
+    "script_sha256": "12b4f13f321f9c66243c5cf05e8875b3a8be761fa16a3044012641d24f5f7ebc",
+    "synthetic_check": {
+      "exact_float32_equal_specimen_pooling": true,
+      "strict_1e_12_tolerance_unchanged": true,
+      "synthetic_only": true,
+      "unavailable_primary_retained": true
+    }
+  },
+  "verified_utc": "2026-10-09T15:59:57.369649+00:00"
+}

@@ -1,0 +1,859 @@
+{
+  "created_utc": "2026-10-12T03:27:14.464370+00:00",
+  "candidate": "measurement",
+  "scope": "Journal-only typography derivatives; native figure/source PDFs immutable; no scientific recalculation",
+  "author_runtime": {
+    "requested_model": "gpt-6.1-sol",
+    "requested_effort": "max",
+    "runtime_reported_model": "gpt-6.1-sol",
+    "runtime_reported_effort": "max",
+    "evidence": "rollout-2026-10-11T20-14-20-01a12e1a-a4d3-7d82-be7b-5a8a76c61177.jsonl / turn_context",
+    "scope": "Authoring agent at initial creation, not a claim about later script reruns"
+  },
+  "libraries": {
+    "PyMuPDF": "1.27.1",
+    "pikepdf": "10.11.0"
+  },
+  "original_directory": "/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/final-documents/measurement/figures",
+  "journal_directory": "/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal-figures",
+  "rerun_command": "python /home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/final-documents/measurement/scripts/style_journal_figures.py",
+  "font_files": {
+    "Arial.ttf": "c3044bcf00753e423e2afb40260b867a02038ddfc24db05b6c273d00ee680169",
+    "Arial Bold.ttf": "c2a7bcbcfadf8b06698f334da0e4b888217fe61a2ad8c7b009899aa18d6abe96"
+  },
+  "normalization": "NFKC (including ligatures), whitespace, minus/en-dash typography and micro/mu; independent wound bold panel markers are intentionally lowercase",
+  "figure_count": 11,
+  "figures": {
+    "paper1_figure10_topic_stability.pdf": {
+      "source_sha256": "61c557715a6f6ef3f4f3c32d213e242dce12f29c118257a0e10639c7721895b7",
+      "derivative_sha256": "7b3a5afa7983944320a7e5fb1f082824e522adbe4ac080e28e64359262330c71",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nPEIUVN+Arial-BoldMT                  CID TrueType      Identity-H       yes yes yes     10  0\nNYAUUX+ArialMT                       CID TrueType      Identity-H       yes yes yes     11  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     12  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [],
+      "off_page_text_runs": [],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 4,
+      "panel_changes": [
+        {
+          "text": "A",
+          "replacement": "a",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "B",
+          "replacement": "b",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "C",
+          "replacement": "c",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "D",
+          "replacement": "d",
+          "horizontal_scale": 1.0
+        }
+      ],
+      "horizontal_scale_range": [
+        1.0,
+        1.0
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 675,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "paper1_figure11_selection_context.pdf": {
+      "source_sha256": "12eea0cdc748f6e05944e0fffd227babfd30b56c01607dc859b81e93c6a295d9",
+      "derivative_sha256": "d5b3b6e0176c7ba164dc0de818dcad7a975f5011cbf9395d4bffbe1a964003f1",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nEFJLAP+Arial-BoldMT                  CID TrueType      Identity-H       yes yes yes     10  0\nBWTOUF+ArialMT                       CID TrueType      Identity-H       yes yes yes     11  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     12  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [],
+      "off_page_text_runs": [],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 4,
+      "panel_changes": [
+        {
+          "text": "A",
+          "replacement": "a",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "B",
+          "replacement": "b",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "C",
+          "replacement": "c",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "D",
+          "replacement": "d",
+          "horizontal_scale": 1.0
+        }
+      ],
+      "horizontal_scale_range": [
+        1.0,
+        1.0
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 675,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "paper1_figure1_workflow.pdf": {
+      "source_sha256": "a82004eebce29183209bcdad6ad56b08aa45899053685dbb55f427416f29bcb6",
+      "derivative_sha256": "ec56ec8da087f54c4c975ebe0283c5507d62f21622970be0404d35cb35aa66bc",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nYWCANS+Arial-BoldMT                  CID TrueType      Identity-H       yes yes yes     10  0\nQBNESL+ArialMT                       CID TrueType      Identity-H       yes yes yes     11  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     12  0\nKSWUXI+ArialMT                       CID TrueType      Identity-H       yes yes yes     21  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [],
+      "off_page_text_runs": [],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 6,
+      "panel_changes": [
+        {
+          "text": "A",
+          "replacement": "a",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "B",
+          "replacement": "b",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "C",
+          "replacement": "c",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "D",
+          "replacement": "d",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "E",
+          "replacement": "e",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "F",
+          "replacement": "f",
+          "horizontal_scale": 1.0
+        }
+      ],
+      "horizontal_scale_range": [
+        1.0,
+        1.0
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 905,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "PASS",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "paper1_figure2_mixture_semantics.pdf": {
+      "source_sha256": "37ed058ccab307585542eb8eb887deb1a113ae4ea186f74b25bbacdd8259f06c",
+      "derivative_sha256": "0c3fee05050b9d4b93b52c7f2a93193c84b42ac8f00695ac2db2545408090806",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nQHONEV+Arial-BoldMT                  CID TrueType      Identity-H       yes yes yes     10  0\nQROZKK+ArialMT                       CID TrueType      Identity-H       yes yes yes     11  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     12  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [],
+      "off_page_text_runs": [],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 6,
+      "panel_changes": [
+        {
+          "text": "A",
+          "replacement": "a",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "B",
+          "replacement": "b",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "C",
+          "replacement": "c",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "D",
+          "replacement": "d",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "E",
+          "replacement": "e",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "F",
+          "replacement": "f",
+          "horizontal_scale": 1.0
+        }
+      ],
+      "horizontal_scale_range": [
+        1.0,
+        1.0
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 926,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "paper1_figure3_artifact_controls.pdf": {
+      "source_sha256": "87427c4a21f8bcc568ff62122e80ed6c6405adf295fa2191c89feef3cc372c2f",
+      "derivative_sha256": "48cf07d3b81545c0bfb7a532a210efda9b76cd7cbbc2745a06dc13f9e0484c12",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nPGBIHQ+Arial-BoldMT                  CID TrueType      Identity-H       yes yes yes     10  0\nOMRPLT+ArialMT                       CID TrueType      Identity-H       yes yes yes     11  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     12  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [],
+      "off_page_text_runs": [],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 6,
+      "panel_changes": [
+        {
+          "text": "A",
+          "replacement": "a",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "B",
+          "replacement": "b",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "C",
+          "replacement": "c",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "D",
+          "replacement": "d",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "E",
+          "replacement": "e",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "F",
+          "replacement": "f",
+          "horizontal_scale": 1.0
+        }
+      ],
+      "horizontal_scale_range": [
+        1.0,
+        1.0
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 926,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "paper1_figure4_outcome_counterexample.pdf": {
+      "source_sha256": "136016a96358e348e279cf73b5de24977f4de9dc0a7162d74d41440e4f890a12",
+      "derivative_sha256": "2fc1e59865cff7060b308ef8c69b93e9743e362449609eefded72a68bb6e213d",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nNSGHDD+Arial-BoldMT                  CID TrueType      Identity-H       yes yes yes     10  0\nGFIPCU+ArialMT                       CID TrueType      Identity-H       yes yes yes     11  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     12  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [],
+      "off_page_text_runs": [],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 4,
+      "panel_changes": [
+        {
+          "text": "A",
+          "replacement": "a",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "B",
+          "replacement": "b",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "C",
+          "replacement": "c",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "D",
+          "replacement": "d",
+          "horizontal_scale": 1.0
+        }
+      ],
+      "horizontal_scale_range": [
+        1.0,
+        1.0
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 675,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "paper1_figure5_patient_readouts.pdf": {
+      "source_sha256": "5761528576d8125baa3ec2d332ed6a95851586ee272d6caae911e7f3a8c1062e",
+      "derivative_sha256": "dab4f0d64f24028a2b0701518a54762073b0444d57bbc3d2194b130339e286db",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nTQGTSS+Arial-BoldMT                  CID TrueType      Identity-H       yes yes yes     10  0\nDLIEFZ+ArialMT                       CID TrueType      Identity-H       yes yes yes     11  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     12  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [],
+      "off_page_text_runs": [],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 8,
+      "panel_changes": [
+        {
+          "text": "A",
+          "replacement": "a",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "B",
+          "replacement": "b",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "C",
+          "replacement": "c",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "D",
+          "replacement": "d",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "E",
+          "replacement": "e",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "F",
+          "replacement": "f",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "G",
+          "replacement": "g",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "H",
+          "replacement": "h",
+          "horizontal_scale": 1.0
+        }
+      ],
+      "horizontal_scale_range": [
+        1.0,
+        1.0
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 1288,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "PASS",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "paper1_figure6_sensitivity_negative_controls.pdf": {
+      "source_sha256": "ce3d40919f88d3d276f462b3757ae13005b5188483d3be453a1f2e77684abb37",
+      "derivative_sha256": "d853a72da7b63806dd48de70edf170d198e72eb1b5720491a8a0be43d315531e",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nCSKAOD+Arial-BoldMT                  CID TrueType      Identity-H       yes yes yes     10  0\nVGOAGA+ArialMT                       CID TrueType      Identity-H       yes yes yes     11  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     12  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [],
+      "off_page_text_runs": [],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 6,
+      "panel_changes": [
+        {
+          "text": "A",
+          "replacement": "a",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "B",
+          "replacement": "b",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "C",
+          "replacement": "c",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "D",
+          "replacement": "d",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "E",
+          "replacement": "e",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "F",
+          "replacement": "f",
+          "horizontal_scale": 1.0
+        }
+      ],
+      "horizontal_scale_range": [
+        1.0,
+        1.0
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 901,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "paper1_figure7_representation_inference.pdf": {
+      "source_sha256": "5d15a530c90c790a7198a39e0882bee2cd6aa1166e0570910d3d2dca6d6fe950",
+      "derivative_sha256": "805c16b746d5675868f5dea58dd3db5207c9cd3ccf2b226850b672063198ea31",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nVGBUVR+Arial-BoldMT                  CID TrueType      Identity-H       yes yes yes     10  0\nGAKGBR+ArialMT                       CID TrueType      Identity-H       yes yes yes     11  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     12  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [],
+      "off_page_text_runs": [],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 2,
+      "panel_changes": [
+        {
+          "text": "A",
+          "replacement": "a",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "B",
+          "replacement": "b",
+          "horizontal_scale": 1.0
+        }
+      ],
+      "horizontal_scale_range": [
+        1.0,
+        1.0
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 345,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "paper1_figure8_patient_unit_anatomy.pdf": {
+      "source_sha256": "448c2b1877a692d919e24aaac9aeb82e56a9470b645a3b7379228fd8449408da",
+      "derivative_sha256": "5f7e3684b64f8f6db993905481d4f8631fac533f2afe20e9e6a9f1317975a85b",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nCNWMRU+Arial-BoldMT                  CID TrueType      Identity-H       yes yes yes     10  0\nCOIJRM+ArialMT                       CID TrueType      Identity-H       yes yes yes     11  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     12  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [],
+      "off_page_text_runs": [],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 4,
+      "panel_changes": [
+        {
+          "text": "A",
+          "replacement": "a",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "B",
+          "replacement": "b",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "C",
+          "replacement": "c",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "D",
+          "replacement": "d",
+          "horizontal_scale": 1.0
+        }
+      ],
+      "horizontal_scale_range": [
+        1.0,
+        1.0
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 675,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "NOT_INDIVIDUALLY_INSPECTED",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    },
+    "paper1_figure9_external_construct_audit.pdf": {
+      "source_sha256": "6ed4758831c038267b78a10ecea199a7893727e58dbbb35f7ff74523f3bfc21a",
+      "derivative_sha256": "44fe97aa6f02439a970c8124eba226ff0d4b09aab66444d40721dc447287c993",
+      "native_source_immutable": true,
+      "page_bounds_preserved": true,
+      "all_text_tokens_preserved_after_intended_normalization": true,
+      "all_number_tokens_preserved": true,
+      "all_graphics_preserved": true,
+      "all_image_streams_preserved": true,
+      "native_math_glyphs_and_origins_preserved": true,
+      "visible_fonts": [
+        "Arial-BoldMT",
+        "ArialMT"
+      ],
+      "sans_serif_lettering": true,
+      "font_audit": {
+        "all_embedded": true,
+        "pdffonts": "name                                 type              encoding         emb sub uni object ID\n------------------------------------ ----------------- ---------------- --- --- --- ---------\nHQRROG+Arial-BoldMT                  CID TrueType      Identity-H       yes yes yes     10  0\nSSPBPP+ArialMT                       CID TrueType      Identity-H       yes yes yes     11  0\nArial Bold                           CID TrueType      Identity-H       yes no  yes     12  0\n"
+      },
+      "inherited_fully_off_page_text_runs": [],
+      "off_page_text_runs": [],
+      "partially_clipped_text_runs": [],
+      "unresolved": [],
+      "status": "PASS",
+      "method": "PDF text-show font replacement; original run advance preserved for serif runs",
+      "changed_text_runs": 6,
+      "panel_changes": [
+        {
+          "text": "A",
+          "replacement": "a",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "B",
+          "replacement": "b",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "C",
+          "replacement": "c",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "D",
+          "replacement": "d",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "E",
+          "replacement": "e",
+          "horizontal_scale": 1.0
+        },
+        {
+          "text": "F",
+          "replacement": "f",
+          "horizontal_scale": 1.0
+        }
+      ],
+      "horizontal_scale_range": [
+        1.0,
+        1.0
+      ],
+      "all_original_drawing_operations_preserved": true,
+      "raster_content_check": {
+        "resolution_dpi": 144,
+        "changed_pixels_total": 906,
+        "changed_pixels_outside_lettering_regions": 0,
+        "outside_difference_bbox": null,
+        "lettering_mask_padding_points": 3,
+        "scope": "Rendering comparison; source/replacement lettering bounding boxes plus padding masked; copy mode masks nothing"
+      },
+      "math_origin_maximum_delta_points": 0,
+      "math_origin_tolerance_points": 0.001,
+      "visual_review": {
+        "status": "PASS",
+        "scope": "Changed/representative/dense figures inspected; all figures also passed token, geometry and outside-lettering pixel checks"
+      }
+    }
+  },
+  "visual_review": {
+    "status": "PASS_REPRESENTATIVE",
+    "inspected_figures": [
+      "paper1_figure1_workflow.pdf",
+      "paper1_figure5_patient_readouts.pdf",
+      "paper1_figure9_external_construct_audit.pdf"
+    ],
+    "comparison_directory": "/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal-figures/qa",
+    "observed_new_collisions": false,
+    "observed_new_clipping": false,
+    "scope": "Side-by-side native/journal rendered comparisons inspected for representative workflows, dense plots, image maps and all three converted SVG schematics. This does not claim individual visual inspection of every figure."
+  },
+  "status": "PASS",
+  "unresolved_font_or_layout_issues": [],
+  "verification_summary": {
+    "figures_passed": 11,
+    "panels_intentionally_lowercased": 56,
+    "outside_lettering_changed_pixels_at_144dpi": 0,
+    "native_math_origin_maximum_delta_points": 0,
+    "all_source_and_derivative_hashes_rechecked": true
+  },
+  "script_sha256": "bc83a67cbcb37059b85e34f0c14280dbc94e4b881143e1a74577c355cdf50513",
+  "rerun_behavior": "Recreates derivatives and mechanical/raster checks; visual review resets to pending and must be repeated after any new input or typography change."
+}

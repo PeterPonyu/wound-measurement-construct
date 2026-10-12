@@ -8,6 +8,8 @@ import re
 import sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 MANUSCRIPTS = ROOT / 'manuscripts'
 LEDGER_PATH = MANUSCRIPTS / 'claim_ledger.json'
 COVERAGE_PATH = MANUSCRIPTS / 'result_coverage.json'
@@ -24,7 +26,7 @@ def read_native(path: Path, stack: tuple[Path, ...]=()) -> str:
     path = path.resolve()
     if path in stack:
         fail(f'cyclic LaTeX include: {path.name}')
-    text = path.read_text(encoding='utf-8')
+    text = re.sub('(?<!\\\\)%[^\\n]*', '', path.read_text(encoding='utf-8'))
 
     def include(match: re.Match) -> str:
         child = path.parent / match[1]
@@ -51,8 +53,14 @@ def check_author_style() -> None:
         metadata = re.search('\\\\hypersetup\\{pdftitle=\\{([^}]+)\\}\\}', main)
         if title is None or metadata is None or title[1] != metadata[1]:
             fail(f'Paper {n}: displayed title differs from PDF metadata')
+        if n == 1 and 'amputation' in title[1].lower():
+            scope = {'abstract': (abstract, 'amputation was not an evaluated endpoint'), 'introduction': (protected['introduction'], 'not a measured endpoint of this audit'), 'methods': ((folder / 'methods.tex').read_text(), 'Amputation events, time to amputation and amputation-risk prediction were not evaluated'), 'discussion': (protected['discussion'], 'cannot estimate amputation risk')}
+            for section, (source, limitation) in scope.items():
+                if limitation.lower() not in source.lower():
+                    fail(f'Paper 1 {section}: amputation title lacks explicit endpoint limitation')
         cite_command = re.compile('\\\\(?:[Cc]ite[A-Za-z]*|nocite)\\b')
         paths = [folder / 'manuscript.tex'] + [folder / f'{section}.tex' for section in ('methods', 'results', 'discussion', 'supplement', 'tables')] + list((folder / 'figure_captions').glob('*.tex'))
+        paths += list(folder.glob(f'paper{n}_preparation_tables.tex'))
         for path in paths:
             source = re.sub('(?<!\\\\)%[^\\n]*', '', path.read_text())
             if path.name == 'manuscript.tex':
@@ -66,7 +74,7 @@ def check_author_style() -> None:
                 fail(f'Paper {n}: literature citation outside Introduction / Discussion: {path.name}')
             if not path.name.endswith(('methods.tex', 'results.tex')) and '\\subsection' in source:
                 fail(f'Paper {n}: subsections outside Materials and methods / Results: {path.name}')
-            if path.name in ('tables.tex','layout.tex'):
+            if path.name in ('tables.tex', 'layout.tex'):
                 continue
             if re.search('\\\\(?:textbf|textit|emph|paragraph|subsubsection)\\b|\\\\begin\\{(?:itemize|enumerate|description)\\}', source):
                 fail(f'Paper {n}: forbidden prose formatting in {path.name}')
@@ -94,7 +102,7 @@ def check_author_style() -> None:
             for label in re.findall('\\\\label\\{(eq:[^}]+)\\}', source):
                 if '\\eqref{' + label + '}' not in results_text:
                     fail(f'Paper {n}: equation lacks a Results interpretation: {label}')
-        panel_counts = {1: [6, 3, 3, 3, 6, 6, 2, 2, 3], 2: [6, 3, 6, 1, 2, 2, 2]}[n]
+        panel_counts = {1: [6, 6, 6, 4, 8, 6, 2, 4, 6, 4, 4], 2: [6, 3, 6, 2, 4, 6, 4, 4, 6]}[n]
         for number, count in enumerate(panel_counts, 1):
             key = f'fig:p{n}f{number}'
             expected = set('ABCDEFGHIJKLMNOPQRSTUVWXYZ'[:count]) if count > 1 else set()
@@ -116,6 +124,16 @@ def check_author_style() -> None:
                 fail(f'Paper {n} figure {number}: panel references {used}, caption descriptions {described}, expected {expected}')
             totals['panels'] += len(expected)
         tables = (folder / 'tables.tex').read_text() + (folder / 'supplement.tex').read_text()
+        for extra in folder.glob(f'paper{n}_preparation_tables.tex'):
+            tables += extra.read_text()
+        for extra in folder.glob(f'paper{n}_quality_tables.tex'):
+            tables += extra.read_text()
+        for extra in folder.glob(f'paper{n}_external_tables.tex'):
+            tables += extra.read_text()
+        for extra in folder.glob(f'paper{n}_followup_tables.tex'):
+            tables += extra.read_text()
+        for extra in folder.glob(f'paper{n}_extension_tables.tex'):
+            tables += extra.read_text()
         for label in re.findall('\\\\label\\{(tab:[^}]+)\\}', tables):
             if '\\ref{' + label + '}' not in results_text:
                 fail(f'Paper {n}: table lacks a Results citation: {label}')
@@ -205,6 +223,21 @@ def check_revision_claims(ledger: dict) -> None:
 
     def close(actual, expected, message):
         require(math.isfinite(float(actual)) and math.isfinite(float(expected)) and math.isclose(float(actual), float(expected), rel_tol=0, abs_tol=1e-11), message)
+
+    def check_patient_covariates():
+        claim_id = 'P1-PATIENT-COVARIATES'
+        claim = claims.get(claim_id, {})
+        source = 'output/paper-science-priority-20261001-r1/patient-covariates/report.json'
+        data = report(source)
+        digest_matches(ROOT / source, claim.get('source_sha256', ''), claim_id)
+        require((data['n_patients'], data['n_specimens'], data['n_covariates'], data['new_model_fits'], data['new_biological_units']) == (20, 25, 31, 0, 0), f'{claim_id}: analysis-unit/scope mismatch')
+        rows = {row['covariate']: row for row in data['associations']}
+        require(len(rows) == len(data['associations']) == 31 and all((row['n_patients'] == 20 for row in rows.values())), f'{claim_id}: incomplete covariate family')
+        for row in rows.values():
+            require(not any((key in row for key in ('p', 'q_bh', 'significant', 'confidence_interval'))) and all((math.isfinite(row[key]) and -1 <= row[key] <= 1 for key in ('rho', 'omission_min', 'omission_max'))) and (row['omission_min'] <= row['omission_max']) and (0 <= row['omission_sign_changes'] <= 20), f'{claim_id}: unsupported inference or nonfinite influence summary')
+        for path, digest in data['sources_sha256'].items():
+            digest_matches(ROOT / path, digest, claim_id)
+        check_claim(claim_id, source, f"20 patients; 31 covariates; B/plasma rho {rows['frac_b_plasma']['rho']:.4f}; CFD/APOD rho {rows['fib_mean_topic_6']['rho']:.4f}; PTPRC rho {rows['tech_ptprc_pos']['rho']:.4f}; weighted specimen UMI medians rho {rows['tech_umi']['rho']:.4f}", ('No p values or BH discoveries', 'not a pooled-patient median', 'independent validation'))
 
     def keyed(rows, columns, message):
         result = {tuple((str(row[column]) for column in columns)): row for row in rows}
@@ -331,7 +364,7 @@ def check_revision_claims(ledger: dict) -> None:
         values = '/'.join((f"{summaries[a,]['flow_ed']:.6f}" for a in axes))
         centroid = '/'.join((f"{summaries[a,]['centroid_ed']:.6f}" for a in axes))
         check_claim(claim_id, source, f"12 paired exact-time fits; 3 donors; seeds 0/1/2; 8000 steps; rank/days/sqrt_days/log_days flow ED {values}; centroid ED {centroid}; unchanged ED {summaries['rank',]['unchanged_source_ed']:.6f}", ('historical nearest-grid scan is separate', 'not biological confidence intervals', 'no target-guided best clock', 'not clinical validation'))
-        old_source = 'outputs/analysis/time_parameterisation/report.json'
+        old_source = 'outputs/scientific_revision_20260926/provenance_repair/time_parameterisation/report.json'
         old = report(old_source)
         require(claims['P2-C04'].get('current_use') == 'historical_comparison_only' and claims['P2-C04'].get('superseded_by') == claim_id, 'P2-C04: historical clock boundary missing')
         check_claim('P2-C04', old_source, f"historical single-seed nearest-grid linear-days improvement {old['axes_results']['days']['improvement_at_claimed'] * 100:.1f}%; retained only in tab:p2axes; current Figure 4 uses P2-PAIRED-CLOCK", ('historical comparison only', 'not the current Figure 4', 'not paired with the revised exact-time fits'))
@@ -491,6 +524,11 @@ def check_revision_claims(ledger: dict) -> None:
         means = conditioning['summary']
         require(means['M4_conditioned_cfm']['mean_ed'] > means['M1_shared_cfm']['mean_ed'], 'P2-C05-CONDITIONING: historical held-out comparison changed')
         check_claim('P2-C05-CONDITIONING', conditioning_source, f"historical conditioned in-sample gains {gains}/{len(rows)}; held-out mean ED conditioned {means['M4_conditioned_cfm']['mean_ed']:.4f} versus shared {means['M1_shared_cfm']['mean_ed']:.4f}", ('historical comparison', 'does not identify the correct model class'))
+        transfer_source = 'outputs/scientific_revision_20260926/provenance_repair/donor_transfer_flow/report.json'
+        transfer = report(transfer_source)
+        transfer_protocol = transfer['protocol']
+        require(transfer['source'] == 'Wound1' and transfer['target'] == 'Wound7' and (transfer['n_donors'] == 3) and (transfer['n_pass'] == 3) and (len(transfer['per_donor']) == 3) and all((row['passes_noise_gate'] for row in transfer['per_donor'].values())) and (transfer_protocol['fold_internal_standardization'] is True) and (transfer_protocol['held_out_target_not_in_scaler'] is True) and (transfer_protocol['paired_same_donor_endpoints'] is True) and (transfer_protocol['steps'] == 8000) and (transfer_protocol['batch_size'] == 256) and (transfer_protocol['analysis_output_root'] == 'outputs/scientific_revision_20260926/provenance_repair/donor_transfer_flow'), 'P2-C03: current donor-transfer protocol or donor coverage changed')
+        check_claim('P2-C03', transfer_source, f"donor transfer {transfer['n_pass']}/{transfer['n_donors']}; mean improvement {transfer['mean_improvement']:+.1%}; cosine mean {transfer['donor_trajectory_alignment']['mean_cosine']:+.3f}", ('does not establish DFU prediction',))
         curve_source = revision + 'population/report.json'
         population = report(curve_source)
         curve = population['curve']
@@ -583,6 +621,7 @@ def check_revision_claims(ledger: dict) -> None:
             check_measurement()
             check_pair_discrimination()
             check_full_depth()
+            check_patient_covariates()
         if 'population_dynamics' in papers:
             check_population()
             check_mixture()
@@ -662,6 +701,20 @@ def check_latest_tables(manuscript_text: dict[str, str]) -> None:
                     rows.append(['Saved target' if target == 'original_evaluation' else 'All day 7', str(k), label, fmt(r['total_variation']), fmt(r['js_divergence_nats']), fmt(r['gene_rmse'], 6)])
         expected['tab:p2observable'] = rows
         expected['tab:p2decoderreference'] = [[r['held_donor'], 'Saved target' if r['target_set'] == 'original_evaluation' else 'All day 7', str(r['n_target']), fmt(r['total_variation']), fmt(r['js_divergence_nats']), fmt(100 * r['missing_panel_mass_mean'], 2) + '%'] for r in observable['decoder_reference']]
+    if 'measurement_construct' in manuscript_text:
+        update = json.loads((ROOT / 'output/paper-science-priority-20261001-r1/patient-covariates/report.json').read_text())
+        table_text = manuscript_text['measurement_construct']
+        blocks = [block for _, block in re.findall('\\\\begin\\{(longtable|table\\*?)\\}(.*?)\\\\end\\{\\1\\}', table_text, re.S) if '\\label{tab:p1patientcovariates}' in block]
+        if len(blocks) != 1:
+            fail('tab:p1patientcovariates: missing unique patient-covariate table')
+        body = blocks[0].split('\\endfoot', 1)[-1]
+        actual = [[cell.strip() for cell in line.split('\\\\', 1)[0].split('&')] for line in body.splitlines() if '&' in line]
+        topics = ['TIMP1/COL3A1', 'JUNB/DNAJB1', 'COL1A1/COL1A2', 'IGFBP7/IGFBP5', 'TAGLN/ACTA2', 'KRT14/KRT10', 'CFD/APOD', 'DCN/CFD', 'DCD/SAT1', 'IGFBP7/SPARCL1', 'FOS/IGFBP7', 'HLA-DRA/CD74', 'IGFBP7/TAGLN', 'FOS/JUNB', 'DNAJB1/FOS']
+        names = {'frac_b_plasma': 'B/plasma fraction', 'frac_endothelial': 'Endothelial fraction', 'frac_fibroblast': 'Fibroblast fraction', 'frac_keratinocyte': 'Keratinocyte fraction', 'frac_lymphatic_ec': 'Lymphatic endothelial fraction', 'frac_mast': 'Mast-cell fraction', 'frac_melanocyte': 'Melanocyte fraction', 'frac_myeloid': 'Myeloid fraction', 'frac_pericyte_smc': 'Pericyte/smooth-muscle fraction', 'frac_sweat_gland': 'Sweat-gland fraction', 'frac_t_cell': 'T-cell fraction', 'tech_diss': 'Fibroblast dissociation score', 'tech_umi': 'Weighted specimen UMI medians', 'tech_ptprc_pos': 'Fibroblast PTPRC-positive fraction', 'meta_g_number': 'Numeric G specimen label', 'n_cells_total': 'Total retained cells', 'n_fibroblasts': 'Retained fibroblasts'}
+        names.update({f'fib_mean_topic_{i}': f'Fibroblast {topics[i]} mean' for i in range(1, 15)})
+        rows = [[names[row['covariate']], str(row['n_patients']), f"{row['rho']:.4f}", f"{row['omission_min']:.4f} to {row['omission_max']:.4f}", str(row['omission_sign_changes'])] for row in update['associations']]
+        if actual != rows or '\\ref{tab:p1patientcovariates}' not in table_text:
+            fail('tab:p1patientcovariates: labelled rows or Results citation differ')
     for label, rows in expected.items():
         text = manuscript_text['measurement_construct' if label.startswith('tab:p1') else 'population_dynamics']
         blocks = [block for block in re.findall('\\\\begin\\{longtable\\}(.*?)\\\\end\\{longtable\\}', text, re.S) if f'\\label{{{label}}}' in block]
@@ -672,6 +725,34 @@ def check_latest_tables(manuscript_text: dict[str, str]) -> None:
         if actual != rows:
             fail(f'{label}: numeric table rows differ from completed report')
     print(f'PASS  {len(expected)} completed-audit tables: every numeric cell and row matches its source')
+
+def check_saved_diagnostic_tables(ledger: dict, manuscript_text: dict[str, str]) -> None:
+    """Check scalar reporting only; never replay historical model experiments."""
+    from manuscripts.saved_diagnostics import measurement_table_rows, validate_measurement
+    specifications = (('measurement_construct', 'P1-BUDGET-PANEL-DIAGNOSTIC', validate_measurement, (('tab:p1budgetdiagnostic', measurement_table_rows),)),)
+    for key, claim_id, validator, tables in specifications:
+        if key not in ledger['papers']:
+            continue
+        claim = next((c for c in ledger['papers'][key]['claims'] if c['id'] == claim_id))
+        path = ROOT / claim['source']
+        actual = hashlib.sha256(path.read_bytes()).hexdigest()
+        if actual != claim['source_sha256']:
+            provenance_path = ROOT / 'EXPORT_PROVENANCE.json'
+            records = [] if not provenance_path.is_file() else [r for r in json.loads(provenance_path.read_text())['files'] if r.get('exported') == claim['source']]
+            if len(records) != 1 or records[0].get('source_sha256') != claim['source_sha256'] or records[0].get('exported_sha256') != actual or (hashlib.sha256((ROOT / records[0].get('original', '__missing__')).read_bytes()).hexdigest() != claim['source_sha256']):
+                fail(f'{claim_id}: saved reporting snapshot changed')
+        report = json.loads(path.read_text())
+        validator(report)
+        source = manuscript_text[key]
+        for label, rows_for in tables:
+            blocks = [body for _, body in re.findall('\\\\begin\\{(longtable|table\\*?)\\}(.*?)\\\\end\\{\\1\\}', source, re.S) if f'\\label{{{label}}}' in body]
+            if len(blocks) != 1 or f'\\ref{{{label}}}' not in source:
+                fail(f'{label}: missing or duplicated diagnostic table')
+            cells = [[cell.strip() for cell in line.split('\\\\', 1)[0].split('&')] for line in blocks[0].splitlines() if '&' in line and '\\caption' not in line]
+            expected = rows_for(report)
+            if cells[-len(expected):] != expected:
+                fail(f'{label}: saved scalar rows changed or omitted')
+    print('PASS  saved diagnostic scalar grids, scope and every exported table cell; no experiment replay')
 
 def check_result_coverage(ledger: dict, coverage: dict) -> None:
     """Verify report hashes and coverage without reclassifying historical results."""
@@ -702,6 +783,121 @@ def check_result_coverage(ledger: dict, coverage: dict) -> None:
                 fail(f"{claim['id']}: historical-only report cannot support a current ledger claim: {source}")
             referenced.add(source)
     print(f'PASS  report coverage: {len(entries)} verified hashes; {len(referenced)} ledger sources covered; historical descriptors preserved')
+
+def check_quality_claims(ledger: dict) -> None:
+    """New claims require unchanged replay bindings and exact generated tables."""
+    from manuscripts.quality_tables import p1, p2
+    definitions = {'measurement_construct': ('P1-QUALITY-STABILITY', 'output/publication-quality-20261009/p1/verification.json', 1, p1), 'population_dynamics': ('P2-QUALITY-PAIRED', 'output/publication-quality-20261009/p2/report.json', 2, p2)}
+    for key, (claim_id, source, paper, renderer) in definitions.items():
+        if key not in ledger['papers']:
+            continue
+        claims = {row['id']: row for row in ledger['papers'][key]['claims']}
+        claim = claims.get(claim_id)
+        if not claim or claim.get('source') != source or claim.get('status') != 'diagnostic_only':
+            fail(f'{claim_id}: source-bound descriptive claim required')
+        if claim.get('source_sha256') != hashlib.sha256((ROOT / source).read_bytes()).hexdigest():
+            fail(f'{claim_id}: current report hash differs from the admitted claim')
+        if 'not' not in claim.get('scope', '').lower():
+            fail(f'{claim_id}: missing computational-versus-biological boundary')
+        try:
+            expected = renderer()
+        except (ValueError, OSError, KeyError) as error:
+            fail(f'{claim_id}: replay/table binding failed: {error}')
+        path = MANUSCRIPTS / f'latex/paper{paper}_quality_tables.tex'
+        if not path.is_file() or path.read_text() != expected:
+            fail(f'{claim_id}: complete numerical table differs from verified source')
+    print('PASS  publication-quality claims: complete replay bindings, source-bound tables, no inferential promotion')
+
+def check_external_claims(ledger: dict) -> None:
+    """The external GSE186527 series must stay bound to its frozen protocol and generated tables."""
+    claims = {row['id']: row for row in ledger['papers']['population_dynamics']['claims']}
+    claim = claims.get('P2-EXTERNAL-GSE186527')
+    source = 'output/external-gse186527-20261009/results/report.json'
+    if not claim or claim.get('source') != source or claim.get('status') != 'diagnostic_only':
+        fail('P2-EXTERNAL-GSE186527: source-bound descriptive claim required')
+    if claim.get('source_sha256') != hashlib.sha256((ROOT / source).read_bytes()).hexdigest():
+        fail('P2-EXTERNAL-GSE186527: current report hash differs from the admitted claim')
+    if 'not' not in claim.get('scope', '').lower():
+        fail('P2-EXTERNAL-GSE186527: missing computational-versus-biological boundary')
+    repeat = claims.get('P2-EXTERNAL-REEXECUTION', {})
+    repeated_source = 'output/external-gse186527-20261010-replay-r1/report.json'
+    if repeat.get('source') != repeated_source or repeat.get('status') != 'diagnostic_only' or repeat.get('source_sha256') != hashlib.sha256((ROOT / repeated_source).read_bytes()).hexdigest() or ('not exact retraining' not in repeat.get('scope', '').lower()):
+        fail('P2-EXTERNAL-REEXECUTION: source-bound retraining-versus-replay boundary required')
+    for name, digest in repeat.get('evidence_sha256', {}).items():
+        if name not in {'replay-cuda.json', 'population_scores.csv', 'mouse_scores.csv'} or hashlib.sha256((ROOT / repeated_source).parent.joinpath(name).read_bytes()).hexdigest() != digest:
+            fail('P2-EXTERNAL-REEXECUTION: repeated-execution evidence changed')
+    if set(repeat.get('evidence_sha256', {})) != {'replay-cuda.json', 'population_scores.csv', 'mouse_scores.csv'}:
+        fail('P2-EXTERNAL-REEXECUTION: complete replay and score bindings required')
+    try:
+        from manuscripts.external_tables import render
+        expected = render()
+    except (ValueError, OSError, KeyError) as error:
+        fail(f'P2-EXTERNAL-GSE186527: output binding failed: {error}')
+    path = MANUSCRIPTS / 'latex/paper2_external_tables.tex'
+    if not path.is_file() or path.read_text() != expected:
+        fail('P2-EXTERNAL-GSE186527: supplement tables differ from the verified outputs')
+    print('PASS  external GSE186527 series: original/repeated grids, frozen-protocol binding, exact saved-state replay only, no inferential promotion')
+
+def check_followup_claims(ledger: dict) -> None:
+    """Bind completed follow-ups and distinguish the two topic-search tests."""
+    base = 'output/followup-integration-20261011-r1'
+    definitions = (('measurement_construct', 'P1-FOLLOWUP-SELECTION-20261011', f'{base}/p1/audit/report.json'), ('population_dynamics', 'P2-FOLLOWUP-COMPLETED-20261011', f'{base}/p2/audit/report.json'), ('population_dynamics', 'P2-FOLLOWUP-E0-20261011', f'{base}/p2/e0-reproduction/receipt.json'))
+    reports = {}
+    for paper, claim_id, source in definitions:
+        if paper not in ledger['papers']:
+            continue
+        claims = {row['id']: row for row in ledger['papers'][paper]['claims']}
+        claim = claims.get(claim_id, {})
+        path = ROOT / source
+        if claim.get('source') != source or claim.get('status') != 'diagnostic_only' or claim.get('source_sha256') != hashlib.sha256(path.read_bytes()).hexdigest():
+            fail(f'{claim_id}: current source-bound descriptive claim required')
+        for name, expected in claim.get('evidence_sha256', {}).items():
+            if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
+                fail(f'{claim_id}: derived evidence changed: {name}')
+        report = json.loads(path.read_text())
+        if report['status'] != 'passed':
+            fail(f'{claim_id}: completed audit required')
+        reports[claim_id] = report
+    if 'measurement_construct' in ledger['papers']:
+        report = reports['P1-FOLLOWUP-SELECTION-20261011']
+        if (report['outcome_patients'], report['healed'], report['nonhealed']) != (11, 7, 4):
+            fail('P1 follow-up: patient counts changed')
+        for name, expected in report['sources'].items():
+            if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
+                fail(f'P1 follow-up source changed: {name}')
+        if hashlib.sha256((ROOT / 'scripts/audit_p1_followup.py').read_bytes()).hexdigest() != report['audit_script_sha256']:
+            fail('P1 follow-up: audit implementation changed')
+        results = (MANUSCRIPTS / 'latex/results.tex').read_text()
+        for readout, expected_topic in (('S', 0), ('M', 0), ('W', 14)):
+            row = report['topic_search'][readout]
+            if row['argmax_topic'] != expected_topic or row['allocations'] != 330:
+                fail('P1 follow-up: named topic versus maximum-statistic identity changed')
+            if f"{row['topic0_max_calibrated_p']:.3f}" not in results:
+                fail(f'P1 follow-up: missing named-topic {readout} probability')
+        if f"{report['topic_search']['W']['global_max_statistic_p']:.3f}" not in results or 'topic 14, not fibroblast-associated topic' not in results or (not report['original_cell_weighted_arm_selection_is_distinct']):
+            fail('P1 follow-up: global versus named-topic test distinction missing')
+    if 'population_dynamics' in ledger['papers']:
+        from manuscripts.followup_tables import population_tables
+        report = reports['P2-FOLLOWUP-COMPLETED-20261011']
+        if (report['original_fits'], report['new_nested_fits'], report['biological_donors']) != (354, 9, 3):
+            fail('P2 follow-up: complete fit/donor contract changed')
+        if len(report['coordinates']) != 31 or len(report['field_checks']) != 363 or any((row['max_abs_error'] != 0 for row in report['coordinates'])) or any((not row['cuda_replayed'] or not row['predictions_finite'] or row['maximum_prediction_error'] != 0 for row in report['field_checks'])):
+            fail('P2 follow-up: input-backed exact replay claim not reproduced')
+        if report['alpha_grid_replayed'] or report['historical_training_input_hashes_available']:
+            fail('P2 follow-up: historical provenance scope changed')
+        if (MANUSCRIPTS / 'latex/paper2_followup_tables.tex').read_text() != population_tables():
+            fail('P2 follow-up: six numerical tables differ from admitted evidence')
+        control = reports['P2-FOLLOWUP-E0-20261011']
+        for name, expected in control['inputs'].items():
+            if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected:
+                fail(f'P2 E0 input changed: {name}')
+        result_path = ROOT / control['actual_output_directory'] / 'e0_reproduction.json'
+        if hashlib.sha256(result_path.read_bytes()).hexdigest() != control['result_sha256']:
+            fail('P2 E0: reproduction result changed')
+        draw_check = control['result']['harness_reproduction']
+        if draw_check['rows'] != 2700 or draw_check['missing'] != 0 or draw_check['max_abs_energy_difference'] > 1e-12:
+            fail('P2 E0: complete deterministic control reproduction required')
+    print('PASS  completed follow-ups: named/global topic tests, 363 CUDA fields, 31 coordinates, six tables and 2700 controls bound')
 
 
 def check_export_reports():
@@ -776,6 +972,9 @@ def main() -> int:
     if not COVERAGE_PATH.is_file():
         fail('result coverage is missing')
     check_result_coverage(ledger, json.loads(COVERAGE_PATH.read_text(encoding='utf-8')))
+    check_quality_claims(ledger)
+    check_external_claims(ledger)
+    check_followup_claims(ledger)
     manuscript_text = {}
     for paper, path in PAPER_FILES.items():
         if not path.exists():
@@ -783,6 +982,7 @@ def main() -> int:
         manuscript_text[paper] = read_native(path)
     check_revision_tables(manuscript_text)
     check_latest_tables(manuscript_text)
+    check_saved_diagnostic_tables(ledger, manuscript_text)
     report_sources = []
     for paper in ledger.get('papers', {}).values():
         for claim in paper.get('claims', []):

@@ -1,0 +1,6 @@
+{
+  "script": "p1_6c_allcell_without_melanocytes",
+  "inputs_sha256": {
+    "outputs/scientific_revision_20260922/measurement/projection/cells.parquet": "3572a78007b7be093603988a87734c194371e1820ebc499d693c1379cd298449"
+  }
+}

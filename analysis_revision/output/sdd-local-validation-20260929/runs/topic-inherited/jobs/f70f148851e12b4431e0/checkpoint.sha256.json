@@ -1,0 +1,5 @@
+{
+ "checkpoint.json": "05f85cff0621758c93b2372985e9afe543a0fe321218925823bd69452f6de5b3",
+ "model_state.npz": "db17fd371ac914060c4898a247e7ee97dfdb0eac3a0d5569c62d0d4bcbadd79c",
+ "topics.npz": "d8389af928021ff682137b1b533cf36cd3bf154c0cba2fdc869aa98b7576d89d"
+}

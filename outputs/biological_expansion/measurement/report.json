@@ -1,0 +1,365 @@
+{
+  "status": "complete",
+  "threshold": 0.18429584801197052,
+  "cells": 76461,
+  "fibroblasts": 19410,
+  "specimens": 25,
+  "patients": 20,
+  "lineage_counts": {
+    "fibroblast": 19410,
+    "pericyte_smc": 18780,
+    "keratinocyte": 10821,
+    "endothelial": 7636,
+    "t_cell": 5761,
+    "myeloid": 5691,
+    "sweat_gland": 2870,
+    "b_plasma": 1516,
+    "lymphatic_ec": 1420,
+    "melanocyte": 1330,
+    "mast": 1226
+  },
+  "contrasts": [
+    {
+      "variant": "cell-weighted",
+      "readout": "fibroblast_mean",
+      "n_healed": 7,
+      "n_nonhealed": 4,
+      "healed_mean": 0.1728731139487157,
+      "nonhealed_mean": 0.0836782474710985,
+      "difference": 0.08919486647761721,
+      "ci_low": -0.04860788050334285,
+      "ci_high": 0.21769625210073582,
+      "exact_p": 0.31212121212121213,
+      "permutations": 330,
+      "bh_q": 0.4696969696969697
+    },
+    {
+      "variant": "cell-weighted",
+      "readout": "high_state_fraction",
+      "n_healed": 7,
+      "n_nonhealed": 4,
+      "healed_mean": 0.30098808413560035,
+      "nonhealed_mean": 0.14956236575234536,
+      "difference": 0.151425718383255,
+      "ci_low": -0.13308071443314262,
+      "ci_high": 0.41530859034227663,
+      "exact_p": 0.3696969696969697,
+      "permutations": 330,
+      "bh_q": 0.4696969696969697
+    },
+    {
+      "variant": "cell-weighted",
+      "readout": "fibroblast_fraction",
+      "n_healed": 7,
+      "n_nonhealed": 4,
+      "healed_mean": 0.28252288163946515,
+      "nonhealed_mean": 0.21175101440013844,
+      "difference": 0.07077186723932671,
+      "ci_low": -0.07078163744545117,
+      "ci_high": 0.21455986236995023,
+      "exact_p": 0.4696969696969697,
+      "permutations": 330,
+      "bh_q": 0.4696969696969697
+    },
+    {
+      "variant": "equal-specimen",
+      "readout": "fibroblast_mean",
+      "n_healed": 7,
+      "n_nonhealed": 4,
+      "healed_mean": 0.18114305239785744,
+      "nonhealed_mean": 0.08378064349048296,
+      "difference": 0.09736240890737448,
+      "ci_low": -0.04213023771637919,
+      "ci_high": 0.22603268357877093,
+      "exact_p": 0.2787878787878788,
+      "permutations": 330,
+      "bh_q": 0.48484848484848486
+    },
+    {
+      "variant": "equal-specimen",
+      "readout": "high_state_fraction",
+      "n_healed": 7,
+      "n_nonhealed": 4,
+      "healed_mean": 0.3179624130008161,
+      "nonhealed_mean": 0.1496906646268037,
+      "difference": 0.16827174837401243,
+      "ci_low": -0.1169830653233349,
+      "ci_high": 0.43099319191183255,
+      "exact_p": 0.3424242424242424,
+      "permutations": 330,
+      "bh_q": 0.48484848484848486
+    },
+    {
+      "variant": "equal-specimen",
+      "readout": "fibroblast_fraction",
+      "n_healed": 7,
+      "n_nonhealed": 4,
+      "healed_mean": 0.2791816836337249,
+      "nonhealed_mean": 0.21128423321576628,
+      "difference": 0.06789745041795864,
+      "ci_low": -0.0724094423299072,
+      "ci_high": 0.21135433063974354,
+      "exact_p": 0.48484848484848486,
+      "permutations": 330,
+      "bh_q": 0.48484848484848486
+    },
+    {
+      "variant": "minimum-100-fibroblasts",
+      "readout": "fibroblast_mean",
+      "n_healed": 7,
+      "n_nonhealed": 4,
+      "healed_mean": 0.1728731139487157,
+      "nonhealed_mean": 0.0836782474710985,
+      "difference": 0.08919486647761721,
+      "ci_low": -0.04860788050334285,
+      "ci_high": 0.21769625210073582,
+      "exact_p": 0.31212121212121213,
+      "permutations": 330,
+      "bh_q": 0.4696969696969697
+    },
+    {
+      "variant": "minimum-100-fibroblasts",
+      "readout": "high_state_fraction",
+      "n_healed": 7,
+      "n_nonhealed": 4,
+      "healed_mean": 0.30098808413560035,
+      "nonhealed_mean": 0.14956236575234536,
+      "difference": 0.151425718383255,
+      "ci_low": -0.13308071443314262,
+      "ci_high": 0.41530859034227663,
+      "exact_p": 0.3696969696969697,
+      "permutations": 330,
+      "bh_q": 0.4696969696969697
+    },
+    {
+      "variant": "minimum-100-fibroblasts",
+      "readout": "fibroblast_fraction",
+      "n_healed": 7,
+      "n_nonhealed": 4,
+      "healed_mean": 0.28252288163946515,
+      "nonhealed_mean": 0.21175101440013844,
+      "difference": 0.07077186723932671,
+      "ci_low": -0.07078163744545117,
+      "ci_high": 0.21455986236995023,
+      "exact_p": 0.4696969696969697,
+      "permutations": 330,
+      "bh_q": 0.4696969696969697
+    }
+  ],
+  "omissions": [
+    {
+      "omitted": "Patient 01",
+      "readout": "fibroblast_mean",
+      "difference": 0.14450380430009324,
+      "exact_p": 0.125
+    },
+    {
+      "omitted": "Patient 02",
+      "readout": "fibroblast_mean",
+      "difference": 0.06011807571104755,
+      "exact_p": 0.5047619047619047
+    },
+    {
+      "omitted": "Patient 03",
+      "readout": "fibroblast_mean",
+      "difference": 0.11343657746449645,
+      "exact_p": 0.20476190476190476
+    },
+    {
+      "omitted": "Patient 04",
+      "readout": "fibroblast_mean",
+      "difference": 0.05932321300770643,
+      "exact_p": 0.5047619047619047
+    },
+    {
+      "omitted": "Patient 05",
+      "readout": "fibroblast_mean",
+      "difference": 0.06546282077340172,
+      "exact_p": 0.525
+    },
+    {
+      "omitted": "Patient 06",
+      "readout": "fibroblast_mean",
+      "difference": 0.0672781210125937,
+      "exact_p": 0.5166666666666667
+    },
+    {
+      "omitted": "Patient 07",
+      "readout": "fibroblast_mean",
+      "difference": 0.07953471982438017,
+      "exact_p": 0.44166666666666665
+    },
+    {
+      "omitted": "Patient 08",
+      "readout": "fibroblast_mean",
+      "difference": 0.09053660611344527,
+      "exact_p": 0.319047619047619
+    },
+    {
+      "omitted": "Patient 09",
+      "readout": "fibroblast_mean",
+      "difference": 0.0832298453261319,
+      "exact_p": 0.3761904761904762
+    },
+    {
+      "omitted": "Patient 10",
+      "readout": "fibroblast_mean",
+      "difference": 0.10625780161724974,
+      "exact_p": 0.2571428571428571
+    },
+    {
+      "omitted": "Patient 11",
+      "readout": "fibroblast_mean",
+      "difference": 0.11146194610324317,
+      "exact_p": 0.21904761904761905
+    },
+    {
+      "omitted": "Patient 01",
+      "readout": "high_state_fraction",
+      "difference": 0.27200900219732993,
+      "exact_p": 0.13333333333333333
+    },
+    {
+      "omitted": "Patient 02",
+      "readout": "high_state_fraction",
+      "difference": 0.1038683586023896,
+      "exact_p": 0.5666666666666667
+    },
+    {
+      "omitted": "Patient 03",
+      "readout": "high_state_fraction",
+      "difference": 0.19782087834015769,
+      "exact_p": 0.2761904761904762
+    },
+    {
+      "omitted": "Patient 04",
+      "readout": "high_state_fraction",
+      "difference": 0.08501736536465654,
+      "exact_p": 0.5666666666666667
+    },
+    {
+      "omitted": "Patient 05",
+      "readout": "high_state_fraction",
+      "difference": 0.10157159646580655,
+      "exact_p": 0.5833333333333334
+    },
+    {
+      "omitted": "Patient 06",
+      "readout": "high_state_fraction",
+      "difference": 0.10264547962731857,
+      "exact_p": 0.5833333333333334
+    },
+    {
+      "omitted": "Patient 07",
+      "readout": "high_state_fraction",
+      "difference": 0.12947679524256497,
+      "exact_p": 0.5166666666666667
+    },
+    {
+      "omitted": "Patient 08",
+      "readout": "high_state_fraction",
+      "difference": 0.1522653731119817,
+      "exact_p": 0.38571428571428573
+    },
+    {
+      "omitted": "Patient 09",
+      "readout": "high_state_fraction",
+      "difference": 0.13960692799814153,
+      "exact_p": 0.43333333333333335
+    },
+    {
+      "omitted": "Patient 10",
+      "readout": "high_state_fraction",
+      "difference": 0.18786490887644322,
+      "exact_p": 0.29523809523809524
+    },
+    {
+      "omitted": "Patient 11",
+      "readout": "high_state_fraction",
+      "difference": 0.1935362163890145,
+      "exact_p": 0.2761904761904762
+    },
+    {
+      "omitted": "Patient 01",
+      "readout": "fibroblast_fraction",
+      "difference": 0.03251231453815434,
+      "exact_p": 0.7583333333333333
+    },
+    {
+      "omitted": "Patient 02",
+      "readout": "fibroblast_fraction",
+      "difference": 0.05668489810185262,
+      "exact_p": 0.6095238095238096
+    },
+    {
+      "omitted": "Patient 03",
+      "readout": "fibroblast_fraction",
+      "difference": 0.0656359482887457,
+      "exact_p": 0.5666666666666667
+    },
+    {
+      "omitted": "Patient 04",
+      "readout": "fibroblast_fraction",
+      "difference": 0.09148864380886718,
+      "exact_p": 0.37142857142857144
+    },
+    {
+      "omitted": "Patient 05",
+      "readout": "fibroblast_fraction",
+      "difference": 0.06568936127377942,
+      "exact_p": 0.5833333333333334
+    },
+    {
+      "omitted": "Patient 06",
+      "readout": "fibroblast_fraction",
+      "difference": 0.0675405370476215,
+      "exact_p": 0.575
+    },
+    {
+      "omitted": "Patient 07",
+      "readout": "fibroblast_fraction",
+      "difference": 0.11734525609775162,
+      "exact_p": 0.30833333333333335
+    },
+    {
+      "omitted": "Patient 08",
+      "readout": "fibroblast_fraction",
+      "difference": 0.05404699127847418,
+      "exact_p": 0.6285714285714286
+    },
+    {
+      "omitted": "Patient 09",
+      "readout": "fibroblast_fraction",
+      "difference": 0.09719644587322662,
+      "exact_p": 0.3333333333333333
+    },
+    {
+      "omitted": "Patient 10",
+      "readout": "fibroblast_fraction",
+      "difference": 0.10244370768667316,
+      "exact_p": 0.3047619047619048
+    },
+    {
+      "omitted": "Patient 11",
+      "readout": "fibroblast_fraction",
+      "difference": 0.027906435637447408,
+      "exact_p": 0.7571428571428571
+    }
+  ],
+  "display_cells": 2000,
+  "umap": {
+    "neighbors": 30,
+    "minimum_distance": 0.3,
+    "seed": 17,
+    "input": "centered log ratio of 15 frozen topic proportions"
+  },
+  "provenance": {
+    "protocol_sha256": "8d0c02d2bbfee52bc29e1e4c3bdabacd915abd0ce134d6b0d8ad4c7415e96218",
+    "script_sha256": "e007b728fab165abb38855d42c67e5cb29ba2d469a6f2dc15327f1c7bf9793ed",
+    "inputs": {
+      "outputs/celltype_resolved/GSE165816_discovery_theta.parquet": "aed3e7cdb7d63207db82781ad521f3b9c06cca08b7a365b21da8e1f330323014",
+      "cohort_metadata/GSE165816_ncomms_subject_sample_map.csv": "11870be07b8c06e6037c7ab5c532e90907913c390bd180b59cfe1821bebcd96c",
+      "outputs/bimodal_stratification/report.json": "dde5b4e5f8cba6045449e8e7797f611213a61b7cbd51551ac0fd051b17d0d14f"
+    }
+  }
+}

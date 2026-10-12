@@ -1,3 +1,14 @@
-"label","value","low","high"
-"14 samples",0.0457369544466465,0.0123434474695914,0.081008288614442
-"11 patients",0.0292796678027977,-0.00244196533271186,0.0667058302605402
+"label","value","low","high","kind","omitted_patient"
+"14 samples",0.0457369544466465,0.0123434474695914,0.081008288614442,"estimate",
+"11 patients",0.0292796678027977,-0.00244196533271186,0.0667058302605402,"estimate",
+"11 patients",0.0356744792984931,,,"patient_omission","S01"
+"11 patients",0.0143286327132243,,,"patient_omission","S02"
+"11 patients",0.036174905210948,,,"patient_omission","S03"
+"11 patients",0.0266270751442865,,,"patient_omission","S04"
+"11 patients",0.030614320323319,,,"patient_omission","S05"
+"11 patients",0.0225018701194834,,,"patient_omission","S06"
+"11 patients",0.0283280014698951,,,"patient_omission","S07"
+"11 patients",0.0266998260918947,,,"patient_omission","S08"
+"11 patients",0.0303546889067606,,,"patient_omission","S09"
+"11 patients",0.0364695829324683,,,"patient_omission","S10"
+"11 patients",0.0343029636200013,,,"patient_omission","S11"

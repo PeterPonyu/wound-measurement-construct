@@ -1,0 +1,628 @@
+{
+  "status": "complete",
+  "raw_shuffle": {
+    "status": "complete",
+    "seed": 9122,
+    "shuffle_seed": 9123,
+    "selection": {
+      "cells_per_gsm": 240,
+      "n_cells": 6000,
+      "n_gsms": 25,
+      "cells_by_gsm": {
+        "GSM5050523": 240,
+        "GSM5050527": 240,
+        "GSM5050530": 240,
+        "GSM5050531": 240,
+        "GSM5050532": 240,
+        "GSM5050533": 240,
+        "GSM5050534": 240,
+        "GSM5050538": 240,
+        "GSM5050539": 240,
+        "GSM5050540": 240,
+        "GSM5050547": 240,
+        "GSM5050548": 240,
+        "GSM5050552": 240,
+        "GSM5050555": 240,
+        "GSM5050556": 240,
+        "GSM5050557": 240,
+        "GSM5050558": 240,
+        "GSM5050563": 240,
+        "GSM5050564": 240,
+        "GSM5050566": 240,
+        "GSM5050567": 240,
+        "GSM5050568": 240,
+        "GSM5050569": 240,
+        "GSM5050573": 240,
+        "GSM5050574": 240
+      },
+      "selection_unit": "cell; equal fixed count per GSM; rows sorted within GSM",
+      "identity": "source_order_cell_id is a synthetic GSM:QC-row identifier, not a barcode"
+    },
+    "input_contract": {
+      "raw_counts": "integer counts read from source CSV, before normalization",
+      "panel": "/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/outputs/direction1_dfu_mainline/panel.npy",
+      "checkpoint": "/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/outputs/direction1_dfu_mainline/topic_model.pt",
+      "panel_sha256": "85f7f9110c895c918d6e55ff8dd84c7de3f61b46bfbde2d70028cebf46d713c4",
+      "checkpoint_sha256": "c54e78d7ebfd26b0d00436e928db3779d93ffd4133a768114698072fb0538ae9",
+      "beta_sha256": "1bbdf049709e482c52df63c35bbb663f8037d6183d450700beb072db6ea1ac4b",
+      "projection": "library_normalize(panel counts) -> frozen encoder -> softmax(mu), deterministic=True",
+      "decoder_reconstruction_not_used": true
+    },
+    "column_marginal_check": {
+      "columns_checked": 23572,
+      "rows_checked": 6000,
+      "every_column_exact": true
+    },
+    "unified_projection_verification": {
+      "tested_cells": 6000,
+      "maximum_absolute_difference": 3.5762786865234375e-07,
+      "tolerance": 1e-06,
+      "all_selected_cells_agree": true
+    },
+    "raw_count_summary": {
+      "real_counts": {
+        "all_genes": {
+          "library_size_mean": 9275.2065,
+          "library_size_sd": 10907.996958249993,
+          "library_size_median": 6333.0,
+          "library_size_p05_p95": [
+            1073.95,
+            26286.800000000007
+          ],
+          "detected_genes_mean": 2312.195833333333,
+          "detected_genes_sd": 1367.1079161802256,
+          "detected_genes_median": 2079.5,
+          "detected_genes_p05_p95": [
+            553.0,
+            4889.05
+          ],
+          "detection_rate_mean": 0.0980907786073873,
+          "detection_rate_sd": 0.05799711166554495,
+          "zero_library_cells": 0
+        },
+        "model_panel": {
+          "library_size_mean": 1821.5001666666667,
+          "library_size_sd": 3110.9966513964578,
+          "library_size_median": 1062.5,
+          "library_size_p05_p95": [
+            153.95,
+            5500.0
+          ],
+          "detected_genes_mean": 342.1268333333333,
+          "detected_genes_sd": 180.85852596243717,
+          "detected_genes_median": 317.0,
+          "detected_genes_p05_p95": [
+            94.0,
+            648.0
+          ],
+          "detection_rate_mean": 0.04886130153289536,
+          "detection_rate_sd": 0.02582955240823153,
+          "zero_library_cells": 0
+        }
+      },
+      "column_shuffled_counts": {
+        "all_genes": {
+          "library_size_mean": 9275.2065,
+          "library_size_sd": 1500.9519669833153,
+          "library_size_median": 9043.0,
+          "library_size_p05_p95": [
+            7949.9,
+            11100.300000000001
+          ],
+          "detected_genes_mean": 2312.195833333333,
+          "detected_genes_sd": 38.97696092102216,
+          "detected_genes_median": 2312.0,
+          "detected_genes_p05_p95": [
+            2248.0,
+            2377.0
+          ],
+          "detection_rate_mean": 0.0980907786073873,
+          "detection_rate_sd": 0.0016535279535475208,
+          "zero_library_cells": 0
+        },
+        "model_panel": {
+          "library_size_mean": 1821.5001666666667,
+          "library_size_sd": 1324.1453608522893,
+          "library_size_median": 1556.0,
+          "library_size_p05_p95": [
+            1123.95,
+            3064.600000000002
+          ],
+          "detected_genes_mean": 342.1268333333333,
+          "detected_genes_sd": 16.236689316859586,
+          "detected_genes_median": 342.0,
+          "detected_genes_p05_p95": [
+            315.0,
+            369.0
+          ],
+          "detection_rate_mean": 0.04886130153289536,
+          "detection_rate_sd": 0.0023188645125477845,
+          "zero_library_cells": 0
+        }
+      }
+    },
+    "coordinate_summary": {
+      "real_counts": {
+        "perplexity_mean": 3.438301951404817,
+        "perplexity_median": 2.919238765403944,
+        "perplexity_p05_p95": [
+          1.5546131008157955,
+          7.04991494463024
+        ],
+        "entropy_mean": 1.1075609612428499,
+        "hhi_mean": 0.574025605079322,
+        "hhi_median": 0.6007917064517434,
+        "max_coordinate_mean": 0.7114610750079154,
+        "max_coordinate_p95": 0.929292106628418,
+        "top1_minus_top2_mean": 0.6012882447332376,
+        "mu_l2_centered_mean": 4.522767797400128,
+        "mu_abs_mean": 0.7367350976909148
+      },
+      "column_shuffled_counts": {
+        "perplexity_mean": 11.230590165201063,
+        "perplexity_median": 12.084913263305431,
+        "perplexity_p05_p95": [
+          5.303419084308293,
+          14.25479317439279
+        ],
+        "entropy_mean": 2.371389772513711,
+        "hhi_mean": 0.14672175162747234,
+        "hhi_median": 0.1032920095143082,
+        "max_coordinate_mean": 0.26530865390847125,
+        "max_coordinate_p95": 0.599636647105217,
+        "top1_minus_top2_mean": 0.14630976465305623,
+        "mu_l2_centered_mean": 2.3115811691134693,
+        "mu_abs_mean": 0.4458109037964708
+      }
+    },
+    "changes": {
+      "all_genes_library_size_mean_delta": 0.0,
+      "all_genes_detected_genes_mean_delta": 0.0,
+      "all_genes_detection_rate_mean_delta": 0.0,
+      "panel_library_size_mean_delta": 0.0,
+      "panel_detected_genes_mean_delta": 0.0,
+      "panel_detection_rate_mean_delta": 0.0,
+      "coordinate_perplexity_mean_delta": 7.792288213796246,
+      "coordinate_hhi_mean_delta": -0.4273038534518496
+    },
+    "interpretation": {
+      "supported": "Frozen topic coordinates are less concentrated after independent raw gene-column shuffling in this fixed subset.",
+      "limitation": "Shuffling preserves pooled gene marginals but changes row library sizes, detection patterns, specimen-specific marginals and biological co-expression together. Their individual contributions are not separated.",
+      "historical_concentration_cutoff": 14.25,
+      "shuffled_mean_perplexity_exceeds_historical_cutoff": false,
+      "topology_audit_run": false,
+      "prohibited_claim": "This experiment does not demonstrate failure of the historical concentration/topology integrity gate; the new raw-null perplexity remains below its old near-uniform threshold."
+    },
+    "output_files": [
+      "raw_shuffle_selected_cells.csv.gz",
+      "raw_shuffle_cell_stats.csv.gz",
+      "raw_shuffle_theta_real.npy",
+      "raw_shuffle_theta_null.npy",
+      "raw_shuffle_mu_real.npy",
+      "raw_shuffle_mu_null.npy"
+    ],
+    "script_sha256": "86b1df6f16c8c3e9e6de1eaeecf4ee8507ee831580f2152de49757915c9fa7fe"
+  },
+  "gate": {
+    "status": "complete",
+    "n_cells": 76461,
+    "n_specimens": 25,
+    "n_dfu_specimens": 14,
+    "n_dfu_patients": 11,
+    "threshold": 0.18429584801197052,
+    "threshold_operator": ">",
+    "projection_source": "outputs/scientific_revision_20260922/measurement/projection/cells.parquet",
+    "pooled_reference_exactly_reproduces_historical_labels": true,
+    "frozen_per_specimen_exactly_reproduces_pooled_labels": true,
+    "frozen_reference_scope": "All discovery cells. Equality on these cells is implementation verification, not independent identity validation.",
+    "marker_reference": {
+      "normalization": "per-cell CP10K then log1p",
+      "score": "mean of marker-wise z-scores",
+      "lineages": [
+        "keratinocyte",
+        "fibroblast",
+        "myeloid",
+        "t_cell",
+        "b_plasma",
+        "endothelial",
+        "lymphatic_ec",
+        "pericyte_smc",
+        "mast",
+        "melanocyte",
+        "sweat_gland"
+      ],
+      "markers_by_lineage": {
+        "keratinocyte": [
+          "KRT14",
+          "KRT5",
+          "KRT1",
+          "KRT10",
+          "KRT16",
+          "DMKN",
+          "SFN",
+          "KRTDAP"
+        ],
+        "fibroblast": [
+          "COL1A1",
+          "COL1A2",
+          "PDGFRA",
+          "TWIST2",
+          "COL6A3",
+          "MMP2",
+          "CCDC80"
+        ],
+        "myeloid": [
+          "CD68",
+          "CD163",
+          "LYZ",
+          "AIF1",
+          "ITGAM",
+          "CD14",
+          "FCER1G",
+          "TYROBP"
+        ],
+        "t_cell": [
+          "CD3D",
+          "CD3E",
+          "CD2",
+          "IL7R",
+          "TRBC2",
+          "CCL5",
+          "SKAP1"
+        ],
+        "b_plasma": [
+          "MS4A1",
+          "CD79A",
+          "MZB1",
+          "JCHAIN",
+          "DERL3"
+        ],
+        "endothelial": [
+          "PECAM1",
+          "VWF",
+          "CDH5",
+          "CLDN5",
+          "EGFL7",
+          "RAMP2"
+        ],
+        "lymphatic_ec": [
+          "LYVE1",
+          "PROX1",
+          "CCL21",
+          "MMRN1",
+          "TFF3"
+        ],
+        "pericyte_smc": [
+          "RGS5",
+          "ACTA2",
+          "MYH11",
+          "NOTCH3",
+          "TAGLN",
+          "NDUFA4L2"
+        ],
+        "mast": [
+          "TPSAB1",
+          "TPSB2",
+          "CPA3",
+          "MS4A2",
+          "KIT"
+        ],
+        "melanocyte": [
+          "PMEL",
+          "MLANA",
+          "DCT",
+          "TYRP1"
+        ],
+        "sweat_gland": [
+          "DCD",
+          "SCGB2A2",
+          "MUCL1",
+          "SCGB1D2",
+          "PIP"
+        ]
+      },
+      "reference_cells": 76461
+    },
+    "adaptive_labels_changed": 7044,
+    "adaptive_labels_changed_fraction": 0.09212539726134893,
+    "fibroblast_counts": {
+      "original_pooled": 19410,
+      "frozen_reference": 19410,
+      "adaptive_per_specimen": 19711
+    },
+    "fibroblasts_lost_under_adaptive": 1119,
+    "fibroblasts_gained_under_adaptive": 1420,
+    "adaptive_specimen_max_absolute_fibroblast_mean_change": 0.037060141979839506,
+    "adaptive_specimen_max_absolute_high_fraction_change": 0.06952501651107579,
+    "zero_fibroblast_specimens": [],
+    "zero_fibroblast_patients": [],
+    "patient_contrasts": [
+      {
+        "readout": "fibroblast_mean",
+        "n_healed": 7,
+        "n_nonhealed": 4,
+        "healed_mean": 0.1728731139487157,
+        "nonhealed_mean": 0.0836782474710985,
+        "difference": 0.08919486647761721,
+        "exact_p": 0.31212121212121213,
+        "allocations": 330,
+        "null_percentile_025": -0.16200111708688109,
+        "null_percentile_975": 0.15970743729719167,
+        "healthy_rows_excluded_before_allocation": 9,
+        "gate": "original_pooled",
+        "unit": "patient",
+        "aggregation": "fibroblast-cell weights for within-fibroblast summaries; all-cell weights for composition",
+        "bh_q_three_readouts_within_gate": 0.4696969696969697
+      },
+      {
+        "readout": "high_state_fraction",
+        "n_healed": 7,
+        "n_nonhealed": 4,
+        "healed_mean": 0.30098808413560035,
+        "nonhealed_mean": 0.14956236575234536,
+        "difference": 0.151425718383255,
+        "exact_p": 0.3696969696969697,
+        "allocations": 330,
+        "null_percentile_025": -0.32052534424676515,
+        "null_percentile_975": 0.3234195908834938,
+        "healthy_rows_excluded_before_allocation": 9,
+        "gate": "original_pooled",
+        "unit": "patient",
+        "aggregation": "fibroblast-cell weights for within-fibroblast summaries; all-cell weights for composition",
+        "bh_q_three_readouts_within_gate": 0.4696969696969697
+      },
+      {
+        "readout": "fibroblast_fraction",
+        "n_healed": 7,
+        "n_nonhealed": 4,
+        "healed_mean": 0.28252288163946515,
+        "nonhealed_mean": 0.21175101440013844,
+        "difference": 0.07077186723932671,
+        "exact_p": 0.4696969696969697,
+        "allocations": 330,
+        "null_percentile_025": -0.1696703643300834,
+        "null_percentile_975": 0.17458340951469678,
+        "healthy_rows_excluded_before_allocation": 9,
+        "gate": "original_pooled",
+        "unit": "patient",
+        "aggregation": "fibroblast-cell weights for within-fibroblast summaries; all-cell weights for composition",
+        "bh_q_three_readouts_within_gate": 0.4696969696969697
+      },
+      {
+        "readout": "fibroblast_mean",
+        "n_healed": 7,
+        "n_nonhealed": 4,
+        "healed_mean": 0.1728731139487157,
+        "nonhealed_mean": 0.0836782474710985,
+        "difference": 0.08919486647761721,
+        "exact_p": 0.31212121212121213,
+        "allocations": 330,
+        "null_percentile_025": -0.16200111708688109,
+        "null_percentile_975": 0.15970743729719167,
+        "healthy_rows_excluded_before_allocation": 9,
+        "gate": "frozen_reference",
+        "unit": "patient",
+        "aggregation": "fibroblast-cell weights for within-fibroblast summaries; all-cell weights for composition",
+        "bh_q_three_readouts_within_gate": 0.4696969696969697
+      },
+      {
+        "readout": "high_state_fraction",
+        "n_healed": 7,
+        "n_nonhealed": 4,
+        "healed_mean": 0.30098808413560035,
+        "nonhealed_mean": 0.14956236575234536,
+        "difference": 0.151425718383255,
+        "exact_p": 0.3696969696969697,
+        "allocations": 330,
+        "null_percentile_025": -0.32052534424676515,
+        "null_percentile_975": 0.3234195908834938,
+        "healthy_rows_excluded_before_allocation": 9,
+        "gate": "frozen_reference",
+        "unit": "patient",
+        "aggregation": "fibroblast-cell weights for within-fibroblast summaries; all-cell weights for composition",
+        "bh_q_three_readouts_within_gate": 0.4696969696969697
+      },
+      {
+        "readout": "fibroblast_fraction",
+        "n_healed": 7,
+        "n_nonhealed": 4,
+        "healed_mean": 0.28252288163946515,
+        "nonhealed_mean": 0.21175101440013844,
+        "difference": 0.07077186723932671,
+        "exact_p": 0.4696969696969697,
+        "allocations": 330,
+        "null_percentile_025": -0.1696703643300834,
+        "null_percentile_975": 0.17458340951469678,
+        "healthy_rows_excluded_before_allocation": 9,
+        "gate": "frozen_reference",
+        "unit": "patient",
+        "aggregation": "fibroblast-cell weights for within-fibroblast summaries; all-cell weights for composition",
+        "bh_q_three_readouts_within_gate": 0.4696969696969697
+      },
+      {
+        "readout": "fibroblast_mean",
+        "n_healed": 7,
+        "n_nonhealed": 4,
+        "healed_mean": 0.16631223702596507,
+        "nonhealed_mean": 0.07764349648445146,
+        "difference": 0.08866874054151361,
+        "exact_p": 0.3181818181818182,
+        "allocations": 330,
+        "null_percentile_025": -0.15574409501135072,
+        "null_percentile_975": 0.153236246159869,
+        "healthy_rows_excluded_before_allocation": 9,
+        "gate": "adaptive_per_specimen",
+        "unit": "patient",
+        "aggregation": "fibroblast-cell weights for within-fibroblast summaries; all-cell weights for composition",
+        "bh_q_three_readouts_within_gate": 0.49696969696969695
+      },
+      {
+        "readout": "high_state_fraction",
+        "n_healed": 7,
+        "n_nonhealed": 4,
+        "healed_mean": 0.2896468888145571,
+        "nonhealed_mean": 0.13388474248991886,
+        "difference": 0.15576214632463822,
+        "exact_p": 0.36666666666666664,
+        "allocations": 330,
+        "null_percentile_025": -0.3153563509322916,
+        "null_percentile_975": 0.3070060335684262,
+        "healthy_rows_excluded_before_allocation": 9,
+        "gate": "adaptive_per_specimen",
+        "unit": "patient",
+        "aggregation": "fibroblast-cell weights for within-fibroblast summaries; all-cell weights for composition",
+        "bh_q_three_readouts_within_gate": 0.49696969696969695
+      },
+      {
+        "readout": "fibroblast_fraction",
+        "n_healed": 7,
+        "n_nonhealed": 4,
+        "healed_mean": 0.2698775534078147,
+        "nonhealed_mean": 0.21457860222965122,
+        "difference": 0.0552989511781635,
+        "exact_p": 0.49696969696969695,
+        "allocations": 330,
+        "null_percentile_025": -0.13808260374384207,
+        "null_percentile_975": 0.13525792171550793,
+        "healthy_rows_excluded_before_allocation": 9,
+        "gate": "adaptive_per_specimen",
+        "unit": "patient",
+        "aggregation": "fibroblast-cell weights for within-fibroblast summaries; all-cell weights for composition",
+        "bh_q_three_readouts_within_gate": 0.49696969696969695
+      }
+    ],
+    "historical_11_patient_results_reproduced": true,
+    "interpretation": "Changing the reference population changes marker assignments and therefore measurement denominators. These gates have no independent cell-identity truth labels; sensitivity cannot establish which gate is correct."
+  },
+  "dfu_label": {
+    "status": "complete",
+    "eligible_arms": [
+      "DFU-healer",
+      "DFU-nonhealer"
+    ],
+    "healthy_controls_enter_healing_label_null": false,
+    "specimen_test": {
+      "n_healed": 9,
+      "n_nonhealed": 5,
+      "allocations": 2002,
+      "primary_inference": false,
+      "readouts": [
+        {
+          "readout": "fibroblast_mean",
+          "n_healed": 9,
+          "n_nonhealed": 5,
+          "healed_mean": 0.20422749673454169,
+          "nonhealed_mean": 0.07069203382309953,
+          "difference": 0.13353546291144214,
+          "exact_p": 0.08941058941058941,
+          "allocations": 2002,
+          "null_percentile_025": -0.1652463163180759,
+          "null_percentile_975": 0.16229861551616587,
+          "healthy_rows_excluded_before_allocation": 11,
+          "unit": "specimen; secondary because repeat specimens share patients"
+        },
+        {
+          "readout": "high_state_fraction",
+          "n_healed": 9,
+          "n_nonhealed": 5,
+          "healed_mean": 0.3585377324051395,
+          "nonhealed_mean": 0.12049950069791684,
+          "difference": 0.23803823170722263,
+          "exact_p": 0.11988011988011989,
+          "allocations": 2002,
+          "null_percentile_025": -0.31665737696287166,
+          "null_percentile_975": 0.3221507109665107,
+          "healthy_rows_excluded_before_allocation": 11,
+          "unit": "specimen; secondary because repeat specimens share patients"
+        },
+        {
+          "readout": "fibroblast_fraction",
+          "n_healed": 9,
+          "n_nonhealed": 5,
+          "healed_mean": 0.2978666925849758,
+          "nonhealed_mean": 0.2090653663901199,
+          "difference": 0.08880132619485587,
+          "exact_p": 0.26973026973026976,
+          "allocations": 2002,
+          "null_percentile_025": -0.1540082562672883,
+          "null_percentile_975": 0.14599778820929904,
+          "healthy_rows_excluded_before_allocation": 11,
+          "unit": "specimen; secondary because repeat specimens share patients"
+        }
+      ]
+    },
+    "patient_test": {
+      "n_healed": 7,
+      "n_nonhealed": 4,
+      "allocations": 330,
+      "primary_inference": true,
+      "readouts": [
+        {
+          "readout": "fibroblast_mean",
+          "n_healed": 7,
+          "n_nonhealed": 4,
+          "healed_mean": 0.1728731139487157,
+          "nonhealed_mean": 0.0836782474710985,
+          "difference": 0.08919486647761721,
+          "exact_p": 0.31212121212121213,
+          "allocations": 330,
+          "null_percentile_025": -0.16200111708688109,
+          "null_percentile_975": 0.15970743729719167,
+          "healthy_rows_excluded_before_allocation": 9,
+          "gate": "original_pooled",
+          "unit": "patient",
+          "aggregation": "fibroblast-cell weights for within-fibroblast summaries; all-cell weights for composition",
+          "bh_q_three_readouts_within_gate": 0.4696969696969697
+        },
+        {
+          "readout": "high_state_fraction",
+          "n_healed": 7,
+          "n_nonhealed": 4,
+          "healed_mean": 0.30098808413560035,
+          "nonhealed_mean": 0.14956236575234536,
+          "difference": 0.151425718383255,
+          "exact_p": 0.3696969696969697,
+          "allocations": 330,
+          "null_percentile_025": -0.32052534424676515,
+          "null_percentile_975": 0.3234195908834938,
+          "healthy_rows_excluded_before_allocation": 9,
+          "gate": "original_pooled",
+          "unit": "patient",
+          "aggregation": "fibroblast-cell weights for within-fibroblast summaries; all-cell weights for composition",
+          "bh_q_three_readouts_within_gate": 0.4696969696969697
+        },
+        {
+          "readout": "fibroblast_fraction",
+          "n_healed": 7,
+          "n_nonhealed": 4,
+          "healed_mean": 0.28252288163946515,
+          "nonhealed_mean": 0.21175101440013844,
+          "difference": 0.07077186723932671,
+          "exact_p": 0.4696969696969697,
+          "allocations": 330,
+          "null_percentile_025": -0.1696703643300834,
+          "null_percentile_975": 0.17458340951469678,
+          "healthy_rows_excluded_before_allocation": 9,
+          "gate": "original_pooled",
+          "unit": "patient",
+          "aggregation": "fibroblast-cell weights for within-fibroblast summaries; all-cell weights for composition",
+          "bh_q_three_readouts_within_gate": 0.4696969696969697
+        }
+      ]
+    },
+    "test_definition": "Exhaustive absolute two-sided difference in equal-unit group means; ties included with 1e-12*max(1,abs(observed)); no Monte Carlo add-one correction.",
+    "inference_limit": "Observational healing-label exchangeability is an assumption; this is a calibrated permutation calculation, not evidence that the measurement is biologically valid or that the pipeline cannot generate artifacts.",
+    "historical_problem": "scripts/38_pipeline_negative_control.py permuted all three arms across 25 specimens, allowing healthy controls into pseudo healing groups. The repaired null first restricts eligibility to 14 DFU specimens; 11-patient tests remain primary."
+  },
+  "continuous_counterexample": {
+    "status": "complete",
+    "seed": 9122,
+    "draws": 200,
+    "construction": "For each original specimen j, draw n_j values as expit(logit(observed mean_j)+Normal(0,1)); no latent class and no mixture fit is used. The distribution mean is not constrained to equal the observed mean.",
+    "observed_rho": 0.9325436810796521,
+    "constructed_rho_median": 0.951144468450431,
+    "fraction_constructed_rho_at_least_observed": 0.76,
+    "inference_scope": "Illustrative counterexample only; not a fitted null, calibrated p-value, model selection result, or evidence favoring this distribution for the actual cells."
+  },
+  "cache_manifest": "outputs/scientific_revision_20260922/measurement_controls/raw_cache_manifest.json"
+}

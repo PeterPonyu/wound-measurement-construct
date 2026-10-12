@@ -1,0 +1,362 @@
+{
+ "schema_version": 1,
+ "kind": "population",
+ "protocol_id": "population-benchmark-v1",
+ "frozen_date": "2026-09-27",
+ "status": "frozen_before_new_data",
+ "question": "When does a population-dynamics model add predictive value over information-set-matched simple baselines, and when does an individual's own source state carry information beyond the population?",
+ "datasets": {
+  "tier_W": [
+   "GSE241132",
+   "GSE326622",
+   "GSE186527",
+   "GSE178758",
+   "GSE204777",
+   "GSE188432"
+  ],
+  "tier_G": [
+   "GSE175634",
+   "CUOMO2020_ZENODO3625024",
+   "GSE122662",
+   "GSE140802",
+   "GSE112294",
+   "GSE114412",
+   "GSE132188"
+  ]
+ },
+ "dataset_task_exclusions": {
+  "GSE326622": {
+   "tasks": [
+    "T-LIO",
+    "T-K"
+   ],
+   "reason": "individual = model arm with one animal per time; holding out an arm is not an individual-level task"
+  },
+  "GSE204777": {
+   "tasks": [
+    "T-LIO",
+    "T-K"
+   ],
+   "reason": "samples are pooled wounds multiplexed by time and position; no individual-level units"
+  },
+  "GSE132188": {
+   "tasks": [
+    "T-LIO",
+    "T-K"
+   ],
+   "reason": "one pooled sample per embryonic stage"
+  },
+  "GSE122662": {
+   "tasks": [
+    "T-LIO",
+    "T-K"
+   ],
+   "reason": "conditions, not individuals; confirm at probe"
+  },
+  "GSE140802": {
+   "tasks": [
+    "T-LIO",
+    "T-K"
+   ],
+   "reason": "wells/populations, not individuals; confirm at probe"
+  },
+  "GSE112294": {
+   "tasks": [
+    "T-LIO",
+    "T-K"
+   ],
+   "reason": "pooled embryos per stage; confirm at probe"
+  }
+ },
+ "min_cells_per_group": 50,
+ "representation_seed": 0,
+ "clock": {
+  "primary": "rank",
+  "sensitivity": [
+   "log_days"
+  ],
+  "sensitivity_methods": [
+   "location_scale",
+   "cfm_independent"
+  ],
+  "note": "Sensitivity jobs rerun missing-time and leave-individual tasks with the log-days clock for the listed methods."
+ },
+ "representation": {
+  "primary": "pca_train"
+ },
+ "representations": {
+  "pca_train": {
+   "kind": "pca_train",
+   "n_hvg": 2000,
+   "n_components": 30,
+   "max_fit_cells": 50000
+  },
+  "frozen_topic_mu": {
+   "kind": "obsm_standardized",
+   "key": "X_frozen_mu",
+   "datasets": [
+    "GSE241132"
+   ]
+  }
+ },
+ "tasks": {
+  "T-MT": {
+   "enabled": true
+  },
+  "T-LIO": {
+   "enabled": true,
+   "min_individuals": 3,
+   "max_held_individuals": 12
+  },
+  "T-SRC": {
+   "enabled": true,
+   "max_substitutes": 3,
+   "design": "leave-two-out: held and substitute individuals are both excluded from fitting",
+   "methods": [
+    "mean_shift",
+    "location_scale",
+    "cfm_independent",
+    "cfm_conditioned"
+   ]
+  },
+  "T-K": {
+   "enabled": true,
+   "min_individuals": 6,
+   "k_values": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    12,
+    16
+   ],
+   "repeats": 3,
+   "max_held_individuals": 6,
+   "methods": [
+    "mean_shift",
+    "location_scale",
+    "target_marginal",
+    "cfm_independent"
+   ],
+   "methods_rationale": "The count curve asks how error changes with the number of training individuals; one flow variant plus three baselines answers it. Exact minibatch OT is CPU-bound (about 26 s per 1,000 steps) and would add about 20 GPU-hours per large dataset without informing the curve.",
+   "design": "Nested training subsets per (held individual, repeat); unit steps k=1..6 allow the frozen plateau criterion (k to k+1, two consecutive intervals containing zero) to be applied literally; 8, 12 and 16 describe the upper range."
+  }
+ },
+ "methods": {
+  "identity": {
+   "tasks": [
+    "T-MT",
+    "T-LIO"
+   ]
+  },
+  "mean_shift": {
+   "tasks": [
+    "T-MT",
+    "T-LIO"
+   ]
+  },
+  "location_scale": {
+   "tasks": [
+    "T-MT",
+    "T-LIO"
+   ]
+  },
+  "quantile_map": {
+   "tasks": [
+    "T-MT",
+    "T-LIO"
+   ]
+  },
+  "ot_displacement": {
+   "tasks": [
+    "T-MT"
+   ],
+   "params": {
+    "cap": 2000,
+    "k": 15
+   }
+  },
+  "gaussian_geodesic": {
+   "tasks": [
+    "T-MT",
+    "T-LIO"
+   ]
+  },
+  "target_marginal": {
+   "tasks": [
+    "T-LIO"
+   ]
+  },
+  "population_ot": {
+   "tasks": [
+    "T-LIO"
+   ],
+   "params": {
+    "cap": 1500,
+    "epsilon": 0.05,
+    "k": 15,
+    "iterations": 2000
+   }
+  },
+  "nearest_individual": {
+   "tasks": [
+    "T-LIO"
+   ]
+  },
+  "cfm_independent": {
+   "tasks": [
+    "T-MT",
+    "T-LIO"
+   ]
+  },
+  "cfm_ot": {
+   "tasks": [
+    "T-MT",
+    "T-LIO"
+   ]
+  },
+  "cfm_sb": {
+   "tasks": [
+    "T-MT",
+    "T-LIO"
+   ],
+   "params": {
+    "sb_sigma_scale": 0.25
+   }
+  },
+  "cfm_conditioned": {
+   "tasks": [
+    "T-LIO"
+   ],
+   "params": {
+    "context_dropout": 0.2
+   }
+  },
+  "cfm_sb_sigma010": {
+   "base": "cfm_sb",
+   "tasks": [
+    "T-MT",
+    "T-LIO"
+   ],
+   "params": {
+    "sb_sigma_scale": 0.1
+   },
+   "role": "sensitivity"
+  },
+  "cfm_sb_sigma050": {
+   "base": "cfm_sb",
+   "tasks": [
+    "T-MT",
+    "T-LIO"
+   ],
+   "params": {
+    "sb_sigma_scale": 0.5
+   },
+   "role": "sensitivity"
+  }
+ },
+ "flow_defaults": {
+  "hidden": 256,
+  "depth": 3,
+  "time_dim": 32,
+  "steps": 10000,
+  "batch_size": 512,
+  "lr": 0.001,
+  "rk4_steps_per_interval": 50,
+  "grad_clip": 1.0,
+  "sinkhorn_iterations": 300,
+  "sb_note": "Schrodinger-bridge noise per coordinate = sb_sigma_scale x within-segment standard deviation; epsilon = 2 sigma^2 with epsilon scaling; probability-flow ODE (RK4) at prediction."
+ },
+ "seeds": {
+  "stochastic": [
+   0,
+   1,
+   2
+  ],
+  "deterministic": [
+   0
+  ]
+ },
+ "evaluation": {
+  "primary_metric": "energy",
+  "secondary_metrics": [
+   "mmd",
+   "sliced_w2",
+   "exact_w2",
+   "mean_error",
+   "bures",
+   "c2st_auc"
+  ],
+  "caps": {
+   "energy": 2000,
+   "exact_w2": 1000,
+   "sliced_w2": 4000,
+   "c2st": 2000
+  },
+  "sliced_projections": 128,
+  "energy_scale_note": "Energy is the squared E-statistic (V-statistic). log(1.2) is a 1.2-fold error ratio: 20% increase or 16.7% reduction in energy; corresponding square-root changes are 9.5% increase or 8.7% reduction."
+ },
+ "analysis": {
+  "primary_comparators": {
+   "T-MT": "location_scale",
+   "T-LIO": "target_marginal"
+  },
+  "primary_family": {
+   "methods": [
+    "cfm_independent",
+    "cfm_ot",
+    "cfm_sb"
+   ],
+   "tasks": [
+    "T-MT",
+    "T-LIO"
+   ],
+   "adjustment": "holm"
+  },
+  "practical_delta_log": 0.1823,
+  "noninferiority_log": 0.0953,
+  "inferential_unit": "dataset",
+  "meta": "REML random effects with modified Hartung-Knapp-Sidik-Jonkman interval",
+  "ranks": "Friedman with Nemenyi critical difference over datasets",
+  "moderators": {
+   "T-MT": [
+    "feature_clock_gap",
+    "feature_log_n_source",
+    "feature_source_anchor_energy",
+    "feature_source_heterogeneity",
+    "feature_n_train_individuals"
+   ],
+   "T-LIO": [
+    "feature_clock_gap",
+    "feature_log_n_source",
+    "feature_source_heterogeneity",
+    "feature_population_shift",
+    "feature_n_train_individuals"
+   ]
+  },
+  "source_information_unit": "individual",
+  "count_curve_plateau": "config/next_cohort_preregistration.json experiment_c_donor_learning_curve.plateau_criterion",
+  "count_curve": {
+   "unit": "held individual",
+   "interval": "percentile bootstrap over held individuals and paired seed/repeat cells (2,000 draws); conditional because training folds overlap",
+   "plateau": "two consecutive unit-step marginal-improvement intervals containing zero; only with matching evaluation/seeds/budget, at least 3 stochastic seeds per cell, nested subsets, and differences not unresolved at seed scale",
+   "scope": "k is the number of dynamics-training individuals conditional on a common representation fitted on all non-held individuals; not total required donor count"
+  },
+  "moderators_note": "Task-level log ratios; OLS with dataset-clustered errors and t(G-1); descriptive below 10 datasets."
+ },
+ "stage_gate": {
+  "stage_a_stops": true,
+  "stage_b_requires": "reviewed Stage-A probe and contract reports plus user approval"
+ },
+ "not_claims": [
+  "Seeds, cell draws and integration settings are computational sensitivity, not biological replication.",
+  "Healthy acute wounds and developmental time courses do not establish diabetic-foot-ulcer prognosis.",
+  "A method ranking is stated only through the pre-specified cross-dataset analysis."
+ ],
+ "datasets_excluded": {
+  "GSE142471": "two time points and different mice at each time: no missing-time or individual-level task is possible"
+ }
+}

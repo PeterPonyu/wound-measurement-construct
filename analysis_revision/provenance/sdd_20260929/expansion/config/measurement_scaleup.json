@@ -1,0 +1,29 @@
+{
+ "schema_version": 1,
+ "kind": "measurement",
+ "protocol_id": "measurement-scaleup-v1",
+ "frozen_date": "2026-09-27",
+ "status": "frozen_before_new_data",
+ "question": "Is specimen-to-specimen variation of single-cell program scores better described by re-weighting shared components (prevalence) or by shifting one shape (intensity), across programs, representations and cohorts; how stable is the frozen representation across training runs; what patient and cell numbers would a prognostic study need?",
+ "cohorts": {"discovery": "GSE165816", "external": ["GSE231643", "GSE223964", "GSE245703", "GSE268834", "GSE248247", "GSE265972"]},
+ "semantics": {
+  "families": ["topic", "module"],
+  "discovery_only_families": ["nmf"],
+  "scale_by_family": {"topic": "logit", "nmf": "logit", "module": "identity"},
+  "n_splits": 10, "min_cells": 50, "seed": 0, "lineages": null,
+  "module_genes": 30, "module_controls": 50, "nmf_components": 15, "nmf_hvg": 2000,
+  "primary_comparison": "M1_vs_C1", "primary_unit": "patient where mapped, otherwise specimen"
+ },
+ "stability": {"K": [10, 15, 20, 30], "seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], "steps": 40000, "batch_size": 512,
+               "lr": 0.001, "kl_weight": 0.01, "reference": "outputs/direction1_dfu_mainline K=15 topic 0",
+               "match": "Hungarian on Pearson correlation of sqrt(beta)"},
+ "design": {"enabled": true, "readouts": ["high_state_fraction"], "patients_per_group": [5, 10, 15, 20, 30, 40, 60],
+            "cells_per_specimen": [50, 100, 200, 500, 1000, 2000], "specimens_per_patient": [1, 2],
+            "delta_multiples_of_sd": [0.5, 0.8, 1.0], "n_sim": 2000, "seed": 0},
+ "stage_gate": {"stage_a_stops": true, "stage_b_requires": "reviewed Stage-A contracts plus user approval"},
+ "not_claims": [
+  "A better held-out likelihood for re-weighting is a statistical description, not proof of discrete biological states.",
+  "External cohorts without authoritative outcomes remain construct evaluations, not prognostic validation.",
+  "The design calculator gives conditional planning numbers, not a clinically justified effect size."
+ ]
+}

@@ -1,24 +1,24 @@
 cff-version: 1.2.0
-message: Cite this software release using the metadata below. The DOI identifies software,
-  not the manuscript.
+message: Cite this software and reproduction release. The software DOI was reserved
+  at archive assembly; publication is handled separately.
 type: software
-title: 'Neural topic measurements in diabetic foot ulcer research: analysis software'
+title: 'Neural topic modelling of fibroblast measurements and diabetic foot ulcer
+  healing: analysis software and reproduction archive'
 authors:
 - family-names: Fu
   given-names: Zeyu
-version: 0.4.2
+version: 0.5.0
 license: MIT
-abstract: Analysis software for a patient-level audit of fibroblast measurements from
-  a frozen 15-topic logistic-normal expression model in diabetic foot ulcer research.
-  It evaluates score decomposition, whole-count-pipeline sensitivity, author-mapped
-  patient contrasts, paired anatomy and external tissue-context projections. Healing
-  inference involves 11 patients; outcome intervals include zero and the external
-  cohorts do not supply independent healing validation. This is a measurement audit,
-  not a validated prognostic tool.
+abstract: A patient-level audit of frozen neural topic measurements in diabetic foot
+  ulcer research. The release includes the producing analysis programs, public processed
+  inputs, numerical evidence, fixed model states, mappings, and corrected journal
+  documents. Healing inference uses eleven discovery patients. The analysis evaluates
+  measurement decomposition, technical sensitivity, topic selection, refits and tissue
+  context; it does not establish prospective healing prediction or independent clinical
+  validation.
 repository-code: https://github.com/PeterPonyu/wound-measurement-construct
 keywords:
 - single-cell transcriptomics
 - wound healing
 - measurement validity
-doi: 10.5281/zenodo.22962314
-date-released: '2026-09-25'
+doi: 10.5281/zenodo.23308073

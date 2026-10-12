@@ -1,0 +1,49 @@
+{
+  "status": "complete",
+  "inputs_sha256": {
+    "data/raw/GSE165816/GSE165816_RAW.tar": "fcad6eacd4d92353c250090e3ecce42c399c321c0777887d28f7b1d90d9d67f4",
+    "data/raw/GSE165816/GSE165816_series_matrix.txt.gz": "f07c5a47aea9063cfbd2443173c1ef84427bd507ddffc3b9cf674bce66506e36",
+    "outputs/direction1_dfu_mainline/obs.csv": "63bc99e6ee7f58ff6384d0af4620f36b1c056755b9f56df2880ae395f22951e6",
+    "outputs/celltype_resolved/GSE165816_discovery_theta.parquet": "aed3e7cdb7d63207db82781ad521f3b9c06cca08b7a365b21da8e1f330323014"
+  },
+  "cache_sha256": {
+    "raw_cell_identity.csv.gz": "3a6725aff494786229b3908c1b7207a6db1550423ef5130896c50278ef46d793",
+    "discovery_raw_genes.npy": "a3e7e194e68854fea561091370c779082f7809303ad68250a67f84bb34f3bbe2",
+    "discovery_raw_counts.npz": "307c35122c553615709e86fd04d190f09cf9e94f27b84bee454f63dfabc9c6f7"
+  },
+  "cells_before_qc": 81602,
+  "cells_after_qc": 76461,
+  "specimens": 25,
+  "genes_union_selected_specimens": 23572,
+  "qc": {
+    "minimum_detected_genes": 200,
+    "maximum_mito_fraction": 0.2
+  },
+  "alignment_checks": {
+    "mainline_gsm_arm_order_exact": true,
+    "parquet_gsm_arm_order_exact": true,
+    "all_saved_marker_labels_reproduced": true
+  },
+  "marker_counts": {
+    "keratinocyte": 8,
+    "fibroblast": 7,
+    "myeloid": 8,
+    "t_cell": 7,
+    "b_plasma": 5,
+    "endothelial": 6,
+    "lymphatic_ec": 5,
+    "pericyte_smc": 6,
+    "mast": 5,
+    "melanocyte": 4,
+    "sweat_gland": 5
+  },
+  "identity_contract": {
+    "raw_cell_id": "GSM + ':' + barcode read from the source CSV column",
+    "raw_row_0": "Zero-based original CSV cell-column position within GSM",
+    "qc_row_0": "Zero-based within-GSM position after the historical QC filter",
+    "saved_row_0": "Zero-based row in obs.csv and discovery theta parquet",
+    "source_order_cell_id": "GSM + ':' + qc_row_0; synthetic order ID, not a barcode",
+    "scope": "Reconstructed identity supported by source order and complete marker agreement; historical artifacts did not retain barcodes"
+  },
+  "gene_union_note": "Only the 25 selected GSM files are assembled. Genes absent from these samples contribute zero counts; full-cell libraries and marker values agree with the original all-54-sample assembly."
+}

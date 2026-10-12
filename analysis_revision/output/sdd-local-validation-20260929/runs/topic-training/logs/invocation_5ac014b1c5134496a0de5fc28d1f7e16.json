@@ -1,0 +1,46 @@
+{
+ "authorization": {
+  "approval_required": true,
+  "receipt": {
+   "approved": true,
+   "approved_by": "user_explicit_current_thread_scope_recorded_by_codex",
+   "approved_utc": "2026-09-30T02:35:01.989427+00:00",
+   "code_digest": "705cf34f73f26ad2925e",
+   "dataset_ids": [
+    "GSE165816"
+   ],
+   "dataset_sha256": {},
+   "input_sha256": {
+    "outputs/biological_expansion/measurement/specimen_readouts.csv": "7ee52a29570f82a3f6ce6cd884ca0cbff6b7ff2712149bcd588a0958ba3dd376",
+    "outputs/direction1_dfu_mainline/beta.npy": "1bbdf049709e482c52df63c35bbb663f8037d6183d450700beb072db6ea1ac4b",
+    "outputs/direction1_dfu_mainline/panel.npy": "85f7f9110c895c918d6e55ff8dd84c7de3f61b46bfbde2d70028cebf46d713c4",
+    "outputs/direction1_dfu_mainline/topic_model.pt": "c54e78d7ebfd26b0d00436e928db3779d93ffd4133a768114698072fb0538ae9",
+    "outputs/scientific_revision_20260922/measurement/projection/cells.parquet": "3572a78007b7be093603988a87734c194371e1820ebc499d693c1379cd298449",
+    "outputs/scientific_revision_20260922/measurement_controls/discovery_raw_counts.npz": "307c35122c553615709e86fd04d190f09cf9e94f27b84bee454f63dfabc9c6f7",
+    "outputs/scientific_revision_20260922/measurement_controls/discovery_raw_genes.npy": "a3e7e194e68854fea561091370c779082f7809303ad68250a67f84bb34f3bbe2"
+   },
+   "jobs_sha256": "391a5bf53e4785c71264df3e61f7db403286365254d5d695592816333111c378",
+   "protocol_hash": "30324a393eb0f15e3b04",
+   "purpose": "stage_b_execution",
+   "review_material_sha256": "16e4f3c4c6ee8222df3de990f90bbc8b9285bb9e7b5f41e42a3956e2345b9f46",
+   "review_notes": "我需要你把剩下的需要额外的很大的网络流量下载的那几个数据给我充分地计划好，并把它们涉及到的实验给我编排好。在此之外呢，我还需要你把现在能够额外补充上去的实验都给我处理掉。 Local fixed SDD diagnostic only; excludes payload downloads, remote GPU, formal grid, publication and outcome tuning. Leader reviewed current inputs/Stage A; this operator receipt is not an external clinical/author signature.",
+   "reviewed_dataset_ids": [
+    "GSE165816"
+   ],
+   "schema_version": 1,
+   "stage_a_reviewed": true
+  },
+  "receipt_sha256": "0aa60b17d6ffbf05f686c3057fbbcd3bbe8a1f62035b8011b17bd7dc9912a45f",
+  "scope": "approved_real_data"
+ },
+ "code_digest": "705cf34f73f26ad2925e",
+ "device": "cuda",
+ "invocation_id": "5ac014b1c5134496a0de5fc28d1f7e16",
+ "jobs_sha256": "391a5bf53e4785c71264df3e61f7db403286365254d5d695592816333111c378",
+ "protocol_hash": "30324a393eb0f15e3b04",
+ "shard": [
+  0,
+  1
+ ],
+ "started_utc": "2026-09-30T02:49:44Z"
+}

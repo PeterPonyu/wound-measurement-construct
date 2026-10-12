@@ -17,6 +17,7 @@ from scipy.stats import spearmanr
 import torch
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from scripts.audit_measurement_math import CURRENT_REVISION, load_current_measurement, producing_fingerprint
 
 def fingerprint(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -27,12 +28,19 @@ def association(x, y):
 def interval(values):
     return np.quantile(values, [0.025, 0.975]).tolist()
 
-def patient_analysis(n_resamples):
+def patient_analysis(n_resamples, revision=None):
+    if n_resamples < 1:
+        raise ValueError('bootstrap draws must be positive')
+    cells, outcome, binding = load_current_measurement(revision)
     source = ROOT / 'outputs/bimodal_stratification/report.json'
-    mapping = ROOT / 'cohort_metadata/GSE165816_ncomms_subject_sample_map.csv'
-    scores = ROOT / 'outputs/cohort_metadata/gse165816_patient_unit_remap/patient_scores.csv'
-    rows = json.loads(source.read_text())['cohorts']['GSE165816_discovery']['per_sample']
-    sample = pd.DataFrame(rows).merge(pd.read_csv(mapping)[['sample_id', 'patient_id']], left_on='gsm', right_on='sample_id', validate='one_to_one')
+    cut = json.loads(source.read_text())['cohorts']['GSE165816_discovery']['gmm']['midpoint']
+    revision_report = json.loads(((CURRENT_REVISION if revision is None else Path(revision)) / 'report.json').read_text())
+    if producing_fingerprint(source) != revision_report['source_sha256'][str(source.relative_to(ROOT))]:
+        raise ValueError('Mixture threshold checksum mismatch')
+    fibro = cells[cells.celltype.eq('fibroblast')].copy()
+    fibro['score'] = fibro.topic_0.to_numpy(np.float64)
+    fibro['high'] = fibro.score > cut
+    sample = fibro.groupby('gsm', sort=True).agg(patient_id=('patient_id', 'first'), topic0_mean=('score', 'mean'), mixing_weight=('high', 'mean'), n_fib=('score', 'size')).reset_index()
     assert len(sample) == 25 and sample.patient_id.nunique() == 20
     patients = []
     for pid, block in sample.groupby('patient_id', sort=True):
@@ -46,7 +54,6 @@ def patient_analysis(n_resamples):
     if not np.isfinite(boot).all():
         raise ValueError('Nonfinite patient bootstrap draw')
     omission = [{'omitted_patient': patients.patient[i], 'rho': association(np.delete(x, i), np.delete(y, i))} for i in range(len(x))]
-    outcome = pd.read_csv(scores)
     values = outcome.score_cell_weighted.to_numpy()
     healed = outcome.healing_status.eq('healed').to_numpy()
     contrast = float(values[healed].mean() - values[~healed].mean())
@@ -55,7 +62,7 @@ def patient_analysis(n_resamples):
         keep = np.arange(len(outcome)) != i
         delta = float(values[healed & keep].mean() - values[~healed & keep].mean())
         outcome_omission.append({'omitted_patient': outcome.patient_id[i].rsplit('_', 1)[-1], 'healing_minus_nonhealing': delta})
-    return {'patient_semantics': {'n_patients': len(patients), 'n_specimens': len(sample), 'rho': association(x, y), 'bootstrap_95_interval': interval(boot), 'n_resamples': n_resamples, 'seed': 217, 'resampling_unit': 'patient after fibroblast-count-weighted collapse', 'leave_one_patient_out': omission, 'omission_range': [min((r['rho'] for r in omission)), max((r['rho'] for r in omission))], 'patients': patients.to_dict('records')}, 'patient_outcome_influence': {'n_patients': len(outcome), 'observed_difference': contrast, 'leave_one_patient_out': outcome_omission, 'omission_range': [min((r['healing_minus_nonhealing'] for r in outcome_omission)), max((r['healing_minus_nonhealing'] for r in outcome_omission))], 'interpretation': 'Influence diagnostic; no interval, significance test or independent validation.'}, 'source_fingerprints': {str(p.relative_to(ROOT)): fingerprint(p) for p in (source, mapping, scores)}}
+    return {'patient_semantics': {'n_patients': len(patients), 'n_specimens': len(sample), 'rho': association(x, y), 'bootstrap_95_interval': interval(boot), 'n_resamples': n_resamples, 'seed': 217, 'resampling_unit': 'patient after fibroblast-count-weighted collapse', 'leave_one_patient_out': omission, 'omission_range': [min((r['rho'] for r in omission)), max((r['rho'] for r in omission))], 'patients': patients.to_dict('records')}, 'patient_outcome_influence': {'n_patients': len(outcome), 'observed_difference': contrast, 'leave_one_patient_out': outcome_omission, 'omission_range': [min((r['healing_minus_nonhealing'] for r in outcome_omission)), max((r['healing_minus_nonhealing'] for r in outcome_omission))], 'interpretation': 'Influence diagnostic; no interval, significance test or independent validation.'}, 'current_source_binding': binding, 'source_fingerprints': {**binding['source_fingerprints'], str(source.relative_to(ROOT)): fingerprint(source)}}
 
 def main():
     ap = argparse.ArgumentParser(description="Recompute the study robustness analysis")

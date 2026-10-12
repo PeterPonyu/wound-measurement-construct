@@ -1,0 +1,37 @@
+{
+  "study": "wound-measurement-construct",
+  "file_hashes": 377,
+  "provenance_gaps": [],
+  "model_training_performed": false,
+  "network_access_performed": false,
+  "full_refit_performed": false,
+  "strict_saved_field_cpu_replay_certified": false,
+  "import_smoke": "passed",
+  "cli_smoke": "passed",
+  "imported": [
+    "core_engines.data_adapter",
+    "core_engines.topic_simplex_engine",
+    "expansion.common.io",
+    "expansion.common.rng",
+    "expansion.measurement.stability",
+    "expansion.measurement.worker",
+    "p1_common"
+  ],
+  "cli_commands": [
+    [
+      "scripts/audit_p1_followup.py",
+      "--help"
+    ],
+    [
+      "scripts/55_full_pipeline_depth_audit.py",
+      "--help"
+    ]
+  ],
+  "saved_result_checks": {
+    "selection_allocations_per_readout": 330,
+    "quantitative_numeric_values": 299,
+    "quantitative_max_abs_error": 0
+  },
+  "output_dir": "tmp/reproduction-check-01",
+  "elapsed_seconds": 74.11411738395691
+}

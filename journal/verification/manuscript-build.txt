@@ -1,0 +1,6 @@
+Rc files read:
+  /etc/LatexMk
+Latexmk: This is Latexmk, John Collins, 15 June 2025. Version 4.87.
+Latexmk: Nothing to do for 'paper_srep.tex'.
+Latexmk: All targets (qa/scientific-reports/build-manuscript/paper_srep.xdv qa/scientific-reports/build-manuscript/paper_srep.pdf) are up-to-date
+

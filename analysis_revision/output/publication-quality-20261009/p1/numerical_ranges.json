@@ -1,0 +1,754 @@
+{
+ "all_numeric_column_ranges": {
+  "fits": {
+   "K": {
+    "available": 9,
+    "max": 20.0,
+    "min": 10.0,
+    "missing": 0
+   },
+   "cut_full_sample_fibroblasts": {
+    "available": 9,
+    "max": 0.1797592941094233,
+    "min": 0.0823654070578666,
+    "missing": 0
+   },
+   "optimizer_steps": {
+    "available": 9,
+    "max": 40000.0,
+    "min": 40000.0,
+    "missing": 0
+   },
+   "primary_correlation": {
+    "available": 9,
+    "max": 0.9876052057826435,
+    "min": 0.6038005658037966,
+    "missing": 0
+   },
+   "primary_new_topic": {
+    "available": 9,
+    "max": 13.0,
+    "min": 0.0,
+    "missing": 0
+   },
+   "reload_max_abs_error": {
+    "available": 9,
+    "max": 0.0,
+    "min": 0.0,
+    "missing": 0
+   },
+   "seed": {
+    "available": 9,
+    "max": 2.0,
+    "min": 0.0,
+    "missing": 0
+   },
+   "specimen_mean_fraction_spearman": {
+    "available": 9,
+    "max": 0.95026212413462,
+    "min": 0.9059634846451602,
+    "missing": 0
+   },
+   "unmatched_new_topics": {
+    "available": 9,
+    "max": 5.0,
+    "min": 0.0,
+    "missing": 0
+   },
+   "unmatched_reference_topics": {
+    "available": 9,
+    "max": 5.0,
+    "min": 0.0,
+    "missing": 0
+   }
+  },
+  "patient_readouts": {
+   "K": {
+    "available": 360,
+    "max": 20.0,
+    "min": 10.0,
+    "missing": 0
+   },
+   "cut_full_sample_fibroblasts": {
+    "available": 360,
+    "max": 0.1797592941094233,
+    "min": 0.0823654070578666,
+    "missing": 0
+   },
+   "fraction_above_fibroblast_descriptive_cut": {
+    "available": 360,
+    "max": 0.8764705882352941,
+    "min": 0.0,
+    "missing": 0
+   },
+   "mean_loading": {
+    "available": 360,
+    "max": 0.4457675218582153,
+    "min": 0.0080843055620789,
+    "missing": 0
+   },
+   "n_cells": {
+    "available": 360,
+    "max": 8340.0,
+    "min": 153.0,
+    "missing": 0
+   },
+   "n_specimens": {
+    "available": 360,
+    "max": 2.0,
+    "min": 1.0,
+    "missing": 0
+   },
+   "seed": {
+    "available": 360,
+    "max": 2.0,
+    "min": 0.0,
+    "missing": 0
+   }
+  },
+  "patient_semantics": {
+   "K": {
+    "available": 900,
+    "max": 20.0,
+    "min": 10.0,
+    "missing": 0
+   },
+   "difference_nats_per_cell": {
+    "available": 900,
+    "max": 1.1432345263516612,
+    "min": -0.581108940329545,
+    "missing": 0
+   },
+   "seed": {
+    "available": 900,
+    "max": 2.0,
+    "min": 0.0,
+    "missing": 0
+   }
+  },
+  "seed_ranges": {
+   "K": {
+    "available": 240,
+    "max": 20.0,
+    "min": 10.0,
+    "missing": 0
+   },
+   "available_seeds": {
+    "available": 240,
+    "max": 3.0,
+    "min": 3.0,
+    "missing": 0
+   },
+   "max_over_available_seeds": {
+    "available": 240,
+    "max": 0.8764705882352941,
+    "min": 0.0,
+    "missing": 0
+   },
+   "min_over_available_seeds": {
+    "available": 240,
+    "max": 0.7387640449438202,
+    "min": 0.0,
+    "missing": 0
+   },
+   "missing_seeds": {
+    "available": 240,
+    "max": 0.0,
+    "min": 0.0,
+    "missing": 0
+   },
+   "planned_seeds": {
+    "available": 240,
+    "max": 3.0,
+    "min": 3.0,
+    "missing": 0
+   },
+   "range_over_available_seeds": {
+    "available": 240,
+    "max": 0.3647058823529411,
+    "min": 0.0,
+    "missing": 0
+   }
+  },
+  "semantics": {
+   "K": {
+    "available": 45,
+    "max": 20.0,
+    "min": 10.0,
+    "missing": 0
+   },
+   "median_difference_nats_per_cell": {
+    "available": 45,
+    "max": 0.251313485824842,
+    "min": -0.0080900291827835,
+    "missing": 0
+   },
+   "seed": {
+    "available": 45,
+    "max": 2.0,
+    "min": 0.0,
+    "missing": 0
+   },
+   "specimens": {
+    "available": 45,
+    "max": 25.0,
+    "min": 25.0,
+    "missing": 0
+   },
+   "specimens_favour_first": {
+    "available": 45,
+    "max": 25.0,
+    "min": 12.0,
+    "missing": 0
+   },
+   "units": {
+    "available": 45,
+    "max": 20.0,
+    "min": 20.0,
+    "missing": 0
+   },
+   "units_favour_first": {
+    "available": 45,
+    "max": 20.0,
+    "min": 8.0,
+    "missing": 0
+   }
+  },
+  "semantics_specimens": {
+   "C1": {
+    "available": 225,
+    "max": -0.4236437480506974,
+    "min": -3.390445376487029,
+    "missing": 0
+   },
+   "C2": {
+    "available": 225,
+    "max": -0.1691784358516925,
+    "min": -2.6719066802060523,
+    "missing": 0
+   },
+   "H1": {
+    "available": 225,
+    "max": -0.2730229048380935,
+    "min": -2.505546826009684,
+    "missing": 0
+   },
+   "K": {
+    "available": 225,
+    "max": 20.0,
+    "min": 10.0,
+    "missing": 0
+   },
+   "M1": {
+    "available": 225,
+    "max": -0.2406379271252766,
+    "min": -2.262100711480051,
+    "missing": 0
+   },
+   "M2": {
+    "available": 225,
+    "max": -0.2104583062807329,
+    "min": -2.1154559562023216,
+    "missing": 0
+   },
+   "cut_training_only_logit_scale": {
+    "available": 225,
+    "max": -2.385521258999507,
+    "min": -3.544450121017918,
+    "missing": 0
+   },
+   "n_cells_scored": {
+    "available": 225,
+    "max": 1821.0,
+    "min": 153.0,
+    "missing": 0
+   },
+   "n_splits": {
+    "available": 225,
+    "max": 10.0,
+    "min": 10.0,
+    "missing": 0
+   },
+   "seed": {
+    "available": 225,
+    "max": 2.0,
+    "min": 0.0,
+    "missing": 0
+   }
+  },
+  "topic_matches": {
+   "K": {
+    "available": 150,
+    "max": 20.0,
+    "min": 10.0,
+    "missing": 0
+   },
+   "assigned_correlation": {
+    "available": 120,
+    "max": 0.999707364393212,
+    "min": 0.44591860349953,
+    "missing": 30
+   },
+   "best_minus_second": {
+    "available": 135,
+    "max": 0.7415252796647052,
+    "min": 0.0103205550289554,
+    "missing": 15
+   },
+   "new_topic": {
+    "available": 135,
+    "max": 19.0,
+    "min": 0.0,
+    "missing": 15
+   },
+   "reference_topic": {
+    "available": 135,
+    "max": 14.0,
+    "min": 0.0,
+    "missing": 15
+   },
+   "rowwise_best_correlation": {
+    "available": 135,
+    "max": 0.999707364393212,
+    "min": 0.481166414624809,
+    "missing": 15
+   },
+   "rowwise_best_topic": {
+    "available": 135,
+    "max": 19.0,
+    "min": 0.0,
+    "missing": 15
+   },
+   "seed": {
+    "available": 150,
+    "max": 2.0,
+    "min": 0.0,
+    "missing": 0
+   }
+  }
+ },
+ "computational_seed_widths_by_K_scope_metric": [
+  {
+   "K": 10,
+   "available": 20,
+   "max": 0.1604635009061402,
+   "median_range_width_over_20_people": 0.03422387986933835,
+   "metric": "fraction_above_fibroblast_descriptive_cut",
+   "min": 0.0050697084917617,
+   "missing": 0,
+   "readout_scope": "all_cells"
+  },
+  {
+   "K": 10,
+   "available": 20,
+   "max": 0.1120165288448333,
+   "median_range_width_over_20_people": 0.0106221958994865,
+   "metric": "mean_loading",
+   "min": 0.0015073558315634,
+   "missing": 0,
+   "readout_scope": "all_cells"
+  },
+  {
+   "K": 10,
+   "available": 20,
+   "max": 0.3647058823529411,
+   "median_range_width_over_20_people": 0.02947524360497035,
+   "metric": "fraction_above_fibroblast_descriptive_cut",
+   "min": 0.0,
+   "missing": 0,
+   "readout_scope": "fibroblast_only"
+  },
+  {
+   "K": 10,
+   "available": 20,
+   "max": 0.2255992591381073,
+   "median_range_width_over_20_people": 0.011195583269000001,
+   "metric": "mean_loading",
+   "min": 0.0030068643391132,
+   "missing": 0,
+   "readout_scope": "fibroblast_only"
+  },
+  {
+   "K": 15,
+   "available": 20,
+   "max": 0.1733333333333333,
+   "median_range_width_over_20_people": 0.01421776364090405,
+   "metric": "fraction_above_fibroblast_descriptive_cut",
+   "min": 9.424947402046636e-05,
+   "missing": 0,
+   "readout_scope": "all_cells"
+  },
+  {
+   "K": 15,
+   "available": 20,
+   "max": 0.0581030771136283,
+   "median_range_width_over_20_people": 0.00709762144833795,
+   "metric": "mean_loading",
+   "min": 0.0007460173219442,
+   "missing": 0,
+   "readout_scope": "all_cells"
+  },
+  {
+   "K": 15,
+   "available": 20,
+   "max": 0.3307207957949207,
+   "median_range_width_over_20_people": 0.00487660180351205,
+   "metric": "fraction_above_fibroblast_descriptive_cut",
+   "min": 0.0,
+   "missing": 0,
+   "readout_scope": "fibroblast_only"
+  },
+  {
+   "K": 15,
+   "available": 20,
+   "max": 0.2296343669295311,
+   "median_range_width_over_20_people": 0.00647627096623175,
+   "metric": "mean_loading",
+   "min": 0.0004146993160247,
+   "missing": 0,
+   "readout_scope": "fibroblast_only"
+  },
+  {
+   "K": 20,
+   "available": 20,
+   "max": 0.1093127000101771,
+   "median_range_width_over_20_people": 0.0354857272129614,
+   "metric": "fraction_above_fibroblast_descriptive_cut",
+   "min": 0.0025310048089091,
+   "missing": 0,
+   "readout_scope": "all_cells"
+  },
+  {
+   "K": 20,
+   "available": 20,
+   "max": 0.1009861081838607,
+   "median_range_width_over_20_people": 0.009146917611360501,
+   "metric": "mean_loading",
+   "min": 0.0011445963755249,
+   "missing": 0,
+   "readout_scope": "all_cells"
+  },
+  {
+   "K": 20,
+   "available": 20,
+   "max": 0.356507208540693,
+   "median_range_width_over_20_people": 0.010611639177968951,
+   "metric": "fraction_above_fibroblast_descriptive_cut",
+   "min": 0.0,
+   "missing": 0,
+   "readout_scope": "fibroblast_only"
+  },
+  {
+   "K": 20,
+   "available": 20,
+   "max": 0.2773635685443878,
+   "median_range_width_over_20_people": 0.0078181778080761,
+   "metric": "mean_loading",
+   "min": 0.0012387474998831,
+   "missing": 0,
+   "readout_scope": "fibroblast_only"
+  }
+ ],
+ "density_comparison_ranges": [
+  {
+   "comparison": "H1_vs_C1",
+   "individual_difference_nats_per_cell": {
+    "available": 180,
+    "max": 1.1432345263516612,
+    "min": -0.5530480180276637,
+    "missing": 0
+   },
+   "people_favour_first_out_of_20": {
+    "available": 9,
+    "max": 15.0,
+    "min": 13.0,
+    "missing": 0
+   },
+   "specimen_median_difference_nats_per_cell": {
+    "available": 9,
+    "max": 0.2012044587875525,
+    "min": 0.0759109675317681,
+    "missing": 0
+   }
+  },
+  {
+   "comparison": "M1_vs_C1",
+   "individual_difference_nats_per_cell": {
+    "available": 180,
+    "max": 1.1231594480198164,
+    "min": -0.5624546273102821,
+    "missing": 0
+   },
+   "people_favour_first_out_of_20": {
+    "available": 9,
+    "max": 16.0,
+    "min": 13.0,
+    "missing": 0
+   },
+   "specimen_median_difference_nats_per_cell": {
+    "available": 9,
+    "max": 0.251313485824842,
+    "min": 0.094879065732089,
+    "missing": 0
+   }
+  },
+  {
+   "comparison": "M1_vs_C2",
+   "individual_difference_nats_per_cell": {
+    "available": 180,
+    "max": 0.4326895560734609,
+    "min": -0.581108940329545,
+    "missing": 0
+   },
+   "people_favour_first_out_of_20": {
+    "available": 9,
+    "max": 15.0,
+    "min": 8.0,
+    "missing": 0
+   },
+   "specimen_median_difference_nats_per_cell": {
+    "available": 9,
+    "max": 0.0604129328073813,
+    "min": -0.0080900291827835,
+    "missing": 0
+   }
+  },
+  {
+   "comparison": "M1_vs_H1",
+   "individual_difference_nats_per_cell": {
+    "available": 180,
+    "max": 0.2832149863163123,
+    "min": -0.1128348651135617,
+    "missing": 0
+   },
+   "people_favour_first_out_of_20": {
+    "available": 9,
+    "max": 20.0,
+    "min": 13.0,
+    "missing": 0
+   },
+   "specimen_median_difference_nats_per_cell": {
+    "available": 9,
+    "max": 0.0612389580149261,
+    "min": 0.0242562827545068,
+    "missing": 0
+   }
+  },
+  {
+   "comparison": "M2_vs_C2",
+   "individual_difference_nats_per_cell": {
+    "available": 180,
+    "max": 0.5422998463964859,
+    "min": -0.1625922651030624,
+    "missing": 0
+   },
+   "people_favour_first_out_of_20": {
+    "available": 9,
+    "max": 18.0,
+    "min": 13.0,
+    "missing": 0
+   },
+   "specimen_median_difference_nats_per_cell": {
+    "available": 9,
+    "max": 0.0840424933799059,
+    "min": 0.0474333894604526,
+    "missing": 0
+   }
+  }
+ ],
+ "interpretation": "mechanical_descriptive_range_export_no_new_tests_selection_or_biological_units",
+ "per_fit_primary_values": [
+  {
+   "K": 10,
+   "cut_full_sample_fibroblasts": 0.1466271806097971,
+   "primary_correlation": 0.8168322380608526,
+   "seed": 0,
+   "specimen_mean_fraction_spearman": 0.946153846153846
+  },
+  {
+   "K": 10,
+   "cut_full_sample_fibroblasts": 0.1587737255250395,
+   "primary_correlation": 0.9384062501661862,
+   "seed": 1,
+   "specimen_mean_fraction_spearman": 0.91637935035176
+  },
+  {
+   "K": 10,
+   "cut_full_sample_fibroblasts": 0.1776629263952863,
+   "primary_correlation": 0.9651614630014382,
+   "seed": 2,
+   "specimen_mean_fraction_spearman": 0.9059634846451602
+  },
+  {
+   "K": 15,
+   "cut_full_sample_fibroblasts": 0.1671027815245825,
+   "primary_correlation": 0.9797621067263972,
+   "seed": 0,
+   "specimen_mean_fraction_spearman": 0.9215169821479672
+  },
+  {
+   "K": 15,
+   "cut_full_sample_fibroblasts": 0.1727843694064821,
+   "primary_correlation": 0.9822327914282476,
+   "seed": 1,
+   "specimen_mean_fraction_spearman": 0.9175788753866512
+  },
+  {
+   "K": 15,
+   "cut_full_sample_fibroblasts": 0.1015416831696502,
+   "primary_correlation": 0.7459773471752921,
+   "seed": 2,
+   "specimen_mean_fraction_spearman": 0.95026212413462
+  },
+  {
+   "K": 20,
+   "cut_full_sample_fibroblasts": 0.1797592941094233,
+   "primary_correlation": 0.9876052057826435,
+   "seed": 0,
+   "specimen_mean_fraction_spearman": 0.912108563316166
+  },
+  {
+   "K": 20,
+   "cut_full_sample_fibroblasts": 0.1114240775814028,
+   "primary_correlation": 0.832378964899863,
+   "seed": 1,
+   "specimen_mean_fraction_spearman": 0.9326374110021404
+  },
+  {
+   "K": 20,
+   "cut_full_sample_fibroblasts": 0.0823654070578666,
+   "primary_correlation": 0.6038005658037966,
+   "seed": 2,
+   "specimen_mean_fraction_spearman": 0.9254570444397158
+  }
+ ],
+ "readout_value_ranges_by_K_and_scope": [
+  {
+   "K": 10,
+   "fraction_above_fibroblast_descriptive_cut": {
+    "available": 60,
+    "max": 0.3959616700889801,
+    "min": 0.0013554727211114,
+    "missing": 0
+   },
+   "mean_loading": {
+    "available": 60,
+    "max": 0.2135471403598785,
+    "min": 0.0135648651048541,
+    "missing": 0
+   },
+   "readout_scope": "all_cells"
+  },
+  {
+   "K": 10,
+   "fraction_above_fibroblast_descriptive_cut": {
+    "available": 60,
+    "max": 0.8764705882352941,
+    "min": 0.0,
+    "missing": 0
+   },
+   "mean_loading": {
+    "available": 60,
+    "max": 0.4457675218582153,
+    "min": 0.0160268936306238,
+    "missing": 0
+   },
+   "readout_scope": "fibroblast_only"
+  },
+  {
+   "K": 15,
+   "fraction_above_fibroblast_descriptive_cut": {
+    "available": 60,
+    "max": 0.3603696098562628,
+    "min": 0.0,
+    "missing": 0
+   },
+   "mean_loading": {
+    "available": 60,
+    "max": 0.1860830932855606,
+    "min": 0.0092784976586699,
+    "missing": 0
+   },
+   "readout_scope": "all_cells"
+  },
+  {
+   "K": 15,
+   "fraction_above_fibroblast_descriptive_cut": {
+    "available": 60,
+    "max": 0.8049019607843138,
+    "min": 0.0,
+    "missing": 0
+   },
+   "mean_loading": {
+    "available": 60,
+    "max": 0.4242198765277862,
+    "min": 0.0097518805414438,
+    "missing": 0
+   },
+   "readout_scope": "fibroblast_only"
+  },
+  {
+   "K": 20,
+   "fraction_above_fibroblast_descriptive_cut": {
+    "available": 60,
+    "max": 0.391854893908282,
+    "min": 0.0,
+    "missing": 0
+   },
+   "mean_loading": {
+    "available": 60,
+    "max": 0.179982841014862,
+    "min": 0.0080843055620789,
+    "missing": 0
+   },
+   "readout_scope": "all_cells"
+  },
+  {
+   "K": 20,
+   "fraction_above_fibroblast_descriptive_cut": {
+    "available": 60,
+    "max": 0.7980392156862746,
+    "min": 0.0,
+    "missing": 0
+   },
+   "mean_loading": {
+    "available": 60,
+    "max": 0.425308495759964,
+    "min": 0.0082637015730142,
+    "missing": 0
+   },
+   "readout_scope": "fibroblast_only"
+  }
+ ],
+ "source_tables": {
+  "fits": {
+   "rows": 9,
+   "sha256": "6cc8ce29aa57be50161c446b6aabcc5cc8139fcfb437d474d472c433a7950a20"
+  },
+  "patient_readouts": {
+   "rows": 360,
+   "sha256": "f39ea7a526984710200316622f4d44b5c32962f11ab5862c52cae376104ec1e0"
+  },
+  "patient_semantics": {
+   "rows": 900,
+   "sha256": "bd2b2caa055668b5d58513d969cc5b70285d16b429fc010006316a9f1f453311"
+  },
+  "seed_ranges": {
+   "rows": 240,
+   "sha256": "f3397efe6f224ea5d0c4b25e3539db5fe70094069626cae528790348ac79bc88"
+  },
+  "semantics": {
+   "rows": 45,
+   "sha256": "575eb38096a89e30d7cfdb3ac7e4075c0526e1e13cd80cbb8951f6d083842109"
+  },
+  "semantics_specimens": {
+   "rows": 225,
+   "sha256": "c10059a79b298b841c56dca4875dd04933256e4944f757557daaaba25c19bbb6"
+  },
+  "topic_matches": {
+   "rows": 150,
+   "sha256": "d90662de1329efd3a4233a7153f4f79331b0aca90fd738ae4e304a18c83a2777"
+  }
+ },
+ "source_verification_sha256": "9c43715d2116c4577b1849506d6d6ecdfa07d59c770ac0b72c4d06ee16e35d64"
+}

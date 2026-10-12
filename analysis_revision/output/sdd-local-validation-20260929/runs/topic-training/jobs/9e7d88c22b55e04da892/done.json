@@ -1,0 +1,34 @@
+{
+ "finished_utc": "2026-09-30T02:44:06Z",
+ "invocation": {
+  "event_sha256": "f73565b35291abcf322625a8c123d13ce7cda08656ce841573a8d61f15bcbadf",
+  "id": "602db76ec7df4af78149df985ee7cd04"
+ },
+ "job": {
+  "dataset_id": "GSE165816",
+  "job_id": "9e7d88c22b55e04da892",
+  "job_type": "stability",
+  "method": "topic_simplex",
+  "params": {
+   "K": 15,
+   "code_digest": "705cf34f73f26ad2925e",
+   "steps": 20000
+  },
+  "protocol_hash": "30324a393eb0f15e3b04",
+  "representation": "panel",
+  "seed": 1,
+  "task": {}
+ },
+ "job_id": "9e7d88c22b55e04da892",
+ "outputs": {
+  "checkpoint.json": "8a6fccc398d3639f92f8f9a31276a3ca87e89b2b7158767bd6aaddd0daf88b3b",
+  "checkpoint.sha256.json": "c82eced2d869578147b35631ee230f2a0cc3e33278ecda8971f5f137a4e84511",
+  "convergence.json": "00cba2f06b0faae42cccf4521460cf3c01420927374e7f5b55ee3a19e62c7211",
+  "fit_trace.json": "e4630190560b90794900f9d626fd3c41678bb4b1a6209efa6aec03af94c070a0",
+  "model_state.npz": "37e809c69a1ada21b747789295e4ac55baefe540e7bfe52577c963e4a24bc1be",
+  "readouts.json": "9e4b729306036c586fe4371a280c0dc68064586c08e98d221a17329f6ccc8608",
+  "result.json": "196b09b456c443359e04c48bb651335285df3cd83b2ea308c16cff3a2ddfb429",
+  "topics.npz": "f2b2407db861cc6560e2689395071a4721cb329aff4f69c8fbedd16f867fe9e2"
+ },
+ "seconds": 69.0599249189836
+}

@@ -1,0 +1,48 @@
+[04:47:54] loading data/raw/GSE165816/GSE165816_RAW.tar
+[04:49:55] loaded CohortMatrix(cells=174962, genes=26923, density=7.417%, samples=54) in 121.2s
+[04:49:55]   note: gene_policy=union: kept 26923 genes (union 26923, present-in-all 10645, samples 54)
+[04:49:55] foot-skin + labelled arms: 81602 / 174962 cells
+[04:49:55]   arm counts: {"Non-diabetic": 36088, "DFU-healer": 28365, "DFU-nonhealer": 17149}
+[04:49:57] cell QC: 0 below 200 genes, 5141 above 20% mito (median mito 5.7%)
+[04:49:58] after QC: 76461 cells x 21613 genes (dropped 5141 cells, 5310 genes)
+[04:50:03] target line: 7002 genes; pinned present 23/23; absent from assay: []
+[04:50:04] fitting on cuda: 76461 cells, G=7002, K=15, 40000 steps; beta perplexity at init = 7001 (uniform = 7002)
+[04:50:04]   step 1: loss=8.8789 beta_perp=7001
+[04:50:21]   step 4000: loss=6.6205 beta_perp=2370
+[04:50:37]   step 8000: loss=6.2635 beta_perp=961
+[04:50:54]   step 12000: loss=6.1268 beta_perp=492
+[04:51:11]   step 16000: loss=6.0830 beta_perp=330
+[04:51:28]   step 20000: loss=6.0524 beta_perp=267
+[04:51:44]   step 24000: loss=6.0067 beta_perp=249
+[04:52:00]   step 28000: loss=6.0141 beta_perp=242
+[04:52:16]   step 32000: loss=6.0208 beta_perp=243
+[04:52:34]   step 36000: loss=5.9994 beta_perp=243
+[04:52:51]   step 40000: loss=6.0259 beta_perp=243
+[04:52:51] fit done in 166.4s; final beta perplexity 243 / 7002
+[04:52:51]   topic  0: TIMP1, COL3A1, DCN, FN1, IER3, SOD2, LUM, CHI3L1
+[04:52:51]   topic  1: JUNB, DNAJB1, CD69, IL32, FOS, SRGN, CD52, CXCR4
+[04:52:51]   topic  2: COL1A1, COL1A2, COL3A1, SPARC, COL6A2, COL6A1, LUM, COL6A3
+[04:52:51]   topic  3: IGFBP7, IGFBP5, MGP, CALD1, IGFBP4, CCL19, APOE, C1R
+[04:52:51]   topic  4: TAGLN, ACTA2, TPM2, IGFBP7, MYL9, ADIRF, CALD1, C11orf96
+[04:52:51]   topic  5: KRT14, KRT10, KRT5, KRT1, PERP, KRT16, DMKN, SFN
+[04:52:51]   topic  6: CFD, APOD, CXCL14, GSN, DCN, MGP, PTGDS, IGFBP7
+[04:52:51]   topic  7: DCN, CFD, PLA2G2A, CXCL14, COL1A2, COMP, GSN, LUM
+[04:52:51]   topic  8: DCD, SAT1, CALML5, SCGB2A2, PERP, KRT14, ATP1B1, MUCL1
+[04:52:51]   topic  9: IGFBP7, SPARCL1, IFI27, GNG11, CD74, CAV1, CCL21, AQP1
+[04:52:51]   topic 10: FOS, IGFBP7, CRYAB, SPARC, APOE, GSN, DST, CLU
+[04:52:51]   topic 11: HLA-DRA, CD74, HLA-DRB1, HLA-DPB1, HLA-DPA1, IGKC, SAT1, SRGN
+[04:52:51]   topic 12: IGFBP7, TAGLN, CALD1, RGS5, SPARC, ACTA2, NDUFA4L2, MYL9
+[04:52:51]   topic 13: FOS, JUNB, GADD45B, ZFP36, RGS16, C11orf96, SOCS3, ATF3
+[04:52:51]   topic 14: DNAJB1, FOS, IER3, ZFP36, SOD2, XIST, FOSB, HSPH1
+[04:52:51]   mean theta by arm: {"DFU-healer": [0.0753, 0.0923, 0.1571, 0.0588, 0.0608, 0.0745, 0.0199, 0.0589, 0.0196, 0.089, 0.0158, 0.1073, 0.1167, 0.028, 0.026], "DFU-nonhealer": [0.0267, 0.1161, 0.0781, 0.0348, 0.0786, 0.1256, 0.0574, 0.0562, 0.0233, 0.0993, 0.0216, 0.1382, 0.0785, 0.0433, 0.0223], "Non-diabetic": [0.0319, 0.0584, 0.0531, 0.0334, 0.1129, 0.1501, 0.0967, 0.084, 0.0386, 0.1092, 0.0326, 0.0581, 0.0759, 0.0379, 0.0271]}
+[04:52:51] RAAG audit on 20000 cells (PCA-50 reference geometry)
+[04:52:59] audit done in 7.9s
+[04:52:59]   reachability_survival: 1.0
+[04:52:59]   edge_survival_score: 0.7610267658247369
+[04:52:59]   edge_survival_n_sources: 2000
+[04:52:59]   edge_survival_exact: False
+[04:52:59]   mean_perplexity: 3.6854910850524902
+[04:52:59]   near_uniform_warning: False
+[04:52:59]   manifold_intact: True
+[04:52:59] wrote outputs/direction1_dfu_mainline/report.json
+[04:52:59] GATE PASSED: manifold_intact is True.

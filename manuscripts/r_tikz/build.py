@@ -55,7 +55,10 @@ def check_environment() -> None:
 
 def compile_tex(path: Path) -> Path:
     log = BUILD / f"{path.stem}.compile.txt"
-    run(["xelatex", "-no-shell-escape", "-interaction=nonstopmode", "-halt-on-error",
+    # Full-range insets repeat vector observations; reserve a bounded local
+    # TeX arena without changing the machine's configuration or rasterizing.
+    run(["xelatex", "-cnf-line=extra_mem_top=16000000", "-no-shell-escape",
+         "-interaction=nonstopmode", "-halt-on-error",
          "-file-line-error", f"-output-directory={STAGING}", str(path)], log=log, cwd=path.parent)
     transcript = (STAGING / f"{path.stem}.log").read_text(errors="replace")
     if "Missing character:" in transcript or re.search(r"Overfull \\[hv]box", transcript):
@@ -191,14 +194,17 @@ def inspect_tissue_panel(path: Path, paper: int, page_number: int = 0) -> dict:
         expected = 1 if paper == 1 else 4
         if len(dermis) != expected:
             raise RuntimeError(f"Missing dermal section(s) in {path.name}: {len(dermis)} != {expected}")
-        words = (["Ulcer bed", "Dermis", "Vessel", "Immune cells", "7,002-gene",
+        words = (["Sampled foot skin", "Single-cell measurement", "intensity or prevalence",
+                  "Ulcer bed", "Dermis", "Vessel", "Immune cells", "7,002-gene",
                   "Frozen MLP", "15-topic", "Fibroblast gate", "All-cell mean",
-                  "Patient-unit", "sampled z", "β decoder", "Gaussian KL"]
+                  "Patient-unit", "sampled z", "β decoder", "Gaussian KL",
+                  "Recovered fibroblasts", "no amputation endpoint"]
                  if paper == 1 else
                  ["Intact skin", "Day 1", "Day 7", "Day 30", "Donor A",
                   "Donor B", "Donor C", "7,002-gene input", "5,383 covered",
                   "Frozen", "Train-only", "Shared CFM", "Product endpoints",
-                  "RK4 flow", "marginal test", "held from fitting"])
+                  "RK4 flow", "marginal test", "held from fitting", "no tracked cells",
+                  "Held-donor task", "retrospective distributions"])
         for word in words:
             if not page.search_for(word):
                 raise RuntimeError(f"Missing tissue/model label {word} in {path.name}")
@@ -210,7 +216,7 @@ def build_tissue_panels() -> dict:
     for paper in PAPERS:
         source = HERE / "panel_a.tex"
         pdf = compile_tex(source)
-        checks[source.stem] = inspect_pdf(pdf, width_mm=84.5, height_mm=57.8667)
+        checks[source.stem] = inspect_pdf(pdf, width_mm=174, height_mm=54)
         checks[source.stem]["tissue"] = inspect_tissue_panel(pdf, paper)
         with fitz.open(pdf) as doc:
             (STAGING / f"{source.stem}.svg").write_text(doc[0].get_svg_image(text_as_path=True))
@@ -223,7 +229,7 @@ def build_tissue_panels() -> dict:
 
 
 def build_collection(paper: int) -> tuple[Path, int]:
-    expected = 9 if paper == 1 else 7
+    expected = len(figure_sources(paper))
     matches = []
     for number in range(1, expected + 1):
         source = PAPERS[paper] / f"f{number}.tex"
@@ -246,6 +252,14 @@ def build_collection(paper: int) -> tuple[Path, int]:
     source = FIG / "tex" / "figures.tex"
     source.write_text("\n".join(lines) + "\n")
     return compile_tex(source), expected
+
+
+def figure_sources(paper: int) -> list[Path]:
+    """Native caption files define the complete, contiguous publication set."""
+    paths = sorted(PAPERS[paper].glob('f*.tex'), key=lambda p: int(p.stem[1:]))
+    if not paths or [int(p.stem[1:]) for p in paths] != list(range(1, len(paths) + 1)):
+        raise RuntimeError(f'Paper {paper}: figure captions must be contiguous and nonempty')
+    return paths
 
 
 def main() -> None:
@@ -291,7 +305,16 @@ def main() -> None:
     for name in names:
         for suffix in (".pdf", ".png"):
             shutil.copy2(STAGING / f"{name}{suffix}", FIG / f"{name}{suffix}")
-    if len(names) == 9:
+    expected_names = set()
+    for paper in PAPERS:
+        for source in figure_sources(paper):
+            match = re.match(r'\\paperfigure\{([^}]+)\}', source.read_text())
+            if not match:
+                raise RuntimeError(f'Missing native figure declaration: {source}')
+            expected_names.add(match[1])
+    if not args.figure and set(names) != expected_names:
+        raise RuntimeError('Full figure build differs from the native manuscript caption set')
+    if set(names) == expected_names:
         for paper in PAPERS:
             pdf, pages = build_collection(paper)
             verification["collections"][pdf.stem] = inspect_pdf(pdf, pages=pages, width_mm=210, figure_text=False)

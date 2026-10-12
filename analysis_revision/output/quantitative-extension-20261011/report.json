@@ -1,0 +1,720 @@
+{
+  "covariates": {
+    "n_patients": 11,
+    "n_healed": 7,
+    "n_nonhealed": 4,
+    "balance": [
+      {
+        "covariate": "age",
+        "healed_n": 7,
+        "healed_median": 63.0,
+        "healed_iqr": [
+          45.0,
+          69.5
+        ],
+        "nonhealed_n": 4,
+        "nonhealed_median": 52.5,
+        "nonhealed_iqr": [
+          46.75,
+          55.5
+        ],
+        "mean_difference": 8.535714285714285,
+        "hodges_lehmann": 9.0,
+        "p_exact_rank": 0.2909090909090909,
+        "n_allocations": 330
+      },
+      {
+        "covariate": "bmi",
+        "healed_n": 7,
+        "healed_median": 34.86159748579112,
+        "healed_iqr": [
+          31.764650034264957,
+          38.76438369989201
+        ],
+        "nonhealed_n": 4,
+        "nonhealed_median": 36.34500514201236,
+        "nonhealed_iqr": [
+          30.964905732442094,
+          48.47047907818365
+        ],
+        "mean_difference": -7.491139716166892,
+        "hodges_lehmann": -1.195715634114503,
+        "p_exact_rank": 0.7878787878787878,
+        "n_allocations": 330
+      },
+      {
+        "covariate": "hba1c",
+        "healed_n": 4,
+        "healed_median": 8.5,
+        "healed_iqr": [
+          7.375,
+          10.825
+        ],
+        "nonhealed_n": 4,
+        "nonhealed_median": 7.6,
+        "nonhealed_iqr": [
+          6.975,
+          8.45
+        ],
+        "mean_difference": 1.8749999999999991,
+        "hodges_lehmann": 0.5499999999999998,
+        "p_exact_rank": 0.4,
+        "n_allocations": 70
+      },
+      {
+        "covariate": "wound_area_cm2",
+        "healed_n": 7,
+        "healed_median": 1.0,
+        "healed_iqr": [
+          0.47500000000000003,
+          2.825
+        ],
+        "nonhealed_n": 4,
+        "nonhealed_median": 1.15,
+        "nonhealed_iqr": [
+          0.765,
+          8.475
+        ],
+        "mean_difference": -5.491428571428571,
+        "hodges_lehmann": -0.09999999999999998,
+        "p_exact_rank": 0.9606060606060606,
+        "n_allocations": 330
+      },
+      {
+        "covariate": "dm_duration_years",
+        "healed_n": 6,
+        "healed_median": 13.0,
+        "healed_iqr": [
+          11.5,
+          13.75
+        ],
+        "nonhealed_n": 4,
+        "nonhealed_median": 12.5,
+        "nonhealed_iqr": [
+          2.0,
+          29.75
+        ],
+        "mean_difference": -6.75,
+        "hodges_lehmann": -0.5,
+        "p_exact_rank": 1.0,
+        "n_allocations": 210
+      }
+    ],
+    "sex": {
+      "table_healed_then_nonhealed_male_female": [
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          2
+        ]
+      ],
+      "p_fisher": 0.5757575757575758
+    },
+    "associations": [
+      {
+        "readout": "S",
+        "covariate": "age",
+        "n": 11,
+        "rho": 0.0,
+        "p_permutation": 1.0,
+        "draws": 20000
+      },
+      {
+        "readout": "S",
+        "covariate": "bmi",
+        "n": 11,
+        "rho": 0.4000000000000001,
+        "p_permutation": 0.2308,
+        "draws": 20000
+      },
+      {
+        "readout": "S",
+        "covariate": "hba1c",
+        "n": 8,
+        "rho": -0.03592878785739777,
+        "p_permutation": 0.9461,
+        "draws": 20000
+      },
+      {
+        "readout": "S",
+        "covariate": "wound_area_cm2",
+        "n": 11,
+        "rho": 0.15945371665237182,
+        "p_permutation": 0.6366,
+        "draws": 20000
+      },
+      {
+        "readout": "S",
+        "covariate": "dm_duration_years",
+        "n": 10,
+        "rho": 0.4756185979889012,
+        "p_permutation": 0.1644,
+        "draws": 20000
+      },
+      {
+        "readout": "M",
+        "covariate": "age",
+        "n": 11,
+        "rho": 0.30979579235317956,
+        "p_permutation": 0.3523,
+        "draws": 20000
+      },
+      {
+        "readout": "M",
+        "covariate": "bmi",
+        "n": 11,
+        "rho": -0.06363636363636364,
+        "p_permutation": 0.85845,
+        "draws": 20000
+      },
+      {
+        "readout": "M",
+        "covariate": "hba1c",
+        "n": 8,
+        "rho": -0.2515015150017844,
+        "p_permutation": 0.5558,
+        "draws": 20000
+      },
+      {
+        "readout": "M",
+        "covariate": "wound_area_cm2",
+        "n": 11,
+        "rho": -0.17767699855550004,
+        "p_permutation": 0.59885,
+        "draws": 20000
+      },
+      {
+        "readout": "M",
+        "covariate": "dm_duration_years",
+        "n": 10,
+        "rho": 0.1768325556625402,
+        "p_permutation": 0.61665,
+        "draws": 20000
+      },
+      {
+        "readout": "W",
+        "covariate": "age",
+        "n": 11,
+        "rho": 0.25512594664379495,
+        "p_permutation": 0.45025,
+        "draws": 20000
+      },
+      {
+        "readout": "W",
+        "covariate": "bmi",
+        "n": 11,
+        "rho": 0.009090909090909092,
+        "p_permutation": 0.98975,
+        "draws": 20000
+      },
+      {
+        "readout": "W",
+        "covariate": "hba1c",
+        "n": 8,
+        "rho": -0.2515015150017844,
+        "p_permutation": 0.5558,
+        "draws": 20000
+      },
+      {
+        "readout": "W",
+        "covariate": "wound_area_cm2",
+        "n": 11,
+        "rho": -0.1640095371281539,
+        "p_permutation": 0.6258,
+        "draws": 20000
+      },
+      {
+        "readout": "W",
+        "covariate": "dm_duration_years",
+        "n": 10,
+        "rho": 0.1768325556625402,
+        "p_permutation": 0.61665,
+        "draws": 20000
+      },
+      {
+        "readout": "F",
+        "covariate": "age",
+        "n": 11,
+        "rho": -0.14578625522502567,
+        "p_permutation": 0.66785,
+        "draws": 20000
+      },
+      {
+        "readout": "F",
+        "covariate": "bmi",
+        "n": 11,
+        "rho": 0.43636363636363645,
+        "p_permutation": 0.18755,
+        "draws": 20000
+      },
+      {
+        "readout": "F",
+        "covariate": "hba1c",
+        "n": 8,
+        "rho": 0.6467181814331598,
+        "p_permutation": 0.0924,
+        "draws": 20000
+      },
+      {
+        "readout": "F",
+        "covariate": "wound_area_cm2",
+        "n": 11,
+        "rho": 0.004555820475782052,
+        "p_permutation": 0.9962,
+        "draws": 20000
+      },
+      {
+        "readout": "F",
+        "covariate": "dm_duration_years",
+        "n": 10,
+        "rho": -0.12195348666382083,
+        "p_permutation": 0.7349,
+        "draws": 20000
+      }
+    ]
+  },
+  "bulk": {
+    "n_probes": 53617,
+    "n_mapped_genes_full": 26902,
+    "n_de_filtered_genes_present": 2956,
+    "de_filter": "submitter table keeps only genes with FDR < 0.05 and absolute linear fold change at least 2",
+    "samples": {
+      "Diabetic Foot Ulcer 07": "DFU",
+      "Diabetic Foot Ulcer 14": "DFU",
+      "Diabetic Foot Ulcer 15": "DFU",
+      "Diabetic Foot Ulcer 24": "DFU",
+      "Diabetic Foot Ulcer 27": "DFU",
+      "Diabetic Foot Ulcer 31": "DFU",
+      "Diabetic Foot Skin 01": "DM",
+      "Diabetic Foot Skin 02": "DM",
+      "Diabetic Foot Skin 03": "DM",
+      "non-Diabetic Foot Skin 01": "NDM",
+      "non-Diabetic Foot Skin 02": "NDM",
+      "non-Diabetic Foot Skin 03": "NDM"
+    },
+    "full_array": {
+      "universe": "full_mapped_array",
+      "n_genes": 26902,
+      "n_panel_overlap": 4902,
+      "signatures": {
+        "top50_decoder": {
+          "n_genes": 50,
+          "genes": [
+            "TIMP1",
+            "COL3A1",
+            "DCN",
+            "FN1",
+            "IER3",
+            "LUM",
+            "CHI3L1",
+            "MMP1",
+            "COL6A2",
+            "SAT1",
+            "NNMT",
+            "IGFBP4",
+            "MMP2",
+            "DCT",
+            "MMP3",
+            "G0S2",
+            "COL1A1",
+            "CHI3L2",
+            "TYRP1",
+            "C1R",
+            "COL6A1",
+            "RARRES2",
+            "BGN",
+            "TNFAIP6",
+            "CTSB",
+            "SPARC",
+            "CALD1",
+            "APOE",
+            "CXCL8",
+            "TPM2",
+            "CXCL1",
+            "TGFBI",
+            "PMEL",
+            "NAMPT",
+            "COL1A2",
+            "CTSK",
+            "CCL2",
+            "SERPINH1",
+            "PTGES",
+            "CYBA",
+            "MLANA",
+            "CCL20",
+            "MMP13",
+            "COL6A3",
+            "FSTL1",
+            "DNAJB1",
+            "ADM",
+            "RGS3",
+            "SERPINE2",
+            "MMP9"
+          ],
+          "DFU_vs_intact": {
+            "difference": -0.1249802852872749,
+            "p_exact": 0.7380952380952381,
+            "n_relabellings": 924,
+            "n_a": 6,
+            "n_b": 6,
+            "random_draws": 4000,
+            "fraction_at_least_as_large": 0.97725,
+            "fraction_at_least_as_extreme": 0.7435,
+            "random_median": 0.22251796105708116
+          },
+          "DFU_vs_diabetic_foot": {
+            "difference": -0.06898695647350143,
+            "p_exact": 0.8809523809523809,
+            "n_relabellings": 84,
+            "n_a": 6,
+            "n_b": 3,
+            "random_draws": 4000,
+            "fraction_at_least_as_large": 0.9645,
+            "fraction_at_least_as_extreme": 0.86525,
+            "random_median": 0.22632285083555478
+          },
+          "diabetic_vs_nondiabetic_foot": {
+            "difference": -0.11198665762754693,
+            "p_exact": 0.6,
+            "n_relabellings": 20,
+            "n_a": 3,
+            "n_b": 3,
+            "random_draws": 4000,
+            "fraction_at_least_as_large": 0.95075,
+            "fraction_at_least_as_extreme": 0.08525,
+            "random_median": -0.0044525273065646465
+          }
+        },
+        "lift50_decoder": {
+          "n_genes": 50,
+          "genes": [
+            "MMP1",
+            "MMP3",
+            "TYRP1",
+            "MMP13",
+            "PMEL",
+            "MLANA",
+            "DCT",
+            "CHI3L1",
+            "CXCL6",
+            "IL11",
+            "TYR",
+            "CA14",
+            "GAPDHS",
+            "IL24",
+            "TRPM1",
+            "SLC24A5",
+            "CXCL5",
+            "CHI3L2",
+            "LINC00681",
+            "CXCL13",
+            "PTPRN",
+            "LINC01705",
+            "GPR143",
+            "SLC45A2",
+            "SLCO4A1-AS1",
+            "COL10A1",
+            "CLEC12B",
+            "CEMIP",
+            "IBSP",
+            "MMP9",
+            "SPP1",
+            "CCL7",
+            "SCG5",
+            "TNFAIP6",
+            "LBP",
+            "CXCL1",
+            "TFPI2",
+            "LGI3",
+            "TMEM158",
+            "TNFSF11",
+            "CSF3",
+            "PTGES",
+            "PDPN",
+            "UBE2C",
+            "TREM1",
+            "TDO2",
+            "GAL",
+            "SLC16A3",
+            "SERPINE1",
+            "HAS1"
+          ],
+          "DFU_vs_intact": {
+            "difference": 0.6623825723365773,
+            "p_exact": 0.0021645021645021645,
+            "n_relabellings": 924,
+            "n_a": 6,
+            "n_b": 6,
+            "random_draws": 4000,
+            "fraction_at_least_as_large": 0.00425,
+            "fraction_at_least_as_extreme": 0.00425,
+            "random_median": 0.22251796105708116
+          },
+          "DFU_vs_diabetic_foot": {
+            "difference": 0.6056691535553421,
+            "p_exact": 0.011904761904761904,
+            "n_relabellings": 84,
+            "n_a": 6,
+            "n_b": 3,
+            "random_draws": 4000,
+            "fraction_at_least_as_large": 0.00925,
+            "fraction_at_least_as_extreme": 0.00925,
+            "random_median": 0.22632285083555478
+          },
+          "diabetic_vs_nondiabetic_foot": {
+            "difference": 0.1134268375624703,
+            "p_exact": 0.5,
+            "n_relabellings": 20,
+            "n_a": 3,
+            "n_b": 3,
+            "random_draws": 4000,
+            "fraction_at_least_as_large": 0.03425,
+            "fraction_at_least_as_extreme": 0.0805,
+            "random_median": -0.0044525273065646465
+          }
+        },
+        "beta_weighted_overlap": {
+          "n_genes": 4902,
+          "DFU_vs_intact": {
+            "difference": -0.1989113778168827,
+            "p_exact": 0.538961038961039,
+            "n_relabellings": 924,
+            "n_a": 6,
+            "n_b": 6
+          },
+          "DFU_vs_diabetic_foot": {
+            "difference": -0.11312553378014024,
+            "p_exact": 0.8214285714285714,
+            "n_relabellings": 84,
+            "n_a": 6,
+            "n_b": 3
+          },
+          "diabetic_vs_nondiabetic_foot": {
+            "difference": -0.17157168807348494,
+            "p_exact": 0.6,
+            "n_relabellings": 20,
+            "n_a": 3,
+            "n_b": 3
+          }
+        }
+      }
+    },
+    "de_filtered_sensitivity": {
+      "universe": "submitter_DE_genes",
+      "n_genes": 2956,
+      "n_panel_overlap": 884,
+      "signatures": {
+        "top50_decoder": {
+          "n_genes": 50,
+          "genes": [
+            "DCN",
+            "IER3",
+            "MMP1",
+            "IGFBP4",
+            "MMP2",
+            "DCT",
+            "MMP3",
+            "TYRP1",
+            "C1R",
+            "BGN",
+            "SPARC",
+            "PMEL",
+            "NAMPT",
+            "COL1A2",
+            "CTSK",
+            "MLANA",
+            "CCL20",
+            "FSTL1",
+            "DNAJB1",
+            "ADM",
+            "MMP9",
+            "TPM1",
+            "SERPINF1",
+            "C1S",
+            "ANGPTL4",
+            "IGFBP5",
+            "SERPINE1",
+            "IGFBP7",
+            "CRYAB",
+            "PRRX1",
+            "SLC16A3",
+            "RND3",
+            "IL6",
+            "PLAUR",
+            "CLU",
+            "DDIT4",
+            "IL24",
+            "SPHK1",
+            "FGF7",
+            "TMEM158",
+            "CXCL5",
+            "ACP5",
+            "PTGS2",
+            "CCND1",
+            "S100A16",
+            "IGF1",
+            "IER5",
+            "HILPDA",
+            "LMCD1",
+            "PHLDA2"
+          ],
+          "DFU_vs_intact": {
+            "difference": 0.035010753605004524,
+            "p_exact": 0.8636363636363636,
+            "n_relabellings": 924,
+            "n_a": 6,
+            "n_b": 6,
+            "random_draws": 4000,
+            "fraction_at_least_as_large": 0.0,
+            "fraction_at_least_as_extreme": 0.99975,
+            "random_median": -0.8547448367737152
+          },
+          "DFU_vs_diabetic_foot": {
+            "difference": 0.04057378253506815,
+            "p_exact": 0.9047619047619048,
+            "n_relabellings": 84,
+            "n_a": 6,
+            "n_b": 3,
+            "random_draws": 4000,
+            "fraction_at_least_as_large": 0.0,
+            "fraction_at_least_as_extreme": 1.0,
+            "random_median": -0.8111145483855651
+          },
+          "diabetic_vs_nondiabetic_foot": {
+            "difference": -0.011126057860127258,
+            "p_exact": 0.9,
+            "n_relabellings": 20,
+            "n_a": 3,
+            "n_b": 3,
+            "random_draws": 4000,
+            "fraction_at_least_as_large": 0.06075,
+            "fraction_at_least_as_extreme": 0.96175,
+            "random_median": -0.08438725161306959
+          }
+        },
+        "lift50_decoder": {
+          "n_genes": 50,
+          "genes": [
+            "MMP1",
+            "MMP3",
+            "TYRP1",
+            "PMEL",
+            "MLANA",
+            "DCT",
+            "IL11",
+            "TYR",
+            "IL24",
+            "CXCL5",
+            "CLEC12B",
+            "MMP9",
+            "TMEM158",
+            "TREM1",
+            "GAL",
+            "SLC16A3",
+            "SERPINE1",
+            "HAS1",
+            "GREM1",
+            "PI3",
+            "ACP5",
+            "ANGPTL4",
+            "CDC20",
+            "CCL20",
+            "TPX2",
+            "PTGS2",
+            "IL6",
+            "SPHK1",
+            "SLCO4A1",
+            "STEAP2",
+            "SLC16A10",
+            "NEFM",
+            "F3",
+            "HILPDA",
+            "AMPD3",
+            "CTSK",
+            "ADM",
+            "KYNU",
+            "PLAUR",
+            "MMP2",
+            "PTHLH",
+            "FNDC1",
+            "HMOX1",
+            "BGN",
+            "NAMPT",
+            "FGF2",
+            "PLXNC1",
+            "CDH3",
+            "TMEM45A",
+            "HSD3B7"
+          ],
+          "DFU_vs_intact": {
+            "difference": 0.5754957509925893,
+            "p_exact": 0.010822510822510822,
+            "n_relabellings": 924,
+            "n_a": 6,
+            "n_b": 6,
+            "random_draws": 4000,
+            "fraction_at_least_as_large": 0.0,
+            "fraction_at_least_as_extreme": 0.916,
+            "random_median": -0.8547448367737152
+          },
+          "DFU_vs_diabetic_foot": {
+            "difference": 0.5377857869536713,
+            "p_exact": 0.047619047619047616,
+            "n_relabellings": 84,
+            "n_a": 6,
+            "n_b": 3,
+            "random_draws": 4000,
+            "fraction_at_least_as_large": 0.0,
+            "fraction_at_least_as_extreme": 0.922,
+            "random_median": -0.8111145483855651
+          },
+          "diabetic_vs_nondiabetic_foot": {
+            "difference": 0.0754199280778361,
+            "p_exact": 0.8,
+            "n_relabellings": 20,
+            "n_a": 3,
+            "n_b": 3,
+            "random_draws": 4000,
+            "fraction_at_least_as_large": 0.00025,
+            "fraction_at_least_as_extreme": 0.56875,
+            "random_median": -0.08438725161306959
+          }
+        },
+        "beta_weighted_overlap": {
+          "n_genes": 884,
+          "DFU_vs_intact": {
+            "difference": -0.2267943888861569,
+            "p_exact": 0.19480519480519481,
+            "n_relabellings": 924,
+            "n_a": 6,
+            "n_b": 6
+          },
+          "DFU_vs_diabetic_foot": {
+            "difference": -0.19048922924262307,
+            "p_exact": 0.5119047619047619,
+            "n_relabellings": 84,
+            "n_a": 6,
+            "n_b": 3
+          },
+          "diabetic_vs_nondiabetic_foot": {
+            "difference": -0.07261031928706771,
+            "p_exact": 0.6,
+            "n_relabellings": 20,
+            "n_a": 3,
+            "n_b": 3
+          }
+        }
+      }
+    }
+  },
+  "limits": [
+    "Eleven outcome patients are the same discovery patients.",
+    "Balance tests are not covariate adjustment and do not exclude confounding.",
+    "GSE80178 has no healing labels. It tests a frozen gene score in bulk wound versus intact skin.",
+    "The DE-filtered universe is a sensitivity, not the primary contrast.",
+    "Random signatures and sample relabellings do not add patients."
+  ]
+}

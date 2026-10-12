@@ -1,0 +1,21 @@
+{
+ "schema_version": 1,
+ "status": "leader_reviewed_output_only_exact_dtype_correction",
+ "leader_reviewed_utc": "2026-10-09T15:58:17Z",
+ "leader_approval_verbatim": "Leader reviewed output-only precision addendum and replay_tables_exact_dtype.py: restoring existing worker float32 specimen/patient mean arithmetic is appropriate and preserves strict rtol0/atol1e-12. I approve the exact-dtype output-only replay correction; do not change the frozen source/config/test manifest or training/results. Run synthetic_check, execute full nine checkpoint CPU replay with correction, bind addendum and helper SHA256 in verification.json, and report raw initial verification failure separately. No tolerance relaxation or outcome selection.",
+ "review_kind": "operator_recorded_leader_engineering_review_not_independent_author_signoff",
+ "identified_utc": "2026-10-09T15:38:54Z",
+ "source_files_unchanged": true,
+ "frozen_training_plan_unchanged": true,
+ "frozen_protocol_hash": "0b5a397b1d500d57733c",
+ "issue": "Frozen table extractor explicitly casts float32 checkpoint theta to float64 before means; the existing worker retains float32 means. Its strict 1e-12 equality guard therefore rejects numerically different arithmetic despite identical equal-specimen pooling.",
+ "evidence": {
+  "source": "read_only_existing_4000_step_pilot",
+  "path": "output/local-p1-20261009/jobs/10ca4c95cf6ef39ae865",
+  "max_abs_patient_mean_difference": 4.719520876536598e-10,
+  "exception": "worker/table equal-specimen readout disagreement"
+ },
+ "correction": "Output-only replay script uses exactly the existing worker's float32 specimen mean and equal-specimen patient mean arithmetic. Strict 1e-12 comparison remains unchanged. No fit, seed, K, steps, match, threshold, outcome or inclusion/exclusion policy changes.",
+ "interpretation": "Engineering precision correction, not adverse-fit rescue or statistical-selection change.",
+ "approved_file": "output/publication-quality-20261009/p1/replay_tables_exact_dtype.py"
+}

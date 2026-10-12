@@ -1,0 +1,1245 @@
+{
+ "schema_version": 1,
+ "verified_utc": "2026-09-27",
+ "verification_sources": [
+  "NCBI E-utilities esummary (db=gds)",
+  "GEO acc.cgi form=text view=brief",
+  "GEO FTP suppl listing",
+  "Zenodo record page",
+  "Europe PMC REST abstract"
+ ],
+ "datasets": [
+  {
+   "id": "GSE241132",
+   "tier": "W",
+   "papers": [
+    "P2"
+   ],
+   "roles": [
+    "T-MT",
+    "T-LIO",
+    "T-SRC"
+   ],
+   "organism": "Homo sapiens",
+   "system": "acute skin wounds in healthy volunteers (Skin, Wound1, Wound7, Wound30)",
+   "design": {
+    "individuals": 3,
+    "timepoints": 4,
+    "samples": 12,
+    "population": "author-annotated fibroblasts"
+   },
+   "source": {
+    "kind": "local"
+   },
+   "local_path": "data/raw/GSE241132",
+   "status": "local",
+   "adapter": "local_gse241132",
+   "adapter_args": {
+    "population": {
+     "cell_type_keep": [
+      "Fibroblast"
+     ]
+    },
+    "frozen_topic_mu": true
+   },
+   "adapter_status": "validated_local",
+   "verification": {
+    "method": "existing barcode-row contract (core_engines.gse241132)",
+    "date": "2026-09-27",
+    "pmid": [
+     "39366968"
+    ]
+   },
+   "license": "GEO public processed matrices; raw reads EGA-controlled (not used)"
+  },
+  {
+   "id": "GSE326622",
+   "tier": "W",
+   "papers": [
+    "P2"
+   ],
+   "roles": [
+    "T-MT"
+   ],
+   "organism": "Mus musculus",
+   "system": "mouse wounds, NDB/PDB/GDB arms at POD0/2/7/30, one animal per arm and time",
+   "design": {
+    "individuals": 3,
+    "individual_meaning": "model arm",
+    "timepoints": 4,
+    "samples": 12
+   },
+   "source": {
+    "kind": "local"
+   },
+   "local_path": "data/raw/GSE326622",
+   "status": "local",
+   "adapter": "dir_triplets",
+   "adapter_args": {
+    "directory": "per_gsm",
+    "label_regex": "(?P<gsm>GSM\\d+)_(?P<arm>[A-Z]+)_POD(?P<pod>\\d+)_",
+    "fields": {
+     "individual": [
+      "arm"
+     ],
+     "time": [
+      "pod"
+     ]
+    },
+    "qc": {
+     "min_genes": 200,
+     "max_mito": 0.2
+    }
+   },
+   "adapter_status": "validated_local",
+   "verification": {
+    "method": "local per-GSM triplets",
+    "date": "2026-09-27"
+   },
+   "license": "GEO public",
+   "notes": "Arm and animal are confounded; T-LIO is not meaningful because each arm is one animal per time."
+  },
+  {
+   "id": "GSE186527",
+   "tier": "W",
+   "papers": [
+    "P2"
+   ],
+   "roles": [
+    "T-MT",
+    "T-LIO"
+   ],
+   "organism": "Mus musculus",
+   "system": "dorsal excisional wounds, unwounded + POD2/7/14/30, PBS versus verteporfin",
+   "design": {
+    "geo_samples": 9,
+    "barcoded_samples": 90,
+    "timepoints": 5,
+    "treatments": 2,
+    "note": "per-mouse barcode assignment must be confirmed by probe"
+   },
+   "source": {
+    "kind": "geo_suppl",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE186nnn/GSE186527/suppl/",
+    "files": [
+     {
+      "name": "GSE186527_RAW.tar",
+      "size_label": "70M"
+     },
+     {
+      "name": "filelist.txt",
+      "size_label": "1.9K"
+     }
+    ]
+   },
+   "local_path": "data/raw/GSE186527",
+   "status": "to_fetch",
+   "adapter": "tar_triplets",
+   "adapter_args": {
+    "archive": "GSE186527_RAW.tar",
+    "series_matrix": "GSE186527_series_matrix.txt.gz",
+    "fields": {
+     "individual": [
+      "mouse",
+      "replicate",
+      "animal"
+     ],
+     "time": [
+      "timepoint",
+      "time",
+      "day"
+     ],
+     "condition": [
+      "treatment"
+     ]
+    }
+   },
+   "adapter_status": "pending_probe",
+   "verification": {
+    "method": "GEO SOFT + FTP listing",
+    "date": "2026-09-27",
+    "pmid": [
+     "35077667"
+    ]
+   },
+   "license": "GEO public",
+   "extra_files": [
+    {
+     "name": "GSE186527_series_matrix.txt.gz",
+     "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE186nnn/GSE186527/matrix/GSE186527_series_matrix.txt.gz"
+    }
+   ]
+  },
+  {
+   "id": "GSE178758",
+   "tier": "W",
+   "papers": [
+    "P2",
+    "P1"
+   ],
+   "roles": [
+    "T-MT"
+   ],
+   "organism": "Mus musculus",
+   "system": "stented wound fibroblasts POD2/7/14 (scRNA-seq) with Visium, scATAC and bulk",
+   "design": {
+    "samples": 34,
+    "timepoints": 3,
+    "population": "FACS-isolated fibroblasts (Rainbow)"
+   },
+   "source": {
+    "kind": "geo_suppl",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE178nnn/GSE178758/suppl/",
+    "files": [
+     {
+      "name": "GSE178758_RAW.tar",
+      "size_label": "207M"
+     },
+     {
+      "name": "GSE178758_scRNA-seq_processed.csv.gz",
+      "size_label": "1.0M"
+     },
+     {
+      "name": "filelist.txt",
+      "size_label": "4.7K"
+     }
+    ]
+   },
+   "local_path": "data/raw/GSE178758",
+   "status": "to_fetch",
+   "adapter": "tar_triplets",
+   "adapter_args": {
+    "archive": "GSE178758_RAW.tar",
+    "series_matrix": "GSE178758_series_matrix.txt.gz",
+    "fields": {
+     "individual": [
+      "replicate",
+      "mouse",
+      "region"
+     ],
+     "time": [
+      "timepoint",
+      "time",
+      "pod"
+     ]
+    }
+   },
+   "adapter_status": "pending_probe",
+   "verification": {
+    "method": "GEO SOFT + FTP listing",
+    "date": "2026-09-27",
+    "pmid": [
+     "34620713"
+    ]
+   },
+   "license": "GEO public",
+   "extra_files": [
+    {
+     "name": "GSE178758_series_matrix.txt.gz",
+     "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE178nnn/GSE178758/matrix/GSE178758_series_matrix.txt.gz"
+    }
+   ]
+  },
+  {
+   "id": "GSE204777",
+   "tier": "W",
+   "papers": [
+    "P2"
+   ],
+   "roles": [
+    "T-MT"
+   ],
+   "organism": "Mus musculus",
+   "system": "skin wounds unwounded + d1/3/7/14, multiplexed by time and radial position; 4 pooled wounds",
+   "design": {
+    "geo_samples": 5,
+    "timepoints": 5,
+    "individuals": "pooled; radial position strata"
+   },
+   "source": {
+    "kind": "geo_suppl",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE204nnn/GSE204777/suppl/",
+    "files": [
+     {
+      "name": "GSE204777_RAW.tar",
+      "size_label": "917M"
+     },
+     {
+      "name": "filelist.txt",
+      "size_label": "1.1K"
+     }
+    ]
+   },
+   "local_path": "data/raw/GSE204777",
+   "status": "to_fetch",
+   "adapter": "tar_triplets",
+   "adapter_args": {
+    "archive": "GSE204777_RAW.tar",
+    "series_matrix": "GSE204777_series_matrix.txt.gz",
+    "individual_from": "gsm",
+    "fields": {
+     "time": [
+      "timepoint",
+      "time",
+      "day"
+     ]
+    }
+   },
+   "adapter_status": "pending_probe",
+   "verification": {
+    "method": "GEO SOFT + FTP listing + Europe PMC",
+    "date": "2026-09-27",
+    "pmid": [
+     "37267918"
+    ]
+   },
+   "license": "GEO public",
+   "extra_files": [
+    {
+     "name": "GSE204777_series_matrix.txt.gz",
+     "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE204nnn/GSE204777/matrix/GSE204777_series_matrix.txt.gz"
+    }
+   ],
+   "notes": "MULTI-seq hashtag assignments are needed to separate time and position; probe first."
+  },
+  {
+   "id": "GSE188432",
+   "tier": "W",
+   "papers": [
+    "P2"
+   ],
+   "roles": [
+    "T-MT"
+   ],
+   "organism": "Mus musculus",
+   "system": "young (7 wk) versus aged (88 wk) back skin: unwounded, 4 and 7 days post-wounding",
+   "design": {
+    "geo_samples": 11,
+    "timepoints": 3,
+    "conditions": [
+     "young",
+     "aged"
+    ]
+   },
+   "source": {
+    "kind": "geo_suppl",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE188nnn/GSE188432/suppl/",
+    "files": [
+     {
+      "name": "GSE188432_aged_v3_batch1_barcodes.tsv.gz",
+      "size_label": "76K"
+     },
+     {
+      "name": "GSE188432_aged_v3_batch1_features.tsv.gz",
+      "size_label": "273K"
+     },
+     {
+      "name": "GSE188432_aged_v3_batch1_matrix.mtx.gz",
+      "size_label": "98M"
+     },
+     {
+      "name": "GSE188432_young+aged_v3_batch2_barcodes.tsv.gz",
+      "size_label": "160K"
+     },
+     {
+      "name": "GSE188432_young+aged_v3_batch2_features.tsv.gz",
+      "size_label": "273K"
+     },
+     {
+      "name": "GSE188432_young+aged_v3_batch2_matrix.mtx.gz",
+      "size_label": "234M"
+     },
+     {
+      "name": "GSE188432_young_v2_barcodes.tsv.gz",
+      "size_label": "152K"
+     },
+     {
+      "name": "GSE188432_young_v2_genes.tsv.gz",
+      "size_label": "213K"
+     },
+     {
+      "name": "GSE188432_young_v2_matrix.mtx.gz",
+      "size_label": "225M"
+     }
+    ]
+   },
+   "local_path": "data/raw/GSE188432",
+   "status": "to_fetch",
+   "adapter": "mtx_with_cell_metadata",
+   "adapter_args": {
+    "note": "three batch-level triplets; per-cell sample labels must be recovered from barcodes (probe)"
+   },
+   "adapter_status": "probe_only",
+   "verification": {
+    "method": "GEO SOFT + FTP listing + Europe PMC",
+    "date": "2026-09-27",
+    "pmid": [
+     "35926463"
+    ]
+   },
+   "license": "GEO public",
+   "notes": "Pairs with GSE142471 (young unwounded/day 4)."
+  },
+  {
+   "id": "GSE142471",
+   "tier": "W",
+   "papers": [
+    "P2"
+   ],
+   "roles": [
+    "context"
+   ],
+   "organism": "Mus musculus",
+   "system": "adult back skin: 2 unwounded and 3 day-4 wounded samples",
+   "design": {
+    "geo_samples": 5,
+    "timepoints": 2
+   },
+   "source": {
+    "kind": "geo_suppl",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE142nnn/GSE142471/suppl/",
+    "files": [
+     {
+      "name": "GSE142471_RAW.tar",
+      "size_label": "166M"
+     },
+     {
+      "name": "filelist.txt",
+      "size_label": "1.3K"
+     }
+    ]
+   },
+   "local_path": "data/raw/GSE142471",
+   "status": "to_fetch",
+   "adapter": "tar_triplets",
+   "adapter_args": {
+    "archive": "GSE142471_RAW.tar",
+    "series_matrix": "GSE142471_series_matrix.txt.gz",
+    "individual_from": "gsm",
+    "fields": {
+     "time": [
+      "time",
+      "condition",
+      "treatment"
+     ]
+    }
+   },
+   "adapter_status": "probe_only",
+   "verification": {
+    "method": "GEO SOFT + FTP listing",
+    "date": "2026-09-27",
+    "pmid": [
+     "32187560"
+    ]
+   },
+   "license": "GEO public",
+   "extra_files": [
+    {
+     "name": "GSE142471_series_matrix.txt.gz",
+     "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE142nnn/GSE142471/matrix/GSE142471_series_matrix.txt.gz"
+    }
+   ],
+   "notes": "Two time points with different mice; not usable for population tasks alone (see population protocol datasets_excluded)."
+  },
+  {
+   "id": "GSE265972",
+   "tier": "M",
+   "papers": [
+    "P1",
+    "P2"
+   ],
+   "roles": [
+    "measurement"
+   ],
+   "organism": "Homo sapiens",
+   "system": "venous-ulcer patients (n=4) and matched healthy controls (n=5), same laboratory as GSE241132",
+   "design": {
+    "geo_samples": 9,
+    "patients": 4,
+    "controls": 5
+   },
+   "source": {
+    "kind": "geo_suppl",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE265nnn/GSE265972/suppl/",
+    "files": [
+     {
+      "name": "GSE265972_processed.tar.gz",
+      "size_label": "694M"
+     },
+     {
+      "name": "GSE265972_VU_anno_metadata.txt.gz",
+      "size_label": "3.9M"
+     }
+    ]
+   },
+   "local_path": "data/raw/GSE265972",
+   "status": "to_fetch",
+   "adapter": "tar_triplets",
+   "adapter_args": {
+    "note": "processed tar layout and annotation keys to be confirmed by probe"
+   },
+   "adapter_status": "probe_only",
+   "verification": {
+    "method": "GEO SOFT + FTP listing",
+    "date": "2026-09-27"
+   },
+   "license": "GEO public processed data; raw reads EGA-controlled (not used)"
+  },
+  {
+   "id": "GSE241124",
+   "tier": "M",
+   "papers": [
+    "P1",
+    "P2"
+   ],
+   "roles": [
+    "spatial_localization"
+   ],
+   "organism": "Homo sapiens",
+   "system": "Visium spatial transcriptomics of the GSE241132 acute wounds (skin, day 1, 7, 30)",
+   "design": {
+    "geo_samples": 16
+   },
+   "source": {
+    "kind": "geo_suppl",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE241nnn/GSE241124/suppl/",
+    "files": [
+     {
+      "name": "GSE241124_RAW.tar",
+      "size_label": "229M"
+     },
+     {
+      "name": "GSE241124_spatialseq_metadata_acutewound.txt.gz",
+      "size_label": "332K"
+     },
+     {
+      "name": "filelist.txt",
+      "size_label": "2.7K"
+     }
+    ]
+   },
+   "local_path": "data/raw/GSE241124",
+   "status": "to_fetch",
+   "adapter": "probe",
+   "adapter_args": {},
+   "adapter_status": "probe_only",
+   "verification": {
+    "method": "GEO SOFT + FTP listing",
+    "date": "2026-09-27",
+    "pmid": [
+     "39366968"
+    ]
+   },
+   "license": "GEO public processed data",
+   "notes": "Spatial ingestion is out of scope for this round; probe only."
+  },
+  {
+   "id": "GSE175634",
+   "tier": "G",
+   "papers": [
+    "P2"
+   ],
+   "roles": [
+    "T-MT",
+    "T-LIO",
+    "T-SRC",
+    "T-K"
+   ],
+   "organism": "Homo sapiens",
+   "system": "iPSC to cardiomyocyte differentiation, 19 cell lines x 7 time points over 16 days",
+   "design": {
+    "individuals": 19,
+    "timepoints": 7,
+    "samples": 57
+   },
+   "source": {
+    "kind": "geo_suppl",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE175nnn/GSE175634/suppl/",
+    "files": [
+     {
+      "name": "GSE175634_cell_counts.mtx.gz",
+      "size_label": "970M"
+     },
+     {
+      "name": "GSE175634_gene_indices_counts.tsv.gz",
+      "size_label": "230K"
+     },
+     {
+      "name": "GSE175634_cell_indices.tsv.gz",
+      "size_label": "1.5M"
+     },
+     {
+      "name": "GSE175634_cell_metadata.tsv.gz",
+      "size_label": "9.8M"
+     },
+     {
+      "name": "GSE175634_collection_metadata.txt.gz",
+      "size_label": "2.9K"
+     },
+     {
+      "name": "GSE175634_experimental_design.txt.gz",
+      "size_label": "736"
+     }
+    ]
+   },
+   "local_path": "data/raw/GSE175634",
+   "status": "to_fetch",
+   "adapter": "mtx_with_cell_metadata",
+   "adapter_args": {
+    "matrix": "GSE175634_cell_counts.mtx.gz",
+    "genes": "GSE175634_gene_indices_counts.tsv.gz",
+    "cells": "GSE175634_cell_indices.tsv.gz",
+    "cell_metadata": "GSE175634_cell_metadata.tsv.gz",
+    "cell_key": [
+     "cell",
+     "barcode",
+     "cell_id"
+    ],
+    "fields": {
+     "individual": [
+      "individual",
+      "line",
+      "cell_line",
+      "donor"
+     ],
+     "time": [
+      "diffday",
+      "day",
+      "timepoint",
+      "time"
+     ],
+     "batch": [
+      "colony",
+      "batch",
+      "collection"
+     ]
+    },
+    "qc": null
+   },
+   "adapter_status": "pending_probe",
+   "verification": {
+    "method": "E-utilities esummary + GEO FTP listing",
+    "date": "2026-09-27",
+    "pmid": [
+     "35061661"
+    ]
+   },
+   "license": "GEO public"
+  },
+  {
+   "id": "CUOMO2020_ZENODO3625024",
+   "tier": "G",
+   "papers": [
+    "P2"
+   ],
+   "roles": [
+    "T-LIO",
+    "T-SRC",
+    "T-K",
+    "T-MT"
+   ],
+   "organism": "Homo sapiens",
+   "system": "iPSC to definitive endoderm, 125 donors, pooled design (Smart-seq2)",
+   "design": {
+    "individuals": 125,
+    "timepoints": 4,
+    "note": "time points and pool structure to confirm by probe"
+   },
+   "source": {
+    "kind": "zenodo",
+    "base_url": "https://zenodo.org/records/3625024/files/",
+    "files": [
+     {
+      "name": "raw_counts.csv.zip",
+      "size_label": "2.5G",
+      "url": "https://zenodo.org/records/3625024/files/raw_counts.csv.zip?download=1",
+      "bytes": 2543502178,
+      "md5": "86044a350cc08ec7c0ad4068206bda0e"
+     },
+     {
+      "name": "cell_metadata_cols.tsv",
+      "size_label": "40.9M",
+      "url": "https://zenodo.org/records/3625024/files/cell_metadata_cols.tsv?download=1",
+      "bytes": 40856728,
+      "md5": "c2e1fd0b1b268047bdcbdbb2f6dab0cb"
+     }
+    ]
+   },
+   "local_path": "data/raw/CUOMO2020",
+   "status": "to_fetch",
+   "adapter": "dense_table_with_cell_metadata",
+   "adapter_args": {
+    "table": "raw_counts.csv.zip",
+    "cell_metadata": "cell_metadata_cols.tsv",
+    "cell_key": [
+     "cell_name",
+     "cell",
+     "cell_id"
+    ],
+    "fields": {
+     "individual": [
+      "donor",
+      "donor_long_id",
+      "individual"
+     ],
+     "time": [
+      "day",
+      "time_point",
+      "time"
+     ],
+     "batch": [
+      "experiment",
+      "pool",
+      "batch"
+     ]
+    },
+    "qc": null
+   },
+   "adapter_status": "pending_probe",
+   "verification": {
+    "method": "Zenodo record page + Europe PMC abstract (PMID 32041960)",
+    "date": "2026-09-27",
+    "doi": "10.1038/s41467-020-14457-z",
+    "checksums": "Zenodo REST API record 3625024 (sizes and md5)"
+   },
+   "license": "CC-BY-4.0"
+  },
+  {
+   "id": "GSE122662",
+   "tier": "G",
+   "papers": [
+    "P2"
+   ],
+   "roles": [
+    "T-MT"
+   ],
+   "organism": "Mus musculus",
+   "system": "fibroblast reprogramming time course (Waddington-OT), dense time points",
+   "design": {
+    "geo_samples": 190,
+    "note": "SuperSeries; select the scRNA-seq SubSeries at probe"
+   },
+   "source": {
+    "kind": "geo_suppl",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE122nnn/GSE122662/suppl/",
+    "files": [
+     {
+      "name": "GSE122662_RAW.tar",
+      "size_label": "1.7G"
+     },
+     {
+      "name": "filelist.txt",
+      "size_label": "16K"
+     }
+    ]
+   },
+   "local_path": "data/raw/GSE122662",
+   "status": "to_fetch",
+   "adapter": "tar_triplets",
+   "adapter_args": {
+    "archive": "GSE122662_RAW.tar",
+    "note": "SuperSeries member layout and series-matrix name to confirm by probe"
+   },
+   "adapter_status": "probe_only",
+   "verification": {
+    "method": "E-utilities esummary + GEO FTP listing",
+    "date": "2026-09-27",
+    "pmid": [
+     "30712874"
+    ]
+   },
+   "license": "GEO public",
+   "notes": "SuperSeries: the series-matrix file name may carry a platform suffix; confirm at probe."
+  },
+  {
+   "id": "GSE140802",
+   "tier": "G",
+   "papers": [
+    "P2"
+   ],
+   "roles": [
+    "T-MT"
+   ],
+   "organism": "Mus musculus",
+   "system": "hematopoietic differentiation with LARRY lineage barcodes (days 2, 4, 6)",
+   "design": {
+    "geo_samples": 4,
+    "timepoints": 3
+   },
+   "source": {
+    "kind": "geo_suppl",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE140nnn/GSE140802/suppl/",
+    "files": [
+     {
+      "name": "GSE140802_RAW.tar",
+      "size_label": "4.4G"
+     },
+     {
+      "name": "filelist.txt",
+      "size_label": "2.0K"
+     }
+    ]
+   },
+   "local_path": "data/raw/GSE140802",
+   "status": "to_fetch",
+   "adapter": "tar_dense_csv",
+   "adapter_args": {
+    "note": "member layout (normalized counts + metadata) to be confirmed by probe"
+   },
+   "adapter_status": "probe_only",
+   "verification": {
+    "method": "E-utilities esummary + GEO FTP listing",
+    "date": "2026-09-27",
+    "pmid": [
+     "31974159"
+    ]
+   },
+   "license": "GEO public"
+  },
+  {
+   "id": "GSE112294",
+   "tier": "G",
+   "papers": [
+    "P2"
+   ],
+   "roles": [
+    "T-MT"
+   ],
+   "organism": "Danio rerio",
+   "system": "zebrafish embryogenesis, first day of development",
+   "design": {
+    "geo_samples": 18
+   },
+   "source": {
+    "kind": "geo_suppl",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE112nnn/GSE112294/suppl/",
+    "files": [
+     {
+      "name": "GSE112294_RAW.tar",
+      "size_label": "1.6G"
+     },
+     {
+      "name": "GSE112294_ClusterNames.csv.gz",
+      "size_label": "1.7K"
+     },
+     {
+      "name": "filelist.txt",
+      "size_label": "3.9K"
+     }
+    ]
+   },
+   "local_path": "data/raw/GSE112294",
+   "status": "to_fetch",
+   "adapter": "tar_dense_csv",
+   "adapter_args": {
+    "note": "member layout to be confirmed by probe"
+   },
+   "adapter_status": "probe_only",
+   "verification": {
+    "method": "E-utilities esummary + GEO FTP listing",
+    "date": "2026-09-27",
+    "pmid": [
+     "29700229"
+    ]
+   },
+   "license": "GEO public"
+  },
+  {
+   "id": "GSE114412",
+   "tier": "G",
+   "papers": [
+    "P2"
+   ],
+   "roles": [
+    "T-MT"
+   ],
+   "organism": "Homo sapiens",
+   "system": "in vitro stem-cell-derived beta-cell differentiation (stages 5-6)",
+   "design": {
+    "geo_samples": 46
+   },
+   "source": {
+    "kind": "geo_suppl",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE114nnn/GSE114412/suppl/",
+    "files": [
+     {
+      "name": "GSE114412_Stage_5.all.processed_counts.tsv.gz",
+      "size_label": "103M"
+     },
+     {
+      "name": "GSE114412_Stage_5.all.cell_metadata.tsv.gz",
+      "size_label": "1.7M"
+     },
+     {
+      "name": "GSE114412_Stage_6.all.processed_counts.tsv.gz",
+      "size_label": "79M"
+     },
+     {
+      "name": "GSE114412_Stage_6.all.cell_metadata.tsv.gz",
+      "size_label": "1.2M"
+     }
+    ]
+   },
+   "local_path": "data/raw/GSE114412",
+   "status": "to_fetch",
+   "adapter": "dense_table_with_cell_metadata",
+   "adapter_args": {
+    "note": "processed (not raw) counts; time field and orientation to be confirmed by probe"
+   },
+   "adapter_status": "probe_only",
+   "verification": {
+    "method": "E-utilities esummary + GEO FTP listing",
+    "date": "2026-09-27",
+    "pmid": [
+     "31068696"
+    ]
+   },
+   "license": "GEO public"
+  },
+  {
+   "id": "GSE132188",
+   "tier": "G",
+   "papers": [
+    "P2"
+   ],
+   "roles": [
+    "T-MT"
+   ],
+   "organism": "Mus musculus",
+   "system": "pancreatic endocrinogenesis E12.5-E15.5, one sample per stage",
+   "design": {
+    "geo_samples": 4,
+    "timepoints": 4,
+    "individuals": 1
+   },
+   "source": {
+    "kind": "geo_suppl",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE132nnn/GSE132188/suppl/",
+    "files": [
+     {
+      "name": "GSE132188_adata.h5ad.h5",
+      "size_label": "318M"
+     }
+    ]
+   },
+   "local_path": "data/raw/GSE132188",
+   "status": "to_fetch",
+   "adapter": "h5ad",
+   "adapter_args": {
+    "file": "GSE132188_adata.h5ad.h5",
+    "individual_from": "day",
+    "fields": {
+     "time": [
+      "day",
+      "stage",
+      "time"
+     ]
+    },
+    "note": "individual equals stage pool; count layer to confirm by probe"
+   },
+   "adapter_status": "pending_probe",
+   "verification": {
+    "method": "E-utilities esummary + GEO FTP listing",
+    "date": "2026-09-27",
+    "pmid": [
+     "31160421"
+    ]
+   },
+   "license": "GEO public"
+  },
+  {
+   "id": "GSE165816",
+   "tier": "M",
+   "papers": [
+    "P1"
+   ],
+   "roles": [
+    "measurement",
+    "discovery"
+   ],
+   "organism": "Homo sapiens",
+   "system": "diabetic foot skin discovery cohort (25 foot specimens, 20 patients; 11 DFU patients with outcomes)",
+   "design": {
+    "specimens": 25,
+    "patients": 20,
+    "outcome_patients": 11
+   },
+   "source": {
+    "kind": "local"
+   },
+   "local_path": "data/raw/GSE165816",
+   "status": "local",
+   "adapter": "tar_dense_csv",
+   "adapter_args": {
+    "note": "measurement jobs read the verified frozen projection outputs instead of re-ingesting"
+   },
+   "adapter_status": "validated_local",
+   "verification": {
+    "method": "existing projection contract",
+    "date": "2026-09-27",
+    "pmid": [
+     "35013299"
+    ]
+   },
+   "license": "GEO public processed data"
+  },
+  {
+   "id": "GSE231643",
+   "tier": "M",
+   "papers": [
+    "P1"
+   ],
+   "roles": [
+    "measurement"
+   ],
+   "organism": "Homo sapiens",
+   "system": "DFU debridement scRNA-seq, title-labelled specimens",
+   "design": {
+    "geo_samples": 8
+   },
+   "source": {
+    "kind": "local"
+   },
+   "local_path": "data/raw/GSE231643",
+   "status": "local",
+   "adapter": "tar_triplets",
+   "adapter_args": {
+    "archive": "GSE231643_RAW.tar",
+    "series_matrix": "GSE231643_series_matrix.txt.gz",
+    "individual_from": "gsm",
+    "constant_time": 0
+   },
+   "adapter_status": "validated_local",
+   "verification": {
+    "method": "local RAW.tar",
+    "date": "2026-09-27"
+   },
+   "license": "GEO public"
+  },
+  {
+   "id": "GSE223964",
+   "tier": "M",
+   "papers": [
+    "P1"
+   ],
+   "roles": [
+    "measurement"
+   ],
+   "organism": "Homo sapiens",
+   "system": "chronic diabetic and non-diabetic foot ulcers, per-sample h5",
+   "design": {
+    "geo_samples": 8
+   },
+   "source": {
+    "kind": "local"
+   },
+   "local_path": "data/raw/GSE223964",
+   "status": "local",
+   "adapter": "dir_h5",
+   "adapter_args": {
+    "directory": ".",
+    "pattern": "^GSM\\d+_.*\\.h5$",
+    "series_matrix": "GSE223964_series_matrix.txt.gz",
+    "individual_from": "gsm",
+    "constant_time": 0
+   },
+   "adapter_status": "validated_local",
+   "verification": {
+    "method": "local per-GSM h5",
+    "date": "2026-09-27"
+   },
+   "license": "GEO public"
+  },
+  {
+   "id": "GSE245703",
+   "tier": "M",
+   "papers": [
+    "P1"
+   ],
+   "roles": [
+    "measurement"
+   ],
+   "organism": "Homo sapiens",
+   "system": "chronic diabetic and non-diabetic foot ulcers, per-sample filtered h5",
+   "design": {
+    "geo_samples": 12
+   },
+   "source": {
+    "kind": "local"
+   },
+   "local_path": "data/raw/GSE245703",
+   "status": "local",
+   "adapter": "dir_h5",
+   "adapter_args": {
+    "directory": ".",
+    "pattern": "_filtered_feature_bc_matrix\\.h5$",
+    "series_matrix": "GSE245703_series_matrix.txt.gz",
+    "individual_from": "gsm",
+    "constant_time": 0
+   },
+   "adapter_status": "validated_local",
+   "verification": {
+    "method": "local per-GSM h5",
+    "date": "2026-09-27"
+   },
+   "license": "GEO public"
+  },
+  {
+   "id": "GSE268834",
+   "tier": "M",
+   "papers": [
+    "P1"
+   ],
+   "roles": [
+    "measurement"
+   ],
+   "organism": "Homo sapiens",
+   "system": "diabetic and non-diabetic wound-edge scRNA-seq",
+   "design": {
+    "geo_samples": 8
+   },
+   "source": {
+    "kind": "local"
+   },
+   "local_path": "data/raw/GSE268834",
+   "status": "local",
+   "adapter": "dir_triplets",
+   "adapter_args": {
+    "directory": "per_gsm",
+    "series_matrix": "GSE268834_series_matrix.txt.gz",
+    "individual_from": "gsm",
+    "constant_time": 0
+   },
+   "adapter_status": "validated_local",
+   "verification": {
+    "method": "local per-GSM triplets",
+    "date": "2026-09-27"
+   },
+   "license": "GEO public"
+  },
+  {
+   "id": "GSE248247",
+   "tier": "M",
+   "papers": [
+    "P1"
+   ],
+   "roles": [
+    "measurement"
+   ],
+   "organism": "Homo sapiens",
+   "system": "one diabetic and one non-diabetic foot ulcer (low-yield stress test)",
+   "design": {
+    "geo_samples": 2
+   },
+   "source": {
+    "kind": "local"
+   },
+   "local_path": "data/raw/GSE248247",
+   "status": "local",
+   "adapter": "dir_triplets",
+   "adapter_args": {
+    "directory": "per_gsm",
+    "series_matrix": "GSE248247_series_matrix.txt.gz",
+    "individual_from": "gsm",
+    "constant_time": 0
+   },
+   "adapter_status": "validated_local",
+   "verification": {
+    "method": "local per-GSM triplets",
+    "date": "2026-09-27"
+   },
+   "license": "GEO public"
+  },
+  {
+   "id": "GSE166120",
+   "tier": "M",
+   "papers": [
+    "P1"
+   ],
+   "roles": [
+    "spatial_localization"
+   ],
+   "organism": "Homo sapiens",
+   "system": "GeoMx DSP (1,800-plex CTA) of DFU sections: 2 healers, 2 non-healers, 23 ROIs; same study as GSE165816",
+   "design": {
+    "patients": 4,
+    "rois": 23,
+    "independent_of_discovery": false
+   },
+   "source": {
+    "kind": "geo_suppl",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE166nnn/GSE166120/suppl/",
+    "files": [
+     {
+      "name": "GSE166120_RAW.tar",
+      "size_label": "730K"
+     },
+     {
+      "name": "GSE166120_Alpha_CTA_v2.0.pkc.txt.gz",
+      "size_label": "676K"
+     }
+    ]
+   },
+   "local_path": "data/raw/GSE166120",
+   "status": "to_fetch",
+   "adapter": "probe",
+   "adapter_args": {},
+   "adapter_status": "probe_only",
+   "verification": {
+    "method": "GEO SOFT sample characteristics",
+    "date": "2026-09-27",
+    "pmid": [
+     "35013299"
+    ]
+   },
+   "license": "GEO public",
+   "notes": "Descriptive localization only; not an independent validation."
+  },
+  {
+   "id": "GSE230426",
+   "tier": "M",
+   "papers": [
+    "P1"
+   ],
+   "roles": [
+    "external_outcome_descriptive"
+   ],
+   "organism": "Homo sapiens",
+   "system": "bulk RNA-seq of S. aureus-infected DFU, 21 patients at 0 and 8 weeks; 17 infection-healed, 4 failed",
+   "design": {
+    "patients": 21,
+    "samples": 42,
+    "outcome": "clinical infection healing at 8 weeks",
+    "construct": "bulk tissue, not single-cell"
+   },
+   "source": {
+    "kind": "geo_suppl",
+    "base_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE230nnn/GSE230426/suppl/",
+    "files": [
+     {
+      "name": "GSE230426_RAW.tar",
+      "size_label": "11M"
+     },
+     {
+      "name": "filelist.txt",
+      "size_label": "2.5K"
+     }
+    ]
+   },
+   "local_path": "data/raw/GSE230426",
+   "status": "to_fetch",
+   "adapter": "probe",
+   "adapter_args": {},
+   "adapter_status": "probe_only",
+   "verification": {
+    "method": "GEO SOFT overall design",
+    "date": "2026-09-27",
+    "pmid": [
+     "37434783"
+    ]
+   },
+   "license": "GEO public",
+   "notes": "Different outcome (infection healing) and assay (bulk); descriptive deconvolution only."
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+ "counts": {
+  "done": 9,
+  "failed": 0,
+  "other_shard": 0,
+  "skipped_done": 0,
+  "skipped_failed": 0
+ },
+ "finished_utc": "2026-10-09T15:56:40.597998+00:00",
+ "resource_final": {
+  "artifact_bytes": 111066639,
+  "free_disk_bytes": 327026491392,
+  "reserved_next_write_bytes": 0
+ },
+ "runtime": {
+  "requested": {
+   "model": "gpt-6.1-sol",
+   "reasoning_effort": "xhigh"
+  },
+  "runtime_file": "/home/zeyufu/.codex/sessions/2026/10/09/rollout-2026-10-09T08-15-15-01a1213b-95f3-7bc1-88f6-2225c233d102.jsonl",
+  "runtime_reported": {
+   "model": "gpt-6.1-sol",
+   "parent_thread_id": "01a1212f-da64-7fb0-8937-08c545eac5f8",
+   "reasoning_effort": "xhigh",
+   "session_id": "01a1212f-da64-7fb0-8937-08c545eac5f8",
+   "thread_id": "01a1213b-95f3-7bc1-88f6-2225c233d102",
+   "turn_id": "01a1213b-9607-7d23-81e8-61941ce458a8"
+  }
+ },
+ "wall_seconds": 1177.553334887998
+}

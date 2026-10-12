@@ -1,0 +1,126 @@
+{
+  "A_immune_replication": {
+    "broad_immune": {
+      "per_cohort": {
+        "GSE165816": {
+          "n_samples": 33,
+          "rho": 0.5499772736915477,
+          "p": 0.0009143266745276289,
+          "annotation": "markers"
+        },
+        "GSE231643": {
+          "n_samples": 8,
+          "rho": 0.3571428571428572,
+          "p": 0.38512064355625636,
+          "annotation": "markers"
+        },
+        "GSE241132": {
+          "n_samples": 12,
+          "rho": -0.06993006993006995,
+          "p": 0.8290236405313092,
+          "annotation": "authors",
+          "n_donors": 3,
+          "independent_units": "3 paired donors, not 12 samples",
+          "sample_level_spearman_is_descriptive_only": true,
+          "donor_level": {
+            "n_donors": 3,
+            "rho": -0.5,
+            "p": 0.6666666666666667,
+            "note": "n=3; p-value is descriptive only"
+          }
+        }
+      },
+      "stouffer_z": 3.3582678008610016,
+      "p": 0.0007843258596760567,
+      "consistent_sign": false,
+      "carried_by_discovery_only": true,
+      "stouffer_excludes": "GSE241132 (paired 3-donor design)"
+    },
+    "b_plasma_like": {
+      "per_cohort": {
+        "GSE165816": {
+          "n_samples": 33,
+          "rho": 0.5578097673726038,
+          "p": 0.0007441130181852566,
+          "annotation": "markers"
+        },
+        "GSE231643": {
+          "n_samples": 8,
+          "rho": 0.4285714285714286,
+          "p": 0.2894032248467901,
+          "annotation": "markers"
+        },
+        "GSE241132": {
+          "n_samples": 12,
+          "rho": 0.20979020979020982,
+          "p": 0.5128409431818263,
+          "annotation": "authors",
+          "n_donors": 3,
+          "independent_units": "3 paired donors, not 12 samples",
+          "sample_level_spearman_is_descriptive_only": true,
+          "donor_level": {
+            "n_donors": 3,
+            "rho": -0.5,
+            "p": 0.6666666666666667,
+            "note": "n=3; p-value is descriptive only"
+          }
+        }
+      },
+      "stouffer_z": 3.4938749813001873,
+      "p": 0.00047606389706154065,
+      "consistent_sign": true,
+      "carried_by_discovery_only": true,
+      "stouffer_excludes": "GSE241132 (paired 3-donor design)"
+    }
+  },
+  "observed_design_power": {
+    "sd": 0.2827024541496337,
+    "mde": 0.5189377629730367,
+    "observed_difference": 0.23626141111335078,
+    "power_at_observed": 0.249,
+    "n_healer": 9,
+    "n_nonhealer": 5
+  },
+  "C_positive_control": {
+    "n_foot": 9,
+    "n_forearm": 5,
+    "p_values": {
+      "topic_0": 0.006993006993006993,
+      "topic_1": 0.7972027972027972,
+      "topic_2": 0.11188811188811189,
+      "topic_3": 0.6063936063936064,
+      "topic_4": 0.2977022977022977,
+      "topic_5": 0.8981018981018981,
+      "topic_6": 0.11188811188811189,
+      "topic_7": 0.001998001998001998,
+      "topic_8": 0.2977022977022977,
+      "topic_9": 0.14685314685314685,
+      "topic_10": 0.003996003996003996,
+      "topic_11": 0.8981018981018981,
+      "topic_12": 0.14685314685314685,
+      "topic_13": 0.2977022977022977,
+      "topic_14": 1.0
+    },
+    "n_significant": 3,
+    "design_has_power": true
+  },
+  "protocol": {
+    "timestamp_utc": "2026-09-18T05:25:01.391103+00:00",
+    "fold_internal_standardization": true,
+    "held_out_target_not_in_scaler": true,
+    "code_sha256": "9ba354c5c141df15dd8e97c4b45f681d7cfaee74ffa0d2ee2f8a8ffd4f4df7fa",
+    "helper_sha256": "4b7fa72ac7f9f7820ba02b18a8e971b12de1336e9adfd2d0b5c0e6eebb5fb3c8",
+    "panel_sha256": "85f7f9110c895c918d6e55ff8dd84c7de3f61b46bfbde2d70028cebf46d713c4",
+    "model_sha256": "c54e78d7ebfd26b0d00436e928db3779d93ffd4133a768114698072fb0538ae9",
+    "seed": 0,
+    "folds": [
+      "GSE165816",
+      "GSE231643",
+      "GSE241132"
+    ],
+    "analysis_output_root": "outputs/analysis",
+    "paired_same_donor_endpoints": false,
+    "gse241132_excluded_from_stouffer": true,
+    "theta_unscaled": true
+  }
+}

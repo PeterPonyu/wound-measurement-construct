@@ -1,0 +1,59 @@
+{
+ "analysis": {
+  "inferential_unit": "none_diagnostic_only",
+  "report_mode": "diagnostic_only"
+ },
+ "cohorts": {
+  "discovery": "GSE165816",
+  "external": []
+ },
+ "design": {
+  "enabled": false
+ },
+ "kind": "measurement",
+ "not_claims": [
+  "No exact reproduction of historical CLI/sampler or biological/clinical validation.",
+  "Training-only panel fit remains conditional on inherited full-discovery raw gene universe and cell QC.",
+  "No cross-panel reconstruction ranking, held-out selection or reference-correlation tuning."
+ ],
+ "protocol_id": "sdd-budget-panel-inherited-20260929-v1",
+ "question": "Separate current-estimator budget sensitivity from training-panel fit sensitivity.",
+ "schema_version": 1,
+ "semantics": {
+  "discovery_only_families": [],
+  "families": []
+ },
+ "smoke_only": true,
+ "stability": {
+  "K": [
+   15
+  ],
+  "batch_size": 128,
+  "diagnostic_every": 100,
+  "kl_weight": 0.01,
+  "lr": 0.001,
+  "patient_partition": {
+   "cell_identity_column": "reconstructed_raw_cell_id",
+   "evaluation_cells_per_patient": 128,
+   "expected_cell_order_identity": "20ad986dbbe87f50acd53d0c4cac910894e8a36b53091a20e743ada38ae3a18b",
+   "expected_held_patients": [
+    "NCOMMS2022_S11",
+    "NCOMMS2022_S07",
+    "NCOMMS2022_S02",
+    "NCOMMS2022_S04"
+   ],
+   "method": "id_hash_v1",
+   "n_held_patients": 4,
+   "seed": 20260929
+  },
+  "retain_undefined_reference_match": true,
+  "seeds": [
+   0,
+   1
+  ],
+  "step_budgets": [
+   20000,
+   40000
+  ]
+ }
+}

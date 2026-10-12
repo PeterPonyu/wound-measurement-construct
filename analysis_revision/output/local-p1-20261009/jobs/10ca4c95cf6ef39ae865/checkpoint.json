@@ -1,0 +1,91 @@
+{
+ "cell_order_identity": "20ad986dbbe87f50acd53d0c4cac910894e8a36b53091a20e743ada38ae3a18b",
+ "kind": "complete_inference_state",
+ "losses": [
+  8.878548622131348,
+  7.5647501945495605,
+  7.00038480758667,
+  6.758871078491211,
+  6.664122104644775
+ ],
+ "model_config": {
+  "hidden_dim": 256,
+  "input_dim": 7002,
+  "kl_weight": 0.01,
+  "num_topics": 15
+ },
+ "optimizer_resume_supported": false,
+ "panel_identity": "1135087a7168503747bd68ccc2fb11b454df6c9780116607b742b906d1ed549b",
+ "projection_chunk": 8192,
+ "proportions_sha256": "2bc9fd21069c8fbac22d2809dbe050a20535115db5405a4b526976271ec61f3e",
+ "provenance": {
+  "cell_identity_column": "reconstructed_raw_cell_id",
+  "code_digest": "ab109504d42ec1e58bb2",
+  "identity_scope": "binds_provided_row_order_not_independent_raw_join_verification",
+  "input_sha256": {
+   "outputs/direction1_dfu_mainline/beta.npy": "1bbdf049709e482c52df63c35bbb663f8037d6183d450700beb072db6ea1ac4b",
+   "outputs/direction1_dfu_mainline/panel.npy": "85f7f9110c895c918d6e55ff8dd84c7de3f61b46bfbde2d70028cebf46d713c4",
+   "outputs/scientific_revision_20260922/measurement/projection/cells.parquet": "3572a78007b7be093603988a87734c194371e1820ebc499d693c1379cd298449",
+   "outputs/scientific_revision_20260922/measurement_controls/discovery_raw_counts.npz": "307c35122c553615709e86fd04d190f09cf9e94f27b84bee454f63dfabc9c6f7",
+   "outputs/scientific_revision_20260922/measurement_controls/discovery_raw_genes.npy": "a3e7e194e68854fea561091370c779082f7809303ad68250a67f84bb34f3bbe2"
+  },
+  "protocol": {
+   "cohorts": {
+    "discovery": "GSE165816",
+    "external": []
+   },
+   "design": {
+    "enabled": false
+   },
+   "kind": "measurement",
+   "not_claims": [
+    "Single pilot is not a final K/seed stability comparison or biological validation.",
+    "No outcome, MCID or amputation endpoint claim is authorized by this protocol."
+   ],
+   "protocol_id": "autodl-discovery-topic-pilot-20261003",
+   "question": "Profile the current topic trainer and pickle-free inference-state path on the sealed discovery inputs",
+   "schema_version": 1,
+   "semantics": {
+    "discovery_only_families": [],
+    "families": [],
+    "min_cells": 50,
+    "n_splits": 10,
+    "scale_by_family": {
+     "topic": "logit"
+    },
+    "seed": 0
+   },
+   "stability": {
+    "K": [
+     15
+    ],
+    "batch_size": 256,
+    "kl_weight": 0.01,
+    "lr": 0.001,
+    "match": "current_stability_readout_not_new_biological_replication",
+    "reference": "outputs/direction1_dfu_mainline K=15 topic 0",
+    "seeds": [
+     0
+    ],
+    "steps": 4000
+   },
+   "stage_gate": {
+    "stage_a_stops": true,
+    "stage_b_requires": "sealed discovery review, user approval, target certificate and one-job resource budget"
+   },
+   "status": "prepared_unapproved_profile_not_final_scientific_protocol"
+  }
+ },
+ "reload_device": "cpu",
+ "reload_max_abs_error": 0.0,
+ "reload_tolerance": 1e-06,
+ "reload_verified": true,
+ "schema_version": 1,
+ "training_config": {
+  "batch_size": 256,
+  "device": "cuda",
+  "lr": 0.001,
+  "seed": 0,
+  "steps": 4000
+ }
+}

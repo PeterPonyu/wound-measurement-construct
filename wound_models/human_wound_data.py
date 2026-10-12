@@ -32,6 +32,7 @@ COND_ORDER = ['Skin', 'Wound1', 'Wound7', 'Wound30']
 COND_TIME = {'Skin': 0.0, 'Wound1': 1 / 3, 'Wound7': 2 / 3, 'Wound30': 1.0}
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 ANALYSIS_ROOT = 'outputs/analysis'
+PROVENANCE_REPAIR_ROOT = 'outputs/scientific_revision_20260926/provenance_repair'
 HISTORICAL_OUTPUT_DIRS = ('outputs/human_temporal_flow', 'outputs/time_parameterisation', 'outputs/donor_transfer_flow', 'outputs/donor_conditioned_benchmark', 'outputs/negative_result_strength')
 
 class AlignmentError(RuntimeError):
@@ -161,8 +162,14 @@ def load_lineage_latent(per_gsm_dir: str, meta_path: str, discovery_dir: str, li
     latent, covered = project_latent(matrix[keep], coh.genes, panel, model, device, n_panel, key=key)
     return {'latent': latent, 'obs': obs_kept, 'n_topics': n_topics, 'n_panel': n_panel, 'covered': covered, 'device': device, 'panel': panel, 'n_cells_joined': int(len(obs)), 'n_cells_loaded': int(len(coh.obs))}
 
-def protocol_block(script_path: str, discovery_dir: str, seed: int, folds: Iterable[str], extra: Optional[Dict[str, Any]]=None) -> Dict[str, Any]:
-    block = {'timestamp_utc': datetime.now(timezone.utc).isoformat(), 'fold_internal_standardization': True, 'held_out_target_not_in_scaler': True, 'code_sha256': file_sha256(script_path), 'helper_sha256': file_sha256(__file__), 'panel_sha256': file_sha256(os.path.join(discovery_dir, 'panel.npy')), 'model_sha256': file_sha256(os.path.join(discovery_dir, 'topic_model.pt')), 'seed': int(seed), 'folds': list(folds), 'analysis_output_root': ANALYSIS_ROOT}
+def protocol_block(script_path: str, discovery_dir: str, seed: int, folds: Iterable[str], extra: Optional[Dict[str, Any]]=None, output_dir: Optional[str]=None) -> Dict[str, Any]:
+    actual_output_dir = output_dir or ANALYSIS_ROOT
+    if os.path.isabs(actual_output_dir):
+        analysis_output_root = os.path.relpath(actual_output_dir, PROJECT_ROOT)
+    else:
+        analysis_output_root = actual_output_dir
+    analysis_output_root = analysis_output_root.replace(os.sep, '/')
+    block = {'timestamp_utc': datetime.now(timezone.utc).isoformat(), 'fold_internal_standardization': True, 'held_out_target_not_in_scaler': True, 'code_sha256': file_sha256(script_path), 'helper_sha256': file_sha256(__file__), 'panel_sha256': file_sha256(os.path.join(discovery_dir, 'panel.npy')), 'model_sha256': file_sha256(os.path.join(discovery_dir, 'topic_model.pt')), 'seed': int(seed), 'folds': list(folds), 'analysis_output_root': analysis_output_root}
     if extra:
         block.update(extra)
     return block

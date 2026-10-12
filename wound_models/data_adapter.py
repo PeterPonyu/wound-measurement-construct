@@ -99,16 +99,26 @@ def parse_series_matrix(path: str) -> pd.DataFrame:
     return df
 _GSM_RE = re.compile('(GSM\\d+)')
 
-def _read_dense_csv_member(fobj) -> Tuple[sp.csr_matrix, np.ndarray, np.ndarray]:
+def validate_raw_source(values) -> None:
+    """Strict opt-in guard before legacy int32/FP32 casts, not a repair."""
+    values = np.asarray(values)
+    if not np.isfinite(values).all() or (values < 0).any() or (not np.equal(values, np.floor(values)).all()):
+        raise ValueError('strict raw source counts must be finite nonnegative integers before conversion')
+    if (values > 2 ** 24).any():
+        raise ValueError('strict raw source counts exceed the exact FP32 integer range; no lossy conversion allowed')
+
+def _read_dense_csv_member(fobj, *, strict_counts: bool=False) -> Tuple[sp.csr_matrix, np.ndarray, np.ndarray]:
     """Dense genes x barcodes CSV -> (CSR cells x genes int32, genes, barcodes)."""
     df = pd.read_csv(fobj, index_col=0)
     genes = df.index.to_numpy(dtype=object)
     barcodes = df.columns.to_numpy(dtype=object)
-    mat = sp.csr_matrix(df.to_numpy(dtype=np.int32).T)
+    if strict_counts:
+        validate_raw_source(df.to_numpy())
+    mat = sp.csr_matrix(df.to_numpy(dtype=np.int64 if strict_counts else np.int32).T)
     del df
     return (mat, genes, barcodes)
 
-def load_dense_csv_tar(tar_path: str, series_matrix: Optional[str]=None, max_samples: Optional[int]=None, gene_policy: str='union', min_sample_frac: float=0.0) -> CohortMatrix:
+def load_dense_csv_tar(tar_path: str, series_matrix: Optional[str]=None, max_samples: Optional[int]=None, gene_policy: str='union', min_sample_frac: float=0.0, strict_counts: bool=False) -> CohortMatrix:
     """
     Loads a GEO RAW.tar of per-GSM dense count CSVs into one CSR cohort matrix.
 
@@ -147,11 +157,11 @@ def load_dense_csv_tar(tar_path: str, series_matrix: Optional[str]=None, max_sam
                 continue
             buf = io.BytesIO(raw.read())
             fobj = gzip.open(buf, 'rb') if m.name.endswith('.gz') else buf
-            mat, genes, barcodes = _read_dense_csv_member(fobj)
+            mat, genes, barcodes = _read_dense_csv_member(fobj, strict_counts=strict_counts)
             per_sample.append((gsm, mat, genes, barcodes))
-    return _assemble(per_sample, series_matrix, gene_policy, min_sample_frac, notes)
+    return _assemble(per_sample, series_matrix, gene_policy, min_sample_frac, notes, strict_counts=strict_counts)
 
-def _assemble(per_sample: List[Tuple[str, sp.csr_matrix, np.ndarray, np.ndarray]], series_matrix: Optional[str], gene_policy: str, min_sample_frac: float, notes: List[str]) -> CohortMatrix:
+def _assemble(per_sample: List[Tuple[str, sp.csr_matrix, np.ndarray, np.ndarray]], series_matrix: Optional[str], gene_policy: str, min_sample_frac: float, notes: List[str], *, strict_counts: bool=False) -> CohortMatrix:
     """Reconciles per-sample gene indices and joins phenotype. Shared by both loaders."""
     if gene_policy not in {'union', 'intersection'}:
         raise ValueError(f"gene_policy must be 'union' or 'intersection', got {gene_policy!r}")
@@ -186,12 +196,14 @@ def _assemble(per_sample: List[Tuple[str, sp.csr_matrix, np.ndarray, np.ndarray]
         else:
             coo = mat.tocoo()
             sel = pos[coo.col] >= 0
-            block = sp.csr_matrix((coo.data[sel], (coo.row[sel], pos[coo.col][sel])), shape=(_shape(mat)[0], n_genes), dtype=np.int32)
+            block = sp.csr_matrix((coo.data[sel], (coo.row[sel], pos[coo.col][sel])), shape=(_shape(mat)[0], n_genes), dtype=np.int64 if strict_counts else np.int32)
             del coo
         blocks.append(block)
         cells.extend((f'{gsm}:{b}' for b in barcodes))
         gsm_col.extend([gsm] * _shape(mat)[0])
     X = sp.csr_matrix(sp.vstack(blocks, format='csr'))
+    if strict_counts:
+        validate_raw_source(X.data)
     obs = pd.DataFrame({'gsm': gsm_col})
     if series_matrix:
         pheno = parse_series_matrix(series_matrix)
@@ -201,22 +213,26 @@ def _assemble(per_sample: List[Tuple[str, sp.csr_matrix, np.ndarray, np.ndarray]
             notes.append(f'{missing} cells had no phenotype row in the series matrix')
     return CohortMatrix(X=X, genes=gene_order, cells=np.array(cells, dtype=object), obs=obs, notes=notes)
 
-def _read_10x_triplet(features_fh, barcodes_fh, matrix_fh, feature_column: int=1) -> Tuple[sp.csr_matrix, np.ndarray, np.ndarray]:
+def _read_10x_triplet(features_fh, barcodes_fh, matrix_fh, feature_column: int=1, strict_counts: bool=False) -> Tuple[sp.csr_matrix, np.ndarray, np.ndarray]:
     """CellRanger triplet -> (CSR cells x genes int32, gene symbols, barcodes)."""
     feats = pd.read_csv(features_fh, sep='\t', header=None, dtype=str)
     col = feature_column if feats.shape[1] > feature_column else 0
     symbols = feats[col].to_numpy(dtype=object)
     barcodes = pd.read_csv(barcodes_fh, sep='\t', header=None, dtype=str)[0].to_numpy(dtype=object)
     mat = sp.coo_matrix(mmread(matrix_fh))
-    mat = sp.csr_matrix(mat.T).astype(np.int32)
+    if strict_counts:
+        validate_raw_source(mat.data)
+    mat = sp.csr_matrix(mat.T).astype(np.int64 if strict_counts else np.int32)
     uniq, inverse = np.unique(symbols.astype(str), return_inverse=True)
     if uniq.size != symbols.size:
-        collapse = sp.csr_matrix((np.ones(inverse.size, dtype=np.int32), (np.arange(inverse.size), inverse)), shape=(symbols.size, uniq.size))
-        mat = sp.csr_matrix(mat @ collapse).astype(np.int32)
+        collapse = sp.csr_matrix((np.ones(inverse.size, dtype=np.int64 if strict_counts else np.int32), (np.arange(inverse.size), inverse)), shape=(symbols.size, uniq.size))
+        mat = sp.csr_matrix(mat @ collapse).astype(np.int64 if strict_counts else np.int32)
         symbols = uniq.astype(object)
+    if strict_counts:
+        validate_raw_source(mat.data)
     return (mat, symbols, barcodes)
 
-def load_10x_mtx_tar(tar_path: str, series_matrix: Optional[str]=None, max_samples: Optional[int]=None, feature_column: int=1, gene_policy: str='union') -> CohortMatrix:
+def load_10x_mtx_tar(tar_path: str, series_matrix: Optional[str]=None, max_samples: Optional[int]=None, feature_column: int=1, gene_policy: str='union', strict_counts: bool=False) -> CohortMatrix:
     """
     Loads a GEO RAW.tar of per-GSM CellRanger triplets into one CSR cohort.
 
@@ -250,11 +266,11 @@ def load_10x_mtx_tar(tar_path: str, series_matrix: Optional[str]=None, max_sampl
                 if fh is None:
                     raise ValueError(f'unreadable member {g[kind]}')
                 return gzip.open(io.BytesIO(fh.read()), 'rb')
-            mat, symbols, barcodes = _read_10x_triplet(member('features'), member('barcodes'), member('matrix'), feature_column=feature_column)
+            mat, symbols, barcodes = _read_10x_triplet(member('features'), member('barcodes'), member('matrix'), feature_column=feature_column, strict_counts=strict_counts)
             per_sample.append((gsm, mat, symbols, barcodes))
-    return _assemble(per_sample, series_matrix, gene_policy, 0.0, [])
+    return _assemble(per_sample, series_matrix, gene_policy, 0.0, [], strict_counts=strict_counts)
 
-def load_10x_mtx_dir(dir_path: str, series_matrix: Optional[str]=None, max_samples: Optional[int]=None, feature_column: int=1, gene_policy: str='union') -> CohortMatrix:
+def load_10x_mtx_dir(dir_path: str, series_matrix: Optional[str]=None, max_samples: Optional[int]=None, feature_column: int=1, gene_policy: str='union', strict_counts: bool=False) -> CohortMatrix:
     """
     Same as load_10x_mtx_tar but for loose per-GSM triplets on disk.
 
@@ -283,11 +299,11 @@ def load_10x_mtx_dir(dir_path: str, series_matrix: Optional[str]=None, max_sampl
         def opener(kind: str):
             path = g[kind]
             return gzip.open(path, 'rb') if path.endswith('.gz') else open(path, 'rb')
-        mat, symbols, barcodes = _read_10x_triplet(opener('features'), opener('barcodes'), opener('matrix'), feature_column=feature_column)
+        mat, symbols, barcodes = _read_10x_triplet(opener('features'), opener('barcodes'), opener('matrix'), feature_column=feature_column, strict_counts=strict_counts)
         per_sample.append((gsm, mat, symbols, barcodes))
-    return _assemble(per_sample, series_matrix, gene_policy, 0.0, [])
+    return _assemble(per_sample, series_matrix, gene_policy, 0.0, [], strict_counts=strict_counts)
 
-def load_10x_zip_dir(dir_path: str, series_matrix: Optional[str]=None, max_samples: Optional[int]=None, feature_column: int=1, gene_policy: str='union') -> CohortMatrix:
+def load_10x_zip_dir(dir_path: str, series_matrix: Optional[str]=None, max_samples: Optional[int]=None, feature_column: int=1, gene_policy: str='union', strict_counts: bool=False) -> CohortMatrix:
     """
     Loads per-GSM .zip archives that each wrap one CellRanger triplet.
 
@@ -316,9 +332,9 @@ def load_10x_zip_dir(dir_path: str, series_matrix: Optional[str]=None, max_sampl
 
             def member(kind: str):
                 return gzip.open(io.BytesIO(zf.read(picked[kind])), 'rb')
-            mat, symbols, barcodes = _read_10x_triplet(member('features'), member('barcodes'), member('matrix'), feature_column=feature_column)
+            mat, symbols, barcodes = _read_10x_triplet(member('features'), member('barcodes'), member('matrix'), feature_column=feature_column, strict_counts=strict_counts)
         per_sample.append((gsm, mat, symbols, barcodes))
-    return _assemble(per_sample, series_matrix, gene_policy, 0.0, [])
+    return _assemble(per_sample, series_matrix, gene_policy, 0.0, [], strict_counts=strict_counts)
 
 def library_normalize(X: sp.csr_matrix) -> sp.csr_matrix:
     """Row-normalizes counts to per-cell proportions (the simplex decoder's x)."""

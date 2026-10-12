@@ -1,0 +1,130 @@
+{
+  "experiment": "patient_mapping_and_equivalence_audit",
+  "status": "completed",
+  "scientific_unit": "sample",
+  "patient_level_inference_available": true,
+  "patient_mapping": {
+    "status": "available",
+    "source": "metadata_intake/GSE165816_ncomms_subject_sample_map.csv",
+    "patient_level_inference_available": true,
+    "note": "This report retains the historical specimen-unit diagnostic; 14 specimens belong to 11 patients."
+  },
+  "primary_metric": "frozen topic-0 mean across all retained cells per sample",
+  "sample_counts": {
+    "dfu": 14,
+    "healer": 9,
+    "nonhealer": 5
+  },
+  "effect": {
+    "healer_minus_nonhealer_mean_difference": 0.04573695444664648,
+    "welch_t": 2.4313142868201996,
+    "welch_two_sided_p": 0.0341381389136874,
+    "exact_two_sided_permutation_p": 0.07892107892107893,
+    "add_one_two_sided_permutation_p": 0.07938092860708937,
+    "bootstrap_95_ci": [
+      0.012343447469591375,
+      0.08100828861444198
+    ],
+    "permutation": {
+      "observed_difference": 0.04573695444664648,
+      "allocations": 2002,
+      "extreme_allocations": 158,
+      "exact_probability": 0.07892107892107893,
+      "recorded_add_one_probability": 0.07938092860708937
+    }
+  },
+  "equivalence": {
+    "status": "sensitivity_grid_only",
+    "alpha": 0.05,
+    "margins": [
+      {
+        "bound": 0.05,
+        "p_lower": 0.00019761179686434465,
+        "p_upper": 0.4125199287206778,
+        "welch_df": 10.579785591182484,
+        "equivalent_at_alpha_0_05": false
+      },
+      {
+        "bound": 0.1,
+        "p_lower": 5.587324414477001e-06,
+        "p_upper": 0.0077017400678893125,
+        "welch_df": 10.579785591182484,
+        "equivalent_at_alpha_0_05": true
+      },
+      {
+        "bound": 0.2,
+        "p_lower": 3.656251094858499e-08,
+        "p_upper": 3.314102228786517e-06,
+        "welch_df": 10.579785591182484,
+        "equivalent_at_alpha_0_05": true
+      },
+      {
+        "bound": 0.3,
+        "p_lower": 1.1385053363576931e-09,
+        "p_upper": 2.597059909757142e-08,
+        "welch_df": 10.579785591182484,
+        "equivalent_at_alpha_0_05": true
+      },
+      {
+        "bound": 0.5,
+        "p_lower": 9.950278105636427e-12,
+        "p_upper": 6.748103265313891e-11,
+        "welch_df": 10.579785591182484,
+        "equivalent_at_alpha_0_05": true
+      }
+    ],
+    "smallest_equivalent_margin": {
+      "margin": 0.07964366358387602,
+      "multiple_of_observed_difference": 1.741341646977888,
+      "note": "Infimum M*=|difference|+t_(.95,Welch df)*SE; strict TOST p<.05 requires M>M*. This is not a clinical margin."
+    },
+    "exact_boundary": {
+      "standard_error": 0.018811617524965754,
+      "welch_df": 10.579785591182484,
+      "two_sided_90_interval": [
+        0.01183024530941694,
+        0.07964366358387602
+      ],
+      "equivalence_margin_infimum": 0.07964366358387602
+    },
+    "interpretation": "Exploratory discovery-cohort precision sensitivity; no independently specified clinical equivalence margin."
+  },
+  "reference_protocol": {
+    "seed": 0,
+    "focus_topic": 0,
+    "discovery_dir": "outputs/direction1_dfu_mainline",
+    "series_matrix": "data/raw/GSE165816/GSE165816_series_matrix.txt.gz",
+    "theta_sha256": "69014f49d5940786febf8738ca24dd612be04c4be420488cc597dc1c071f7519",
+    "obs_sha256": "63bc99e6ee7f58ff6384d0af4620f36b1c056755b9f56df2880ae395f22951e6",
+    "script_sha256": "97ff182f7dff9f38aab34eda05ed126e8e2c8cc8a0c10ee36fd61d08fdb41370",
+    "patient_identifier_required": true,
+    "cell_to_sample_aggregation": "arithmetic mean within GSM"
+  },
+  "protocol": {
+    "seed": 0,
+    "focus_topic": 0,
+    "patient_identifier_required": true,
+    "cell_to_sample_aggregation": "float64 arithmetic mean within GSM",
+    "script_sha256": "160ece7687a4a3785857d8232e4efbf3d995b367b2907f51e0cc253ddca9b469",
+    "computation_dtype": "float64",
+    "deterministic_projection": true,
+    "projection_source": "outputs/celltype_resolved/GSE165816_discovery_theta.parquet",
+    "projection_sha256": "aed3e7cdb7d63207db82781ad521f3b9c06cca08b7a365b21da8e1f330323014",
+    "label_exchangeability": "assumed; observational labels were not randomized",
+    "exact_permutation_convention": "exhaustive k/N; add-one stored separately",
+    "n_boot": 30000
+  },
+  "projection_revision": {
+    "source_report": "outputs/repaired_20260918/patient_mapping_equivalence/report.json",
+    "source_sha256": "47b9a5f6d19bbc4446cf27d2cee4e298d32b888042806636c1acd39f56deb171",
+    "projection_source": "outputs/celltype_resolved/GSE165816_discovery_theta.parquet",
+    "projection_sha256": "aed3e7cdb7d63207db82781ad521f3b9c06cca08b7a365b21da8e1f330323014",
+    "recomputed": [
+      "all sample score effects, bootstrap, TOST"
+    ],
+    "reused": [],
+    "script_sha256": "160ece7687a4a3785857d8232e4efbf3d995b367b2907f51e0cc253ddca9b469",
+    "no_model_training": true
+  },
+  "scientific_scope": "Historical specimen-unit sensitivity with repeated patients; primary inference uses 11 author-mapped patients."
+}

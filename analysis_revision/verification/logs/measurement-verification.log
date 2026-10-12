@@ -1,0 +1,70 @@
+{
+  "S": {
+    "topic0_ratio": 1.9568783937004581,
+    "observed_max": 1.9568783937004581,
+    "argmax_topic": 0,
+    "allocations": 330,
+    "topic0_max_calibrated_p": 0.7848484848484848,
+    "global_max_statistic_p": 0.7848484848484848
+  },
+  "M": {
+    "topic0_ratio": 2.065926560046853,
+    "observed_max": 2.065926560046853,
+    "argmax_topic": 0,
+    "allocations": 330,
+    "topic0_max_calibrated_p": 0.6090909090909091,
+    "global_max_statistic_p": 0.6090909090909091
+  },
+  "W": {
+    "topic0_ratio": 2.012458699897774,
+    "observed_max": 3.2908708156048343,
+    "argmax_topic": 14,
+    "allocations": 330,
+    "topic0_max_calibrated_p": 0.9545454545454546,
+    "global_max_statistic_p": 0.8848484848484849
+  }
+}
+{
+  "age_p": 0.2909090909090909,
+  "age_hl": 9.0,
+  "full_top50_diff": -0.1249802852872749,
+  "full_top50_p": 0.7380952380952381,
+  "full_genes": 26902
+}
+{
+  "study": "wound-measurement-construct",
+  "file_hashes": 377,
+  "provenance_gaps": [],
+  "model_training_performed": false,
+  "network_access_performed": false,
+  "full_refit_performed": false,
+  "strict_saved_field_cpu_replay_certified": false,
+  "import_smoke": "passed",
+  "cli_smoke": "passed",
+  "imported": [
+    "core_engines.data_adapter",
+    "core_engines.topic_simplex_engine",
+    "expansion.common.io",
+    "expansion.common.rng",
+    "expansion.measurement.stability",
+    "expansion.measurement.worker",
+    "p1_common"
+  ],
+  "cli_commands": [
+    [
+      "scripts/audit_p1_followup.py",
+      "--help"
+    ],
+    [
+      "scripts/55_full_pipeline_depth_audit.py",
+      "--help"
+    ]
+  ],
+  "saved_result_checks": {
+    "selection_allocations_per_readout": 330,
+    "quantitative_numeric_values": 299,
+    "quantitative_max_abs_error": 0
+  },
+  "output_dir": "tmp/reproduction-check-01",
+  "elapsed_seconds": 74.11411738395691
+}

@@ -1,0 +1,305 @@
+{
+  "status": "completed",
+  "scope": "SM-01 deterministic all-cell projection repair and SM-05 repeat-specimen diagnostic",
+  "source_sha256": {
+    "outputs/celltype_resolved/GSE165816_discovery_theta.parquet": "aed3e7cdb7d63207db82781ad521f3b9c06cca08b7a365b21da8e1f330323014",
+    "outputs/direction1_dfu_mainline/obs.csv": "63bc99e6ee7f58ff6384d0af4620f36b1c056755b9f56df2880ae395f22951e6",
+    "outputs/direction1_dfu_mainline/theta.npy": "69014f49d5940786febf8738ca24dd612be04c4be420488cc597dc1c071f7519",
+    "outputs/direction1_dfu_mainline/topic_model.pt": "c54e78d7ebfd26b0d00436e928db3779d93ffd4133a768114698072fb0538ae9",
+    "outputs/direction1_dfu_mainline/panel.npy": "85f7f9110c895c918d6e55ff8dd84c7de3f61b46bfbde2d70028cebf46d713c4",
+    "outputs/direction1_dfu_mainline/beta.npy": "1bbdf049709e482c52df63c35bbb663f8037d6183d450700beb072db6ea1ac4b",
+    "metadata_intake/GSE165816_ncomms_subject_sample_map.csv": "11870be07b8c06e6037c7ab5c532e90907913c390bd180b59cfe1821bebcd96c",
+    "outputs/metadata_intake/gse165816_author_map_contract.json": "ef86a2611a6914a9d7bc42b86ae96b6642157017bed9250c0eb85e051dda3113",
+    "outputs/scientific_review_20260922/measurement_projection_probe.json": "ef59469a9a0638db4d4588f24c74e71e45c67b005bb222f2aa54dd813e100966",
+    "outputs/scientific_review_20260922/measurement_projection_probe.py": "9078da3d606c675d1d1832898c00a778c12c7bcc48845065ee87a76ed8f8efe5",
+    "outputs/bimodal_stratification/report.json": "dde5b4e5f8cba6045449e8e7797f611213a61b7cbd51551ac0fd051b17d0d14f",
+    "outputs/repaired_20260918/patient_mapping_equivalence/report.json": "47b9a5f6d19bbc4446cf27d2cee4e298d32b888042806636c1acd39f56deb171",
+    "outputs/metadata_intake/gse165816_patient_unit_remap/report.json": "4eccb04133c68118e1b95afa871fa5be619a1c4270e5111349dd3d633028f380",
+    "outputs/representation_benchmark/report.json": "13510d4c60d7a3d06458c4ec3bcf587bf6dd5b1c26b72a87ffea4667079584ca",
+    "outputs/representation_benchmark/sample_scores.csv": "c53e7c19c77d34c8278a398ff38ffbceb426a26aaffa01e071867a60c1e3c497",
+    "outputs/repaired_20260918/representation_inference/report.json": "6447affe6c15f9cd5be6820d70807e517a9f002d32f17e4d9075e67d5fe4e982",
+    "outputs/repaired_20260918/patient_unit_representation_benchmark/report.json": "23d39b30fdc0c1fd75d3549bda8d33f6bdc16b3eff86ddfb3e31a90a1ed1e132",
+    "outputs/repaired_20260918/patient_unit_representation_benchmark/patient_scores.csv": "daa05191cf3871857885b1121d4957a3d23a1b689d7fd5aeb66877b80d7ee81c",
+    "outputs/mathematical_audit/measurement/report.json": "961c56537d7396c754542888c4a841de8582b979ef3ba8cf8162a16a7e523935",
+    "outputs/robustness_extensions/report.json": "a967adc2481b9ebefae294ca7e210aaa4ad1cbbc298e7224e20cf0afc7301d95",
+    "outputs/repaired_20260918/design_power_simulation/report.json": "a16a2ab6f41af9faf3760abeb74d45486793f80d3a731408642380ba71152494",
+    "scripts/32_design_power_simulation.py": "5e6eb9f15f41aeaaaae09def92ed0b1832f67d600dc0b33a0a7e6b2272939716",
+    "scripts/audit_measurement_math.py": "ff3f55b95ca983f4bca7c73ee1f0d1ed23ddf4dff5c548670df92385660bce34",
+    "manuscripts/tables/paper1_representation_inference.csv": "33bc8627867511ac1714fe1c7643bc106e9c20636f8049df9fcab5a31c3ab279",
+    "manuscripts/tables/paper1_patient_unit_and_anatomy.csv": "d814a29fa49d63be1ac55b93b9d536a42d2924eba9416db94e1b43b318d6b0da",
+    "manuscripts/tables/paper1_representation_cross_method.csv": "b92593e0da222b77ed10f9c4b48c894ace7db06fa9966f8f63a8dbe57ad45290",
+    "outputs/scientific_revision_20260922/measurement_controls/raw_cell_identity.csv.gz": "3a6725aff494786229b3908c1b7207a6db1550423ef5130896c50278ef46d793",
+    "outputs/scientific_revision_20260922/measurement_controls/raw_cache_manifest.json": "02f942c3daea6b1b3b7c3f194cd35039fcf318f9b77196b5b92aa6619f53ad3d"
+  },
+  "script_sha256": "160ece7687a4a3785857d8232e4efbf3d995b367b2907f51e0cc253ddca9b469",
+  "source_identity": {
+    "status": "accepted",
+    "n_cells": 76461,
+    "n_topics": 15,
+    "n_specimens": 25,
+    "n_patients": 20,
+    "coordinate_definition": "Frozen encoder softmax(mu), existing deterministic lineage parquet; no refit or stochastic draw",
+    "cell_id_definition": "GSM:qc_row_N; zero-based within-GSM position after QC in the hashed source order, not a barcode or raw pre-QC row",
+    "raw_identity_included": true,
+    "raw_cache_manifest": {
+      "status": "complete",
+      "inputs_sha256": {
+        "data/raw/GSE165816/GSE165816_RAW.tar": "fcad6eacd4d92353c250090e3ecce42c399c321c0777887d28f7b1d90d9d67f4",
+        "data/raw/GSE165816/GSE165816_series_matrix.txt.gz": "f07c5a47aea9063cfbd2443173c1ef84427bd507ddffc3b9cf674bce66506e36",
+        "outputs/direction1_dfu_mainline/obs.csv": "63bc99e6ee7f58ff6384d0af4620f36b1c056755b9f56df2880ae395f22951e6",
+        "outputs/celltype_resolved/GSE165816_discovery_theta.parquet": "aed3e7cdb7d63207db82781ad521f3b9c06cca08b7a365b21da8e1f330323014"
+      },
+      "cache_sha256": {
+        "raw_cell_identity.csv.gz": "3a6725aff494786229b3908c1b7207a6db1550423ef5130896c50278ef46d793",
+        "discovery_raw_genes.npy": "a3e7e194e68854fea561091370c779082f7809303ad68250a67f84bb34f3bbe2",
+        "discovery_raw_counts.npz": "307c35122c553615709e86fd04d190f09cf9e94f27b84bee454f63dfabc9c6f7"
+      },
+      "cells_before_qc": 81602,
+      "cells_after_qc": 76461,
+      "specimens": 25,
+      "genes_union_selected_specimens": 23572,
+      "qc": {
+        "minimum_detected_genes": 200,
+        "maximum_mito_fraction": 0.2
+      },
+      "alignment_checks": {
+        "mainline_gsm_arm_order_exact": true,
+        "parquet_gsm_arm_order_exact": true,
+        "all_saved_marker_labels_reproduced": true
+      },
+      "marker_counts": {
+        "keratinocyte": 8,
+        "fibroblast": 7,
+        "myeloid": 8,
+        "t_cell": 7,
+        "b_plasma": 5,
+        "endothelial": 6,
+        "lymphatic_ec": 5,
+        "pericyte_smc": 6,
+        "mast": 5,
+        "melanocyte": 4,
+        "sweat_gland": 5
+      },
+      "identity_contract": {
+        "raw_cell_id": "GSM + ':' + barcode read from the source CSV column",
+        "raw_row_0": "Zero-based original CSV cell-column position within GSM",
+        "qc_row_0": "Zero-based within-GSM position after the historical QC filter",
+        "saved_row_0": "Zero-based row in obs.csv and discovery theta parquet",
+        "source_order_cell_id": "GSM + ':' + qc_row_0; synthetic order ID, not a barcode",
+        "scope": "Reconstructed identity supported by source order and complete marker agreement; historical artifacts did not retain barcodes"
+      },
+      "gene_union_note": "Only the 25 selected GSM files are assembled. Genes absent from these samples contribute zero counts; full-cell libraries and marker values agree with the original all-54-sample assembly."
+    },
+    "raw_identity_limitation": "Reconstructed raw IDs, when included, join by identical QC/source order and per-GSM counts; historical artifacts did not store barcodes. The separately saved GSM5050530 probe verifies rowwise deterministic coordinates against raw input.",
+    "order_contract": {
+      "obs_gsm_equal": true,
+      "obs_arm_equal": true,
+      "unique_cell_ids": true,
+      "simplex_tolerance": 2e-06
+    },
+    "cell_order_sha256": "ef82aca64d7effdc32244a37f47299bc21fe15a79b90b11aa7fe2c7145ef6343",
+    "raw_cell_order_sha256": "146d37267f5c242a1e561df98b48660c41065fe82e90829a85d6e38ec0ba919f",
+    "single_gsm_raw_probe": {
+      "gsm": "GSM5050530",
+      "qc_cells": 2279,
+      "raw_archive_member": "GSM5050530_G6counts.csv.gz",
+      "archive_member_sha256": "e6918957e0187d6c6066fdb1a1689bfce771938db974a206111a1ac4b9951463",
+      "deterministic_vs_lineage_parquet": {
+        "maximum_absolute": 3.5762786865234375e-07,
+        "rms": 2.116639783294529e-08
+      },
+      "cell_id_limitation": "Original saved artifacts omit barcode IDs. Linkage uses documented stable CSV column order after identical QC, the identical GSM row block length, and a cellwise match to all 15 deterministic coordinates within 1e-6. Raw IDs are reconstructed, not claimed to have been stored with theta.npy."
+    },
+    "legacy_projection_difference": {
+      "maximum_absolute": 0.536718811839819,
+      "rms": 0.03146625615090959
+    },
+    "source_sha256": {
+      "outputs/celltype_resolved/GSE165816_discovery_theta.parquet": "aed3e7cdb7d63207db82781ad521f3b9c06cca08b7a365b21da8e1f330323014",
+      "outputs/direction1_dfu_mainline/obs.csv": "63bc99e6ee7f58ff6384d0af4620f36b1c056755b9f56df2880ae395f22951e6",
+      "outputs/direction1_dfu_mainline/theta.npy": "69014f49d5940786febf8738ca24dd612be04c4be420488cc597dc1c071f7519",
+      "outputs/direction1_dfu_mainline/topic_model.pt": "c54e78d7ebfd26b0d00436e928db3779d93ffd4133a768114698072fb0538ae9",
+      "outputs/direction1_dfu_mainline/panel.npy": "85f7f9110c895c918d6e55ff8dd84c7de3f61b46bfbde2d70028cebf46d713c4",
+      "outputs/direction1_dfu_mainline/beta.npy": "1bbdf049709e482c52df63c35bbb663f8037d6183d450700beb072db6ea1ac4b",
+      "metadata_intake/GSE165816_ncomms_subject_sample_map.csv": "11870be07b8c06e6037c7ab5c532e90907913c390bd180b59cfe1821bebcd96c",
+      "outputs/metadata_intake/gse165816_author_map_contract.json": "ef86a2611a6914a9d7bc42b86ae96b6642157017bed9250c0eb85e051dda3113",
+      "outputs/scientific_review_20260922/measurement_projection_probe.json": "ef59469a9a0638db4d4588f24c74e71e45c67b005bb222f2aa54dd813e100966",
+      "outputs/scientific_review_20260922/measurement_projection_probe.py": "9078da3d606c675d1d1832898c00a778c12c7bcc48845065ee87a76ed8f8efe5",
+      "outputs/bimodal_stratification/report.json": "dde5b4e5f8cba6045449e8e7797f611213a61b7cbd51551ac0fd051b17d0d14f",
+      "outputs/repaired_20260918/patient_mapping_equivalence/report.json": "47b9a5f6d19bbc4446cf27d2cee4e298d32b888042806636c1acd39f56deb171",
+      "outputs/metadata_intake/gse165816_patient_unit_remap/report.json": "4eccb04133c68118e1b95afa871fa5be619a1c4270e5111349dd3d633028f380",
+      "outputs/representation_benchmark/report.json": "13510d4c60d7a3d06458c4ec3bcf587bf6dd5b1c26b72a87ffea4667079584ca",
+      "outputs/representation_benchmark/sample_scores.csv": "c53e7c19c77d34c8278a398ff38ffbceb426a26aaffa01e071867a60c1e3c497",
+      "outputs/repaired_20260918/representation_inference/report.json": "6447affe6c15f9cd5be6820d70807e517a9f002d32f17e4d9075e67d5fe4e982",
+      "outputs/repaired_20260918/patient_unit_representation_benchmark/report.json": "23d39b30fdc0c1fd75d3549bda8d33f6bdc16b3eff86ddfb3e31a90a1ed1e132",
+      "outputs/repaired_20260918/patient_unit_representation_benchmark/patient_scores.csv": "daa05191cf3871857885b1121d4957a3d23a1b689d7fd5aeb66877b80d7ee81c",
+      "outputs/mathematical_audit/measurement/report.json": "961c56537d7396c754542888c4a841de8582b979ef3ba8cf8162a16a7e523935",
+      "outputs/robustness_extensions/report.json": "a967adc2481b9ebefae294ca7e210aaa4ad1cbbc298e7224e20cf0afc7301d95",
+      "outputs/repaired_20260918/design_power_simulation/report.json": "a16a2ab6f41af9faf3760abeb74d45486793f80d3a731408642380ba71152494",
+      "scripts/32_design_power_simulation.py": "5e6eb9f15f41aeaaaae09def92ed0b1832f67d600dc0b33a0a7e6b2272939716",
+      "scripts/audit_measurement_math.py": "ff3f55b95ca983f4bca7c73ee1f0d1ed23ddf4dff5c548670df92385660bce34",
+      "manuscripts/tables/paper1_representation_inference.csv": "33bc8627867511ac1714fe1c7643bc106e9c20636f8049df9fcab5a31c3ab279",
+      "manuscripts/tables/paper1_patient_unit_and_anatomy.csv": "d814a29fa49d63be1ac55b93b9d536a42d2924eba9416db94e1b43b318d6b0da",
+      "manuscripts/tables/paper1_representation_cross_method.csv": "b92593e0da222b77ed10f9c4b48c894ace7db06fa9966f8f63a8dbe57ad45290",
+      "outputs/scientific_revision_20260922/measurement_controls/raw_cell_identity.csv.gz": "3a6725aff494786229b3908c1b7207a6db1550423ef5130896c50278ef46d793",
+      "outputs/scientific_revision_20260922/measurement_controls/raw_cache_manifest.json": "02f942c3daea6b1b3b7c3f194cd35039fcf318f9b77196b5b92aa6619f53ad3d"
+    },
+    "output_sha256": {
+      "cells.parquet": "3572a78007b7be093603988a87734c194371e1820ebc499d693c1379cd298449",
+      "theta.npy": "c2634b8c7f7cb56d518f68157ea632eda83bbca1008e4b214a49253992ddd319",
+      "obs.csv": "949a51a3200f27e7e8966c87bef9f5df10392e4a5462b175cec1528bc9e5a8b0"
+    },
+    "aggregation_dtype": "float64",
+    "script_sha256": "160ece7687a4a3785857d8232e4efbf3d995b367b2907f51e0cc253ddca9b469"
+  },
+  "old_to_new": {
+    "patient_effect": {
+      "old": {
+        "healer_minus_nonhealer_mean_difference": 0.027975090845887153,
+        "welch_t": 1.5348677977981366,
+        "welch_two_sided_p": 0.16290617318513206,
+        "exact_two_sided_permutation_p": 0.2719033232628399,
+        "bootstrap_95_ci": [
+          -0.001742361969913226,
+          0.0630825662968813
+        ]
+      },
+      "new": {
+        "healer_minus_nonhealer_mean_difference": 0.029279667802797664,
+        "welch_t": 1.5056714751130118,
+        "welch_two_sided_p": 0.170047456337779,
+        "exact_two_sided_permutation_p": 0.2727272727272727,
+        "add_one_two_sided_permutation_p": 0.27492447129909364,
+        "bootstrap_95_ci": [
+          -0.0024419653327118623,
+          0.06670583026054017
+        ],
+        "permutation": {
+          "observed_difference": 0.029279667802797664,
+          "allocations": 330,
+          "extreme_allocations": 90,
+          "exact_probability": 0.2727272727272727,
+          "recorded_add_one_probability": 0.27492447129909364
+        }
+      }
+    },
+    "specimen_effect": {
+      "old": {
+        "healer_minus_nonhealer_mean_difference": 0.04346680645313528,
+        "welch_t": 2.464745874250406,
+        "welch_two_sided_p": 0.03217702357235478,
+        "exact_two_sided_permutation_p": 0.0763854218671992,
+        "bootstrap_95_ci": [
+          0.012184877708657746,
+          0.07652385803922596
+        ]
+      },
+      "new": {
+        "healer_minus_nonhealer_mean_difference": 0.04573695444664648,
+        "welch_t": 2.4313142868201996,
+        "welch_two_sided_p": 0.0341381389136874,
+        "exact_two_sided_permutation_p": 0.07892107892107893,
+        "add_one_two_sided_permutation_p": 0.07938092860708937,
+        "bootstrap_95_ci": [
+          0.012343447469591375,
+          0.08100828861444198
+        ],
+        "permutation": {
+          "observed_difference": 0.04573695444664648,
+          "allocations": 2002,
+          "extreme_allocations": 158,
+          "exact_probability": 0.07892107892107893,
+          "recorded_add_one_probability": 0.07938092860708937
+        }
+      }
+    },
+    "patient_auc_null": {
+      "old": {
+        "n_relabelings": 330,
+        "exact_enumeration": true,
+        "null_auc_mean": 0.5393939393939394,
+        "null_auc_95th_percentile": 0.8571428571428571,
+        "p_one_sided": 0.3021148036253776
+      },
+      "new": {
+        "n_relabelings": 330,
+        "exact_enumeration": true,
+        "null_auc_mean": 0.5399350649350649,
+        "null_auc_95th_percentile": 0.8571428571428571,
+        "extreme_allocations": 98,
+        "exact_probability": 0.296969696969697,
+        "add_one_probability": 0.2990936555891239,
+        "p_one_sided": 0.2990936555891239,
+        "p_one_sided_convention": "add-one comparison; exact_probability is exhaustive k/N",
+        "significant_at_0_05": false
+      }
+    },
+    "specimen_auc_null": {
+      "old": {
+        "n_relabelings": 2002,
+        "exact_enumeration": true,
+        "null_auc_mean": 0.5609723609723609,
+        "null_auc_95th_percentile": 0.8222222222222222,
+        "p_one_sided": 0.06040938592111832,
+        "significant_at_0_05": false
+      },
+      "new": {
+        "n_relabelings": 2002,
+        "exact_enumeration": true,
+        "null_auc_mean": 0.5615717615717616,
+        "null_auc_95th_percentile": 0.8222222222222222,
+        "extreme_allocations": 120,
+        "exact_probability": 0.059940059940059943,
+        "add_one_probability": 0.06040938592111832,
+        "p_one_sided": 0.06040938592111832,
+        "p_one_sided_convention": "add-one comparison; exact_probability is exhaustive k/N",
+        "significant_at_0_05": false
+      }
+    }
+  },
+  "verification": {
+    "all_source_hashes_unchanged": true,
+    "finite_json": true,
+    "expected_counts": true,
+    "topic_sample_bootstrap_pair_invariance": true,
+    "state_identity_error_below_1e12": true
+  },
+  "output_sha256": {
+    "design_power_simulation/report.json": "a5b08848e6460dceedff4882c46b12bd3f8f6a16e8a9ae6fd86689973c218df2",
+    "design_power_simulation.log": "28d75c38cb44c23a3ddb102f33ff0d891150942faad129c2d06e37c1ff79a842",
+    "mathematical_audit/report.json": "6bd4607ba115cfee6e95b93510dae32e140e6c2576662578c3e0ac09a28c0088",
+    "mathematical_audit/state_decomposition.csv": "41451cb7368f38ec7290fdeb73ac8282d7eb2cc8ecb8e6dc8147f7a2c7a96c24",
+    "patient_mapping_equivalence/report.json": "53578f9141c66ba43d2e723b3a882755ac0a979b2ace7e83bb8c18a2e9ad7e05",
+    "patient_mapping_equivalence/sample_scores.csv": "94b7f3e9d6861851a701770eff9216f5ab07707548c806849a47f024440f6a3f",
+    "patient_unit_remap/patient_scores.csv": "6f091229fe8d4963b5096c2583b56f54a1a64f897ea9e36dc9e60a5e64518df1",
+    "patient_unit_remap/report.json": "427d7286836af7cc9b63979c7009c9b87f8d59ef75d87be983b97c2ef6607235",
+    "patient_unit_representation_benchmark/bootstrap_indices.npy": "dd96f2921f77556a784c63353e213e859dc7aaa121d68db62e8417da273f6b64",
+    "patient_unit_representation_benchmark/patient_scores.csv": "822798f1813b02ef0c6dc2e29024cceaa4169c9953e9a6b5797f28f9fb7089ad",
+    "patient_unit_representation_benchmark/report.json": "0a4a37cd3eaa34f4dbded4d416aa169cd5dc01240fa2b025ca9243857c224236",
+    "patient_unit_representation_benchmark/topic_auc_permutation_null.npy": "46958718a473e4626fa3f2d2dae18ee48c55deda95e6be1e4cf93927c8743990",
+    "projection/cells.parquet": "3572a78007b7be093603988a87734c194371e1820ebc499d693c1379cd298449",
+    "projection/contract.json": "0937c925a1b43fe4dbe54e9a1bc0603af3190dfe10ec5c18a12a1c218be31302",
+    "projection/obs.csv": "949a51a3200f27e7e8966c87bef9f5df10392e4a5462b175cec1528bc9e5a8b0",
+    "projection/patient_scores_all_arms.csv": "db761fb025f811bd03b96889d7ec1df9a636cebf834e6433a93e127f45242fb1",
+    "projection/specimen_scores.csv": "ab2378b9c3d1e75c15fe295660db58f3920cb6304d3a30f529530a42e9046bec",
+    "projection/theta.npy": "c2634b8c7f7cb56d518f68157ea632eda83bbca1008e4b214a49253992ddd319",
+    "repeat_specimens/paired_specimens.csv": "5e1eaa207d3226ab6a6821ba726e6d993534170996999f96334b8bf0e18bdd68",
+    "repeat_specimens/report.json": "9e8e466ffd399f1dc189b2131b07ee5be8077b34dced7b99d99ccd3926202d28",
+    "repeat_specimens/specimen_scores.csv": "8185849d5fd3601bf022930ec19a936bda3bc9e069a45144f28594192599ea71",
+    "repeat_specimens/split_half_draws.csv": "f03c87afe6e374b675895117e790ab07e1ca27b94d76cb0d6115d156a3247a4e",
+    "representation_benchmark/report.json": "08f0e40e332a046f1c8d0c230414e8fd2e1212015cb0a61408619b423e511b7a",
+    "representation_benchmark/sample_scores.csv": "e38192111db0eae46296c3afd42fdb2f187e6d60d0b646ebe598349785fef64e",
+    "representation_inference/bootstrap_indices.npy": "798bd47503c54f8ba1f5254dbe801ca7db74c42529f40dfe2ea1092786ecf532",
+    "representation_inference/report.json": "73feb4986c511a4c5718345f608bb10390c79f882ab9bd44f113933494467bed",
+    "representation_inference/topic_auc_pair_invariance.csv": "bf6183d35d7d4c8dad3ff4c49ba7b267b341bd98bbf950a9eb2e9d26b975aacd",
+    "representation_inference/topic_auc_permutation_null.npy": "2a51d7f97c5c5c197b2c50c82e00add7a792af53afa40842656ac7d31a70da78",
+    "representation_inference/topic_loso_scores.csv": "c2411cb9041462d6ae09eaca16bcfd6b15e4aa6cff9730826b5b86044d3ad9d0",
+    "robustness_extensions/patient_omission.csv": "bb3eeb8d4c4e2c5a340465bb47e3693c0fc22594f27e2ba8959b9325c9b6f545",
+    "robustness_extensions/report.json": "2e615b5459c8aef0d1330f4278667599ab234a1087526c63169f3793c64f13dd",
+    "tables/paper1_patient_unit_and_anatomy.csv": "f64ce4ce07f7977fe1b2e2f6ee5e553e7c66f620f6ac3152429f4aa7999cb2e2",
+    "tables/paper1_representation_cross_method.csv": "51e633b97c8b9453ebf904a37019bbd82efc99b10daf76a5bd257d0937e23211",
+    "tables/paper1_representation_inference.csv": "9f99b5c3fb79e09bb2b4fae93292e9a237b914e7ffb173d5c768d3b84ec1f4f3",
+    "tables/provenance.json": "b8d07930a2411d26503757fe30e80977b34ed526bcc999270d488df20b86214c",
+    "INTEGRATION.md": "9c7c43f37a24a3eb2d0a93010fe7bcb67f5bbcad7fc169542cc3d776d9ecd9aa"
+  }
+}

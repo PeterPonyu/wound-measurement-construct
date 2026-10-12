@@ -2,6 +2,46 @@
   "scope": "Study-specific report coverage with transitive superseded_by provenance. Statuses, historical destinations and interpretations retain their native meaning; sha256 binds exported bytes and native_sha256 binds the producing snapshot. A replacement retained only for provenance is not a current claim of this study.",
   "entries": [
     {
+      "source": "output/publication-quality-20261009/p1/verification.json",
+      "sha256": "e8cb97af5350c02f1304acbc7ebb56bc30760f568cf6a45cc0a87e54cf90765e",
+      "status": "included",
+      "manuscript_destination": "P1 Abstract/Methods/Results/Discussion; Figure 10; Tables tab:p1qualityfits, tab:p1qualityranges and tab:p1qualitydensity",
+      "interpretation": "All nine fixed capacity/seed fits, full CPU inference and Hungarian matching replays, 360 person-readout rows, 240 complete seed-range rows and 900 conditional density comparisons. Exact float32 extraction correction retains initial failure and unchanged strict tolerance. Full-discovery dependence and unfavorable comparisons remain; not independent patients, state truth, outcome validation or convergence.",
+      "native_sha256": "9c43715d2116c4577b1849506d6d6ecdfa07d59c770ac0b72c4d06ee16e35d64"
+    },
+    {
+      "source": "output/autodl-cpu-preparation-20261005-r1/p1-dfu-only/analysis/report.json",
+      "sha256": "0297a1f91af85710f6e9a504eb94e3bb62f1b4ddd72049bb63f4c0d095357391",
+      "status": "included",
+      "manuscript_destination": "P1 Methods/Results/Discussion; Tables tab:p1dfu31 and tab:p1dfuomissions",
+      "interpretation": "Complete saved DFU11 restriction, 31 covariates and 341 omissions; adverse attenuation and sign reversals retained. Existing patients and high-fraction target, not adjusted/outcome/causal effects or independent clinical validation. Omission ranges are not confidence intervals.",
+      "native_sha256": "c5155c5c38f826d146bffb7aefdaeb1f383342a7f6191a1cb50397d66c49578a"
+    },
+    {
+      "source": "output/autodl-cpu-preparation-20261005-r1/p1-pooling-bridge/analysis/report.json",
+      "sha256": "51bdc3e11cfffc85f888f6ab01d81c679a08072ec7d7d1f0756b6903909b5343",
+      "status": "included",
+      "manuscript_destination": "P1 Methods/Results/Discussion; Tables tab:p1poolfits, tab:p1poolsummary and tab:p1poolpatients",
+      "interpretation": "All six saved fits, all 120 patient-fit rows and 18 partition summaries, same 20 patients/16 train/4 held. Preserve saved matched topic/training cut and upstream discovery dependence; no primary-estimator replacement, new fitting/encoding, new biological units or outcome inference.",
+      "native_sha256": "2fa416a913929561d79be484638a818d1d7fbc5366ce4a61ab639545088edd0e"
+    },
+    {
+      "source": "output/submission-preparation-20261002-r1/measurement/report.json",
+      "sha256": "da4401eca504ce5d28759e93362be781e520f3cd7b533122f526fdf26ce80809",
+      "status": "included",
+      "manuscript_destination": "P1 Methods/Results/Discussion; Table tab:p1budgetdiagnostic",
+      "interpretation": "Authenticated saved six-fit reporting, no refitting or matrix projection. Separate equal-patient reconstruction diagnostic with inherited upstream QC/gene universe; all seeds and failed screens retained. Not the primary cell-pooled patient measurement, DFU-only validation, a cross-panel ranking or mathematical convergence.",
+      "native_sha256": "da4401eca504ce5d28759e93362be781e520f3cd7b533122f526fdf26ce80809"
+    },
+    {
+      "source": "output/paper-science-priority-20261001-r1/patient-covariates/report.json",
+      "sha256": "258c58bf1482a1e8e8415a0007053dacee98a2fd1b49addd0818b1b7f6cb2eb4",
+      "status": "included",
+      "manuscript_destination": "P1 Methods/Results; Table tab:p1patientcovariates",
+      "interpretation": "All 31 covariates recomputed at the 20-patient unit with denominator-specific pooling and deletion influence ranges. Same discovery data, current deterministic scores, no p/BH discoveries, adjusted effects, new fits or independent clinical validation. Weighted specimen UMI medians are not a pooled-patient median. Historical sample screen remains separately documented.",
+      "native_sha256": "258c58bf1482a1e8e8415a0007053dacee98a2fd1b49addd0818b1b7f6cb2eb4"
+    },
+    {
       "source": "outputs/ambient_invariance/report.json",
       "sha256": "4c2bfacfccc6b285ea2d3064ba80496b853ac2f519f45768dc1dd95d6a06cf6a",
       "status": "included",
@@ -356,6 +396,14 @@
       "manuscript_destination": "P1 Methods/Results; tab:p1fulldepth; tab:p1depthoutcomes",
       "interpretation": "Frozen-reference QC/gate/score depth sensitivity from every released pre-QC column, no refit. Seeds are not biological replicates; this is not annotation truth or external portability. RT06 remains partially addressed; a computational range is not a clinical acceptance margin.",
       "native_sha256": "e1b955523021c7de6b0f67d61086e8253fb5f1cd91caef8574ad8e35b1f224b9"
+    },
+    {
+      "source": "output/followup-integration-20261011-r1/p1/audit/report.json",
+      "sha256": "b1440d00b8325b174d8950b328dfa8b2868f27015c75ddcf4d93607a9ccbf968",
+      "status": "included",
+      "manuscript_destination": "P1 Methods/Results/Discussion; Figure 11; late selection/context/composition/fitted-null sensitivity subsection",
+      "interpretation": "Patient-mean topic-search sensitivity conditional on discovery-trained upstream processing, not a replay of the original cell-weighted arm selection or independent outcome validation. Retain the difference between named fibroblast-associated topic and global maximum tests, pooled tissue/site confounding, descriptive variance shares, upstream discovery dependence and unsuccessful outcome validation. Non-significance does not establish equivalence or absence of association.",
+      "native_sha256": "b1440d00b8325b174d8950b328dfa8b2868f27015c75ddcf4d93607a9ccbf968"
     }
   ]
 }

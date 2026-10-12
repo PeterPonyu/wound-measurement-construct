@@ -1,0 +1,87 @@
+{
+  "A_immune_replication": {
+    "broad_immune": {
+      "per_cohort": {
+        "GSE165816": {
+          "n_samples": 33,
+          "rho": 0.5499772736915477,
+          "p": 0.0009143266745276289,
+          "annotation": "markers"
+        },
+        "GSE231643": {
+          "n_samples": 8,
+          "rho": 0.3571428571428572,
+          "p": 0.38512064355625636,
+          "annotation": "markers"
+        },
+        "GSE241132": {
+          "n_samples": 12,
+          "rho": -0.06293706293706294,
+          "p": 0.8459309212287789,
+          "annotation": "authors"
+        }
+      },
+      "stouffer_z": 2.8612598980042745,
+      "p": 0.0042196098383640935,
+      "consistent_sign": false,
+      "carried_by_discovery_only": true
+    },
+    "b_plasma_like": {
+      "per_cohort": {
+        "GSE165816": {
+          "n_samples": 33,
+          "rho": 0.5578097673726038,
+          "p": 0.0007441130181852566,
+          "annotation": "markers"
+        },
+        "GSE231643": {
+          "n_samples": 8,
+          "rho": 0.4285714285714286,
+          "p": 0.2894032248467901,
+          "annotation": "markers"
+        },
+        "GSE241132": {
+          "n_samples": 12,
+          "rho": 0.14685314685314685,
+          "p": 0.6487957097846664,
+          "annotation": "authors"
+        }
+      },
+      "stouffer_z": 3.2897019411073156,
+      "p": 0.00100293560048714,
+      "consistent_sign": true,
+      "carried_by_discovery_only": true
+    }
+  },
+  "B_power": {
+    "sd": 0.2827024541496337,
+    "mde": 0.5189377629730367,
+    "observed_difference": 0.23626141111335078,
+    "power_at_observed": 0.249,
+    "n_healer": 9,
+    "n_nonhealer": 5
+  },
+  "C_positive_control": {
+    "n_foot": 9,
+    "n_forearm": 5,
+    "p_values": {
+      "topic_0": 0.006993006993006993,
+      "topic_1": 0.7972027972027972,
+      "topic_2": 0.11188811188811189,
+      "topic_3": 0.6063936063936064,
+      "topic_4": 0.2977022977022977,
+      "topic_5": 0.8981018981018981,
+      "topic_6": 0.11188811188811189,
+      "topic_7": 0.001998001998001998,
+      "topic_8": 0.2977022977022977,
+      "topic_9": 0.14685314685314685,
+      "topic_10": 0.003996003996003996,
+      "topic_11": 0.8981018981018981,
+      "topic_12": 0.14685314685314685,
+      "topic_13": 0.2977022977022977,
+      "topic_14": 1.0
+    },
+    "n_significant": 3,
+    "design_has_power": true
+  }
+}

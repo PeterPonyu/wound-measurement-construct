@@ -1,0 +1,302 @@
+{
+  "experiment": "next_cohort_design_power_simulation",
+  "status": "completed",
+  "scientific_unit": "patient",
+  "patient_level_inference_available": false,
+  "is_a_design_calculation_not_a_result": true,
+  "question": "How many independent patients does the next cohort need to resolve the comparisons the current cohort cannot?",
+  "anchors": {
+    "source": "current discovery samples; used only to set spread and balance",
+    "n_samples": 14,
+    "healer_fraction": 0.6428571428571429,
+    "sd_topic0_healed": 0.04844798821722714,
+    "sd_topic0_not_healed": 0.015844067853300985,
+    "variance_ratio_healed_over_not_healed": 3.0577998444467274,
+    "observed_sample_level_difference": 0.043466828355555556,
+    "median_between_representation_rank_correlation": 0.5022286010368417,
+    "pooled_sd_would_be": 0.04060151725708932
+  },
+  "design_a_detect_difference": {
+    "difference_0.02": {
+      "total": 87,
+      "n_healed": 56,
+      "n_not_healed": 31,
+      "power": 0.8025
+    },
+    "difference_0.03": {
+      "total": 41,
+      "n_healed": 26,
+      "n_not_healed": 15,
+      "power": 0.7985
+    },
+    "difference_0.0435": {
+      "total": 21,
+      "n_healed": 14,
+      "n_not_healed": 7,
+      "power": 0.82225
+    },
+    "difference_0.06": {
+      "total": 12,
+      "n_healed": 8,
+      "n_not_healed": 4,
+      "power": 0.807
+    },
+    "difference_0.08": {
+      "total": 9,
+      "n_healed": 6,
+      "n_not_healed": 3,
+      "power": 0.862
+    },
+    "difference_0.1": {
+      "total": 7,
+      "n_healed": 4,
+      "n_not_healed": 3,
+      "power": 0.78575
+    }
+  },
+  "design_b_declare_equivalence": {
+    "margin_0.02": {
+      "total": 94,
+      "n_healed": 60,
+      "n_not_healed": 34,
+      "power": 0.805
+    },
+    "margin_0.03": {
+      "total": 43,
+      "n_healed": 28,
+      "n_not_healed": 15,
+      "power": 0.80275
+    },
+    "margin_0.05": {
+      "total": 17,
+      "n_healed": 11,
+      "n_not_healed": 6,
+      "power": 0.80675
+    },
+    "margin_0.075": {
+      "total": 9,
+      "n_healed": 6,
+      "n_not_healed": 3,
+      "power": 0.8285
+    },
+    "margin_0.1": {
+      "total": 7,
+      "n_healed": 4,
+      "n_not_healed": 3,
+      "power": 0.85575
+    }
+  },
+  "design_c_resolve_auc_difference": {
+    "auc_gap_0.05": {
+      "total": 721,
+      "n_healed": 464,
+      "n_not_healed": 257,
+      "power": 0.818
+    },
+    "auc_gap_0.1": {
+      "total": 181,
+      "n_healed": 116,
+      "n_not_healed": 65,
+      "power": 0.80025
+    },
+    "auc_gap_0.15": {
+      "total": 84,
+      "n_healed": 54,
+      "n_not_healed": 30,
+      "power": 0.8155
+    },
+    "auc_gap_0.2": {
+      "total": 52,
+      "n_healed": 33,
+      "n_not_healed": 19,
+      "power": 0.8115
+    }
+  },
+  "patient_translation_grid": [
+    {
+      "samples_per_patient": 1.0,
+      "within_patient_icc": 0.0,
+      "outcome_missing_fraction": 0.0,
+      "design_effect": 1.0,
+      "patients_for_detect_observed_difference": 21,
+      "patients_for_equivalence_margin_0.05": 17,
+      "patients_for_resolve_auc_gap_0.1": 181
+    },
+    {
+      "samples_per_patient": 1.0,
+      "within_patient_icc": 0.0,
+      "outcome_missing_fraction": 0.15,
+      "design_effect": 1.0,
+      "patients_for_detect_observed_difference": 25,
+      "patients_for_equivalence_margin_0.05": 20,
+      "patients_for_resolve_auc_gap_0.1": 213
+    },
+    {
+      "samples_per_patient": 1.0,
+      "within_patient_icc": 0.3,
+      "outcome_missing_fraction": 0.0,
+      "design_effect": 1.0,
+      "patients_for_detect_observed_difference": 21,
+      "patients_for_equivalence_margin_0.05": 17,
+      "patients_for_resolve_auc_gap_0.1": 181
+    },
+    {
+      "samples_per_patient": 1.0,
+      "within_patient_icc": 0.3,
+      "outcome_missing_fraction": 0.15,
+      "design_effect": 1.0,
+      "patients_for_detect_observed_difference": 25,
+      "patients_for_equivalence_margin_0.05": 20,
+      "patients_for_resolve_auc_gap_0.1": 213
+    },
+    {
+      "samples_per_patient": 1.0,
+      "within_patient_icc": 0.6,
+      "outcome_missing_fraction": 0.0,
+      "design_effect": 1.0,
+      "patients_for_detect_observed_difference": 21,
+      "patients_for_equivalence_margin_0.05": 17,
+      "patients_for_resolve_auc_gap_0.1": 181
+    },
+    {
+      "samples_per_patient": 1.0,
+      "within_patient_icc": 0.6,
+      "outcome_missing_fraction": 0.15,
+      "design_effect": 1.0,
+      "patients_for_detect_observed_difference": 25,
+      "patients_for_equivalence_margin_0.05": 20,
+      "patients_for_resolve_auc_gap_0.1": 213
+    },
+    {
+      "samples_per_patient": 2.0,
+      "within_patient_icc": 0.0,
+      "outcome_missing_fraction": 0.0,
+      "design_effect": 1.0,
+      "patients_for_detect_observed_difference": 11,
+      "patients_for_equivalence_margin_0.05": 9,
+      "patients_for_resolve_auc_gap_0.1": 91
+    },
+    {
+      "samples_per_patient": 2.0,
+      "within_patient_icc": 0.0,
+      "outcome_missing_fraction": 0.15,
+      "design_effect": 1.0,
+      "patients_for_detect_observed_difference": 13,
+      "patients_for_equivalence_margin_0.05": 10,
+      "patients_for_resolve_auc_gap_0.1": 107
+    },
+    {
+      "samples_per_patient": 2.0,
+      "within_patient_icc": 0.3,
+      "outcome_missing_fraction": 0.0,
+      "design_effect": 1.3,
+      "patients_for_detect_observed_difference": 14,
+      "patients_for_equivalence_margin_0.05": 12,
+      "patients_for_resolve_auc_gap_0.1": 118
+    },
+    {
+      "samples_per_patient": 2.0,
+      "within_patient_icc": 0.3,
+      "outcome_missing_fraction": 0.15,
+      "design_effect": 1.3,
+      "patients_for_detect_observed_difference": 17,
+      "patients_for_equivalence_margin_0.05": 14,
+      "patients_for_resolve_auc_gap_0.1": 139
+    },
+    {
+      "samples_per_patient": 2.0,
+      "within_patient_icc": 0.6,
+      "outcome_missing_fraction": 0.0,
+      "design_effect": 1.6,
+      "patients_for_detect_observed_difference": 17,
+      "patients_for_equivalence_margin_0.05": 14,
+      "patients_for_resolve_auc_gap_0.1": 145
+    },
+    {
+      "samples_per_patient": 2.0,
+      "within_patient_icc": 0.6,
+      "outcome_missing_fraction": 0.15,
+      "design_effect": 1.6,
+      "patients_for_detect_observed_difference": 20,
+      "patients_for_equivalence_margin_0.05": 17,
+      "patients_for_resolve_auc_gap_0.1": 171
+    },
+    {
+      "samples_per_patient": 3.0,
+      "within_patient_icc": 0.0,
+      "outcome_missing_fraction": 0.0,
+      "design_effect": 1.0,
+      "patients_for_detect_observed_difference": 7,
+      "patients_for_equivalence_margin_0.05": 6,
+      "patients_for_resolve_auc_gap_0.1": 61
+    },
+    {
+      "samples_per_patient": 3.0,
+      "within_patient_icc": 0.0,
+      "outcome_missing_fraction": 0.15,
+      "design_effect": 1.0,
+      "patients_for_detect_observed_difference": 9,
+      "patients_for_equivalence_margin_0.05": 7,
+      "patients_for_resolve_auc_gap_0.1": 71
+    },
+    {
+      "samples_per_patient": 3.0,
+      "within_patient_icc": 0.3,
+      "outcome_missing_fraction": 0.0,
+      "design_effect": 1.6,
+      "patients_for_detect_observed_difference": 12,
+      "patients_for_equivalence_margin_0.05": 10,
+      "patients_for_resolve_auc_gap_0.1": 97
+    },
+    {
+      "samples_per_patient": 3.0,
+      "within_patient_icc": 0.3,
+      "outcome_missing_fraction": 0.15,
+      "design_effect": 1.6,
+      "patients_for_detect_observed_difference": 14,
+      "patients_for_equivalence_margin_0.05": 11,
+      "patients_for_resolve_auc_gap_0.1": 114
+    },
+    {
+      "samples_per_patient": 3.0,
+      "within_patient_icc": 0.6,
+      "outcome_missing_fraction": 0.0,
+      "design_effect": 2.2,
+      "patients_for_detect_observed_difference": 16,
+      "patients_for_equivalence_margin_0.05": 13,
+      "patients_for_resolve_auc_gap_0.1": 133
+    },
+    {
+      "samples_per_patient": 3.0,
+      "within_patient_icc": 0.6,
+      "outcome_missing_fraction": 0.15,
+      "design_effect": 2.2,
+      "patients_for_detect_observed_difference": 19,
+      "patients_for_equivalence_margin_0.05": 15,
+      "patients_for_resolve_auc_gap_0.1": 157
+    }
+  ],
+  "assumptions": [
+    "arm-specific normal spread taken from the current discovery samples",
+    "unequal variances retained; a pooled SD would understate n",
+    "candidate margins and AUC gaps are inputs, not findings",
+    "repeated samples inflate variance through the design effect",
+    "no interim analyses and no multiplicity across the three designs"
+  ],
+  "not_supported": [
+    "any of these margins as a clinical minimal important difference",
+    "a claim that the current cohort was adequately powered",
+    "reuse of these numbers as evidence about wound biology"
+  ],
+  "protocol": {
+    "alpha": 0.05,
+    "target_power": 0.8,
+    "n_sim_per_point": 4000,
+    "n_max_searched": 2000,
+    "seed": 0,
+    "scores_sha256": "c53e7c19c77d34c8278a398ff38ffbceb426a26aaffa01e071867a60c1e3c497",
+    "benchmark_sha256": "13510d4c60d7a3d06458c4ec3bcf587bf6dd5b1c26b72a87ffea4667079584ca",
+    "script_sha256": "5e6eb9f15f41aeaaaae09def92ed0b1832f67d600dc0b33a0a7e6b2272939716",
+    "elapsed_seconds": 5.850896120071411
+  }
+}

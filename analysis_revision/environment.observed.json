@@ -1,0 +1,40 @@
+{
+  "recorded_utc": "2026-10-12T03:09:06.823731+00:00",
+  "python": "3.13.5 | packaged by Anaconda, Inc. | (main, Jun 12 2025, 16:09:02) [GCC 11.2.0]",
+  "packages": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.8.0",
+    "torch": "2.12.0+cu130",
+    "anndata": "0.12.10",
+    "scanpy": "1.11.5",
+    "networkx": "3.6.1",
+    "pyarrow": "23.0.1",
+    "h5py": "3.16.0",
+    "POT": "0.9.6.post1",
+    "matplotlib": "3.10.8",
+    "seaborn": "0.13.2",
+    "PyYAML": "6.0.3",
+    "tqdm": "4.67.1",
+    "umap-learn": "0.5.11"
+  },
+  "scope": "Existing local verification runtime; producing runtimes remain in unchanged source reports.",
+  "requested_agent_runtime": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "max"
+  },
+  "actual_agent_runtime": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "max",
+    "verification": "Directly verified from the subagent session metadata and turn_context, separately from requested parameters.",
+    "session_id": "01a12e0f-2d3d-7601-9c19-e75b17d96372",
+    "source_agent_path": "/root/wound_release_closure",
+    "runtime_evidence": "/home/zeyufu/.codex/sessions/2026/10/11/rollout-2026-10-11T20-01-48-01a12e0f-2d3d-7601-9c19-e75b17d96372.jsonl"
+  },
+  "numeric_runtime": {
+    "default_openblas_threads": 24,
+    "thread_environment_overrides": null,
+    "note": "The successful full population-coordinate audit used unchanged default numeric threading. Reduced-thread PCA audits are retained separately."
+  }
+}

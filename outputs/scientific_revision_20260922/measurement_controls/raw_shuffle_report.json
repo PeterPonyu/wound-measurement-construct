@@ -1,0 +1,203 @@
+{
+  "status": "complete",
+  "seed": 9122,
+  "shuffle_seed": 9123,
+  "selection": {
+    "cells_per_gsm": 240,
+    "n_cells": 6000,
+    "n_gsms": 25,
+    "cells_by_gsm": {
+      "GSM5050523": 240,
+      "GSM5050527": 240,
+      "GSM5050530": 240,
+      "GSM5050531": 240,
+      "GSM5050532": 240,
+      "GSM5050533": 240,
+      "GSM5050534": 240,
+      "GSM5050538": 240,
+      "GSM5050539": 240,
+      "GSM5050540": 240,
+      "GSM5050547": 240,
+      "GSM5050548": 240,
+      "GSM5050552": 240,
+      "GSM5050555": 240,
+      "GSM5050556": 240,
+      "GSM5050557": 240,
+      "GSM5050558": 240,
+      "GSM5050563": 240,
+      "GSM5050564": 240,
+      "GSM5050566": 240,
+      "GSM5050567": 240,
+      "GSM5050568": 240,
+      "GSM5050569": 240,
+      "GSM5050573": 240,
+      "GSM5050574": 240
+    },
+    "selection_unit": "cell; equal fixed count per GSM; rows sorted within GSM",
+    "identity": "source_order_cell_id is a synthetic GSM:QC-row identifier, not a barcode"
+  },
+  "input_contract": {
+    "raw_counts": "integer counts read from source CSV, before normalization",
+    "panel": "outputs/expression_representation/panel.npy",
+    "checkpoint": "outputs/expression_representation/topic_model.pt",
+    "panel_sha256": "85f7f9110c895c918d6e55ff8dd84c7de3f61b46bfbde2d70028cebf46d713c4",
+    "checkpoint_sha256": "c54e78d7ebfd26b0d00436e928db3779d93ffd4133a768114698072fb0538ae9",
+    "beta_sha256": "1bbdf049709e482c52df63c35bbb663f8037d6183d450700beb072db6ea1ac4b",
+    "projection": "library_normalize(panel counts) -> frozen encoder -> softmax(mu), deterministic=True",
+    "decoder_reconstruction_not_used": true
+  },
+  "column_marginal_check": {
+    "columns_checked": 23572,
+    "rows_checked": 6000,
+    "every_column_exact": true
+  },
+  "unified_projection_verification": {
+    "tested_cells": 6000,
+    "maximum_absolute_difference": 3.5762786865234375e-07,
+    "tolerance": 1e-06,
+    "all_selected_cells_agree": true
+  },
+  "raw_count_summary": {
+    "real_counts": {
+      "all_genes": {
+        "library_size_mean": 9275.2065,
+        "library_size_sd": 10907.996958249993,
+        "library_size_median": 6333.0,
+        "library_size_p05_p95": [
+          1073.95,
+          26286.800000000007
+        ],
+        "detected_genes_mean": 2312.195833333333,
+        "detected_genes_sd": 1367.1079161802256,
+        "detected_genes_median": 2079.5,
+        "detected_genes_p05_p95": [
+          553.0,
+          4889.05
+        ],
+        "detection_rate_mean": 0.0980907786073873,
+        "detection_rate_sd": 0.05799711166554495,
+        "zero_library_cells": 0
+      },
+      "model_panel": {
+        "library_size_mean": 1821.5001666666667,
+        "library_size_sd": 3110.9966513964578,
+        "library_size_median": 1062.5,
+        "library_size_p05_p95": [
+          153.95,
+          5500.0
+        ],
+        "detected_genes_mean": 342.1268333333333,
+        "detected_genes_sd": 180.85852596243717,
+        "detected_genes_median": 317.0,
+        "detected_genes_p05_p95": [
+          94.0,
+          648.0
+        ],
+        "detection_rate_mean": 0.04886130153289536,
+        "detection_rate_sd": 0.02582955240823153,
+        "zero_library_cells": 0
+      }
+    },
+    "column_shuffled_counts": {
+      "all_genes": {
+        "library_size_mean": 9275.2065,
+        "library_size_sd": 1500.9519669833153,
+        "library_size_median": 9043.0,
+        "library_size_p05_p95": [
+          7949.9,
+          11100.300000000001
+        ],
+        "detected_genes_mean": 2312.195833333333,
+        "detected_genes_sd": 38.97696092102216,
+        "detected_genes_median": 2312.0,
+        "detected_genes_p05_p95": [
+          2248.0,
+          2377.0
+        ],
+        "detection_rate_mean": 0.0980907786073873,
+        "detection_rate_sd": 0.0016535279535475208,
+        "zero_library_cells": 0
+      },
+      "model_panel": {
+        "library_size_mean": 1821.5001666666667,
+        "library_size_sd": 1324.1453608522893,
+        "library_size_median": 1556.0,
+        "library_size_p05_p95": [
+          1123.95,
+          3064.600000000002
+        ],
+        "detected_genes_mean": 342.1268333333333,
+        "detected_genes_sd": 16.236689316859586,
+        "detected_genes_median": 342.0,
+        "detected_genes_p05_p95": [
+          315.0,
+          369.0
+        ],
+        "detection_rate_mean": 0.04886130153289536,
+        "detection_rate_sd": 0.0023188645125477845,
+        "zero_library_cells": 0
+      }
+    }
+  },
+  "coordinate_summary": {
+    "real_counts": {
+      "perplexity_mean": 3.438301951404817,
+      "perplexity_median": 2.919238765403944,
+      "perplexity_p05_p95": [
+        1.5546131008157955,
+        7.04991494463024
+      ],
+      "entropy_mean": 1.1075609612428499,
+      "hhi_mean": 0.574025605079322,
+      "hhi_median": 0.6007917064517434,
+      "max_coordinate_mean": 0.7114610750079154,
+      "max_coordinate_p95": 0.929292106628418,
+      "top1_minus_top2_mean": 0.6012882447332376,
+      "mu_l2_centered_mean": 4.522767797400128,
+      "mu_abs_mean": 0.7367350976909148
+    },
+    "column_shuffled_counts": {
+      "perplexity_mean": 11.230590165201063,
+      "perplexity_median": 12.084913263305431,
+      "perplexity_p05_p95": [
+        5.303419084308293,
+        14.25479317439279
+      ],
+      "entropy_mean": 2.371389772513711,
+      "hhi_mean": 0.14672175162747234,
+      "hhi_median": 0.1032920095143082,
+      "max_coordinate_mean": 0.26530865390847125,
+      "max_coordinate_p95": 0.599636647105217,
+      "top1_minus_top2_mean": 0.14630976465305623,
+      "mu_l2_centered_mean": 2.3115811691134693,
+      "mu_abs_mean": 0.4458109037964708
+    }
+  },
+  "changes": {
+    "all_genes_library_size_mean_delta": 0.0,
+    "all_genes_detected_genes_mean_delta": 0.0,
+    "all_genes_detection_rate_mean_delta": 0.0,
+    "panel_library_size_mean_delta": 0.0,
+    "panel_detected_genes_mean_delta": 0.0,
+    "panel_detection_rate_mean_delta": 0.0,
+    "coordinate_perplexity_mean_delta": 7.792288213796246,
+    "coordinate_hhi_mean_delta": -0.4273038534518496
+  },
+  "interpretation": {
+    "supported": "Frozen topic coordinates are less concentrated after independent raw gene-column shuffling in this fixed subset.",
+    "limitation": "Shuffling preserves pooled gene marginals but changes row library sizes, detection patterns, specimen-specific marginals and biological co-expression together. Their individual contributions are not separated.",
+    "historical_concentration_cutoff": 14.25,
+    "shuffled_mean_perplexity_exceeds_historical_cutoff": false,
+    "topology_audit_run": false,
+    "prohibited_claim": "This experiment does not demonstrate failure of the historical concentration/topology integrity gate; the new raw-null perplexity remains below its old near-uniform threshold."
+  },
+  "output_files": [
+    "raw_shuffle_selected_cells.csv.gz",
+    "raw_shuffle_cell_stats.csv.gz",
+    "raw_shuffle_theta_real.npy",
+    "raw_shuffle_theta_null.npy",
+    "raw_shuffle_mu_real.npy",
+    "raw_shuffle_mu_null.npy"
+  ],
+  "script_sha256": "86b1df6f16c8c3e9e6de1eaeecf4ee8507ee831580f2152de49757915c9fa7fe"
+}

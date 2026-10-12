@@ -1,0 +1,10 @@
+{
+  "status": "complete",
+  "seed": 9122,
+  "draws": 200,
+  "construction": "For each original specimen j, draw n_j values as expit(logit(observed mean_j)+Normal(0,1)); no latent class and no mixture fit is used. The distribution mean is not constrained to equal the observed mean.",
+  "observed_rho": 0.9325436810796521,
+  "constructed_rho_median": 0.951144468450431,
+  "fraction_constructed_rho_at_least_observed": 0.76,
+  "inference_scope": "Illustrative counterexample only; not a fitted null, calibrated p-value, model selection result, or evidence favoring this distribution for the actual cells."
+}

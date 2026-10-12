@@ -1,0 +1,9 @@
+{
+  "script": "p1_6b_bulk_gse80178",
+  "inputs_sha256": {
+    "data/raw/GSE80178/GSE80178_further_processed_data.txt.gz": "e465871aab08914c73c3dc326c38295114ab8bce901ac0aebc7500df7590b4ba",
+    "data/raw/GSE80178/GSE80178_series_matrix.txt.gz": "989f08bad8d6963da1ec2b6a41f5da5523bd17388ff737607749f550c947d2b2",
+    "outputs/direction1_dfu_mainline/beta.npy": "1bbdf049709e482c52df63c35bbb663f8037d6183d450700beb072db6ea1ac4b",
+    "outputs/direction1_dfu_mainline/panel.npy": "85f7f9110c895c918d6e55ff8dd84c7de3f61b46bfbde2d70028cebf46d713c4"
+  }
+}

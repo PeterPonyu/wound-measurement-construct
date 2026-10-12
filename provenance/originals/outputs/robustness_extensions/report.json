@@ -1,0 +1,1884 @@
+{
+  "status": "completed",
+  "scope": "Retrospective robustness extensions in existing cohorts; no additional biological replicates.",
+  "patient": {
+    "patient_semantics": {
+      "n_patients": 20,
+      "n_specimens": 25,
+      "rho": 0.9372367215292043,
+      "bootstrap_95_interval": [
+        0.7760205485255466,
+        0.990332280288683
+      ],
+      "n_resamples": 10000,
+      "seed": 217,
+      "resampling_unit": "patient after fibroblast-count-weighted collapse",
+      "leave_one_patient_out": [
+        {
+          "omitted_patient": "S01",
+          "rho": 0.9265527682591773
+        },
+        {
+          "omitted_patient": "S02",
+          "rho": 0.9265527682591773
+        },
+        {
+          "omitted_patient": "S03",
+          "rho": 0.92835189984803
+        },
+        {
+          "omitted_patient": "S04",
+          "rho": 0.9265527682591773
+        },
+        {
+          "omitted_patient": "S05",
+          "rho": 0.9417625636032959
+        },
+        {
+          "omitted_patient": "S06",
+          "rho": 0.935548426203441
+        },
+        {
+          "omitted_patient": "S07",
+          "rho": 0.92835189984803
+        },
+        {
+          "omitted_patient": "S08",
+          "rho": 0.9265527682591773
+        },
+        {
+          "omitted_patient": "S09",
+          "rho": 0.9265527682591773
+        },
+        {
+          "omitted_patient": "S10",
+          "rho": 0.92835189984803
+        },
+        {
+          "omitted_patient": "S11",
+          "rho": 0.9265527682591773
+        },
+        {
+          "omitted_patient": "S19",
+          "rho": 0.9265527682591773
+        },
+        {
+          "omitted_patient": "S20",
+          "rho": 0.92835189984803
+        },
+        {
+          "omitted_patient": "S21",
+          "rho": 0.947999401772854
+        },
+        {
+          "omitted_patient": "S22",
+          "rho": 0.9417625636032959
+        },
+        {
+          "omitted_patient": "S23",
+          "rho": 0.947999401772854
+        },
+        {
+          "omitted_patient": "S24",
+          "rho": 0.947999401772854
+        },
+        {
+          "omitted_patient": "S25",
+          "rho": 0.9643345316250855
+        },
+        {
+          "omitted_patient": "S26",
+          "rho": 0.947999401772854
+        },
+        {
+          "omitted_patient": "S27",
+          "rho": 0.9560181937051432
+        }
+      ],
+      "omission_range": [
+        0.9265527682591773,
+        0.9643345316250855
+      ],
+      "patients": [
+        {
+          "patient": "S01",
+          "fibroblast_mean": 0.24960505962371826,
+          "high_state_fraction": 0.5113122171945701,
+          "specimens": 1
+        },
+        {
+          "patient": "S02",
+          "fibroblast_mean": 0.3473338645313142,
+          "high_state_fraction": 0.5863322428207924,
+          "specimens": 2
+        },
+        {
+          "patient": "S03",
+          "fibroblast_mean": 0.027422847226262093,
+          "high_state_fraction": 0.022617124394184167,
+          "specimens": 1
+        },
+        {
+          "patient": "S04",
+          "fibroblast_mean": 0.35210302472114563,
+          "high_state_fraction": 0.699438202247191,
+          "specimens": 1
+        },
+        {
+          "patient": "S05",
+          "fibroblast_mean": 0.012482110410928726,
+          "high_state_fraction": 0.0,
+          "specimens": 1
+        },
+        {
+          "patient": "S06",
+          "fibroblast_mean": 0.017928010949711363,
+          "high_state_fraction": 0.0032216494845360823,
+          "specimens": 2
+        },
+        {
+          "patient": "S07",
+          "fibroblast_mean": 0.054697807878255844,
+          "high_state_fraction": 0.08371559633027523,
+          "specimens": 1
+        },
+        {
+          "patient": "S08",
+          "fibroblast_mean": 0.1648226818887987,
+          "high_state_fraction": 0.29595015576323985,
+          "specimens": 2
+        },
+        {
+          "patient": "S09",
+          "fibroblast_mean": 0.2086632400751114,
+          "high_state_fraction": 0.371900826446281,
+          "specimens": 1
+        },
+        {
+          "patient": "S10",
+          "fibroblast_mean": 0.07049550116062164,
+          "high_state_fraction": 0.08235294117647059,
+          "specimens": 1
+        },
+        {
+          "patient": "S11",
+          "fibroblast_mean": 0.039270635694265366,
+          "high_state_fraction": 0.04832509610104338,
+          "specimens": 1
+        },
+        {
+          "patient": "S19",
+          "fibroblast_mean": 0.46625635027885437,
+          "high_state_fraction": 0.8411764705882353,
+          "specimens": 1
+        },
+        {
+          "patient": "S20",
+          "fibroblast_mean": 0.02954976074397564,
+          "high_state_fraction": 0.018604651162790697,
+          "specimens": 1
+        },
+        {
+          "patient": "S21",
+          "fibroblast_mean": 0.013711540250981275,
+          "high_state_fraction": 0.0,
+          "specimens": 2
+        },
+        {
+          "patient": "S22",
+          "fibroblast_mean": 0.012041047215461731,
+          "high_state_fraction": 0.0,
+          "specimens": 1
+        },
+        {
+          "patient": "S23",
+          "fibroblast_mean": 0.015348632428818948,
+          "high_state_fraction": 0.0,
+          "specimens": 2
+        },
+        {
+          "patient": "S24",
+          "fibroblast_mean": 0.013633697293698788,
+          "high_state_fraction": 0.0,
+          "specimens": 1
+        },
+        {
+          "patient": "S25",
+          "fibroblast_mean": 0.013104111887514591,
+          "high_state_fraction": 0.001026694045174538,
+          "specimens": 1
+        },
+        {
+          "patient": "S26",
+          "fibroblast_mean": 0.013496397994458675,
+          "high_state_fraction": 0.0,
+          "specimens": 1
+        },
+        {
+          "patient": "S27",
+          "fibroblast_mean": 0.020514702424407005,
+          "high_state_fraction": 0.0,
+          "specimens": 1
+        }
+      ]
+    },
+    "patient_outcome_influence": {
+      "n_patients": 11,
+      "observed_difference": 0.02797509084588716,
+      "leave_one_patient_out": [
+        {
+          "omitted_patient": "S01",
+          "healing_minus_nonhealing": 0.03380732850304671
+        },
+        {
+          "omitted_patient": "S02",
+          "healing_minus_nonhealing": 0.01391529090081653
+        },
+        {
+          "omitted_patient": "S03",
+          "healing_minus_nonhealing": 0.03450982567543786
+        },
+        {
+          "omitted_patient": "S04",
+          "healing_minus_nonhealing": 0.025565134206165886
+        },
+        {
+          "omitted_patient": "S05",
+          "healing_minus_nonhealing": 0.02927663416734765
+        },
+        {
+          "omitted_patient": "S06",
+          "healing_minus_nonhealing": 0.02150635474494525
+        },
+        {
+          "omitted_patient": "S07",
+          "healing_minus_nonhealing": 0.027310045968209018
+        },
+        {
+          "omitted_patient": "S08",
+          "healing_minus_nonhealing": 0.025537178386002793
+        },
+        {
+          "omitted_patient": "S09",
+          "healing_minus_nonhealing": 0.029062275929997383
+        },
+        {
+          "omitted_patient": "S10",
+          "healing_minus_nonhealing": 0.03469581141447029
+        },
+        {
+          "omitted_patient": "S11",
+          "healing_minus_nonhealing": 0.032540119408319405
+        }
+      ],
+      "omission_range": [
+        0.01391529090081653,
+        0.03469581141447029
+      ],
+      "interpretation": "Influence diagnostic; no interval, significance test or independent validation."
+    },
+    "source_fingerprints": {
+      "outputs/bimodal_stratification/report.json": "dde5b4e5f8cba6045449e8e7797f611213a61b7cbd51551ac0fd051b17d0d14f",
+      "metadata_intake/GSE165816_ncomms_subject_sample_map.csv": "11870be07b8c06e6037c7ab5c532e90907913c390bd180b59cfe1821bebcd96c",
+      "outputs/metadata_intake/gse165816_patient_unit_remap/patient_scores.csv": "8f99c008be06e74a6178ee5187b1df2574349518aa53b98da51d6336f30cc4db"
+    }
+  },
+  "temporal": {
+    "fit": {
+      "seed": 0,
+      "optimization_steps": 8000,
+      "batch_size": 256,
+      "device": "cuda",
+      "n_training_cells": 8438,
+      "n_source_cells": 1012,
+      "n_target_cells": 3821,
+      "training_excludes_target": true,
+      "scaler": {
+        "n_train_cells": 8438,
+        "n_applied_cells": 12259,
+        "n_held_out_of_scaler": 3821,
+        "train_mean_abs": 8.016982633307634e-07
+      }
+    },
+    "numerical_sensitivity": {
+      "reference_steps": 200,
+      "stay_still_distance": 1.4069241577125586,
+      "evaluation_target_cells": 1500,
+      "rows": [
+        {
+          "rk4_steps": 25,
+          "energy_distance": 0.7053954094308796,
+          "relative_improvement": 0.49862584591784703,
+          "rms_coordinate_difference_from_200": 5.455457312564249e-07
+        },
+        {
+          "rk4_steps": 50,
+          "energy_distance": 0.7053954486026699,
+          "relative_improvement": 0.4986258180756993,
+          "rms_coordinate_difference_from_200": 4.75713505920794e-07
+        },
+        {
+          "rk4_steps": 100,
+          "energy_distance": 0.7053954627538186,
+          "relative_improvement": 0.49862580801748213,
+          "rms_coordinate_difference_from_200": 5.355609005164297e-07
+        },
+        {
+          "rk4_steps": 200,
+          "energy_distance": 0.705395451526976,
+          "relative_improvement": 0.49862581599718914,
+          "rms_coordinate_difference_from_200": 0.0
+        }
+      ],
+      "historical_predicted_distance": 0.7053947448730469,
+      "historical_baseline_distance": 1.4069271087646484
+    },
+    "evaluation_sampling": {
+      "summary": [
+        {
+          "cells_per_distribution": 250,
+          "draws": 50,
+          "median_relative_improvement": 0.48462192159922135,
+          "central_95_draw_range": [
+            0.4424455230495977,
+            0.5156878775547141
+          ],
+          "gain_exceeds_split_half_count": 50
+        },
+        {
+          "cells_per_distribution": 500,
+          "draws": 50,
+          "median_relative_improvement": 0.48385815116501074,
+          "central_95_draw_range": [
+            0.4622206139367404,
+            0.5169259715622984
+          ],
+          "gain_exceeds_split_half_count": 50
+        },
+        {
+          "cells_per_distribution": 1000,
+          "draws": 50,
+          "median_relative_improvement": 0.49262593278651057,
+          "central_95_draw_range": [
+            0.4785793487537564,
+            0.5059519675486881
+          ],
+          "gain_exceeds_split_half_count": 50
+        }
+      ],
+      "draws": [
+        {
+          "cells_per_distribution": 250,
+          "seed": 0,
+          "stay_still_distance": 1.4185072018551095,
+          "predicted_distance": 0.7396253789558234,
+          "split_half_distance": 0.03609407468096748,
+          "gain": 0.6788818228992861,
+          "relative_improvement": 0.47858891517184493,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 1,
+          "stay_still_distance": 1.471809515910313,
+          "predicted_distance": 0.7208825411384012,
+          "split_half_distance": 0.039239496893251236,
+          "gain": 0.7509269747719118,
+          "relative_improvement": 0.510206631126083,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 2,
+          "stay_still_distance": 1.28633180558767,
+          "predicted_distance": 0.6223235164802574,
+          "split_half_distance": 0.05633338812012223,
+          "gain": 0.6640082891074126,
+          "relative_improvement": 0.5162029627371731,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 3,
+          "stay_still_distance": 1.4326666244011763,
+          "predicted_distance": 0.7418549615747789,
+          "split_half_distance": 0.025768509674396256,
+          "gain": 0.6908116628263974,
+          "relative_improvement": 0.4821859119633933,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 4,
+          "stay_still_distance": 1.4157740391923515,
+          "predicted_distance": 0.7243595410418884,
+          "split_half_distance": 0.03803522907182355,
+          "gain": 0.6914144981504631,
+          "relative_improvement": 0.4883650067103154,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 5,
+          "stay_still_distance": 1.2773699904761484,
+          "predicted_distance": 0.6713567952784194,
+          "split_half_distance": 0.03531672017442222,
+          "gain": 0.606013195197729,
+          "relative_improvement": 0.47442260246918233,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 6,
+          "stay_still_distance": 1.5571908927928044,
+          "predicted_distance": 0.7581444680251064,
+          "split_half_distance": 0.06014215007308987,
+          "gain": 0.799046424767698,
+          "relative_improvement": 0.5131332506926092,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 7,
+          "stay_still_distance": 1.53204089800961,
+          "predicted_distance": 0.7912693729611027,
+          "split_half_distance": 0.03235299280756099,
+          "gain": 0.7407715250485074,
+          "relative_improvement": 0.48351941910356283,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 8,
+          "stay_still_distance": 1.340638336282046,
+          "predicted_distance": 0.7437150795294682,
+          "split_half_distance": 0.03574857727268377,
+          "gain": 0.5969232567525777,
+          "relative_improvement": 0.44525301164220615,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 9,
+          "stay_still_distance": 1.2668687756355226,
+          "predicted_distance": 0.6084586498669893,
+          "split_half_distance": 0.040061811138579984,
+          "gain": 0.6584101257685333,
+          "relative_improvement": 0.5197145422091906,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 10,
+          "stay_still_distance": 1.5767090213607222,
+          "predicted_distance": 0.7843128356850242,
+          "split_half_distance": 0.03327633360655824,
+          "gain": 0.792396185675698,
+          "relative_improvement": 0.5025633613688903,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 11,
+          "stay_still_distance": 1.5156641385941931,
+          "predicted_distance": 0.7702066009831183,
+          "split_half_distance": 0.05680000193538781,
+          "gain": 0.7454575376110748,
+          "relative_improvement": 0.4918355713703833,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 12,
+          "stay_still_distance": 1.4940536950378691,
+          "predicted_distance": 0.762474429564242,
+          "split_half_distance": 0.06154511893083914,
+          "gain": 0.7315792654736271,
+          "relative_improvement": 0.48966062458356563,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 13,
+          "stay_still_distance": 1.2116965296241506,
+          "predicted_distance": 0.6316911138472463,
+          "split_half_distance": 0.06742213186106927,
+          "gain": 0.5800054157769043,
+          "relative_improvement": 0.4786721770646756,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 14,
+          "stay_still_distance": 1.4203961485822738,
+          "predicted_distance": 0.7272006603054741,
+          "split_half_distance": 0.046041962011444504,
+          "gain": 0.6931954882767997,
+          "relative_improvement": 0.48802968732961727,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 15,
+          "stay_still_distance": 1.496238227538358,
+          "predicted_distance": 0.7925163298894988,
+          "split_half_distance": 0.03694705770537077,
+          "gain": 0.7037218976488591,
+          "relative_improvement": 0.470327441644528,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 16,
+          "stay_still_distance": 1.4715109256757017,
+          "predicted_distance": 0.745414758199689,
+          "split_half_distance": 0.028409353113820757,
+          "gain": 0.7260961674760127,
+          "relative_improvement": 0.4934357977278336,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 17,
+          "stay_still_distance": 1.260884617559463,
+          "predicted_distance": 0.6704008071172209,
+          "split_half_distance": 0.05109863726995556,
+          "gain": 0.5904838104422421,
+          "relative_improvement": 0.4683091555079543,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 18,
+          "stay_still_distance": 1.41490038091598,
+          "predicted_distance": 0.7494898440395632,
+          "split_half_distance": 0.04034398631298508,
+          "gain": 0.6654105368764167,
+          "relative_improvement": 0.4702879056726541,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 19,
+          "stay_still_distance": 1.4480884749396408,
+          "predicted_distance": 0.7074342254730794,
+          "split_half_distance": 0.039632264288063546,
+          "gain": 0.7406542494665613,
+          "relative_improvement": 0.5114703019077845,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 20,
+          "stay_still_distance": 1.4745835695303509,
+          "predicted_distance": 0.8001491621438106,
+          "split_half_distance": 0.03203255785455106,
+          "gain": 0.6744344073865403,
+          "relative_improvement": 0.4573727941383105,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 21,
+          "stay_still_distance": 1.5893522400461828,
+          "predicted_distance": 0.8429595497739761,
+          "split_half_distance": 0.03288962613352453,
+          "gain": 0.7463926902722067,
+          "relative_improvement": 0.46962068663301365,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 22,
+          "stay_still_distance": 1.4690978848664251,
+          "predicted_distance": 0.7141083621566908,
+          "split_half_distance": 0.033291395748785924,
+          "gain": 0.7549895227097343,
+          "relative_improvement": 0.5139136952595778,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 23,
+          "stay_still_distance": 1.1490718568787335,
+          "predicted_distance": 0.5941844256310409,
+          "split_half_distance": 0.04651977151227893,
+          "gain": 0.5548874312476926,
+          "relative_improvement": 0.4829005496270302,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 24,
+          "stay_still_distance": 1.3999504102435543,
+          "predicted_distance": 0.694167659678314,
+          "split_half_distance": 0.035573194487942494,
+          "gain": 0.7057827505652403,
+          "relative_improvement": 0.5041483936866398,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 25,
+          "stay_still_distance": 1.3055896492242978,
+          "predicted_distance": 0.6439614072896411,
+          "split_half_distance": 0.05002666657588861,
+          "gain": 0.6616282419346566,
+          "relative_improvement": 0.5067658450936372,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 26,
+          "stay_still_distance": 1.417483573648262,
+          "predicted_distance": 0.7962004649625687,
+          "split_half_distance": 0.04695875652771431,
+          "gain": 0.6212831086856934,
+          "relative_improvement": 0.43830004116849125,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 27,
+          "stay_still_distance": 1.3900526638065864,
+          "predicted_distance": 0.6937808376584398,
+          "split_half_distance": 0.06269883798852938,
+          "gain": 0.6962718261481466,
+          "relative_improvement": 0.5008960050775649,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 28,
+          "stay_still_distance": 1.382440323165829,
+          "predicted_distance": 0.7049269964171954,
+          "split_half_distance": 0.028263570343347588,
+          "gain": 0.6775133267486337,
+          "relative_improvement": 0.49008504410310333,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 29,
+          "stay_still_distance": 1.3856576422425038,
+          "predicted_distance": 0.7559081211545857,
+          "split_half_distance": 0.039606730501219545,
+          "gain": 0.629749521087918,
+          "relative_improvement": 0.4544769948143552,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 30,
+          "stay_still_distance": 1.2903243290430586,
+          "predicted_distance": 0.6305569027516924,
+          "split_half_distance": 0.042060582445775374,
+          "gain": 0.6597674262913662,
+          "relative_improvement": 0.5113190625341991,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 31,
+          "stay_still_distance": 1.4346078449527502,
+          "predicted_distance": 0.8010413429582242,
+          "split_half_distance": 0.06592958443659036,
+          "gain": 0.633566501994526,
+          "relative_improvement": 0.4416304457162598,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 32,
+          "stay_still_distance": 1.4809938410276402,
+          "predicted_distance": 0.770404299471287,
+          "split_half_distance": 0.03585363935482899,
+          "gain": 0.7105895415563532,
+          "relative_improvement": 0.4798058721589858,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 33,
+          "stay_still_distance": 1.3698171637389276,
+          "predicted_distance": 0.6947296764440072,
+          "split_half_distance": 0.03257671092419656,
+          "gain": 0.6750874872949204,
+          "relative_improvement": 0.49283036098939176,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 34,
+          "stay_still_distance": 1.4004872154456196,
+          "predicted_distance": 0.7382221694736799,
+          "split_half_distance": 0.02653693614482222,
+          "gain": 0.6622650459719397,
+          "relative_improvement": 0.47288189329255265,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 35,
+          "stay_still_distance": 1.5049592169481274,
+          "predicted_distance": 0.775097233448089,
+          "split_half_distance": 0.05530463052664025,
+          "gain": 0.7298619835000384,
+          "relative_improvement": 0.4849712705040001,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 36,
+          "stay_still_distance": 1.4162925573777176,
+          "predicted_distance": 0.7607863223148552,
+          "split_half_distance": 0.030799670916763056,
+          "gain": 0.6555062350628624,
+          "relative_improvement": 0.4628325070609281,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 37,
+          "stay_still_distance": 1.4695259889837935,
+          "predicted_distance": 0.747322162690474,
+          "split_half_distance": 0.024429485142552387,
+          "gain": 0.7222038262933195,
+          "relative_improvement": 0.49145359231975055,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 38,
+          "stay_still_distance": 1.2322041157179457,
+          "predicted_distance": 0.6762021283632507,
+          "split_half_distance": 0.054625196160990264,
+          "gain": 0.5560019873546951,
+          "relative_improvement": 0.4512255561090539,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 39,
+          "stay_still_distance": 1.3557147497190405,
+          "predicted_distance": 0.6999990120344464,
+          "split_half_distance": 0.03975881067352738,
+          "gain": 0.6557157376845941,
+          "relative_improvement": 0.48366792337435677,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 40,
+          "stay_still_distance": 1.1925624741326164,
+          "predicted_distance": 0.6147311010508991,
+          "split_half_distance": 0.04758917867454748,
+          "gain": 0.5778313730817173,
+          "relative_improvement": 0.48452922644743623,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 41,
+          "stay_still_distance": 1.4407277730157677,
+          "predicted_distance": 0.740475323218666,
+          "split_half_distance": 0.0533064308569724,
+          "gain": 0.7002524497971017,
+          "relative_improvement": 0.4860407794675295,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 42,
+          "stay_still_distance": 1.237873016648364,
+          "predicted_distance": 0.6272400778129059,
+          "split_half_distance": 0.0484196749225152,
+          "gain": 0.6106329388354581,
+          "relative_improvement": 0.49329206681376214,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 43,
+          "stay_still_distance": 1.369165016043894,
+          "predicted_distance": 0.7080766924554576,
+          "split_half_distance": 0.03180518889184558,
+          "gain": 0.6610883235884364,
+          "relative_improvement": 0.48284050194227474,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 44,
+          "stay_still_distance": 1.4290164064711668,
+          "predicted_distance": 0.7587028789002472,
+          "split_half_distance": 0.037212605103836616,
+          "gain": 0.6703135275709196,
+          "relative_improvement": 0.4690733602045908,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 45,
+          "stay_still_distance": 1.4366096650685165,
+          "predicted_distance": 0.7526391362442473,
+          "split_half_distance": 0.02328713475054034,
+          "gain": 0.6839705288242692,
+          "relative_improvement": 0.47610046448604987,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 46,
+          "stay_still_distance": 1.3619254601639765,
+          "predicted_distance": 0.6741761113128488,
+          "split_half_distance": 0.02715422454426175,
+          "gain": 0.6877493488511277,
+          "relative_improvement": 0.5049831058803484,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 47,
+          "stay_still_distance": 1.4500774957990963,
+          "predicted_distance": 0.7472037381635781,
+          "split_half_distance": 0.027970328263913657,
+          "gain": 0.7028737576355182,
+          "relative_improvement": 0.48471461675100647,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 48,
+          "stay_still_distance": 1.188729737986213,
+          "predicted_distance": 0.6412581918683511,
+          "split_half_distance": 0.03150187823814754,
+          "gain": 0.5474715461178619,
+          "relative_improvement": 0.4605517373909691,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 250,
+          "seed": 49,
+          "stay_still_distance": 1.3788919760635885,
+          "predicted_distance": 0.693396330584779,
+          "split_half_distance": 0.03685076236534357,
+          "gain": 0.6854956454788095,
+          "relative_improvement": 0.49713513268511283,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 0,
+          "stay_still_distance": 1.221863116226654,
+          "predicted_distance": 0.5872310211710481,
+          "split_half_distance": 0.03000882650463943,
+          "gain": 0.6346320950556059,
+          "relative_improvement": 0.5193970475313722,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 1,
+          "stay_still_distance": 1.3426818257895485,
+          "predicted_distance": 0.7027599845373818,
+          "split_half_distance": 0.01864102803742096,
+          "gain": 0.6399218412521668,
+          "relative_improvement": 0.47659976396557546,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 2,
+          "stay_still_distance": 1.2611701531812791,
+          "predicted_distance": 0.655571746467797,
+          "split_half_distance": 0.024667127280084244,
+          "gain": 0.6055984067134821,
+          "relative_improvement": 0.4801877091571434,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 3,
+          "stay_still_distance": 1.384198152424461,
+          "predicted_distance": 0.6932393080366523,
+          "split_half_distance": 0.01689304736733188,
+          "gain": 0.6909588443878087,
+          "relative_improvement": 0.499176251014044,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 4,
+          "stay_still_distance": 1.5939829673730177,
+          "predicted_distance": 0.8444903354205167,
+          "split_half_distance": 0.015704029969382916,
+          "gain": 0.749492631952501,
+          "relative_improvement": 0.4702011547762716,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 5,
+          "stay_still_distance": 1.367363561526873,
+          "predicted_distance": 0.659197779240416,
+          "split_half_distance": 0.020934039693270456,
+          "gain": 0.7081657822864571,
+          "relative_improvement": 0.5179059923870433,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 6,
+          "stay_still_distance": 1.2952560028065836,
+          "predicted_distance": 0.6548334152800779,
+          "split_half_distance": 0.025618996323229837,
+          "gain": 0.6404225875265057,
+          "relative_improvement": 0.4944370735505774,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 7,
+          "stay_still_distance": 1.4616472702262282,
+          "predicted_distance": 0.766019021715973,
+          "split_half_distance": 0.01763679989949196,
+          "gain": 0.6956282485102552,
+          "relative_improvement": 0.47592073866261075,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 8,
+          "stay_still_distance": 1.4235449975180279,
+          "predicted_distance": 0.7357879465528114,
+          "split_half_distance": 0.016989572277661402,
+          "gain": 0.6877570509652164,
+          "relative_improvement": 0.48312982881772704,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 9,
+          "stay_still_distance": 1.376056392390855,
+          "predicted_distance": 0.7475949526884991,
+          "split_half_distance": 0.019690242410528747,
+          "gain": 0.628461439702356,
+          "relative_improvement": 0.45671198010310016,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 10,
+          "stay_still_distance": 1.3307984130040165,
+          "predicted_distance": 0.6890506666470717,
+          "split_half_distance": 0.022869991558602365,
+          "gain": 0.6417477463569448,
+          "relative_improvement": 0.4822276162084722,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 11,
+          "stay_still_distance": 1.4222930520737194,
+          "predicted_distance": 0.6918739655183819,
+          "split_half_distance": 0.01723205123958138,
+          "gain": 0.7304190865553375,
+          "relative_improvement": 0.5135503442770659,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 12,
+          "stay_still_distance": 1.3226093915213246,
+          "predicted_distance": 0.6900265220087931,
+          "split_half_distance": 0.015455455858554679,
+          "gain": 0.6325828695125315,
+          "relative_improvement": 0.47828396922609656,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 13,
+          "stay_still_distance": 1.212167768370489,
+          "predicted_distance": 0.6154759002745296,
+          "split_half_distance": 0.015471495539231661,
+          "gain": 0.5966918680959594,
+          "relative_improvement": 0.49225188432298383,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 14,
+          "stay_still_distance": 1.351578096059649,
+          "predicted_distance": 0.6977225641433886,
+          "split_half_distance": 0.058766045751212914,
+          "gain": 0.6538555319162604,
+          "relative_improvement": 0.483771921002931,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 15,
+          "stay_still_distance": 1.230820152887195,
+          "predicted_distance": 0.6193805196793516,
+          "split_half_distance": 0.012666185158296095,
+          "gain": 0.6114396332078433,
+          "relative_improvement": 0.49677414833804884,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 16,
+          "stay_still_distance": 1.3426344425152692,
+          "predicted_distance": 0.707792858417239,
+          "split_half_distance": 0.01968459944398937,
+          "gain": 0.6348415840980302,
+          "relative_improvement": 0.4728327860476515,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 17,
+          "stay_still_distance": 1.4865442341961979,
+          "predicted_distance": 0.7572760307927693,
+          "split_half_distance": 0.01209383945725051,
+          "gain": 0.7292682034034286,
+          "relative_improvement": 0.49057955130259373,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 18,
+          "stay_still_distance": 1.4230317541891413,
+          "predicted_distance": 0.7445278961998341,
+          "split_half_distance": 0.019980183231492532,
+          "gain": 0.6785038579893072,
+          "relative_improvement": 0.4768016286298024,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 19,
+          "stay_still_distance": 1.4654779386947911,
+          "predicted_distance": 0.7335415059598667,
+          "split_half_distance": 0.01889299886194884,
+          "gain": 0.7319364327349245,
+          "relative_improvement": 0.4994523720956278,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 20,
+          "stay_still_distance": 1.4581843769259724,
+          "predicted_distance": 0.7450591527233383,
+          "split_half_distance": 0.0299127324595716,
+          "gain": 0.713125224202634,
+          "relative_improvement": 0.48905010606819665,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 21,
+          "stay_still_distance": 1.4968105874804563,
+          "predicted_distance": 0.7664837271799145,
+          "split_half_distance": 0.02817524423623574,
+          "gain": 0.7303268603005417,
+          "relative_improvement": 0.48792202995429274,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 22,
+          "stay_still_distance": 1.3868410494769234,
+          "predicted_distance": 0.7020192866009358,
+          "split_half_distance": 0.017541813026538122,
+          "gain": 0.6848217628759876,
+          "relative_improvement": 0.49379974953458633,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 23,
+          "stay_still_distance": 1.2076703457306088,
+          "predicted_distance": 0.6328141005761303,
+          "split_half_distance": 0.014051064580461237,
+          "gain": 0.5748562451544785,
+          "relative_improvement": 0.47600427317498273,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 24,
+          "stay_still_distance": 1.4982653413875857,
+          "predicted_distance": 0.7726831306882396,
+          "split_half_distance": 0.020982902385977553,
+          "gain": 0.7255822106993461,
+          "relative_improvement": 0.48428151586778617,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 25,
+          "stay_still_distance": 1.460327869643539,
+          "predicted_distance": 0.7618624368105245,
+          "split_half_distance": 0.01527200860414446,
+          "gain": 0.6984654328330144,
+          "relative_improvement": 0.47829357184253934,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 26,
+          "stay_still_distance": 1.3556890757987121,
+          "predicted_distance": 0.7086797647878518,
+          "split_half_distance": 0.019128105905330983,
+          "gain": 0.6470093110108603,
+          "relative_improvement": 0.47725494183072253,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 27,
+          "stay_still_distance": 1.3838210634487185,
+          "predicted_distance": 0.7193145100745353,
+          "split_half_distance": 0.036934857797148446,
+          "gain": 0.6645065533741832,
+          "relative_improvement": 0.4801968772740887,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 28,
+          "stay_still_distance": 1.285747996605541,
+          "predicted_distance": 0.6727946563290361,
+          "split_half_distance": 0.019826200519010406,
+          "gain": 0.6129533402765048,
+          "relative_improvement": 0.47672898724691143,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 29,
+          "stay_still_distance": 1.3489401673466528,
+          "predicted_distance": 0.7246209012936013,
+          "split_half_distance": 0.019336623220842952,
+          "gain": 0.6243192660530514,
+          "relative_improvement": 0.4628220592475047,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 30,
+          "stay_still_distance": 1.2064859092394595,
+          "predicted_distance": 0.603196201123132,
+          "split_half_distance": 0.014939093161556727,
+          "gain": 0.6032897081163275,
+          "relative_improvement": 0.5000387517966349,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 31,
+          "stay_still_distance": 1.2778146009886528,
+          "predicted_distance": 0.664781529089276,
+          "split_half_distance": 0.016393012758298298,
+          "gain": 0.6130330718993768,
+          "relative_improvement": 0.4797511872419281,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 32,
+          "stay_still_distance": 1.5107251008194913,
+          "predicted_distance": 0.8094500584314979,
+          "split_half_distance": 0.02135323226776542,
+          "gain": 0.7012750423879934,
+          "relative_improvement": 0.4641976505239686,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 33,
+          "stay_still_distance": 1.3287895968015402,
+          "predicted_distance": 0.6715256832625451,
+          "split_half_distance": 0.03405472391422393,
+          "gain": 0.657263913538995,
+          "relative_improvement": 0.4946335485475357,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 34,
+          "stay_still_distance": 1.347613620878139,
+          "predicted_distance": 0.6954435808543078,
+          "split_half_distance": 0.016326521265821903,
+          "gain": 0.6521700400238313,
+          "relative_improvement": 0.4839443813270905,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 35,
+          "stay_still_distance": 1.3542064765247401,
+          "predicted_distance": 0.7285007898133973,
+          "split_half_distance": 0.02489189676498338,
+          "gain": 0.6257056867113429,
+          "relative_improvement": 0.4620460007820024,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 36,
+          "stay_still_distance": 1.4442058529326083,
+          "predicted_distance": 0.7258095293460016,
+          "split_half_distance": 0.02437723222341681,
+          "gain": 0.7183963235866067,
+          "relative_improvement": 0.49743346637726826,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 37,
+          "stay_still_distance": 1.3864091192163865,
+          "predicted_distance": 0.6851202700485031,
+          "split_half_distance": 0.02660186092866379,
+          "gain": 0.7012888491678835,
+          "relative_improvement": 0.5058310995272878,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 38,
+          "stay_still_distance": 1.3017262985716966,
+          "predicted_distance": 0.6607051086976581,
+          "split_half_distance": 0.016797090763961187,
+          "gain": 0.6410211898740386,
+          "relative_improvement": 0.49243930200794994,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 39,
+          "stay_still_distance": 1.5161245945945314,
+          "predicted_distance": 0.80992050424548,
+          "split_half_distance": 0.0163958070335255,
+          "gain": 0.7062040903490514,
+          "relative_improvement": 0.4657955506209019,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 40,
+          "stay_still_distance": 1.2824841986831865,
+          "predicted_distance": 0.6545868797329613,
+          "split_half_distance": 0.021670787121798263,
+          "gain": 0.6278973189502253,
+          "relative_improvement": 0.4895945849429802,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 41,
+          "stay_still_distance": 1.2657996058935677,
+          "predicted_distance": 0.6315092997761482,
+          "split_half_distance": 0.025779062447259804,
+          "gain": 0.6342903061174194,
+          "relative_improvement": 0.5010985176201362,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 42,
+          "stay_still_distance": 1.396821303225038,
+          "predicted_distance": 0.7378176916753585,
+          "split_half_distance": 0.025329093078902076,
+          "gain": 0.6590036115496796,
+          "relative_improvement": 0.47178805909399085,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 43,
+          "stay_still_distance": 1.5698461987342789,
+          "predicted_distance": 0.8129897014641951,
+          "split_half_distance": 0.02608989203742329,
+          "gain": 0.7568564972700838,
+          "relative_improvement": 0.48212143194684615,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 44,
+          "stay_still_distance": 1.2710756745765384,
+          "predicted_distance": 0.6427067814320786,
+          "split_half_distance": 0.01737001810768657,
+          "gain": 0.6283688931444598,
+          "relative_improvement": 0.4943599391545293,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 45,
+          "stay_still_distance": 1.3315202840494926,
+          "predicted_distance": 0.6594704141711372,
+          "split_half_distance": 0.023223219433705644,
+          "gain": 0.6720498698783555,
+          "relative_improvement": 0.5047237191419124,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 46,
+          "stay_still_distance": 1.447605518453913,
+          "predicted_distance": 0.7752899201650694,
+          "split_half_distance": 0.01843068584547325,
+          "gain": 0.6723155982888436,
+          "relative_improvement": 0.4644328787906924,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 47,
+          "stay_still_distance": 1.3038648192830955,
+          "predicted_distance": 0.6493548496050083,
+          "split_half_distance": 0.024371829011503365,
+          "gain": 0.6545099696780872,
+          "relative_improvement": 0.5019768614034364,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 48,
+          "stay_still_distance": 1.351190063962055,
+          "predicted_distance": 0.6956634251353906,
+          "split_half_distance": 0.02541820294456265,
+          "gain": 0.6555266388266645,
+          "relative_improvement": 0.48514761639416065,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 500,
+          "seed": 49,
+          "stay_still_distance": 1.4282643975876859,
+          "predicted_distance": 0.7512007366161724,
+          "split_half_distance": 0.021628548914291557,
+          "gain": 0.6770636609715135,
+          "relative_improvement": 0.4740464455426197,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 0,
+          "stay_still_distance": 1.3780560310347774,
+          "predicted_distance": 0.7068918195624292,
+          "split_half_distance": 0.00793473143135337,
+          "gain": 0.6711642114723482,
+          "relative_improvement": 0.48703695376477063,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 1,
+          "stay_still_distance": 1.412301339189316,
+          "predicted_distance": 0.7372444122554258,
+          "split_half_distance": 0.015116745164389656,
+          "gain": 0.6750569269338902,
+          "relative_improvement": 0.4779836343718146,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 2,
+          "stay_still_distance": 1.3251163509356552,
+          "predicted_distance": 0.6736487073624762,
+          "split_half_distance": 0.008185920335092689,
+          "gain": 0.651467643573179,
+          "relative_improvement": 0.4916305221901325,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 3,
+          "stay_still_distance": 1.3407775140783462,
+          "predicted_distance": 0.6602192401082618,
+          "split_half_distance": 0.007496452024892797,
+          "gain": 0.6805582739700844,
+          "relative_improvement": 0.5075847907830568,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 4,
+          "stay_still_distance": 1.3317994390602887,
+          "predicted_distance": 0.6762439842695169,
+          "split_half_distance": 0.00666574572932177,
+          "gain": 0.6555554547907718,
+          "relative_improvement": 0.4922328659736699,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 5,
+          "stay_still_distance": 1.366164643498509,
+          "predicted_distance": 0.6997914206260383,
+          "split_half_distance": 0.010710898873642627,
+          "gain": 0.6663732228724708,
+          "relative_improvement": 0.4877693373516133,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 6,
+          "stay_still_distance": 1.382078591904456,
+          "predicted_distance": 0.7015610289627991,
+          "split_half_distance": 0.014674070469262723,
+          "gain": 0.6805175629416569,
+          "relative_improvement": 0.4923870226539921,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 7,
+          "stay_still_distance": 1.3322529315323495,
+          "predicted_distance": 0.6809004508347449,
+          "split_half_distance": 0.010497803280124174,
+          "gain": 0.6513524806976045,
+          "relative_improvement": 0.48891052538231067,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 8,
+          "stay_still_distance": 1.2554226365174923,
+          "predicted_distance": 0.6258768571481141,
+          "split_half_distance": 0.011134799670628581,
+          "gain": 0.6295457793693782,
+          "relative_improvement": 0.5014612299135539,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 9,
+          "stay_still_distance": 1.3150255717883663,
+          "predicted_distance": 0.6683706672751422,
+          "split_half_distance": 0.009369173795169772,
+          "gain": 0.6466549045132242,
+          "relative_improvement": 0.49174321654734604,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 10,
+          "stay_still_distance": 1.36387492654511,
+          "predicted_distance": 0.679473672930107,
+          "split_half_distance": 0.01175240713675585,
+          "gain": 0.684401253615003,
+          "relative_improvement": 0.5018064635506492,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 11,
+          "stay_still_distance": 1.3859441561565502,
+          "predicted_distance": 0.7031848735371211,
+          "split_half_distance": 0.012126931951248032,
+          "gain": 0.6827592826194291,
+          "relative_improvement": 0.4926311638073732,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 12,
+          "stay_still_distance": 1.3149780984275061,
+          "predicted_distance": 0.6664900802906626,
+          "split_half_distance": 0.008493256712606367,
+          "gain": 0.6484880181368435,
+          "relative_improvement": 0.4931549954423779,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 13,
+          "stay_still_distance": 1.3378187150793854,
+          "predicted_distance": 0.6738792359863846,
+          "split_half_distance": 0.009402933674900638,
+          "gain": 0.6639394790930009,
+          "relative_improvement": 0.4962850882629513,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 14,
+          "stay_still_distance": 1.4278263666605238,
+          "predicted_distance": 0.7129758518054921,
+          "split_half_distance": 0.009667142774333115,
+          "gain": 0.7148505148550317,
+          "relative_improvement": 0.5006564744472132,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 15,
+          "stay_still_distance": 1.3688412512183055,
+          "predicted_distance": 0.6950450483670609,
+          "split_half_distance": 0.016032651377693163,
+          "gain": 0.6737962028512445,
+          "relative_improvement": 0.49223838209985843,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 16,
+          "stay_still_distance": 1.3526281489494005,
+          "predicted_distance": 0.6842552277197349,
+          "split_half_distance": 0.009084159674679348,
+          "gain": 0.6683729212296656,
+          "relative_improvement": 0.4941290936084669,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 17,
+          "stay_still_distance": 1.282556983697856,
+          "predicted_distance": 0.6477894383937581,
+          "split_half_distance": 0.010636450339898573,
+          "gain": 0.634767545304098,
+          "relative_improvement": 0.4949234641208239,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 18,
+          "stay_still_distance": 1.3384572668750874,
+          "predicted_distance": 0.6739350519490106,
+          "split_half_distance": 0.01143796392846852,
+          "gain": 0.6645222149260768,
+          "relative_improvement": 0.4964836990855487,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 19,
+          "stay_still_distance": 1.355579460953388,
+          "predicted_distance": 0.6878045179376642,
+          "split_half_distance": 0.01140312269269117,
+          "gain": 0.6677749430157238,
+          "relative_improvement": 0.4926121723222874,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 20,
+          "stay_still_distance": 1.3143244291537597,
+          "predicted_distance": 0.6724502263839822,
+          "split_half_distance": 0.007523722812931233,
+          "gain": 0.6418742027697775,
+          "relative_improvement": 0.48836815974200093,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 21,
+          "stay_still_distance": 1.242717360623268,
+          "predicted_distance": 0.6214061974853191,
+          "split_half_distance": 0.015581238089514393,
+          "gain": 0.6213111631379489,
+          "relative_improvement": 0.4999617634908864,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 22,
+          "stay_still_distance": 1.3819842204218924,
+          "predicted_distance": 0.7043961205501912,
+          "split_half_distance": 0.0073979781629294195,
+          "gain": 0.6775880998717012,
+          "relative_improvement": 0.4903008947995419,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 23,
+          "stay_still_distance": 1.312606356447386,
+          "predicted_distance": 0.6736831316974703,
+          "split_half_distance": 0.0069878201619753,
+          "gain": 0.6389232247499157,
+          "relative_improvement": 0.48675920363450265,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 24,
+          "stay_still_distance": 1.3920952326099618,
+          "predicted_distance": 0.7123985575367131,
+          "split_half_distance": 0.010434983989614288,
+          "gain": 0.6796966750732487,
+          "relative_improvement": 0.48825443773621957,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 25,
+          "stay_still_distance": 1.368327017710632,
+          "predicted_distance": 0.7106662875154921,
+          "split_half_distance": 0.018118848591054615,
+          "gain": 0.6576607301951398,
+          "relative_improvement": 0.48063125384711153,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 26,
+          "stay_still_distance": 1.2781528230960086,
+          "predicted_distance": 0.6409617236879024,
+          "split_half_distance": 0.010994129908925565,
+          "gain": 0.6371910994081063,
+          "relative_improvement": 0.49852497126647866,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 27,
+          "stay_still_distance": 1.3502726216926213,
+          "predicted_distance": 0.674204605681938,
+          "split_half_distance": 0.006933506533465916,
+          "gain": 0.6760680160106833,
+          "relative_improvement": 0.5006900126310824,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 28,
+          "stay_still_distance": 1.4022878216741663,
+          "predicted_distance": 0.7155442453187453,
+          "split_half_distance": 0.006910086136951321,
+          "gain": 0.686743576355421,
+          "relative_improvement": 0.4897308282514571,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 29,
+          "stay_still_distance": 1.3911543728843894,
+          "predicted_distance": 0.7079808726585624,
+          "split_half_distance": 0.01233209175825678,
+          "gain": 0.683173500225827,
+          "relative_improvement": 0.4910838894243993,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 30,
+          "stay_still_distance": 1.3833178016997056,
+          "predicted_distance": 0.6918739084962713,
+          "split_half_distance": 0.009120604335741689,
+          "gain": 0.6914438932034344,
+          "relative_improvement": 0.4998445710406139,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 31,
+          "stay_still_distance": 1.3358573077138844,
+          "predicted_distance": 0.6764418833694057,
+          "split_half_distance": 0.009345132185218041,
+          "gain": 0.6594154243444788,
+          "relative_improvement": 0.4936271415642195,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 32,
+          "stay_still_distance": 1.3975258446668706,
+          "predicted_distance": 0.7018421382372928,
+          "split_half_distance": 0.00944017962692012,
+          "gain": 0.6956837064295778,
+          "relative_improvement": 0.4977966662186548,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 33,
+          "stay_still_distance": 1.3204929437644042,
+          "predicted_distance": 0.6771418208083766,
+          "split_half_distance": 0.010355561271819802,
+          "gain": 0.6433511229560276,
+          "relative_improvement": 0.487205271329955,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 34,
+          "stay_still_distance": 1.4459943850673262,
+          "predicted_distance": 0.7453658633482627,
+          "split_half_distance": 0.007537647680260662,
+          "gain": 0.7006285217190635,
+          "relative_improvement": 0.4845305963525176,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 35,
+          "stay_still_distance": 1.3794127498615687,
+          "predicted_distance": 0.6846499808719786,
+          "split_half_distance": 0.013799976083966214,
+          "gain": 0.6947627689895901,
+          "relative_improvement": 0.5036656135441065,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 36,
+          "stay_still_distance": 1.3602475224785966,
+          "predicted_distance": 0.684009463563255,
+          "split_half_distance": 0.021762011821223837,
+          "gain": 0.6762380589153416,
+          "relative_improvement": 0.4971433858472491,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 37,
+          "stay_still_distance": 1.3702034870722493,
+          "predicted_distance": 0.6881797082626768,
+          "split_half_distance": 0.010091916107435317,
+          "gain": 0.6820237788095724,
+          "relative_improvement": 0.4977536440714153,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 38,
+          "stay_still_distance": 1.3844491041977003,
+          "predicted_distance": 0.7260531169331719,
+          "split_half_distance": 0.0053618877159022915,
+          "gain": 0.6583959872645284,
+          "relative_improvement": 0.47556532433604654,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 39,
+          "stay_still_distance": 1.3419636404598299,
+          "predicted_distance": 0.6827821073487428,
+          "split_half_distance": 0.013263315144699028,
+          "gain": 0.6591815331110871,
+          "relative_improvement": 0.4912067013121276,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 40,
+          "stay_still_distance": 1.526586292348016,
+          "predicted_distance": 0.7639584053921666,
+          "split_half_distance": 0.008250637989018372,
+          "gain": 0.7626278869558494,
+          "relative_improvement": 0.4995642177441962,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 41,
+          "stay_still_distance": 1.3971089277770288,
+          "predicted_distance": 0.7181689864840637,
+          "split_half_distance": 0.008620368865014605,
+          "gain": 0.6789399412929651,
+          "relative_improvement": 0.4859606347038678,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 42,
+          "stay_still_distance": 1.3192688093186087,
+          "predicted_distance": 0.6788263010153859,
+          "split_half_distance": 0.007351581241308303,
+          "gain": 0.6404425083032228,
+          "relative_improvement": 0.48545262631806324,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 43,
+          "stay_still_distance": 1.3320403983946854,
+          "predicted_distance": 0.6817407899709043,
+          "split_half_distance": 0.012007436935863147,
+          "gain": 0.6502996084237811,
+          "relative_improvement": 0.4881981126154227,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 44,
+          "stay_still_distance": 1.3033691304969146,
+          "predicted_distance": 0.6430618038643381,
+          "split_half_distance": 0.01316032816137902,
+          "gain": 0.6603073266325765,
+          "relative_improvement": 0.5066157477435665,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 45,
+          "stay_still_distance": 1.3736758654420393,
+          "predicted_distance": 0.6876266400697544,
+          "split_half_distance": 0.01615938891030222,
+          "gain": 0.686049225372285,
+          "relative_improvement": 0.49942584173706733,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 46,
+          "stay_still_distance": 1.3265900276191775,
+          "predicted_distance": 0.673084317258108,
+          "split_half_distance": 0.014791050694784147,
+          "gain": 0.6535057103610695,
+          "relative_improvement": 0.49262070176564793,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 47,
+          "stay_still_distance": 1.386272025154918,
+          "predicted_distance": 0.688675006179138,
+          "split_half_distance": 0.009410201576073085,
+          "gain": 0.6975970189757801,
+          "relative_improvement": 0.5032179877523119,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 48,
+          "stay_still_distance": 1.4323283752926352,
+          "predicted_distance": 0.7209155344691656,
+          "split_half_distance": 0.007357620244784258,
+          "gain": 0.7114128408234697,
+          "relative_improvement": 0.4966827810543953,
+          "gain_exceeds_split_half": true
+        },
+        {
+          "cells_per_distribution": 1000,
+          "seed": 49,
+          "stay_still_distance": 1.38639183765651,
+          "predicted_distance": 0.689907656577101,
+          "split_half_distance": 0.006973135149819676,
+          "gain": 0.6964841810794091,
+          "relative_improvement": 0.5023718130486922,
+          "gain_exceeds_split_half": true
+        }
+      ],
+      "interval_type": "central Monte Carlo range conditional on one fitted field and the observed cohort; not a confidence interval"
+    },
+    "source_fingerprints": {
+      "outputs/repaired_20260918/human_temporal_flow/mu.npy": "0ac3ff419ee8108cd3a2b0e45e8b8b7832c989c76e189bc4f8aa47e809c8ac71",
+      "outputs/repaired_20260918/human_temporal_flow/obs_fibroblast.csv": "4323b852d234396b61ee865749d2b7a4c2f96f644159b5e4c4e0459c6ca2cb76",
+      "outputs/repaired_20260918/human_temporal_flow/report.json": "ad6048f290c98649718940a1c83d0feb4dbc6eae6d0f1651a849ce581efc50ae",
+      "scripts/18_human_temporal_flow.py": "7b30f32c2f0b5939f41be2bc86cd65b2ed098db4f0ea176903c4b1dd3e4e2f6c"
+    }
+  },
+  "protocol": {
+    "script_sha256": "efc69d9128c2ea9ab742fd0323740d487f30e3cf776350945ef4fa734c8b5940",
+    "elapsed_seconds": 11.021705865859985
+  }
+}

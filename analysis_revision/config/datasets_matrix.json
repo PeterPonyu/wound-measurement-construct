@@ -1,0 +1,256 @@
+{
+  "project_meta": {
+    "title": "Orthopedic Arthroplasty & Diabetic Incision Surrogate Computational Biology Framework",
+    "theme": "骨科 + 糖尿病 + 伤口/护理 (Orthopedics + Diabetes + Wound Care / Bedside Nursing)",
+    "version": "2.0.0",
+    "updated_at": "2026-09-20",
+    "provenance": "Every entry below was re-verified by reading the GEO series_matrix header and suppl/filelist.txt directly. v1.1.0 asserted eight datasets; three were wrong organism/tissue/design and were removed. GSE241132 was added after its use in T2/T3 was found. GSE223964 and GSE245703 are now on the mainline as external frozen-projection cohorts: both have DFU tissue and disease/genotype metadata, neither has a healing endpoint. See docs/05_DATASET_AUDIT.md.",
+    "surrogate_rationale": "Direct human TJA surgical incision biopsy is restricted by clinical ethics (PJI risk). The claim this framework can defend is narrow: not anatomical equivalence between foot skin and joint tissue, but a shared sterile myeloid activation programme. Anything beyond that is unsupported by these data."
+  },
+
+  "mainline_datasets": {
+    "GSE165816": {
+      "module": "Module 1 (discovery): human DFU single-cell landscape",
+      "verified": "series_matrix + filelist read 2026-09-17; author clinical table and series-level provenance joined 2026-09-20",
+      "organism": "Homo sapiens",
+      "title": "Single Cell Transcriptomic Landscape of Diabetic Foot Ulcers",
+      "design": "10 non-diabetic subjects, 17 diabetic (11 with DFU, 6 without); foot skin, forearm skin and PBMCs",
+      "n_gsm": 54,
+      "file_format": "RAW.tar of 54 *dense* CSV.gz (genes x barcodes), NOT 10x mtx triplets",
+      "archive_bytes": 410255360,
+      "available_characteristics": ["tissue", "disease"],
+      "outcome_variable": "disease: DFU-healer | DFU-nonhealer | Non-DFU Diabetic | Non-diabetic",
+      "caveats": [
+        "Raw sequence data withheld for patient privacy; only processed counts are public.",
+        "The 94k cell figure spans foot skin + forearm skin + PBMC. The DFU foot-skin subset is substantially smaller; do not quote 94k as the DFU sample size.",
+        "Dense CSV loading is ~452 MB/sample; use core_engines.data_adapter (CSR int32) or the cohort will not fit in RAM.",
+        "No cell-type annotation ships with the archive; annotation must be derived and is a human-in-the-loop step.",
+        "GEO still has no patient field. The Nature Communications 13:181 clinical table maps all 54 GSM titles onto 27 subjects. The 14 DFU foot samples are 11 patients (7 healer / 4 non-healer); G4+G23, G7+G8 and G33+G34 are same-wound same-day replicates. That map lives under metadata_intake/ and does not admit the discovery set as experiment A.",
+        "Finest public laboratory process is series-level: identical Chromium 3' V2/V3 extract protocol and Illumina NovaSeq 6000 / NovaSeq S4 instrument text for all 54 samples. Raw reads withheld; no SRR or per-sample chemistry assignment."
+      ],
+      "mapping_role": "Core discovery set and the project's ONLY real clinical outcome variable. Author subject map and GEO-declared series-level batch/run are now local; the collapsed 11-patient prognostic contract is accepted. This is still not experiment A."
+    },
+
+    "GSE231643": {
+      "module": "Module 1b (directional frozen projection): human DFU debridement single-cell",
+      "verified": "series_matrix + filelist read 2026-09-17",
+      "organism": "Homo sapiens",
+      "title": "Diabetic foot ulcers debridement SCRNA-seq showed healing association with inflammatory fibroblasts in minorities",
+      "design": "Debrided DFU from healing and non-healing patients, African American and White",
+      "n_gsm": 8,
+      "file_format": "RAW.tar, 10x 3'v3.1 libraries (CellRanger 7.0.0, 36,601 features)",
+      "archive_bytes": 371927040,
+      "local_status": "Downloaded and byte-count verified at data/raw/GSE231643/GSE231643_RAW.tar. Loaded: 35,655 cells x 36,591 gene symbols, 30,484 after QC.",
+      "available_characteristics": ["tissue", "cell type", "race"],
+      "labels_recovered": "Healing status is NOT a characteristics key. Recovered from !Sample_title: H1-H5 = healer (5), NH1/NH2/NH4 = non-healer (3).",
+      "caveats": [
+        "n=5 vs 3. The smallest attainable two-sided Mann-Whitney p is 0.0357, and a 15-topic Bonferroni threshold is 0.0033, so NO result from this cohort can survive multiple-testing correction. It can corroborate a direction, never confirm one.",
+        "Cells are not replicates. With 30,484 cells from 8 patients, cell-level p-values are pseudoreplication and must not be reported.",
+        "Debridement tissue, whereas GSE165816 is surgically resected. Epithelial content is not comparable between the two, which confounds any keratinocyte-topic contrast."
+      ],
+      "mapping_role": "Directional external projection for HE-Fibro / macrophage-polarisation claims; healing labels are title-derived and the cohort does not pass the authoritative patient prognostic contract."
+    },
+
+    "GSE326622": {
+      "module": "Module 2 (temporal anchor): murine wound healing time course",
+      "verified": "series_matrix + filelist read 2026-09-17",
+      "organism": "Mus musculus",
+      "title": "Mechanotransduction unifies healthy non-diabetic wound healing over time by promoting a Cd14+/C1qa+ fibroblast subpopulation",
+      "design": "Full-thickness EXCISIONAL dorsal wounds; N-DB (WT), P-DB (high-fat-diet), G-DB (leptin-receptor-deficient) x POD0 / POD2 / POD7 / POD30",
+      "n_gsm": 12,
+      "file_format": "10x barcodes/features/matrix triplets",
+      "archive_bytes": 1132769280,
+      "local_status": "Downloaded to data/raw/GSE326622/per_gsm/ as 36 loose per-GSM files (1.1 GB), all 36 byte-count verified against filelist.txt. Load with core_engines.data_adapter.load_10x_mtx_dir. Verified readable: 2-sample smoke load gave 30,134 cells x 32,255 mouse gene symbols.",
+      "download_route": "PER-GSM ONLY. The series-level GSE326622_RAW.tar is NOT retrievable: two independent attempts both truncated at ~780 MB of 1,132,769,280 (780,318,127 and 781,318,127 bytes, 'transfer closed with ~352 MB remaining'). Reproducible server-side failure; retrying the tar is futile. Use scripts/fetch_gse326622_per_gsm.sh.",
+      "caveats": [
+        "CORRECTION vs v1.1.0: mechanotransduction here is a biological conclusion of the paper, NOT an applied mechanical-tension intervention. Do not describe this as a tension-loading experiment.",
+        "CORRECTION vs v1.1.0: timepoints are POD0/2/7/30, not Day 1/3/7/14.",
+        "n=1 sample per model per timepoint. There are no biological replicates, so the time axis carries no uncertainty estimate. Drift velocities calibrated against it are point estimates only.",
+        "Excisional, not incisional. It cannot stand in for a sutured surgical incision."
+      ],
+      "mapping_role": "Murine temporal axis for T3. n=1 per model×timepoint; drift velocities are point estimates."
+    },
+
+    "GSE241132": {
+      "module": "T3 human paired time course; T2 alternative-explanation check",
+      "verified": "series_matrix + filelist read 2026-09-17; on disk as 12 per-GSM zips",
+      "organism": "Homo sapiens",
+      "title": "Spatiotemporal Single-Cell Roadmap of Human Skin Wound Healing (Single-cell-Wound)",
+      "design": "3 healthy volunteers, each sampled at intact skin, wound day 1, day 7 and day 30 (paired within donor). Donors in GEO titles are Donor3/4/5; zip names are PWH26/27/28.",
+      "n_gsm": 12,
+      "file_format": "per-GSM CellRanger zip (features/barcodes/matrix). Series RAW.tar is 775,905,280 bytes; fetched per-GSM because series-level NCBI transfers are unreliable.",
+      "archive_bytes": 775905280,
+      "local_status": "Downloaded to data/raw/GSE241132/ (745 MB): series_matrix, author cell_metadata, filelist, and 12/12 per_gsm zips.",
+      "available_characteristics": ["individual", "tissue", "treatment", "author_cell_metadata: Patient/Age/Gender/Condition"],
+      "caveats": [
+        "Acute experimental wounds in healthy volunteers, not DFU. It tests whether a frozen DFU-trained encoder carries time, not whether topic 0 marks DFU healing.",
+        "n=3 donors. Leave-one-donor-out therefore trains on 2 contexts; out-of-sample failure is expected to be donor-count limited.",
+        "The attached cell metadata includes Patient, Age and Gender (PWH26 29/M, PWH27 22/F, PWH28 24/M), but no HbA1c, BMI or wound-duration variable suitable for the planned causal estimands.",
+        "Authors ship cell-type annotation and doublet calls; T3 uses those, not the in-house marker scorer."
+      ],
+      "mapping_role": "Only human paired wound time axis in this repo. T3 held-out day-7 and leave-one-donor tests; T2 B-cell alternative-explanation check."
+    },
+
+    "GSE223964": {
+      "module": "External DFU projection: human chronic diabetic and non-diabetic foot ulcers",
+      "verified": "series_matrix + filelist + per-GSM H5 read 2026-09-18",
+      "organism": "Homo sapiens",
+      "title": "Gene expression profile as single cell level of chronic diabetic foot ulcers and chronic non-diabetic foot ulcer",
+      "design": "5 diabetic and 3 non-diabetic chronic foot-ulcer samples; DIAC019/19B/19C are title-level replicate proxies",
+      "n_gsm": 8,
+      "file_format": "per-GSM 10x H5 matrices; author Integrated_all_cells.h5ad also downloaded for sample/age/sex/condition provenance",
+      "local_status": "Per-GSM H5 files, series matrix, filelist and author h5ad are byte-verified/readable under data/raw/GSE223964/.",
+      "available_characteristics": ["tissue", "disease", "author_h5ad: sample/Age/Sex/Condition"],
+      "caveats": [
+        "No healing or follow-up outcome is supplied; diabetic vs non-diabetic is not a healing endpoint.",
+        "The public series matrix has sample titles but no authoritative patient ID field. DIAC019 variants are not pooled as independent patients.",
+        "The current experiment uses frozen T1 projection and fixed marker gates; the author h5ad has Leiden clusters but no cell-type annotation column."
+      ],
+      "mapping_role": "External state projection and descriptive immune-axis audit; no clinical validation claim."
+    },
+
+    "GSE245703": {
+      "module": "External DFU projection: human chronic diabetic and non-diabetic foot/ankle ulcers",
+      "verified": "series_matrix + filelist + per-GSM H5 read 2026-09-18",
+      "organism": "Homo sapiens",
+      "title": "Single Cell Analysis of Gene expression profile as single cell level of chronic diabetic foot ulcer and chronic non-diabetic foot ulcer Foot Wounds",
+      "design": "5 diabetic and 7 non-diabetic foot/ankle-ulcer samples; Diac44a/b/c and Diac50a/b are title-level replicate proxies",
+      "n_gsm": 12,
+      "file_format": "per-GSM 10x filtered feature/barcode/matrix H5 files",
+      "local_status": "All 12 per-GSM H5 files, series matrix and filelist are byte-verified/readable under data/raw/GSE245703/.",
+      "available_characteristics": ["tissue", "genotype"],
+      "caveats": [
+        "No healing or follow-up outcome is supplied; diabetic vs non-diabetic is not a healing endpoint.",
+        "The public series matrix has sample titles but no authoritative patient ID field. Lettered title variants are not pooled as independent patients.",
+        "The current experiment uses frozen T1 projection and fixed marker gates; broad immune fractions are exploratory and not author cell-type labels."
+      ],
+      "mapping_role": "External state projection and descriptive immune-axis audit; no clinical validation claim."
+    }
+  },
+
+  "rejected_datasets": {
+    "GSE137911": {
+      "claimed_in_v1.1.0": "human chronic wound longitudinal healing time series",
+      "actual": "Eastern woodchuck (Marmota monax) liver/kidney/spleen/lung/heart/pancreas/thymus RNA-seq, chronic hepatitis B model, 20 samples",
+      "verdict": "REMOVED - wrong organism, wrong tissue, wrong design. Fabricated mapping."
+    },
+    "GSE171542": {
+      "claimed_in_v1.1.0": "wear-particle-induced human prosthesis loosening",
+      "actual": "In vitro human macrophages stimulated with M-CSF / RANKL / thymidine phosphorylase (TYMP), 9 samples",
+      "verdict": "REMOVED - no wear particles, no patient prosthesis tissue, in vitro only."
+    },
+    "GSE276597": {
+      "claimed_in_v1.1.0": "periprosthetic membrane RNA-seq, N=28, 1.5 MB counts",
+      "actual": "Bone-marrow MSCs from arthroplasty patients (GPNMB aseptic-loosening biomarker study), N=28; the only public file is an 8.1 MB DESeq2 result overview, not a count matrix",
+      "verdict": "REMOVED - wrong tissue and no usable count matrix."
+    },
+    "GSE274513": {
+      "claimed_in_v1.1.0": "db/db high-glucose full-thickness mouse wound tissue, N=12",
+      "actual": "Smad7-based biologic (Tat-PYC-Smad7) vs vehicle in db/db mouse wounds, days 9 and 11, N=12",
+      "verdict": "REMOVED from the mainline - every animal is db/db, so there is no WT arm and it cannot serve as a high-glucose-vs-normal contrast. Retained only as a possible drug-perturbation reference."
+    },
+    "GSE152805": {
+      "claimed_in_v1.1.0": "human TKA arthroplasty implant joint microenvironment single-cell",
+      "actual": "OA knee synovium + matched cartilage from n=3 individuals (9 samples); tissue taken at the time of TKA but containing no implant",
+      "verdict": "REMOVED from the mainline - native OA joint tissue, not an implant microenvironment. Usable only if the question is reframed as OA synovial myeloid biology."
+    }
+  },
+
+  "blocked_datasets": {
+    "GSE255786": {
+      "title": "Human transcriptomic response to periprosthetic joint infection",
+      "organism": "Homo sapiens",
+      "n_gsm": 93,
+      "local_status": "Downloaded to data/raw/GSE255786/ (23398 genes x 93 samples, 7 annotation columns + 93 count columns)",
+      "blocker": "The PJI vs aseptic-failure grouping does not exist in any public metadata. The only characteristics keys are 'tissue: Knee/Hip' and 'cell type: Sonicate fluid'; SRA runinfo for PRJNA1076519 has an empty Disease column; there is no series-level label file and no linked PubMed ID. Without y there is no ROC, no AUC and no EMI discrimination curve.",
+      "secondary_risk": "The source paper already performed PJI vs non-infection differential expression and reported 28 confirmed plus 3 novel biomarkers. Reproducing that discrimination is not a novel result.",
+      "note": "The '.' characters that were previously reported as missing-value corruption are the GeneBiotype annotation column, not the count region. The counts are clean integers.",
+      "unblock_condition": "Recover the per-specimen infection status from the publication's supplementary tables AND map it onto the internal specimen IDs (1005, 1006, 1013, ...) used as count-matrix column headers."
+    },
+    "GSE80178": {
+      "title": "Genomic Profiling of Diabetic Foot Ulcers Identifies miR-15b-5p as a Major Regulator",
+      "platform": "GPL16686 Affymetrix Human Gene 2.0 ST (CORRECTION: v1.1.0 said U133 Plus 2.0)",
+      "design": "6 diabetic foot ulcer, 3 diabetic foot skin, 3 non-diabetic foot skin (CORRECTION: v1.1.0 said forearm skin; there is no forearm arm)",
+      "n_gsm": 12,
+      "local_status": "Downloaded to data/raw/GSE80178/",
+      "available_characteristics": ["tissue", "disease state"],
+      "blocker": "Cannot support a causal DML design. N=12, no treatment variable, no follow-up outcome, and none of the confounders that design requires (age, sex, wound duration, HbA1c, BMI) exist in the metadata.",
+      "usable_for": "Bulk-level sanity checking of a gene panel derived elsewhere. Nothing causal."
+    },
+    "GSE268834": {
+      "title": "Tissue nanotransfection-based endothelial PLCγ2-targeted epigenetic gene editing in vivo rescues diabetic ischemic wound healing",
+      "organism": "Homo sapiens",
+      "n_gsm": 8,
+      "assay": "scRNA-seq",
+      "local_status": "Series matrix plus verified per-GSM 10x MTX bundle under data/raw/GSE268834/; frozen external projection completed.",
+      "available_characteristics": ["tissue", "tissue type", "Sex", "age"],
+      "blocker": "Diabetic versus non-diabetic chronic wound-edge samples. Titles are SC_W4-style labels. No authoritative patient ID, wound, timepoint, or healed/not_healed field. Prognostic and projection contracts rejected.",
+      "usable_for": "Frozen external state projection and exclusive immune-axis audit; diabetic versus non-diabetic contrast is descriptive only. Not experiment A."
+    },
+    "GSE272918": {
+      "title": "Novel Targets for Diabetic Foot Ulcer Healing: A Transcriptomic Analysis by Negative Pressure Wound Therapy",
+      "organism": "Homo sapiens",
+      "n_gsm": 6,
+      "assay": "bulk RNA-seq",
+      "local_status": "Series matrix only under data/raw/GSE272918/. FPKM was not opened.",
+      "available_characteristics": ["tissue", "time point", "patient diagnosis", "patient number", "treatment"],
+      "blocker": "GEO deposits authoritative patient numbers for three DFU patients sampled before and after 1 week of NPWT. Missing wound_id, healing_status, and follow_up_days. Assay is bulk, so the frozen T1 scRNA-seq encoder cannot run. PMID 39301661 healing rates belong to a 24-patient qPCR set that is not this series.",
+      "usable_for": "Closest public metadata hit: depositor patient numbers exist. Still not experiment A."
+    },
+    "GSE248247": {
+      "title": "Characterization of Diabetic and Non-Diabetic Foot Ulcers Using Single-Cell RNA-Sequencing",
+      "organism": "Homo sapiens",
+      "n_gsm": 2,
+      "assay": "scRNA-seq",
+      "local_status": "Series matrix and verified per-GSM 10x MTX bundles under data/raw/GSE248247/; frozen low-yield projection completed.",
+      "blocker": "One diabetic and one non-diabetic plantar ulcer. No named patient, no healing endpoint. n=2.",
+      "usable_for": "Two-sample frozen projection and low-yield feasibility audit only. Not a validation cohort or experiment A."
+    },
+    "GSE219078": {
+      "title": "HDMECs isolated from skin biopsies of patients with DFUs and healthy controls",
+      "organism": "Homo sapiens",
+      "n_gsm": 8,
+      "assay": "bulk RNA-seq of cultured HDMECs",
+      "blocker": "Cultured endothelial cells, DFU versus non-diabetic. Titles are culture-replicate labels.",
+      "usable_for": "None for T1/T2/T3 patient-level claims."
+    },
+    "GSE327462": {
+      "title": "RNA binding protein YWHAZ mediates translation of specific mRNA and regulates cell Proliferation and apoptosis in diabetic foot ulcer",
+      "organism": "Homo sapiens",
+      "n_gsm": 6,
+      "assay": "bulk RNA-seq of HaCaT cells",
+      "blocker": "HaCaT si_NC versus si_YWHAZ. Cell line, not patient tissue.",
+      "usable_for": "None for a patient-linked DFU cohort."
+    },
+    "Dryad_2v6wwpzzc": {
+      "title": "RNAseq analysis of gene counts and expression levels in diabetic foot ulcers",
+      "doi": "10.5061/dryad.2v6wwpzzc",
+      "sra": "PRJNA1200081",
+      "assay": "bulk RNA-seq",
+      "local_status": "Landing page and methods are public. Patients.xlsx is the author sample key and was not available locally from this environment.",
+      "blocker": "Even with the patient table, the assay is 12-week bulk RNA-seq and cannot enter frozen T1 experiment A. Do not open counts.csv or expression.csv before a passing prognostic contract.",
+      "usable_for": "Future metadata-only intake if Patients.xlsx becomes local. Not a substitute scRNA-seq validation cohort."
+    }
+  },
+
+  "cohort_wide_constraint": {
+    "statement": "Series-level GEO characteristics across GSE165816, GSE231643, GSE241132, GSE223964, GSE245703, GSE80178 and GSE255786 provide tissue, disease, cell type, race, disease state, genotype, individual and treatment. The attached GSE241132 cell metadata additionally contains donor Patient, Age and Gender, and the GSE223964 author h5ad contains sample, Age, Sex and Condition; the cohort family still has no consistently linked HbA1c, BMI, wound duration, treatment assignment and follow-up outcome.",
+    "implication": "The available metadata do not identify a clinical causal estimand for Double Machine Learning / causal forest. A future causal design must specify its treatment, outcome, confounders and linkage at specimen level; it must not silently fabricate age, sex, BMI, HbA1c or wound duration. The retired DML stub under directions/_retired printed those confounder names without loading them; its mock_verification.py fabricates the covariates with np.random.normal."
+  },
+
+  "local_benchmark_datasets": {
+    "DevelopmentDatasets": {
+      "location": "/home/zeyufu/Desktop/data/datasets/DevelopmentDatasets/",
+      "available_h5ad": ["dentate.h5ad (967M)", "endo.h5ad (113M)", "hemato.h5ad (1008M)", "lung.h5ad (471M)", "setty.h5ad (371M)"],
+      "role": "Algorithmic baseline & hardware benchmarking."
+    }
+  },
+
+  "hardware_verified_2026_09_17": {
+    "gpu": "NVIDIA GeForce RTX 5090 Laptop GPU, 25.1 GB VRAM, 14.9 TFLOPS fp32 measured",
+    "cpu": "Intel Core Ultra 9 275HX, 24 cores (CORRECTION: v1.1.0 said 16)",
+    "ram": "62 GB total, ~44 GB available",
+    "disk_free": "602 GB",
+    "known_issue": "nvidia-smi is broken (NVML driver/library mismatch, NVML 595.91). torch.cuda works, but any pynvml/nvidia-smi based memory monitoring or scheduling will fail until the driver is fixed."
+  }
+}

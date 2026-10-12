@@ -6,10 +6,21 @@
 \usepackage{unicode-math}
 \setmathfont{TeX Gyre Termes Math}
 \usepackage{graphicx,booktabs,array,tabularx,longtable}
-\usepackage[font=small,labelfont=normalfont,labelsep=period,skip=4pt]{caption}
+% Keep captions visually separated from their artwork/table rules, while
+% retaining a compact single-column manuscript.  The same defaults are used
+% by both papers so appendix tables and main-text figures do not drift apart.
+\usepackage[font=small,labelfont=normalfont,labelsep=period,skip=8pt]{caption}
 \usepackage{flafter,placeins,needspace}
 \usepackage[sort&compress,numbers]{natbib}
 \usepackage[unicode,colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+% longtable 4.24 uses infinitely shrinkable glue before a kernel box split.
+% Backport the upstream 4.25 finite-shrink fix (latex3/latex2e issue 1907)
+% locally. etoolbox is already loaded by hyperref; no runtime/package changes.
+% Patch both nested vbox branches. Already-fixed versions are left unchanged.
+\makeatletter
+\patchcmd{\LT@output}{\vss}{\vskip\z@\@plus1fil\@minus\normalbaselineskip}{}{}
+\patchcmd{\LT@output}{\vss}{\vskip\z@\@plus1fil\@minus\normalbaselineskip}{}{}
+\makeatother
 \usepackage{xcolor,microtype,titlesec,enumitem,fancyhdr}
 \usepackage{bookmark}
 \hypersetup{pdfcreator={XeLaTeX},pdfauthor={Zeyu Fu}}
@@ -17,9 +28,9 @@
 \setlength{\parindent}{1em}
 \setlength{\parskip}{1pt plus .4pt}
 \linespread{1.02}
-\setlength{\textfloatsep}{6pt plus 1pt minus 2pt}
-\setlength{\floatsep}{5pt plus 1pt minus 2pt}
-\setlength{\intextsep}{5pt plus 1pt minus 2pt}
+\setlength{\textfloatsep}{12pt plus 2pt minus 1pt}
+\setlength{\floatsep}{10pt plus 2pt minus 1pt}
+\setlength{\intextsep}{12pt plus 2pt minus 1pt}
 \renewcommand{\topfraction}{.94}
 \renewcommand{\bottomfraction}{.88}
 \renewcommand{\textfraction}{.06}
@@ -39,10 +50,15 @@
 \setlength{\bibsep}{1.5pt}
 \renewcommand{\bibfont}{\small\let\emph\textnormal}
 \setlength{\tabcolsep}{4pt}
-\setlength{\LTpre}{2pt}
-\setlength{\LTpost}{2pt}
+% Longtable captions sit above the first rule.  These pre/post skips prevent
+% adjacent appendix tables from reading as one continuous table while still
+% allowing a continued table head to remain visually attached to its rows.
+\setlength{\LTpre}{8pt plus 2pt minus 1pt}
+\setlength{\LTpost}{8pt plus 2pt minus 1pt}
 \setlength{\LTcapwidth}{\textwidth}
-\captionsetup[longtable]{font=footnotesize,skip=3pt}
+\captionsetup[figure]{skip=8pt}
+\captionsetup[table]{skip=8pt}
+\captionsetup[longtable]{font=footnotesize,skip=8pt}
 \renewcommand{\arraystretch}{1.12}
 \setlength{\emergencystretch}{1.2em}
 \widowpenalty=10000

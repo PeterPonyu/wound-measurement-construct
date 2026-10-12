@@ -1,0 +1,10 @@
+"job_id","K","seed","optimizer_steps","reload_verified","reload_max_abs_error","primary_match_status","primary_new_topic","primary_correlation","semantics_available","cut_full_sample_fibroblasts","specimen_mean_fraction_spearman","mean_fraction_correlation_unit","unmatched_reference_topics","unmatched_new_topics"
+"c63a1e8454a6cd5bb604","10","0",40000,"True",0,"assigned",4,0.816832238060853,"True",0.146627180609797,0.946153846153846,"specimen_descriptive_not_prognostic",5,0
+"8a21de4ba901e2a207e8","10","1",40000,"True",0,"assigned",9,0.938406250166186,"True",0.15877372552504,0.91637935035176,"specimen_descriptive_not_prognostic",5,0
+"d0e362d9bbf7de7a32cc","10","2",40000,"True",0,"assigned",1,0.965161463001438,"True",0.177662926395286,0.90596348464516,"specimen_descriptive_not_prognostic",5,0
+"2f7bd513d5be8fed7801","15","0",40000,"True",0,"assigned",10,0.979762106726397,"True",0.167102781524583,0.921516982147967,"specimen_descriptive_not_prognostic",0,0
+"be6c78438f804f78c67f","15","1",40000,"True",0,"assigned",13,0.982232791428248,"True",0.172784369406482,0.917578875386651,"specimen_descriptive_not_prognostic",0,0
+"276891b34ca94e72f4b8","15","2",40000,"True",0,"assigned",0,0.745977347175292,"True",0.10154168316965,0.95026212413462,"specimen_descriptive_not_prognostic",0,0
+"575c028dc798d820fe4b","20","0",40000,"True",0,"assigned",7,0.987605205782644,"True",0.179759294109423,0.912108563316166,"specimen_descriptive_not_prognostic",0,5
+"9d4cc9372fadeb4c6770","20","1",40000,"True",0,"assigned",8,0.832378964899863,"True",0.111424077581403,0.93263741100214,"specimen_descriptive_not_prognostic",0,5
+"f809518a6001a67cc6ec","20","2",40000,"True",0,"assigned",5,0.603800565803797,"True",0.0823654070578666,0.925457044439716,"specimen_descriptive_not_prognostic",0,5

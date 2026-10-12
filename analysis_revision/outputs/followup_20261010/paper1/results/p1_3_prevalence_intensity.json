@@ -1,0 +1,847 @@
+{
+  "zero_mass_check": {
+    "exact_zero": 0,
+    "exact_one": 0,
+    "below_1e-7": 0,
+    "min": 0.004001185763627291,
+    "max": 0.9454239010810852
+  },
+  "observed": {
+    "var_share_A": 0.8839965440102144,
+    "var_share_R": 0.011576303908265547,
+    "cov_share_2AR": 0.10442715208151987,
+    "R2_A": 0.9915077098714682,
+    "rho_MF": 0.9325436810796521,
+    "rms_R": 0.015754425321985604,
+    "rho_low_vs_w": 0.9034016910459131,
+    "slope_low_vs_w": 0.08284806937691132,
+    "rho_high_vs_w_min1": 0.823529411764706,
+    "slope_high_vs_w_min1": 0.31159299385534106,
+    "n_high_specimens_min1": 16.0,
+    "rho_high_vs_w_min10": 0.7342657342657343,
+    "slope_high_vs_w_min10": 0.26554536756947766,
+    "n_high_specimens_min10": 12.0,
+    "n_empty_high_bin": 9.0,
+    "patient_var_share_A": 0.8906446278042157,
+    "patient_var_share_R": 0.01036029191978775,
+    "patient_R2_A": 0.9923905319253559,
+    "patient_rho_MF": 0.9372367215292043
+  },
+  "model_fit": {
+    "logit_gaussian_components": {
+      "means": [
+        -4.253865483482878,
+        -0.8598966023541412
+      ],
+      "sds": [
+        0.43970002248659085,
+        1.5676654968176276
+      ],
+      "expit_means": [
+        0.014010129417623142,
+        0.2973609488394478
+      ]
+    },
+    "pooled_within_sd": 1.1350681420880568,
+    "total_loglik": {
+      "C1g": -30000.70196890093,
+      "C2g": -22292.963212902563,
+      "M1g": -22453.99871445975,
+      "M2g": -21435.28479610552
+    },
+    "n_params": {
+      "C1g": 26,
+      "C2g": 50,
+      "M1g": 29,
+      "M2g": 54
+    },
+    "BIC": {
+      "C1g": 60258.116073382094,
+      "C2g": 45079.60360961328,
+      "M1g": 45194.33019552823,
+      "M2g": 43403.74095072384
+    },
+    "specimens_preferring_M1g_over_C2g_loglik": 7,
+    "specimens_preferring_M1g_over_C1g_loglik": 22,
+    "LR_M2g_vs_M1g": {
+      "observed": 2037.4278367084635,
+      "null_median": 19.03224983565815,
+      "null_95": 29.33040510630888,
+      "p_parametric_bootstrap": 0.004975124378109453,
+      "B": 200
+    }
+  },
+  "bootstrap_B": 1000,
+  "nulls": {
+    "C1g": {
+      "var_share_A": {
+        "observed": 0.8839965440102144,
+        "null_median": 0.6820181826779799,
+        "null_2.5": 0.6634505676829653,
+        "null_97.5": 0.7006624118665732,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "var_share_R": {
+        "observed": 0.011576303908265547,
+        "null_median": 0.03786894713346603,
+        "null_2.5": 0.03371819546925833,
+        "null_97.5": 0.04240511443214549,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "cov_share_2AR": {
+        "observed": 0.10442715208151987,
+        "null_median": 0.2801104959037257,
+        "null_2.5": 0.26401310037578113,
+        "null_97.5": 0.2946231950904351,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "R2_A": {
+        "observed": 0.9915077098714682,
+        "null_median": 0.9909824310012227,
+        "null_2.5": 0.9873000741053674,
+        "null_97.5": 0.9939081562684283,
+        "p_two_sided": 0.788,
+        "n_valid_draws": 1000
+      },
+      "rho_MF": {
+        "observed": 0.9325436810796521,
+        "null_median": 0.9576923076923078,
+        "null_2.5": 0.8938408351891846,
+        "null_97.5": 0.9869230769230769,
+        "p_two_sided": 0.376,
+        "n_valid_draws": 1000
+      },
+      "rms_R": {
+        "observed": 0.015754425321985604,
+        "null_median": 0.024117776633411386,
+        "null_2.5": 0.02269754659604223,
+        "null_97.5": 0.025623899896534498,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "rho_low_vs_w": {
+        "observed": 0.9034016910459131,
+        "null_median": 0.9353846153846154,
+        "null_2.5": 0.8591771979343535,
+        "null_97.5": 0.9776923076923076,
+        "p_two_sided": 0.376,
+        "n_valid_draws": 1000
+      },
+      "slope_low_vs_w": {
+        "observed": 0.08284806937691132,
+        "null_median": 0.12413646842302863,
+        "null_2.5": 0.11867637514525084,
+        "null_97.5": 0.12984836886670997,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "rho_high_vs_w_min1": {
+        "observed": 0.823529411764706,
+        "null_median": 0.7653846153846153,
+        "null_2.5": 0.5569038461538461,
+        "null_97.5": 0.9085304912478828,
+        "p_two_sided": 0.53,
+        "n_valid_draws": 1000
+      },
+      "slope_high_vs_w_min1": {
+        "observed": 0.31159299385534106,
+        "null_median": 0.2584795233036712,
+        "null_2.5": 0.22495343940000379,
+        "null_97.5": 0.2853629609615208,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "n_high_specimens_min1": {
+        "observed": 16.0,
+        "null_median": 24.0,
+        "null_2.5": 23.0,
+        "null_97.5": 25.0,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "rho_high_vs_w_min10": {
+        "observed": 0.7342657342657343,
+        "null_median": 0.9615384615384615,
+        "null_2.5": 0.8726123876123878,
+        "null_97.5": 0.9930444555444556,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "slope_high_vs_w_min10": {
+        "observed": 0.26554536756947766,
+        "null_median": 0.2522753442583313,
+        "null_2.5": 0.22439960606686946,
+        "null_97.5": 0.27755224878568224,
+        "p_two_sided": 0.366,
+        "n_valid_draws": 1000
+      },
+      "n_high_specimens_min10": {
+        "observed": 12.0,
+        "null_median": 13.0,
+        "null_2.5": 11.0,
+        "null_97.5": 15.0,
+        "p_two_sided": 0.85,
+        "n_valid_draws": 1000
+      },
+      "n_empty_high_bin": {
+        "observed": 9.0,
+        "null_median": 1.0,
+        "null_2.5": 0.0,
+        "null_97.5": 2.0,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "patient_var_share_A": {
+        "observed": 0.8906446278042157,
+        "null_median": 0.6541819255138449,
+        "null_2.5": 0.6322518858838991,
+        "null_97.5": 0.6776651830226084,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "patient_var_share_R": {
+        "observed": 0.01036029191978775,
+        "null_median": 0.044243703490523645,
+        "null_2.5": 0.039032304392068895,
+        "null_97.5": 0.04977726869046947,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "patient_R2_A": {
+        "observed": 0.9923905319253559,
+        "null_median": 0.9906484043518159,
+        "null_2.5": 0.986011041123983,
+        "null_97.5": 0.9941796359610742,
+        "p_two_sided": 0.372,
+        "n_valid_draws": 1000
+      },
+      "patient_rho_MF": {
+        "observed": 0.9372367215292043,
+        "null_median": 0.9639097744360902,
+        "null_2.5": 0.8932330827067668,
+        "null_97.5": 0.9909774436090225,
+        "p_two_sided": 0.344,
+        "n_valid_draws": 1000
+      }
+    },
+    "C2g": {
+      "var_share_A": {
+        "observed": 0.8839965440102144,
+        "null_median": 0.834966496196025,
+        "null_2.5": 0.8142091320634754,
+        "null_97.5": 0.8553836614549928,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "var_share_R": {
+        "observed": 0.011576303908265547,
+        "null_median": 0.014253685305736018,
+        "null_2.5": 0.012466343808454473,
+        "null_97.5": 0.016826412103414866,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "cov_share_2AR": {
+        "observed": 0.10442715208151987,
+        "null_median": 0.15070821820791122,
+        "null_2.5": 0.12999006272962174,
+        "null_97.5": 0.1711578141446264,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "R2_A": {
+        "observed": 0.9915077098714682,
+        "null_median": 0.9925886969940014,
+        "null_2.5": 0.9888427399058077,
+        "null_97.5": 0.995363311352191,
+        "p_two_sided": 0.532,
+        "n_valid_draws": 1000
+      },
+      "rho_MF": {
+        "observed": 0.9325436810796521,
+        "null_median": 0.920725986583205,
+        "null_2.5": 0.904907525413474,
+        "null_97.5": 0.9273618495495705,
+        "p_two_sided": 0.046,
+        "n_valid_draws": 1000
+      },
+      "rms_R": {
+        "observed": 0.015754425321985604,
+        "null_median": 0.01671679693529893,
+        "null_2.5": 0.01572651365523907,
+        "null_97.5": 0.018163302153516983,
+        "p_two_sided": 0.056,
+        "n_valid_draws": 1000
+      },
+      "rho_low_vs_w": {
+        "observed": 0.9034016910459131,
+        "null_median": 0.9149196064876352,
+        "null_2.5": 0.8998261541898138,
+        "null_97.5": 0.9240439180663877,
+        "p_two_sided": 0.31,
+        "n_valid_draws": 1000
+      },
+      "slope_low_vs_w": {
+        "observed": 0.08284806937691132,
+        "null_median": 0.10904771620130524,
+        "null_2.5": 0.10420698603698993,
+        "null_97.5": 0.11477848859844948,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "rho_high_vs_w_min1": {
+        "observed": 0.823529411764706,
+        "null_median": 0.8531468531468532,
+        "null_2.5": 0.7622377622377624,
+        "null_97.5": 0.901098901098901,
+        "p_two_sided": 0.428,
+        "n_valid_draws": 1000
+      },
+      "slope_high_vs_w_min1": {
+        "observed": 0.31159299385534106,
+        "null_median": 0.3763725543357234,
+        "null_2.5": 0.33559886046659126,
+        "null_97.5": 0.4116229059586619,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "n_high_specimens_min1": {
+        "observed": 16.0,
+        "null_median": 12.0,
+        "null_2.5": 11.0,
+        "null_97.5": 12.024999999999977,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "rho_high_vs_w_min10": {
+        "observed": 0.7342657342657343,
+        "null_median": 0.8060606060606059,
+        "null_2.5": 0.6999242424242424,
+        "null_97.5": 0.8636363636363636,
+        "p_two_sided": 0.148,
+        "n_valid_draws": 1000
+      },
+      "slope_high_vs_w_min10": {
+        "observed": 0.26554536756947766,
+        "null_median": 0.3579779919978673,
+        "null_2.5": 0.3211216123311075,
+        "null_97.5": 0.3941994161797831,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "n_high_specimens_min10": {
+        "observed": 12.0,
+        "null_median": 10.0,
+        "null_2.5": 10.0,
+        "null_97.5": 11.0,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "n_empty_high_bin": {
+        "observed": 9.0,
+        "null_median": 13.0,
+        "null_2.5": 12.975000000000001,
+        "null_97.5": 14.0,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "patient_var_share_A": {
+        "observed": 0.8906446278042157,
+        "null_median": 0.8438779035888285,
+        "null_2.5": 0.8160190100541209,
+        "null_97.5": 0.8712490554485169,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "patient_var_share_R": {
+        "observed": 0.01036029191978775,
+        "null_median": 0.012949063531578056,
+        "null_2.5": 0.01115918376037251,
+        "null_97.5": 0.015624134531335564,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "patient_R2_A": {
+        "observed": 0.9923905319253559,
+        "null_median": 0.9931966889976225,
+        "null_2.5": 0.9891802597795472,
+        "null_97.5": 0.9959747181911873,
+        "p_two_sided": 0.624,
+        "n_valid_draws": 1000
+      },
+      "patient_rho_MF": {
+        "observed": 0.9372367215292043,
+        "null_median": 0.9270796020120794,
+        "null_2.5": 0.9119109917337407,
+        "null_97.5": 0.9359165826205134,
+        "p_two_sided": 0.046,
+        "n_valid_draws": 1000
+      }
+    },
+    "C1e": {
+      "var_share_A": {
+        "observed": 0.8839965440102144,
+        "null_median": 0.6907833284814706,
+        "null_2.5": 0.670703711773539,
+        "null_97.5": 0.7102351782844584,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "var_share_R": {
+        "observed": 0.011576303908265547,
+        "null_median": 0.0508838249262612,
+        "null_2.5": 0.045345887131889764,
+        "null_97.5": 0.05719288982978665,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "cov_share_2AR": {
+        "observed": 0.10442715208151987,
+        "null_median": 0.2585026979367967,
+        "null_2.5": 0.23943797053136295,
+        "null_97.5": 0.2781269390503112,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "R2_A": {
+        "observed": 0.9915077098714682,
+        "null_median": 0.9733694462653388,
+        "null_2.5": 0.9663736563497862,
+        "null_97.5": 0.9799416437181769,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "rho_MF": {
+        "observed": 0.9325436810796521,
+        "null_median": 0.9684615384615385,
+        "null_2.5": 0.9115000000000001,
+        "null_97.5": 0.9915384615384615,
+        "p_two_sided": 0.182,
+        "n_valid_draws": 1000
+      },
+      "rms_R": {
+        "observed": 0.015754425321985604,
+        "null_median": 0.027155313649277327,
+        "null_2.5": 0.02565486912698434,
+        "null_97.5": 0.028827893450003573,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "rho_low_vs_w": {
+        "observed": 0.9034016910459131,
+        "null_median": 0.8980769230769232,
+        "null_2.5": 0.8107307692307693,
+        "null_97.5": 0.9484807692307692,
+        "p_two_sided": 0.866,
+        "n_valid_draws": 1000
+      },
+      "slope_low_vs_w": {
+        "observed": 0.08284806937691132,
+        "null_median": 0.11326998821905557,
+        "null_2.5": 0.10625426577762832,
+        "null_97.5": 0.12029585336041544,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "rho_high_vs_w_min1": {
+        "observed": 0.823529411764706,
+        "null_median": 0.816923076923077,
+        "null_2.5": 0.6438461538461538,
+        "null_97.5": 0.9138653846153846,
+        "p_two_sided": 0.914,
+        "n_valid_draws": 1000
+      },
+      "slope_high_vs_w_min1": {
+        "observed": 0.31159299385534106,
+        "null_median": 0.14250656280023336,
+        "null_2.5": 0.12024230288585218,
+        "null_97.5": 0.16120569985488592,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "n_high_specimens_min1": {
+        "observed": 16.0,
+        "null_median": 25.0,
+        "null_2.5": 24.0,
+        "null_97.5": 25.0,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "rho_high_vs_w_min10": {
+        "observed": 0.7342657342657343,
+        "null_median": 0.8532467532467533,
+        "null_2.5": 0.7532396950875211,
+        "null_97.5": 0.9243560135516656,
+        "p_two_sided": 0.022,
+        "n_valid_draws": 1000
+      },
+      "slope_high_vs_w_min10": {
+        "observed": 0.26554536756947766,
+        "null_median": 0.1404728006646351,
+        "null_2.5": 0.12196773476891207,
+        "null_97.5": 0.15809103771574282,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "n_high_specimens_min10": {
+        "observed": 12.0,
+        "null_median": 22.0,
+        "null_2.5": 20.0,
+        "null_97.5": 24.0,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "n_empty_high_bin": {
+        "observed": 9.0,
+        "null_median": 0.0,
+        "null_2.5": 0.0,
+        "null_97.5": 1.0,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "patient_var_share_A": {
+        "observed": 0.8906446278042157,
+        "null_median": 0.6356214058932468,
+        "null_2.5": 0.613302679990043,
+        "null_97.5": 0.6594230473687863,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "patient_var_share_R": {
+        "observed": 0.01036029191978775,
+        "null_median": 0.062011881041081934,
+        "null_2.5": 0.05514976794770316,
+        "null_97.5": 0.06973562000296085,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "patient_R2_A": {
+        "observed": 0.9923905319253559,
+        "null_median": 0.9741758659737936,
+        "null_2.5": 0.9650546001666036,
+        "null_97.5": 0.9820099472681849,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "patient_rho_MF": {
+        "observed": 0.9372367215292043,
+        "null_median": 0.9699248120300751,
+        "null_2.5": 0.9082706766917292,
+        "null_97.5": 0.9924812030075187,
+        "p_two_sided": 0.242,
+        "n_valid_draws": 1000
+      }
+    },
+    "M1g": {
+      "var_share_A": {
+        "observed": 0.8839965440102144,
+        "null_median": 0.8194863961314245,
+        "null_2.5": 0.7937679127012232,
+        "null_97.5": 0.8440675187948845,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "var_share_R": {
+        "observed": 0.011576303908265547,
+        "null_median": 0.010110933581207956,
+        "null_2.5": 0.007738486576186816,
+        "null_97.5": 0.01357463711824733,
+        "p_two_sided": 0.396,
+        "n_valid_draws": 1000
+      },
+      "cov_share_2AR": {
+        "observed": 0.10442715208151987,
+        "null_median": 0.17062098242747054,
+        "null_2.5": 0.14779992277649623,
+        "null_97.5": 0.19301841034661668,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "R2_A": {
+        "observed": 0.9915077098714682,
+        "null_median": 0.9988323953924183,
+        "null_2.5": 0.9968341620264023,
+        "null_97.5": 0.9996500487091708,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "rho_MF": {
+        "observed": 0.9325436810796521,
+        "null_median": 0.9868391948624108,
+        "null_2.5": 0.9680682563674516,
+        "null_97.5": 0.9942310114336345,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "rms_R": {
+        "observed": 0.015754425321985604,
+        "null_median": 0.013020778582840908,
+        "null_2.5": 0.01135276788531328,
+        "null_97.5": 0.015268871138020211,
+        "p_two_sided": 0.02,
+        "n_valid_draws": 1000
+      },
+      "rho_low_vs_w": {
+        "observed": 0.9034016910459131,
+        "null_median": 0.9317164118275053,
+        "null_2.5": 0.8679567427073097,
+        "null_97.5": 0.9760855683831363,
+        "p_two_sided": 0.328,
+        "n_valid_draws": 1000
+      },
+      "slope_low_vs_w": {
+        "observed": 0.08284806937691132,
+        "null_median": 0.09818802724141629,
+        "null_2.5": 0.09198246808393756,
+        "null_97.5": 0.10379078803949277,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "rho_high_vs_w_min1": {
+        "observed": 0.823529411764706,
+        "null_median": 0.04907120743034056,
+        "null_2.5": -0.5253847854931446,
+        "null_97.5": 0.5542285861713105,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "slope_high_vs_w_min1": {
+        "observed": 0.31159299385534106,
+        "null_median": 0.0027924828916660073,
+        "null_2.5": -0.174782773154038,
+        "null_97.5": 0.14348608752174216,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "n_high_specimens_min1": {
+        "observed": 16.0,
+        "null_median": 19.0,
+        "null_2.5": 17.0,
+        "null_97.5": 21.0,
+        "p_two_sided": 0.028,
+        "n_valid_draws": 1000
+      },
+      "rho_high_vs_w_min10": {
+        "observed": 0.7342657342657343,
+        "null_median": -0.002197802197802198,
+        "null_2.5": -0.608901098901099,
+        "null_97.5": 0.60032967032967,
+        "p_two_sided": 0.008,
+        "n_valid_draws": 1000
+      },
+      "slope_high_vs_w_min10": {
+        "observed": 0.26554536756947766,
+        "null_median": 0.0017210500999128645,
+        "null_2.5": -0.08715147594771978,
+        "null_97.5": 0.07830074667718055,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "n_high_specimens_min10": {
+        "observed": 12.0,
+        "null_median": 14.0,
+        "null_2.5": 13.0,
+        "null_97.5": 15.0,
+        "p_two_sided": 0.044,
+        "n_valid_draws": 1000
+      },
+      "n_empty_high_bin": {
+        "observed": 9.0,
+        "null_median": 6.0,
+        "null_2.5": 4.0,
+        "null_97.5": 8.0,
+        "p_two_sided": 0.028,
+        "n_valid_draws": 1000
+      },
+      "patient_var_share_A": {
+        "observed": 0.8906446278042157,
+        "null_median": 0.8191771647658004,
+        "null_2.5": 0.7888089251749171,
+        "null_97.5": 0.8488697429629177,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "patient_var_share_R": {
+        "observed": 0.01036029191978775,
+        "null_median": 0.010142960622060885,
+        "null_2.5": 0.007323158429209891,
+        "null_97.5": 0.014535488902628298,
+        "p_two_sided": 0.898,
+        "n_valid_draws": 1000
+      },
+      "patient_R2_A": {
+        "observed": 0.9923905319253559,
+        "null_median": 0.9988229022486763,
+        "null_2.5": 0.9962578821784808,
+        "null_97.5": 0.9997207015373967,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "patient_rho_MF": {
+        "observed": 0.9372367215292043,
+        "null_median": 0.987931562371516,
+        "null_2.5": 0.9608444631443785,
+        "null_97.5": 0.9969890824476153,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      }
+    },
+    "H1e": {
+      "var_share_A": {
+        "observed": 0.8839965440102144,
+        "null_median": 0.9992200473206708,
+        "null_2.5": 0.9754280602213208,
+        "null_97.5": 1.023124853793131,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "var_share_R": {
+        "observed": 0.011576303908265547,
+        "null_median": 0.0007344409619532617,
+        "null_2.5": 0.0002531651532236108,
+        "null_97.5": 0.002088477834599212,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "cov_share_2AR": {
+        "observed": 0.10442715208151987,
+        "null_median": 8.09879029831133e-05,
+        "null_2.5": -0.024437500625362388,
+        "null_97.5": 0.02313447420876985,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "R2_A": {
+        "observed": 0.9915077098714682,
+        "null_median": 0.9992889567123049,
+        "null_2.5": 0.9979658577788194,
+        "null_97.5": 0.9997528889254024,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "rho_MF": {
+        "observed": 0.9325436810796521,
+        "null_median": 0.9502621241346199,
+        "null_2.5": 0.9010373673496649,
+        "null_97.5": 0.9719247486928132,
+        "p_two_sided": 0.392,
+        "n_valid_draws": 1000
+      },
+      "rms_R": {
+        "observed": 0.015754425321985604,
+        "null_median": 0.0036981920770173867,
+        "null_2.5": 0.0021793692151623567,
+        "null_97.5": 0.006298699412297484,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "rho_low_vs_w": {
+        "observed": 0.9034016910459131,
+        "null_median": -0.0017812036652437924,
+        "null_2.5": -0.4552648321419476,
+        "null_97.5": 0.43337041121096026,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "slope_low_vs_w": {
+        "observed": 0.08284806937691132,
+        "null_median": 3.540574115967465e-05,
+        "null_2.5": -0.0027378411108583234,
+        "null_97.5": 0.002889361048645289,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "rho_high_vs_w_min1": {
+        "observed": 0.823529411764706,
+        "null_median": 0.017752100840336134,
+        "null_2.5": -0.614516806722689,
+        "null_97.5": 0.5736764705882351,
+        "p_two_sided": 0.004,
+        "n_valid_draws": 1000
+      },
+      "slope_high_vs_w_min1": {
+        "observed": 0.31159299385534106,
+        "null_median": 0.0020609390890435923,
+        "null_2.5": -0.1269313152240084,
+        "null_97.5": 0.10969910605204056,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "n_high_specimens_min1": {
+        "observed": 16.0,
+        "null_median": 15.0,
+        "null_2.5": 14.0,
+        "null_97.5": 16.0,
+        "p_two_sided": 0.804,
+        "n_valid_draws": 1000
+      },
+      "rho_high_vs_w_min10": {
+        "observed": 0.7342657342657343,
+        "null_median": 0.0,
+        "null_2.5": -0.6015734265734266,
+        "null_97.5": 0.6225524475524475,
+        "p_two_sided": 0.014,
+        "n_valid_draws": 1000
+      },
+      "slope_high_vs_w_min10": {
+        "observed": 0.26554536756947766,
+        "null_median": 1.4553981730343372e-05,
+        "null_2.5": -0.05283832841404454,
+        "null_97.5": 0.04640086199229781,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "n_high_specimens_min10": {
+        "observed": 12.0,
+        "null_median": 12.0,
+        "null_2.5": 11.0,
+        "null_97.5": 12.0,
+        "p_two_sided": 1.0,
+        "n_valid_draws": 1000
+      },
+      "n_empty_high_bin": {
+        "observed": 9.0,
+        "null_median": 10.0,
+        "null_2.5": 9.0,
+        "null_97.5": 11.0,
+        "p_two_sided": 0.804,
+        "n_valid_draws": 1000
+      },
+      "patient_var_share_A": {
+        "observed": 0.8906446278042157,
+        "null_median": 0.999228520317192,
+        "null_2.5": 0.9682248080651604,
+        "null_97.5": 1.0348755196825117,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "patient_var_share_R": {
+        "observed": 0.01036029191978775,
+        "null_median": 0.0007287661242936708,
+        "null_2.5": 0.00022768796582049055,
+        "null_97.5": 0.0025013274170714076,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "patient_R2_A": {
+        "observed": 0.9923905319253559,
+        "null_median": 0.9993236684256586,
+        "null_2.5": 0.9978360931334649,
+        "null_97.5": 0.9997930477079616,
+        "p_two_sided": 0.0,
+        "n_valid_draws": 1000
+      },
+      "patient_rho_MF": {
+        "observed": 0.9372367215292043,
+        "null_median": 0.9587470725151206,
+        "null_2.5": 0.9141734014198976,
+        "null_97.5": 0.9787209698591857,
+        "p_two_sided": 0.304,
+        "n_valid_draws": 1000
+      }
+    }
+  }
+}

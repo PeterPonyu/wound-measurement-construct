@@ -1,0 +1,216 @@
+{
+ "n_allocations": 330,
+ "per_topic_gmm_cuts": [
+  0.18429710059297816,
+  0.03502500445892309,
+  0.24612691480469617,
+  0.07773271769630685,
+  0.029944142920183645,
+  0.02388137253419701,
+  0.21523666720544363,
+  0.21717130072107235,
+  0.016239785172942743,
+  0.027999268148617595,
+  0.034529151984364334,
+  0.02414532709074672,
+  0.057546061603178336,
+  0.03106374023513441,
+  0.04711818354256322
+ ],
+ "topic0_cut_refit": 0.18429710059297816,
+ "topic0_cut_frozen": 0.18429584801197052,
+ "S_all_cell_mean": {
+  "readout": "S_all_cell_mean",
+  "max_ratio": {
+   "observed_max": 1.9568783937004568,
+   "argmax_topic": 0,
+   "selection_adjusted_p": 0.7848484848484848,
+   "null_median": 2.277847760200899,
+   "null_95pct": 4.244706774793531
+  },
+  "max_abs_log_ratio": {
+   "observed_max": 0.8602816865118071,
+   "argmax_topic": 6,
+   "selection_adjusted_p": 0.6333333333333333,
+   "null_median": 0.93877460743603,
+   "null_95pct": 1.4745252290186972
+  },
+  "max_abs_diff": {
+   "observed_max": 0.0623761077146163,
+   "argmax_topic": 2,
+   "selection_adjusted_p": 0.8272727272727273,
+   "null_median": 0.08558954200105781,
+   "null_95pct": 0.14439791563169646
+  },
+  "max_abs_welch_t": {
+   "observed_max": 1.5056714751130118,
+   "argmax_topic": 0,
+   "selection_adjusted_p": 0.8939393939393939,
+   "null_median": 2.1560594578201857,
+   "null_95pct": 3.585024879293324
+  },
+  "topic0": {
+   "healed_mean": 0.05987882020874428,
+   "nonhealed_mean": 0.030599152405946614,
+   "difference": 0.029279667802797664,
+   "ratio": 1.9568783937004568,
+   "ratio_rank_among_15": 1,
+   "p_two_sided_abs_diff": 0.2727272727272727,
+   "p_one_sided_ratio": 0.11818181818181818
+  }
+ },
+ "M_fibroblast_mean": {
+  "readout": "M_fibroblast_mean",
+  "max_ratio": {
+   "observed_max": 2.0659265600468517,
+   "argmax_topic": 0,
+   "selection_adjusted_p": 0.6090909090909091,
+   "null_median": 2.2711419697541495,
+   "null_95pct": 5.096583769799441
+  },
+  "max_abs_log_ratio": {
+   "observed_max": 1.228863263769962,
+   "argmax_topic": 6,
+   "selection_adjusted_p": 0.3939393939393939,
+   "null_median": 1.070354127349083,
+   "null_95pct": 1.6761268259003514
+  },
+  "max_abs_diff": {
+   "observed_max": 0.10886372292800398,
+   "argmax_topic": 6,
+   "selection_adjusted_p": 0.6454545454545455,
+   "null_median": 0.13328873263022845,
+   "null_95pct": 0.2692730851346344
+  },
+  "max_abs_welch_t": {
+   "observed_max": 1.3401210333813574,
+   "argmax_topic": 14,
+   "selection_adjusted_p": 0.8606060606060606,
+   "null_median": 1.9065847882591938,
+   "null_95pct": 3.7970348584534985
+  },
+  "topic0": {
+   "healed_mean": 0.1728731139487157,
+   "nonhealed_mean": 0.0836782474710985,
+   "difference": 0.08919486647761721,
+   "ratio": 2.0659265600468517,
+   "ratio_rank_among_15": 1,
+   "p_two_sided_abs_diff": 0.31212121212121213,
+   "p_one_sided_ratio": 0.16363636363636364
+  }
+ },
+ "W_fibroblast_fraction_topic_cut": {
+  "readout": "W_fibroblast_fraction_topic_cut",
+  "max_ratio": {
+   "observed_max": 3.290870815604832,
+   "argmax_topic": 14,
+   "selection_adjusted_p": 0.8848484848484849,
+   "null_median": 8.088384226758574,
+   "null_95pct": 25.64854822520998
+  },
+  "max_abs_log_ratio": {
+   "observed_max": 2.359598569234866,
+   "argmax_topic": 11,
+   "selection_adjusted_p": 0.6545454545454545,
+   "null_median": 2.567436222475347,
+   "null_95pct": 3.4315735143239956
+  },
+  "max_abs_diff": {
+   "observed_max": 0.17203445121345634,
+   "argmax_topic": 6,
+   "selection_adjusted_p": 0.6848484848484848,
+   "null_median": 0.2083867850358091,
+   "null_95pct": 0.35787663077289444
+  },
+  "max_abs_welch_t": {
+   "observed_max": 1.6774735525672584,
+   "argmax_topic": 14,
+   "selection_adjusted_p": 0.8,
+   "null_median": 2.0148399565185726,
+   "null_95pct": 3.8880121017459346
+  },
+  "topic0": {
+   "healed_mean": 0.30098808413560035,
+   "nonhealed_mean": 0.14956236575234536,
+   "difference": 0.151425718383255,
+   "ratio": 2.0124586998977745,
+   "ratio_rank_among_15": 3,
+   "p_two_sided_abs_diff": 0.3696969696969697,
+   "p_one_sided_ratio": 0.18484848484848485
+  }
+ },
+ "C_cell_pooled_arm_mean": {
+  "readout": "C_cell_pooled_arm_mean",
+  "max_ratio": {
+   "observed_max": 3.0889613206669684,
+   "argmax_topic": 0,
+   "selection_adjusted_p": 0.24545454545454545,
+   "null_median": 2.5999274322015675,
+   "null_95pct": 4.413018542818365
+  },
+  "max_abs_log_ratio": {
+   "observed_max": 1.2130463680360766,
+   "argmax_topic": 6,
+   "selection_adjusted_p": 0.2787878787878788,
+   "null_median": 1.1013888906676916,
+   "null_95pct": 1.489457371614802
+  },
+  "max_abs_diff": {
+   "observed_max": 0.08346797305434053,
+   "argmax_topic": 2,
+   "selection_adjusted_p": 0.5303030303030303,
+   "null_median": 0.08655281867392259,
+   "null_95pct": 0.1502605182315415
+  },
+  "topic0": {
+   "healed_mean": 0.07562032067958864,
+   "nonhealed_mean": 0.024480824726954075,
+   "difference": 0.05113949595263456,
+   "ratio": 3.0889613206669684,
+   "ratio_rank_among_15": 1,
+   "p_two_sided_abs_diff": 0.27575757575757576,
+   "p_one_sided_ratio": 0.08484848484848485
+  }
+ },
+ "W0_frozen_cut_marginal": {
+  "difference": 0.151425718383255,
+  "p_two_sided": 0.3696969696969697
+ },
+ "joint_max_abs_log_ratio_S_M_W": {
+  "observed": 2.359598569234866,
+  "selection_adjusted_p": 0.6545454545454545
+ },
+ "selection_loops": {
+  "S_all_cell_mean": {
+   "lopo_auc": 0.5,
+   "lopo_p_one_sided": 0.5181818181818182,
+   "lopo_topic_counts": {
+    "0": 8,
+    "2": 3
+   },
+   "held_pair_auc": 0.39285714285714285,
+   "held_pair_p_one_sided": 0.6818181818181818,
+   "held_pair_topic_counts": {
+    "0": 17,
+    "2": 10,
+    "1": 1
+   },
+   "null_lopo_auc_median": 0.5,
+   "null_pair_auc_median": 0.5
+  },
+  "M_fibroblast_mean": {
+   "lopo_auc": 0.5714285714285714,
+   "lopo_p_one_sided": 0.4393939393939394,
+   "lopo_topic_counts": {
+    "0": 10,
+    "2": 1
+   },
+   "held_pair_auc": 0.5,
+   "held_pair_p_one_sided": 0.5212121212121212,
+   "held_pair_topic_counts": {
+    "0": 19,
+    "2": 5,
+    "14": 4
+   },
+   "null_lopo_auc_median": 0.5,
+   "null_pair_

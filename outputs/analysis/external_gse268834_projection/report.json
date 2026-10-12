@@ -1,0 +1,465 @@
+{
+  "experiment": "gse268834_frozen_external_projection",
+  "status": "completed",
+  "scientific_unit": "sample",
+  "patient_level_inference_available": false,
+  "independent_prognostic_validation_eligible": false,
+  "healing_endpoint_available": false,
+  "cohort": {
+    "accession": "GSE268834",
+    "sample_count": 8,
+    "groups": {
+      "diabetic": 5,
+      "non_diabetic": 3
+    },
+    "cells_qc_total": 85287,
+    "authoritative_patient_ids": false,
+    "metadata_limit": "series labels distinguish diabetic from non-diabetic wound-edge samples but do not provide patient IDs, wound IDs, follow-up, or healed/not_healed outcomes"
+  },
+  "source_files": [
+    {
+      "name": "GSE268834_series_matrix.txt.gz",
+      "bytes": 3228,
+      "sha256": "b11244599522cd9e26d38855acf93b508a6b3ee223286dca53bb97a71af744cd"
+    },
+    {
+      "name": "GSM8300974_SC_W4_matrix.mtx.gz",
+      "bytes": 41176874,
+      "sha256": "20d652b0b37d3838ea4a1d6bdd644e79491987a800fc843194d207bcd6bd70c8"
+    },
+    {
+      "name": "GSM8300974_SC_W4_features.tsv.gz",
+      "bytes": 304728,
+      "sha256": "c1749034df68700997f27a9144521ed44432b059fc1c4b8a3c1890fcd196eb68"
+    },
+    {
+      "name": "GSM8300974_SC_W4_barcodes.tsv.gz",
+      "bytes": 27360,
+      "sha256": "fbcb84762281a081db443abfd979abc7cb2e2587d2053c4ef9f674d2109812f6"
+    },
+    {
+      "name": "GSM8300975_SC_W6_matrix.mtx.gz",
+      "bytes": 8910767,
+      "sha256": "3ab3305b228715f51dd7ab44eefaacbffb7e193d91e98ca29a89787a7e9be440"
+    },
+    {
+      "name": "GSM8300975_SC_W6_features.tsv.gz",
+      "bytes": 304728,
+      "sha256": "857fd69aed3442b17c9779d926f4e4f54ed5eeae0acc26361c8e779e4bdb77ae"
+    },
+    {
+      "name": "GSM8300975_SC_W6_barcodes.tsv.gz",
+      "bytes": 7934,
+      "sha256": "a02d19b290cc5b18d738393af30f20235b463353b5fa2cf563267b1ae5f862d1"
+    },
+    {
+      "name": "GSM8300976_SC_W7_matrix.mtx.gz",
+      "bytes": 28645490,
+      "sha256": "464158ece4a0367ac8f221eca4d50138f8bbd4086ce9bc17aebafe94b8dcb361"
+    },
+    {
+      "name": "GSM8300976_SC_W7_features.tsv.gz",
+      "bytes": 304728,
+      "sha256": "f8e4f6843adf8625f6efb26a0f85412536faeafeb1bbbb390b180a2a1de2b7af"
+    },
+    {
+      "name": "GSM8300976_SC_W7_barcodes.tsv.gz",
+      "bytes": 20477,
+      "sha256": "750196a75458806216085d4014eef7b2a645102935f6032b4581ebe25834e168"
+    },
+    {
+      "name": "GSM8300977_SC_W8_matrix.mtx.gz",
+      "bytes": 201617904,
+      "sha256": "3558ded5c17456cc712a8f6e1dac58f084cb8e6f0d7a5033e41dbb684820349b"
+    },
+    {
+      "name": "GSM8300977_SC_W8_features.tsv.gz",
+      "bytes": 304728,
+      "sha256": "540c9383bad9650cafff9baa95679e28b6754e5f57375c2f61cc34a27e75cc4f"
+    },
+    {
+      "name": "GSM8300977_SC_W8_barcodes.tsv.gz",
+      "bytes": 195090,
+      "sha256": "9cc460597f4a1a7b4f982de4bc7dd63492435d0c5e2eac3d96942559b2c344ba"
+    },
+    {
+      "name": "GSM8300978_SC_W9_matrix.mtx.gz",
+      "bytes": 72517931,
+      "sha256": "7a89d96366dd6a727f5bbc57b27bd9157db8556c62c337cfe3c231df819f452f"
+    },
+    {
+      "name": "GSM8300978_SC_W9_features.tsv.gz",
+      "bytes": 304728,
+      "sha256": "ed19f99eec8ec86dd9b85f1535175b8a46e1e9dfecb9c3d8d7dfdd137af272da"
+    },
+    {
+      "name": "GSM8300978_SC_W9_barcodes.tsv.gz",
+      "bytes": 59019,
+      "sha256": "bd11cb56a510848257f11371390e95e9b8586a6b127617d96f7e9b7fccb1e1e8"
+    },
+    {
+      "name": "GSM8300979_SC_W10_matrix.mtx.gz",
+      "bytes": 81405896,
+      "sha256": "3a3a08c3d412ec9e5991d1d8ced3bfbf798815577de4f7d3ba3ae902825a7d39"
+    },
+    {
+      "name": "GSM8300979_SC_W10_features.tsv.gz",
+      "bytes": 304728,
+      "sha256": "8863c03647536d240deffe740f2eb4e348b34088b6171c421486550a9a5733d8"
+    },
+    {
+      "name": "GSM8300979_SC_W10_barcodes.tsv.gz",
+      "bytes": 61116,
+      "sha256": "7625ef76e9589b0855c1693449ce63cbdca534c36292d94e54dc1108b98babea"
+    },
+    {
+      "name": "GSM8300980_SC_W11_matrix.mtx.gz",
+      "bytes": 85383112,
+      "sha256": "6b41d2661ad348c1c67a82c0c7f73ca505deba014ce1135e053591956c182c83"
+    },
+    {
+      "name": "GSM8300980_SC_W11_features.tsv.gz",
+      "bytes": 304728,
+      "sha256": "955b4d68d95258cd5ce9c4944330c32a57aba699ded522ccc793ed223bd963ca"
+    },
+    {
+      "name": "GSM8300980_SC_W11_barcodes.tsv.gz",
+      "bytes": 46883,
+      "sha256": "5d69d5fda014d27b70fb5c6e7eaaf3d609cce7abd2769154607b9fa99a1f23bc"
+    },
+    {
+      "name": "GSM8325196_SC_W5_matrix.mtx.gz",
+      "bytes": 82579853,
+      "sha256": "f1f5bcc82dee9f98bdd566dde572bc380b080cd5d0500a30024be91590358a56"
+    },
+    {
+      "name": "GSM8325196_SC_W5_features.tsv.gz",
+      "bytes": 304728,
+      "sha256": "f54cc0098d2380ff5ed6dc691d998fb3cacd4e05992a58787aaf6821f4a2b9dc"
+    },
+    {
+      "name": "GSM8325196_SC_W5_barcodes.tsv.gz",
+      "bytes": 37142,
+      "sha256": "9773f5a203f49eb2abef23b0e7b9b079ec554ec23cf4d4315c1c9359cabd5716"
+    }
+  ],
+  "samples": [
+    {
+      "gsm": "GSM8300974",
+      "title": "non-diabetic wound [SC_W4]",
+      "group": "non_diabetic",
+      "sex": "Male",
+      "age": "52",
+      "cells_raw": 3560,
+      "cells_qc": 3560,
+      "panel_covered": 6994,
+      "panel_total": 7002,
+      "panel_fraction": 0.9988574692944873,
+      "median_genes_per_cell": 2739.0,
+      "median_umis_per_cell": 7992.0,
+      "immune_fraction_exclusive": 0.3151685393258427,
+      "fibro_fraction_exclusive": 0.5168539325842697,
+      "other_fraction_exclusive": 0.16797752808988764,
+      "b_plasma_fraction_strict": 0.04466292134831461,
+      "b_plasma_share_of_immune": 0.14171122994652408,
+      "cd74_positive_fraction": 0.4289325842696629,
+      "old_immune_fraction": 0.5584269662921348,
+      "old_b_plasma_fraction": 0.6786516853932584,
+      "topic0_all_mean": 0.03428042680025101,
+      "topic0_fibro_mean": 0.04663347080349922
+    },
+    {
+      "gsm": "GSM8300975",
+      "title": "non-diabetic wound [SC_W6]",
+      "group": "non_diabetic",
+      "sex": "missing",
+      "age": "unknown",
+      "cells_raw": 1329,
+      "cells_qc": 1329,
+      "panel_covered": 6994,
+      "panel_total": 7002,
+      "panel_fraction": 0.9988574692944873,
+      "median_genes_per_cell": 1876.0,
+      "median_umis_per_cell": 3857.0,
+      "immune_fraction_exclusive": 0.09330323551542513,
+      "fibro_fraction_exclusive": 0.17757712565838976,
+      "other_fraction_exclusive": 0.7291196388261851,
+      "b_plasma_fraction_strict": 0.014296463506395787,
+      "b_plasma_share_of_immune": 0.1532258064516129,
+      "cd74_positive_fraction": 0.6696764484574869,
+      "old_immune_fraction": 0.7155756207674944,
+      "old_b_plasma_fraction": 0.7027840481565086,
+      "topic0_all_mean": 0.018831711262464523,
+      "topic0_fibro_mean": 0.044537268579006195
+    },
+    {
+      "gsm": "GSM8300976",
+      "title": "diabetic wound [SC_W7]",
+      "group": "diabetic",
+      "sex": "Male",
+      "age": "70",
+      "cells_raw": 3363,
+      "cells_qc": 3363,
+      "panel_covered": 6994,
+      "panel_total": 7002,
+      "panel_fraction": 0.9988574692944873,
+      "median_genes_per_cell": 1770.0,
+      "median_umis_per_cell": 5887.0,
+      "immune_fraction_exclusive": 0.5417781742491823,
+      "fibro_fraction_exclusive": 0.2575081772227178,
+      "other_fraction_exclusive": 0.20071364852809992,
+      "b_plasma_fraction_strict": 0.05144216473386857,
+      "b_plasma_share_of_immune": 0.09495060373216246,
+      "cd74_positive_fraction": 0.35176925364258105,
+      "old_immune_fraction": 0.7035385072851621,
+      "old_b_plasma_fraction": 0.45168004757656854,
+      "topic0_all_mean": 0.07687710970640182,
+      "topic0_fibro_mean": 0.159870445728302
+    },
+    {
+      "gsm": "GSM8300977",
+      "title": "diabetic wound [SC_W8]",
+      "group": "diabetic",
+      "sex": "Male",
+      "age": "65",
+      "cells_raw": 40797,
+      "cells_qc": 40797,
+      "panel_covered": 6994,
+      "panel_total": 7002,
+      "panel_fraction": 0.9988574692944873,
+      "median_genes_per_cell": 1069.0,
+      "median_umis_per_cell": 2289.0,
+      "immune_fraction_exclusive": 0.6302179081795231,
+      "fibro_fraction_exclusive": 0.3521582469299213,
+      "other_fraction_exclusive": 0.017623844890555677,
+      "b_plasma_fraction_strict": 0.30458121920729464,
+      "b_plasma_share_of_immune": 0.48329508770565127,
+      "cd74_positive_fraction": 0.5717577272838689,
+      "old_immune_fraction": 0.8711915091795965,
+      "old_b_plasma_fraction": 0.7547123563007084,
+      "topic0_all_mean": 0.06963354349136353,
+      "topic0_fibro_mean": 0.086302749812603
+    },
+    {
+      "gsm": "GSM8300978",
+      "title": "diabetic wound [SC_W9]",
+      "group": "diabetic",
+      "sex": "Male",
+      "age": "79",
+      "cells_raw": 9632,
+      "cells_qc": 9632,
+      "panel_covered": 6994,
+      "panel_total": 7002,
+      "panel_fraction": 0.9988574692944873,
+      "median_genes_per_cell": 1740.0,
+      "median_umis_per_cell": 5094.0,
+      "immune_fraction_exclusive": 0.27875830564784054,
+      "fibro_fraction_exclusive": 0.46791943521594687,
+      "other_fraction_exclusive": 0.25332225913621265,
+      "b_plasma_fraction_strict": 0.02782392026578073,
+      "b_plasma_share_of_immune": 0.09981378026070764,
+      "cd74_positive_fraction": 0.40988372093023256,
+      "old_immune_fraction": 0.541735880398671,
+      "old_b_plasma_fraction": 0.4981312292358804,
+      "topic0_all_mean": 0.020699428394436836,
+      "topic0_fibro_mean": 0.024928146973252296
+    },
+    {
+      "gsm": "GSM8300979",
+      "title": "diabetic wound [SC_W10]",
+      "group": "diabetic",
+      "sex": "Male",
+      "age": "70",
+      "cells_raw": 11122,
+      "cells_qc": 11122,
+      "panel_covered": 6994,
+      "panel_total": 7002,
+      "panel_fraction": 0.9988574692944873,
+      "median_genes_per_cell": 1636.0,
+      "median_umis_per_cell": 4641.5,
+      "immune_fraction_exclusive": 0.37385362344901996,
+      "fibro_fraction_exclusive": 0.4168315051249775,
+      "other_fraction_exclusive": 0.20931487142600252,
+      "b_plasma_fraction_strict": 0.1819816579751843,
+      "b_plasma_share_of_immune": 0.48677248677248675,
+      "cd74_positive_fraction": 0.5305700413594677,
+      "old_immune_fraction": 0.7221722711742492,
+      "old_b_plasma_fraction": 0.6631001618413954,
+      "topic0_all_mean": 0.02358962781727314,
+      "topic0_fibro_mean": 0.032123345881700516
+    },
+    {
+      "gsm": "GSM8300980",
+      "title": "diabetic wound [SC_W11]",
+      "group": "diabetic",
+      "sex": "Male",
+      "age": "67",
+      "cells_raw": 8667,
+      "cells_qc": 8667,
+      "panel_covered": 6994,
+      "panel_total": 7002,
+      "panel_fraction": 0.9988574692944873,
+      "median_genes_per_cell": 2346.0,
+      "median_umis_per_cell": 7088.0,
+      "immune_fraction_exclusive": 0.38006230529595014,
+      "fibro_fraction_exclusive": 0.5765547478943117,
+      "other_fraction_exclusive": 0.04338294680973809,
+      "b_plasma_fraction_strict": 0.029998846198223145,
+      "b_plasma_share_of_immune": 0.07893139040680024,
+      "cd74_positive_fraction": 0.5103265259028499,
+      "old_immune_fraction": 0.6693204107534325,
+      "old_b_plasma_fraction": 0.6007845852082612,
+      "topic0_all_mean": 0.13752290606498718,
+      "topic0_fibro_mean": 0.16513584554195404
+    },
+    {
+      "gsm": "GSM8325196",
+      "title": "non-diabetic wound [SC_W5]",
+      "group": "non_diabetic",
+      "sex": "Male",
+      "age": "48",
+      "cells_raw": 6817,
+      "cells_qc": 6817,
+      "panel_covered": 6994,
+      "panel_total": 7002,
+      "panel_fraction": 0.9988574692944873,
+      "median_genes_per_cell": 2837.0,
+      "median_umis_per_cell": 9571.0,
+      "immune_fraction_exclusive": 0.5031538800058677,
+      "fibro_fraction_exclusive": 0.48804459439636205,
+      "other_fraction_exclusive": 0.00880152559777028,
+      "b_plasma_fraction_strict": 0.05046208009388294,
+      "b_plasma_share_of_immune": 0.10029154518950437,
+      "cd74_positive_fraction": 0.4896582074226199,
+      "old_immune_fraction": 0.6381106058383453,
+      "old_b_plasma_fraction": 0.7773214023764119,
+      "topic0_all_mean": 0.03992292284965515,
+      "topic0_fibro_mean": 0.05068158730864525
+    }
+  ],
+  "sample_level_group_contrasts": {
+    "topic0_all_mean": {
+      "difference_diabetic_minus_non_diabetic": 0.034652836124102276,
+      "n_permutations": 20000,
+      "null_ci95": [
+        -0.05136736532052358,
+        0.0449053665002187
+      ],
+      "p_two_sided_descriptive": 0.3394,
+      "scope_note": "sample-level descriptive contrast; no authoritative patient IDs"
+    },
+    "topic0_fibro_mean": {
+      "difference_diabetic_minus_non_diabetic": 0.04638799789051214,
+      "n_permutations": 20000,
+      "null_ci95": [
+        -0.07832429644962152,
+        0.06674392484128475
+      ],
+      "p_two_sided_descriptive": 0.28115,
+      "scope_note": "sample-level descriptive contrast; no authoritative patient IDs"
+    },
+    "immune_fraction_exclusive": {
+      "difference_diabetic_minus_non_diabetic": 0.13705884508192467,
+      "n_permutations": 20000,
+      "null_ci95": [
+        -0.2045052791194193,
+        0.225437773207178
+      ],
+      "p_two_sided_descriptive": 0.2843,
+      "scope_note": "sample-level descriptive contrast; no authoritative patient IDs"
+    },
+    "fibro_fraction_exclusive": {
+      "difference_diabetic_minus_non_diabetic": 0.020035871597901156,
+      "n_permutations": 20000,
+      "null_ci95": [
+        -0.1820187753650357,
+        0.19633392206880057
+      ],
+      "p_two_sided_descriptive": 0.8437,
+      "scope_note": "sample-level descriptive contrast; no authoritative patient IDs"
+    },
+    "b_plasma_fraction_strict": {
+      "difference_diabetic_minus_non_diabetic": 0.08269174002653917,
+      "n_permutations": 20000,
+      "null_ci95": [
+        -0.14536345588160407,
+        0.09476542526819369
+      ],
+      "p_two_sided_descriptive": 0.30525,
+      "scope_note": "sample-level descriptive contrast; no authoritative patient IDs"
+    }
+  },
+  "sample_level_associations": {
+    "immune_fraction_exclusive": {
+      "n_samples": 8,
+      "rho": 0.7142857142857144,
+      "p_descriptive": 0.04652823228416724
+    },
+    "b_plasma_fraction_strict": {
+      "n_samples": 8,
+      "rho": 0.28571428571428575,
+      "p_descriptive": 0.4927262450169573
+    },
+    "b_plasma_share_of_immune": {
+      "n_samples": 8,
+      "rho": -0.5000000000000001,
+      "p_descriptive": 0.20703124999999997
+    },
+    "median_genes_per_cell": {
+      "n_samples": 8,
+      "rho": 0.2380952380952381,
+      "p_descriptive": 0.5701563208157683
+    },
+    "median_umis_per_cell": {
+      "n_samples": 8,
+      "rho": 0.261904761904762,
+      "p_descriptive": 0.530922861565801
+    },
+    "old_immune_fraction": {
+      "n_samples": 8,
+      "rho": 0.2142857142857143,
+      "p_descriptive": 0.6103444156452669
+    },
+    "old_b_plasma_fraction": {
+      "n_samples": 8,
+      "rho": -0.023809523809523815,
+      "p_descriptive": 0.9553740118158807
+    }
+  },
+  "exclusivity_check": {
+    "exclusive_compartment_sum_min": 0.9999999999999999,
+    "exclusive_compartment_sum_max": 1.0,
+    "old_gate_overlap_max": 1.2458751586477441,
+    "old_gates_were_overlapping": true
+  },
+  "interpretation": "This extends frozen state and immune-axis auditing to an independent wound-edge series. Diabetic/non-diabetic contrasts are descriptive sample-level quantities; they are not healing or patient-level validation.",
+  "protocol": {
+    "frozen_discovery_dir": "outputs/expression_representation",
+    "frozen_panel_genes": 7002,
+    "frozen_topics": 15,
+    "encoder_refit_on_external": false,
+    "projection_deterministic": true,
+    "input_format": "10x matrix-market per GSM",
+    "qc": {
+      "min_genes_per_cell": 200,
+      "max_mito": 0.2
+    },
+    "exclusive_compartment_assignment": true,
+    "promiscuous_markers_excluded": [
+      "CD74",
+      "CD37",
+      "CD38",
+      "SDC1"
+    ],
+    "no_healing_endpoint": true,
+    "no_authoritative_patient_ids": true,
+    "source_axis_script_sha256": "31350bf1b138122e210530eeb35772b538b11bf8fd0d02cf828c861acdfdabf5",
+    "script_sha256": "1ef69403ef2038928a7d95287a8ff4a14b8b533f681284b73270a67b0e5663c6",
+    "checked_at_utc": "2026-09-20T14:29:41.745572+00:00",
+    "elapsed_seconds": 39.45721745491028
+  },
+  "scope": {
+    "patient_level_inference_available": false,
+    "limit": "Independent external construct projection only; no healing validation, no pooled patient inference, and no MCID test."
+  }
+}

@@ -1,4 +1,4 @@
-# Version 0.4.2 — software release
+# Version 0.5.0 — unpublished local candidate
 
 Export current native code, scientific revision reports, numeric inputs, recursive checkpoints and independent manuscript/figure build dependencies. Clarify the Gaussian regularizer, softmax coordinates, threshold-bin identity, exhaustive permutation probability and Welch equivalence boundary. The new saved-score analysis measures within-bin residual variation rather than equating the mean with a state fraction. Add independent mathematical tests and document anndata and openpyxl dependencies already required by existing analysis paths.
 

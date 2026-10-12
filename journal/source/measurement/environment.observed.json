@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "PyMuPDF": "1.27.1",
+    "pikepdf": "10.11.0",
+    "fonttools": "4.61.1",
+    "Pillow": "12.1.1"
+  },
+  "scope": "Existing journal typography runtime; no installation performed."
+}

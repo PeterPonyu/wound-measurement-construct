@@ -1,0 +1,3452 @@
+[
+  {
+    "training_indices": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "held_indices": [
+      1,
+      0
+    ],
+    "training_ids": [
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S01"
+    ],
+    "training_outcomes": [
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "c5a5cde10a3cb543a6f95b7e9ced41fc92fa3c036c7586c7ac8f80140640121e",
+      "topic": "7abfcdc0fef91f18bafff4305d8799c50a1eb777c8c613163ee3259795262374",
+      "outcomes": "4a851454a0da39b2b9c934e95c20b897d34a9ef488567ea5466f23ac326eaeb6"
+    },
+    "fold": 0,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.020723444208919712,
+        "state_sha256": "14e2d9fccb21accf9804fe6fdc49a3b812f81e614b84e7d89413480fbdf76dbd",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.5779118514832823,
+        "state_sha256": "d70e52f6a72437fb0611a13e3c493d64320053645f72c69ff0f02007caf12224",
+        "preprocessing_sha256": "1ae6472d57d6e510ce4298d82e3bd48a070eeee43b5165ab84846b65295f455a",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "b1a7ad417e933622310f47bb1df232ffa5113707b114fda8c92bd98d0bac1498",
+          "scale": "5af98384c296226d9b79dd092993228c2f2e1c74889b0b4200cf5be4b30f9569"
+        }
+      },
+      "pca": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          1.4868372909996712,
+          -18.767730160130224,
+          -46.58398847711671,
+          -10.087742652977967,
+          -8.188695123835007
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "823966dd6ca184557fbaf2e7817acad9e67b9aed7d8e9c0082288f4094c365e4",
+        "preprocessing_sha256": "0be1a6b08c510da2d325da08cb211065b86b34417315571006e324a98f4bf861",
+        "preprocessing_arrays": {
+          "mean": "50129ec406e626a7d0f493d70a392642e3c184a7da35218e67df03c7594d7320",
+          "scale": "d7d145c10e0077502487f7757ab128fbe05e1be790764700844440ba315976f4",
+          "pca_mean": "d26f90d19147ead0de2bad17daf4153ce5677f1502412d436563bf1026f52976"
+        }
+      },
+      "nmf": {
+        "component": 4,
+        "orientation": -1.0,
+        "training_contrasts": [
+          0.5109878827034096,
+          0.3860734127506662,
+          -0.6928102627998718,
+          0.8154238914304323,
+          -0.940223612965429
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 285,
+        "fit_reconstruction_error": 0.04558071433867265,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "debe91bcd12a6a4a1534258bc75c095d53896cc45250df71e77447dca7585e5a",
+        "preprocessing_sha256": "58cb3ba04f5cf24ae22d7ee1928b79126c6a8b0e528ae5567742ce9129504205",
+        "preprocessing_arrays": {
+          "basis_norms": "397fd59cdee93e41796cca9dddbcb9112e4a2f7082f72c4559c5e672454bb6df"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_00.npz",
+    "state_file_sha256": "fe3906306187cd2068125742758a6ab0a7aa4434978b5a167a177ceace91b1ba",
+    "seconds": 0.08946190900314832,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "held_indices": [
+      1,
+      4
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S05"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "c55aa710206be7c42c42a832686680991d3b12a622d3939e219be26f7ebcdb34",
+      "topic": "5829860752b3f0702cbaa72b25cbc3c029c4c822ea9b098beb2baf92f2240177",
+      "outcomes": "e36f07971a3956a6bed911ee45e9f9e1afb4395d88a73ce7cc27e4e4d3ac7f36"
+    },
+    "fold": 1,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.015663285233745612,
+        "state_sha256": "d49f5c3b77b21adf40026084054eb899b125dfe3574190305ad40d7e82053f9d",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.5584845893698915,
+        "state_sha256": "09747e263832a75580823bc6f2420873cfc9b2027a72619a47852416e7b8e02c",
+        "preprocessing_sha256": "3c8f561b27305061b07e22565d6378d1c62752d0bfa273ccf8bf897695004bff",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "b89c9d9b64c3d19ad9b5b463aad70ac1a08b9c04ca639332702223a7b2367e7d",
+          "scale": "041f23b360d195632d3b81bd43971605b395be225aa0c0401d65625d765ea975"
+        }
+      },
+      "pca": {
+        "component": 3,
+        "orientation": 1.0,
+        "training_contrasts": [
+          -17.170162427166133,
+          3.6797834740257933,
+          -22.003699683695867,
+          29.984589409928034,
+          -7.902111165756084
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "0df31ffab9d0643b80cc576448592edff2c8bc8b33de3564284254b73cd8f73c",
+        "preprocessing_sha256": "18dd2f84af3fcc25033ed42065ec8af8a56727203c49670927415d5e3c8d65b9",
+        "preprocessing_arrays": {
+          "mean": "777fcd52c085d5a944f0d5661825d94678a271713aca12f533a1182e08590df6",
+          "scale": "ee7ecd9e781196dfca55676eba7d7297f3267fab7ee4b360cbed3e9967ba2eec",
+          "pca_mean": "f697b7e940703c4ddcb8eb92ab9490d35bd73cd521a7b2374ee1703c62985a50"
+        }
+      },
+      "nmf": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          0.6690309562600923,
+          -0.6232207240556317,
+          -0.9078116687595136,
+          0.4773158472412142,
+          0.49315600875260507
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 230,
+        "fit_reconstruction_error": 0.04605475360701415,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "5c87f00db697f287b26cb26acf97f6367091df9d930f397195fd509d0ca4fc7c",
+        "preprocessing_sha256": "766ac13182005450265a348e4cee03ef7652de1b17a80d4d6ec56b2d9f0f8690",
+        "preprocessing_arrays": {
+          "basis_norms": "8fc1ac22bf21187c60b8178ac38d8f04f13ebe2d7738a0ebe28ad6b10af4e9bf"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_01.npz",
+    "state_file_sha256": "0f99d515bcad413b26195db801f7ad867c4d4fda23534bbd39904f73db88bc29",
+    "seconds": 0.07615772400458809,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "held_indices": [
+      1,
+      5
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S06"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "f67e3b5093d338b75dfe2d28c20684d127dfb59024d25d31b2eadbb3231d3d61",
+      "topic": "95659be8a2e4a2a62e74fa96daad935a9de7f701df2bf268a8502fe2ca34e057",
+      "outcomes": "e36f07971a3956a6bed911ee45e9f9e1afb4395d88a73ce7cc27e4e4d3ac7f36"
+    },
+    "fold": 2,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.007550835029910059,
+        "state_sha256": "5e1f6683966573dd4d544d6541ff338f23689c1928b932f04f024daaf3b45ad0",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.49457823050519123,
+        "state_sha256": "8f2488e910191575af0ccf9cf8c759afcc0d3f73cae75799e184632595a3152f",
+        "preprocessing_sha256": "573bbeba07fd3b0b85c2ff85aaa14178f116ef82b660fa2d7372e06da5efe8fb",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "6a3f41b3ba77588275bc74ea964e9dbeb8929545c4c4c86e17bee763b68ad041",
+          "scale": "525da64d3cdf66424eb54f60c08a07c6d51953e5b8a3a64a6e2cee754939a29e"
+        }
+      },
+      "pca": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          25.981350845775737,
+          -5.282690200225709,
+          -28.566315293425667,
+          -14.850770327420083,
+          -8.004970130713078
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "a2ecf7f5a8afefdf0c1acafbaeda64bb57b5255022b54a342deabccc982afd8f",
+        "preprocessing_sha256": "9abec6d608b58a2c19e1df736a52a796791573d296c86cb21163054661a368ad",
+        "preprocessing_arrays": {
+          "mean": "f13e03e8df68dcf7b95ffe9049e5d67bb9ada582768299d290c9a9ff78c920d0",
+          "scale": "ee3827ea64e72b92fa205d745073f2d5de2b6918ee96f5f35ca0fde75edfacb7",
+          "pca_mean": "a75ee5cdd76453b665a1022e62a198d462288ee7415c4144f9e8203e30ab1e66"
+        }
+      },
+      "nmf": {
+        "component": 4,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.4679702279548635,
+          0.41500464193617465,
+          -0.7493160821440806,
+          -0.9245425342296075,
+          0.9989720314571956
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 233,
+        "fit_reconstruction_error": 0.046489915090012185,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "69e8c721a2e07ed675959697dac95362897fc08fb68b5da2006391c814341283",
+        "preprocessing_sha256": "d4d0fbedf0d77e2f6bca76afc3c2f5cd8d51c83462494721bb2e4ec4fe6c466c",
+        "preprocessing_arrays": {
+          "basis_norms": "12b18136c12eee1c66582b0ecbe17d0bae7cf4cfb7916a0ac114302c3ce4ee64"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_02.npz",
+    "state_file_sha256": "6537737542afae99058a762488446a4c6aa4c780cd96db39ec5d74eef2c46da0",
+    "seconds": 0.07711181000195211,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10
+    ],
+    "held_indices": [
+      1,
+      6
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S07"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "f74893ae1d349b4d62058a45d35ebe5290d1b6949699aea7212a5384da467c5e",
+      "topic": "2e1d31caa4b5d862ae567d53d0ac03bbc2075b27863cc5b1a38b83fff779f29b",
+      "outcomes": "e36f07971a3956a6bed911ee45e9f9e1afb4395d88a73ce7cc27e4e4d3ac7f36"
+    },
+    "fold": 3,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.013376966380321764,
+        "state_sha256": "634ea47a64f9466dd57e414204dceafae398ac0763970fcf3359fe65fe8928d8",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.7504541841749883,
+        "state_sha256": "299aa28a59b07774a69b8713a02c2455cd0d144ba2625507c5c61baee59b4bc7",
+        "preprocessing_sha256": "ecfe75caaf992d3e1c35a3d9f0e6bdca4dfcbe6aea2cdb578ae9d7073235c30a",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "d7c6f57891d7618ecd2ae15521e7fedf278f61c6966802db294703be297d6e09",
+          "scale": "fc2746cd41ae92940ef0019ea26694ed164dfa68bbcff87625f8ca3c75538d6d"
+        }
+      },
+      "pca": {
+        "component": 3,
+        "orientation": -1.0,
+        "training_contrasts": [
+          -4.71149509753582,
+          8.904987539403955,
+          -21.735261279345064,
+          -53.33234127685207,
+          3.824709506650915
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "84d13a3c3de61247291b2c0939a98b1a9457d927a9a3b4e0d359294decf1a0a6",
+        "preprocessing_sha256": "c3a6e5b886a294063d643ec5bada052af144066091651db648ffa8e0d18db9a3",
+        "preprocessing_arrays": {
+          "mean": "5b201208d23ed53c24a6b8e5a644ee893dade6595ea2be4c26798dded6f93251",
+          "scale": "a68a698c1854da0e219ea577e5d7f2f4ad81957226df237fac7cca5bf65e9991",
+          "pca_mean": "b7fb4d0ec52ac7642d7b3f56c6bb33a0b4015cfce5a5333d7d87c2990236b04b"
+        }
+      },
+      "nmf": {
+        "component": 3,
+        "orientation": -1.0,
+        "training_contrasts": [
+          0.7736154586170972,
+          0.05146728126945082,
+          -0.6776463186890224,
+          -0.8867191033017485,
+          0.7785152331461787
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 126,
+        "fit_reconstruction_error": 0.050479052357430575,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "d4871a3a0b29881f6f566daa9db94159bb02a8b6ac039601350a1b165fc49fb5",
+        "preprocessing_sha256": "52727102e40bf8355ea12cc4d38f6e2e8b6b31957f39bdb0a6d2e80c74f760df",
+        "preprocessing_arrays": {
+          "basis_norms": "f5f027f22ab7325ef3b6eb7c5f3633d15ee908082f96f8c8cff376a8d919c3f3"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_03.npz",
+    "state_file_sha256": "c6394c674d0107fbcd6434d4662853f69c26c2bc9e65f7b7e131b6753d99065c",
+    "seconds": 0.054451837997476105,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "held_indices": [
+      2,
+      0
+    ],
+    "training_ids": [
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S01"
+    ],
+    "training_outcomes": [
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "81ddfdc8bce01d855b02426be99a99826802639588e436a9611dd7861c30bf0b",
+      "topic": "db73c14f9f2f0b38c0d8ec5897e6f4ac4cd8207552d1f734cb4836db064c6c32",
+      "outcomes": "4a851454a0da39b2b9c934e95c20b897d34a9ef488567ea5466f23ac326eaeb6"
+    },
+    "fold": 4,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.042569716706643404,
+        "state_sha256": "01ac2238b351a7ee44325ca9f339825c9669ae74ba109e001b659d4475d671fd",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.6310777173963473,
+        "state_sha256": "139f7b4d4d9426677944601c467fdb79fb8b6dcfb613cee29ce4c4b772c4c302",
+        "preprocessing_sha256": "7f770d18445d346af48d20c29789614591ae81e16b9f1e6645621155cb93431f",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "6a792c032f339f31168c62c9d78f7c276b5b3ecf0eda31e1fb7fadd78d097da0",
+          "scale": "65726a44f3eccd555b6b6554539478b83ce953eef6049af645cb5ca248079d5d"
+        }
+      },
+      "pca": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          4.3701427688770025,
+          -19.850578841666913,
+          -47.321229174596766,
+          -9.976627206734276,
+          -8.629946172815835
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "d3b2278e17fe0e4ec844ffd91786e3caeec306b0c51861fde890f034092676d9",
+        "preprocessing_sha256": "4818ce70ac4af0d6ac8d5d6a41717d7389461e0510c9c09e990df8f65aee17fb",
+        "preprocessing_arrays": {
+          "mean": "445f77b9c1ffdda90250bf946f3814552b7b4bc3c100665316f116b8994e081e",
+          "scale": "797b5c9bac52ed4a16bd74063ec2572438b559eb0d99b7133816308c466ab7c0",
+          "pca_mean": "ac4a6cb77d2a26802ec3351af65423cfd4836f3ed3f98f5946c4e8c1d3fa0af0"
+        }
+      },
+      "nmf": {
+        "component": 3,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.2958699749453402,
+          0.38582824435191815,
+          -0.6882787672148273,
+          0.9986297609778196,
+          -0.7964719962879206
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 299,
+        "fit_reconstruction_error": 0.042615295731776144,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "f786e13647c6576e579ca244cf90532ed686c626773aca32245133f3bb92ecf7",
+        "preprocessing_sha256": "1d9c5e7868c5a21f89c0abac47cca07ad03fe976dd251d6a2146b44443dbd629",
+        "preprocessing_arrays": {
+          "basis_norms": "f89b0c773883a50903977b41ceaef35496399f3d214c4540a3d5e418e610932e"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_04.npz",
+    "state_file_sha256": "88aefe3c3ef79fdca8683cdd59f48061e0089b3660597133e6f5abb7458836d2",
+    "seconds": 0.08998105800128542,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "held_indices": [
+      2,
+      4
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S05"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "79b88669678f81949e9642a4bea3a7d683e3646149df8d74f8754629e3eedd58",
+      "topic": "975d06de83ec83c6a1c89a3f263bbe1f2968667cc522314f386462ec41d66c4a",
+      "outcomes": "e36f07971a3956a6bed911ee45e9f9e1afb4395d88a73ce7cc27e4e4d3ac7f36"
+    },
+    "fold": 5,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.0375095577314693,
+        "state_sha256": "3c2f72478f30899696e9b20b06c48496c697d239eee6f55453ce535077f1c01d",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.6570818301112225,
+        "state_sha256": "afbe51c764f5b3ed731d6140de10051c07772989b90cef4852694a8f0b557a6a",
+        "preprocessing_sha256": "52b490e5edf085a54c476c4c3405f21e5f40610858c04eb16b76caf560fc4815",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "bb5a97e120cce073bff7587538fde537844558798aa3f7e4b8ae7ec3fd641936",
+          "scale": "267715647399f7e041e68572fab43e4dcdeaf80ae4fab0112145b373f3613d3d"
+        }
+      },
+      "pca": {
+        "component": 3,
+        "orientation": 1.0,
+        "training_contrasts": [
+          -16.36390548055346,
+          2.315563850730139,
+          -19.31382276600998,
+          35.00438603500386,
+          -13.656978179111753
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "aadd283ce09a2e4948212a0e417aeadf57e3ca5a95783954c2c2101bd4e7777d",
+        "preprocessing_sha256": "0e3569243b2c580e6572c3e564cc762b1dff3cd92a8b0a25bd784775116005ac",
+        "preprocessing_arrays": {
+          "mean": "dd44a07e61f5a9d288ee5b711ebb2aa81ed65c4de22092bbd3ae7d770b48dc6d",
+          "scale": "f71702e909d13c3e8db800b4a6a60215ea6bd2376b2da8e31e74e41519bb3360",
+          "pca_mean": "773c2645a4c3a750e02dad1ecf5261acd130857544b62a93d4e62f96eea72171"
+        }
+      },
+      "nmf": {
+        "component": 4,
+        "orientation": -1.0,
+        "training_contrasts": [
+          0.4446928139480915,
+          0.7974897189056183,
+          -0.7854603857197432,
+          0.3919433074473926,
+          -0.8306440366016693
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 229,
+        "fit_reconstruction_error": 0.04525618402723025,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "09f05467b5aa6302a1857b9d7f99b13f6f9125f7ac052bb19e93c3d698ea5625",
+        "preprocessing_sha256": "763dfdeb12e403a98b3e7010c05955102b9d469aa408929bf965f4696734d583",
+        "preprocessing_arrays": {
+          "basis_norms": "7b387b446aea14843e2bd0a43c81a9467fbcf2d79d90d975dd3bbfb233c78dd1"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_05.npz",
+    "state_file_sha256": "121b2778f64e9095a252c4a41a77804445aabaab84b01fb5a0205d5051b31106",
+    "seconds": 0.07581298599689035,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "held_indices": [
+      2,
+      5
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S06"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "04bfb47482343df0d3c065ae7d25147ec344675e2f795f1ca9333cecbe8fe348",
+      "topic": "253c47923deb13959d47bfcb4c003cf27a2e26b3d9988d0de0ac967615330af4",
+      "outcomes": "e36f07971a3956a6bed911ee45e9f9e1afb4395d88a73ce7cc27e4e4d3ac7f36"
+    },
+    "fold": 6,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.029397107527633748,
+        "state_sha256": "df2d551777970168418d9468e3fb339f558bef3cb5319a6e2eb98d850689996c",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.5790925798727401,
+        "state_sha256": "4a082f2f49b9b1dfc397be1f3ef3e7157baba83256a29e9b99f1a5dc132ab3b4",
+        "preprocessing_sha256": "e6a6d05f607f554c4127e3f3f40dee87fe3110827ec2968b520a4cb78a28b0a4",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "e60f6364d6dc020f77a2e36aba5a2734e46497bae39af5341874d4b0a884e16f",
+          "scale": "5c89a94a5bc81ea2484c1c101f29f2805afecac9bccd909d00e9b1c2a53f3ce7"
+        }
+      },
+      "pca": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          25.227948762891714,
+          -9.451270383755094,
+          -34.46382111116553,
+          -18.852970779222833,
+          -15.04871717134753
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "f729b6a57a18ee8b54f9f650f6e76e43f499c7875e4b122b1bd1411678ff1e2a",
+        "preprocessing_sha256": "ea6b38bb694dbbbd9314cb3a2148f7a435bb87c1d5883b3b914f14e91af48ccc",
+        "preprocessing_arrays": {
+          "mean": "7d0b4c45b3e7e595a8a1182ab938aa03d5dbd0bfa7605be4ea1af50ac1d79a9e",
+          "scale": "6d28bc8bed0206747044d5807dc103701c6b7766402ca975abeb6e4457ff2715",
+          "pca_mean": "d19eca2f92bb105e672a20539c60f351b25337bf46d069013a1e4b31e09c75d8"
+        }
+      },
+      "nmf": {
+        "component": 4,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.14680843062774054,
+          0.43036518369582083,
+          -0.6873437429462701,
+          -0.9421036906918008,
+          1.1229646906928683
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 287,
+        "fit_reconstruction_error": 0.044931826308977456,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "b0ee96b4394caf31b4bb7da4f71b6c317fda17bc40976adfdbef73dfef3c2b60",
+        "preprocessing_sha256": "8c3b7149a20f6c17965b436c1fb64bf5df4f8a4c92262aa012d563ec7f352e62",
+        "preprocessing_arrays": {
+          "basis_norms": "b7d0a430c43ecf99bcc5c100133ed9ed1fc0e76cd5985d3d77add50cba6fd98a"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_06.npz",
+    "state_file_sha256": "40d4255ac8acebd17069edb8b99fffe38b59a812c91406fc3355d7f27b81fcd0",
+    "seconds": 0.08740394800406648,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10
+    ],
+    "held_indices": [
+      2,
+      6
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S07"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "54e062ab50d8434b649faed83b260241e6d6c37b204a53526c814e5b424365f0",
+      "topic": "b6d43938faa3985f7092c5c24f6cc27ba4b945f36bba4000b95b02bd14eeb830",
+      "outcomes": "e36f07971a3956a6bed911ee45e9f9e1afb4395d88a73ce7cc27e4e4d3ac7f36"
+    },
+    "fold": 7,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.03522323887804545,
+        "state_sha256": "82314a2c0e1a5e83ae10e96e066c9d018aaaac4e51d388d86e49196a33b79528",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.81055315293265,
+        "state_sha256": "1b56e5f9eb89bd7e38c85ff1e7b7ca7ac0cfa00ed183bbf02c86827e3aa50668",
+        "preprocessing_sha256": "0bc50dc73f53465b071e5fce459458e0fe5d8030aa9cf2de1568c6c1a715791a",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "3643301a679bbbc737ba51a39694cf4c9f1cea77c0676bec4c3f3352ab061f7f",
+          "scale": "aec7410f11f4d1122949af6d3ffab580749e183577835b60d64bc0b7f25ef795"
+        }
+      },
+      "pca": {
+        "component": 3,
+        "orientation": 1.0,
+        "training_contrasts": [
+          -2.435562166040177,
+          9.058553830668323,
+          -16.82255748209173,
+          56.707407767367044,
+          -1.7411049882981553
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "a792164d44c92544629cd5991b71bfaada85b9421e5e61005e4153a299c89f2d",
+        "preprocessing_sha256": "6bad373b090ff931a4a5d2931fa9bd4cc09586f1b614f8cd369749d94e9bb656",
+        "preprocessing_arrays": {
+          "mean": "2092a5a85d285992dcab7f883f61b1d1ec6e7a1b28273afb59bd5fe1fd0970e1",
+          "scale": "1bcec9be633ac2a91c95c86329f85079916e62873eca91b552b1c875ec2a61ed",
+          "pca_mean": "518d5c440062e19566d913d5ee49519d5308f6dcb80e4c15ab71ec034d9b3ffd"
+        }
+      },
+      "nmf": {
+        "component": 1,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.46523034362826404,
+          1.2403887876108521,
+          -0.7715846211318719,
+          -0.7567214246028446,
+          -0.39863151569247673
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 707,
+        "fit_reconstruction_error": 0.049149859106803764,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "f61c9e7b2436c28580b195a064e9fcf29cf72804ceac5e7aad36663167837219",
+        "preprocessing_sha256": "a85d27c0d1f3fb9bbecf10ac160dd53de7052cc9bd1e50c3fdf859c9222793fc",
+        "preprocessing_arrays": {
+          "basis_norms": "7807d6586d23b2b21b50e9c4acb34a7fffdff68760dd6d61931eb09496c99081"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_07.npz",
+    "state_file_sha256": "324e470e00cc9ed88798e2791882fe2b33e55659fa23d81eff5ebb06093c82d2",
+    "seconds": 0.17285533399990527,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "held_indices": [
+      3,
+      0
+    ],
+    "training_ids": [
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S01"
+    ],
+    "training_outcomes": [
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "bbd80d54638d7381a23ff0e38d4303e96433b86dba3f4117bd12000ca8baa9cc",
+      "topic": "e7765eefc20504f395a45f930063f9a0af7bba141a8e1e8672d1229568cdefc0",
+      "outcomes": "4a851454a0da39b2b9c934e95c20b897d34a9ef488567ea5466f23ac326eaeb6"
+    },
+    "fold": 8,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.03302188663998194,
+        "state_sha256": "e001fbb10de0ab401750b14192623eb7f4710bdc7e5596b9e9f98df2e2186057",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.6639286185303344,
+        "state_sha256": "a89615a61a871ad86a77ec4e3637662438ad429e4b4fafb4f40b5459798c7f80",
+        "preprocessing_sha256": "20e590f9c950f19787307070e47fc61ed9fe0a88c67c4acc02a43fd461aa65f5",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "feb313fce608db13d31d6aa5fa72648a46e67a7eb033a42d457d5386a92ed9aa",
+          "scale": "bebbd1956897e4f4ecd578e33d8e6306b7d66f9a76cfa1edb1af3773ca2d7e5a"
+        }
+      },
+      "pca": {
+        "component": 4,
+        "orientation": -1.0,
+        "training_contrasts": [
+          -14.43491016649861,
+          -23.31924368161041,
+          -27.191790836709792,
+          26.549266245799508,
+          -30.97093748728029
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "ec22fa56209b9657c59ee2ca4eb83a9590505021258c3ed1656fb942c38cc5ef",
+        "preprocessing_sha256": "93612fd1b3515da05541b02d24aba04d3446cc348b0551cb5587767a7885f414",
+        "preprocessing_arrays": {
+          "mean": "961e24593d7c4eec15ca350185d315c24c511b367348f90e40c86064ab585764",
+          "scale": "41cbd1c155bc1ad3f690dbb0cd7eea2e490326b7b042d4656859dde56b2ca645",
+          "pca_mean": "29bc6948f76c4c7d40af46a351231963c05db9271f8f3dfd8606d103f237d371"
+        }
+      },
+      "nmf": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          0.5442529326429039,
+          0.7266493172445458,
+          -0.9033440434677446,
+          -0.7287453835091017,
+          0.5982846316313423
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 1000,
+        "fit_reconstruction_error": 0.04308977073834596,
+        "warnings": [
+          "Maximum number of iterations 1000 reached. Increase it to improve convergence."
+        ],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "c0cae0bdc7796ab13290fced70ee313acfc2da42d373108d88fa3a9e00993752",
+        "preprocessing_sha256": "f2456546c26fea1c60cfa594b22aa63d3058cbb97fc519ef136eee15d95fbb4b",
+        "preprocessing_arrays": {
+          "basis_norms": "20f004a96b99eef8cfccdf7e7d8f054b5058e3621efdb2047c4bd2e9f6190049"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_08.npz",
+    "state_file_sha256": "eed766f965f756250491cca0dfb8f107e71cd242e46b37a4c2fc38482daf5967",
+    "seconds": 0.23736524500418454,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      2,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "held_indices": [
+      3,
+      4
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "73d5b753f2418260d1d57d3089dd7e3184bd5a4f6f888e7112aa47c7d0d278d0",
+      "topic": "f3ade8f86c3d8d38ef5017d150ff4ca7fec999250041573f3b5148d00430158f",
+      "outcomes": "e36f07971a3956a6bed911ee45e9f9e1afb4395d88a73ce7cc27e4e4d3ac7f36"
+    },
+    "fold": 9,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.027961727664807846,
+        "state_sha256": "1a0e488a78b16e1fb9aef4ee4500d2ed9e2f7e2c675391186aa0457fabfa520e",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.6725602007974072,
+        "state_sha256": "1df2e5b5b1006831f326f5fcf33f922b1491b7d95149d806143a202dd66d7b63",
+        "preprocessing_sha256": "ac8e2c4acd85e69ad1e8e873dd4c239fb8ff7827365ba83f1cc9d3714ab35cb1",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "e9e090067a776769fab6af7f291da24b34f9b24d5adf1cf7ececa08019cc6c23",
+          "scale": "9e95026ed9d3ca78a18f85e459215cfbcdd9270322e8f2cf268aed3974d1397d"
+        }
+      },
+      "pca": {
+        "component": 4,
+        "orientation": -1.0,
+        "training_contrasts": [
+          -26.055169806715362,
+          -18.612547391148656,
+          -23.544729040265175,
+          5.146794200275222,
+          -37.69293615459094
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "1424dac85f07455fd3ebd4dd3546d5f5253613063dccfaf58abba27fd0302688",
+        "preprocessing_sha256": "f68867cea73092cc1aad55b95145acfe86f459d35f0836bd0dfc68d8b772b015",
+        "preprocessing_arrays": {
+          "mean": "6e18fff4fdfc94dcd498b16b1e7ea5d11ab17929eb5ac7f4efea8f9d82de9db8",
+          "scale": "a2a74791d874d9cb4eab596618ab4cf0dc7ed6ee7d089c81b2805de8e1d5f343",
+          "pca_mean": "1691c1a1d842f47992b7d14860a300fa228c91c8fa940b3a16582f5bd9d6f4a0"
+        }
+      },
+      "nmf": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          0.5814534985978094,
+          0.6568574368987504,
+          -0.9557878088529619,
+          0.7086830924897959,
+          -0.6443466168252929
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 1000,
+        "fit_reconstruction_error": 0.04314363449578889,
+        "warnings": [
+          "Maximum number of iterations 1000 reached. Increase it to improve convergence."
+        ],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "3190ccc6630bce30f207daf47d3890d399ab10d17249549d2ebe5f31a63d523e",
+        "preprocessing_sha256": "32702bb9cd871e995fc6aad26b571ce9fa680b659871416120c95d2cab18a846",
+        "preprocessing_arrays": {
+          "basis_norms": "9086a1e96219178ab4c3684bf14f03c070e0c52466ec626c89a70eb708296eb2"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_09.npz",
+    "state_file_sha256": "ff4480f48c2ba2b78a8a7f519c0e5f5c8245bc24603899b44941d52523fdee2c",
+    "seconds": 0.24132266000378877,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      2,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "held_indices": [
+      3,
+      5
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S06"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "ec2cd8b6df9e5f4563a54a5299c781459e159a9ad35fc67d7e5084e5dd27f3d2",
+      "topic": "ed882ea98e26ee6a4feec072a21e282f4a90f3ce390343646becd5a4e26f9079",
+      "outcomes": "e36f07971a3956a6bed911ee45e9f9e1afb4395d88a73ce7cc27e4e4d3ac7f36"
+    },
+    "fold": 10,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.019849277460972294,
+        "state_sha256": "5505ef1ae438660ba16338a55ef9865a3491a1bd33ffc91848b9295400e02dd8",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.6103757286905066,
+        "state_sha256": "ffcbd055b88f4a862ceb90e7d2755bf9a0fe881a2ba1897a85c74007233644da",
+        "preprocessing_sha256": "f67bf11c7eaec860ae9da85ae3eeafb60fd75958a7efe3ce02609a30943fff04",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "88a3a82f8ab0633be86fada7980fa88e08021802cfacb73d349a408fec7a48cc",
+          "scale": "61ba91633fdef263b0f9da992c86353680ed00be9896753d8e4be2a58af83420"
+        }
+      },
+      "pca": {
+        "component": 4,
+        "orientation": 1.0,
+        "training_contrasts": [
+          8.005577772650401,
+          -19.957848781455983,
+          -27.501933678369703,
+          -14.022041401052466,
+          28.171674804643594
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "a81415768573e9cbd23596ca16968eb974c38fd3a5a747a69c42cbe70884ed6c",
+        "preprocessing_sha256": "bdc43e846558ed8f7250447f10fc31f0c1510e1fab571af283f32740ca843c81",
+        "preprocessing_arrays": {
+          "mean": "061be502af757a0904d658859b417422d61019603bd709d9bad7b9d8a9ca127a",
+          "scale": "910717429609248064ffdcdf15d0d1ba575b2d6f3f8f62bf2139bae49da06b01",
+          "pca_mean": "819263f07ffd788f991ec3bf7e2c31d5a31b807dcdc697fa6d07914db83b6147"
+        }
+      },
+      "nmf": {
+        "component": 3,
+        "orientation": -1.0,
+        "training_contrasts": [
+          0.5317026228799018,
+          0.7326209132343323,
+          -0.8585874587766112,
+          -0.9355084129681812,
+          0.5362482864414013
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 824,
+        "fit_reconstruction_error": 0.04493928877606075,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "50f08853764ebb80443a91af3cfe0408472499e8ecc940389c29cd340b4a1c4f",
+        "preprocessing_sha256": "8d476c337dc7609f87a4e27af0b469fe0af02c68e0cdc0abf8ca982ab88768dd",
+        "preprocessing_arrays": {
+          "basis_norms": "fee3d69f66d3ff60f66be9bdc6b6b484c231684ce8befab7385de17d869c38bd"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_10.npz",
+    "state_file_sha256": "2e6b7a6c4df286f2ea09ea016338c985c356e25313c1ff86b95da281e74f819d",
+    "seconds": 0.1932301750057377,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10
+    ],
+    "held_indices": [
+      3,
+      6
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S07"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "fcd34912f35545839ce3bf51363d1313278d51f616262b19acd5f87d81ae4f55",
+      "topic": "30d68f3060907d5667e262b394768e8f9b3b694b4143bb056a2400f1330190c1",
+      "outcomes": "e36f07971a3956a6bed911ee45e9f9e1afb4395d88a73ce7cc27e4e4d3ac7f36"
+    },
+    "fold": 11,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.025675408811384,
+        "state_sha256": "206fe3ca0e3abf5b93ab3f813c231f217040b15b836331195e7e84db2511ab93",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.8254397836640872,
+        "state_sha256": "b3c35496f84119c67025d002f65fe8abdc9e95d7b54c67cae8ec4ec55c460dcf",
+        "preprocessing_sha256": "2a8edba2265f8c750f119947e91e30c41372cd228c9f9767146bf1555c82974c",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "2aa8044464131cb1314644830af80b5a8e19fd3442e3b2bf3dd687efddbdd833",
+          "scale": "fd86640735f77694f18021e6966d63168cefd4a81b3e85752340a30da913fe67"
+        }
+      },
+      "pca": {
+        "component": 3,
+        "orientation": -1.0,
+        "training_contrasts": [
+          -15.708197069160502,
+          -12.834593725852221,
+          -18.431240486044736,
+          -56.023145412673074,
+          -5.3695185855600025
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "44fa48bae1e9baa164a55ef434c9d31f7650f1e76dcf14fde16f8215d8c6b08c",
+        "preprocessing_sha256": "26617a8a5e9bade984c980e0c6603ac94aea27f07faf61be99ec795ef27d4fb9",
+        "preprocessing_arrays": {
+          "mean": "2e1d96ee78abd4c111f1f2855423c524a3153251fb883aac1a55be54090fc3f5",
+          "scale": "13d01cadc33cbb1deef023e39bf28bed8bc2b63bf62d8cacfed8312050149820",
+          "pca_mean": "ee6622c30e3dda48f985c043f55e19eb71fcb66a41effcb7a2298c2c63ee11b6"
+        }
+      },
+      "nmf": {
+        "component": 1,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.8823912671099096,
+          1.1769869795098964,
+          -0.6126921557960959,
+          -0.8977860338276931,
+          -0.45809053784496845
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 194,
+        "fit_reconstruction_error": 0.04756931663398976,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "3db494c5d06be3c041069d3e81a635dc43db30cf6396af1df497261db1bdae5e",
+        "preprocessing_sha256": "bc966c1a7b867b7acf46013652cde861cb33e7a37e9d5ef53d44e97ccbd6df01",
+        "preprocessing_arrays": {
+          "basis_norms": "520cc7de8be1ea55c6fe55c1a04d784621c902a27922c4067007ae91d215e3f6"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_11.npz",
+    "state_file_sha256": "ada4b1a9184904cf64f18fe2ae6f8d8cc65d1f5100638fbbf9bbe964d44dd4df",
+    "seconds": 0.06808577900665114,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10
+    ],
+    "held_indices": [
+      7,
+      0
+    ],
+    "training_ids": [
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S01"
+    ],
+    "training_outcomes": [
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "b9b4743b81de198de3294aaba1682dcc7a52cab9f3efa3d2df145b6eca2f5890",
+      "topic": "0e9e2ede77c03c49d60bed73089f5a991928b684768f05f51110038a45d5e496",
+      "outcomes": "dfba93eccfe27acfdfb54c59d8573eab08f36ff2c3016a82eac3fd7222b8e438"
+    },
+    "fold": 12,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.03309463758759017,
+        "state_sha256": "c84f744fa39b4098da139b7de59ce36bc61f3ea0246135808e0b62dd4ea95f16",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.5784614334249646,
+        "state_sha256": "337bdf9ca5cd68dfdb75ceabe8671d460e08ccf29ec817077fa055ce40de403f",
+        "preprocessing_sha256": "79d26bf0f48160fbca64df7503edbe6e9a557b61b0ca4c45729d338e2400bc68",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "1d24567330997cc352204ca8eb919f977508ccff3dd88e2bf5c18b08f878a7d5",
+          "scale": "f0e3cf1491d904b91ff096e257e9275122e0fe05607c6b91c3d9eba6c690da6d"
+        }
+      },
+      "pca": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          -1.4051070616583239,
+          18.392770627350686,
+          -47.019469861872466,
+          -11.189047207541854,
+          5.787653772439723
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "df24ad977f12bbd8035773690c6d4cd894630a0ec82bd6ffd9f6b25ab0c2503b",
+        "preprocessing_sha256": "6bcd1f2002cdeb95b49c770cc1ece03c878713f6ace931bcaf7edb6a4afbfa57",
+        "preprocessing_arrays": {
+          "mean": "1f40be9f55a438d098a01003f1547d8aa7b05778fcfea191ceb4ce203a27893c",
+          "scale": "0b01261fa697936cde5ee9ee00ab8346bf4a3600575a444d5dc7069ec6c2057c",
+          "pca_mean": "247fa2a8063fbd151b43b6324a0f7449fd2a4fe1aacd4d8dc535cb88084b1f6c"
+        }
+      },
+      "nmf": {
+        "component": 3,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.34718496817008376,
+          0.4671663611510959,
+          -0.6916572091458366,
+          0.9024443817704844,
+          -0.7637390249507822
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 543,
+        "fit_reconstruction_error": 0.04490764068217759,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "ab38aa4e124e4da1fdf60ede723cf6aec23116db6c3a763f1255d512c359d996",
+        "preprocessing_sha256": "bf182444f9de37eaf54a1d1c8185c366242bf9e3a977d85667c3853dbc085309",
+        "preprocessing_arrays": {
+          "basis_norms": "60fdb961062b08107997aa296c73af4c9c8d25d26e307eaa0c2517848b07dbc4"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_12.npz",
+    "state_file_sha256": "96429d590dfec739ebc1e02e6e3c14ad7450c221a0741b7ea218353ed4308c6f",
+    "seconds": 0.1453207710001152,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      8,
+      9,
+      10
+    ],
+    "held_indices": [
+      7,
+      4
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S05"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "0e81f822339778583553881099db33af2595fb21303af6c8fbbdb7ba837312b0",
+      "topic": "284c991517995973bf4e72c79f3cb8b178bf1109bf11eefaaa82626c3d3109fe",
+      "outcomes": "a61575711e0c67c93ea54bce79d921e0baebafb092083795100fe84420fac336"
+    },
+    "fold": 13,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.02803447861241607,
+        "state_sha256": "65cbb384ea15c14dc8007810b00958822daab82ff6bf2b109dedc42fda956115",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.5877257127444929,
+        "state_sha256": "c998deb2ca0756646c7cd1ef7002f06394a34d7b105e5ed4ef1f1e0d95821ebc",
+        "preprocessing_sha256": "96f212ba6cd9dace7c5d0e0ed97e5c0bb3f06216c64499c8b849bef22bd83620",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "50d96169403b08637904990c2452fce273f307ef7aaf95a64bbbcffa6613df0c",
+          "scale": "b38065d2b3964b3ee8ce35ad96468ed702e525fa2eb8452335f38affb49ad402"
+        }
+      },
+      "pca": {
+        "component": 3,
+        "orientation": -1.0,
+        "training_contrasts": [
+          -19.243736030268423,
+          3.8141172416433013,
+          -19.808704941402265,
+          -36.08192265517949,
+          8.63263136242615
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "d698d7fe96b4c9b22e9c642ecbf8beccedfc7c22956b6989d9d4b2086ffa81b5",
+        "preprocessing_sha256": "827711af15bc499c7cdf82c823da64b8a9742b3a886637fc5ba5cf67816996b1",
+        "preprocessing_arrays": {
+          "mean": "7f7509683e0c0152e8c25b2330f24b857bdbdcd78edc85ef11b497477194515e",
+          "scale": "b2e3f350be38548c5db78800c7df1ed7a088700dbf6f13d15011ca72c26e7c3b",
+          "pca_mean": "185963efa70cb41379949a923c05f11cc81a20dcc5797bcf681b13423b4eb099"
+        }
+      },
+      "nmf": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          0.6268151186107593,
+          0.7299229647194442,
+          -0.870699505105401,
+          0.34092466142291433,
+          -0.7492877460491021
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 102,
+        "fit_reconstruction_error": 0.0488923018856818,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "99839d2d13a6ef81748d73a04db66652d66a13723bb3bb3747627dfced2b5090",
+        "preprocessing_sha256": "a34a70a894ca2506afc51c7f463ec7a69f76ce6432d68b9be507b0147fc4a68d",
+        "preprocessing_arrays": {
+          "basis_norms": "412ca39899d9c183a8c8ab2b5c62a26587e88f6135f9d4c498f55b4ffc0c6f26"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_13.npz",
+    "state_file_sha256": "1ae95bdbce2fd67f5a9ced51d6672740a571912b96030c63fa20467298b61d74",
+    "seconds": 0.049747996003134176,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      10
+    ],
+    "held_indices": [
+      7,
+      5
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S06"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "bec9b3c2754d76ef9f0b05fe8db83ef665baaf2cb9bb425d6b99ea472b2bf4f0",
+      "topic": "9b718376003ee70babe89b16b028b8763e4af562123aae4db87d1add410cea83",
+      "outcomes": "a61575711e0c67c93ea54bce79d921e0baebafb092083795100fe84420fac336"
+    },
+    "fold": 14,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.019922028408580518,
+        "state_sha256": "beba055eca9eec27e0989c5e59aa17360e997afe2abb16a4273a96312c66ca4c",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.5223426941829552,
+        "state_sha256": "e8880fc6a27170ca98b3229f9ad7541df9e96209da055d8df118848c1831431c",
+        "preprocessing_sha256": "f2d4d30182ab5c6f02d989c49d09cafb3a3dfdcc0a7236b2e36bdfee6dca47cd",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "dd83f833cd8d382313d0602650164178906cbee219e073218fafd62489fb2aa0",
+          "scale": "dd8c199333cfc777516116d3f044bf08e80a63ab1b823f648ea5276733cad1e7"
+        }
+      },
+      "pca": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          21.0045803636397,
+          -8.03845162058147,
+          -33.9087327486063,
+          -16.89936422589535,
+          6.307923749051848
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "b0e4ebd43d7bb80fa047cb9b2901aa18a2b9f7afcf7626c80539cce10420824f",
+        "preprocessing_sha256": "92a37319b535b7450d4fe2931cec8f7ece658f399da76be87921cab5fd312e26",
+        "preprocessing_arrays": {
+          "mean": "b82af18556c3056cb26422e8132817d1c0a859f231d52a4267db58d669b7fbe7",
+          "scale": "a201a3bb4311c8920fd9af5813bf1f8cc933568b4d45583a9085939605f4b5f9",
+          "pca_mean": "8bf7ddfd8804dbe78f96eec286b86de446e5456042112d0207bd0e3fb2a322bb"
+        }
+      },
+      "nmf": {
+        "component": 4,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.4254392451581842,
+          0.4981423805943006,
+          -0.7580195934307505,
+          -0.9055038401230239,
+          0.9628150556272406
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 265,
+        "fit_reconstruction_error": 0.04687778178868001,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "76be5676755f4ea43727c81bdc06be269aa759b3a541319b88941cd94031395c",
+        "preprocessing_sha256": "483b062a3ea1e41a274cc09aef325c695d47de0406247b5405d25725a7145b9b",
+        "preprocessing_arrays": {
+          "basis_norms": "da06f5c5c43eebf96cfe11e4debc65c341abe112bf6a14af6909cafec3f1cb08"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_14.npz",
+    "state_file_sha256": "38323c52b3d38b1c196f7da8b23fd983367006e9fffd51d95372b74bddf2de92",
+    "seconds": 0.08475959899806185,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      8,
+      9,
+      10
+    ],
+    "held_indices": [
+      7,
+      6
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S07"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "009f3805686d8ebd4cc31d6b0897a17d11e1a0b99512c965110a94b83d6291f6",
+      "topic": "f840544b7aaad77582b5b45cdcddda15dcd1b6fe1abcd76b09f05550972dca37",
+      "outcomes": "a61575711e0c67c93ea54bce79d921e0baebafb092083795100fe84420fac336"
+    },
+    "fold": 15,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.025748159758992223,
+        "state_sha256": "7500c60bc355a146affdb08228a991c4567246ca5e8206e9c5ff6eeab3e71533",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.7416657796453023,
+        "state_sha256": "0b7c613b1a1cf2c990529e07f6ef690103c717db3c5525bf01190197a588795c",
+        "preprocessing_sha256": "1d9bbf4bd9fc9279441d0a8d12bb205b57a325e6e8385f165d881d47f51b00d7",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "aa493df76f45b26d6130f37eba9e4334d38bc0f9389b4ec3084630ed78cfadc8",
+          "scale": "e559fcbec35fa593394703e2951f8024fbcaf7c4fac5962c303b9af1f1d3f927"
+        }
+      },
+      "pca": {
+        "component": 3,
+        "orientation": -1.0,
+        "training_contrasts": [
+          -7.6112561901649265,
+          8.357198956076797,
+          -16.50181629948555,
+          -56.82902175765577,
+          4.232815389982277
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "e91aa208126f4c6b7c31df69ab9fb7b959f38ac3ebfb047fdd419f0e31c46d87",
+        "preprocessing_sha256": "33d325c6cf8e0e363df458a4773dd0e2ab7c3a10ea0fb14ec34f97fc468ab2ed",
+        "preprocessing_arrays": {
+          "mean": "8c7030b91cbac3d4cb808e2043b834628a705744b7f2d05b1a331027ca8ed3d8",
+          "scale": "e2884f36ab465772a33d2bcec440073f27432150c4b46bddc64ee4a32e60fb9f",
+          "pca_mean": "9ea43326b321735947191eb780ee1383bc81a631801dab0abace26a2ce28e5a6"
+        }
+      },
+      "nmf": {
+        "component": 1,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.6056019494934478,
+          1.1528412496976206,
+          -0.7817183238715391,
+          -0.6993657144326678,
+          -0.49120201948437014
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 907,
+        "fit_reconstruction_error": 0.05210425363007934,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "41c848509894d16479a32689fb0b8e7f39526b718d2a7ad7fdc11cb0190fa8f5",
+        "preprocessing_sha256": "ab1b380c415f21d4c75d0d1ef79df3579d1393800e1518db54d521d8f4dca0f6",
+        "preprocessing_arrays": {
+          "basis_norms": "99f8911c3153efec7656c1b8495d381833da714faacef33b1528e470593055a8"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_15.npz",
+    "state_file_sha256": "61038ee7758070335078aba3ba4f48a16bba3f61bd7743b52c98c9c5b84d62d8",
+    "seconds": 0.2153316600015387,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10
+    ],
+    "held_indices": [
+      8,
+      0
+    ],
+    "training_ids": [
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S01"
+    ],
+    "training_outcomes": [
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "f8e4f049c1820ba7325d5d766473c15f45cded7e0354b2175e786ee7a05f00fa",
+      "topic": "c2742107025a2bd30f1f71d85b08e076a23f85bacc9162d81124f8d3815c4be3",
+      "outcomes": "dfba93eccfe27acfdfb54c59d8573eab08f36ff2c3016a82eac3fd7222b8e438"
+    },
+    "fold": 16,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.03674950040245602,
+        "state_sha256": "17d80316c179891582ddcdc8c2b49ecdaa7795046b9f305577e0d065020a5c8b",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.6519005604991113,
+        "state_sha256": "cbb75984826c7fdfde3f2e1b36a837e290e392e45d5d7c67972fbd1c31d9b506",
+        "preprocessing_sha256": "44e54147270e505fccb10db0c525ff18e88c0d10ebdde64f00e81fd06f6cdba6",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "9def934c1e082d7465e41aae00b0931a9f42c770d0db9e7ce81cce2c7be0c4d8",
+          "scale": "75d8eb2b8c8038b0863add9ce943f13a719be76664de1d8f161fd59623b4fef2"
+        }
+      },
+      "pca": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          -4.728080426933689,
+          -23.810804290700194,
+          -42.85573491105309,
+          -13.926333013577965,
+          21.89332901647696
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "8358a4f12394f800a6fa191e9b9f85cb9f0085c094ec15ea24475403d0efbff3",
+        "preprocessing_sha256": "37d52a5102ad926c1971ad66b1c9cfba9b9c079c014da9dee905bb145714810e",
+        "preprocessing_arrays": {
+          "mean": "7783bd6de20581d999b4da8071a937aae22d079e5fa9ed9df2a4dc0f8aa20fa2",
+          "scale": "f15fff854313b4d81316dd5a85a3a592ff719c7de01bac4a7228b3d0f3656b8b",
+          "pca_mean": "a7fe7fe9a5f581f57088f1feac3ee0fd0137029b45f2c9f4c11ce001114e48ab"
+        }
+      },
+      "nmf": {
+        "component": 3,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.3140715879615042,
+          0.3775999999199552,
+          -0.8522810681800798,
+          0.9171989630353033,
+          -0.6050702096505919
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 446,
+        "fit_reconstruction_error": 0.04389422913071036,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "0d83dd8b71ca3196d49fff124e2da7678a6f2f46893ad3ab5a0d08e15130237f",
+        "preprocessing_sha256": "4af07e4e0759d3f367e518da463dd070bb545a7d55db598f5768272b98c895f0",
+        "preprocessing_arrays": {
+          "basis_norms": "0788327490aa0ccbe8c7a65433d73bebdae7fcdc5da996d64259e39ce320e42f"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_16.npz",
+    "state_file_sha256": "da4dab9c11862af81012c4fb81ccb465be5b50b77d503f94ef486baefa6a538e",
+    "seconds": 0.12643505499727326,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      9,
+      10
+    ],
+    "held_indices": [
+      8,
+      4
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S05"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "91c9d81922ce389659ee79cb9a777e77cc3faf539d7972a6dc8929d80b9b57f1",
+      "topic": "c0e3783b437560afc39b6f9c9498ee8ff2528df55de986cdae52d6d7df977f64",
+      "outcomes": "a61575711e0c67c93ea54bce79d921e0baebafb092083795100fe84420fac336"
+    },
+    "fold": 17,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.031689341427281914,
+        "state_sha256": "ba27434e0189f1c3fa6eeed8122c212fb83faa9e2b525f155c6ce2ae13a50720",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.665255158755174,
+        "state_sha256": "4a9ef7aae48b6542869c636e455603763e66230323a616a938b2abc4668693f2",
+        "preprocessing_sha256": "e9031476128e4d58a8636ff417533ef9f130f05da401d8966ccc74f56bc1a028",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "348bd159f114be0ff0cec975132bbbd53a2528f6d337b6f15df98177af18ffab",
+          "scale": "40a7d1f23445e6ae0095c4927e2cab9f31b41eb263956c8badacaff537a59f7a"
+        }
+      },
+      "pca": {
+        "component": 3,
+        "orientation": -1.0,
+        "training_contrasts": [
+          -22.063682201917587,
+          5.921210213648613,
+          -16.299386465830395,
+          -32.15537820385509,
+          28.059665244312118
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "95cfea9eb150e390a92526aea10ab73fa31e5bfeb0c25a003f7bf47f5db681ea",
+        "preprocessing_sha256": "667fbadcc3a6399d12924986f14127581cc1cf3d095de9defa87fc825fbae980",
+        "preprocessing_arrays": {
+          "mean": "8f7bff9ba864e912327f477eb37e6a5ed0c5c75497eb822f24c8c97f09d3b991",
+          "scale": "b3c80057c7c49d850ae78b837ee71605cd9bcc4ac8feddd47bee3da9730d4731",
+          "pca_mean": "ff4fd839955375ff44350e2b49025f555c5badd528d56aa4df6fd5c3fdfbbd18"
+        }
+      },
+      "nmf": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          0.5387590128280233,
+          0.4696513811437824,
+          -0.8692671158860312,
+          0.6648678094465506,
+          -0.5373474062913378
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 451,
+        "fit_reconstruction_error": 0.04571230567340359,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "ccad2720250cf8f49b8155775aaa37e07f833c4dc228c3ef643873b5ccd81ea1",
+        "preprocessing_sha256": "f6ae5d528001a98e8d08076fdcddbff9da713c293e203f0656cf4ac53b03a9d6",
+        "preprocessing_arrays": {
+          "basis_norms": "6c03c675af4b8872f75bff7038c2bc2f65bc980bf2658d754e8bdd00b0d997ca"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_17.npz",
+    "state_file_sha256": "88a2ef03851ed453bc5a6fc2a42c72077830559eac6a2980508ec1456d34d389",
+    "seconds": 0.12254305600072257,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      9,
+      10
+    ],
+    "held_indices": [
+      8,
+      5
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S06"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "77acdf4fa74aaa8535c5a70d09a2fcc89d738112b834039d5cd991b305dd8b21",
+      "topic": "f11f0ddf4c382ab7a5da2f456312fa5a972dfeefafa549659b014585e0cb53b6",
+      "outcomes": "a61575711e0c67c93ea54bce79d921e0baebafb092083795100fe84420fac336"
+    },
+    "fold": 18,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.02357689122344636,
+        "state_sha256": "0b2ef8d4066c0e508b742bdfc8a2dd19df0445e93df6564e8e658ec93ed703f0",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.6016331033686318,
+        "state_sha256": "23d02bb8da6847fd753621f545b32aeb693ccdc7d7fd60d3d7504b006f9c7720",
+        "preprocessing_sha256": "46f2238b3c70a818ea52abe5aca5d838fe5bd3df8389de606358fcd3208f9be0",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "f6c0b1061b98a1971b4df0c98e19c22880b5fa394fbeef9c0270eeda3abf170e",
+          "scale": "3aaa7c4d9905ab3eb69d2d34f5287be95c03ac63934945830aa1d902aea0a55b"
+        }
+      },
+      "pca": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          16.16622343325979,
+          -14.904324525924192,
+          -32.38367712701081,
+          -15.947208054590646,
+          18.57002918769835
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "1c1e92f01326f98709ab4190193e6530f79ca221c916e91b6af34767273de364",
+        "preprocessing_sha256": "56c611ab8855fb6fa3dc499519ef51d5abaa5772733c6bc1917fa4ab9685de24",
+        "preprocessing_arrays": {
+          "mean": "2597a0b5594c38047b08b08c69728a8c09ba8490725ede116822eba718c42949",
+          "scale": "2b2c5c420832c8e9d73c63f42499b09f7972a6412beb0f1e95e85185b8a9903f",
+          "pca_mean": "c6a01159b5b700dc8aaec1567b0cb2064ef6cf406414c58f2500d4bca9016886"
+        }
+      },
+      "nmf": {
+        "component": 4,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.3464916854380153,
+          0.4966484751569872,
+          -0.8617506265646101,
+          -0.9034845584932975,
+          1.0968285532593613
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 262,
+        "fit_reconstruction_error": 0.04613066128333769,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "dc4eb69d7257818c8b21b8461c6701f85a8210c3c1f6863f7bb880fc2be901e0",
+        "preprocessing_sha256": "e0accc355f88ef78eb79c8946a062e40056019478548a002964e0202b4e7ff8a",
+        "preprocessing_arrays": {
+          "basis_norms": "98e19eefb98fde29371f20ffbf1de9f571183dedf7837d480b55bc41e30a16b0"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_18.npz",
+    "state_file_sha256": "f448e6e740b2a9e19704e7aa9f4d043e9744533fd8ba9fec685f0e130ac57736",
+    "seconds": 0.0912738140032161,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      9,
+      10
+    ],
+    "held_indices": [
+      8,
+      6
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S07"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "ba7d2d09bd0417282981d3f6124b381abe735ba5643926f6e571f72446782c89",
+      "topic": "8ae5e33a590e32a2500a81a75afa99b84f88a0f7dc87ad71b5ad950ba9434c67",
+      "outcomes": "a61575711e0c67c93ea54bce79d921e0baebafb092083795100fe84420fac336"
+    },
+    "fold": 19,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.029403022573858066,
+        "state_sha256": "0dac83b7019c84321046c518c18349b83374ead48b6fe563657caac48f43de2a",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.8185713715201468,
+        "state_sha256": "d068cfb8fd2c5d0c9d2f6b2cb013383203926ad9a8dcaef34cb0a710c54dda5a",
+        "preprocessing_sha256": "9406ffe52d8c326d67d302aa047c5bd1eb9da5ceb68f2867f44fb3c74d1d7f2e",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "3877e74c4175c180e3a4b07d5fe2b512c9373165103a76fc102a77f315f88b7f",
+          "scale": "00ba4d80ee255469487f805525fba6c189c96fe771bbbaa22fdc01adaba5ed36"
+        }
+      },
+      "pca": {
+        "component": 3,
+        "orientation": -1.0,
+        "training_contrasts": [
+          -11.244224684266332,
+          11.49244486469618,
+          -13.18413548438875,
+          -54.539545019697485,
+          12.576051019343236
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "772276cb4efcd49af2ff03b004cf5b7ceae324faf65f6ae825909c060ad54af1",
+        "preprocessing_sha256": "478fcae9c2fd522f4e9ceecd53310bc391eb225c57a436735e3a7292a940ecc3",
+        "preprocessing_arrays": {
+          "mean": "38f723812d6ec099a28dd8dcf43cb2f85167ef04d63e25dbca0c1168f3cd11d1",
+          "scale": "21edf037f85cd4132e32211a9eb4d81e5f6a284bfdb6c93373c316b2e6e10f31",
+          "pca_mean": "8067e5a31288550a9ece1c5f75cfac6d7dad952064ffd0b3c57fcd3341930574"
+        }
+      },
+      "nmf": {
+        "component": 1,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.5891712673062758,
+          1.114818714255872,
+          -0.8697560497083013,
+          -0.7161903014351126,
+          -0.3298073041199915
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 559,
+        "fit_reconstruction_error": 0.05120996833193226,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "3b6f93eba340db654869aa6d4d6bd34ec658c0a56a37f62e4e2c979c344e3ff5",
+        "preprocessing_sha256": "065806edfbcad54da6b274382970ca9270409ccc565faa1b000e01e56186dcd4",
+        "preprocessing_arrays": {
+          "basis_norms": "09ec5c2aa35067387013cf6c8ed4265bd03f27e0aedeb94a2b9253d2a279fc41"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_19.npz",
+    "state_file_sha256": "714f6add9c6f5c7599d73ef04c251cffff36c20656a2b1a725e1ad13740bdd63",
+    "seconds": 0.1421910939970985,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ],
+    "held_indices": [
+      9,
+      0
+    ],
+    "training_ids": [
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S01"
+    ],
+    "training_outcomes": [
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "dfe4c2fdfac66687318fecc9c52c790b2a815d28923fddeaa99abeee97a1df3f",
+      "topic": "936cdbbcc9cb5c70bde0b3d94fc1d90a1824f51cf78805e0b1fb66f630e2ffc6",
+      "outcomes": "dfba93eccfe27acfdfb54c59d8573eab08f36ff2c3016a82eac3fd7222b8e438"
+    },
+    "fold": 20,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.04286439442816371,
+        "state_sha256": "275c680fa9bd9072278397b566f493c22e1cd9790eff11c28c2b9149b01aa4a4",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.7968345728951061,
+        "state_sha256": "574fbe46f05a12b949543fbeeb123b6993c091f20b226ff38a085925be24b192",
+        "preprocessing_sha256": "190b860ee8943b4af67d19c36a8dcb2ac5ca136c87d006a6e7eb7bd50875e59c",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "81222e74644433124da766ce131c64f4450de80894df4b626c998a18269d4e75",
+          "scale": "fbb82ea8781d498ab994bb79bc5bf9f69c174785cd4e7f041f315302b55d6a45"
+        }
+      },
+      "pca": {
+        "component": 1,
+        "orientation": -1.0,
+        "training_contrasts": [
+          -10.832031551288134,
+          -56.18458045821886,
+          -13.373742256603965,
+          -6.95361114111539,
+          23.718173095812173
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "aecc48183f5d997f02509f06bf59520dc71ffdebc05ac61837afaab0647c4dc3",
+        "preprocessing_sha256": "05e06e5a0cde0ebd36f09d873929d2169fef3fb225207078590ee0c1e00e1b40",
+        "preprocessing_arrays": {
+          "mean": "596c258ccaf51778143ab0cb6cbac095af1eaf704f25e0f90554ad6cc468aeba",
+          "scale": "6050a084d9718448a68a591ebf6dcf152174265df444e643934cb92e62d3f07d",
+          "pca_mean": "346a21dcf26e24297ad480721482e29d59c04ffc39cd41d9c6711bdc6a3b3e89"
+        }
+      },
+      "nmf": {
+        "component": 4,
+        "orientation": -1.0,
+        "training_contrasts": [
+          0.6245220595880576,
+          0.5988970162121302,
+          -0.8587518739399324,
+          0.948781290193537,
+          -1.002915135528716
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 648,
+        "fit_reconstruction_error": 0.04367916519850277,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "7e061c93c2d64cf1bdb2f4084f7ad09019429f5d0f8cc73ff574b4fc78f7154a",
+        "preprocessing_sha256": "719dbe9e7d13437404a1751afac20135554c7188af2f6b0c0243c1eebf7ab63b",
+        "preprocessing_arrays": {
+          "basis_norms": "57575c24f745629feab7de5d280313ab88e55725bab9fd807b7009d192c74328"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_20.npz",
+    "state_file_sha256": "868bb1a1ce4039518616a484936ed6571e640356aea9b0c03a78410a4b2ebb90",
+    "seconds": 0.16500627899949905,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      10
+    ],
+    "held_indices": [
+      9,
+      4
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S05"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "07dd205f1b7019e068bfbd3b89101de82d20506b82aa1d08bf518745fb195ee7",
+      "topic": "25ebdda992cf60b379763c6c9f1ef6e360faefd0ba650ffe2dd6965908093b76",
+      "outcomes": "a61575711e0c67c93ea54bce79d921e0baebafb092083795100fe84420fac336"
+    },
+    "fold": 21,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.03780423545298961,
+        "state_sha256": "14cc8ca3ef81e0aa204a2ebd46fb5b5622af191a6d7546ba1d955e909382d5bd",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.8118864836116005,
+        "state_sha256": "88a142e142046d9fb89c7e2266f646b4dfe4b4c333dd77c239cfbdbb0f5f8b74",
+        "preprocessing_sha256": "3f006c46064e45e3f6f7885d17d51806c615566275746ab38daeb0deef0fee54",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "a6eb263422f5c1e5391b477cc565f3673dd2be1e57a10934e339deb448991bf0",
+          "scale": "ee2fcc6c57cc0af198ec29152c1b8b2fd4c011f878daf86dada810d7a2a62089"
+        }
+      },
+      "pca": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          -33.89969480785089,
+          -18.234837441870432,
+          -38.09261034626006,
+          -11.950091763756516,
+          -27.711707409646138
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "b4924cf94791b0f6270b721af3f6a91fb91aaff9d6edf580b442a3f6abd47aaf",
+        "preprocessing_sha256": "c1029b730fa88413669fb5e2d84a9207712ce95edb868be093518f59299a8bfd",
+        "preprocessing_arrays": {
+          "mean": "7fb54f70b48de8b79c4046af097fc1ff7e3978d1db80e2cd473bd27218809219",
+          "scale": "080ab41e8fff4d6cc6bfd90bea7868a976ce101139b6d4e64cb9dbba5c0ce113",
+          "pca_mean": "d33876b22c8a643377ebcd627e467409ba69dfcba16a81cb6c18bb4cabf37949"
+        }
+      },
+      "nmf": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          0.6868613683415439,
+          -0.8362503515252694,
+          -0.8761211485131613,
+          0.7886582786559293,
+          0.6188140636415955
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 459,
+        "fit_reconstruction_error": 0.04656005279457684,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "a698030b9d771c3ab39c33ab93f6c1365713623849f008da5d14909400741f47",
+        "preprocessing_sha256": "7087144435871209b09447bfa1b0ec7972249029633e373168a7bc18417062e8",
+        "preprocessing_arrays": {
+          "basis_norms": "3eff60a14164648da968cbbd71df534d078f4e86a904556b3f477ad2ced73dfa"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_21.npz",
+    "state_file_sha256": "6f9233dc49b773e35caca3ff7b205e6079a62b648e76711cfcb6179bbc8bf4b2",
+    "seconds": 0.12545677999878535,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      10
+    ],
+    "held_indices": [
+      9,
+      5
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S06"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "128c0a45df37c16cb4fc2a9983bac048d8b06804adbdcc1df1fdd85eb663a2af",
+      "topic": "22d782c37f2c17c7a0213183377ffb53c6d1bda0fa604ee78d9ce8fd567c8559",
+      "outcomes": "a61575711e0c67c93ea54bce79d921e0baebafb092083795100fe84420fac336"
+    },
+    "fold": 22,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.029691785249154057,
+        "state_sha256": "fd61c69ff20651090d088e6274ff888fe9b2b5e01ba4019ef8330cfae7b0a20c",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.752530050126981,
+        "state_sha256": "97e0321ea4b2bab08ec5f3cbc4de7383d867ca1f244c93a85a1c3bf741922af0",
+        "preprocessing_sha256": "b8bc18fbc16fe2e57d92747198c05e47669d1dc350189946e4042a9787ec69d9",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "401364ef9e9d273888d45122dbdf6b711418cfe67ef26846aa1cc94b4fe57a07",
+          "scale": "dd4fe8cdbc6a5c8ede6b00e07b5d6b3ff2de66b69e096fa75af5c8a23ec4f149"
+        }
+      },
+      "pca": {
+        "component": 1,
+        "orientation": -1.0,
+        "training_contrasts": [
+          19.60570925710702,
+          -32.87877185673149,
+          -7.853568947375161,
+          -29.820594261162974,
+          -22.76408523946131
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "c19d8aab95869f68782bac471cd53c6b742a8e96e9d99c962fe7027f36fefb4a",
+        "preprocessing_sha256": "f3b6a93d8d705f2e322066a087e3c22dcb726d1cf57bcd9d1eb7bb4daa26708e",
+        "preprocessing_arrays": {
+          "mean": "9cd5339d10ce4131920648cf3f5d30dabe063cbca59cd23923019fec74dd99df",
+          "scale": "76d26ac814e2dd014ccac4a22b7578df6a47caf0e35bd09775b6cf210cc83cea",
+          "pca_mean": "7891827964ab21561ee4a576d47ba66caab120ae151aeecd7fad4542c40bd9aa"
+        }
+      },
+      "nmf": {
+        "component": 4,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.6197903545582812,
+          0.5436832379967396,
+          -0.8652267027725284,
+          -0.9304301040326012,
+          1.0685924733672894
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 839,
+        "fit_reconstruction_error": 0.04485421470276752,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "8893002e1b43f7d43bf42ec2458e83f48aefb41ce80a04870f222616a182ba46",
+        "preprocessing_sha256": "216307ae044f2e71de73920996aaf7526730f54f109d74697db4bf7ebd0344e9",
+        "preprocessing_arrays": {
+          "basis_norms": "7811d29632bbf4af8895b1d2c207c30f83be4594dbbb592e0d71c2a23f987111"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_22.npz",
+    "state_file_sha256": "7447563e39b3f024c36b842f98ca3c69dadae5a7df5717ce11f483408b390dc4",
+    "seconds": 0.20318933200178435,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      10
+    ],
+    "held_indices": [
+      9,
+      6
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S11"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S10",
+      "NCOMMS2022_S07"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "622577d2426ddbce67958fa93e7b464542f938317be1f7a5410bd8b093b5ec9d",
+      "topic": "e2389792769c99b75916c6092403e316eb656d728c055dbca087fc4470246847",
+      "outcomes": "a61575711e0c67c93ea54bce79d921e0baebafb092083795100fe84420fac336"
+    },
+    "fold": 23,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.03551791659956576,
+        "state_sha256": "4f1baae8771e5c76fc10049bb3015caee879b12fd2a7051f514a19d3c2680e27",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.9621752780345054,
+        "state_sha256": "d97195874f78bdba1314061d97cd05b61160a15b968f79ee44a2145cb1752386",
+        "preprocessing_sha256": "627d18aa860c14973ce6093b32cc19807a0526d4d471bd286389af6fe59b545d",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "3284c822bffdb6d5379d43bd8b2ce786c10f0a789ae57c281644b186ff8480f6",
+          "scale": "963d8598b51218dfb3148177eda62be89636f26f9d141baa822efbea0c16b73f"
+        }
+      },
+      "pca": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          -20.947687975811068,
+          -21.298050956415153,
+          -58.620886022056226,
+          4.611848772333042,
+          4.34349900600885
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "04a08bda9cd5cfbe2c7fecd5a0bbd0d3fda070ee003be2596d401b25b9dccb57",
+        "preprocessing_sha256": "dd8f5d75cf3852f2921b9aef195fd806414594aec0d4c5826ece9328a04fc1b8",
+        "preprocessing_arrays": {
+          "mean": "30816a24c923aa377b445570a2007399fd1182fbe7d3493535719842d916c25a",
+          "scale": "5542074235f35fae78218041dad5b7f0fabbcb25fa353d0d112df0c485153a80",
+          "pca_mean": "ef96ec368d74356628636b2b0f4b92868e94f4077aa426c5a7c91297efd2aada"
+        }
+      },
+      "nmf": {
+        "component": 1,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.9061541231585613,
+          1.3116585481964023,
+          -0.9854991132816565,
+          -0.745549247100745,
+          -0.5063984452607178
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 1000,
+        "fit_reconstruction_error": 0.05128151381317969,
+        "warnings": [
+          "Maximum number of iterations 1000 reached. Increase it to improve convergence."
+        ],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "6e750d85bd8b48df31aa54714f6ade43dad86d7f7ab0f3c072096e5d714c258a",
+        "preprocessing_sha256": "12c809fcd92b8edefb329eaaa78f03c12fcdc68167b46fe1225cba3bfc644457",
+        "preprocessing_arrays": {
+          "basis_norms": "be8dec4e7f9c72d437ee127d9b48f8ad12a72991c1b953b6d1b502b869884322"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_23.npz",
+    "state_file_sha256": "f17676caf258ef45ab3b57a3c3a268f1b568c93903e3cf2aabb62eb31743cb4c",
+    "seconds": 0.23397878700052388,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "held_indices": [
+      10,
+      0
+    ],
+    "training_ids": [
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S11",
+      "NCOMMS2022_S01"
+    ],
+    "training_outcomes": [
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "68012f6c2925666063c705aa0ec706663a5902420b5eb931deaf820e958cc33a",
+      "topic": "4c36eab35faa3506c2baf3405891319d6f12c4ec3126da21a98f8a71cb406202",
+      "outcomes": "dfba93eccfe27acfdfb54c59d8573eab08f36ff2c3016a82eac3fd7222b8e438"
+    },
+    "fold": 24,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.040697775115696694,
+        "state_sha256": "9eadcb030d4ac5295ad5895bba263bf89bc904f1c3174ea6a4b406a89d7e7b48",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.5814953483693751,
+        "state_sha256": "e3206bc297b28f880f281f983c563b15784e0228109ead68b0190253530c520a",
+        "preprocessing_sha256": "a6f52296826fc5980bf6af8caa32e8397a6c036d297ad2d3dcd78441c9caed53",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "18f5ae8e24a70d589d85740982b833afe6d2c765088dc261d44c82905555ff32",
+          "scale": "7fd7b77d0ae7bb5e7090a9d3452d1e675bc5a25e802361a833f46940f9766a1d"
+        }
+      },
+      "pca": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          2.135873569210472,
+          21.852301583096597,
+          -45.418288739474235,
+          -10.578739194785241,
+          -7.7084387058042205
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "e645eedc88f178574a92aa95fff44cbd3c7fc96c272d46e8cc278cc1fa39a070",
+        "preprocessing_sha256": "681bdeba1afe7d6092d9f2cc13facef4a8148ff2cd6d050cfda4ab0ffaa4fa90",
+        "preprocessing_arrays": {
+          "mean": "379685bc7a27e12adb9df52df8f9b0b32b1beda93abe0bd44adf190a3c07eca2",
+          "scale": "9a933d0da90af3086429c94dc129325c4a8ad1cb33a7694086ebfe46e62f4575",
+          "pca_mean": "242cead000e84354669d38914505ab8b42125d5dcb752e84be9dde50c771840b"
+        }
+      },
+      "nmf": {
+        "component": 3,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.28392658170757173,
+          -0.8707226386984664,
+          -0.6257494959389374,
+          0.949790214038712,
+          0.5631084669339913
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 436,
+        "fit_reconstruction_error": 0.04375536356284727,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "173e0cda862609d8d0efc0607328a49e9482c8386c1d3e20210411612e91d9e3",
+        "preprocessing_sha256": "288b98a85da1e0761d7735b05ecf09bbd8cf7edea23b9277f888a400f0abd678",
+        "preprocessing_arrays": {
+          "basis_norms": "c471691c32ed8d19c8953dff9afcb18115574daf6e99ba118fe2739a39f8c901"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_24.npz",
+    "state_file_sha256": "1acc7d65c285e150912fe105a869b16c64a2c1f4c7c48e75340d1e64a50b4460",
+    "seconds": 0.12438960599683924,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "held_indices": [
+      10,
+      4
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S11",
+      "NCOMMS2022_S05"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "a808f88d8c4e242c9403cdbaf95c0f0119ad024e6bcefc443f6c4bc5398a4fed",
+      "topic": "9d064b7d4d82ed4f3fadd51fcfbdb30f14123c6f694217a5cc95a430c93143e2",
+      "outcomes": "a61575711e0c67c93ea54bce79d921e0baebafb092083795100fe84420fac336"
+    },
+    "fold": 25,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.03563761614052259,
+        "state_sha256": "d3257f12001f5b748e40159180fb003340d59073091670cd296f3827699d4ceb",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.6225270969774928,
+        "state_sha256": "41f8dd8b4685b2840889336819d22b22934a6a5e96d7c4e7244618d85fa54e48",
+        "preprocessing_sha256": "9482bde00072e503654d762185c0bd0985edcb31712fc3de2ba5777f96817f8c",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "67a2b9544f7df470918937b97f4cc1c1c03cd26749509683d7396789681a3c35",
+          "scale": "ded1f18452ec2fc6f5116820964d2ec66666cfc7cf7e5ffeb49353dd215cfe84"
+        }
+      },
+      "pca": {
+        "component": 3,
+        "orientation": -1.0,
+        "training_contrasts": [
+          -15.84925373331626,
+          5.280551603177302,
+          -19.559701838875352,
+          -31.793820042002974,
+          -8.666281290530815
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "693a3d6c40ff5df2436b060c834abc3faeaf2275582448cc8bf684321432b4d4",
+        "preprocessing_sha256": "725bcd90678df289bc4738afd77523c9a79c94e30a6eee873dff115206c9f42c",
+        "preprocessing_arrays": {
+          "mean": "e11675c672274a36e5d34548a997239290caee2247099e75bb7e3d50bcc6293f",
+          "scale": "92de7506264bd8a4d6e90e39f924e5b6dd4519d17d3ab6514cac6358b7e31ece",
+          "pca_mean": "c03c9f0b0faf333a631462c53a0f7243c128713d8c3b612cec2dacd4c2ce1656"
+        }
+      },
+      "nmf": {
+        "component": 4,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.32727996760554773,
+          -0.8483030993585275,
+          -0.6599909587315729,
+          0.4753453690983621,
+          0.9277178826710679
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 202,
+        "fit_reconstruction_error": 0.04331704385092253,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "b250a9e1c65d93d834dba778127dca676a575a6873846ebd07c040ddfc698e52",
+        "preprocessing_sha256": "53af009f15b032ffe8c2758b260e7e2c1f93808d9dc85dfb9f01320e5f2d0078",
+        "preprocessing_arrays": {
+          "basis_norms": "d9f2a4ce83705f97656f6869df351444f6f9fbc81773429a23ac3d551bfcea45"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_25.npz",
+    "state_file_sha256": "7fd513372252faaf3580333113340eb65422774a589c10b1416d2172568961e7",
+    "seconds": 0.07302007799444254,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9
+    ],
+    "held_indices": [
+      10,
+      5
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S07",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S11",
+      "NCOMMS2022_S06"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "12ff14267d25a76f2b440823c3f5de7e7faf099513407d5be6f3b7d8802bcc45",
+      "topic": "ae4a93b2e90dc06d7a0728fc7da8a38ef2e265d0579fa7579be624a42e3bc426",
+      "outcomes": "a61575711e0c67c93ea54bce79d921e0baebafb092083795100fe84420fac336"
+    },
+    "fold": 26,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.027525165936687038,
+        "state_sha256": "057cd376d8809283eac232da9af8e9a60ad4238a431f21320359ed24db29d628",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.5193530042331589,
+        "state_sha256": "cab9d3020107c32ce67a5996f8d457b8e94fb1388c251f0094eb25d63180f9fc",
+        "preprocessing_sha256": "c659e928aff39a747f66bde14b3a4fb3a6b5dbe32e23d46764b5d58730bebd4e",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "0b7e89d7e6ecf8aa99138deccdf13fc6088296edd93fa4aacb93ba6fea2bca4e",
+          "scale": "78e1585c4c5a2bc98b172e8eb688add9bb798a045b231c5f367e24302307f7ea"
+        }
+      },
+      "pca": {
+        "component": 2,
+        "orientation": -1.0,
+        "training_contrasts": [
+          23.296401422663777,
+          14.8143347252471,
+          -29.520894946131666,
+          -15.680625573037004,
+          -8.019183187878124
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "94cceb079186ae3b01d1e7e94de29ae720e66185a78ed6dc872a433804d4de75",
+        "preprocessing_sha256": "e53ac31fbbd50b1086f1ec3133246514dff9fe40c55ad9609c9592353de0fe06",
+        "preprocessing_arrays": {
+          "mean": "3b20875fd1f9fdc51933cdafa2299077aea9f4af33abb41c9a5361efc74aca09",
+          "scale": "eff43edf374ad3f9a191179d8bdab73a880f0037f0efd388d9cfd2922ca80191",
+          "pca_mean": "34c850da34e4e853c49b6b1f178945dfc240489cd98f38920073a3cf3bd53bcc"
+        }
+      },
+      "nmf": {
+        "component": 2,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.3798668840702321,
+          -0.8990973158554693,
+          1.0385495992281255,
+          -0.8629779194571403,
+          0.47725375469854353
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 330,
+        "fit_reconstruction_error": 0.044876023789347796,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "93490da1916f97532584af9d36990443ea497458a452cd0d75b29c7b3f3f3fc9",
+        "preprocessing_sha256": "2c137f1547bc28bcd07525320a4a6fda63b1810ca816026d5a266475e64387be",
+        "preprocessing_arrays": {
+          "basis_norms": "a707de530e3865dc0099fefd864bd53260c9cfad44b3f4bdf924687a735f8c7f"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_26.npz",
+    "state_file_sha256": "0f4ac63240df0c44d8885822a44dbf61d50af4965c1341dd32c2121f9d082b6f",
+    "seconds": 0.09893096599989804,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  },
+  {
+    "training_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9
+    ],
+    "held_indices": [
+      10,
+      6
+    ],
+    "training_ids": [
+      "NCOMMS2022_S01",
+      "NCOMMS2022_S02",
+      "NCOMMS2022_S03",
+      "NCOMMS2022_S04",
+      "NCOMMS2022_S05",
+      "NCOMMS2022_S06",
+      "NCOMMS2022_S08",
+      "NCOMMS2022_S09",
+      "NCOMMS2022_S10"
+    ],
+    "held_ids": [
+      "NCOMMS2022_S11",
+      "NCOMMS2022_S07"
+    ],
+    "training_outcomes": [
+      0,
+      1,
+      1,
+      1,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "training_input_sha256": {
+      "expression": "fde12b26d03266699257d6440addbdae62710688a259e69f979548320072e1ad",
+      "topic": "f5c33e2e1589aacdd86183df5eb4b27bde3dce01cef10a7bd107ff47c4a99d73",
+      "outcomes": "a61575711e0c67c93ea54bce79d921e0baebafb092083795100fe84420fac336"
+    },
+    "fold": 27,
+    "held_outcomes": [
+      1,
+      0
+    ],
+    "states": {
+      "topic_simplex_theta0": {
+        "component": 0,
+        "orientation": 1.0,
+        "selection": "prespecified_topic_0",
+        "training_abs_mean_difference": 0.03335129728709874,
+        "state_sha256": "1a67720f7d30c1c7d5fc6643b469dc002339f2f03cedd5ade1f76d63f58e0b5f",
+        "preprocessing_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+        "preprocessing_arrays": {}
+      },
+      "module_score": {
+        "component": -1,
+        "orientation": 1.0,
+        "selection": "prespecified_module",
+        "training_abs_mean_difference": 0.7971118672890645,
+        "state_sha256": "f9ddf72d48309a9bbf9d4e26aac87f03ed342692903c15756222a00e4f3f317e",
+        "preprocessing_sha256": "1f51d8589167bf93228c7d8e3060c9a46587795b1f4af1e8642b31d232fb502b",
+        "preprocessing_arrays": {
+          "positions": "2cd19a391f647923c76820b694690a81cdade4db53c32b6c8f93912f4e0efc65",
+          "mean": "d3bbe59d8f191eebfd928a1174652df8b9591705950af67cba247a6f6b7cc3b4",
+          "scale": "bdbf75e432abe378237717480f9a2d261a09974ecf577202571cab8bbd14cab3"
+        }
+      },
+      "pca": {
+        "component": 3,
+        "orientation": 1.0,
+        "training_contrasts": [
+          -3.916393551625471,
+          11.124376779168369,
+          -18.03150364194413,
+          52.69796772665724,
+          -8.887776819451904
+        ],
+        "selection": "training_mean_difference",
+        "state_sha256": "9410ab78e4f3c675a95c8938df83735455ebbe7d4337a50345331b0d0eec5787",
+        "preprocessing_sha256": "b558358a1ebd5b1ad6470ec265d9a3bfb23a29acaeabfbeaa7e137fb8a57a8c1",
+        "preprocessing_arrays": {
+          "mean": "f854e721dbdca48e710cc70a6fcc7aef3ddd10a1fef8ed629a2d732a3c4ba9dc",
+          "scale": "e8486b1ee928206a9c25810122eac6079b3196b69343cb395c1dc25e96ac09e2",
+          "pca_mean": "45a53479e65a988b80469936d79c5d338fd806cce0884ec09afa5c333d29633c"
+        }
+      },
+      "nmf": {
+        "component": 4,
+        "orientation": 1.0,
+        "training_contrasts": [
+          0.757321511039517,
+          -0.6779439581549308,
+          -0.8246452827889243,
+          -0.48158975969737744,
+          1.1537406119112923
+        ],
+        "selection": "training_SD_standardized_mean_difference",
+        "n_iter": 168,
+        "fit_reconstruction_error": 0.047970994128151416,
+        "warnings": [],
+        "projection": "independent row NNLS on training-fitted unit-L2 basis",
+        "state_sha256": "3dbab29d0a7fe109020c47cb6c705c6041f45d190a018a35571331751fff5ebe",
+        "preprocessing_sha256": "de4b9273249586b62c90963fc1459414c459fc7f7e655b9201ed283d0b5682b8",
+        "preprocessing_arrays": {
+          "basis_norms": "9486dfda3c64649915a423f7de61032b8131c8cf3b8aa44af7ee21592cdd6e68"
+        }
+      }
+    },
+    "state_file": "fitted_states/fold_27.npz",
+    "state_file_sha256": "5fa4f6d01cc7f06df460a21002ee3645c9728a74b319e63770c7578b45d2eb59",
+    "seconds": 0.06481779600289883,
+    "positive_affine_credit_invariant": true,
+    "positive_nmf_factor_scale_invariant": true,
+    "scoring_does_not_mutate_fit": true
+  }
+]

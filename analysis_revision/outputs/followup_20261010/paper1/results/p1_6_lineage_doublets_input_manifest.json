@@ -1,0 +1,10 @@
+{
+  "script": "p1_6_lineage_doublets",
+  "inputs_sha256": {
+    "outputs/scientific_revision_20260922/measurement/projection/cells.parquet": "3572a78007b7be093603988a87734c194371e1820ebc499d693c1379cd298449",
+    "outputs/scientific_revision_20260922/measurement_controls/discovery_raw_counts.npz": "307c35122c553615709e86fd04d190f09cf9e94f27b84bee454f63dfabc9c6f7",
+    "outputs/scientific_revision_20260922/measurement_controls/discovery_raw_genes.npy": "a3e7e194e68854fea561091370c779082f7809303ad68250a67f84bb34f3bbe2",
+    "outputs/scientific_revision_20260922/measurement_controls/raw_cell_identity.csv.gz": "3a6725aff494786229b3908c1b7207a6db1550423ef5130896c50278ef46d793"
+  },
+  "scanpy": "1.11.4"
+}

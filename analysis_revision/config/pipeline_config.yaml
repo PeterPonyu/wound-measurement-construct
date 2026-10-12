@@ -1,0 +1,93 @@
+# Live configuration for tracks T1–T3.
+# Retired GRN / GAT / DML hyperparameters do not belong here; they lived in
+# the previous `directions:` block and would have implied those pipelines
+# were runnable. Unlock conditions for those routes are in
+# directions/_retired/README.md, not in this file.
+#
+# Scripts take CLI flags. Values below are the ones that produced the
+# report.json files preflight re-reads, not aspirational defaults.
+
+project:
+  name: "ortho-diabetic-wound-insilico"
+  version: "2.0.0"
+  random_seed: 0
+  device: "cuda"
+  output_dir: "outputs"
+  logs_dir: "logs"
+
+compute_allocation:
+  local_workstation:
+    device: "ASUS ROG SCAR 18 (RTX 5090 Laptop, 25.1 GB VRAM measured)"
+    target_tasks:
+      - "T1 Topic-Simplex fit and RAAG audit on GSE165816"
+      - "T2 construct-validation scripts 11–16 and 22"
+      - "T3 flow matching on GSE326622 / GSE241132 (scripts 17–21)"
+  known_issue: "nvidia-smi broken (NVML 595.91); torch.cuda works"
+
+tracks:
+  T1_representation:
+    encoder: "core_engines.topic_simplex_engine.TopicSimplexModel"
+    uses: "theta and mu; freeze both for T2 and T3"
+    data: "GSE165816 foot-skin labelled arms"
+    n_topics: 15
+    n_genes: 7000
+    fit_steps: 40000
+    batch_size: 512
+    audit_cells: 20000
+    max_mito: 0.20
+    artifact_dir: "outputs/direction1_dfu_mainline"
+    benchmark_dir: "outputs/representation_benchmark"
+    inference_dir: "outputs/repaired_20260918/representation_inference"
+    notes:
+      - "eval-mode projection is deterministic (posterior mean)"
+      - "folder name is historical; this is T1, not retired Direction 1"
+      - "cross-method benchmark is sample-level LOSO; no patient IDs are available"
+      - "benchmark AUCs are point estimates; ordering requires the interval and permutation results in inference_dir"
+
+  T2_construct_validation:
+    encoder: "frozen T1"
+    uses: "theta only; do not substitute mu"
+    focus_topic: 0
+    high_state_cut: 0.184
+    artifact_dirs:
+      - "outputs/celltype_resolved"
+      - "outputs/bimodal_stratification"
+      - "outputs/artifact_triage"
+      - "outputs/stratifier_sweep"
+      - "outputs/ambient_invariance"
+      - "outputs/validation_gse231643"
+      - "outputs/negative_result_strength"
+      - "outputs/repaired_20260918/negative_result_strength"
+      - "outputs/repaired_20260918/patient_mapping_equivalence"
+      - "outputs/metadata_intake/gse165816_patient_unit_remap"
+      - "outputs/repaired_20260918/external_dfu_projection"
+      - "outputs/repaired_20260918/external_immune_axis"
+    superseded_dirs:
+      - "outputs/repaired_20260918/external_dfu_projection: immune and B/plasma gates saturated; use external_immune_axis"
+    notes:
+      - "GSE165816 public metadata has no explicit patient identifier"
+      - "Nature Communications author map plus GEO series-level batch/run yields an accepted collapsed 11-patient intake contract"
+      - "equivalence margins remain sensitivity analysis until a clinical margin is pre-specified"
+      - "GSE223964 and GSE245703 are frozen-model external projections; neither supplies a healing endpoint"
+      - "external immune composition must come from exclusive compartments; CD74/CD37/CD38/SDC1 gates saturate"
+
+  T3_temporal_dynamics:
+    encoder: "frozen T1"
+    uses: "mu only; do not substitute theta"
+    mouse_cohort: "GSE326622"
+    human_cohort: "GSE241132"
+    baseline: "stay-still energy distance, with a per-sample noise floor"
+    artifact_dirs:
+      - "outputs/mouse_temporal_flow"
+      - "outputs/repaired_20260918/mouse_temporal_flow"
+      - "outputs/repaired_20260918/human_temporal_flow"
+      - "outputs/scientific_revision_20260926/provenance_repair/time_parameterisation"
+      - "outputs/scientific_revision_20260926/provenance_repair/donor_transfer_flow"
+      - "outputs/repaired_20260918/donor_conditioned_benchmark"
+      - "outputs/scientific_revision_20260926/provenance_repair/donor_count_curve"
+    historical_frozen_dirs:
+      - "outputs/human_temporal_flow"
+      - "outputs/time_parameterisation"
+      - "outputs/donor_transfer_flow"
+      - "outputs/donor_conditioned_benchmark"
+    constraint: "after barcode-row repair: human Wound7 +49.9% LOO 3/3; donor transfer 3/3; shared CFM mean ED 0.395; repaired NDB mouse POD7 -1.5% and does not beat standstill; n=3 acute human wounds and one-animal-per-timepoint mouse arm are not DFU evidence"

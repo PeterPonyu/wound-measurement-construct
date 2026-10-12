@@ -1,0 +1,33 @@
+{
+ "finished_utc": "2026-10-09T15:48:11Z",
+ "invocation": {
+  "event_sha256": "f5ca59c055180919e5ca3b0d0102ac2705f0241aa4e2a6125428a0f08d00d2b3",
+  "id": "2327a1eb212a44b9a5c7551d3ec0f35d"
+ },
+ "job": {
+  "dataset_id": "GSE165816",
+  "job_id": "9d4cc9372fadeb4c6770",
+  "job_type": "stability",
+  "method": "topic_simplex",
+  "params": {
+   "K": 20,
+   "code_digest": "ab109504d42ec1e58bb2",
+   "steps": 40000
+  },
+  "protocol_hash": "0b5a397b1d500d57733c",
+  "representation": "panel",
+  "seed": 1,
+  "task": {}
+ },
+ "job_id": "9d4cc9372fadeb4c6770",
+ "outputs": {
+  "checkpoint.json": "dcae85ec85ca5bd88622ee9d28d166cffb37d876c445aafc6ce4cc20dd6919ed",
+  "checkpoint.sha256.json": "63bb28bdc23bc2a1ce22cb545828b05c6421095c9c42f8e596d0c9a54006d3a8",
+  "fit_trace.json": "0052032ad70bcfc2de1aab2d889ffaab9a2f3dd529246931bbc05b0adbf1eea0",
+  "model_state.npz": "a7a36c7558aefe671893b1794310f08c68117cf1f156710a9c640ebed2f34d82",
+  "readouts.json": "c7df6eb7c6b9d0d2283df56f728790bbef9ee7fb31bf1d5909a6e90fabba29bc",
+  "result.json": "6faf804592766137761d6846f31ac076c82bce4857576e646ddf30dff18b7bb2",
+  "topics.npz": "5292a8ece797a29cbea5816fbd5c35080d9ca41f9cad054771e97ba58f8e579e"
+ },
+ "seconds": 132.5147094339991
+}

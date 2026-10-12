@@ -1,0 +1,191 @@
+{
+ "DFU_patients": 11,
+ "cell_order_identity": "20ad986dbbe87f50acd53d0c4cac910894e8a36b53091a20e743ada38ae3a18b",
+ "cells": 76461,
+ "fibroblast_cells": 19410,
+ "mapping_scope": "supplied_previously_audited_mapping_not_new_independent_raw_join",
+ "patients": [
+  {
+   "all_cells": 2279,
+   "all_specimens": 1,
+   "fibroblast_cells": 221,
+   "fibroblast_specimens": 1,
+   "group": "DFU-NH",
+   "is_DFU": true,
+   "patient_id": "NCOMMS2022_S01"
+  },
+  {
+   "all_cells": 7495,
+   "all_specimens": 2,
+   "fibroblast_cells": 2751,
+   "fibroblast_specimens": 2,
+   "group": "DFU-H",
+   "is_DFU": true,
+   "patient_id": "NCOMMS2022_S02"
+  },
+  {
+   "all_cells": 3951,
+   "all_specimens": 1,
+   "fibroblast_cells": 1238,
+   "fibroblast_specimens": 1,
+   "group": "DFU-H",
+   "is_DFU": true,
+   "patient_id": "NCOMMS2022_S03"
+  },
+  {
+   "all_cells": 2250,
+   "all_specimens": 1,
+   "fibroblast_cells": 356,
+   "fibroblast_specimens": 1,
+   "group": "DFU-H",
+   "is_DFU": true,
+   "patient_id": "NCOMMS2022_S04"
+  },
+  {
+   "all_cells": 4290,
+   "all_specimens": 1,
+   "fibroblast_cells": 843,
+   "fibroblast_specimens": 1,
+   "group": "DFU-NH",
+   "is_DFU": true,
+   "patient_id": "NCOMMS2022_S05"
+  },
+  {
+   "all_cells": 7681,
+   "all_specimens": 2,
+   "fibroblast_cells": 1552,
+   "fibroblast_specimens": 2,
+   "group": "DFU-NH",
+   "is_DFU": true,
+   "patient_id": "NCOMMS2022_S06"
+  },
+  {
+   "all_cells": 2481,
+   "all_specimens": 1,
+   "fibroblast_cells": 872,
+   "fibroblast_specimens": 1,
+   "group": "DFU-NH",
+   "is_DFU": true,
+   "patient_id": "NCOMMS2022_S07"
+  },
+  {
+   "all_cells": 4192,
+   "all_specimens": 2,
+   "fibroblast_cells": 1605,
+   "fibroblast_specimens": 2,
+   "group": "DFU-H",
+   "is_DFU": true,
+   "patient_id": "NCOMMS2022_S08"
+  },
+  {
+   "all_cells": 2928,
+   "all_specimens": 1,
+   "fibroblast_cells": 363,
+   "fibroblast_specimens": 1,
+   "group": "DFU-H",
+   "is_DFU": true,
+   "patient_id": "NCOMMS2022_S09"
+  },
+  {
+   "all_cells": 1838,
+   "all_specimens": 1,
+   "fibroblast_cells": 170,
+   "fibroblast_specimens": 1,
+   "group": "DFU-H",
+   "is_DFU": true,
+   "patient_id": "NCOMMS2022_S10"
+  },
+  {
+   "all_cells": 3374,
+   "all_specimens": 1,
+   "fibroblast_cells": 1821,
+   "fibroblast_specimens": 1,
+   "group": "DFU-H",
+   "is_DFU": true,
+   "patient_id": "NCOMMS2022_S11"
+  },
+  {
+   "all_cells": 2922,
+   "all_specimens": 1,
+   "fibroblast_cells": 1020,
+   "fibroblast_specimens": 1,
+   "group": "H",
+   "is_DFU": false,
+   "patient_id": "NCOMMS2022_S19"
+  },
+  {
+   "all_cells": 2483,
+   "all_specimens": 1,
+   "fibroblast_cells": 215,
+   "fibroblast_specimens": 1,
+   "group": "H",
+   "is_DFU": false,
+   "patient_id": "NCOMMS2022_S20"
+  },
+  {
+   "all_cells": 7657,
+   "all_specimens": 2,
+   "fibroblast_cells": 1921,
+   "fibroblast_specimens": 2,
+   "group": "H",
+   "is_DFU": false,
+   "patient_id": "NCOMMS2022_S21"
+  },
+  {
+   "all_cells": 2951,
+   "all_specimens": 1,
+   "fibroblast_cells": 1152,
+   "fibroblast_specimens": 1,
+   "group": "H",
+   "is_DFU": false,
+   "patient_id": "NCOMMS2022_S22"
+  },
+  {
+   "all_cells": 8340,
+   "all_specimens": 2,
+   "fibroblast_cells": 1562,
+   "fibroblast_specimens": 2,
+   "group": "H",
+   "is_DFU": false,
+   "patient_id": "NCOMMS2022_S23"
+  },
+  {
+   "all_cells": 789,
+   "all_specimens": 1,
+   "fibroblast_cells": 153,
+   "fibroblast_specimens": 1,
+   "group": "H",
+   "is_DFU": false,
+   "patient_id": "NCOMMS2022_S24"
+  },
+  {
+   "all_cells": 5399,
+   "all_specimens": 1,
+   "fibroblast_cells": 974,
+   "fibroblast_specimens": 1,
+   "group": "H",
+   "is_DFU": false,
+   "patient_id": "NCOMMS2022_S25"
+  },
+  {
+   "all_cells": 1445,
+   "all_specimens": 1,
+   "fibroblast_cells": 425,
+   "fibroblast_specimens": 1,
+   "group": "H",
+   "is_DFU": false,
+   "patient_id": "NCOMMS2022_S26"
+  },
+  {
+   "all_cells": 1716,
+   "all_specimens": 1,
+   "fibroblast_cells": 196,
+   "fibroblast_specimens": 1,
+   "group": "H",
+   "is_DFU": false,
+   "patient_id": "NCOMMS2022_S27"
+  }
+ ],
+ "people": 20,
+ "specimens": 25
+}

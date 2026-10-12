@@ -1,65 +1,54 @@
 #!/usr/bin/env python3
-"""Verify an extracted publication archive and optional analysis smoke checks."""
-from __future__ import annotations
+"""Verify the full-source archive and optional safe native-analysis smoke."""
 import argparse
 import ast
 import hashlib
-import importlib.util
 import json
-import os
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import subprocess
 import sys
+import yaml
 
 ROOT = Path(__file__).resolve().parent
 
 
+def sha(path):
+    with path.open('rb') as stream:
+        return hashlib.file_digest(stream,'sha256').hexdigest()
+
+
 def main():
-    ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("--smoke", action="store_true")
-    args = ap.parse_args()
-    manifest = json.loads((ROOT / "MANIFEST.sha256.json").read_text())
-    errors = []
-    for name, digest in manifest.items():
-        path = ROOT / name
-        if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != digest:
-            errors.append(name)
-    if errors:
-        raise RuntimeError(f"Checksum mismatch or missing files: {errors}")
-    for path in ROOT.rglob("*.py"):
-        if 'provenance' in path.relative_to(ROOT).parts:
-            continue
-        ast.parse(path.read_text(), filename=str(path.relative_to(ROOT)))
-    import yaml
-    citation = yaml.safe_load((ROOT / "CITATION.cff").read_text())
-    archive = json.loads((ROOT / ".zenodo.json").read_text())
-    assert citation["authors"] == [{"family-names": "Fu", "given-names": "Zeyu"}]
-    assert archive["creators"] == [{"name": "Fu, Zeyu"}]
-    assert citation["title"] == archive["title"]
-    assert citation["version"] == archive["version"]
-    assert citation.get("license") == "MIT"
-    assert str(archive.get("license", "")).lower() == "mit"
-    assert (ROOT / "LICENSE").is_file() and (ROOT / "NOTICE").is_file()
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--smoke',action='store_true')
+    args=parser.parse_args()
+    entries=json.loads((ROOT/'MANIFEST.sha256.json').read_text())
+    for name,digest in entries.items():
+        rel=PurePosixPath(name)
+        if rel.is_absolute() or '..' in rel.parts or rel.as_posix()!=name:
+            raise ValueError('Unsafe manifest entry')
+        target=ROOT/name
+        if not target.is_file() or target.is_symlink() or sha(target)!=digest:
+            raise ValueError('Missing or changed archive file: '+name)
+        if target.suffix=='.py':ast.parse(target.read_text(),filename=name)
+    cff=yaml.safe_load((ROOT/'CITATION.cff').read_text())
+    zenodo=json.loads((ROOT/'.zenodo.json').read_text())
     status=json.loads((ROOT/'RELEASE_STATUS.json').read_text())
-    assert status['status']=='release' and status['doi']==citation['doi']
-    assert status['version']==citation['version'] and citation.get('doi')
-    os.environ['CUDA_VISIBLE_DEVICES']=''
-    os.environ['PYTEST_DISABLE_PLUGIN_AUTOLOAD']='1'
-    commands = []
+    assert cff['title']==zenodo['title']
+    assert str(cff['version'])==str(zenodo['version'])==status['version']=='0.5.0'
+    assert cff['doi']==zenodo['doi']==status['doi']
+    assert status['doi_status']=='reserved_at_archive_assembly'
+    assert status['doi_scope']=='Software and reproduction release; not a manuscript or preprint DOI'
+    journal=json.loads((ROOT/'journal/JOURNAL_SOURCE_PROVENANCE.json').read_text())
+    for row in journal['files']:
+        target=ROOT/'journal'/row['destination']
+        if not target.is_file() or sha(target)!=row['sha256']:
+            raise ValueError('Corrected journal source binding differs: '+row['destination'])
     if args.smoke:
-        for path in sorted((ROOT / "scripts").glob("*.py")):
-            result = subprocess.run([sys.executable, str(path), "--help"], cwd=ROOT,
-                                    capture_output=True, text=True, timeout=60)
-            if result.returncode:
-                raise RuntimeError(f"{path.name}: {result.stderr[-2500:]}")
-            commands.append(path.name)
-        if (ROOT / "tests").is_dir():
-            result = subprocess.run([sys.executable, "-m", "pytest", "-p", "no:cacheprovider", "tests", "-q"],
-                                    cwd=ROOT, capture_output=True, text=True, timeout=60)
-            if result.returncode:
-                raise RuntimeError("Mathematical verification failed: " + result.stderr[-2500:])
-    print(json.dumps({"verified_files": len(manifest), "python_syntax": "passed", "citation_metadata": "consistent", "cli_smoke_checks": len(commands), "numerical_checks": "not part of software-only archive"}, indent=2))
+        subprocess.run([sys.executable,'analysis_revision/verify_revision.py','--smoke'],cwd=ROOT,check=True)
+    print(json.dumps({'status':'passed','manifest_files':len(entries),
+          'corrected_journal_source_files':len(journal['files']),
+          'reserved_software_doi':status['doi'],'smoke_requested':args.smoke,
+          'model_training_performed':False,'remote_publication_performed':False},indent=2))
 
 
-if __name__ == "__main__":
-    main()
+if __name__=='__main__':main()

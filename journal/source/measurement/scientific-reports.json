@@ -1,0 +1,26 @@
+{
+  "main_source": "paper.tex",
+  "supplement_source": "supporting.tex",
+  "main_figures": [
+    "fig:p1f1",
+    "fig:p1f2",
+    "fig:p1f3",
+    "fig:p1f4",
+    "fig:p1f5",
+    "fig:p1f8",
+    "fig:p1f9",
+    "fig:p1f11"
+  ],
+  "main_tables": [],
+  "title": "Neural topic modelling of fibroblast measurements and diabetic foot ulcer healing: a patient-level audit",
+  "output": "journal",
+  "qa": "qa/scientific-reports",
+  "compiler": "xelatex",
+  "preserve_author_title": false,
+  "inline_float_spec": "tbp",
+  "inline_max_pages_after_citation": 3,
+  "inline_vfuzz_pt": 1,
+  "equation_style": true,
+  "journal_figure_directory": true,
+  "journal_lowercase_panels": true
+}

@@ -1,0 +1,12 @@
+pooled_gate,b_plasma,endothelial,fibroblast,keratinocyte,lymphatic_ec,mast,melanocyte,myeloid,pericyte_smc,sweat_gland,t_cell
+b_plasma,1373,8,28,10,4,8,6,21,35,3,20
+endothelial,64,7344,38,19,38,36,33,14,19,21,10
+fibroblast,128,48,18291,169,81,71,112,52,225,164,69
+keratinocyte,216,76,257,9654,36,59,80,66,141,201,35
+lymphatic_ec,2,28,45,3,1224,9,4,9,81,12,3
+mast,5,5,12,14,2,1160,0,7,14,2,5
+melanocyte,153,8,87,79,5,65,677,3,48,202,3
+myeloid,22,16,16,29,45,16,29,5365,26,76,51
+pericyte_smc,105,36,285,54,178,84,119,40,17788,77,14
+sweat_gland,65,59,622,299,23,48,12,72,420,1208,42
+t_cell,50,14,30,51,17,38,6,147,20,55,5333

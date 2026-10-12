@@ -1,0 +1,9 @@
+{
+  "reference_cells": 76461,
+  "reprojected_discovery_cells": 76461,
+  "common_cells": 76461,
+  "max_abs_topic_difference": 4.76837158203125e-07,
+  "celltype_agreement": 1.0,
+  "fibroblasts_reprojected": 19410,
+  "elapsed_s": 140.84606313705444
+}

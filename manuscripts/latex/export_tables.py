@@ -1,17 +1,24 @@
 #!/usr/bin/env python3
 """Export numerical supplementary tables from completed reports; no model fitting."""
 from pathlib import Path
-import csv,json
+import csv,json,sys
 ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT))
+from manuscripts.saved_diagnostics import measurement_table_rows
 HERE=Path(__file__).resolve().parent
 ANALYSIS=ROOT/'outputs/analysis'
+PROVENANCE_REPAIR=ROOT/'outputs/scientific_revision_20260926/provenance_repair'
 REVISION=ROOT/'outputs/scientific_revision_20260922'
 LATEST=ROOT/'outputs/scientific_revision_20260923'
 AUDIT=ROOT/'outputs/scientific_revision_20260925'
 MEASUREMENT=REVISION/'measurement'
+PATIENT_COVARIATES=ROOT/'output/paper-science-priority-20261001-r1/patient-covariates'
 MEASUREMENT_REPORTS={'patient_mapping_equivalence','representation_benchmark','representation_inference','patient_unit_representation_benchmark','design_power_simulation'}
 TOPIC_LABELS=['TIMP1/COL3A1', 'JUNB/DNAJB1', 'COL1A1/COL1A2', 'IGFBP7/IGFBP5', 'TAGLN/ACTA2', 'KRT14/KRT10', 'CFD/APOD', 'DCN/CFD', 'DCD/SAT1', 'IGFBP7/SPARCL1', 'FOS/IGFBP7', 'HLA-DRA/CD74', 'IGFBP7/TAGLN', 'FOS/JUNB', 'DNAJB1/FOS']
-def report(n):return json.loads(((MEASUREMENT if n in MEASUREMENT_REPORTS else ANALYSIS)/n/'report.json').read_text())
+ACTIVE_PROVENANCE_REPAIRS={'time_parameterisation','donor_transfer_flow','donor_count_curve'}
+def report(n):
+ base = PROVENANCE_REPAIR if n in ACTIVE_PROVENANCE_REPAIRS else (MEASUREMENT if n in MEASUREMENT_REPORTS else ANALYSIS)
+ return json.loads((base/n/'report.json').read_text())
 def esc(x):
  return str(x).replace('&',r'\&').replace('%',r'\%').replace('_',r'\_').replace('#',r'\#')
 def historical(n):
@@ -34,7 +41,7 @@ def table(label,caption,headers,rows,widths,break_before=None):
    lines.append(r'\pagebreak')
   lines.append(' & '.join(esc(c) for c in row)+(r' \\*' if len(rows)>1 and i in (0,len(rows)-2) else r' \\'))
  body='\n'.join(lines)
- return '\n'.join([r'{\small',r'\begin{longtable}{'+col+'}',r'\caption{'+caption+r'}\label{'+label+r'}\\',r'\toprule',header,r'\midrule\endfirsthead',r'\multicolumn{'+str(len(headers))+r'}{l}{\tablename\ \thetable\ (continued)}\\',r'\toprule',header,r'\midrule\endhead',r'\bottomrule\endfoot',body,r'\end{longtable}',r'}'])
+ return '\n'.join([r'{\small',r'\begin{longtable}{'+col+'}',r'\caption{'+caption+r'}\label{'+label+r'}\\',r'\toprule',header,r'\midrule\endfirsthead',r'\multicolumn{'+str(len(headers))+r'}{l}{\tablename\ \thetable\ (continued)}\\[6pt]',r'\toprule',header,r'\midrule\endhead',r'\bottomrule\endfoot',body,r'\end{longtable}',r'}'])
 def csvrows(n):
  folder=MEASUREMENT/'tables' if n in {'representation_inference.csv','patient_unit_and_anatomy.csv','representation_cross_method.csv'} else ROOT/'manuscripts/tables'
  return list(csv.DictReader((folder/n).open()))
@@ -71,6 +78,10 @@ readable={'frac_b_plasma':'B/plasma fraction','frac_endothelial':'Endothelial fr
 for i in range(1,15):readable[f'fib_mean_topic_{i}']=f'Fibroblast {TOPIC_LABELS[i]} mean'
 rows=[[readable[r['covariate']],r['n'],f(r['rho']),probability(r['p']),probability(r['q_bh'])] for r in d['sweep']]
 p1.append(table('tab:p1covariates',r'Complete exploratory covariate screen in 25 discovery specimens. Each row correlates the fibroblast high-state fraction, using the historical rule loading at least 0.184, with one of 31 covariates. Lineage fractions use all retained cells; technical summaries and topic means use fibroblasts. Values are Spearman rho, two-sided asymptotic p and Benjamini--Hochberg q across all 31 tests, ordered by absolute rho; 14 rows have q below 0.05. UMI means unique molecular identifier. The G label is an identifier, not an established batch or time variable. Repeated patients invalidate the naive independent-row premise of these historical p values; their BH transforms do not establish false-discovery-rate control or 14 independent discoveries. Shared cells and compositional constraints further limit interpretation; these are descriptive row-level summaries, not causal or healing-validation tests.',['Covariate','Specimens','Spearman rho','Raw p','BH q'],rows,[76,20,25,22,22]))
+d=json.loads((PATIENT_COVARIATES/'report.json').read_text())
+patient_names={**readable,'tech_umi':'Weighted specimen UMI medians'}
+rows=[[patient_names[r['covariate']],r['n_patients'],f(r['rho']),f(r['omission_min'])+' to '+f(r['omission_max']),r['omission_sign_changes']] for r in d['associations']]
+patient_covariate_table=table('tab:p1patientcovariates',r'Complete descriptive covariate update in 20 author-mapped discovery patients. Every row correlates the patient fibroblast high-score fraction with one of the original 31 covariates, using current deterministic coordinates and the fitted cut 0.184295848. Fibroblast means/fractions pool fibroblast cells; lineage fractions pool counts with all cells as denominator, and count covariates sum. Technical scores average saved specimen summaries with fibroblast-count weights; weighted specimen UMI medians are not a pooled-patient median. G labels are averaged within patient and do not identify a verified batch. Rows retain the full covariate family; none is selected by significance. The deletion range recomputes rho after each of 20 patient omissions and is not a confidence interval. The last column counts deletions whose correlation sign differs from the full estimate. No p values, BH discoveries or adjusted associations are supplied. Mixed clinical groups, shared cells and compositional dependence prevent causal attribution or independent validation.',['Covariate','Patients','Spearman rho','Patient-deletion range','Sign changes'],rows,[67,18,23,37,20])
 d=historical('ambient_invariance')
 rows=[]
 for name,n,r2,b in [('Before immune-transcript exclusion',24,None,d['test_A_purity']['bimodal_all']),('After immune-transcript exclusion',24,None,d['test_A_purity']['bimodal_pure']),('Immune-covariate residuals',25,d['test_B_residual']['r2_immune_covariates'],d['test_B_residual']['bimodal_residual']),('Placebo-covariate residuals',25,d['test_B_placebo']['r2'],d['test_B_placebo']['bimodal_residual'])]:
@@ -178,5 +189,10 @@ rows=[]
 depth_names={'all_cell_topic0_mean':'All-cell mean','fibroblast_topic0_mean':'Fibroblast mean','fibroblast_high_state_fraction':'High-state fraction','fibroblast_fraction':'Fibroblast composition'}
 for v in sorted(depth['full_pipeline_outcome_seed_ranges'],key=lambda x:(-x['rate'],list(depth_names).index(x['readout']))):
  rows.append([f(100*v['rate'],0)+'%',depth_names[v['readout']],str(v['n_estimable'])+' / '+str(v['n_runs']),f(v['difference_min'])+' to '+f(v['difference_max']),f(v['exact_p_min'])+' to '+f(v['exact_p_max'])])
+# Let longtable paginate the complete rate grid; a fixed row break from an
+# earlier manuscript pagination can now strand most of a supplement page.
 p1.append(table('tab:p1depthoutcomes',r'Patient contrasts after rerunning QC and the frozen-reference gate on each depth perturbation. Differences are healed minus non-healed, with seven and four author-mapped DFU patients. Repeated specimens are pooled by the appropriate all-cell or fibroblast count. Fibroblast composition uses all current QC survivors; high state uses the unchanged discovery cut. The exact two-sided probability enumerates all 330 patient-label allocations, including ties, without add-one correction. Baseline has one run; other rows give the minimum and maximum over three fixed thinning seeds. These are computational ranges, not confidence intervals, multiplicity-adjusted discoveries, equivalence bounds or biological replication. Zero-panel cells remain explicitly missing in conditional branches rather than receiving scores from an all-zero vector.',['Count retention','Readout','Estimable runs','Difference range','Exact p range'],rows,[25,48,26,35,33]))
+p1.append(patient_covariate_table)
+saved_measurement=json.loads((ROOT/'output/submission-preparation-20261002-r1/measurement/report.json').read_text())
+p1.append(table('tab:p1budgetdiagnostic',r'All six saved budget/panel diagnostic fits. These are not replacements for the frozen discovery fit: K=15 and batch size 128, with 16 training patients (60,861 cells) and four held patients (15,600 cells) from all clinical groups. Reconstruction equally weights fixed 128-cell evaluations per patient; it is cross-entropy in nats, without the KL term. The null is the same-panel equal-training-patient mean profile (6.74522 for inherited, 6.78361 for train-selected); raw errors from different panels cannot be ranked. Cosine summarizes all decoder row pairs after square-root transformation. Effective usage is the exponential entropy of the held mean topic weights, not a count of validated cell types. The engineering screen requires all last five absolute 100-step objective changes at most 0.001, separately for training and held patients; it is not mathematical convergence or a model-selection rule. Training-selected support and dispersion exclude held expression, but the gene universe and cell QC are discovery-derived. Historical reference-topic matching includes held discovery expression and supplies no independent construct validation. All fits, including failed screens, are retained.',['Panel / genes','Steps / seed','Held recon.','Own-null diff.','Median cosine','Effective usage','Train / held screen'],measurement_table_rows(saved_measurement),[30,19,22,23,21,21,26]))
 (HERE/'tables.tex').write_text('\n\n'.join(p1)+'\n')

@@ -1,0 +1,113 @@
+{
+  "experiment": "gse165816_discovery_patient_unit_remap",
+  "status": "completed",
+  "scientific_unit": "patient",
+  "scientific_scope": "unit correction of the already-unblinded discovery cohort; not experiment A and not a confirmatory result",
+  "not_an_independent_cohort": true,
+  "mcid_filled": false,
+  "does_not_open_expression_matrix": true,
+  "does_not_rewrite_scripts_25": true,
+  "primary_metric": "frozen fibroblast-associated topic mean across all retained cells from that patient's DFU foot samples",
+  "patient_counts": {
+    "dfu": 11,
+    "healed": 7,
+    "not_healed": 4,
+    "collapsed_replicate_patients": 3
+  },
+  "effect_cell_weighted": {
+    "healer_minus_nonhealer_mean_difference": 0.027975090845887153,
+    "welch_t": 1.5348677977981366,
+    "welch_two_sided_p": 0.16290617318513206,
+    "exact_two_sided_permutation_p": 0.2719033232628399,
+    "bootstrap_95_ci": [
+      -0.001742361969913226,
+      0.0630825662968813
+    ]
+  },
+  "effect_unweighted_sample_means": {
+    "healer_minus_nonhealer_mean_difference": 0.028368418803438544,
+    "note": "mean of per-GSM means, then mean across patients; not the primary metric"
+  },
+  "sample_level_reference_not_rewritten": {
+    "healer_minus_nonhealer_mean_difference": 0.04346680645313528,
+    "source": "outputs/analysis/patient_mapping_equivalence/report.json"
+  },
+  "equivalence": {
+    "status": "sensitivity_grid_only",
+    "alpha": 0.05,
+    "margins": [
+      {
+        "bound": 0.05,
+        "p_lower": 0.0013095933328127751,
+        "p_upper": 0.13049392483709066,
+        "welch_df": 8.098868540709557,
+        "equivalent_at_alpha_0_05": false
+      },
+      {
+        "bound": 0.1,
+        "p_lower": 5.194435121658181e-05,
+        "p_upper": 0.0020619505676491437,
+        "welch_df": 8.098868540709557,
+        "equivalent_at_alpha_0_05": true
+      },
+      {
+        "bound": 0.2,
+        "p_lower": 7.013786986753701e-07,
+        "p_upper": 6.003959124503032e-06,
+        "welch_df": 8.098868540709557,
+        "equivalent_at_alpha_0_05": true
+      },
+      {
+        "bound": 0.3,
+        "p_lower": 4.0509966714452617e-08,
+        "p_upper": 1.7701001204307751e-07,
+        "welch_df": 8.098868540709557,
+        "equivalent_at_alpha_0_05": true
+      },
+      {
+        "bound": 0.5,
+        "p_lower": 9.054589300561133e-10,
+        "p_upper": 2.2236530186551363e-09,
+        "welch_df": 8.098868540709557,
+        "equivalent_at_alpha_0_05": true
+      }
+    ],
+    "smallest_equivalent_margin": {
+      "margin": 0.06181436769229566,
+      "multiple_of_observed_difference": 2.2096216964165283,
+      "note": "smallest absolute mean-difference margin this patient-level sample can declare equivalent at alpha=0.05; a clinically meaningful margin below this value cannot be ruled in or out here"
+    },
+    "interpretation": "TOST is a patient-level restatement of the discovery set and exploratory until a clinical margin is pre-specified from an external source; this is not experiment A"
+  },
+  "collapsed_pairs": [
+    {
+      "patient_id": "NCOMMS2022_S02",
+      "sample_titles": "G23|G4",
+      "n_cells": 7495
+    },
+    {
+      "patient_id": "NCOMMS2022_S06",
+      "sample_titles": "G33|G34",
+      "n_cells": 7681
+    },
+    {
+      "patient_id": "NCOMMS2022_S08",
+      "sample_titles": "G7|G8",
+      "n_cells": 4192
+    }
+  ],
+  "protocol": {
+    "seed": 0,
+    "focus_topic": 0,
+    "map_csv": "cohort_metadata/GSE165816_ncomms_subject_sample_map.csv",
+    "contract_report": "outputs/cohort_metadata/gse165816_author_map_contract.json",
+    "discovery_dir": "outputs/expression_representation",
+    "map_sha256": "11870be07b8c06e6037c7ab5c532e90907913c390bd180b59cfe1821bebcd96c",
+    "contract_sha256": "ef86a2611a6914a9d7bc42b86ae96b6642157017bed9250c0eb85e051dda3113",
+    "author_map_contract_status": "accepted",
+    "theta_sha256": "69014f49d5940786febf8738ca24dd612be04c4be420488cc597dc1c071f7519",
+    "obs_sha256": "63bc99e6ee7f58ff6384d0af4620f36b1c056755b9f56df2880ae395f22951e6",
+    "script_sha256": "08b81ee46c9abf831a5d95b76ccbeeb303420b74bbfd7ea8a0f960266cf87b7f",
+    "checked_at_utc": "2026-09-20T09:17:14.725469+00:00"
+  }
+}

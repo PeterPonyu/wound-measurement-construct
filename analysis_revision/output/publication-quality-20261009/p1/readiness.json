@@ -1,0 +1,56 @@
+{
+ "artifact_upper_bounds": [
+  {
+   "K": 10,
+   "uncompressed_artifact_upper_bytes_per_fit": 22324484
+  },
+  {
+   "K": 15,
+   "uncompressed_artifact_upper_bytes_per_fit": 24138944
+  },
+  {
+   "K": 20,
+   "uncompressed_artifact_upper_bytes_per_fit": 25953404
+  }
+ ],
+ "execution_approval": "unapproved_draft",
+ "plan": {
+  "code_digest": "ab109504d42ec1e58bb2",
+  "counts": {
+   "stability|GSE165816|-|-|topic_simplex": 9
+  },
+  "datasets": [],
+  "jobs": 9,
+  "planned_utc": "2026-10-09T15:33:43Z",
+  "protocol_hash": "0b5a397b1d500d57733c"
+ },
+ "prepared_utc": "2026-10-09T15:33:43.217833+00:00",
+ "resource_preflight": {
+  "artifact_bytes": 0,
+  "free_disk_bytes": 327913558016,
+  "reserved_next_write_bytes": 310378496
+ },
+ "run_command": "python scripts/run_quality_topic_stability.py run --approval output/publication-quality-20261009/p1/run/execution_approval.json",
+ "runtime": {
+  "requested": {
+   "model": "gpt-6.1-sol",
+   "reasoning_effort": "xhigh"
+  },
+  "runtime_file": "/home/zeyufu/.codex/sessions/2026/10/09/rollout-2026-10-09T08-15-15-01a1213b-95f3-7bc1-88f6-2225c233d102.jsonl",
+  "runtime_reported": {
+   "model": "gpt-6.1-sol",
+   "parent_thread_id": "01a1212f-da64-7fb0-8937-08c545eac5f8",
+   "reasoning_effort": "xhigh",
+   "session_id": "01a1212f-da64-7fb0-8937-08c545eac5f8",
+   "thread_id": "01a1213b-95f3-7bc1-88f6-2225c233d102",
+   "turn_id": "01a1213b-9607-7d23-81e8-61941ce458a8"
+  }
+ },
+ "source_files": [
+  "config/quality_topic_stability_20261009.json",
+  "scripts/run_quality_topic_stability.py",
+  "tests/test_quality_topic_stability.py"
+ ],
+ "status": "ready_for_review_no_real_fits_started",
+ "timing_note": "4000-step pilot wall time is not a guaranteed duration for nine 40000-step fits"
+}

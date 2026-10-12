@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "title": "Neural topic modelling of fibroblast measurements and diabetic foot ulcer healing: a patient-level audit",
+  "title_words": 14,
+  "abstract_words": 188,
+  "main_figures": 8,
+  "main_tables": 0,
+  "supplementary_figures": 3,
+  "supplementary_tables": 44,
+  "moved_displays": {
+    "fig:p1f6": [
+      "figure",
+      1
+    ],
+    "fig:p1f7": [
+      "figure",
+      2
+    ],
+    "fig:p1f10": [
+      "figure",
+      3
+    ]
+  },
+  "main_text_words": 3720,
+  "main_text_section_words": {
+    "introduction": 977,
+    "results": 2203,
+    "discussion": 540
+  },
+  "main_text_count_method": "TeXcount prose words in Introduction, Results and Discussion; excludes Abstract, Methods, references, headings, equations and figure legends.",
+  "main_text_recommendation_met": true,
+  "title_recommendation_met": true,
+  "title_page_and_declaration_order": "PASS",
+  "supplement_title_matches": true,
+  "canonical_source_sha256": "3985c5cba84f230d5ea184e89a2d7c91de5013fbdd66fd0f8896dc5acf964f7c",
+  "canonical_supplement_sha256": "028f31ec939b45f3462bb4b57128ed2cc0b8f21c9a8580729c1998beed9037f2",
+  "configuration_sha256": "cf8911269a6807586f72ee6057186f3cd99bc338c74ac5035e62a96bcfe475ee",
+  "generator_sha256": "62839ea28caad14c2bdc75d80a59b3164f41a220e76510639fd72616f6c9a6e4",
+  "documents": {
+    "manuscript": {
+      "path": "/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal/scientific-reports-manuscript.pdf",
+      "sha256": "5722421bdb0e865d93be31c9fb2f6fd31718923833f6b9077dabce65c1d46a89",
+      "pages": 23,
+      "source_sha256": "df12a6661f90a653963e04e0402bb340cdc42e01b57d165d42c8645fbed90ccb",
+      "bytes": 1017174
+    },
+    "supplement": {
+      "path": "/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal/scientific-reports-supplement.pdf",
+      "sha256": "cb27387383039c2caa811f5a2d301d60ac454b2a187b42771cae676be2441357",
+      "pages": 31,
+      "source_sha256": "eb400062404dfb13134628b7cf1557509d785db18c9978a5c43697320f83da98",
+      "bytes": 436225
+    },
+    "manuscript-inline": {
+      "path": "/home/zeyufu/Desktop/ortho-diabetic-wound-insilico/output/scientific-reports-readiness-20261011-r2/final-documents/measurement/journal/scientific-reports-manuscript-inline.pdf",
+      "sha256": "1478b4d883a44eac780182ccdd857d2745ae885beea45d1a6505a1277f1e40bd",
+      "pages": 21,
+      "source_sha256": "1a76dbdd7afb9b3e4ea390fbba66dc3c5dcb736c1d2f3c8b2aad6f1d8720c993",
+      "bytes": 1017038
+    }
+  },
+  "inline_layout": {
+    "fig:p1f1": {
+      "display": "Figure 1",
+      "first_citation_page": 9,
+      "display_page": 10,
+      "pages_after_first_citation": 1
+    },
+    "fig:p1f2": {
+      "display": "Figure 2",
+      "first_citation_page": 11,
+      "display_page": 11,
+      "pages_after_first_citation": 0
+    },
+    "fig:p1f3": {
+      "display": "Figure 3",
+      "first_citation_page": 12,
+      "display_page": 12,
+      "pages_after_first_citation": 0
+    },
+    "fig:p1f4": {
+      "display": "Figure 4",
+      "first_citation_page": 13,
+      "display_page": 13,
+      "pages_after_first_citation": 0
+    },
+    "fig:p1f5": {
+      "display": "Figure 5",
+      "first_citation_page": 13,
+      "display_page": 14,
+      "pages_after_first_citation": 1
+    },
+    "fig:p1f8": {
+      "display": "Figure 6",
+      "first_citation_page": 15,
+      "display_page": 16,
+      "pages_after_first_citation": 1
+    },
+    "fig:p1f9": {
+      "display": "Figure 7",
+      "first_citation_page": 15,
+      "display_page": 17,
+      "pages_after_first_citation": 2
+    },
+    "fig:p1f11": {
+      "display": "Figure 8",
+      "first_citation_page": 16,
+      "display_page": 18,
+      "pages_after_first_citation": 2
+    }
+  },
+  "layouts": {
+    "manuscript": "journal-checklist layout: legends, figures and the table follow the references",
+    "manuscript-inline": "reading layout: each figure and table floats after the paragraph that first cites it"
+  },
+  "scope": "Journal document conversion and mechanical checks; no new experiments or independent peer review.",
+  "guidelines": "https://www.nature.com/srep/author-instructions/submission-guidelines",
+  "checklist": "https://www.nature.com/documents/srep-checklist-for-initial-submissions.pdf"
+}

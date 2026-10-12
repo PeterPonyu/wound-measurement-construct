@@ -1,0 +1,4 @@
+readout,n_healed,n_nonhealed,healed_mean,nonhealed_mean,difference,exact_p,allocations,null_percentile_025,null_percentile_975,healthy_rows_excluded_before_allocation,unit
+fibroblast_mean,9,5,0.20422749673454169,0.07069203382309953,0.13353546291144214,0.08941058941058941,2002,-0.1652463163180759,0.16229861551616587,11,specimen; secondary because repeat specimens share patients
+high_state_fraction,9,5,0.3585377324051395,0.12049950069791684,0.23803823170722263,0.11988011988011989,2002,-0.31665737696287166,0.3221507109665107,11,specimen; secondary because repeat specimens share patients
+fibroblast_fraction,9,5,0.2978666925849758,0.2090653663901199,0.08880132619485587,0.26973026973026976,2002,-0.1540082562672883,0.14599778820929904,11,specimen; secondary because repeat specimens share patients

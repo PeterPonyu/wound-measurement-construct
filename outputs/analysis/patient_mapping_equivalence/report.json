@@ -1,0 +1,98 @@
+{
+  "experiment": "patient_mapping_and_equivalence_audit",
+  "status": "completed",
+  "scientific_unit": "sample",
+  "patient_level_inference_available": false,
+  "patient_mapping": {
+    "status": "unavailable",
+    "explicit_identifier_columns": [],
+    "series_matrix_columns": [
+      "gsm",
+      "title",
+      "tissue",
+      "disease"
+    ],
+    "title_prefix_observation": {
+      "n_nonmissing": 54,
+      "n_unique": 54,
+      "reused_prefix_present": false,
+      "interpretation": "title prefixes are sample labels; they are not promoted to patient IDs without an explicit author mapping"
+    },
+    "patient_level_inference_available": false,
+    "blocking_reason": "public series matrix has no patient/subject/donor/individual identifier"
+  },
+  "primary_metric": "frozen fibroblast-associated topic mean across all retained cells per sample",
+  "sample_counts": {
+    "dfu": 14,
+    "healer": 9,
+    "nonhealer": 5
+  },
+  "effect": {
+    "healer_minus_nonhealer_mean_difference": 0.04346680645313528,
+    "welch_t": 2.464745874250406,
+    "welch_two_sided_p": 0.03217702357235478,
+    "exact_two_sided_permutation_p": 0.0763854218671992,
+    "bootstrap_95_ci": [
+      0.012184877708657746,
+      0.07652385803922596
+    ]
+  },
+  "equivalence": {
+    "status": "sensitivity_grid_only",
+    "alpha": 0.05,
+    "margins": [
+      {
+        "bound": 0.05,
+        "p_lower": 0.00014332391678240075,
+        "p_upper": 0.359171136110051,
+        "welch_df": 10.591596637740288,
+        "equivalent_at_alpha_0_05": false
+      },
+      {
+        "bound": 0.1,
+        "p_lower": 3.5430299447636315e-06,
+        "p_upper": 0.004380505223710046,
+        "welch_df": 10.591596637740288,
+        "equivalent_at_alpha_0_05": true
+      },
+      {
+        "bound": 0.2,
+        "p_lower": 2.0732274674806206e-08,
+        "p_upper": 1.5694815802851006e-06,
+        "welch_df": 10.591596637740288,
+        "equivalent_at_alpha_0_05": true
+      },
+      {
+        "bound": 0.3,
+        "p_lower": 6.166062105350534e-10,
+        "p_upper": 1.2225832824989615e-08,
+        "welch_df": 10.591596637740288,
+        "equivalent_at_alpha_0_05": true
+      },
+      {
+        "bound": 0.5,
+        "p_lower": 5.17674791922218e-12,
+        "p_upper": 3.2072525055813006e-11,
+        "welch_df": 10.591596637740288,
+        "equivalent_at_alpha_0_05": true
+      }
+    ],
+    "smallest_equivalent_margin": {
+      "margin": 0.07525009732187499,
+      "multiple_of_observed_difference": 1.7312083279687818,
+      "note": "smallest absolute mean-difference margin this sample can declare equivalent at alpha=0.05; a clinically meaningful margin below this value cannot be ruled in or out here"
+    },
+    "interpretation": "TOST is sample-level and exploratory until a clinical margin is pre-specified; no patient-level equivalence claim is made"
+  },
+  "protocol": {
+    "seed": 0,
+    "focus_topic": 0,
+    "discovery_dir": "outputs/expression_representation",
+    "series_matrix": "data/raw/GSE165816/GSE165816_series_matrix.txt.gz",
+    "theta_sha256": "69014f49d5940786febf8738ca24dd612be04c4be420488cc597dc1c071f7519",
+    "obs_sha256": "63bc99e6ee7f58ff6384d0af4620f36b1c056755b9f56df2880ae395f22951e6",
+    "script_sha256": "97ff182f7dff9f38aab34eda05ed126e8e2c8cc8a0c10ee36fd61d08fdb41370",
+    "patient_identifier_required": true,
+    "cell_to_sample_aggregation": "arithmetic mean within GSM"
+  }
+}

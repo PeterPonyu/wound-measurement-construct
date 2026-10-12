@@ -1,0 +1,19 @@
+{
+  "manuscript_text": "TeX Gyre Termes",
+  "manuscript_math": "TeX Gyre Termes Math",
+  "sans_serif": "Arial",
+  "bundled_raw_fonts": [
+    "texgyretermes-regular.otf",
+    "texgyretermes-bolditalic.otf",
+    "texgyretermes-bold.otf",
+    "texgyretermes-italic.otf",
+    "texgyretermes-math.otf"
+  ],
+  "Arial_raw_font_files_included": false,
+  "Arial_scope": "The provided PDFs contain their embedded fonts. Standalone proprietary Arial font binaries are not redistributed; journal recompilation/restyling requires a separately licensed installation.",
+  "Arial_producing_sha256": {
+    "Arial.ttf": "c3044bcf00753e423e2afb40260b867a02038ddfc24db05b6c273d00ee680169",
+    "Arial Bold.ttf": "c2a7bcbcfadf8b06698f334da0e4b888217fe61a2ad8c7b009899aa18d6abe96"
+  },
+  "restyling_command": "python3 scripts/style_journal_figures.py --root . --font-dir /path/to/licensed/arial"
+}

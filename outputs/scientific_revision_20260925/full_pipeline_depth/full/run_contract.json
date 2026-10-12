@@ -1,0 +1,41 @@
+{
+  "started_at_utc": "2026-09-25T07:34:38.472495+00:00",
+  "status": "completed",
+  "mode": "full",
+  "argv": [
+    "scripts/audit_full_pipeline_depth.py",
+    "--mode",
+    "full",
+    "--device",
+    "cpu",
+    "--threads",
+    "4",
+    "--output-dir",
+    "outputs/scientific_revision_20260925/full_pipeline_depth/full",
+    "--runtime-log",
+    "Local execution session metadata; original locator retained in source provenance."
+  ],
+  "protocol_frozen_sha256": "003501ad5f2d7857495de06e5d0e207fa9a6ea5fc6950dfd8f75b8de2bbe61a5",
+  "agent_model": {
+    "requested_model": "gpt-6-astra",
+    "runtime_reported_model": "gpt-6-astra",
+    "runtime_metadata_source": "Local execution session metadata; original locator retained in source provenance.",
+    "runtime_timestamp": "2026-09-25T07:16:50.583Z",
+    "same_exact_model_verified": true,
+    "runtime_reasoning_effort": "max"
+  },
+  "device": "cpu",
+  "torch_threads": 4,
+  "packages": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scipy": "1.16.3",
+    "torch": "2.12.0+cu130"
+  },
+  "new_dependencies_installed": false,
+  "model_training": false,
+  "historical_outputs_writable": false,
+  "completed_at_utc": "2026-09-25T07:38:50.035975+00:00",
+  "elapsed_seconds": 252.14743065834045,
+  "artifacts_manifest_sha256": "07776690fe7b78693d0dfd6cc971c6765a2eb3b8f3039f6e598102ad91755fc5"
+}

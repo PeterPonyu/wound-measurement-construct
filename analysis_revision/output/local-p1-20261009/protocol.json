@@ -1,0 +1,46 @@
+{
+ "cohorts": {
+  "discovery": "GSE165816",
+  "external": []
+ },
+ "design": {
+  "enabled": false
+ },
+ "kind": "measurement",
+ "not_claims": [
+  "Single pilot is not a final K/seed stability comparison or biological validation.",
+  "No outcome, MCID or amputation endpoint claim is authorized by this protocol."
+ ],
+ "protocol_id": "autodl-discovery-topic-pilot-20261003",
+ "question": "Profile the current topic trainer and pickle-free inference-state path on the sealed discovery inputs",
+ "schema_version": 1,
+ "semantics": {
+  "discovery_only_families": [],
+  "families": [],
+  "min_cells": 50,
+  "n_splits": 10,
+  "scale_by_family": {
+   "topic": "logit"
+  },
+  "seed": 0
+ },
+ "stability": {
+  "K": [
+   15
+  ],
+  "batch_size": 256,
+  "kl_weight": 0.01,
+  "lr": 0.001,
+  "match": "current_stability_readout_not_new_biological_replication",
+  "reference": "outputs/direction1_dfu_mainline K=15 topic 0",
+  "seeds": [
+   0
+  ],
+  "steps": 4000
+ },
+ "stage_gate": {
+  "stage_a_stops": true,
+  "stage_b_requires": "sealed discovery review, user approval, target certificate and one-job resource budget"
+ },
+ "status": "prepared_unapproved_profile_not_final_scientific_protocol"
+}

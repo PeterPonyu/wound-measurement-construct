@@ -1,0 +1,189 @@
+{
+ "cell_order_identity": "20ad986dbbe87f50acd53d0c4cac910894e8a36b53091a20e743ada38ae3a18b",
+ "kind": "complete_inference_state",
+ "losses": [
+  8.866555213928223,
+  7.547027111053467,
+  6.93862771987915,
+  6.750229835510254,
+  6.607658863067627,
+  6.518731594085693,
+  6.499903202056885,
+  6.313663482666016,
+  6.2937774658203125,
+  6.2321457862854,
+  6.161235332489014,
+  6.166748046875,
+  6.145247459411621,
+  6.186864852905273,
+  6.06832218170166,
+  6.129149913787842,
+  6.190932273864746,
+  6.015797138214111,
+  6.122389316558838,
+  6.07413911819458,
+  6.073452472686768,
+  6.047585487365723,
+  6.062620639801025,
+  5.992053031921387,
+  6.062472820281982,
+  6.118707656860352,
+  6.060546398162842,
+  6.05253267288208,
+  6.050314903259277,
+  6.090347766876221,
+  6.073908805847168,
+  6.018582820892334,
+  6.058428764343262,
+  6.026011943817139,
+  6.0506510734558105,
+  6.050780296325684,
+  6.074291229248047,
+  6.021572113037109,
+  6.000454902648926,
+  6.064342021942139,
+  6.001674652099609
+ ],
+ "model_config": {
+  "hidden_dim": 256,
+  "input_dim": 7002,
+  "kl_weight": 0.01,
+  "num_topics": 10
+ },
+ "optimizer_resume_supported": false,
+ "panel_identity": "1135087a7168503747bd68ccc2fb11b454df6c9780116607b742b906d1ed549b",
+ "projection_chunk": 8192,
+ "proportions_sha256": "2bc9fd21069c8fbac22d2809dbe050a20535115db5405a4b526976271ec61f3e",
+ "provenance": {
+  "cell_identity_column": "reconstructed_raw_cell_id",
+  "code_digest": "ab109504d42ec1e58bb2",
+  "identity_scope": "binds_provided_row_order_not_independent_raw_join_verification",
+  "input_sha256": {
+   "outputs/direction1_dfu_mainline/beta.npy": "1bbdf049709e482c52df63c35bbb663f8037d6183d450700beb072db6ea1ac4b",
+   "outputs/direction1_dfu_mainline/panel.npy": "85f7f9110c895c918d6e55ff8dd84c7de3f61b46bfbde2d70028cebf46d713c4",
+   "outputs/scientific_revision_20260922/measurement/projection/cells.parquet": "3572a78007b7be093603988a87734c194371e1820ebc499d693c1379cd298449",
+   "outputs/scientific_revision_20260922/measurement_controls/discovery_raw_counts.npz": "307c35122c553615709e86fd04d190f09cf9e94f27b84bee454f63dfabc9c6f7",
+   "outputs/scientific_revision_20260922/measurement_controls/discovery_raw_genes.npy": "a3e7e194e68854fea561091370c779082f7809303ad68250a67f84bb34f3bbe2"
+  },
+  "protocol": {
+   "analysis": {
+    "all_cell_fraction": "same_fibroblast_descriptive_cut_applied_to_all_cells_not_a_fibroblast_state_prevalence",
+    "density_threshold": "H1_shape_cut_refitted_excluding_every_specimen_of_the_scored_patient",
+    "density_validation": "conditional_on_full_discovery_trained_scores_and_supplied_lineage_labels_not_end_to_end_cross_fitted",
+    "full_sample_threshold": "two_component_GMM_midpoint_on_all_fibroblast_loadings_per_fit_descriptive_only",
+    "inferential_unit": "none_computational_sensitivity_only",
+    "patient_aggregation": "equal_specimen_mean_within_patient_not_cell_pooled",
+    "prognostic_tests": false,
+    "ranges": "min_max_across_three_computational_seeds_with_available_and_missing_counts_not_patient_confidence_intervals",
+    "readout_population": "existing_20_mapped_people_including_11_DFU_patients",
+    "readout_scopes": [
+     "fibroblast_only",
+     "all_cells"
+    ],
+    "report_mode": "diagnostic_only"
+   },
+   "cohorts": {
+    "discovery": "GSE165816",
+    "external": []
+   },
+   "design": {
+    "enabled": false
+   },
+   "expected_cohort": {
+    "DFU_patients": 11,
+    "cell_identity_column": "reconstructed_raw_cell_id",
+    "cells": 76461,
+    "fibroblast_cells": 19410,
+    "people": 20,
+    "reference_topics": 15,
+    "specimens": 25
+   },
+   "implementation_adapter": "Provide empty trace metadata when the existing non-partitioned trainer omits trace keys expected by the undefined-match retention path; no numeric or matching changes.",
+   "kind": "measurement",
+   "not_claims": [
+    "Seeds, capacity variants, cells and specimens are not new biological patients.",
+    "All fits reuse the full discovery gene panel, cell QC and supplied patient/lineage mapping.",
+    "Full-discovery topic fitting is not independent held-patient or external-cohort validation.",
+    "Assigned, weak, negative, unmatched and undefined matches remain in the tables without a success threshold.",
+    "The rowwise best match is a labeled sensitivity diagnostic and never replaces the Hungarian primary match.",
+    "Fixed 40000-step completion is not proof of optimizer convergence.",
+    "Density comparisons are descriptive transformed-score likelihoods, not proof of discrete biological states.",
+    "No new healing, amputation, MCID, mechanistic or prognostic hypothesis test is performed.",
+    "No GitHub publishing, commits, releases, installations, software archives or raw-data duplication."
+   ],
+   "protocol_id": "publication-quality-topic-stability-20261009-v1",
+   "question": "Describe topic and measurement sensitivity across a fixed capacity/seed grid on the existing discovery cohort, retaining every missing or adverse match.",
+   "resources": {
+    "archives": false,
+    "device": "cuda",
+    "gpu_workers": 1,
+    "max_incremental_artifact_bytes": 536870912,
+    "max_jobs": 9,
+    "min_remaining_disk_bytes": 8589934592,
+    "new_downloads": false,
+    "numeric_threads": 1,
+    "optimizer_resume": false,
+    "output_root": "output/publication-quality-20261009/p1",
+    "per_fit_reserve_bytes": 33554432,
+    "raw_matrix_copies": false,
+    "summary_reserve_bytes": 8388608
+   },
+   "schema_version": 1,
+   "semantics": {
+    "discovery_only_families": [],
+    "families": [],
+    "max_cells": 4000,
+    "min_cells": 50,
+    "min_positive": 20,
+    "n_splits": 10,
+    "scale_by_family": {
+     "topic": "logit"
+    },
+    "seed": 0
+   },
+   "stability": {
+    "K": [
+     10,
+     15,
+     20
+    ],
+    "batch_size": 256,
+    "kl_weight": 0.01,
+    "lr": 0.001,
+    "matching": "hungarian_one_to_one_pearson_sqrt_gene_probabilities",
+    "reference": "outputs/direction1_dfu_mainline K=15; primary reference topic 0",
+    "retain_undefined_reference_match": true,
+    "seeds": [
+     0,
+     1,
+     2
+    ],
+    "selection_policy": "all_nine_fits_no_quality_threshold_no_rowwise_rescue_no_favourable_seed_selection",
+    "step_budgets": [
+     40000
+    ],
+    "steps": 40000
+   },
+   "stage_gate": {
+    "approval_kind": "explicit_current_user_authorization_recorded_by_operator_not_independent_signoff",
+    "prepare_stops_before_real_fits": true,
+    "run_requires": "leader_review_of_protocol_and_synthetic_tests_plus_fresh_plan_bound_execution_approval",
+    "sidecar_hold_verbatim": "Do not start real experiments until protocol is written and tested and report is submitted to leader for review; send concise readiness with files/command/plan job count. Main will authorize run after review via send_input.",
+    "user_authorization_verbatim": "I approve you, I allow you, I proceed you with more experiments, with more methods, with more data sets, and any way that you can find to improve the current version of the papers, of the directions."
+   },
+   "status": "frozen_before_fitting_pending_leader_review"
+  }
+ },
+ "reload_device": "cpu",
+ "reload_max_abs_error": 0.0,
+ "reload_tolerance": 1e-06,
+ "reload_verified": true,
+ "schema_version": 1,
+ "training_config": {
+  "batch_size": 256,
+  "device": "cuda",
+  "lr": 0.001,
+  "seed": 1,
+  "steps": 40000
+ }
+}

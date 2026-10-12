@@ -22,7 +22,8 @@ BUILD = ROOT / "tmp/pdfs"
 DEST = ROOT / "output/pdf"
 NAMES = {1: "measurement_construct_validation"}
 sys.path.insert(0, str(ROOT))
-from manuscripts.r_tikz.build import inspect_tissue_panel, sha
+from manuscripts.r_tikz.build import figure_sources, inspect_tissue_panel, sha
+from manuscripts.latex.geometry import inspect_appendix
 
 
 def validate_figure_inputs():
@@ -31,8 +32,10 @@ def validate_figure_inputs():
     verification_path = ROOT / "outputs/figure_r_tikz/verification.json"
     manifest = json.loads(manifest_path.read_text())
     verification = json.loads(verification_path.read_text())
-    if len(verification["figures"]) != 9 or len(verification["collections"]) != 1:
-        raise RuntimeError("A complete 9-figure build is required before manuscript delivery")
+    expected = {re.match(r'\\paperfigure\{([^}]+)\}', p.read_text())[1]
+                for n in NAMES for p in figure_sources(n)}
+    if set(verification['figures']) != expected or len(verification["collections"]) != 1:
+        raise RuntimeError("A complete native-caption-matched figure build is required before manuscript delivery")
     if sha(manifest_path) != verification["render_manifest_sha256"]:
         raise RuntimeError("Figure manifest changed after verification; rebuild figures")
     for group in ("sources", "auxiliary_sources", "design_sources"):
@@ -59,13 +62,41 @@ def execute(command, log=None, cwd=HERE):
         subprocess.run(command, cwd=cwd, check=True)
 
 
-def validate(n):
-    folder = BUILD / "manuscript"
-    stem = folder / "manuscript"
-    log = stem.with_suffix(".log").read_text(errors="replace")
-    for pattern in [r"Overfull \\[hv]box", r"Missing character:", r"(?:Citation|Reference) .+ undefined", r"multiply defined"]:
+def validate_population_results_whitespace(whitespace, first_page, last_page):
+    """Prevent a stranded Results float, including one shifted to a later page."""
+    for item in whitespace[first_page - 1:last_page]:
+        limit = 36 if item["page"] == 14 else 60
+        if item["bottom_gap_pt"] > limit:
+            raise RuntimeError(
+                f"Population Results page {item['page']} has excessive bottom "
+                f"whitespace: {item['bottom_gap_pt']} pt (limit {limit} pt)"
+            )
+
+
+def validate_measurement_results_whitespace(whitespace, first_page, last_page):
+    """Reject the measurement opening's original or pagination-shifted gap."""
+    for item in whitespace[first_page - 1:last_page]:
+        limit = 36 if item["page"] == first_page else 60
+        if item["bottom_gap_pt"] > limit:
+            raise RuntimeError(
+                f"Measurement Results page {item['page']} has excessive bottom "
+                f"whitespace: {item['bottom_gap_pt']} pt (limit {limit} pt)"
+            )
+
+
+def require_clean_typesetting(log, n):
+    for pattern in [r"Overfull \\[hv]box", r"Missing character:",
+                    r"(?:Citation|Reference) .+ undefined", r"multiply defined",
+                    r"ignored error:", r"(?:LaTeX|Package .+) Error:"]:
         if re.search(pattern, log):
             raise RuntimeError(f"Paper {n}: unresolved typesetting issue: {pattern}")
+
+
+def validate(n, build_dir=None, *, write_extracted_text=True):
+    folder = (BUILD if build_dir is None else Path(build_dir)) / "manuscript"
+    stem = folder / "manuscript"
+    log = stem.with_suffix(".log").read_text(errors="replace")
+    require_clean_typesetting(log, n)
     if "already defined" in (folder/"build.log").read_text(errors="replace"):
         raise RuntimeError(f"Paper {n}: duplicate PDF navigation destination")
     aux = stem.with_suffix(".aux").read_text()
@@ -77,7 +108,7 @@ def validate(n):
         raise RuntimeError(f"Paper {n}: bibliography does not follow first citation order")
     pages = {m[1]: int(m[2]) for m in re.finditer(r"\\newlabel\{((?:fig|call):[^}]+)\}\{\{[^}]*\}\{(\d+)\}", aux)}
     placement = []
-    for number in range(1, 10 if n == 1 else 8):
+    for number in range(1, len(figure_sources(n)) + 1):
         key = f"p{n}f{number}"
         ref, fig = pages[f"call:{key}"], pages[f"fig:{key}"]
         if not 0 <= fig - ref <= 1:
@@ -129,6 +160,14 @@ def validate(n):
             raise RuntimeError("Population Results opening has excessive bottom whitespace")
         if "1 Introduction" not in text or "2 Materials and methods" not in text or "3 Results" not in text:
             raise RuntimeError(f"Paper {n}: section order changed")
+        results_first = next(page.number + 1 for page in document
+                             if "3 Results" in page.get_text())
+        discussion_first = next(page.number + 1 for page in document
+                                if "4 Discussion" in page.get_text())
+        if n == 2:
+            validate_population_results_whitespace(whitespace, results_first, discussion_first)
+        else:
+            validate_measurement_results_whitespace(whitespace, results_first, discussion_first)
         tissue=inspect_tissue_panel(stem.with_suffix(".pdf"),n,pages[f"fig:p{n}f1"]-1)
         internal_links=0
         for page in document:
@@ -139,18 +178,28 @@ def validate(n):
                     internal_links+=1
         result = {"pages": len(document), "figures": placement, "raster_objects": 0, "fonts": fonts,
                   "figure1_tissue":tissue,"page_bottom_gaps":whitespace,"resolved_internal_links":internal_links,
+                  "results_page_range": {"first": results_first, "discussion_begins": discussion_first},
+                  "population_results_whitespace_checked": n == 2,
+                  "measurement_results_whitespace_checked": n == 1,
                   "references": len(re.findall(r"\\bibitem", stem.with_suffix(".bbl").read_text())),
                   "first_citation_order_verified": True, "reference_keys": bibliography_order,
                   "equations": len(re.findall(r"\\newlabel\{eq:",aux)),
-                  "tables": len(re.findall(r"\\newlabel\{tab:",aux))}
-        (folder / "extracted_text.txt").write_text(text)
+                  "tables": len(re.findall(r"\\newlabel\{tab:",aux)),
+                  "appendix_geometry": inspect_appendix(document)}
+        if write_extracted_text:
+            (folder / "extracted_text.txt").write_text(text)
     return result
 
 
 def main():
+    global BUILD, DEST
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--render", action="store_true", help="Render every final page for visual inspection")
+    parser.add_argument("--build-dir", default=str(BUILD), help="Fresh LaTeX build directory")
+    parser.add_argument("--dest-dir", default=str(DEST), help="Destination directory for compiled PDFs")
     args = parser.parse_args()
+    BUILD = Path(args.build_dir).resolve()
+    DEST = Path(args.dest_dir).resolve()
     for command in ("latexmk", "xelatex", "bibtex", "pdftoppm"):
         if shutil.which(command) is None:
             raise RuntimeError(f"Required installed tool is absent: {command}")
@@ -160,6 +209,11 @@ def main():
     # Resolve the canonical bibliography independently of local symlinks.
     os.environ["BIBINPUTS"] = str(ROOT / "manuscripts") + os.pathsep + os.environ.get("BIBINPUTS", "")
     execute([sys.executable, str(HERE / "export_tables.py")])
+    execute([sys.executable, str(ROOT / "manuscripts/quality_tables.py"), "--check"])
+    execute([sys.executable, str(ROOT / "manuscripts/followup_tables.py"), "--check"])
+    if (ROOT / "manuscripts/p1_preparation_tables.py").is_file():
+        execute([sys.executable, str(ROOT / "manuscripts/p1_preparation_tables.py"), "--check",
+                 str(HERE / "paper1_preparation_tables.tex")])
     execute([sys.executable, str(ROOT / "scripts/verify_manuscript.py")])
     results = {}
     for n, name in NAMES.items():

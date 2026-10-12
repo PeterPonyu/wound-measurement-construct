@@ -1,0 +1,120 @@
+{
+  "status": "complete",
+  "eligible_arms": [
+    "DFU-healer",
+    "DFU-nonhealer"
+  ],
+  "healthy_controls_enter_healing_label_null": false,
+  "specimen_test": {
+    "n_healed": 9,
+    "n_nonhealed": 5,
+    "allocations": 2002,
+    "primary_inference": false,
+    "readouts": [
+      {
+        "readout": "fibroblast_mean",
+        "n_healed": 9,
+        "n_nonhealed": 5,
+        "healed_mean": 0.20422749673454169,
+        "nonhealed_mean": 0.07069203382309953,
+        "difference": 0.13353546291144214,
+        "exact_p": 0.08941058941058941,
+        "allocations": 2002,
+        "null_percentile_025": -0.1652463163180759,
+        "null_percentile_975": 0.16229861551616587,
+        "healthy_rows_excluded_before_allocation": 11,
+        "unit": "specimen; secondary because repeat specimens share patients"
+      },
+      {
+        "readout": "high_state_fraction",
+        "n_healed": 9,
+        "n_nonhealed": 5,
+        "healed_mean": 0.3585377324051395,
+        "nonhealed_mean": 0.12049950069791684,
+        "difference": 0.23803823170722263,
+        "exact_p": 0.11988011988011989,
+        "allocations": 2002,
+        "null_percentile_025": -0.31665737696287166,
+        "null_percentile_975": 0.3221507109665107,
+        "healthy_rows_excluded_before_allocation": 11,
+        "unit": "specimen; secondary because repeat specimens share patients"
+      },
+      {
+        "readout": "fibroblast_fraction",
+        "n_healed": 9,
+        "n_nonhealed": 5,
+        "healed_mean": 0.2978666925849758,
+        "nonhealed_mean": 0.2090653663901199,
+        "difference": 0.08880132619485587,
+        "exact_p": 0.26973026973026976,
+        "allocations": 2002,
+        "null_percentile_025": -0.1540082562672883,
+        "null_percentile_975": 0.14599778820929904,
+        "healthy_rows_excluded_before_allocation": 11,
+        "unit": "specimen; secondary because repeat specimens share patients"
+      }
+    ]
+  },
+  "patient_test": {
+    "n_healed": 7,
+    "n_nonhealed": 4,
+    "allocations": 330,
+    "primary_inference": true,
+    "readouts": [
+      {
+        "readout": "fibroblast_mean",
+        "n_healed": 7,
+        "n_nonhealed": 4,
+        "healed_mean": 0.1728731139487157,
+        "nonhealed_mean": 0.0836782474710985,
+        "difference": 0.08919486647761721,
+        "exact_p": 0.31212121212121213,
+        "allocations": 330,
+        "null_percentile_025": -0.16200111708688109,
+        "null_percentile_975": 0.15970743729719167,
+        "healthy_rows_excluded_before_allocation": 9,
+        "gate": "original_pooled",
+        "unit": "patient",
+        "aggregation": "fibroblast-cell weights for within-fibroblast summaries; all-cell weights for composition",
+        "bh_q_three_readouts_within_gate": 0.4696969696969697
+      },
+      {
+        "readout": "high_state_fraction",
+        "n_healed": 7,
+        "n_nonhealed": 4,
+        "healed_mean": 0.30098808413560035,
+        "nonhealed_mean": 0.14956236575234536,
+        "difference": 0.151425718383255,
+        "exact_p": 0.3696969696969697,
+        "allocations": 330,
+        "null_percentile_025": -0.32052534424676515,
+        "null_percentile_975": 0.3234195908834938,
+        "healthy_rows_excluded_before_allocation": 9,
+        "gate": "original_pooled",
+        "unit": "patient",
+        "aggregation": "fibroblast-cell weights for within-fibroblast summaries; all-cell weights for composition",
+        "bh_q_three_readouts_within_gate": 0.4696969696969697
+      },
+      {
+        "readout": "fibroblast_fraction",
+        "n_healed": 7,
+        "n_nonhealed": 4,
+        "healed_mean": 0.28252288163946515,
+        "nonhealed_mean": 0.21175101440013844,
+        "difference": 0.07077186723932671,
+        "exact_p": 0.4696969696969697,
+        "allocations": 330,
+        "null_percentile_025": -0.1696703643300834,
+        "null_percentile_975": 0.17458340951469678,
+        "healthy_rows_excluded_before_allocation": 9,
+        "gate": "original_pooled",
+        "unit": "patient",
+        "aggregation": "fibroblast-cell weights for within-fibroblast summaries; all-cell weights for composition",
+        "bh_q_three_readouts_within_gate": 0.4696969696969697
+      }
+    ]
+  },
+  "test_definition": "Exhaustive absolute two-sided difference in equal-unit group means; ties included with 1e-12*max(1,abs(observed)); no Monte Carlo add-one correction.",
+  "inference_limit": "Observational healing-label exchangeability is an assumption; this is a calibrated permutation calculation, not evidence that the measurement is biologically valid or that the pipeline cannot generate artifacts.",
+  "historical_problem": "scripts/38_pipeline_negative_control.py permuted all three arms across 25 specimens, allowing healthy controls into pseudo healing groups. The repaired null first restricts eligibility to 14 DFU specimens; 11-patient tests remain primary."
+}
