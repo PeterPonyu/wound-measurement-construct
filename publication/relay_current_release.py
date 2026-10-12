@@ -34,8 +34,11 @@ def api(method, url, data=None, binary=None):
     body = binary if binary is not None else json.dumps(data).encode() if data is not None else None
     headers = {'Authorization': 'Bearer ' + token,
                'Accept': 'application/json',
+               'Cache-Control': 'no-cache',
                'User-Agent': 'scientific-reports-release-transfer/1.0',
                'Content-Type': 'application/octet-stream' if binary is not None else 'application/json'}
+    if method == 'GET':
+        url += ('&' if parsed.query else '?') + 'fresh=' + str(time.time_ns())
     try:
         with API.open(Request(url, data=body, headers=headers, method=method), timeout=600) as response:
             payload = response.read()
@@ -177,11 +180,11 @@ def stage_release():
 
 try:
     stage_release()
-except RuntimeError:
+except RuntimeError as exc:
     # A failed or ambiguous transfer never proves publication. The exact public
     # DOI, version, file set and downloaded payloads must still pass below.
-    print('Checking the public record after an ambiguous or resumed transfer', flush=True)
-with urlopen(base, timeout=90) as response: public = json.load(response)
+    print(str(exc) + '; checking the public record after an ambiguous or resumed transfer', flush=True)
+with urlopen(base + '?fresh=' + str(time.time_ns()), timeout=90) as response: public = json.load(response)
 assert public['doi'] == CONFIG['doi'] and public['metadata']['version'] == CONFIG['version']
 assert {x['key'] for x in public['files']} == set(by_name)
 published = {x['key']: x for x in public['files']}
@@ -191,7 +194,7 @@ for name, item in by_name.items():
     remote = published[name]
     assert remote['size'] == item['bytes'] and remote['checksum'].removeprefix('md5:') == item['md5']
     target = public_root / name
-    url = 'https://zenodo.org/records/' + record_id + '/files/' + quote(name) + '?download=1'
+    url = 'https://zenodo.org/records/' + record_id + '/files/' + quote(name) + '?download=1&fresh=' + str(time.time_ns())
     with urlopen(url, timeout=180) as response, target.open('wb') as stream:
         for block in iter(lambda: response.read(1 << 20), b''): stream.write(block)
     assert target.stat().st_size == item['bytes'] and digest(target) == item['sha256']
