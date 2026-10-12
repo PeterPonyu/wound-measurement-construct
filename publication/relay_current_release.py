@@ -28,7 +28,7 @@ def digest(path, algorithm='sha256'):
 def api(method, url, data=None, binary=None):
     parsed = urlsplit(url)
     assert parsed.scheme == 'https' and parsed.hostname == 'zenodo.org' and parsed.path.startswith('/api/')
-    token = os.environ.get('ZENODO_ACCESS_TOKEN')
+    token = (os.environ.get('ZENODO_ACCESS_TOKEN') or '').strip()
     if not token:
         raise RuntimeError('The temporary publication secret is not configured')
     body = binary if binary is not None else json.dumps(data).encode() if data is not None else None
@@ -71,7 +71,7 @@ if '--preflight' in sys.argv[2:]:
     record_id = str(CONFIG['record_id'])
     assert record_id in ('23308073', '23308074', '23308077')
     base = 'https://zenodo.org/api/records/' + record_id
-    draft = retry('GET', base + '/draft')
+    draft = retry('GET', 'https://zenodo.org/api/deposit/depositions/' + record_id)
     assert draft['metadata']['version'] == CONFIG['version']
     entries = retry('GET', base + '/draft/files')['entries']
     assert {x['key'] for x in entries}.issubset({x['name'] for x in CONFIG['files']})
@@ -105,9 +105,11 @@ def list_entries():
     return entries
 
 def stage_release():
-    draft = retry('GET', base + '/draft')
+    draft = retry('GET', 'https://zenodo.org/api/deposit/depositions/' + record_id)
     assert draft['metadata']['version'] == CONFIG['version']
-    assert draft.get('is_published') is not True
+    if draft.get('submitted') is True:
+        return  # Continue below with public-file verification, without a mutation.
+    assert draft.get('submitted') is False
     entries = list_entries()
     for name, item in by_name.items():
         entry = entries.get(name)
@@ -147,7 +149,7 @@ def stage_release():
     entries = list_entries()
     assert set(entries) == set(by_name) and all(good(entries[n], item) for n, item in by_name.items())
     try:
-        api('POST', base + '/draft/actions/publish')
+        api('POST', 'https://zenodo.org/api/deposit/depositions/' + record_id + '/actions/publish')
     except RuntimeError:
         # An ambiguous publish reply is followed by a public read, never blind repetition.
         pass
