@@ -4538,11 +4538,6 @@
       "path": "wound_models/topic_model.py",
       "sha256": "12c02b6dcf994a953cae2058e24d151f96d183029bcfcbafa2cc3473edc27ab6",
       "bytes": 5948
-    },
-    {
-      "path": "PUBLICATION_STATUS.json",
-      "sha256": "0b7e772835ca01118a2c06f60ddb158f8741c45b366ed46d5488f192c06dee8d",
-      "bytes": 729
     }
   ],
   "editorial_document_tag": "submission-2026-10-12",
