@@ -1,11 +1,17 @@
 # Neural topic modelling of fibroblast measurements and diabetic foot ulcer healing: analysis software and reproduction archive
 
-**Read the [corrected inline main manuscript](journal/scientific-reports-manuscript-inline.pdf).**
+## Current manuscript documents
+
+The reviewed main Article, Supplementary Information and editable document sources are available in the [submission-2026-10-12 document release](https://github.com/PeterPonyu/wound-measurement-construct/releases/tag/submission-2026-10-12) and in [submission-2026-10-12/](submission-2026-10-12/README.md).
+
+The software and saved-analysis release remains version 0.5.0, DOI [10.5281/zenodo.23308073](https://doi.org/10.5281/zenodo.23308073). It archives the frozen computational evidence and its earlier document sources. The later editorial revision has a separate GitHub document tag; it adds no model fits or biological samples. Earlier document files remain available for provenance.
+
+**Earlier frozen-release documents: [inline main manuscript](journal/scientific-reports-manuscript-inline.pdf).**
 The [submission-layout main manuscript](journal/scientific-reports-manuscript.pdf)
 and [Supplementary Information](journal/scientific-reports-supplement.pdf) are also included.
 
 Software/reproduction version: **0.5.0**. DOI **10.5281/zenodo.23308073** was reserved at archive
-assembly; remote publication is a separate operation. That identifier identifies
+assembly and is now published; its complete public payload has been downloaded and hash-verified. That identifier identifies
 the software/reproduction release, not a manuscript or preprint. The immutable
 prior software-only snapshot has DOI 10.5281/zenodo.22884868 and does not archive this revision.
 

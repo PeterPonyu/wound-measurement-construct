@@ -1,0 +1,38 @@
+{
+  "document_version": "submission-2026-10-12",
+  "title": "Neural topic modelling of fibroblast measurements and diabetic foot ulcer healing: a patient-level audit",
+  "software_doi": "10.5281/zenodo.23308073",
+  "software_version": "0.5.0",
+  "software_archive_sha256": "c0561a58d9cf70e0fa386134b581f28a2c0929063c330f4e8049f3af5709343a",
+  "documents": {
+    "manuscript": {
+      "sha256": "e61bf90ff6d96724a5ae43713d4e9f2071c165fcf788be908616efe31291d443",
+      "bytes": 848343,
+      "pages": 11
+    },
+    "supplement": {
+      "sha256": "d7b2d8b44bc7f17448628aca757a1bdbab66fb7ead74cec2b376932bb6ef0d2a",
+      "bytes": 591148,
+      "pages": 38
+    }
+  },
+  "editable_source": {
+    "file": "wound-measurement-construct-submission-2026-10-12-editable-source.zip",
+    "sha256": "173820ff7d8277c35bed81cbceb29cabc3ee02988f171f1f4e8c796e139059ca",
+    "bytes": 1171808
+  },
+  "checks": {
+    "mechanical_layout": "PASS",
+    "main_panels_in_first_citation_order": "PASS",
+    "displays_after_first_citation_within_one_page": "PASS",
+    "all_page_overview_and_selected_full_page_review": "PASS",
+    "fresh_source_rebuild_with_network_and_original_author_home_unavailable": "PASS",
+    "rebuild_pdf_text_and_page_identity": "PASS",
+    "new_model_fits": false
+  },
+  "scope": "Document reproduction and preparation checks, not independent human peer review or additional biological validation.",
+  "author_final_journal_reading_certified": false,
+  "journal_submission_performed": false,
+  "Arial_is_installed_licensed_runtime_not_redistributed": true,
+  "software_doi_archives_this_later_editorial_source": false
+}

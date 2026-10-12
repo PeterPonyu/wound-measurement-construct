@@ -1,0 +1,319 @@
+\begin{thebibliography}{10}
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+\providecommand{\bibinfo}[2]{#2}
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{armstrong2017}
+\bibinfo{author}{Armstrong, D.~G.}, \bibinfo{author}{Boulton, A.~J.} \&
+  \bibinfo{author}{Bus, S.~A.}
+\newblock \bibinfo{title}{{Diabetic Foot Ulcers and Their Recurrence}}.
+\newblock \emph{\bibinfo{journal}{New England Journal of Medicine}}
+  \textbf{\bibinfo{volume}{376}}, \bibinfo{pages}{2367--2375}
+  (\bibinfo{year}{2017}).
+
+\bibitem{wilkinson2020}
+\bibinfo{author}{Wilkinson, H.~N.} \& \bibinfo{author}{Hardman, M.~J.}
+\newblock \bibinfo{title}{{Wound healing: cellular mechanisms and pathological
+  outcomes}}.
+\newblock \emph{\bibinfo{journal}{Open Biology}} \textbf{\bibinfo{volume}{10}},
+  \bibinfo{pages}{200223} (\bibinfo{year}{2020}).
+
+\bibitem{theocharidis2022}
+\bibinfo{author}{Theocharidis, G.} \emph{et~al.}
+\newblock \bibinfo{title}{{Single cell transcriptomic landscape of diabetic
+  foot ulcers}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{13}}, \bibinfo{pages}{181} (\bibinfo{year}{2022}).
+
+\bibitem{geo_gse165816}
+\bibinfo{author}{{NCBI Gene Expression Omnibus}}.
+\newblock \bibinfo{title}{{GSE165816: Single Cell Transcriptomic Landscape of
+  Diabetic Foot Ulcers}}.
+\newblock \bibinfo{howpublished}{Gene Expression Omnibus accession}
+  (\bibinfo{year}{2021}).
+\newblock
+  \urlprefix\url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE165816}.
+
+\bibitem{driskell2013}
+\bibinfo{author}{Driskell, R.~R.} \emph{et~al.}
+\newblock \bibinfo{title}{{Distinct fibroblast lineages determine dermal
+  architecture in skin development and repair}}.
+\newblock \emph{\bibinfo{journal}{Nature}} \textbf{\bibinfo{volume}{504}},
+  \bibinfo{pages}{277--281} (\bibinfo{year}{2013}).
+
+\bibitem{muhl2020}
+\bibinfo{author}{Muhl, L.} \emph{et~al.}
+\newblock \bibinfo{title}{{Single-cell analysis uncovers fibroblast
+  heterogeneity and criteria for fibroblast and mural cell identification and
+  discrimination}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{11}}, \bibinfo{pages}{3953} (\bibinfo{year}{2020}).
+
+\bibitem{buechler2021}
+\bibinfo{author}{Buechler, M.~B.} \emph{et~al.}
+\newblock \bibinfo{title}{{Cross-tissue organization of the fibroblast
+  lineage}}.
+\newblock \emph{\bibinfo{journal}{Nature}} \textbf{\bibinfo{volume}{593}},
+  \bibinfo{pages}{575--579} (\bibinfo{year}{2021}).
+
+\bibitem{soleboldo2020}
+\bibinfo{author}{Sol{\'e}-Boldo, L.} \emph{et~al.}
+\newblock \bibinfo{title}{{Single-cell transcriptomes of the human skin reveal
+  age-related loss of fibroblast priming}}.
+\newblock \emph{\bibinfo{journal}{Communications Biology}}
+  \textbf{\bibinfo{volume}{3}}, \bibinfo{pages}{188} (\bibinfo{year}{2020}).
+
+\bibitem{philippeos2018}
+\bibinfo{author}{Philippeos, C.} \emph{et~al.}
+\newblock \bibinfo{title}{Spatial and single-cell transcriptional profiling
+  identifies functionally distinct human dermal fibroblast subpopulations}.
+\newblock \emph{\bibinfo{journal}{Journal of Investigative Dermatology}}
+  \textbf{\bibinfo{volume}{138}}, \bibinfo{pages}{811--825}
+  (\bibinfo{year}{2018}).
+
+\bibitem{blei2003}
+\bibinfo{author}{Blei, D.~M.}, \bibinfo{author}{Ng, A.~Y.} \&
+  \bibinfo{author}{Jordan, M.~I.}
+\newblock \bibinfo{title}{{Latent Dirichlet Allocation}}.
+\newblock \emph{\bibinfo{journal}{Journal of Machine Learning Research}}
+  \textbf{\bibinfo{volume}{3}}, \bibinfo{pages}{993--1022}
+  (\bibinfo{year}{2003}).
+\newblock \urlprefix\url{https://www.jmlr.org/papers/v3/blei03a.html}.
+
+\bibitem{kotliar2019}
+\bibinfo{author}{Kotliar, D.} \emph{et~al.}
+\newblock \bibinfo{title}{{Identifying gene expression programs of cell-type
+  identity and cellular activity with single-cell RNA-Seq}}.
+\newblock \emph{\bibinfo{journal}{eLife}} \textbf{\bibinfo{volume}{8}},
+  \bibinfo{pages}{e43803} (\bibinfo{year}{2019}).
+
+\bibitem{lopez2018}
+\bibinfo{author}{Lopez, R.}, \bibinfo{author}{Regier, J.},
+  \bibinfo{author}{Cole, M.~B.}, \bibinfo{author}{Jordan, M.~I.} \&
+  \bibinfo{author}{Yosef, N.}
+\newblock \bibinfo{title}{{Deep generative modeling for single-cell
+  transcriptomics}}.
+\newblock \emph{\bibinfo{journal}{Nature Methods}}
+  \textbf{\bibinfo{volume}{15}}, \bibinfo{pages}{1053--1058}
+  (\bibinfo{year}{2018}).
+
+\bibitem{srivastava2017}
+\bibinfo{author}{Srivastava, A.} \& \bibinfo{author}{Sutton, C.}
+\newblock \bibinfo{title}{{Autoencoding Variational Inference For Topic
+  Models}}.
+\newblock In \emph{\bibinfo{booktitle}{International Conference on Learning
+  Representations}} (\bibinfo{year}{2017}).
+\newblock \urlprefix\url{https://arxiv.org/abs/1703.01488}.
+
+\bibitem{kingma2014}
+\bibinfo{author}{Kingma, D.~P.} \& \bibinfo{author}{Welling, M.}
+\newblock \bibinfo{title}{{Auto-Encoding Variational Bayes}}.
+\newblock In \emph{\bibinfo{booktitle}{International Conference on Learning
+  Representations}} (\bibinfo{year}{2014}).
+\newblock \urlprefix\url{https://arxiv.org/abs/1312.6114}.
+
+\bibitem{aitchison1980}
+\bibinfo{author}{Aitchison, J.} \& \bibinfo{author}{Shen, S.~M.}
+\newblock \bibinfo{title}{{Logistic-normal distributions: Some properties and
+  uses}}.
+\newblock \emph{\bibinfo{journal}{Biometrika}} \textbf{\bibinfo{volume}{67}},
+  \bibinfo{pages}{261--272} (\bibinfo{year}{1980}).
+
+\bibitem{buettner2021}
+\bibinfo{author}{B{\"{u}}ttner, M.}, \bibinfo{author}{Ostner, J.},
+  \bibinfo{author}{M{\"{u}}ller, C.~L.}, \bibinfo{author}{Theis, F.~J.} \&
+  \bibinfo{author}{Schubert, B.}
+\newblock \bibinfo{title}{{scCODA is a Bayesian model for compositional
+  single-cell data analysis}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{12}}, \bibinfo{pages}{6876} (\bibinfo{year}{2021}).
+
+\bibitem{altman2006}
+\bibinfo{author}{Altman, D.~G.} \& \bibinfo{author}{Royston, P.}
+\newblock \bibinfo{title}{{The cost of dichotomising continuous variables}}.
+\newblock \emph{\bibinfo{journal}{BMJ}} \textbf{\bibinfo{volume}{332}},
+  \bibinfo{pages}{1080} (\bibinfo{year}{2006}).
+
+\bibitem{dann2022}
+\bibinfo{author}{Dann, E.}, \bibinfo{author}{Henderson, N.~C.},
+  \bibinfo{author}{Teichmann, S.~A.}, \bibinfo{author}{Morgan, M.~D.} \&
+  \bibinfo{author}{Marioni, J.~C.}
+\newblock \bibinfo{title}{{Differential abundance testing on single-cell data
+  using k-nearest neighbor graphs}}.
+\newblock \emph{\bibinfo{journal}{Nature Biotechnology}}
+  \textbf{\bibinfo{volume}{40}}, \bibinfo{pages}{245--253}
+  (\bibinfo{year}{2022}).
+
+\bibitem{vandenbrink2017}
+\bibinfo{author}{van~den Brink, S.~C.} \emph{et~al.}
+\newblock \bibinfo{title}{{Single-cell sequencing reveals dissociation-induced
+  gene expression in tissue subpopulations}}.
+\newblock \emph{\bibinfo{journal}{Nature Methods}}
+  \textbf{\bibinfo{volume}{14}}, \bibinfo{pages}{935--936}
+  (\bibinfo{year}{2017}).
+
+\bibitem{young2020}
+\bibinfo{author}{Young, M.~D.} \& \bibinfo{author}{Behjati, S.}
+\newblock \bibinfo{title}{{SoupX removes ambient RNA contamination from
+  droplet-based single-cell RNA sequencing data}}.
+\newblock \emph{\bibinfo{journal}{GigaScience}} \textbf{\bibinfo{volume}{9}},
+  \bibinfo{pages}{giaa151} (\bibinfo{year}{2020}).
+
+\bibitem{wolock2019}
+\bibinfo{author}{Wolock, S.~L.}, \bibinfo{author}{Lopez, R.} \&
+  \bibinfo{author}{Klein, A.~M.}
+\newblock \bibinfo{title}{{Scrublet: Computational Identification of Cell
+  Doublets in Single-Cell Transcriptomic Data}}.
+\newblock \emph{\bibinfo{journal}{Cell Systems}} \textbf{\bibinfo{volume}{8}},
+  \bibinfo{pages}{281--291.e9} (\bibinfo{year}{2019}).
+
+\bibitem{heumos2023}
+\bibinfo{author}{Heumos, L.} \emph{et~al.}
+\newblock \bibinfo{title}{{Best practices for single-cell analysis across
+  modalities}}.
+\newblock \emph{\bibinfo{journal}{Nature Reviews Genetics}}
+  \textbf{\bibinfo{volume}{24}}, \bibinfo{pages}{550--572}
+  (\bibinfo{year}{2023}).
+
+\bibitem{hafemeister2019}
+\bibinfo{author}{Hafemeister, C.} \& \bibinfo{author}{Satija, R.}
+\newblock \bibinfo{title}{{Normalization and variance stabilization of
+  single-cell RNA-seq data using regularized negative binomial regression}}.
+\newblock \emph{\bibinfo{journal}{Genome Biology}}
+  \textbf{\bibinfo{volume}{20}}, \bibinfo{pages}{296} (\bibinfo{year}{2019}).
+
+\bibitem{luecken2022}
+\bibinfo{author}{Luecken, M.~D.} \emph{et~al.}
+\newblock \bibinfo{title}{{Benchmarking atlas-level data integration in
+  single-cell genomics}}.
+\newblock \emph{\bibinfo{journal}{Nature Methods}}
+  \textbf{\bibinfo{volume}{19}}, \bibinfo{pages}{41--50}
+  (\bibinfo{year}{2022}).
+
+\bibitem{crowell2020}
+\bibinfo{author}{Crowell, H.~L.} \emph{et~al.}
+\newblock \bibinfo{title}{{muscat detects subpopulation-specific state
+  transitions from multi-sample multi-condition single-cell transcriptomics
+  data}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{11}}, \bibinfo{pages}{6077} (\bibinfo{year}{2020}).
+
+\bibitem{squair2021}
+\bibinfo{author}{Squair, J.~W.} \emph{et~al.}
+\newblock \bibinfo{title}{{Confronting false discoveries in single-cell
+  differential expression}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{12}}, \bibinfo{pages}{5692} (\bibinfo{year}{2021}).
+
+\bibitem{zimmerman2021}
+\bibinfo{author}{Zimmerman, K.~D.}, \bibinfo{author}{Espeland, M.~A.} \&
+  \bibinfo{author}{Langefeld, C.~D.}
+\newblock \bibinfo{title}{{A practical solution to pseudoreplication bias in
+  single-cell studies}}.
+\newblock \emph{\bibinfo{journal}{Nature Communications}}
+  \textbf{\bibinfo{volume}{12}}, \bibinfo{pages}{738} (\bibinfo{year}{2021}).
+
+\bibitem{lazic2010}
+\bibinfo{author}{Lazic, S.~E.}
+\newblock \bibinfo{title}{{The problem of pseudoreplication in neuroscientific
+  studies: is it affecting your analysis?}}
+\newblock \emph{\bibinfo{journal}{BMC Neuroscience}}
+  \textbf{\bibinfo{volume}{11}}, \bibinfo{pages}{5} (\bibinfo{year}{2010}).
+
+\bibitem{steyerberg2010}
+\bibinfo{author}{Steyerberg, E.~W.} \emph{et~al.}
+\newblock \bibinfo{title}{{Assessing the Performance of Prediction Models: A
+  Framework for Traditional and Novel Measures}}.
+\newblock \emph{\bibinfo{journal}{Epidemiology}} \textbf{\bibinfo{volume}{21}},
+  \bibinfo{pages}{128--138} (\bibinfo{year}{2010}).
+
+\bibitem{vancalster2019}
+\bibinfo{author}{Van~Calster, B.} \emph{et~al.}
+\newblock \bibinfo{title}{{Calibration: the Achilles heel of predictive
+  analytics}}.
+\newblock \emph{\bibinfo{journal}{BMC Medicine}} \textbf{\bibinfo{volume}{17}},
+  \bibinfo{pages}{230} (\bibinfo{year}{2019}).
+
+\bibitem{vickers2006}
+\bibinfo{author}{Vickers, A.~J.} \& \bibinfo{author}{Elkin, E.~B.}
+\newblock \bibinfo{title}{{Decision Curve Analysis: A Novel Method for
+  Evaluating Prediction Models}}.
+\newblock \emph{\bibinfo{journal}{Medical Decision Making}}
+  \textbf{\bibinfo{volume}{26}}, \bibinfo{pages}{565--574}
+  (\bibinfo{year}{2006}).
+
+\bibitem{collins2015}
+\bibinfo{author}{Collins, G.~S.}, \bibinfo{author}{Reitsma, J.~B.},
+  \bibinfo{author}{Altman, D.~G.} \& \bibinfo{author}{Moons, K.~G.}
+\newblock \bibinfo{title}{{Transparent Reporting of a multivariable prediction
+  model for Individual Prognosis Or Diagnosis (TRIPOD): The TRIPOD Statement}}.
+\newblock \emph{\bibinfo{journal}{Annals of Internal Medicine}}
+  \textbf{\bibinfo{volume}{162}}, \bibinfo{pages}{55--63}
+  (\bibinfo{year}{2015}).
+
+\bibitem{cawley2010}
+\bibinfo{author}{Cawley, G.~C.} \& \bibinfo{author}{Talbot, N. L.~C.}
+\newblock \bibinfo{title}{{On Over-fitting in Model Selection and Subsequent
+  Selection Bias in Performance Evaluation}}.
+\newblock \emph{\bibinfo{journal}{Journal of Machine Learning Research}}
+  \textbf{\bibinfo{volume}{11}}, \bibinfo{pages}{2079--2107}
+  (\bibinfo{year}{2010}).
+\newblock \urlprefix\url{https://www.jmlr.org/papers/v11/cawley10a.html}.
+
+\bibitem{schuirmann1987}
+\bibinfo{author}{Schuirmann, D.~J.}
+\newblock \bibinfo{title}{{A comparison of the two one-sided tests procedure
+  and the power approach for assessing the equivalence of average
+  bioavailability}}.
+\newblock \emph{\bibinfo{journal}{Journal of Pharmacokinetics and
+  Biopharmaceutics}} \textbf{\bibinfo{volume}{15}}, \bibinfo{pages}{657--680}
+  (\bibinfo{year}{1987}).
+
+\bibitem{lakens2017}
+\bibinfo{author}{Lakens, D.}
+\newblock \bibinfo{title}{{Equivalence Tests: A Practical Primer for t Tests,
+  Correlations, and Meta-Analyses}}.
+\newblock \emph{\bibinfo{journal}{Social Psychological and Personality
+  Science}} \textbf{\bibinfo{volume}{8}}, \bibinfo{pages}{355--362}
+  (\bibinfo{year}{2017}).
+
+\bibitem{riley2019}
+\bibinfo{author}{Riley, R.~D.} \emph{et~al.}
+\newblock \bibinfo{title}{{Minimum sample size for developing a multivariable
+  prediction model: PART II - binary and time-to-event outcomes}}.
+\newblock \emph{\bibinfo{journal}{Statistics in Medicine}}
+  \textbf{\bibinfo{volume}{38}}, \bibinfo{pages}{1276--1296}
+  (\bibinfo{year}{2019}).
+
+\bibitem{becht2019}
+\bibinfo{author}{Becht, E.} \emph{et~al.}
+\newblock \bibinfo{title}{Dimensionality reduction for visualizing single-cell
+  data using {UMAP}}.
+\newblock \emph{\bibinfo{journal}{Nature Biotechnology}}
+  \textbf{\bibinfo{volume}{37}}, \bibinfo{pages}{38--44}
+  (\bibinfo{year}{2019}).
+
+\bibitem{huang2022visualization}
+\bibinfo{author}{Huang, H.}, \bibinfo{author}{Wang, Y.},
+  \bibinfo{author}{Rudin, C.} \& \bibinfo{author}{Browne, E.~P.}
+\newblock \bibinfo{title}{Towards a comprehensive evaluation of dimension
+  reduction methods for transcriptomic data visualization}.
+\newblock \emph{\bibinfo{journal}{Communications Biology}}
+  \textbf{\bibinfo{volume}{5}}, \bibinfo{pages}{719} (\bibinfo{year}{2022}).
+
+\bibitem{cronbach1955}
+\bibinfo{author}{Cronbach, L.~J.} \& \bibinfo{author}{Meehl, P.~E.}
+\newblock \bibinfo{title}{Construct validity in psychological tests}.
+\newblock \emph{\bibinfo{journal}{Psychological Bulletin}}
+  \textbf{\bibinfo{volume}{52}}, \bibinfo{pages}{281--302}
+  (\bibinfo{year}{1955}).
+
+\bibitem{efron1993}
+\bibinfo{author}{Efron, B.} \& \bibinfo{author}{Tibshirani, R.~J.}
+\newblock \emph{\bibinfo{title}{{An Introduction to the Bootstrap}}}
+  (\bibinfo{publisher}{Chapman and Hall}, \bibinfo{address}{New York},
+  \bibinfo{year}{1993}).
+
+\end{thebibliography}

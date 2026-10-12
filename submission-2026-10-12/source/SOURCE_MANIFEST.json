@@ -1,0 +1,111 @@
+{
+  "title": "Neural topic modelling of fibroblast measurements and diabetic foot ulcer healing: a patient-level audit",
+  "document_version": "submission-2026-10-12",
+  "software_doi": "10.5281/zenodo.23308073",
+  "software_version": "0.5.0",
+  "numeric_research_outputs_changed": false,
+  "documents": {
+    "manuscript": {
+      "sha256": "e61bf90ff6d96724a5ae43713d4e9f2071c165fcf788be908616efe31291d443",
+      "bytes": 848343,
+      "pages": 11
+    },
+    "supplement": {
+      "sha256": "d7b2d8b44bc7f17448628aca757a1bdbab66fb7ead74cec2b376932bb6ef0d2a",
+      "bytes": 591148,
+      "pages": 38
+    }
+  },
+  "files": [
+    {
+      "path": "LICENSE",
+      "bytes": 1064,
+      "sha256": "10ef938551816fda8e6981789fd207e905524d51abd3023de441f7aac6dedfd1"
+    },
+    {
+      "path": "journal-figures/paper1_figure10_topic_stability.pdf",
+      "bytes": 70481,
+      "sha256": "7b3a5afa7983944320a7e5fb1f082824e522adbe4ac080e28e64359262330c71"
+    },
+    {
+      "path": "journal-figures/paper1_figure11_selection_context.pdf",
+      "bytes": 49221,
+      "sha256": "d5b3b6e0176c7ba164dc0de818dcad7a975f5011cbf9395d4bffbe1a964003f1"
+    },
+    {
+      "path": "journal-figures/paper1_figure1_workflow.pdf",
+      "bytes": 469158,
+      "sha256": "ec56ec8da087f54c4c975ebe0283c5507d62f21622970be0404d35cb35aa66bc"
+    },
+    {
+      "path": "journal-figures/paper1_figure2_mixture_semantics.pdf",
+      "bytes": 54933,
+      "sha256": "0c3fee05050b9d4b93b52c7f2a93193c84b42ac8f00695ac2db2545408090806"
+    },
+    {
+      "path": "journal-figures/paper1_figure3_artifact_controls.pdf",
+      "bytes": 51779,
+      "sha256": "48cf07d3b81545c0bfb7a532a210efda9b76cd7cbbc2745a06dc13f9e0484c12"
+    },
+    {
+      "path": "journal-figures/paper1_figure4_outcome_counterexample.pdf",
+      "bytes": 47989,
+      "sha256": "2fc1e59865cff7060b308ef8c69b93e9743e362449609eefded72a68bb6e213d"
+    },
+    {
+      "path": "journal-figures/paper1_figure5_patient_readouts.pdf",
+      "bytes": 98705,
+      "sha256": "dab4f0d64f24028a2b0701518a54762073b0444d57bbc3d2194b130339e286db"
+    },
+    {
+      "path": "journal-figures/paper1_figure6_sensitivity_negative_controls.pdf",
+      "bytes": 128221,
+      "sha256": "d853a72da7b63806dd48de70edf170d198e72eb1b5720491a8a0be43d315531e"
+    },
+    {
+      "path": "journal-figures/paper1_figure7_representation_inference.pdf",
+      "bytes": 40494,
+      "sha256": "805c16b746d5675868f5dea58dd3db5207c9cd3ccf2b226850b672063198ea31"
+    },
+    {
+      "path": "journal-figures/paper1_figure8_patient_unit_anatomy.pdf",
+      "bytes": 49889,
+      "sha256": "5f7e3684b64f8f6db993905481d4f8631fac533f2afe20e9e6a9f1317975a85b"
+    },
+    {
+      "path": "journal-figures/paper1_figure9_external_construct_audit.pdf",
+      "bytes": 48376,
+      "sha256": "44fe97aa6f02439a970c8124eba226ff0d4b09aab66444d40721dc447287c993"
+    },
+    {
+      "path": "layout.tex",
+      "bytes": 4317,
+      "sha256": "880ee3607af622f3564820cc1f0469d0d6cc880a74b6687366145df7304a3627"
+    },
+    {
+      "path": "paper_srep_inline.bbl",
+      "bytes": 14223,
+      "sha256": "32b383cf791ccca5db108c73d838aefe002ae8b2d8b88feadde05eb21167e61c"
+    },
+    {
+      "path": "paper_srep_inline.tex",
+      "bytes": 34649,
+      "sha256": "d8d2c66467d9391de0c30fd54f84507b613ffbb3e980dcc32b164eef2da13a64"
+    },
+    {
+      "path": "references_paper1.bib",
+      "bytes": 19375,
+      "sha256": "7aa312d69929ccf6d9bc3b73e40d90304b2b06a851899ad546255d0044fdd2f7"
+    },
+    {
+      "path": "supporting_srep.bbl",
+      "bytes": 10361,
+      "sha256": "dbf92bb540454016fa03e37bb268242488027634fe8459ab149533d04a2eb638"
+    },
+    {
+      "path": "supporting_srep.tex",
+      "bytes": 217140,
+      "sha256": "04a7af17a3d547b20f665c6c5f6f74c940f06a1280184753a850f8e82867cfeb"
+    }
+  ]
+}
