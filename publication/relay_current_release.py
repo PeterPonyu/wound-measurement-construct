@@ -67,6 +67,18 @@ def download(item):
     print(name, 'downloaded and hash verified', flush=True)
     return path
 
+if '--preflight' in sys.argv[2:]:
+    record_id = str(CONFIG['record_id'])
+    assert record_id in ('23308073', '23308074', '23308077')
+    base = 'https://zenodo.org/api/records/' + record_id
+    draft = retry('GET', base + '/draft')
+    assert draft['metadata']['version'] == CONFIG['version']
+    entries = retry('GET', base + '/draft/files')['entries']
+    assert {x['key'] for x in entries}.issubset({x['name'] for x in CONFIG['files']})
+    print(json.dumps({'status': 'cloud-connection-verified', 'record_id': CONFIG['record_id'],
+                      'files': len(entries), 'completed': sum(x.get('status') == 'completed' for x in entries)}), flush=True)
+    raise SystemExit(0)
+
 local = {item['name']: download(item) for item in CONFIG['files']}
 complete = ROOT / CONFIG['canonical_archive_name']
 with complete.open('wb') as target:

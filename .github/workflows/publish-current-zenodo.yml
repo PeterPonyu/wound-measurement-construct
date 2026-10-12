@@ -1,6 +1,11 @@
 name: Publish verified Zenodo release
 on:
   workflow_dispatch:
+    inputs:
+      preflight_only:
+        description: Check authenticated access without transferring or publishing files
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -22,4 +27,4 @@ jobs:
       - name: Verify, transfer and publish this version
         env:
           ZENODO_ACCESS_TOKEN: ${{ secrets.ZENODO_ACCESS_TOKEN }}
-        run: python3 relay_current_release.py current-zenodo-release.json
+        run: python3 relay_current_release.py current-zenodo-release.json ${{ inputs.preflight_only && '--preflight' || '' }}
