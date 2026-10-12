@@ -45,7 +45,7 @@ def api(method, url, data=None, binary=None):
             payload = response.read()
             return json.loads(payload) if payload else None
     except HTTPError as exc:
-        raise RuntimeError('Zenodo ' + method + ' HTTP ' + str(exc.code)) from None
+        raise RuntimeError('Zenodo ' + method + ' ' + parsed.path + ' HTTP ' + str(exc.code)) from None
     except (URLError, TimeoutError, ConnectionError, ssl.SSLError):
         raise RuntimeError('Zenodo connection failed; publication state must be rechecked') from None
 
@@ -120,16 +120,25 @@ def list_entries():
     assert set(entries).issubset(by_name), 'Unexpected file: preserve it and stop'
     return entries
 
+def remove_interrupted(entry):
+    assert entry.get('status') == 'pending' and entry.get('size') in (None, 0)
+    assert entry['links']['self'].startswith(files_url + '/')
+    for attempt in range(4):
+        current = list_entries().get(entry['key'])
+        if not current or current.get('status') == 'completed': return
+        try: api('DELETE', current['links']['self'])
+        except RuntimeError: pass
+        for delay in (2, 5, 10):
+            if entry['key'] not in list_entries(): return
+            time.sleep(delay)
+    raise RuntimeError(entry['key'] + ': interrupted upload could not be cleared; preserve unpublished state')
+
 def stage_release():
     # Incomplete placeholders can prevent Zenodo from serializing draft metadata.
     # Remove only expected, zero-byte pending entries before reading metadata.
-    for entry in list_entries().values():
-        if entry.get('status') != 'pending': continue
-        assert entry.get('size') in (None, 0)
-        assert entry['links']['self'].startswith(files_url + '/')
-        try: api('DELETE', entry['links']['self'])
-        except RuntimeError:
-            if entry['key'] in list_entries(): raise
+    interrupted = [entry for entry in list_entries().values() if entry.get('status') == 'pending']
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        list(pool.map(remove_interrupted, interrupted))
     draft = retry('GET', 'https://zenodo.org/api/deposit/depositions/' + record_id)
     assert draft['metadata']['version'] == CONFIG['version']
     if draft.get('submitted') is True:
