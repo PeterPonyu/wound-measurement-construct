@@ -81,9 +81,6 @@ print('All source payloads and canonical ZIP SHA256/CRC verified', flush=True)
 record_id = str(CONFIG['record_id'])
 assert record_id in ('23308073', '23308074', '23308077')
 base = 'https://zenodo.org/api/records/' + record_id
-draft = retry('GET', base + '/draft')
-assert draft['metadata']['version'] == CONFIG['version']
-assert draft.get('is_published') is not True
 files_url = base + '/draft/files'
 by_name = {item['name']: item for item in CONFIG['files']}
 
@@ -95,49 +92,60 @@ def list_entries():
     assert set(entries).issubset(by_name), 'Unexpected file: preserve it and stop'
     return entries
 
-entries = list_entries()
-for name, item in by_name.items():
-    entry = entries.get(name)
-    if good(entry, item):
-        print(name, 'already verified', flush=True); continue
-    for attempt in range(4):
-        entry = list_entries().get(name)
-        if good(entry, item): break
-        if entry:
-            # Remove only an interrupted file in this fixed, unpublished draft.
-            try: api('DELETE', entry['links']['self'])
-            except RuntimeError:
-                if list_entries().get(name): raise
-        try:
-            initialized = api('POST', files_url, [{'key': name}])
-            entry = next(x for x in initialized['entries'] if x['key'] == name)
-        except RuntimeError:
-            # Initialization may have committed despite a lost response.
+def stage_release():
+    draft = retry('GET', base + '/draft')
+    assert draft['metadata']['version'] == CONFIG['version']
+    assert draft.get('is_published') is not True
+    entries = list_entries()
+    for name, item in by_name.items():
+        entry = entries.get(name)
+        if good(entry, item):
+            print(name, 'already verified', flush=True); continue
+        for attempt in range(4):
             entry = list_entries().get(name)
-            if not entry: raise
-        try:
-            api('PUT', entry['links']['content'], binary=local[name].read_bytes())
-            api('POST', entry['links']['commit'])
-        except RuntimeError:
-            current = list_entries().get(name)
-            if good(current, item): break
-            # A lost upload response can precede a successful commit.
-            if current:
-                try: api('POST', current['links']['commit'])
-                except RuntimeError: pass
-        if good(list_entries().get(name), item): break
-        if attempt == 3: raise RuntimeError(name + ': upload not verified; draft remains unpublished')
-        time.sleep(10 * (attempt + 1))
-    assert good(list_entries().get(name), item), name
-    print(name, 'committed with verified size and MD5', flush=True)
+            if good(entry, item): break
+            if entry:
+                # Remove only an interrupted file in this fixed, unpublished draft.
+                try: api('DELETE', entry['links']['self'])
+                except RuntimeError:
+                    if list_entries().get(name): raise
+            try:
+                initialized = api('POST', files_url, [{'key': name}])
+                entry = next(x for x in initialized['entries'] if x['key'] == name)
+            except RuntimeError:
+                # Initialization may have committed despite a lost response.
+                entry = list_entries().get(name)
+                if not entry: raise
+            try:
+                api('PUT', entry['links']['content'], binary=local[name].read_bytes())
+                api('POST', entry['links']['commit'])
+            except RuntimeError:
+                current = list_entries().get(name)
+                if good(current, item): break
+                # A lost upload response can precede a successful commit.
+                if current:
+                    try: api('POST', current['links']['commit'])
+                    except RuntimeError: pass
+            if good(list_entries().get(name), item): break
+            if attempt == 3: raise RuntimeError(name + ': upload not verified; draft remains unpublished')
+            time.sleep(10 * (attempt + 1))
+        assert good(list_entries().get(name), item), name
+        print(name, 'committed with verified size and MD5', flush=True)
 
-entries = list_entries()
-assert set(entries) == set(by_name) and all(good(entries[n], item) for n, item in by_name.items())
+    entries = list_entries()
+    assert set(entries) == set(by_name) and all(good(entries[n], item) for n, item in by_name.items())
+    try:
+        api('POST', base + '/draft/actions/publish')
+    except RuntimeError:
+        # An ambiguous publish reply is followed by a public read, never blind repetition.
+        pass
+
 try:
-    api('POST', base + '/draft/actions/publish')
+    stage_release()
 except RuntimeError:
-    # An ambiguous publish reply is followed by a public read, never blind repetition.
-    pass
+    # A failed or ambiguous transfer never proves publication. The exact public
+    # DOI, version, file set and downloaded payloads must still pass below.
+    print('Checking the public record after an ambiguous or resumed transfer', flush=True)
 with urlopen(base, timeout=90) as response: public = json.load(response)
 assert public['doi'] == CONFIG['doi'] and public['metadata']['version'] == CONFIG['version']
 assert {x['key'] for x in public['files']} == set(by_name)
