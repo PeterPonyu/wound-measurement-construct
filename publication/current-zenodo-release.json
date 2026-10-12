@@ -1,0 +1,528 @@
+{
+  "record_id": 23308073,
+  "doi": "10.5281/zenodo.23308073",
+  "version": "0.5.0",
+  "repository": "PeterPonyu/wound-measurement-construct",
+  "tag": "v0.5.0",
+  "canonical_archive_name": "wound-measurement-construct-0.5.0-full-source.zip",
+  "canonical_archive_sha256": "c0561a58d9cf70e0fa386134b581f28a2c0929063c330f4e8049f3af5709343a",
+  "archive_parts": [
+    "wound-measurement-construct-0.5.0-full-source.zip.part-001",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-002",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-003",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-004",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-005",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-006",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-007",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-008",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-009",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-010",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-011",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-012",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-013",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-014",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-015",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-016",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-017",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-018",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-019",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-020",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-021",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-022",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-023",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-024",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-025",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-026",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-027",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-028",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-029",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-030",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-031",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-032",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-033",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-034",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-035",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-036",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-037",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-038",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-039",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-040",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-041",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-042",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-043",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-044",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-045",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-046",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-047",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-048",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-049",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-050",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-051",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-052",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-053",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-054",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-055",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-056",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-057",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-058",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-059",
+    "wound-measurement-construct-0.5.0-full-source.zip.part-060"
+  ],
+  "files": [
+    {
+      "name": "SHA256SUMS",
+      "bytes": 7616,
+      "sha256": "d4be86e98196debf1538bb8c0b80c7ec59f6557d1cb7c9951c8b51bf16020b4b",
+      "md5": "45db1bad54eadcbf0575e7218ccb3319",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/SHA256SUMS"
+    },
+    {
+      "name": "REASSEMBLE.md",
+      "bytes": 1192,
+      "sha256": "b6c8f28a8ed2659fb58cbcf9b106b94f1a714e8723841a944bcd83c008f9c472",
+      "md5": "17b23fe08c1bef6f779b0cc659bc7cba",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/REASSEMBLE.md"
+    },
+    {
+      "name": "PARTS.json",
+      "bytes": 12025,
+      "sha256": "1f1e3ebcdca401182402f258bd66ffaf3dd019a20da07f9029eb5c3a055e058d",
+      "md5": "0ead850a0c4e7d95e48ab5bc904cee0d",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/PARTS.json"
+    },
+    {
+      "name": "scientific-reports-manuscript-inline.pdf",
+      "bytes": 1017038,
+      "sha256": "1478b4d883a44eac780182ccdd857d2745ae885beea45d1a6505a1277f1e40bd",
+      "md5": "baf0ba4d50927684a211b8c44e1617b4",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/scientific-reports-manuscript-inline.pdf"
+    },
+    {
+      "name": "scientific-reports-supplement.pdf",
+      "bytes": 436225,
+      "sha256": "cb27387383039c2caa811f5a2d301d60ac454b2a187b42771cae676be2441357",
+      "md5": "7eee70f4ffbc9f672476a81287be1ef2",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/scientific-reports-supplement.pdf"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-001",
+      "bytes": 33554432,
+      "sha256": "846e91de5ec026d28c2a2a4ab377c09a2a47ffd82ed0447f7cd9b38e9bed1673",
+      "md5": "f5428a4b4a3748a206722c5456a246bf",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-001"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-002",
+      "bytes": 33554432,
+      "sha256": "a85bc9f0e4d62ab604ac7581810cf795a8287df7f4eb7a23588f4d8cfd4c5035",
+      "md5": "0cf1cd33a57d14e9e93fb5fd0426c1d3",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-002"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-003",
+      "bytes": 33554432,
+      "sha256": "4a7822e957b47786178c64c81c57cfe9f234c96f08874bd6d10adec9fb8c0046",
+      "md5": "fe243ba26e28b06a9afa953523c6fa78",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-003"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-004",
+      "bytes": 33554432,
+      "sha256": "1b00c3caa1dacf429d6af336c7d235b321b25bc6bc6e94e0dc4be9179e554068",
+      "md5": "fdea5b5b34f39f1c5afb9f45274c95f1",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-004"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-005",
+      "bytes": 33554432,
+      "sha256": "887fbf73ce18e56e9c58726696ea711efea3da418d3f1cb4194af8ae22ef41d6",
+      "md5": "95014e934a6aeab5a90b20ab47f21bb3",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-005"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-006",
+      "bytes": 33554432,
+      "sha256": "fb8bd085ba5a003b1219e748bd3442fdcdcf35f89aacf9095365bbe90c61dcfa",
+      "md5": "28bcebc6316cc798f17dbfec419a955e",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-006"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-007",
+      "bytes": 33554432,
+      "sha256": "c88f9598ecc0e801a25649b63faa20353cd1847735b8b8f106b40a4eca751ecf",
+      "md5": "3d6a96f201097bf4faa4e24b44634c85",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-007"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-008",
+      "bytes": 33554432,
+      "sha256": "afb8a5f30c8f997e1a4008fbd5300dd54cf8c2d82b9312434fc7699a6445cde2",
+      "md5": "a30077aeb743da5a28cc8e2cf0c1c493",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-008"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-009",
+      "bytes": 33554432,
+      "sha256": "0772d7ebfa729c5457d3fb6e3fbcb0b39c29d1d9ef2232b78d5aa7eb5a7a9cdb",
+      "md5": "47c8938b1d1d98d737b1c224bc785abf",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-009"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-010",
+      "bytes": 33554432,
+      "sha256": "6da2591af9e1e3882ffdc0ae683eaaa0f5eb089401bd0dbc806d248862b6e8b9",
+      "md5": "9e11cc18954b7789e61a3bf618da58a8",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-010"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-011",
+      "bytes": 33554432,
+      "sha256": "50ebbc0afb92292a1cfbdb3b2474df9111fa1fc914c707eb670f6b558793f968",
+      "md5": "8c52ea4d3d72f26f91c1f536d62f51d6",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-011"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-012",
+      "bytes": 33554432,
+      "sha256": "59345bedc26e866bc020944c3aad009a576d2f594ed9d8b985eab06d8e589274",
+      "md5": "eb6ebcdd44251cb9cb93b1d4cb2dc545",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-012"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-013",
+      "bytes": 33554432,
+      "sha256": "3d6896020120aaba20b71ffda8338b1e29578f39d9c32387572b499442f7fcc6",
+      "md5": "0645e27f122aa8233eea926608866605",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-013"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-014",
+      "bytes": 33554432,
+      "sha256": "eaf7b524711cebd243eee665325d780e5a996674a31e0203ced3557ee109c340",
+      "md5": "5427470ec6a00cce878446a7b7782c2e",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-014"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-015",
+      "bytes": 33554432,
+      "sha256": "419ae853cf78abcbabbe3e64ba4094f3f22be13e3560d6b9c257c8cc11e1f0ae",
+      "md5": "311b04f06142790bd0321ff582b090af",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-015"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-016",
+      "bytes": 33554432,
+      "sha256": "1314dd9390cd9d16639a6857b27ffdaeb1aa3a683fbf5b461bcc98e7dace0792",
+      "md5": "a41cf3b9f20da07811ed47f612b39f42",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-016"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-017",
+      "bytes": 33554432,
+      "sha256": "bcf2863bc870d6c17a82b1eced166f241b7ed6321a26c4393cbc91e133083372",
+      "md5": "aa902e9b82ff5b3728c9aa812b39517d",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-017"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-018",
+      "bytes": 33554432,
+      "sha256": "34834f0a2d40b7c6c437fbe3c4e6a967fb0144e1a96e16ba230495cb32625057",
+      "md5": "d617ab1ee3da49195a62426dc1eafc86",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-018"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-019",
+      "bytes": 33554432,
+      "sha256": "b1331a7b1dfcefb41e50ba8406f39cbfba8b26966f4cf7d1d61708c7fccb820e",
+      "md5": "bc177e9b126c10dcb79d5f4a9e045aa4",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-019"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-020",
+      "bytes": 33554432,
+      "sha256": "6c6b10a91812748238c7a9b0031b56c9660dfce5b5962801407be82484721bcf",
+      "md5": "1d741d7149f41d583538db1bd62d1252",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-020"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-021",
+      "bytes": 33554432,
+      "sha256": "712bf0a2a3120c5f65791dba9fc17f767a081c7c36f2e65d6532159fec3a230e",
+      "md5": "3445f49d2dd40c78d52169afc3e7090a",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-021"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-022",
+      "bytes": 33554432,
+      "sha256": "6063077b22f9ff6d47322bec1d0a0eb5842c78842ebd6e81290323b1c6327fca",
+      "md5": "07abee1714845ffa4f2a220a5c4bd9c5",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-022"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-023",
+      "bytes": 33554432,
+      "sha256": "1d0610afcf9d84f2b6a99cbc0768379cd5d0672fdba9b5271ca085c527ff1d0b",
+      "md5": "a6c06d3af58ab4d1919e627059db5ebc",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-023"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-024",
+      "bytes": 33554432,
+      "sha256": "066bb82a381df00ce227106c14248f9905822a3a696ce0b45ca8084f49b21c06",
+      "md5": "2f7dfa178a7b8d7b4bbf1210ac30143c",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-024"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-025",
+      "bytes": 33554432,
+      "sha256": "da7cf705d342affd2b9eb6b602bb0cdef92c5caeab8dbce2e7263c2978babf6e",
+      "md5": "2ff417725308938a12030c9eb0bda802",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-025"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-026",
+      "bytes": 33554432,
+      "sha256": "92b5e76a82b784f8aeb54188fe8f6548e38a1a047e6a66e5732593bc15d42a4e",
+      "md5": "eb3cfacb7bc43fe9cba1ad4facdd25a3",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-026"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-027",
+      "bytes": 33554432,
+      "sha256": "de84f6c0c6793954f609a8989d6b31ddb3c86d353865902368ce1a74ba13b52b",
+      "md5": "fa7b2218beaf793d25c3583baaeba531",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-027"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-028",
+      "bytes": 33554432,
+      "sha256": "8d403d12a8e556bceaa836c6fd6cef61902d7d7d429739222312cf7ba24e422f",
+      "md5": "e41f9b153408207bb9d17ad9a0897c95",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-028"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-029",
+      "bytes": 33554432,
+      "sha256": "5d28c785657449241c27e0f31e8adc6caea9f03b3d71fdfd95a4a847b2c8dc1f",
+      "md5": "36389709257c56f1869cbb3505ba1893",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-029"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-030",
+      "bytes": 33554432,
+      "sha256": "5ef81bc058c19280742cd4b599c5037825a16b5bd98a6065c6b115d1675eb6e6",
+      "md5": "54808a9e0a377033557b2f2dbb32af0d",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-030"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-031",
+      "bytes": 33554432,
+      "sha256": "02ea5164ac2e4e1113ff27a730f6bcc9c776c41153a38f0572a939fa661677c9",
+      "md5": "b64554a2101829caed0a31933734b2aa",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-031"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-032",
+      "bytes": 33554432,
+      "sha256": "43ffaab54285989c71a01931d9b224f2912e7f2c8c75175a04be1f092db53ce1",
+      "md5": "fde3394a5a5e6758e64c6c3d536d2420",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-032"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-033",
+      "bytes": 33554432,
+      "sha256": "7d752d58209f30996093eb4dce7041f90edc9222e14d15429d6a4df8dc204db1",
+      "md5": "748dee137a965954a7f5a3bcc6caeab6",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-033"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-034",
+      "bytes": 33554432,
+      "sha256": "8a00f6cc149cb433c352246df61f7eaafd848fb494ee73f7b8532c82dfc80661",
+      "md5": "9d33b1e12b78acd32c4deecde2173a0f",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-034"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-035",
+      "bytes": 33554432,
+      "sha256": "d21e44d69f794966f6ff77cc7f0b5c0fc2533c12b2f16f79655469bba3015eb9",
+      "md5": "f6e6727f60f19129ac50c32149942838",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-035"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-036",
+      "bytes": 33554432,
+      "sha256": "ac5c3594cd11870320742d03143251579474fcfc7da18cc7b660786291aced55",
+      "md5": "5148cb5357ed61fa155c7ce5dae4eb73",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-036"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-037",
+      "bytes": 33554432,
+      "sha256": "7877ae91516ed73abacf9562c1b05dbc6d65ff29d066744abd01b291b60001e5",
+      "md5": "3f9d537578b6c9f5be78d8fa440d30a5",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-037"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-038",
+      "bytes": 33554432,
+      "sha256": "4294830569e27e5835bcbc020461238401dbdd71a0def5d3aa338e298cb1d347",
+      "md5": "53006814d1748d0f7e395499e490bd37",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-038"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-039",
+      "bytes": 33554432,
+      "sha256": "8d847c1fbf880e9455374032e33be82f6c5315da52816262505f7e1cbb9d95bc",
+      "md5": "315c55a54f5afa54d8dde386947d84c4",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-039"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-040",
+      "bytes": 33554432,
+      "sha256": "1e9885068bb896129176336e5b51bb15c18174808e351875ecbcab15a67b6c11",
+      "md5": "9b5451fcbf2d2e367e3a39afbfd1e72c",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-040"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-041",
+      "bytes": 33554432,
+      "sha256": "df1f175f54a9a469db444d851dd923a3f32c39ba4420da0ce329ef84e9538bca",
+      "md5": "7516960156a08bb92fddb2bf79f3c3c6",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-041"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-042",
+      "bytes": 33554432,
+      "sha256": "a6ed36839928f2b1ed0bbb58a398d541869f10c4ae0c15ce4c13542f7d434072",
+      "md5": "fb6d28b7cd61991a66ee35e2656c28c0",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-042"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-043",
+      "bytes": 33554432,
+      "sha256": "77ecea7f43158051780ec61fa2815f73137e9c74880a650bd3a853e93478859e",
+      "md5": "2cdf5e6ad257ddd3675d2091a128950e",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-043"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-044",
+      "bytes": 33554432,
+      "sha256": "38f0a3428e98d569451d1dd0f585fc130a896fccf3baf62c833547c9e01bc87e",
+      "md5": "b29dff78ca31dfd7bbd49e23921f3bb2",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-044"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-045",
+      "bytes": 33554432,
+      "sha256": "08f2dfcd4c2c743984a25fe3f651b07ad545c0eea8c2e409c60fe8c8330966b8",
+      "md5": "a5c638769e271e049a2f91a615a81eb9",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-045"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-046",
+      "bytes": 33554432,
+      "sha256": "e7c2f7b2a7945314e0042e1ad73f146a59653e8d20db83c0e8ad4b8c2563c0b4",
+      "md5": "7ff17f1bf6d4aae68e9833b6894763e9",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-046"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-047",
+      "bytes": 33554432,
+      "sha256": "7afe7e44e8d6587143908decbdbf37c94e4432851753afdf76f863aabe3193f9",
+      "md5": "880cb610f1c997e0156c556bbc4f0551",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-047"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-048",
+      "bytes": 33554432,
+      "sha256": "c9945d412464f59e4398150621e84e1fa5e61033b30ad58196dee6c7351d5ec5",
+      "md5": "c0966c0874c8c4e8b67c00fa260627b9",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-048"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-049",
+      "bytes": 33554432,
+      "sha256": "b833aa751a4ba19a9263cca8184f4dbe5cb71500c93e4c6f6d4c9f2fe50ee3e8",
+      "md5": "ecafa5465eac046298cadb9b66e88afc",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-049"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-050",
+      "bytes": 33554432,
+      "sha256": "886ce6ce7d4d3d633badb00612e41be53061c1e0576f07700738578185082299",
+      "md5": "18480be1690441e6c2b0d9886e8237b3",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-050"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-051",
+      "bytes": 33554432,
+      "sha256": "8397c4b652db74eb86303835f8e32762d1cf1f0a8caee463ea6c8174cf5ed84b",
+      "md5": "7ade6816240b3eccdc44b8ebb55d44ed",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-051"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-052",
+      "bytes": 33554432,
+      "sha256": "a4c7777d64191e0c447f372d35ecc3f243b02936e950840a417569a64ded4176",
+      "md5": "19aacf3bb687b04c6136a7d0125cb8f8",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-052"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-053",
+      "bytes": 33554432,
+      "sha256": "9f9fe33396adbe5b96b07e6185680d16607b85ced64305ddc483721d4497f479",
+      "md5": "f336dac70330f7bb222824b52496ee38",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-053"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-054",
+      "bytes": 33554432,
+      "sha256": "40a574f52d7a4127dc8d6e0bf7d491ed028f26f9fb99bcd453b1b869deba7bc8",
+      "md5": "aff3dfcfd0823a247cd25a5682b326d4",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-054"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-055",
+      "bytes": 33554432,
+      "sha256": "f534bc4b0f304612be8b4441394074be9463f00f5c1e731c0b66893b62d162a3",
+      "md5": "0b7772b1c89c2a3e19dc922ac2e7635a",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-055"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-056",
+      "bytes": 33554432,
+      "sha256": "96808a4db3e51c26767a3e534ffcba7c7adff837da5c53bea53002aae251397e",
+      "md5": "45d250c8ac2355bda9dd1b13062efbe6",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-056"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-057",
+      "bytes": 33554432,
+      "sha256": "f0f252975539ee84160789d1dc5839652d19aedb72a47e17f8ecaeb4b7c3b8b1",
+      "md5": "6e669fa46f3dcf06df9739a66a7c6918",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-057"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-058",
+      "bytes": 33554432,
+      "sha256": "28b3eb555f20314b4f612fce4167b2cf776a4b224d7f2b582ff4279957eed0ee",
+      "md5": "8c899c0a91a0f65872b3a55008efc5af",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-058"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-059",
+      "bytes": 33554432,
+      "sha256": "3aed1335ce380d002cede2f0eedd7017df12778a7f890a307c90bcb8a656e448",
+      "md5": "73a2c9b24fa2792da5981f63870092aa",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-059"
+    },
+    {
+      "name": "wound-measurement-construct-0.5.0-full-source.zip.part-060",
+      "bytes": 15070994,
+      "sha256": "ca899017632429921b48c051cfbefa1654d5778f356879502689ff3299c6b869",
+      "md5": "8bc178ffe3ab9a513991d73951c3458c",
+      "url": "https://github.com/PeterPonyu/wound-measurement-construct/releases/download/v0.5.0/wound-measurement-construct-0.5.0-full-source.zip.part-060"
+    }
+  ]
+}

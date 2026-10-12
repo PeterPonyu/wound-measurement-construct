@@ -1,0 +1,25 @@
+name: Publish verified Zenodo release
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: current-zenodo-publication
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    environment: zenodo-current-release
+    steps:
+      - name: Obtain the exact workflow-commit publication program
+        env:
+          SOURCE_COMMIT: ${{ github.sha }}
+          SOURCE_REPOSITORY: ${{ github.repository }}
+        run: |
+          curl -fsSL "https://raw.githubusercontent.com/${SOURCE_REPOSITORY}/${SOURCE_COMMIT}/publication/relay_current_release.py" -o relay_current_release.py
+          curl -fsSL "https://raw.githubusercontent.com/${SOURCE_REPOSITORY}/${SOURCE_COMMIT}/publication/current-zenodo-release.json" -o current-zenodo-release.json
+      - name: Verify, transfer and publish this version
+        env:
+          ZENODO_ACCESS_TOKEN: ${{ secrets.ZENODO_ACCESS_TOKEN }}
+        run: python3 relay_current_release.py current-zenodo-release.json
