@@ -18,7 +18,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-24.04
-    timeout-minutes: 180
+    timeout-minutes: 360
     environment: zenodo-current-release
     steps:
       - name: Obtain the exact workflow-commit publication program
@@ -31,4 +31,12 @@ jobs:
       - name: Verify, transfer and publish this version
         env:
           ZENODO_ACCESS_TOKEN: ${{ secrets.ZENODO_ACCESS_TOKEN }}
-        run: python3 relay_current_release.py current-zenodo-release.json ${{ inputs.cleanup_pending_only && '--cleanup-pending' || inputs.preflight_only && '--preflight' || '' }}
+        run: |
+          for attempt in 1 2 3 4 5 6; do
+            if python3 relay_current_release.py current-zenodo-release.json ${{ inputs.cleanup_pending_only && '--cleanup-pending' || inputs.preflight_only && '--preflight' || '' }}; then
+              exit 0
+            fi
+            echo "Transfer attempt ${attempt} needs a fresh state check; completed files will be preserved"
+            sleep 30
+          done
+          exit 1

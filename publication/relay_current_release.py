@@ -36,7 +36,7 @@ def api(method, url, data=None, binary=None):
     headers = {'Authorization': 'Bearer ' + token,
                'Accept': 'application/json',
                'Cache-Control': 'no-cache',
-               'User-Agent': 'scientific-reports-release-transfer/1.0',
+               'User-Agent': 'ScientificReportsSourceRelease/1.0 (+https://github.com/' + CONFIG['repository'] + '; fuzeyu09@gmail.com)',
                'Content-Type': 'application/octet-stream' if binary is not None else 'application/json'}
     if method == 'GET':
         url += ('&' if parsed.query else '?') + 'fresh=' + str(time.time_ns())
