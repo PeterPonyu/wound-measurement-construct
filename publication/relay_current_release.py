@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Copy this product's hash-verified public release to its current Zenodo draft."""
 import hashlib
+from concurrent.futures import ThreadPoolExecutor
 import ssl
 import json
 import os
@@ -134,11 +135,11 @@ def stage_release():
     if draft.get('submitted') is True:
         return  # Continue below with public-file verification, without a mutation.
     assert draft.get('submitted') is False
-    entries = list_entries()
-    for name, item in by_name.items():
-        entry = entries.get(name)
+    def upload_one(pair):
+        name, item = pair
+        entry = list_entries().get(name)
         if good(entry, item):
-            print(name, 'already verified', flush=True); continue
+            print(name, 'already verified', flush=True); return
         for attempt in range(4):
             entry = list_entries().get(name)
             if good(entry, item): break
@@ -153,7 +154,10 @@ def stage_release():
             except RuntimeError:
                 # Initialization may have committed despite a lost response.
                 entry = list_entries().get(name)
-                if not entry: raise
+                if not entry:
+                    if attempt == 3: raise
+                    time.sleep(10 * (attempt + 1))
+                    continue
             try:
                 api('PUT', entry['links']['content'], binary=local[name].read_bytes())
                 api('POST', entry['links']['commit'])
@@ -169,6 +173,10 @@ def stage_release():
             time.sleep(10 * (attempt + 1))
         assert good(list_entries().get(name), item), name
         print(name, 'committed with verified size and MD5', flush=True)
+
+
+    with ThreadPoolExecutor(max_workers=4) as pool:
+        list(pool.map(upload_one, by_name.items()))
 
     entries = list_entries()
     assert set(entries) == set(by_name) and all(good(entries[n], item) for n, item in by_name.items())
@@ -190,7 +198,8 @@ assert {x['key'] for x in public['files']} == set(by_name)
 published = {x['key']: x for x in public['files']}
 verified = []
 public_root = Path('published-downloads'); public_root.mkdir(exist_ok=True)
-for name, item in by_name.items():
+def download_public(pair):
+    name, item = pair
     remote = published[name]
     assert remote['size'] == item['bytes'] and remote['checksum'].removeprefix('md5:') == item['md5']
     target = public_root / name
@@ -199,8 +208,11 @@ for name, item in by_name.items():
         for block in iter(lambda: response.read(1 << 20), b''): stream.write(block)
     assert target.stat().st_size == item['bytes'] and digest(target) == item['sha256']
     assert digest(target, 'md5') == item['md5']
-    verified.append({'name': name, 'bytes': item['bytes'], 'sha256': item['sha256'], 'md5': item['md5']})
     print(name, 'public Zenodo download verified', flush=True)
+    return {'name': name, 'bytes': item['bytes'], 'sha256': item['sha256'], 'md5': item['md5']}
+
+with ThreadPoolExecutor(max_workers=4) as pool:
+    verified = list(pool.map(download_public, by_name.items()))
 public_zip = public_root / CONFIG['canonical_archive_name']
 with public_zip.open('wb') as target:
     for name in CONFIG['archive_parts']:
