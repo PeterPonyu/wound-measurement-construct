@@ -61,5 +61,7 @@ REASSEMBLE.md and SHA256SUMS. The reconstructed ZIP has SHA256
 
 Extract the full archive before running full-manifest checks or scripts that use
 the large inputs. The full archive's release-manifest.json describes that archive;
-SOURCE_DOCUMENTS_MANIFEST.json describes this compact source/docs selection.
+SOURCE_DOCUMENTS_MANIFEST.json describes the current default-branch compact selection, including separately versioned documents; the immutable source-and-documents asset retains its original manifest.
 The DOI identifies software and research sources, not a manuscript publication.
+
+The current default-branch compact selection is recorded in `SOURCE_DOCUMENTS_MANIFEST.json`; historical full-archive manifests apply to the immutable software archive. `PUBLICATION_STATUS.json` records the publication and separate document version.

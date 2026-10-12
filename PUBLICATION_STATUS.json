@@ -1,0 +1,11 @@
+{
+  "software_version": "0.5.0",
+  "software_publication_and_download_check": "PASS",
+  "editorial_document_release": "https://github.com/PeterPonyu/wound-measurement-construct/releases/tag/submission-2026-10-12",
+  "editorial_document_commit": "dd312c9dcf3934656c46ea5718dc99331f5a9ebc",
+  "immutable_archives_and_release_tags_changed": false,
+  "metadata_scope": "Mutable default-branch publication metadata; frozen software/source manifests in historical releases remain unchanged.",
+  "current_compact_manifest_files_checked": 907,
+  "prior_manifest_sha256": "66e73e0fcbb36acac8a80c9d8df1bae12ed2a4c546ca2fb7f985a30b373282a0",
+  "current_manifest_sha256": "8891fd9c4e89ab902ec24d837de9661528e0d06ac638cb7293c6eedb17866318"
+}
