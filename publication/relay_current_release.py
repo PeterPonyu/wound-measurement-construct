@@ -33,6 +33,8 @@ def api(method, url, data=None, binary=None):
         raise RuntimeError('The temporary publication secret is not configured')
     body = binary if binary is not None else json.dumps(data).encode() if data is not None else None
     headers = {'Authorization': 'Bearer ' + token,
+               'Accept': 'application/json',
+               'User-Agent': 'scientific-reports-release-transfer/1.0',
                'Content-Type': 'application/octet-stream' if binary is not None else 'application/json'}
     try:
         with API.open(Request(url, data=body, headers=headers, method=method), timeout=600) as response:
@@ -67,14 +69,24 @@ def download(item):
     print(name, 'downloaded and hash verified', flush=True)
     return path
 
-if '--preflight' in sys.argv[2:]:
+if '--preflight' in sys.argv[2:] or '--cleanup-pending' in sys.argv[2:]:
     record_id = str(CONFIG['record_id'])
     assert record_id in ('23308073', '23308074', '23308077')
     base = 'https://zenodo.org/api/records/' + record_id
-    draft = retry('GET', 'https://zenodo.org/api/deposit/depositions/' + record_id)
-    assert draft['metadata']['version'] == CONFIG['version']
-    entries = retry('GET', base + '/draft/files')['entries']
+    files_url = base + '/draft/files'
+    entries = retry('GET', files_url)['entries']
     assert {x['key'] for x in entries}.issubset({x['name'] for x in CONFIG['files']})
+    if '--cleanup-pending' in sys.argv[2:]:
+        for entry in entries:
+            if entry.get('status') != 'pending': continue
+            assert entry.get('size') in (None, 0)
+            assert entry['links']['self'].startswith(files_url + '/')
+            try: api('DELETE', entry['links']['self'])
+            except RuntimeError:
+                remaining = {x['key'] for x in retry('GET', files_url)['entries']}
+                if entry['key'] in remaining: raise
+            print(entry['key'], 'interrupted private-draft placeholder removed', flush=True)
+        entries = retry('GET', files_url)['entries']
     print(json.dumps({'status': 'cloud-connection-verified', 'record_id': CONFIG['record_id'],
                       'files': len(entries), 'completed': sum(x.get('status') == 'completed' for x in entries)}), flush=True)
     raise SystemExit(0)
@@ -105,6 +117,15 @@ def list_entries():
     return entries
 
 def stage_release():
+    # Incomplete placeholders can prevent Zenodo from serializing draft metadata.
+    # Remove only expected, zero-byte pending entries before reading metadata.
+    for entry in list_entries().values():
+        if entry.get('status') != 'pending': continue
+        assert entry.get('size') in (None, 0)
+        assert entry['links']['self'].startswith(files_url + '/')
+        try: api('DELETE', entry['links']['self'])
+        except RuntimeError:
+            if entry['key'] in list_entries(): raise
     draft = retry('GET', 'https://zenodo.org/api/deposit/depositions/' + record_id)
     assert draft['metadata']['version'] == CONFIG['version']
     if draft.get('submitted') is True:

@@ -6,6 +6,10 @@ on:
         description: Check authenticated access without transferring or publishing files
         type: boolean
         default: false
+      cleanup_pending_only:
+        description: Remove only interrupted zero-byte uploads from this private draft
+        type: boolean
+        default: false
 permissions:
   contents: read
 concurrency:
@@ -27,4 +31,4 @@ jobs:
       - name: Verify, transfer and publish this version
         env:
           ZENODO_ACCESS_TOKEN: ${{ secrets.ZENODO_ACCESS_TOKEN }}
-        run: python3 relay_current_release.py current-zenodo-release.json ${{ inputs.preflight_only && '--preflight' || '' }}
+        run: python3 relay_current_release.py current-zenodo-release.json ${{ inputs.cleanup_pending_only && '--cleanup-pending' || inputs.preflight_only && '--preflight' || '' }}
