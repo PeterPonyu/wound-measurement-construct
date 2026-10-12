@@ -6,6 +6,10 @@ on:
         description: Check authenticated access without transferring or publishing files
         type: boolean
         default: false
+      verify_public_only:
+        description: Verify the published files without credentials or mutations
+        type: boolean
+        default: false
       cleanup_pending_only:
         description: Remove only interrupted zero-byte uploads from this private draft
         type: boolean
@@ -26,14 +30,14 @@ jobs:
           SOURCE_COMMIT: ${{ github.sha }}
           SOURCE_REPOSITORY: ${{ github.repository }}
         run: |
-          curl -fsSL "https://raw.githubusercontent.com/${SOURCE_REPOSITORY}/${SOURCE_COMMIT}/publication/relay_current_release.py" -o relay_current_release.py
-          curl -fsSL "https://raw.githubusercontent.com/${SOURCE_REPOSITORY}/${SOURCE_COMMIT}/publication/current-zenodo-release.json" -o current-zenodo-release.json
+          curl --retry 5 --retry-all-errors --retry-delay 5 -fsSL "https://raw.githubusercontent.com/${SOURCE_REPOSITORY}/${SOURCE_COMMIT}/publication/relay_current_release.py" -o relay_current_release.py
+          curl --retry 5 --retry-all-errors --retry-delay 5 -fsSL "https://raw.githubusercontent.com/${SOURCE_REPOSITORY}/${SOURCE_COMMIT}/publication/current-zenodo-release.json" -o current-zenodo-release.json
       - name: Verify, transfer and publish this version
         env:
           ZENODO_ACCESS_TOKEN: ${{ secrets.ZENODO_ACCESS_TOKEN }}
         run: |
           for attempt in 1 2 3 4 5 6; do
-            if python3 relay_current_release.py current-zenodo-release.json ${{ inputs.cleanup_pending_only && '--cleanup-pending' || inputs.preflight_only && '--preflight' || '' }}; then
+            if python3 relay_current_release.py current-zenodo-release.json ${{ inputs.verify_public_only && '--verify-public' || inputs.cleanup_pending_only && '--cleanup-pending' || inputs.preflight_only && '--preflight' || '' }}; then
               exit 0
             fi
             echo "Transfer attempt ${attempt} needs a fresh state check; completed files will be preserved"

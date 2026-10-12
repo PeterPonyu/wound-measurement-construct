@@ -15,6 +15,8 @@ import zipfile
 
 CONFIG = json.loads(Path(sys.argv[1]).read_text())
 ROOT = Path('verified-release'); ROOT.mkdir(exist_ok=True)
+USER_AGENT = 'ScientificReportsSourceRelease/1.1 (+https://github.com/' + CONFIG['repository'] + '; fuzeyu09@gmail.com)'
+WORKERS = 2
 
 class NoRedirect(HTTPRedirectHandler):
     def redirect_request(self, req, fp, code, msg, headers, newurl):
@@ -36,7 +38,7 @@ def api(method, url, data=None, binary=None):
     headers = {'Authorization': 'Bearer ' + token,
                'Accept': 'application/json',
                'Cache-Control': 'no-cache',
-               'User-Agent': 'ScientificReportsSourceRelease/1.0 (+https://github.com/' + CONFIG['repository'] + '; fuzeyu09@gmail.com)',
+               'User-Agent': USER_AGENT,
                'Content-Type': 'application/octet-stream' if binary is not None else 'application/json'}
     if method == 'GET':
         url += ('&' if parsed.query else '?') + 'fresh=' + str(time.time_ns())
@@ -56,18 +58,61 @@ def retry(method, url, data=None, binary=None):
             if n == 3: raise
             time.sleep(5 * (n + 1))
 
+def public_probe(url):
+    """An unpublished record is an ordinary 404; transport errors leave state unknown."""
+    for attempt in range(6):
+        request = Request(url + '?fresh=' + str(time.time_ns()),
+                          headers={'User-Agent': USER_AGENT, 'Cache-Control': 'no-cache',
+                                   'Accept': 'application/json'})
+        try:
+            with urlopen(request, timeout=90) as response:
+                return json.load(response)
+        except HTTPError as exc:
+            if exc.code == 404:
+                return None
+            if exc.code not in (408, 429, 500, 502, 503, 504):
+                raise RuntimeError('Public Zenodo record HTTP ' + str(exc.code)) from None
+        except (URLError, TimeoutError, ConnectionError, ssl.SSLError):
+            pass
+        if attempt < 5:
+            time.sleep(min(60, 5 * (2 ** attempt)))
+    raise RuntimeError('Public Zenodo record could not be read; publication state is unknown')
+
+
+def verified_download(url, target, item):
+    """Resume verified files; replace an incomplete download only after full hash checks."""
+    if (target.exists() and target.stat().st_size == item['bytes']
+            and digest(target) == item['sha256'] and digest(target, 'md5') == item['md5']):
+        return
+    partial = target.with_name(target.name + '.partial')
+    for attempt in range(6):
+        try:
+            request = Request(url, headers={'User-Agent': USER_AGENT, 'Cache-Control': 'no-cache'})
+            with urlopen(request, timeout=180) as response, partial.open('wb') as stream:
+                for block in iter(lambda: response.read(1 << 20), b''):
+                    stream.write(block)
+            if (partial.stat().st_size != item['bytes'] or digest(partial) != item['sha256']
+                    or digest(partial, 'md5') != item['md5']):
+                raise RuntimeError(item['name'] + ': downloaded payload differs from sealed release')
+            partial.replace(target)
+            return
+        except HTTPError as exc:
+            if exc.code not in (408, 429, 500, 502, 503, 504):
+                raise RuntimeError(item['name'] + ': download HTTP ' + str(exc.code)) from None
+        except (URLError, TimeoutError, ConnectionError, ssl.SSLError):
+            pass
+        if attempt < 5:
+            time.sleep(min(60, 5 * (2 ** attempt)))
+    raise RuntimeError(item['name'] + ': download unavailable after bounded retries')
+
+
 def download(item):
     url = item['url']; parts = urlsplit(url)
     assert parts.scheme == 'https' and parts.hostname == 'github.com'
     assert parts.path.startswith('/' + CONFIG['repository'] + '/releases/download/' + CONFIG['tag'] + '/')
     name = item['name']; assert name == Path(name).name
     path = ROOT / name
-    if not path.exists() or digest(path) != item['sha256']:
-        partial = path.with_suffix(path.suffix + '.partial')
-        with urlopen(url, timeout=180) as response, partial.open('wb') as target:
-            for block in iter(lambda: response.read(1 << 20), b''): target.write(block)
-        assert partial.stat().st_size == item['bytes'] and digest(partial) == item['sha256'], name
-        partial.replace(path)
+    verified_download(url, path, item)
     assert path.stat().st_size == item['bytes'] and digest(path) == item['sha256']
     assert digest(path, 'md5') == item['md5']
     print(name, 'downloaded and hash verified', flush=True)
@@ -95,16 +140,17 @@ if '--preflight' in sys.argv[2:] or '--cleanup-pending' in sys.argv[2:]:
                       'files': len(entries), 'completed': sum(x.get('status') == 'completed' for x in entries)}), flush=True)
     raise SystemExit(0)
 
-local = {item['name']: download(item) for item in CONFIG['files']}
-complete = ROOT / CONFIG['canonical_archive_name']
-with complete.open('wb') as target:
-    for name in CONFIG['archive_parts']:
-        with local[name].open('rb') as part:
-            for block in iter(lambda: part.read(1 << 20), b''): target.write(block)
-assert digest(complete) == CONFIG['canonical_archive_sha256']
-with zipfile.ZipFile(complete) as archive:
-    assert archive.testzip() is None
-print('All source payloads and canonical ZIP SHA256/CRC verified', flush=True)
+local = {} if '--verify-public' in sys.argv[2:] else {item['name']: download(item) for item in CONFIG['files']}
+if '--verify-public' not in sys.argv[2:]:
+    complete = ROOT / CONFIG['canonical_archive_name']
+    with complete.open('wb') as target:
+        for name in CONFIG['archive_parts']:
+            with local[name].open('rb') as part:
+                for block in iter(lambda: part.read(1 << 20), b''): target.write(block)
+    assert digest(complete) == CONFIG['canonical_archive_sha256']
+    with zipfile.ZipFile(complete) as archive:
+        assert archive.testzip() is None
+    print('All source payloads and canonical ZIP SHA256/CRC verified', flush=True)
 
 record_id = str(CONFIG['record_id'])
 assert record_id in ('23308073', '23308074', '23308077')
@@ -137,7 +183,7 @@ def stage_release():
     # Incomplete placeholders can prevent Zenodo from serializing draft metadata.
     # Remove only expected, zero-byte pending entries before reading metadata.
     interrupted = [entry for entry in list_entries().values() if entry.get('status') == 'pending']
-    with ThreadPoolExecutor(max_workers=4) as pool:
+    with ThreadPoolExecutor(max_workers=WORKERS) as pool:
         list(pool.map(remove_interrupted, interrupted))
     draft = retry('GET', 'https://zenodo.org/api/deposit/depositions/' + record_id)
     assert draft['metadata']['version'] == CONFIG['version']
@@ -184,7 +230,7 @@ def stage_release():
         print(name, 'committed with verified size and MD5', flush=True)
 
 
-    with ThreadPoolExecutor(max_workers=4) as pool:
+    with ThreadPoolExecutor(max_workers=WORKERS) as pool:
         list(pool.map(upload_one, by_name.items()))
 
     entries = list_entries()
@@ -195,13 +241,17 @@ def stage_release():
         # An ambiguous publish reply is followed by a public read, never blind repetition.
         pass
 
-try:
-    stage_release()
-except RuntimeError as exc:
-    # A failed or ambiguous transfer never proves publication. The exact public
-    # DOI, version, file set and downloaded payloads must still pass below.
-    print(str(exc) + '; checking the public record after an ambiguous or resumed transfer', flush=True)
-with urlopen(base + '?fresh=' + str(time.time_ns()), timeout=90) as response: public = json.load(response)
+public = public_probe(base)
+if public is None:
+    if '--verify-public' in sys.argv[2:]:
+        raise RuntimeError('The requested record is still unpublished')
+    try:
+        stage_release()
+    except RuntimeError as exc:
+        print(str(exc) + '; completed draft files are preserved for resume', flush=True)
+    public = public_probe(base)
+    if public is None:
+        raise RuntimeError('Draft remains unpublished; resume verified staging rather than treating 404 as a publication failure')
 assert public['doi'] == CONFIG['doi'] and public['metadata']['version'] == CONFIG['version']
 assert {x['key'] for x in public['files']} == set(by_name)
 published = {x['key']: x for x in public['files']}
@@ -213,14 +263,13 @@ def download_public(pair):
     assert remote['size'] == item['bytes'] and remote['checksum'].removeprefix('md5:') == item['md5']
     target = public_root / name
     url = 'https://zenodo.org/records/' + record_id + '/files/' + quote(name) + '?download=1&fresh=' + str(time.time_ns())
-    with urlopen(url, timeout=180) as response, target.open('wb') as stream:
-        for block in iter(lambda: response.read(1 << 20), b''): stream.write(block)
+    verified_download(url, target, item)
     assert target.stat().st_size == item['bytes'] and digest(target) == item['sha256']
     assert digest(target, 'md5') == item['md5']
     print(name, 'public Zenodo download verified', flush=True)
     return {'name': name, 'bytes': item['bytes'], 'sha256': item['sha256'], 'md5': item['md5']}
 
-with ThreadPoolExecutor(max_workers=4) as pool:
+with ThreadPoolExecutor(max_workers=WORKERS) as pool:
     verified = list(pool.map(download_public, by_name.items()))
 public_zip = public_root / CONFIG['canonical_archive_name']
 with public_zip.open('wb') as target:
